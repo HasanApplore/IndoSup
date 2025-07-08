@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,65 +44,84 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Animated Background */}
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
-        {/* Primary gradient background */}
-        <div className="absolute inset-0 hero-gradient"></div>
+        <video 
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          preload="auto"
+          onLoadedData={() => {
+            setVideoLoaded(true);
+          }}
+          onCanPlay={() => {
+            setVideoLoaded(true);
+          }}
+          onError={(e) => {
+            console.log('Video failed to load, showing fallback');
+            setVideoError(true);
+            setVideoLoaded(false);
+          }}
+        >
+          <source src="/construction-hero.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/855271/855271-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/5349087/5349087-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
         
-        {/* Animated overlay patterns */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/15 to-transparent animate-pulse"></div>
-          <div className="absolute top-0 left-0 w-full h-full">
-            <motion.div
-              className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-              animate={{
-                x: [0, 100, 0],
-                y: [0, 50, 0],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              style={{ top: '10%', left: '10%' }}
-            />
-            <motion.div
-              className="absolute w-64 h-64 bg-primary/15 rounded-full blur-2xl"
-              animate={{
-                x: [0, -80, 0],
-                y: [0, 100, 0],
-                scale: [1, 0.8, 1],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 5
-              }}
-              style={{ top: '60%', right: '15%' }}
-            />
-            <motion.div
-              className="absolute w-80 h-80 bg-primary/8 rounded-full blur-3xl"
-              animate={{
-                x: [0, 60, 0],
-                y: [0, -40, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 25,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 10
-              }}
-              style={{ bottom: '20%', left: '20%' }}
-            />
+        {/* Fallback animated background */}
+        <div className={`absolute inset-0 w-full h-full ${videoError || !videoLoaded ? 'block' : 'hidden'}`}>
+          <div className="absolute inset-0 hero-gradient"></div>
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/15 to-transparent animate-pulse"></div>
+            <div className="absolute top-0 left-0 w-full h-full">
+              <motion.div
+                className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+                animate={{
+                  x: [0, 100, 0],
+                  y: [0, 50, 0],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                style={{ top: '10%', left: '10%' }}
+              />
+              <motion.div
+                className="absolute w-64 h-64 bg-primary/15 rounded-full blur-2xl"
+                animate={{
+                  x: [0, -80, 0],
+                  y: [0, 100, 0],
+                  scale: [1, 0.8, 1],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 5
+                }}
+                style={{ top: '60%', right: '15%' }}
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
+      
+      {/* Video Loading State */}
+      {!videoLoaded && !videoError && (
+        <div className="absolute inset-0 bg-accent flex items-center justify-center text-white z-20">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-lg">Loading video...</p>
+          </div>
+        </div>
+      )}
 
       {/* Hero Content */}
       <div className="relative z-10 h-full flex items-center justify-center pt-16">
