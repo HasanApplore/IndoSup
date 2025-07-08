@@ -47,13 +47,20 @@ IndoSup is a modern web application built with React, JavaScript, and configured
 ### Frontend Components
 - **Home Page**: Landing page with full-screen hero section and additional content sections
 - **App Component**: Main application component following Next.js patterns
-- **Hero Section**: Full-screen animated hero with gradient background, floating elements, and prominent CTA
+- **Hero Section**: Full-screen animated hero with background video, floating elements, and prominent CTA
   - Heading: "Revolutionizing Construction Procurement"
   - Subtext: "End-to-End Digital Sourcing for Modern Infrastructure"
   - Two CTA buttons: "Explore Solutions" and "Get a Quote"
   - Framer Motion animations with staggered content reveal
-  - Animated background with floating gradient orbs
+  - Construction industry background video with fallback animated gradient
   - Scroll indicator with bounce animation
+- **Who We Are Section**: Feature showcase with animated cards
+  - Centered section heading: "Who We Are"
+  - 4 feature cards: Sourcing, Procurement, Quality Assurance, Delivery
+  - Each card includes icon, title, and descriptive text
+  - White background with rounded corners and shadow effects
+  - Yellow hover effects with lift animation and border highlights
+  - Staggered reveal animations on scroll
 - **Navbar Component**: Sticky responsive navigation with IndoSup logo, main navigation links, dropdown menu for "Our Business" (Steel/Non-Steel), and "Get a Quote" CTA button
 - **Navigation Features**: 
   - Dark accent background (#031D33) with white text
@@ -119,7 +126,8 @@ Changelog:
 - July 08, 2025. Initial setup
 - July 08, 2025. Converted to Next.js-style React application with custom color theme and Google Fonts integration
 - July 08, 2025. Added sticky responsive navbar with IndoSup logo, navigation links, dropdown menu, and mobile hamburger menu
-- July 08, 2025. Created full-screen hero section with animated background, Framer Motion animations, and construction procurement messaging
+- July 08, 2025. Created full-screen hero section with background video, Framer Motion animations, and construction procurement messaging
+- July 08, 2025. Added "Who We Are" section with 4 animated feature cards for Sourcing, Procurement, Quality Assurance, and Delivery
 
 ## User Preferences
 
