@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80">
+  <!-- Key Icon -->
+  <g fill="#FFC600">
+    <!-- Key body -->
+    <rect x="10" y="30" width="30" height="8" rx="4"/>
+    <!-- Key head (circular) -->
+    <circle cx="25" cy="20" r="12" fill="none" stroke="#FFC600" stroke-width="3"/>
+    <!-- Key teeth -->
+    <rect x="40" y="28" width="4" height="4"/>
+    <rect x="40" y="36" width="6" height="4"/>
+    <!-- Chain links -->
+    <ellipse cx="45" cy="15" rx="4" ry="6" fill="none" stroke="#FFC600" stroke-width="2"/>
+    <ellipse cx="55" cy="15" rx="4" ry="6" fill="none" stroke="#FFC600" stroke-width="2"/>
+  </g>
+  
+  <!-- IndoSup Text -->
+  <text x="70" y="35" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="white">IndoSup</text>
+  
+  <!-- Digital Key to Procurement Text -->
+  <text x="70" y="52" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="white">Digital Key to Procurement</text>
+</svg>
