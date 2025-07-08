@@ -92,32 +92,32 @@ export default function Navbar() {
               
               {isBusinessDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 z-50 border border-gray-200">
-                  <a 
-                    href="#steel" 
+                  <Link 
+                    to="/products/steel" 
                     className="block px-4 py-3 text-accent hover:bg-primary hover:text-accent transition-colors duration-200 font-medium"
                     onClick={handleLinkClick}
                   >
                     Steel
-                  </a>
-                  <a 
-                    href="#non-steel" 
+                  </Link>
+                  <Link 
+                    to="/products/non-steel" 
                     className="block px-4 py-3 text-accent hover:bg-primary hover:text-accent transition-colors duration-200 font-medium"
                     onClick={handleLinkClick}
                   >
                     Non-Steel
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a 
-              href="#catalogues" 
+            <Link 
+              to="/products" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
-              Catalogues
+              Products
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
             <a 
               href="#media" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"

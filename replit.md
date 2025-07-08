@@ -147,6 +147,7 @@ Changelog:
 - July 08, 2025. Created full-width CTA banner with construction background, "Let's Build the Future Together" headline, and yellow contact button with hover invert effect
 - July 08, 2025. Added About Us page with Mission/Vision/Values cards, horizontal timeline (2020-2025), leadership team profiles, and alternating dark/light sections with scroll animations
 - July 08, 2025. Created Solutions page showcasing 5 key services (Multi-site Procurement, SKU Price Accuracy, Supply Chain Delays, GST Compliance, Order Management) with icons, animations, and alternating layouts
+- July 08, 2025. Added Products pages with Steel and Non-Steel categories, each containing detailed subpages with product information, specifications, and catalog download functionality
 
 ## User Preferences
 
