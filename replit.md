@@ -150,6 +150,7 @@ Changelog:
 - July 08, 2025. Added Products pages with Steel and Non-Steel categories, each containing detailed subpages with product information, specifications, and catalog download functionality
 - July 08, 2025. Created Media & Resources page with tabbed layout featuring Media Coverage, Awards, Newsletters, Blogs, and Case Studies sections with search and filter functionality
 - July 08, 2025. Added Careers page with job listings, department/location filters, application modal with resume upload, and "Life at IndoSup" team culture section
+- July 08, 2025. Created Catalogues page with filterable and searchable product catalog downloads, grid layout with hover effects, and detailed PDF specifications
 
 ## User Preferences
 

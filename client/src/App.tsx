@@ -12,6 +12,7 @@ import SteelProducts from "@/pages/steel-products";
 import NonSteelProducts from "@/pages/non-steel-products";
 import Media from "@/pages/media";
 import Careers from "@/pages/careers";
+import Catalogues from "@/pages/catalogues";
 import NotFound from "@/pages/not-found";
 
 // Main App component following Next.js patterns
@@ -30,6 +31,7 @@ function App() {
           <Route path="/products/non-steel" component={NonSteelProducts} />
           <Route path="/media" component={Media} />
           <Route path="/careers" component={Careers} />
+          <Route path="/catalogues" component={Catalogues} />
           <Route component={NotFound} />
         </Switch>
       </TooltipProvider>
