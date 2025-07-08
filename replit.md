@@ -47,6 +47,13 @@ IndoSup is a modern web application built with React, JavaScript, and configured
 ### Frontend Components
 - **Home Page**: Clean, centered welcome page with "Welcome to IndoSup" message
 - **App Component**: Main application component following Next.js patterns
+- **Navbar Component**: Sticky responsive navigation with IndoSup logo, main navigation links, dropdown menu for "Our Business" (Steel/Non-Steel), and "Get a Quote" CTA button
+- **Navigation Features**: 
+  - Dark accent background (#031D33) with white text
+  - Yellow hover underlines (#FFC600)
+  - Mobile-friendly hamburger menu
+  - Dropdown functionality with click-outside-to-close
+  - Smooth transitions and animations
 - **UI Components**: Comprehensive set of shadcn/ui components
 - **Custom Hooks**: Mobile detection, toast notifications
 - **Responsive Design**: Mobile-first approach with Tailwind CSS and 12-column grid
@@ -104,6 +111,7 @@ IndoSup is a modern web application built with React, JavaScript, and configured
 Changelog:
 - July 08, 2025. Initial setup
 - July 08, 2025. Converted to Next.js-style React application with custom color theme and Google Fonts integration
+- July 08, 2025. Added sticky responsive navbar with IndoSup logo, navigation links, dropdown menu, and mobile hamburger menu
 
 ## User Preferences
 
