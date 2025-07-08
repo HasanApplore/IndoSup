@@ -4,6 +4,7 @@ import StatsSection from '@/components/StatsSection';
 import IndiaMapSection from '@/components/IndiaMapSection';
 import ClientLogosSection from '@/components/ClientLogosSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import InitiativesSection from '@/components/InitiativesSection';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <IndiaMapSection />
       <ClientLogosSection />
       <TestimonialsSection />
+      <InitiativesSection />
     </div>
   )
 }

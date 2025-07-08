@@ -142,6 +142,8 @@ Changelog:
 - July 08, 2025. Added "Who We Are" section with 4 animated feature cards for Sourcing, Procurement, Quality Assurance, and Delivery
 - July 08, 2025. Created stats section with 4 animated counters showcasing company metrics and achievements
 - July 08, 2025. Added India map section with animated markers showing pan-India presence across major cities
+- July 08, 2025. Created client logos carousel with hover effects and testimonials slider with auto-advancing functionality
+- July 08, 2025. Added company initiatives section with image cards, hover effects, and "Read More" functionality
 
 ## User Preferences
 
