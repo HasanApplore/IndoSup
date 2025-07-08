@@ -2,20 +2,20 @@ import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
 export default function IndiaMapSection() {
-  // Key states where IndoSup has presence
+  // Key states where IndoSup has presence - coordinates adjusted for detailed SVG map
   const stateMarkers = [
-    { name: 'Delhi', x: 48, y: 28, delay: 0 },
-    { name: 'Mumbai', x: 35, y: 55, delay: 0.2 },
-    { name: 'Chennai', x: 52, y: 80, delay: 0.4 },
-    { name: 'Kolkata', x: 68, y: 50, delay: 0.6 },
-    { name: 'Bangalore', x: 50, y: 75, delay: 0.8 },
-    { name: 'Hyderabad', x: 52, y: 65, delay: 1.0 },
-    { name: 'Pune', x: 38, y: 58, delay: 1.2 },
-    { name: 'Ahmedabad', x: 32, y: 45, delay: 1.4 },
-    { name: 'Jaipur', x: 40, y: 35, delay: 1.6 },
-    { name: 'Lucknow', x: 55, y: 35, delay: 1.8 },
-    { name: 'Bhubaneswar', x: 65, y: 55, delay: 2.0 },
-    { name: 'Guwahati', x: 75, y: 40, delay: 2.2 }
+    { name: 'Delhi', x: 1200, y: 800, delay: 0 },
+    { name: 'Mumbai', x: 950, y: 1350, delay: 0.2 },
+    { name: 'Chennai', x: 1350, y: 1950, delay: 0.4 },
+    { name: 'Kolkata', x: 1550, y: 1300, delay: 0.6 },
+    { name: 'Bangalore', x: 1250, y: 1850, delay: 0.8 },
+    { name: 'Hyderabad', x: 1320, y: 1600, delay: 1.0 },
+    { name: 'Pune', x: 1000, y: 1400, delay: 1.2 },
+    { name: 'Ahmedabad', x: 950, y: 1100, delay: 1.4 },
+    { name: 'Jaipur', x: 1050, y: 850, delay: 1.6 },
+    { name: 'Lucknow', x: 1350, y: 850, delay: 1.8 },
+    { name: 'Bhubaneswar', x: 1480, y: 1350, delay: 2.0 },
+    { name: 'Guwahati', x: 1750, y: 950, delay: 2.2 }
   ];
 
   const containerVariants = {
@@ -74,40 +74,21 @@ export default function IndiaMapSection() {
           viewport={{ once: true }}
         >
           {/* India Map SVG */}
-          <div className="relative bg-white rounded-2xl shadow-xl p-8 overflow-hidden">
-            <svg
-              viewBox="0 0 100 100"
-              className="w-full h-auto"
-              style={{ aspectRatio: '1' }}
-            >
-              {/* Simplified India Map Outline */}
-              <path
-                d="M20 20 L25 15 L35 18 L45 12 L55 15 L65 10 L75 18 L80 25 L85 35 L82 45 L78 55 L75 65 L70 75 L65 85 L55 88 L45 85 L35 80 L25 75 L18 65 L15 55 L12 45 L15 35 L20 25 Z"
-                fill="#f8f9fa"
-                stroke="#e9ecef"
-                strokeWidth="0.5"
-                className="drop-shadow-sm"
+          <div className="relative bg-white rounded-2xl shadow-xl p-4 overflow-hidden">
+            <div className="relative">
+              {/* Load the detailed India map from the SVG file */}
+              <img 
+                src="/india-map.svg" 
+                alt="India Map" 
+                className="w-full h-auto opacity-90"
+                style={{ filter: 'brightness(1.1) contrast(0.9)' }}
               />
               
-              {/* Additional map details */}
-              <path
-                d="M30 25 L40 30 L50 25 L60 30 L70 25"
-                stroke="#dee2e6"
-                strokeWidth="0.3"
-                fill="none"
-              />
-              <path
-                d="M25 45 L35 50 L45 45 L55 50 L65 45"
-                stroke="#dee2e6"
-                strokeWidth="0.3"
-                fill="none"
-              />
-              <path
-                d="M20 65 L30 70 L40 65 L50 70 L60 65"
-                stroke="#dee2e6"
-                strokeWidth="0.3"
-                fill="none"
-              />
+              {/* Overlay for markers */}
+              <svg
+                viewBox="0 0 2500 2843"
+                className="absolute inset-0 w-full h-full"
+              >
 
               {/* Animated State Markers */}
               {stateMarkers.map((marker, index) => (
@@ -124,13 +105,13 @@ export default function IndiaMapSection() {
                   <motion.circle
                     cx={marker.x}
                     cy={marker.y}
-                    r="2"
+                    r="40"
                     fill="none"
                     stroke="#FFC600"
-                    strokeWidth="0.3"
+                    strokeWidth="6"
                     opacity="0.6"
                     animate={{
-                      r: [2, 4, 2],
+                      r: [40, 80, 40],
                       opacity: [0.6, 0.2, 0.6]
                     }}
                     transition={{
@@ -145,10 +126,10 @@ export default function IndiaMapSection() {
                   <motion.circle
                     cx={marker.x}
                     cy={marker.y}
-                    r="1.5"
+                    r="30"
                     fill="#FFC600"
                     stroke="#031D33"
-                    strokeWidth="0.3"
+                    strokeWidth="6"
                     className="cursor-pointer"
                     whileHover={{ scale: 1.3 }}
                     whileTap={{ scale: 0.9 }}
@@ -157,17 +138,19 @@ export default function IndiaMapSection() {
                   {/* City Label */}
                   <motion.text
                     x={marker.x}
-                    y={marker.y + 4}
+                    y={marker.y + 80}
                     textAnchor="middle"
-                    fontSize="2"
+                    fontSize="40"
                     fill="#031D33"
-                    className="font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="font-medium opacity-80 hover:opacity-100 transition-opacity"
+                    style={{ fontWeight: 'bold' }}
                   >
                     {marker.name}
                   </motion.text>
                 </motion.g>
               ))}
-            </svg>
+              </svg>
+            </div>
 
             {/* Floating Background Elements */}
             <motion.div
