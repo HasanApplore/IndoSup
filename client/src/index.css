@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 11%, 15%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 11%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 11%, 15%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(48, 100%, 50%);
+  --primary-foreground: hsl(204, 95%, 10%);
+  --secondary: hsl(0, 0%, 100%);
+  --secondary-foreground: hsl(210, 11%, 15%);
+  --accent: hsl(204, 95%, 10%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(210, 11%, 15%);
+  --radius: 0.5rem;
+  
+  /* Custom IndoSup colors */
+  --indosup-primary: hsl(48, 100%, 50%);
+  --indosup-secondary: hsl(0, 0%, 100%);
+  --indosup-accent: hsl(204, 95%, 10%);
+  --indosup-neutral-dark: hsl(208, 7%, 15%);
+  --indosup-neutral-base: hsl(0, 0%, 57%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(48, 100%, 50%);
+  --primary-foreground: hsl(204, 95%, 10%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 5%, 84%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-indosup-primary {
+    color: var(--indosup-primary);
+  }
+  
+  .text-indosup-secondary {
+    color: var(--indosup-secondary);
+  }
+  
+  .text-indosup-accent {
+    color: var(--indosup-accent);
+  }
+  
+  .text-indosup-neutral-dark {
+    color: var(--indosup-neutral-dark);
+  }
+  
+  .text-indosup-neutral-base {
+    color: var(--indosup-neutral-base);
+  }
+  
+  .bg-indosup-primary {
+    background-color: var(--indosup-primary);
+  }
+  
+  .bg-indosup-secondary {
+    background-color: var(--indosup-secondary);
+  }
+  
+  .bg-indosup-accent {
+    background-color: var(--indosup-accent);
+  }
+  
+  .bg-indosup-neutral-dark {
+    background-color: var(--indosup-neutral-dark);
+  }
+  
+  .border-indosup-primary {
+    border-color: var(--indosup-primary);
+  }
+  
+  .border-indosup-accent {
+    border-color: var(--indosup-accent);
+  }
+  
+  .hover\:bg-indosup-primary:hover {
+    background-color: hsl(48, 100%, 45%);
+  }
+  
+  .hover\:bg-indosup-accent:hover {
+    background-color: var(--indosup-accent);
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
