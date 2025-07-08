@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection';
 import WhoWeAreSection from '@/components/WhoWeAreSection';
 import StatsSection from '@/components/StatsSection';
+import IndiaMapSection from '@/components/IndiaMapSection';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <WhoWeAreSection />
       <StatsSection />
+      <IndiaMapSection />
       
       {/* Additional content sections can be added here */}
       <div className="min-h-screen bg-secondary flex items-center justify-center">

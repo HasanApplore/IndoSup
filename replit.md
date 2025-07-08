@@ -66,6 +66,13 @@ IndoSup is a modern web application built with React, JavaScript, and configured
   - Dark background (#222629) with white text and yellow numeric counters (#FFC600)
   - Spring-based counter animations that trigger on scroll into view
   - Staggered animations with hover effects and decorative elements
+- **India Map Section**: Visual representation of pan-India presence
+  - Heading: "Pan-India Reach with Local Expertise"
+  - Custom SVG India map with animated location markers
+  - 12 major cities highlighted with pulsing yellow markers
+  - Interactive hover effects and smooth animations
+  - Legend and coverage statistics display
+  - White background with shadow for map container
 - **Navbar Component**: Sticky responsive navigation with IndoSup logo, main navigation links, dropdown menu for "Our Business" (Steel/Non-Steel), and "Get a Quote" CTA button
 - **Navigation Features**: 
   - Dark accent background (#031D33) with white text
@@ -134,6 +141,7 @@ Changelog:
 - July 08, 2025. Created full-screen hero section with background video, Framer Motion animations, and construction procurement messaging
 - July 08, 2025. Added "Who We Are" section with 4 animated feature cards for Sourcing, Procurement, Quality Assurance, and Delivery
 - July 08, 2025. Created stats section with 4 animated counters showcasing company metrics and achievements
+- July 08, 2025. Added India map section with animated markers showing pan-India presence across major cities
 
 ## User Preferences
 
