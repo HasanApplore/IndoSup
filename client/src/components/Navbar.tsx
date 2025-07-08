@@ -126,14 +126,14 @@ export default function Navbar() {
               Media
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
-            <a 
-              href="#careers" 
+            <Link 
+              to="/careers" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
               Careers
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
             <a 
               href="#contact" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"

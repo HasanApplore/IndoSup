@@ -149,6 +149,7 @@ Changelog:
 - July 08, 2025. Created Solutions page showcasing 5 key services (Multi-site Procurement, SKU Price Accuracy, Supply Chain Delays, GST Compliance, Order Management) with icons, animations, and alternating layouts
 - July 08, 2025. Added Products pages with Steel and Non-Steel categories, each containing detailed subpages with product information, specifications, and catalog download functionality
 - July 08, 2025. Created Media & Resources page with tabbed layout featuring Media Coverage, Awards, Newsletters, Blogs, and Case Studies sections with search and filter functionality
+- July 08, 2025. Added Careers page with job listings, department/location filters, application modal with resume upload, and "Life at IndoSup" team culture section
 
 ## User Preferences
 
