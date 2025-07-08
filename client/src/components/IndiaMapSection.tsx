@@ -2,20 +2,39 @@ import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
 export default function IndiaMapSection() {
-  // Key states where IndoSup has presence - coordinates adjusted for detailed SVG map
+  // IndoSup's presence across India - strongest in North & Central, moderate elsewhere, minimal in South
   const stateMarkers = [
-    { name: 'Delhi', x: 1200, y: 800, delay: 0 },
-    { name: 'Mumbai', x: 950, y: 1350, delay: 0.2 },
-    { name: 'Chennai', x: 1350, y: 1950, delay: 0.4 },
-    { name: 'Kolkata', x: 1550, y: 1300, delay: 0.6 },
-    { name: 'Bangalore', x: 1250, y: 1850, delay: 0.8 },
-    { name: 'Hyderabad', x: 1320, y: 1600, delay: 1.0 },
-    { name: 'Pune', x: 1000, y: 1400, delay: 1.2 },
-    { name: 'Ahmedabad', x: 950, y: 1100, delay: 1.4 },
-    { name: 'Jaipur', x: 1050, y: 850, delay: 1.6 },
-    { name: 'Lucknow', x: 1350, y: 850, delay: 1.8 },
-    { name: 'Bhubaneswar', x: 1480, y: 1350, delay: 2.0 },
-    { name: 'Guwahati', x: 1750, y: 950, delay: 2.2 }
+    // Strong presence in North India
+    { name: 'Delhi', x: 1200, y: 800, delay: 0, strength: 'strong' },
+    { name: 'Chandigarh', x: 1150, y: 750, delay: 0.1, strength: 'strong' },
+    { name: 'Jaipur', x: 1050, y: 900, delay: 0.2, strength: 'strong' },
+    { name: 'Lucknow', x: 1350, y: 900, delay: 0.3, strength: 'strong' },
+    { name: 'Kanpur', x: 1320, y: 950, delay: 0.4, strength: 'strong' },
+    
+    // Strong presence in Central India
+    { name: 'Bhopal', x: 1200, y: 1200, delay: 0.5, strength: 'strong' },
+    { name: 'Indore', x: 1100, y: 1150, delay: 0.6, strength: 'strong' },
+    { name: 'Nagpur', x: 1350, y: 1350, delay: 0.7, strength: 'strong' },
+    { name: 'Raipur', x: 1420, y: 1300, delay: 0.8, strength: 'strong' },
+    
+    // Moderate presence in West India
+    { name: 'Mumbai', x: 950, y: 1350, delay: 0.9, strength: 'moderate' },
+    { name: 'Pune', x: 1000, y: 1400, delay: 1.0, strength: 'moderate' },
+    { name: 'Ahmedabad', x: 950, y: 1100, delay: 1.1, strength: 'moderate' },
+    { name: 'Surat', x: 920, y: 1180, delay: 1.2, strength: 'moderate' },
+    
+    // Moderate presence in East India
+    { name: 'Kolkata', x: 1550, y: 1300, delay: 1.3, strength: 'moderate' },
+    { name: 'Bhubaneswar', x: 1480, y: 1400, delay: 1.4, strength: 'moderate' },
+    { name: 'Ranchi', x: 1500, y: 1200, delay: 1.5, strength: 'moderate' },
+    
+    // Moderate presence in Hyderabad region
+    { name: 'Hyderabad', x: 1320, y: 1600, delay: 1.6, strength: 'moderate' },
+    
+    // Minimal presence in South India
+    { name: 'Bangalore', x: 1250, y: 1850, delay: 1.7, strength: 'minimal' },
+    { name: 'Kochi', x: 1100, y: 2100, delay: 1.8, strength: 'minimal' },
+    { name: 'Chennai', x: 1350, y: 1950, delay: 1.9, strength: 'minimal' }
   ];
 
   const containerVariants = {
@@ -46,22 +65,22 @@ export default function IndiaMapSection() {
   };
 
   return (
-    <section className="py-20 bg-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-16 lg:py-20 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-6 font-inter">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-accent mb-4 md:mb-6 font-inter">
             Pan-India Reach with Local Expertise
           </h2>
-          <div className="w-32 h-1 bg-primary mx-auto"></div>
-          <p className="text-lg text-neutral-base mt-6 max-w-3xl mx-auto">
-            Serving construction projects across India with strategic partnerships and local knowledge
+          <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+          <p className="text-base md:text-lg text-neutral-base mt-4 md:mt-6 max-w-2xl md:max-w-3xl mx-auto px-4">
+            Strongest presence in North & Central India, expanding nationwide with strategic partnerships
           </p>
         </motion.div>
 
@@ -74,13 +93,13 @@ export default function IndiaMapSection() {
           viewport={{ once: true }}
         >
           {/* India Map SVG */}
-          <div className="relative bg-white rounded-2xl shadow-xl p-4 overflow-hidden">
+          <div className="relative bg-white rounded-xl md:rounded-2xl shadow-2xl p-3 md:p-6 overflow-hidden">
             <div className="relative">
               {/* Load the detailed India map from the SVG file */}
               <img 
                 src="/india-map.svg" 
-                alt="India Map" 
-                className="w-full h-auto opacity-90"
+                alt="India Map showing IndoSup's presence across Indian states" 
+                className="w-full h-auto opacity-90 transition-opacity duration-300"
                 style={{ filter: 'brightness(1.1) contrast(0.9)' }}
               />
               
@@ -90,65 +109,107 @@ export default function IndiaMapSection() {
                 className="absolute inset-0 w-full h-full"
               >
 
-              {/* Animated State Markers */}
-              {stateMarkers.map((marker, index) => (
-                <motion.g
-                  key={marker.name}
-                  variants={markerVariants}
-                  custom={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  transition={{ delay: marker.delay }}
-                >
-                  {/* Pulse Ring */}
-                  <motion.circle
-                    cx={marker.x}
-                    cy={marker.y}
-                    r="40"
-                    fill="none"
-                    stroke="#FFC600"
-                    strokeWidth="6"
-                    opacity="0.6"
-                    animate={{
-                      r: [40, 80, 40],
-                      opacity: [0.6, 0.2, 0.6]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: marker.delay
-                    }}
-                  />
-                  
-                  {/* Main Marker */}
-                  <motion.circle
-                    cx={marker.x}
-                    cy={marker.y}
-                    r="30"
-                    fill="#FFC600"
-                    stroke="#031D33"
-                    strokeWidth="6"
-                    className="cursor-pointer"
-                    whileHover={{ scale: 1.3 }}
-                    whileTap={{ scale: 0.9 }}
-                  />
-                  
-                  {/* City Label */}
-                  <motion.text
-                    x={marker.x}
-                    y={marker.y + 80}
-                    textAnchor="middle"
-                    fontSize="40"
-                    fill="#031D33"
-                    className="font-medium opacity-80 hover:opacity-100 transition-opacity"
-                    style={{ fontWeight: 'bold' }}
+              {/* Animated State Markers with varying sizes based on presence strength */}
+              {stateMarkers.map((marker, index) => {
+                const getMarkerSize = (strength: string) => {
+                  switch (strength) {
+                    case 'strong': return { main: 45, pulse: 50, pulseMax: 90 };
+                    case 'moderate': return { main: 35, pulse: 40, pulseMax: 70 };
+                    case 'minimal': return { main: 25, pulse: 30, pulseMax: 50 };
+                    default: return { main: 35, pulse: 40, pulseMax: 70 };
+                  }
+                };
+                
+                const getMarkerColor = (strength: string) => {
+                  switch (strength) {
+                    case 'strong': return '#FFC600';
+                    case 'moderate': return '#FFD700';
+                    case 'minimal': return '#FFF4CC';
+                    default: return '#FFC600';
+                  }
+                };
+                
+                const sizes = getMarkerSize(marker.strength);
+                const color = getMarkerColor(marker.strength);
+                
+                return (
+                  <motion.g
+                    key={marker.name}
+                    variants={markerVariants}
+                    custom={index}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ delay: marker.delay }}
                   >
-                    {marker.name}
-                  </motion.text>
-                </motion.g>
-              ))}
+                    {/* Pulse Ring */}
+                    <motion.circle
+                      cx={marker.x}
+                      cy={marker.y}
+                      r={sizes.pulse}
+                      fill="none"
+                      stroke={color}
+                      strokeWidth={marker.strength === 'strong' ? "8" : marker.strength === 'moderate' ? "6" : "4"}
+                      opacity={marker.strength === 'strong' ? "0.8" : marker.strength === 'moderate' ? "0.6" : "0.4"}
+                      animate={{
+                        r: [sizes.pulse, sizes.pulseMax, sizes.pulse],
+                        opacity: [0.8, 0.2, 0.8]
+                      }}
+                      transition={{
+                        duration: marker.strength === 'strong' ? 1.5 : marker.strength === 'moderate' ? 2 : 2.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: marker.delay
+                      }}
+                    />
+                    
+                    {/* Main Marker */}
+                    <motion.circle
+                      cx={marker.x}
+                      cy={marker.y}
+                      r={sizes.main}
+                      fill={color}
+                      stroke="#031D33"
+                      strokeWidth={marker.strength === 'strong' ? "8" : marker.strength === 'moderate' ? "6" : "4"}
+                      className="cursor-pointer"
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    />
+                    
+                    {/* Strength Indicator - Inner Circle for strong presence */}
+                    {marker.strength === 'strong' && (
+                      <motion.circle
+                        cx={marker.x}
+                        cy={marker.y}
+                        r="20"
+                        fill="#031D33"
+                        opacity="0.7"
+                        animate={{
+                          opacity: [0.7, 0.3, 0.7]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    )}
+                    
+                    {/* City Label */}
+                    <motion.text
+                      x={marker.x}
+                      y={marker.y + (sizes.main + 60)}
+                      textAnchor="middle"
+                      fontSize={marker.strength === 'strong' ? "45" : marker.strength === 'moderate' ? "35" : "28"}
+                      fill="#031D33"
+                      className="font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{ fontWeight: marker.strength === 'strong' ? 'bold' : 'medium' }}
+                    >
+                      {marker.name}
+                    </motion.text>
+                  </motion.g>
+                );
+              })}
               </svg>
             </div>
 
@@ -182,24 +243,33 @@ export default function IndiaMapSection() {
 
           {/* Legend */}
           <motion.div
-            className="flex items-center justify-center mt-8 space-x-8"
+            className="flex flex-col sm:flex-row items-center justify-center mt-6 md:mt-8 space-y-4 sm:space-y-0 sm:space-x-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1, duration: 0.6 }}
           >
             <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+              <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-accent rounded-full"></div>
+              </div>
+              <span className="text-sm text-neutral-base font-medium">
+                Strong Presence
+              </span>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <div className="w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
                 <MapPin className="w-2 h-2 text-accent" />
               </div>
               <span className="text-sm text-neutral-base font-medium">
-                Service Centers
+                Moderate Presence
               </span>
             </div>
             
             <div className="flex items-center space-x-2">
               <motion.div
-                className="w-4 h-4 border-2 border-primary rounded-full"
+                className="w-3 h-3 border-2 border-yellow-200 bg-yellow-100 rounded-full"
                 animate={{
                   scale: [1, 1.2, 1]
                 }}
@@ -210,33 +280,40 @@ export default function IndiaMapSection() {
                 }}
               />
               <span className="text-sm text-neutral-base font-medium">
-                Active Operations
+                Minimal Presence
               </span>
             </div>
           </motion.div>
 
           {/* Stats Summary */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1.5, duration: 0.8 }}
           >
             {[
-              { number: '25+', label: 'States' },
-              { number: '50+', label: 'Cities' },
-              { number: '100+', label: 'Districts' },
-              { number: '24/7', label: 'Support' }
+              { number: '15+', label: 'States', description: 'Active Coverage' },
+              { number: '35+', label: 'Cities', description: 'Service Centers' },
+              { number: '75+', label: 'Districts', description: 'Project Areas' },
+              { number: '24/7', label: 'Support', description: 'Customer Care' }
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
+              <motion.div 
+                key={index} 
+                className="text-center p-3 md:p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1 md:mb-2">
                   {item.number}
                 </div>
-                <div className="text-sm text-neutral-base">
+                <div className="text-sm md:text-base font-medium text-accent mb-1">
                   {item.label}
                 </div>
-              </div>
+                <div className="text-xs text-neutral-base">
+                  {item.description}
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
