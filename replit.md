@@ -148,6 +148,7 @@ Changelog:
 - July 08, 2025. Added About Us page with Mission/Vision/Values cards, horizontal timeline (2020-2025), leadership team profiles, and alternating dark/light sections with scroll animations
 - July 08, 2025. Created Solutions page showcasing 5 key services (Multi-site Procurement, SKU Price Accuracy, Supply Chain Delays, GST Compliance, Order Management) with icons, animations, and alternating layouts
 - July 08, 2025. Added Products pages with Steel and Non-Steel categories, each containing detailed subpages with product information, specifications, and catalog download functionality
+- July 08, 2025. Created Media & Resources page with tabbed layout featuring Media Coverage, Awards, Newsletters, Blogs, and Case Studies sections with search and filter functionality
 
 ## User Preferences
 
