@@ -5,6 +5,7 @@ import IndiaMapSection from '@/components/IndiaMapSection';
 import ClientLogosSection from '@/components/ClientLogosSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import InitiativesSection from '@/components/InitiativesSection';
+import CTABanner from '@/components/CTABanner';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ClientLogosSection />
       <TestimonialsSection />
       <InitiativesSection />
+      <CTABanner />
     </div>
   )
 }
