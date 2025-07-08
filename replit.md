@@ -155,6 +155,7 @@ Changelog:
 - July 08, 2025. Created responsive footer with 4 columns (Quick Links, Product Categories, Social Media, Newsletter), dark background, yellow hover effects, and legal links
 - July 08, 2025. Updated hero section to remove overlay text and implement YouTube video background with sound support, maintaining responsive design and fallback animations
 - July 08, 2025. Fixed hero video positioning to avoid navbar overlap and properly fit screen dimensions, updated to use specific construction industry demo video
+- July 08, 2025. Fixed navbar issues: converted mobile menu anchor tags to proper Link components, fixed mobile dropdown routing, linked mobile CTA button to contact page
 
 ## User Preferences
 
