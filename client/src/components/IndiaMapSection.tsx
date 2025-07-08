@@ -86,20 +86,20 @@ export default function IndiaMapSection() {
 
         {/* Map Container */}
         <motion.div
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* India Map SVG */}
-          <div className="relative bg-white rounded-xl md:rounded-2xl shadow-2xl p-3 md:p-6 overflow-hidden">
+          <div className="relative bg-white rounded-xl md:rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden max-w-4xl mx-auto">
             <div className="relative">
               {/* Load the detailed India map from the SVG file */}
               <img 
                 src="/india-map.svg" 
                 alt="India Map showing IndoSup's presence across Indian states" 
-                className="w-full h-auto opacity-90 transition-opacity duration-300"
+                className="w-full h-auto opacity-90 transition-opacity duration-300 max-h-[600px] object-contain"
                 style={{ filter: 'brightness(1.1) contrast(0.9)' }}
               />
               
@@ -107,16 +107,17 @@ export default function IndiaMapSection() {
               <svg
                 viewBox="0 0 2500 2843"
                 className="absolute inset-0 w-full h-full"
+                preserveAspectRatio="xMidYMid meet"
               >
 
               {/* Animated State Markers with varying sizes based on presence strength */}
               {stateMarkers.map((marker, index) => {
                 const getMarkerSize = (strength: string) => {
                   switch (strength) {
-                    case 'strong': return { main: 35, pulse: 40, pulseMax: 70 };
-                    case 'moderate': return { main: 25, pulse: 30, pulseMax: 50 };
-                    case 'minimal': return { main: 18, pulse: 22, pulseMax: 35 };
-                    default: return { main: 25, pulse: 30, pulseMax: 50 };
+                    case 'strong': return { main: 20, pulse: 25, pulseMax: 40 };
+                    case 'moderate': return { main: 15, pulse: 20, pulseMax: 30 };
+                    case 'minimal': return { main: 12, pulse: 15, pulseMax: 22 };
+                    default: return { main: 15, pulse: 20, pulseMax: 30 };
                   }
                 };
                 
@@ -181,7 +182,7 @@ export default function IndiaMapSection() {
                       <motion.circle
                         cx={marker.x}
                         cy={marker.y}
-                        r="15"
+                        r="8"
                         fill="#031D33"
                         opacity="0.7"
                         animate={{
@@ -198,9 +199,9 @@ export default function IndiaMapSection() {
                     {/* City Label */}
                     <motion.text
                       x={marker.x}
-                      y={marker.y + (sizes.main + 50)}
+                      y={marker.y + (sizes.main + 35)}
                       textAnchor="middle"
-                      fontSize={marker.strength === 'strong' ? "32" : marker.strength === 'moderate' ? "26" : "20"}
+                      fontSize={marker.strength === 'strong' ? "24" : marker.strength === 'moderate' ? "20" : "16"}
                       fill="#031D33"
                       className="font-medium opacity-70 hover:opacity-100 transition-opacity"
                       style={{ fontWeight: marker.strength === 'strong' ? 'bold' : 'medium' }}
