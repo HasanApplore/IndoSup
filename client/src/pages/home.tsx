@@ -1,11 +1,13 @@
 import HeroSection from '@/components/HeroSection';
 import WhoWeAreSection from '@/components/WhoWeAreSection';
+import StatsSection from '@/components/StatsSection';
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
       <WhoWeAreSection />
+      <StatsSection />
       
       {/* Additional content sections can be added here */}
       <div className="min-h-screen bg-secondary flex items-center justify-center">

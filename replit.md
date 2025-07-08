@@ -61,6 +61,11 @@ IndoSup is a modern web application built with React, JavaScript, and configured
   - White background with rounded corners and shadow effects
   - Yellow hover effects with lift animation and border highlights
   - Staggered reveal animations on scroll
+- **Stats Section**: Animated counter showcase with company metrics
+  - 4 animated counters: 400+ Vendors, 350+ Distributors, 25+ States Served, 10K+ Deliveries
+  - Dark background (#222629) with white text and yellow numeric counters (#FFC600)
+  - Spring-based counter animations that trigger on scroll into view
+  - Staggered animations with hover effects and decorative elements
 - **Navbar Component**: Sticky responsive navigation with IndoSup logo, main navigation links, dropdown menu for "Our Business" (Steel/Non-Steel), and "Get a Quote" CTA button
 - **Navigation Features**: 
   - Dark accent background (#031D33) with white text
@@ -128,6 +133,7 @@ Changelog:
 - July 08, 2025. Added sticky responsive navbar with IndoSup logo, navigation links, dropdown menu, and mobile hamburger menu
 - July 08, 2025. Created full-screen hero section with background video, Framer Motion animations, and construction procurement messaging
 - July 08, 2025. Added "Who We Are" section with 4 animated feature cards for Sourcing, Procurement, Quality Assurance, and Delivery
+- July 08, 2025. Created stats section with 4 animated counters showcasing company metrics and achievements
 
 ## User Preferences
 
