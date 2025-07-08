@@ -68,6 +68,18 @@
   .grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--neutral-dark) 50%, var(--accent) 100%);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+  }
 }
 
 @layer utilities {

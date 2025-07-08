@@ -45,8 +45,15 @@ IndoSup is a modern web application built with React, JavaScript, and configured
 - **Migrations**: Stored in `./migrations` directory
 
 ### Frontend Components
-- **Home Page**: Clean, centered welcome page with "Welcome to IndoSup" message
+- **Home Page**: Landing page with full-screen hero section and additional content sections
 - **App Component**: Main application component following Next.js patterns
+- **Hero Section**: Full-screen animated hero with gradient background, floating elements, and prominent CTA
+  - Heading: "Revolutionizing Construction Procurement"
+  - Subtext: "End-to-End Digital Sourcing for Modern Infrastructure"
+  - Two CTA buttons: "Explore Solutions" and "Get a Quote"
+  - Framer Motion animations with staggered content reveal
+  - Animated background with floating gradient orbs
+  - Scroll indicator with bounce animation
 - **Navbar Component**: Sticky responsive navigation with IndoSup logo, main navigation links, dropdown menu for "Our Business" (Steel/Non-Steel), and "Get a Quote" CTA button
 - **Navigation Features**: 
   - Dark accent background (#031D33) with white text
@@ -112,6 +119,7 @@ Changelog:
 - July 08, 2025. Initial setup
 - July 08, 2025. Converted to Next.js-style React application with custom color theme and Google Fonts integration
 - July 08, 2025. Added sticky responsive navbar with IndoSup logo, navigation links, dropdown menu, and mobile hamburger menu
+- July 08, 2025. Created full-screen hero section with animated background, Framer Motion animations, and construction procurement messaging
 
 ## User Preferences
 
