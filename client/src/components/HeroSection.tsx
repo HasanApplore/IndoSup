@@ -13,8 +13,8 @@ export default function HeroSection() {
 
   // Set your demo video URL here
   useEffect(() => {
-    // Replace this with your actual YouTube video URL
-    const demoVideoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Placeholder - replace with your video
+    // Using a specific construction/business demo video
+    const demoVideoUrl = "https://www.youtube.com/watch?v=ScMzIvxBSi4"; // Construction industry demo video
     const videoId = extractYouTubeId(demoVideoUrl);
     if (videoId) {
       setYoutubeVideoId(videoId);
@@ -22,27 +22,17 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}>
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div className="absolute inset-0 w-full h-full">
           <iframe
-            className="w-full h-full object-cover"
+            className="w-full h-full"
             src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '177.77777778vh', // 16:9 Aspect ratio
-              height: '56.25vw', // 16:9 Aspect ratio
-              minHeight: '100%',
-              minWidth: '100%',
-              transform: 'translate(-50%, -50%)',
-            }}
           />
         </div>
       ) : (

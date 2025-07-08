@@ -154,6 +154,7 @@ Changelog:
 - July 08, 2025. Added Contact page with comprehensive contact form, office location cards, direct contact links, embedded Google Map, and social media icons with hover effects
 - July 08, 2025. Created responsive footer with 4 columns (Quick Links, Product Categories, Social Media, Newsletter), dark background, yellow hover effects, and legal links
 - July 08, 2025. Updated hero section to remove overlay text and implement YouTube video background with sound support, maintaining responsive design and fallback animations
+- July 08, 2025. Fixed hero video positioning to avoid navbar overlap and properly fit screen dimensions, updated to use specific construction industry demo video
 
 ## User Preferences
 
