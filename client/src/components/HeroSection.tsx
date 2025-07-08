@@ -22,7 +22,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}>
+    <section className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 64px)' }}>
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div className="absolute inset-0 w-full h-full">

@@ -9,7 +9,7 @@ import CTABanner from '@/components/CTABanner';
 
 export default function Home() {
   return (
-    <div>
+    <div className="pt-16"> {/* Add padding-top to account for fixed navbar */}
       <HeroSection />
       <WhoWeAreSection />
       <StatsSection />
