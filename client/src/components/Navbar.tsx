@@ -146,9 +146,11 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <Button className="bg-primary hover:bg-primary/90 text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-200">
-              Get a Quote
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-primary hover:bg-primary/90 text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-200">
+                Get a Quote
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

@@ -151,6 +151,7 @@ Changelog:
 - July 08, 2025. Created Media & Resources page with tabbed layout featuring Media Coverage, Awards, Newsletters, Blogs, and Case Studies sections with search and filter functionality
 - July 08, 2025. Added Careers page with job listings, department/location filters, application modal with resume upload, and "Life at IndoSup" team culture section
 - July 08, 2025. Created Catalogues page with filterable and searchable product catalog downloads, grid layout with hover effects, and detailed PDF specifications
+- July 08, 2025. Added Contact page with comprehensive contact form, office location cards, direct contact links, embedded Google Map, and social media icons with hover effects
 
 ## User Preferences
 
