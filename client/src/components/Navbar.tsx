@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'wouter';
 import logoImage from '../assets/indosup-logo.png';
 
 export default function Navbar() {
@@ -42,32 +43,33 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src={logoImage} 
-              alt="IndoSup - Digital Key to Procurement" 
-              className="h-12 w-auto cursor-pointer"
-              onClick={() => window.scrollTo(0, 0)}
-            />
+            <Link to="/">
+              <img 
+                src={logoImage} 
+                alt="IndoSup - Digital Key to Procurement" 
+                className="h-12 w-auto cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a 
-              href="#home" 
+            <Link 
+              to="/" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a 
-              href="#about" 
+            </Link>
+            <Link 
+              to="/about" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
               About Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
             <a 
               href="#solutions" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
