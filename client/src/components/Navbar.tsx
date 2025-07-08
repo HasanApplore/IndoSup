@@ -168,27 +168,27 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-accent border-t border-primary/20">
-              <a 
-                href="#home" 
+              <Link 
+                to="/" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
+              </Link>
+              <Link 
+                to="/about" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 About Us
-              </a>
-              <a 
-                href="#solutions" 
+              </Link>
+              <Link 
+                to="/solutions" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Solutions
-              </a>
+              </Link>
               
               {/* Mobile Our Business Section */}
               <div>
@@ -201,58 +201,67 @@ export default function Navbar() {
                 </button>
                 {isBusinessDropdownOpen && (
                   <div className="pl-3 mt-1 space-y-1">
-                    <a 
-                      href="#steel" 
+                    <Link 
+                      to="/products/steel" 
                       className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3"
                       onClick={handleLinkClick}
                     >
                       Steel
-                    </a>
-                    <a 
-                      href="#non-steel" 
+                    </Link>
+                    <Link 
+                      to="/products/non-steel" 
                       className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3"
                       onClick={handleLinkClick}
                     >
                       Non-Steel
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
 
-              <a 
-                href="#catalogues" 
+              <Link 
+                to="/products" 
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                onClick={handleLinkClick}
+              >
+                Products
+              </Link>
+              <Link 
+                to="/catalogues" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Catalogues
-              </a>
-              <a 
-                href="#media" 
+              </Link>
+              <Link 
+                to="/media" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Media
-              </a>
-              <a 
-                href="#careers" 
+              </Link>
+              <Link 
+                to="/careers" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Careers
-              </a>
-              <a 
-                href="#contact" 
+              </Link>
+              <Link 
+                to="/contact" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Contact
-              </a>
+              </Link>
               
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-accent font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg">
-                  Get a Quote
-                </Button>
+                <Link to="/contact">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-accent font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg">
+                    Get a Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
