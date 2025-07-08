@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Home from "@/pages/home";
 import About from "@/pages/about";
+import Solutions from "@/pages/solutions";
 import NotFound from "@/pages/not-found";
 
 // Main App component following Next.js patterns
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/solutions" component={Solutions} />
           <Route component={NotFound} />
         </Switch>
       </TooltipProvider>
