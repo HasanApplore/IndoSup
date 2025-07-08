@@ -2,39 +2,39 @@ import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
 export default function IndiaMapSection() {
-  // IndoSup's presence across India - strongest in North & Central, moderate elsewhere, minimal in South
+  // IndoSup's presence across India - coordinates properly positioned within map boundaries
   const stateMarkers = [
     // Strong presence in North India
-    { name: 'Delhi', x: 1200, y: 800, delay: 0, strength: 'strong' },
-    { name: 'Chandigarh', x: 1150, y: 750, delay: 0.1, strength: 'strong' },
-    { name: 'Jaipur', x: 1050, y: 900, delay: 0.2, strength: 'strong' },
-    { name: 'Lucknow', x: 1350, y: 900, delay: 0.3, strength: 'strong' },
-    { name: 'Kanpur', x: 1320, y: 950, delay: 0.4, strength: 'strong' },
+    { name: 'Delhi', x: 1100, y: 680, delay: 0, strength: 'strong' },
+    { name: 'Chandigarh', x: 1080, y: 650, delay: 0.1, strength: 'strong' },
+    { name: 'Jaipur', x: 1020, y: 720, delay: 0.2, strength: 'strong' },
+    { name: 'Lucknow', x: 1200, y: 750, delay: 0.3, strength: 'strong' },
+    { name: 'Kanpur', x: 1180, y: 780, delay: 0.4, strength: 'strong' },
     
     // Strong presence in Central India
-    { name: 'Bhopal', x: 1200, y: 1200, delay: 0.5, strength: 'strong' },
-    { name: 'Indore', x: 1100, y: 1150, delay: 0.6, strength: 'strong' },
-    { name: 'Nagpur', x: 1350, y: 1350, delay: 0.7, strength: 'strong' },
-    { name: 'Raipur', x: 1420, y: 1300, delay: 0.8, strength: 'strong' },
+    { name: 'Bhopal', x: 1130, y: 950, delay: 0.5, strength: 'strong' },
+    { name: 'Indore', x: 1080, y: 920, delay: 0.6, strength: 'strong' },
+    { name: 'Nagpur', x: 1250, y: 1050, delay: 0.7, strength: 'strong' },
+    { name: 'Raipur', x: 1300, y: 1000, delay: 0.8, strength: 'strong' },
     
     // Moderate presence in West India
-    { name: 'Mumbai', x: 950, y: 1350, delay: 0.9, strength: 'moderate' },
-    { name: 'Pune', x: 1000, y: 1400, delay: 1.0, strength: 'moderate' },
-    { name: 'Ahmedabad', x: 950, y: 1100, delay: 1.1, strength: 'moderate' },
-    { name: 'Surat', x: 920, y: 1180, delay: 1.2, strength: 'moderate' },
+    { name: 'Mumbai', x: 950, y: 1050, delay: 0.9, strength: 'moderate' },
+    { name: 'Pune', x: 980, y: 1080, delay: 1.0, strength: 'moderate' },
+    { name: 'Ahmedabad', x: 940, y: 880, delay: 1.1, strength: 'moderate' },
+    { name: 'Surat', x: 950, y: 930, delay: 1.2, strength: 'moderate' },
     
     // Moderate presence in East India
-    { name: 'Kolkata', x: 1550, y: 1300, delay: 1.3, strength: 'moderate' },
-    { name: 'Bhubaneswar', x: 1480, y: 1400, delay: 1.4, strength: 'moderate' },
-    { name: 'Ranchi', x: 1500, y: 1200, delay: 1.5, strength: 'moderate' },
+    { name: 'Kolkata', x: 1380, y: 1000, delay: 1.3, strength: 'moderate' },
+    { name: 'Bhubaneswar', x: 1350, y: 1050, delay: 1.4, strength: 'moderate' },
+    { name: 'Ranchi', x: 1330, y: 950, delay: 1.5, strength: 'moderate' },
     
     // Moderate presence in Hyderabad region
-    { name: 'Hyderabad', x: 1320, y: 1600, delay: 1.6, strength: 'moderate' },
+    { name: 'Hyderabad', x: 1230, y: 1200, delay: 1.6, strength: 'moderate' },
     
     // Minimal presence in South India
-    { name: 'Bangalore', x: 1250, y: 1850, delay: 1.7, strength: 'minimal' },
-    { name: 'Kochi', x: 1100, y: 2100, delay: 1.8, strength: 'minimal' },
-    { name: 'Chennai', x: 1350, y: 1950, delay: 1.9, strength: 'minimal' }
+    { name: 'Bangalore', x: 1200, y: 1350, delay: 1.7, strength: 'minimal' },
+    { name: 'Kochi', x: 1120, y: 1450, delay: 1.8, strength: 'minimal' },
+    { name: 'Chennai', x: 1300, y: 1380, delay: 1.9, strength: 'minimal' }
   ];
 
   const containerVariants = {
@@ -113,10 +113,10 @@ export default function IndiaMapSection() {
               {stateMarkers.map((marker, index) => {
                 const getMarkerSize = (strength: string) => {
                   switch (strength) {
-                    case 'strong': return { main: 45, pulse: 50, pulseMax: 90 };
-                    case 'moderate': return { main: 35, pulse: 40, pulseMax: 70 };
-                    case 'minimal': return { main: 25, pulse: 30, pulseMax: 50 };
-                    default: return { main: 35, pulse: 40, pulseMax: 70 };
+                    case 'strong': return { main: 35, pulse: 40, pulseMax: 70 };
+                    case 'moderate': return { main: 25, pulse: 30, pulseMax: 50 };
+                    case 'minimal': return { main: 18, pulse: 22, pulseMax: 35 };
+                    default: return { main: 25, pulse: 30, pulseMax: 50 };
                   }
                 };
                 
@@ -181,7 +181,7 @@ export default function IndiaMapSection() {
                       <motion.circle
                         cx={marker.x}
                         cy={marker.y}
-                        r="20"
+                        r="15"
                         fill="#031D33"
                         opacity="0.7"
                         animate={{
@@ -198,11 +198,11 @@ export default function IndiaMapSection() {
                     {/* City Label */}
                     <motion.text
                       x={marker.x}
-                      y={marker.y + (sizes.main + 60)}
+                      y={marker.y + (sizes.main + 50)}
                       textAnchor="middle"
-                      fontSize={marker.strength === 'strong' ? "45" : marker.strength === 'moderate' ? "35" : "28"}
+                      fontSize={marker.strength === 'strong' ? "32" : marker.strength === 'moderate' ? "26" : "20"}
                       fill="#031D33"
-                      className="font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="font-medium opacity-70 hover:opacity-100 transition-opacity"
                       style={{ fontWeight: marker.strength === 'strong' ? 'bold' : 'medium' }}
                     >
                       {marker.name}
