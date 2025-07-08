@@ -1,35 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(210, 11%, 15%);
-  --muted: hsl(210, 40%, 96%);
-  --muted-foreground: hsl(215, 16%, 47%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(210, 11%, 15%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(210, 11%, 15%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(48, 100%, 50%);
-  --primary-foreground: hsl(204, 95%, 10%);
-  --secondary: hsl(0, 0%, 100%);
-  --secondary-foreground: hsl(210, 11%, 15%);
-  --accent: hsl(204, 95%, 10%);
-  --accent-foreground: hsl(0, 0%, 100%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(210, 11%, 15%);
-  --radius: 0.5rem;
+  /* Custom IndoSup color theme */
+  --primary: #FFC600;
+  --secondary: #FFFFFF;
+  --accent: #031D33;
+  --neutral-dark: #222629;
+  --neutral-base: #919191;
   
-  /* Custom IndoSup colors */
-  --indosup-primary: hsl(48, 100%, 50%);
-  --indosup-secondary: hsl(0, 0%, 100%);
-  --indosup-accent: hsl(204, 95%, 10%);
-  --indosup-neutral-dark: hsl(208, 7%, 15%);
-  --indosup-neutral-base: hsl(0, 0%, 57%);
+  /* System colors */
+  --background: #FFFFFF;
+  --foreground: #031D33;
+  --muted: #F5F5F5;
+  --muted-foreground: #919191;
+  --popover: #FFFFFF;
+  --popover-foreground: #031D33;
+  --card: #FFFFFF;
+  --card-foreground: #031D33;
+  --border: #E5E5E5;
+  --input: #F5F5F5;
+  --ring: #FFC600;
+  --radius: 0.5rem;
 }
 
 .dark {
@@ -61,6 +57,16 @@
 
   body {
     @apply font-inter antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 }
 

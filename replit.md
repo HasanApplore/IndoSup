@@ -1,18 +1,24 @@
-# IndoSup - Full Stack Web Application
+# IndoSup - Next.js-Style React Application
 
 ## Overview
 
-IndoSup is a full-stack web application built with React, TypeScript, and Express.js. It's a modern web platform featuring a responsive design with shadcn/ui components, PostgreSQL database integration via Drizzle ORM, and a clean architecture separating client and server concerns.
+IndoSup is a modern web application built with React, JavaScript, and configured following Next.js patterns. It features a responsive design with Tailwind CSS, custom color theme, and Google Fonts integration. The application is designed with a clean, centered homepage displaying the "Welcome to IndoSup" message.
 
 ## System Architecture
 
 ### Frontend Architecture
-- **Framework**: React 18 with TypeScript
+- **Framework**: React 18 with JavaScript (Next.js-style patterns)
 - **UI Library**: shadcn/ui components with Radix UI primitives
-- **Styling**: Tailwind CSS with custom IndoSup brand colors
+- **Styling**: Tailwind CSS with custom IndoSup color theme
+- **Color Theme**: 
+  - Primary: #FFC600 (bright yellow)
+  - Secondary: #FFFFFF (white)
+  - Accent: #031D33 (dark blue)
+  - Neutral Dark: #222629 (dark gray)
+  - Neutral Base: #919191 (medium gray)
+- **Typography**: Inter and Plus Jakarta Sans fonts from Google Fonts
+- **Responsive Design**: 12-column grid system with breakpoints at 640px, 768px, 1024px, and 1280px
 - **State Management**: TanStack Query for server state management
-- **Routing**: Wouter for client-side routing
-- **Animation**: Framer Motion for smooth animations
 - **Build Tool**: Vite for fast development and optimized builds
 
 ### Backend Architecture
@@ -39,10 +45,11 @@ IndoSup is a full-stack web application built with React, TypeScript, and Expres
 - **Migrations**: Stored in `./migrations` directory
 
 ### Frontend Components
-- **Home Page**: Landing page with hero section and feature highlights
+- **Home Page**: Clean, centered welcome page with "Welcome to IndoSup" message
+- **App Component**: Main application component following Next.js patterns
 - **UI Components**: Comprehensive set of shadcn/ui components
 - **Custom Hooks**: Mobile detection, toast notifications
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Responsive Design**: Mobile-first approach with Tailwind CSS and 12-column grid
 
 ### Backend Services
 - **Storage Interface**: Abstract storage layer with memory and database implementations
@@ -96,6 +103,7 @@ IndoSup is a full-stack web application built with React, TypeScript, and Expres
 
 Changelog:
 - July 08, 2025. Initial setup
+- July 08, 2025. Converted to Next.js-style React application with custom color theme and Google Fonts integration
 
 ## User Preferences
 
