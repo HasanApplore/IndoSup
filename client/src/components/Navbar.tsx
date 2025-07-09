@@ -91,20 +91,26 @@ export default function Navbar() {
               </button>
               
               {isBusinessDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 z-50 border border-gray-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-accent/95 backdrop-blur-md rounded-lg shadow-2xl py-3 z-50 border border-primary/20">
                   <Link 
                     to="/products/steel" 
-                    className="block px-4 py-3 text-accent hover:bg-primary hover:text-accent transition-colors duration-200 font-medium"
+                    className="block px-6 py-3 text-white hover:bg-primary/20 hover:text-primary transition-all duration-200 font-medium rounded-md mx-2 group"
                     onClick={handleLinkClick}
                   >
-                    Steel
+                    <span className="flex items-center">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+                      Steel Products
+                    </span>
                   </Link>
                   <Link 
                     to="/products/non-steel" 
-                    className="block px-4 py-3 text-accent hover:bg-primary hover:text-accent transition-colors duration-200 font-medium"
+                    className="block px-6 py-3 text-white hover:bg-primary/20 hover:text-primary transition-all duration-200 font-medium rounded-md mx-2 group"
                     onClick={handleLinkClick}
                   >
-                    Non-Steel
+                    <span className="flex items-center">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+                      Non-Steel Products
+                    </span>
                   </Link>
                 </div>
               )}
@@ -139,8 +145,9 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex">
             <Link to="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-200">
-                Contact Us
+              <Button className="bg-primary hover:bg-primary/90 text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-200 group">
+                <span className="block group-hover:hidden">Contact Us</span>
+                <span className="hidden group-hover:block">Contact</span>
               </Button>
             </Link>
           </div>
@@ -192,20 +199,26 @@ export default function Navbar() {
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isBusinessDropdownOpen && (
-                  <div className="pl-3 mt-1 space-y-1">
+                  <div className="pl-3 mt-2 space-y-1 border-l-2 border-primary/30 ml-3">
                     <Link 
                       to="/products/steel" 
-                      className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3"
+                      className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3 group"
                       onClick={handleLinkClick}
                     >
-                      Steel
+                      <span className="flex items-center">
+                        <span className="w-2 h-2 bg-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+                        Steel Products
+                      </span>
                     </Link>
                     <Link 
                       to="/products/non-steel" 
-                      className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3"
+                      className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3 group"
                       onClick={handleLinkClick}
                     >
-                      Non-Steel
+                      <span className="flex items-center">
+                        <span className="w-2 h-2 bg-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+                        Non-Steel Products
+                      </span>
                     </Link>
                   </div>
                 )}
@@ -236,8 +249,9 @@ export default function Navbar() {
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-accent font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg">
-                    Contact Us
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-accent font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg group">
+                    <span className="block group-hover:hidden">Contact Us</span>
+                    <span className="hidden group-hover:block">Contact</span>
                   </Button>
                 </Link>
               </div>
