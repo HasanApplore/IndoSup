@@ -16,7 +16,19 @@ export default function ClientLogosSection() {
     { name: 'DLF Limited', initial: 'DLF', color: '#7C3AED' },
     { name: 'Reliance Industries', initial: 'REL', color: '#059669' },
     { name: 'Adani Group', initial: 'ADA', color: '#DC2626' },
-    { name: 'Hindustan Construction', initial: 'HCC', color: '#1F2937' }
+    { name: 'Hindustan Construction', initial: 'HCC', color: '#1F2937' },
+    { name: 'Sobha Limited', initial: 'SOB', color: '#F59E0B' },
+    { name: 'Prestige Group', initial: 'PRE', color: '#8B5CF6' },
+    { name: 'Brigade Group', initial: 'BRI', color: '#10B981' },
+    { name: 'Puravankara', initial: 'PUR', color: '#EF4444' },
+    { name: 'Embassy Group', initial: 'EMB', color: '#3B82F6' },
+    { name: 'Oberoi Realty', initial: 'OBE', color: '#F97316' },
+    { name: 'Hiranandani Group', initial: 'HIR', color: '#06B6D4' },
+    { name: 'Unitech Limited', initial: 'UNI', color: '#84CC16' },
+    { name: 'Lodha Group', initial: 'LOD', color: '#EC4899' },
+    { name: 'Raheja Developers', initial: 'RAH', color: '#6366F1' },
+    { name: 'Kolte-Patil', initial: 'KOL', color: '#14B8A6' },
+    { name: 'Shriram Properties', initial: 'SHR', color: '#F43F5E' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -174,26 +186,18 @@ export default function ClientLogosSection() {
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center mt-8 space-x-2">
+        <div className="flex justify-center mt-8 space-x-3">
           {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-4 h-4 rounded-full transition-all duration-300 hover:scale-110 ${
                 index === currentIndex 
-                  ? 'bg-primary scale-125' 
+                  ? 'bg-primary scale-125 shadow-lg' 
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
             />
           ))}
-        </div>
-
-        {/* Auto-play Indicator */}
-        <div className="flex justify-center mt-4">
-          <div className="flex items-center space-x-2 text-sm text-neutral-base">
-            <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-primary animate-pulse' : 'bg-gray-300'}`}></div>
-            <span>{isAutoPlaying ? 'Auto-playing' : 'Paused'}</span>
-          </div>
         </div>
       </div>
     </section>
