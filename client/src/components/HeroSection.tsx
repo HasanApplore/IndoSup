@@ -13,8 +13,8 @@ export default function HeroSection() {
 
   // Set your demo video URL here
   useEffect(() => {
-    // Using a construction site video
-    const demoVideoUrl = "https://www.youtube.com/watch?v=8lMIdrlIWOQ"; // Construction site video
+    // Using a construction and architecture video
+    const demoVideoUrl = "https://www.youtube.com/watch?v=G3ja6Hn8ps4"; // Construction and architecture video
     const videoId = extractYouTubeId(demoVideoUrl);
     if (videoId) {
       setYoutubeVideoId(videoId);
