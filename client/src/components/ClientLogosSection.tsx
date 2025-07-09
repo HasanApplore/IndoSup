@@ -1,17 +1,57 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ClientLogosSection() {
   // Client logos data - using well-known construction/infrastructure companies
   const clientLogos = [
-    { name: 'L&T Construction', logo: 'https://logos-world.net/wp-content/uploads/2021/12/Larsen-Toubro-Logo.png' },
-    { name: 'Tata Projects', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Tata-Logo.png' },
-    { name: 'Godrej', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Godrej-Logo.png' },
-    { name: 'Mahindra', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Mahindra-Logo.png' },
-    { name: 'Shapoorji Pallonji', logo: 'https://www.shapoorjipallonji.com/assets/images/sp-logo.png' },
-    { name: 'Gammon India', logo: 'https://www.gammonindia.com/images/logo.png' },
-    { name: 'NCC Limited', logo: 'https://www.nccindia.com/images/ncc-logo.png' },
-    { name: 'Simplex', logo: 'https://www.simplexinfra.com/images/logo.png' }
+    { name: 'L&T Construction', initial: 'L&T', color: '#FF6B35' },
+    { name: 'Tata Projects', initial: 'TATA', color: '#1E3A8A' },
+    { name: 'Godrej', initial: 'GOD', color: '#16A34A' },
+    { name: 'Mahindra', initial: 'MAH', color: '#DC2626' },
+    { name: 'Shapoorji Pallonji', initial: 'S&P', color: '#9333EA' },
+    { name: 'Gammon India', initial: 'GAM', color: '#EA580C' },
+    { name: 'NCC Limited', initial: 'NCC', color: '#0891B2' },
+    { name: 'Simplex', initial: 'SIM', color: '#BE185D' },
+    { name: 'DLF Limited', initial: 'DLF', color: '#7C3AED' },
+    { name: 'Reliance Industries', initial: 'REL', color: '#059669' },
+    { name: 'Adani Group', initial: 'ADA', color: '#DC2626' },
+    { name: 'Hindustan Construction', initial: 'HCC', color: '#1F2937' }
   ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const itemsPerPage = 4;
+
+  const totalPages = Math.ceil(clientLogos.length / itemsPerPage);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % totalPages);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, totalPages]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const getCurrentPageItems = () => {
+    const start = currentIndex * itemsPerPage;
+    return clientLogos.slice(start, start + itemsPerPage);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,9 +64,10 @@ export default function ClientLogosSection() {
   };
 
   const logoVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: {
       opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
         duration: 0.6,
@@ -36,83 +77,124 @@ export default function ClientLogosSection() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(3,29,51,0.05),transparent_50%)]"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 md:mb-6 font-inter">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 font-inter">
             Trusted by Industry Leaders
           </h2>
-          <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
-          <p className="text-base md:text-lg text-neutral-base mt-4 md:mt-6 max-w-2xl md:max-w-3xl mx-auto">
+          <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
+          <p className="text-base md:text-lg text-neutral-base max-w-2xl mx-auto">
             Proud to partner with India's leading construction and infrastructure companies
           </p>
         </motion.div>
 
-        {/* Client Logos Carousel */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        {/* Carousel Container */}
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {clientLogos.map((client, index) => (
-            <motion.div
-              key={index}
-              variants={logoVariants}
-              className="group flex items-center justify-center p-6 md:p-8 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="relative w-full h-16 md:h-20 flex items-center justify-center">
-                {/* Placeholder logo with company initial */}
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center group-hover:from-primary group-hover:to-yellow-400 transition-all duration-300 filter grayscale group-hover:grayscale-0">
-                  <span className="text-xl md:text-2xl font-bold text-accent group-hover:text-white transition-colors duration-300">
-                    {client.name.charAt(0)}
-                  </span>
-                </div>
-                
-                {/* Company name on hover */}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-xs md:text-sm text-neutral-base font-medium whitespace-nowrap">
-                    {client.name}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Floating Animation */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <motion.div
-            animate={{
-              y: [0, -10, 0]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="inline-flex items-center space-x-2 text-neutral-base text-sm"
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/80 hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110"
           >
-            <div className="w-2 h-2 bg-primary rounded-full"></div>
-            <span>And many more leading companies across India</span>
-            <div className="w-2 h-2 bg-primary rounded-full"></div>
-          </motion.div>
-        </motion.div>
+            <ChevronLeft className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/80 hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110"
+          >
+            <ChevronRight className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />
+          </button>
+
+          {/* Logos Container */}
+          <div className="overflow-hidden rounded-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                className="flex gap-6 justify-center"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                transition={{ duration: 0.5 }}
+              >
+                {getCurrentPageItems().map((client, index) => (
+                  <motion.div
+                    key={`${currentIndex}-${index}`}
+                    variants={logoVariants}
+                    className="group flex-1 max-w-64 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 cursor-pointer border border-gray-100 hover:border-primary/20"
+                    whileHover={{ 
+                      scale: 1.05,
+                      y: -5,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    <div className="flex flex-col items-center justify-center h-24">
+                      {/* Company Logo */}
+                      <div 
+                        className="w-16 h-16 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+                        style={{ 
+                          background: `linear-gradient(135deg, ${client.color}20, ${client.color}40)`,
+                          borderColor: client.color + '30'
+                        }}
+                      >
+                        <span 
+                          className="text-lg font-bold transition-colors duration-300"
+                          style={{ color: client.color }}
+                        >
+                          {client.initial}
+                        </span>
+                      </div>
+                      
+                      {/* Company Name */}
+                      <h3 className="text-sm font-medium text-accent text-center group-hover:text-primary transition-colors duration-300">
+                        {client.name}
+                      </h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-primary scale-125' 
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Auto-play Indicator */}
+        <div className="flex justify-center mt-4">
+          <div className="flex items-center space-x-2 text-sm text-neutral-base">
+            <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-primary animate-pulse' : 'bg-gray-300'}`}></div>
+            <span>{isAutoPlaying ? 'Auto-playing' : 'Paused'}</span>
+          </div>
+        </div>
       </div>
     </section>
   );
