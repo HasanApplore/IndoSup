@@ -47,7 +47,7 @@ export default function Navbar() {
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
-                className="h-14 w-auto cursor-pointer"
+                className="h-12 w-auto cursor-pointer"
               />
             </Link>
           </div>
