@@ -66,7 +66,7 @@ export default function WhoWeAreSection() {
 
   return (
     <section className="py-12 bg-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-6">
         {/* Section Heading */}
         <motion.div
           className="text-center mb-10"
@@ -86,7 +86,7 @@ export default function WhoWeAreSection() {
 
         {/* Feature Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
