@@ -222,7 +222,20 @@ export default function TestimonialsSection() {
           </button>
         </div>
 
-
+        {/* Navigation Dots */}
+        <div className="flex justify-center mt-4 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-[#041d33] w-6' 
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

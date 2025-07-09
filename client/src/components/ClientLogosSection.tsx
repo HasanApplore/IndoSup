@@ -220,30 +220,7 @@ export default function ClientLogosSection() {
           </div>
         </div>
 
-        {/* Dots Navigation with Progress */}
-        <div className="flex justify-center mt-8 space-x-3">
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`relative w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
-                index === currentIndex 
-                  ? 'bg-primary scale-150 shadow-md' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-            >
-              {/* Auto-play progress indicator */}
-              {index === currentIndex && isAutoPlaying && (
-                <div className="absolute inset-0 rounded-full border-2 border-primary/30">
-                  <div 
-                    className="absolute inset-0 rounded-full border-2 border-primary border-t-transparent animate-spin"
-                    style={{ animationDuration: '4s' }}
-                  />
-                </div>
-              )}
-            </button>
-          ))}
-        </div>
+
 
 
       </div>
