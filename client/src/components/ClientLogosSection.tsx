@@ -129,7 +129,7 @@ export default function ClientLogosSection() {
 
         {/* Carousel Container */}
         <div 
-          className="relative"
+          className="relative pt-6 pb-4"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
@@ -151,7 +151,7 @@ export default function ClientLogosSection() {
           </button>
 
           {/* Logos Container */}
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-visible rounded-2xl py-4">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
