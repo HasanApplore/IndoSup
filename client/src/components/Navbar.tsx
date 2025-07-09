@@ -83,7 +83,6 @@ export default function Navbar() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onMouseEnter={() => setIsBusinessDropdownOpen(true)}
-                onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                 onClick={toggleBusinessDropdown}
                 className="flex items-center text-white hover:text-primary transition-colors duration-200 relative group"
               >
