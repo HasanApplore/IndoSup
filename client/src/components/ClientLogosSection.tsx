@@ -215,7 +215,7 @@ export default function ClientLogosSection() {
                       </div>
                       
                       {/* Company Name */}
-                      <h3 className="text-sm font-semibold text-accent text-center group-hover:text-primary transition-colors duration-300 leading-tight">
+                      <h3 className="text-sm font-semibold text-accent text-center group-hover:text-[#172a36] transition-colors duration-300 leading-tight">
                         {client.name}
                       </h3>
                       
@@ -257,12 +257,7 @@ export default function ClientLogosSection() {
           ))}
         </div>
 
-        {/* Slide Counter */}
-        <div className="flex justify-center mt-4">
-          <span className="text-sm text-neutral-base bg-white/80 px-3 py-1 rounded-full backdrop-blur-sm">
-            {currentIndex + 1} / {totalPages}
-          </span>
-        </div>
+
       </div>
     </section>
   );
