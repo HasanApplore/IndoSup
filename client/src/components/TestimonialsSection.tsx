@@ -162,7 +162,7 @@ export default function TestimonialsSection() {
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
               
               {/* Quote Icon */}
-              <div className="absolute top-4 left-4 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+              <div className="absolute top-4 left-4 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center ml-[344px] mr-[344px]">
                 <Quote className="w-6 h-6 text-primary" />
               </div>
 
