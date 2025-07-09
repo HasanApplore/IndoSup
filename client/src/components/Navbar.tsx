@@ -82,6 +82,8 @@ export default function Navbar() {
             {/* Our Business Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
+                onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+                onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                 onClick={toggleBusinessDropdown}
                 className="flex items-center text-white hover:text-primary transition-colors duration-200 relative group"
               >
@@ -91,10 +93,11 @@ export default function Navbar() {
               </button>
               
               {isBusinessDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-accent/95 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
-                  <div className="px-4 py-2 text-primary font-bold text-sm uppercase tracking-wide border-b border-primary/20 mb-2">
-                    Our Businesses
-                  </div>
+                <div 
+                  className="absolute top-full left-0 mt-2 w-56 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                  onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+                  onMouseLeave={() => setIsBusinessDropdownOpen(false)}
+                >
                   <Link 
                     to="/products/steel" 
                     className="flex items-center px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium group rounded-md mx-2"
@@ -103,6 +106,7 @@ export default function Navbar() {
                     <span className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-200"></span>
                     Steel Products
                   </Link>
+                  <div className="border-t border-primary/20 my-2 mx-4"></div>
                   <Link 
                     to="/products/non-steel" 
                     className="flex items-center px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium group rounded-md mx-2"
