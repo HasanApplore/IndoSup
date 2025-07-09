@@ -65,12 +65,8 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-secondary relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-accent/10"></div>
-      </div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-6 md:py-10 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
           className="text-center mb-6"
