@@ -115,7 +115,7 @@ export default function ClientLogosSection() {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="py-6 md:py-10 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(3,29,51,0.05),transparent_50%)]"></div>
@@ -123,7 +123,7 @@ export default function ClientLogosSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

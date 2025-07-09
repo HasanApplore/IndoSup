@@ -88,7 +88,7 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative py-8 md:py-10 bg-neutral-dark overflow-hidden">
+    <section className="relative py-6 md:py-8 bg-neutral-dark overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"

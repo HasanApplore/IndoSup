@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-6 md:py-10 bg-white">
+    <section className="py-5 md:py-8 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         {/* Section Heading */}
         <motion.div

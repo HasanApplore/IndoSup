@@ -65,11 +65,11 @@ export default function IndiaMapSection() {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-secondary">
+    <section className="py-6 md:py-10 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-8 md:mb-10"
+          className="text-center mb-6 md:mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
