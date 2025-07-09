@@ -94,8 +94,8 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <section className="py-6 md:py-10 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         {/* Section Heading */}
         <motion.div
           className="text-center mb-6 md:mb-8"
@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
 
         {/* Testimonials Slider */}
         <div className="relative max-w-3xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 md:p-6 shadow-lg border-2 border-[#041d33] overflow-hidden relative">
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 md:p-6 shadow-lg overflow-hidden relative">
             {/* Decorative Elements */}
             <div className="absolute top-0 left-0 w-16 h-16 bg-primary/5 rounded-full -translate-x-8 -translate-y-8"></div>
             <div className="absolute bottom-0 right-0 w-20 h-20 bg-accent/5 rounded-full translate-x-10 translate-y-10"></div>

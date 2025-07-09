@@ -57,28 +57,28 @@ export default function InitiativesSection() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="py-8 md:py-12 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 md:mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 md:mb-6 font-inter">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4 font-inter">
             Our Key Initiatives
           </h2>
-          <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
-          <p className="text-base md:text-lg text-neutral-base mt-4 md:mt-6 max-w-3xl mx-auto">
+          <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
+          <p className="text-sm md:text-base text-neutral-base mt-3 md:mt-4 max-w-2xl mx-auto">
             Driving positive change in the construction industry through innovation, sustainability, and community empowerment
           </p>
         </motion.div>
 
         {/* Initiatives Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -96,7 +96,7 @@ export default function InitiativesSection() {
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               {/* Card Image */}
-              <div className="relative h-48 md:h-56 overflow-hidden">
+              <div className="relative h-40 md:h-48 overflow-hidden">
                 <img
                   src={initiative.image}
                   alt={initiative.title}
@@ -120,12 +120,12 @@ export default function InitiativesSection() {
               </div>
 
               {/* Card Content */}
-              <div className="p-6 md:p-8">
-                <h3 className="text-xl md:text-2xl font-bold text-accent mb-3 group-hover:text-primary transition-colors duration-300">
+              <div className="p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-accent mb-3 group-hover:text-primary transition-colors duration-300">
                   {initiative.title}
                 </h3>
                 
-                <p className="text-neutral-base leading-relaxed mb-6">
+                <p className="text-neutral-base text-sm leading-relaxed mb-4">
                   {initiative.summary}
                 </p>
 
@@ -160,19 +160,19 @@ export default function InitiativesSection() {
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-12 md:mt-16"
+          className="text-center mt-8 md:mt-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           <motion.button
-            className="inline-flex items-center px-8 py-4 bg-accent text-white font-semibold rounded-full hover:bg-primary hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-full hover:bg-primary hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="mr-2">Explore All Initiatives</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4" />
           </motion.button>
         </motion.div>
 
