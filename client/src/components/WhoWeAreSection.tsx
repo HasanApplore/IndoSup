@@ -98,8 +98,8 @@ export default function WhoWeAreSection() {
               className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center cursor-pointer border border-gray-100 hover:border-primary/30"
               variants={cardVariants}
               whileHover={{
-                y: -8,
-                scale: 1.05,
+                y: -12,
+                scale: 1.08,
                 transition: { duration: 0.3 }
               }}
             >

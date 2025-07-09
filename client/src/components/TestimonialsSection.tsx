@@ -122,7 +122,6 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Quote className="w-8 h-8 text-primary" />
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent font-inter">
               What Our Clients Say
             </h2>
@@ -139,17 +138,17 @@ export default function TestimonialsSection() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Positioned above testimonial card */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
+            className="absolute left-8 top-2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
+            className="absolute right-8 top-2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -161,9 +160,9 @@ export default function TestimonialsSection() {
               <div className="absolute top-0 left-0 w-20 h-20 bg-primary/10 rounded-full -translate-x-10 -translate-y-10"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
               
-              {/* Quote Icon */}
-              <div className="absolute top-4 left-4 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center ml-[344px] mr-[344px]">
-                <Quote className="w-6 h-6 text-primary" />
+              {/* Quote Icon - Centered */}
+              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                <Quote className="w-8 h-8 text-primary" />
               </div>
 
               <AnimatePresence mode="wait" custom={direction}>
@@ -179,7 +178,7 @@ export default function TestimonialsSection() {
                     opacity: { duration: 0.4 },
                     scale: { duration: 0.4 }
                   }}
-                  className="text-center pt-8"
+                  className="text-center pt-16"
                 >
                   {/* Testimonial Quote - First */}
                   <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">

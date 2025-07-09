@@ -166,6 +166,7 @@ Changelog:
 - July 09, 2025. Applied final homepage polish: improved text sizing consistency, reduced CTA banner elements, optimized spacing in initiatives cards, and enhanced overall visual hierarchy
 - July 09, 2025. Removed navigation arrows from "Our Trusted Partners" section and reduced auto-change timing from 4 seconds to 2 seconds for faster transitions
 - July 09, 2025. Completely recreated testimonials section with modern UI/UX design: added sliding animations, star ratings, client avatars, project details, backdrop blur effects, and interactive navigation while maintaining current dimensions
+- July 09, 2025. Final homepage polish and testimonials enhancements: removed title quote icon, centered testimonial quote icon with increased size, repositioned navigation arrows above testimonial cards, removed star ratings, added hover effects to testimonial cards, increased spacing between quote icon and content, enhanced "Why Choose IndoSup?" card hover effects (scale 1.08, y -12px)
 
 ## User Preferences
 
