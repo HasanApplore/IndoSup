@@ -1,211 +1,144 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 export default function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Testimonials data
   const testimonials = [
     {
-      quote: "IndoSup has revolutionized our procurement process. Their digital platform and reliable supply chain have reduced our project timelines by 30%.",
+      id: 1,
       name: "Rajesh Kumar",
-      position: "Project Director",
-      company: "L&T Construction",
-      logo: "LT",
-      rating: 5
+      company: "Kumar Construction Ltd",
+      location: "Mumbai",
+      role: "Project Manager",
+      rating: 5,
+      testimonial: "IndoSup has revolutionized our procurement process. Their platform provides transparency, competitive pricing, and reliable delivery that we've never experienced before. The quality assurance is exceptional.",
+      project: "Commercial Complex Project",
+      avatar: "RK"
     },
     {
-      quote: "Outstanding quality control and timely delivery. IndoSup's local expertise across different states has been invaluable for our pan-India projects.",
+      id: 2,
       name: "Priya Sharma",
-      position: "Procurement Head",
-      company: "Tata Projects",
-      logo: "TP",
-      rating: 5
+      company: "Sharma Infrastructure",
+      location: "Delhi",
+      role: "Purchase Head",
+      rating: 5,
+      testimonial: "The digital sourcing platform has streamlined our entire supply chain. We've reduced costs by 15% while improving delivery times. The customer support is outstanding and responsive.",
+      project: "Residential Township",
+      avatar: "PS"
     },
     {
-      quote: "The transparency and efficiency IndoSup brings to construction procurement is unmatched. They've become our preferred sourcing partner.",
+      id: 3,
       name: "Amit Patel",
-      position: "Operations Manager",
-      company: "Godrej Properties",
-      logo: "GP",
-      rating: 5
+      company: "Patel Builders",
+      location: "Ahmedabad",
+      role: "Site Engineer",
+      rating: 5,
+      testimonial: "Working with IndoSup has been a game-changer for our construction projects. Their comprehensive product range and expert guidance have helped us deliver projects on time and within budget.",
+      project: "Industrial Warehouse",
+      avatar: "AP"
     },
     {
-      quote: "From steel to specialty materials, IndoSup's comprehensive network ensures we get the best prices without compromising on quality.",
+      id: 4,
       name: "Sunita Reddy",
-      position: "Senior Engineer",
-      company: "Mahindra Lifespaces",
-      logo: "ML",
-      rating: 5
-    },
-    {
-      quote: "Their 24/7 support and real-time tracking have transformed how we manage our supply chain. Highly recommended for any construction company.",
-      name: "Vikram Singh",
-      position: "Supply Chain Lead",
-      company: "Shapoorji Pallonji",
-      logo: "SP",
-      rating: 5
+      company: "Reddy Constructions",
+      location: "Hyderabad",
+      role: "CEO",
+      rating: 5,
+      testimonial: "IndoSup's end-to-end digital sourcing has transformed how we approach procurement. The platform's user-friendly interface and comprehensive vendor network make it our go-to solution.",
+      project: "Mixed-Use Development",
+      avatar: "SR"
     }
   ];
 
-  // Auto-advance testimonials
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [direction, setDirection] = useState(0);
+
+  // Auto-play functionality
   useEffect(() => {
+    if (!isAutoPlaying) return;
+    
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-      );
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [isAutoPlaying, testimonials.length]);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const goToSlide = (index: number) => {
+  const goToTestimonial = (index: number) => {
+    setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
     }),
     center: {
       zIndex: 1,
       x: 0,
-      opacity: 1
+      opacity: 1,
+      scale: 1,
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 300 : -300,
-      opacity: 0
-    })
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+    }),
   };
 
+  const currentTestimonial = testimonials[currentIndex];
+
   return (
-    <section className="py-5 md:py-8 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        {/* Section Heading */}
+    <section className="py-5 md:py-8 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+        {/* Section Header */}
         <motion.div
-          className="text-center mb-6 md:mb-8"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-2 md:mb-3 font-inter">
-            What Our Clients Say
-          </h2>
-          <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
-          <p className="text-sm md:text-base text-neutral-base mt-2 md:mt-3 max-w-lg mx-auto">
-            Trusted by industry leaders
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Quote className="w-8 h-8 text-primary" />
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent font-inter">
+              What Our Clients Say
+            </h2>
+          </div>
+          <div className="w-16 h-1 bg-primary mx-auto mb-3"></div>
+          <p className="text-sm md:text-base text-neutral-base max-w-xl mx-auto">
+            Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>
 
-        {/* Testimonials Slider */}
-        <div className="relative max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 md:p-6 shadow-lg overflow-hidden relative">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 left-0 w-16 h-16 bg-primary/5 rounded-full -translate-x-8 -translate-y-8"></div>
-            <div className="absolute bottom-0 right-0 w-20 h-20 bg-accent/5 rounded-full translate-x-10 translate-y-10"></div>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.3 }
-                }}
-                className="text-center"
-              >
-                {/* Quote Icon */}
-                <motion.div
-                  className="flex justify-center mb-4"
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                >
-                  <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-yellow-400 rounded-full flex items-center justify-center shadow-md">
-                      <Quote className="w-6 h-6 text-white" />
-                    </div>
-
-                  </div>
-                </motion.div>
-
-                {/* Testimonial Quote */}
-                <motion.blockquote
-                  className="text-sm md:text-base lg:text-lg text-accent font-medium leading-relaxed mb-6 max-w-2xl mx-auto relative"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                >
-                  <span className="text-primary text-4xl font-bold absolute -top-2 -left-2 opacity-20">"</span>
-                  {testimonials[currentIndex].quote}
-                  <span className="text-primary text-4xl font-bold absolute -bottom-4 -right-2 opacity-20">"</span>
-                </motion.blockquote>
-
-                {/* Client Info */}
-                <motion.div
-                  className="flex flex-col items-center justify-center space-y-3"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                >
-                  {/* Star Rating */}
-                  <div className="flex space-x-1 mb-2">
-                    {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        transition={{ delay: 0.5 + (i * 0.1), duration: 0.3 }}
-                      >
-                        <svg className="w-4 h-4 text-primary fill-current" viewBox="0 0 20 20">
-                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    {/* Client Logo */}
-                    <div className="w-12 h-12 bg-gradient-to-br from-accent to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">
-                      {testimonials[currentIndex].logo}
-                    </div>
-
-                    {/* Client Details */}
-                    <div className="text-left">
-                      <h4 className="text-sm font-bold text-accent mb-0.5">
-                        {testimonials[currentIndex].name}
-                      </h4>
-                      <p className="text-xs text-neutral-base font-medium mb-0.5">
-                        {testimonials[currentIndex].position}
-                      </p>
-                      <p className="text-primary font-semibold text-sm">
-                        {testimonials[currentIndex].company}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
+        {/* Main Testimonial Container */}
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
+        >
           {/* Navigation Arrows */}
           <button
             onClick={prevTestimonial}
@@ -213,24 +146,95 @@ export default function TestimonialsSection() {
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
-
+          
           <button
             onClick={nextTestimonial}
             className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
+
+          {/* Testimonial Card */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative">
+              {/* Decorative Elements */}
+              <div className="absolute top-0 left-0 w-20 h-20 bg-primary/10 rounded-full -translate-x-10 -translate-y-10"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
+              
+              {/* Quote Icon */}
+              <div className="absolute top-4 left-4 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                <Quote className="w-6 h-6 text-primary" />
+              </div>
+
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={currentIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.4 },
+                    scale: { duration: 0.4 }
+                  }}
+                  className="text-center pt-8"
+                >
+                  {/* Star Rating */}
+                  <div className="flex items-center justify-center gap-1 mb-6">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-5 h-5 ${
+                          i < currentTestimonial.rating
+                            ? 'text-yellow-400 fill-yellow-400'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Testimonial Quote */}
+                  <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
+                    "{currentTestimonial.testimonial}"
+                  </blockquote>
+
+                  {/* Client Info */}
+                  <div className="flex items-center justify-center gap-4">
+                    {/* Avatar */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      {currentTestimonial.avatar}
+                    </div>
+                    
+                    {/* Client Details */}
+                    <div className="text-left">
+                      <h4 className="font-bold text-accent text-lg mb-1">
+                        {currentTestimonial.name}
+                      </h4>
+                      <p className="text-sm text-neutral-base mb-1">
+                        {currentTestimonial.role} at {currentTestimonial.company}
+                      </p>
+                      <p className="text-xs text-neutral-base">
+                        {currentTestimonial.location} • {currentTestimonial.project}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
 
         {/* Navigation Dots */}
-        <div className="flex justify-center mt-4 space-x-2">
+        <div className="flex justify-center mt-6 space-x-2">
           {testimonials.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => goToTestimonial(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? 'bg-[#041d33] w-6' 
+                  ? 'bg-primary w-8' 
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
             />

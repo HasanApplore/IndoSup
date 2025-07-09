@@ -55,7 +55,7 @@ export default function ClientLogosSection() {
     
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalPages);
-    }, 4000); // Slightly longer for better UX
+    }, 2000); // Faster transitions
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, totalPages]);
@@ -144,22 +144,7 @@ export default function ClientLogosSection() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-primary shadow-lg hover:shadow-xl rounded-full p-2 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-gray-200 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={currentIndex === 0}
-          >
-            <ChevronLeft className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-primary shadow-lg hover:shadow-xl rounded-full p-2 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-gray-200 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={currentIndex === totalPages - 1}
-          >
-            <ChevronRight className="w-5 h-5 text-accent group-hover:text-white transition-colors" />
-          </button>
+
 
           {/* Logos Container */}
           <div className="overflow-visible rounded-2xl py-4">
