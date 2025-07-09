@@ -115,25 +115,25 @@ export default function ClientLogosSection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(3,29,51,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.15),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(23,42,54,0.08),transparent_50%)]"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 font-inter">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#172a36] mb-6 font-inter">
             Our Trusted Partners
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
-          <p className="text-base md:text-lg text-neutral-base max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-base md:text-lg text-neutral-base max-w-3xl mx-auto">
             Collaborating with India's leading construction and infrastructure companies to deliver excellence
           </p>
         </motion.div>
@@ -147,18 +147,18 @@ export default function ClientLogosSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-primary shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-gray-200 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-[#172a36] shadow-lg hover:shadow-xl rounded-full p-4 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-[#172a36]/20 hover:border-[#172a36] disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentIndex === 0}
           >
-            <ChevronLeft className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
+            <ChevronLeft className="w-6 h-6 text-[#172a36] group-hover:text-white transition-colors" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-primary shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-gray-200 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-[#172a36] shadow-lg hover:shadow-xl rounded-full p-4 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-[#172a36]/20 hover:border-[#172a36] disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentIndex === totalPages - 1}
           >
-            <ChevronRight className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
+            <ChevronRight className="w-6 h-6 text-[#172a36] group-hover:text-white transition-colors" />
           </button>
 
           {/* Logos Container */}
@@ -177,7 +177,7 @@ export default function ClientLogosSection() {
                   <motion.div
                     key={`${currentIndex}-${index}`}
                     variants={logoVariants}
-                    className="group flex-1 max-w-60 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-8 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
+                    className="group flex-1 max-w-72 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-10 cursor-pointer border-2 border-[#172a36]/10 hover:border-[#172a36]/30 relative overflow-hidden"
                     whileHover={{ 
                       scale: 1.08,
                       y: -8,
@@ -190,7 +190,7 @@ export default function ClientLogosSection() {
                     {/* Subtle background gradient on hover */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-gray-50 to-white" />
                     
-                    <div className="relative z-10 flex items-center justify-center h-24">
+                    <div className="relative z-10 flex items-center justify-center h-28">
                       {/* Company Logo - Optimized for partner logos */}
                       <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                         <img 
@@ -221,22 +221,22 @@ export default function ClientLogosSection() {
         </div>
 
         {/* Dots Navigation with Progress */}
-        <div className="flex justify-center mt-8 space-x-3">
+        <div className="flex justify-center mt-12 space-x-4">
           {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`relative w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+              className={`relative w-4 h-4 rounded-full transition-all duration-300 hover:scale-125 ${
                 index === currentIndex 
-                  ? 'bg-primary scale-150 shadow-md' 
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-[#172a36] scale-150 shadow-lg' 
+                  : 'bg-gray-300 hover:bg-[#172a36]/50'
               }`}
             >
               {/* Auto-play progress indicator */}
               {index === currentIndex && isAutoPlaying && (
-                <div className="absolute inset-0 rounded-full border-2 border-primary/30">
+                <div className="absolute inset-0 rounded-full border-2 border-[#172a36]/30">
                   <div 
-                    className="absolute inset-0 rounded-full border-2 border-primary border-t-transparent animate-spin"
+                    className="absolute inset-0 rounded-full border-2 border-[#172a36] border-t-transparent animate-spin"
                     style={{ animationDuration: '4s' }}
                   />
                 </div>
