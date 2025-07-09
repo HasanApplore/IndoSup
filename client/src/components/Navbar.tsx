@@ -53,7 +53,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 ml-16">
             <Link 
               to="/about" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
