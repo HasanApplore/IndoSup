@@ -1,15 +1,18 @@
 <!-- Inline SVG logo with text color changed to white -->
-<svg width="280" height="60" viewBox="0 0 280 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="320" height="70" viewBox="0 0 320 70" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g id="Logo">
-    <!-- Graphic part (hand/orange elements) -->
-    <path d="M10 20C10 15 14 11 19 11C24 11 28 15 28 20V40C28 45 24 49 19 49C14 49 10 45 10 40V20Z" fill="#EC781E"/>
-    <!-- Additional graphic elements can be added here -->
-    <rect x="5" y="25" width="8" height="10" rx="2" fill="#EC781E"/>
-    <circle cx="15" cy="15" r="3" fill="#EC781E"/>
-    <path d="M25 18L35 18L35 22L30 22L30 35L25 35Z" fill="#EC781E"/>
+    <!-- Graphic part (hand/orange elements) - Made larger and more visible -->
+    <path d="M12 25C12 18 17 13 24 13C31 13 36 18 36 25V45C36 52 31 57 24 57C17 57 12 52 12 45V25Z" fill="#EC781E"/>
+    <!-- Additional graphic elements - Made larger -->
+    <rect x="6" y="30" width="12" height="15" rx="3" fill="#EC781E"/>
+    <circle cx="18" cy="18" r="5" fill="#EC781E"/>
+    <path d="M30 22L45 22L45 28L38 28L38 48L30 48Z" fill="#EC781E"/>
+    <!-- Key teeth -->
+    <rect x="45" y="30" width="6" height="6" rx="1" fill="#EC781E"/>
+    <rect x="45" y="38" width="8" height="6" rx="1" fill="#EC781E"/>
 
-    <!-- White Text (Adjusted to be visible on dark backgrounds) -->
-    <text x="50" y="38" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">IndoSup</text>
-    <text x="50" y="50" font-family="Inter, sans-serif" font-size="8" fill="#CCCCCC">Digital Key to Procurement</text>
+    <!-- White Text (Adjusted to be visible on dark backgrounds) - Made larger -->
+    <text x="65" y="42" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF">IndoSup</text>
+    <text x="65" y="55" font-family="Inter, sans-serif" font-size="10" fill="#CCCCCC">Digital Key to Procurement</text>
   </g>
 </svg>
