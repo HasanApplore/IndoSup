@@ -3,32 +3,33 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ClientLogosSection() {
-  // Client logos data - using well-known construction/infrastructure companies
+  // Client logos data - using provided company logos
   const clientLogos = [
-    { name: 'L&T Construction', initial: 'L&T', color: '#FF6B35', logo: 'https://logos-world.net/wp-content/uploads/2021/12/Larsen-Toubro-Logo.png' },
-    { name: 'Tata Projects', initial: 'TATA', color: '#1E3A8A', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Tata-Logo.png' },
-    { name: 'Godrej', initial: 'GOD', color: '#16A34A', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Godrej-Logo.png' },
-    { name: 'Mahindra', initial: 'MAH', color: '#DC2626', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Mahindra-Logo.png' },
-    { name: 'Shapoorji Pallonji', initial: 'S&P', color: '#9333EA', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Shapoorji_Pallonji_logo.svg/1200px-Shapoorji_Pallonji_logo.svg.png' },
-    { name: 'Gammon India', initial: 'GAM', color: '#EA580C', logo: 'https://www.gammonindia.com/wp-content/uploads/2021/01/gammon-logo.png' },
-    { name: 'NCC Limited', initial: 'NCC', color: '#0891B2', logo: 'https://www.nccindia.com/images/logo-ncc.png' },
-    { name: 'Simplex', initial: 'SIM', color: '#BE185D', logo: 'https://www.simplexinfra.com/assets/images/logo.png' },
-    { name: 'DLF Limited', initial: 'DLF', color: '#7C3AED', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/DLF_Logo.svg/1200px-DLF_Logo.svg.png' },
-    { name: 'Reliance Industries', initial: 'REL', color: '#059669', logo: 'https://logos-world.net/wp-content/uploads/2020/09/Reliance-Industries-Logo.png' },
-    { name: 'Adani Group', initial: 'ADA', color: '#DC2626', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Adani_2012_logo.svg/1200px-Adani_2012_logo.svg.png' },
-    { name: 'Hindustan Construction', initial: 'HCC', color: '#1F2937', logo: 'https://www.hccindia.com/wp-content/uploads/2020/10/hcc-logo.png' },
-    { name: 'Sobha Limited', initial: 'SOB', color: '#F59E0B', logo: 'https://www.sobha.com/wp-content/uploads/2020/03/sobha-logo.png' },
-    { name: 'Prestige Group', initial: 'PRE', color: '#8B5CF6', logo: 'https://www.prestigeconstructions.com/wp-content/uploads/2020/03/prestige-logo.png' },
-    { name: 'Brigade Group', initial: 'BRI', color: '#10B981', logo: 'https://www.brigadegroup.com/wp-content/uploads/2020/03/brigade-logo.png' },
-    { name: 'Puravankara', initial: 'PUR', color: '#EF4444', logo: 'https://www.puravankara.com/wp-content/uploads/2020/03/puravankara-logo.png' },
-    { name: 'Embassy Group', initial: 'EMB', color: '#3B82F6', logo: 'https://www.embassygroup.com/wp-content/uploads/2020/03/embassy-logo.png' },
-    { name: 'Oberoi Realty', initial: 'OBE', color: '#F97316', logo: 'https://www.oberoirealty.com/wp-content/uploads/2020/03/oberoi-logo.png' },
-    { name: 'Hiranandani Group', initial: 'HIR', color: '#06B6D4', logo: 'https://www.hiranandani.com/wp-content/uploads/2020/03/hiranandani-logo.png' },
-    { name: 'Unitech Limited', initial: 'UNI', color: '#84CC16', logo: 'https://www.unitechgroup.com/wp-content/uploads/2020/03/unitech-logo.png' },
-    { name: 'Lodha Group', initial: 'LOD', color: '#EC4899', logo: 'https://www.lodhagroup.in/wp-content/uploads/2020/03/lodha-logo.png' },
-    { name: 'Raheja Developers', initial: 'RAH', color: '#6366F1', logo: 'https://www.rahejadevelopers.com/wp-content/uploads/2020/03/raheja-logo.png' },
-    { name: 'Kolte-Patil', initial: 'KOL', color: '#14B8A6', logo: 'https://www.koltepatil.com/wp-content/uploads/2020/03/kolte-patil-logo.png' },
-    { name: 'Shriram Properties', initial: 'SHR', color: '#F43F5E', logo: 'https://www.shriramproperties.com/wp-content/uploads/2020/03/shriram-logo.png' }
+    { name: 'KSB', logo: '/image_1752053991095.png' },
+    { name: 'Steel Authority of India', logo: '/image_1752053993871.png' },
+    { name: 'Vedanta', logo: '/image_1752053997490.png' },
+    { name: 'FinOlex Pipes', logo: '/image_1752054000374.png' },
+    { name: 'UltraTech Cement', logo: '/image_1752054003624.png' },
+    { name: 'Ashirvad by Aliaxis', logo: '/image_1752054007526.png' },
+    { name: 'Havells', logo: '/image_1752054012007.png' },
+    { name: 'Polycab', logo: '/image_1752054016241.png' },
+    { name: 'Jindal Steel & Power', logo: '/image_1752054022101.png' },
+    // Duplicate the companies to fill more slots
+    { name: 'KSB', logo: '/image_1752053991095.png' },
+    { name: 'Steel Authority of India', logo: '/image_1752053993871.png' },
+    { name: 'Vedanta', logo: '/image_1752053997490.png' },
+    { name: 'FinOlex Pipes', logo: '/image_1752054000374.png' },
+    { name: 'UltraTech Cement', logo: '/image_1752054003624.png' },
+    { name: 'Ashirvad by Aliaxis', logo: '/image_1752054007526.png' },
+    { name: 'Havells', logo: '/image_1752054012007.png' },
+    { name: 'Polycab', logo: '/image_1752054016241.png' },
+    { name: 'Jindal Steel & Power', logo: '/image_1752054022101.png' },
+    { name: 'KSB', logo: '/image_1752053991095.png' },
+    { name: 'Steel Authority of India', logo: '/image_1752053993871.png' },
+    { name: 'Vedanta', logo: '/image_1752053997490.png' },
+    { name: 'FinOlex Pipes', logo: '/image_1752054000374.png' },
+    { name: 'UltraTech Cement', logo: '/image_1752054003624.png' },
+    { name: 'Ashirvad by Aliaxis', logo: '/image_1752054007526.png' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -166,7 +167,7 @@ export default function ClientLogosSection() {
                   <motion.div
                     key={`${currentIndex}-${index}`}
                     variants={logoVariants}
-                    className="group flex-1 max-w-60 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-6 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
+                    className="group flex-1 max-w-60 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-8 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
                     whileHover={{ 
                       scale: 1.08,
                       y: -8,
@@ -176,54 +177,29 @@ export default function ClientLogosSection() {
                     onHoverEnd={() => setHoveredCard(null)}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {/* Subtle background gradient */}
-                    <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{
-                        background: `linear-gradient(135deg, ${client.color}05, ${client.color}10)`
-                      }}
-                    />
+                    {/* Subtle background gradient on hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-gray-50 to-white" />
                     
-                    <div className="relative z-10 flex flex-col items-center justify-center h-28">
-                      {/* Company Logo Container */}
-                      <div className="w-20 h-20 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 relative overflow-hidden bg-gray-50 group-hover:bg-white">
-                        {/* Try to load real logo, fallback to initials */}
+                    <div className="relative z-10 flex items-center justify-center h-24">
+                      {/* Company Logo - Full Size */}
+                      <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                         <img 
                           src={client.logo} 
                           alt={client.name}
-                          className="w-16 h-16 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                          className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                           onError={(e) => {
                             e.currentTarget.style.display = 'none';
                             e.currentTarget.nextElementSibling.style.display = 'flex';
                           }}
                         />
                         
-                        {/* Fallback initials */}
-                        <div 
-                          className="absolute inset-0 hidden items-center justify-center rounded-xl transition-all duration-300"
-                          style={{ 
-                            background: `linear-gradient(135deg, ${client.color}20, ${client.color}40)`
-                          }}
-                        >
-                          <span 
-                            className="text-xl font-bold transition-colors duration-300"
-                            style={{ color: client.color }}
-                          >
-                            {client.initial}
+                        {/* Fallback text if logo fails */}
+                        <div className="absolute inset-0 hidden items-center justify-center">
+                          <span className="text-lg font-bold text-accent">
+                            {client.name}
                           </span>
                         </div>
                       </div>
-                      
-                      {/* Company Name */}
-                      <h3 className="text-sm font-semibold text-accent text-center group-hover:text-[#172a36] transition-colors duration-300 leading-tight">
-                        {client.name}
-                      </h3>
-                      
-                      {/* Subtle hover indicator */}
-                      <div 
-                        className="w-0 h-0.5 mt-2 group-hover:w-8 transition-all duration-300"
-                        style={{ backgroundColor: client.color }}
-                      />
                     </div>
                   </motion.div>
                 ))}
