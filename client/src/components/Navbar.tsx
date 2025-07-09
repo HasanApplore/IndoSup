@@ -167,21 +167,21 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-accent border-t border-primary/20">
               <Link 
                 to="/about" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 About Us
               </Link>
               <Link 
                 to="/solutions" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 New Initiatives
               </Link>
               <Link 
                 to="/products" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Streamlined Procurement
@@ -191,7 +191,7 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={toggleBusinessDropdown}
-                  className="flex items-center justify-between w-full px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                  className="flex items-center justify-between w-full px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 >
                   Our Businesses
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
@@ -200,14 +200,14 @@ export default function Navbar() {
                   <div className="pl-3 mt-1 space-y-1">
                     <Link 
                       to="/products/steel" 
-                      className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3"
+                      className="block px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
                       onClick={handleLinkClick}
                     >
                       Steel
                     </Link>
                     <Link 
                       to="/products/non-steel" 
-                      className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 ml-3"
+                      className="block px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
                       onClick={handleLinkClick}
                     >
                       Non-Steel
@@ -218,21 +218,21 @@ export default function Navbar() {
 
               <Link 
                 to="/media" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Media
               </Link>
               <Link 
                 to="/careers" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Career
               </Link>
               <Link 
                 to="/catalogues" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
                 Catalogues
