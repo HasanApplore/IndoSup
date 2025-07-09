@@ -67,7 +67,15 @@ export default function Navbar() {
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
-              Solutions
+              New Initiatives
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link 
+              to="/products" 
+              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
+              onClick={handleLinkClick}
+            >
+              Streamlined Procurement
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             
@@ -77,7 +85,7 @@ export default function Navbar() {
                 onClick={toggleBusinessDropdown}
                 className="flex items-center text-white hover:text-primary transition-colors duration-200 relative group"
               >
-                Our Business
+                Our Businesses
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
@@ -103,14 +111,6 @@ export default function Navbar() {
             </div>
 
             <Link 
-              to="/products" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
-              onClick={handleLinkClick}
-            >
-              Products
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link 
               to="/media" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
@@ -123,7 +123,7 @@ export default function Navbar() {
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
-              Careers
+              Career
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
@@ -140,7 +140,7 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link to="/contact">
               <Button className="bg-primary hover:bg-primary/90 text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-200">
-                Get a Quote
+                Contact Us
               </Button>
             </Link>
           </div>
@@ -172,7 +172,14 @@ export default function Navbar() {
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
-                Solutions
+                New Initiatives
+              </Link>
+              <Link 
+                to="/products" 
+                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
+                onClick={handleLinkClick}
+              >
+                Streamlined Procurement
               </Link>
               
               {/* Mobile Our Business Section */}
@@ -181,7 +188,7 @@ export default function Navbar() {
                   onClick={toggleBusinessDropdown}
                   className="flex items-center justify-between w-full px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 >
-                  Our Business
+                  Our Businesses
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isBusinessDropdownOpen && (
@@ -205,20 +212,6 @@ export default function Navbar() {
               </div>
 
               <Link 
-                to="/products" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
-                onClick={handleLinkClick}
-              >
-                Products
-              </Link>
-              <Link 
-                to="/catalogues" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
-                onClick={handleLinkClick}
-              >
-                Catalogues
-              </Link>
-              <Link 
                 to="/media" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
@@ -230,21 +223,21 @@ export default function Navbar() {
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
-                Careers
+                Career
               </Link>
               <Link 
-                to="/contact" 
+                to="/catalogues" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
-                Contact
+                Catalogues
               </Link>
               
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
                 <Link to="/contact">
                   <Button className="w-full bg-primary hover:bg-primary/90 text-accent font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg">
-                    Get a Quote
+                    Contact Us
                   </Button>
                 </Link>
               </div>
