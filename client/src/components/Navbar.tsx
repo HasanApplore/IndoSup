@@ -42,20 +42,13 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex flex-col items-start">
+          <div className="flex items-center">
             <Link to="/">
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
                 className="h-12 w-auto cursor-pointer"
               />
-            </Link>
-            <Link 
-              to="/" 
-              className="text-xs text-white/80 hover:text-primary transition-colors duration-200 mt-1"
-              onClick={handleLinkClick}
-            >
-              Home
             </Link>
           </div>
 
