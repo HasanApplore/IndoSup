@@ -43,12 +43,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/">
+            <Link to="/" className="flex items-center space-x-3">
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
                 className="h-12 w-auto cursor-pointer"
               />
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-xl tracking-wide">IndoSup</span>
+                <span className="text-white text-xs opacity-90">Digital Key to Procurement</span>
+              </div>
             </Link>
           </div>
 
