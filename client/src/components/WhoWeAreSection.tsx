@@ -1,27 +1,27 @@
 import { motion } from 'framer-motion';
-import { ShoppingCart, FileCheck, Shield, Truck } from 'lucide-react';
+import { Building2, Zap, Award, Clock } from 'lucide-react';
 
 export default function WhoWeAreSection() {
   const features = [
     {
-      icon: ShoppingCart,
-      title: "Sourcing",
-      description: "We connect you with trusted suppliers and manufacturers across the construction industry."
+      icon: Building2,
+      title: "Smart Sourcing",
+      description: "Connect with verified suppliers and get the best materials for your construction projects."
     },
     {
-      icon: FileCheck,
-      title: "Procurement",
-      description: "Streamlined purchasing processes that save time and reduce costs for your projects."
+      icon: Zap,
+      title: "Quick Procurement",
+      description: "Lightning-fast purchasing processes that cut costs and save valuable time."
     },
     {
-      icon: Shield,
-      title: "Quality Assurance",
-      description: "Rigorous testing and validation ensures every material meets the highest standards."
+      icon: Award,
+      title: "Premium Quality",
+      description: "Every material is rigorously tested to meet industry standards and exceed expectations."
     },
     {
-      icon: Truck,
-      title: "Delivery",
-      description: "On-time delivery coordination that keeps your construction timeline on track."
+      icon: Clock,
+      title: "On-Time Delivery",
+      description: "Reliable delivery schedules that keep your projects moving forward without delays."
     }
   ];
 
@@ -65,25 +65,28 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-20 bg-secondary">
+    <section className="py-12 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-6 font-inter">
-            Who We Are
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-3 font-inter">
+            Why Choose IndoSup?
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <p className="text-neutral-base text-sm md:text-base max-w-2xl mx-auto mb-4">
+            We simplify construction procurement with cutting-edge technology and trusted partnerships
+          </p>
+          <div className="w-16 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
         {/* Feature Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -92,38 +95,36 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white rounded-xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 p-8 text-center hover:bg-primary/5 cursor-pointer border border-transparent hover:border-primary/20"
+              className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center cursor-pointer border border-gray-100 hover:border-primary/30"
               variants={cardVariants}
               whileHover={{
-                y: -10,
+                y: -8,
+                scale: 1.05,
                 transition: { duration: 0.3 }
               }}
             >
               {/* Icon */}
               <motion.div
-                className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300 mb-6 relative overflow-hidden"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-colors duration-300 mb-4"
                 variants={iconVariants}
                 whileHover="hover"
               >
-                <motion.div
-                  className="absolute inset-0 bg-primary/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"
-                />
-                <feature.icon className="w-9 h-9 text-accent group-hover:text-primary transition-colors duration-300 relative z-10" />
+                <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
               </motion.div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-accent mb-4 group-hover:text-primary transition-colors duration-300 font-inter">
+              <h3 className="text-lg font-semibold text-accent mb-3 group-hover:text-primary transition-colors duration-300 font-inter">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-neutral-base group-hover:text-accent/80 transition-colors duration-300 leading-relaxed text-sm">
+              <p className="text-neutral-base text-sm leading-relaxed group-hover:text-accent/90 transition-colors duration-300">
                 {feature.description}
               </p>
 
               {/* Hover Effect Line */}
               <motion.div
-                className="w-0 h-0.5 bg-primary mx-auto mt-6 group-hover:w-12 transition-all duration-300"
+                className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-10 transition-all duration-300"
               />
             </motion.div>
           ))}
