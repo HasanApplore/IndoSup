@@ -94,7 +94,7 @@ export default function Navbar() {
               
               {isBusinessDropdownOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-56 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                  className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
                   onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                   onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                 >
