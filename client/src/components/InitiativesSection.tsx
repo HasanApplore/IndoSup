@@ -104,15 +104,15 @@ export default function InitiativesSection() {
                 />
                 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary text-white">
+                <div className="absolute top-3 left-3">
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary text-white">
                     {initiative.category}
                   </span>
                 </div>
 
                 {/* Icon Overlay */}
-                <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-accent group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  {initiative.icon}
+                <div className="absolute bottom-3 right-3 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-accent group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <div className="w-6 h-6">{initiative.icon}</div>
                 </div>
 
                 {/* Gradient Overlay */}

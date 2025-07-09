@@ -33,7 +33,7 @@ export default function CTABanner() {
         <div className="text-center">
           {/* Headline */}
           <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 md:mb-12 font-inter leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 md:mb-8 font-inter leading-tight"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -54,7 +54,7 @@ export default function CTABanner() {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-gray-200 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -71,7 +71,7 @@ export default function CTABanner() {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <motion.button
-              className="group inline-flex items-center px-10 md:px-12 py-4 md:py-5 bg-primary text-accent font-bold text-lg md:text-xl rounded-full hover:bg-accent hover:text-primary transition-all duration-300 shadow-2xl hover:shadow-primary/50 border-2 border-primary hover:border-primary"
+              className="group inline-flex items-center px-8 md:px-10 py-3 md:py-4 bg-primary text-accent font-bold text-base md:text-lg rounded-full hover:bg-accent hover:text-primary transition-all duration-300 shadow-2xl hover:shadow-primary/50 border-2 border-primary hover:border-primary"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(255, 198, 0, 0.3)"

@@ -78,7 +78,7 @@ export default function WhoWeAreSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-3 font-inter">
             Why Choose IndoSup?
           </h2>
-          <p className="text-neutral-base text-base md:text-lg max-w-2xl mx-auto mb-4">
+          <p className="text-neutral-base text-sm md:text-base max-w-xl mx-auto mb-4">
             We simplify construction procurement with cutting-edge technology and trusted partnerships
           </p>
           <div className="w-16 h-1 bg-primary mx-auto"></div>

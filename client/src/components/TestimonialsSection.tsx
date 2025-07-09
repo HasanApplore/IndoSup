@@ -114,7 +114,7 @@ export default function TestimonialsSection() {
         </motion.div>
 
         {/* Testimonials Slider */}
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 md:p-6 shadow-lg overflow-hidden relative">
             {/* Decorative Elements */}
             <div className="absolute top-0 left-0 w-16 h-16 bg-primary/5 rounded-full -translate-x-8 -translate-y-8"></div>
@@ -149,7 +149,7 @@ export default function TestimonialsSection() {
 
                 {/* Testimonial Quote */}
                 <motion.blockquote
-                  className="text-sm md:text-base lg:text-lg text-accent font-medium leading-relaxed mb-6 max-w-xl mx-auto relative"
+                  className="text-sm md:text-base lg:text-lg text-accent font-medium leading-relaxed mb-6 max-w-2xl mx-auto relative"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
@@ -222,20 +222,7 @@ export default function TestimonialsSection() {
           </button>
         </div>
 
-        {/* Navigation Indicator */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-[#041d33] w-6' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-            />
-          ))}
-        </div>
+
       </div>
     </section>
   );

@@ -93,7 +93,7 @@ export default function IndiaMapSection() {
           viewport={{ once: true }}
         >
           {/* India Map SVG */}
-          <div className="relative bg-white rounded-xl md:rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden max-w-4xl mx-auto">
+          <div className="relative bg-white rounded-xl md:rounded-2xl shadow-2xl p-4 md:p-6 overflow-hidden max-w-4xl mx-auto">
             <div className="relative">
               {/* Load the detailed India map from the SVG file */}
               <img 
