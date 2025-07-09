@@ -144,8 +144,8 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex">
             <Link to="/contact">
-              <Button className="bg-primary hover:bg-white text-accent hover:text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-110 border-2 border-primary hover:border-[#041d33] shadow-lg hover:shadow-xl">
-                <span className="transition-all duration-300 hover:scale-110">Contact Us</span>
+              <Button className="bg-primary text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary">
+                <span>Contact Us</span>
               </Button>
             </Link>
           </div>
@@ -241,8 +241,8 @@ export default function Navbar() {
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary text-accent font-semibold py-3 rounded-lg transition-all duration-300 border-2 border-primary shadow-lg">
-                    <span className="transition-all duration-300">Contact Us</span>
+                  <Button className="w-full bg-primary text-accent font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary">
+                    <span>Contact Us</span>
                   </Button>
                 </Link>
               </div>
