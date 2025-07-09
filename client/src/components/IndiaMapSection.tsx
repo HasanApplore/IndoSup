@@ -65,21 +65,21 @@ export default function IndiaMapSection() {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="section-padding bg-secondary">
+      <div className="container">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-12 md:mb-16"
+          className="text-center section-margin"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-accent mb-4 md:mb-6 font-inter">
+          <h2 className="text-accent mb-6">
             Pan-India Reach with Local Expertise
           </h2>
-          <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
-          <p className="text-base md:text-lg text-neutral-base mt-4 md:mt-6 max-w-2xl md:max-w-3xl mx-auto px-4">
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <p className="subtitle text-neutral-base mt-6 max-w-4xl mx-auto">
             Strongest presence in North & Central India, expanding nationwide with strategic partnerships
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ export default function IndiaMapSection() {
           viewport={{ once: true }}
         >
           {/* India Map SVG */}
-          <div className="relative bg-white rounded-xl md:rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden max-w-4xl mx-auto">
+          <div className="relative card-base p-6 md:p-8 overflow-hidden max-w-4xl mx-auto shadow-2xl">
             <div className="relative">
               {/* Load the detailed India map from the SVG file */}
               <img 

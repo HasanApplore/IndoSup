@@ -115,25 +115,25 @@ export default function ClientLogosSection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(3,29,51,0.05),transparent_50%)]"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+      <div className="container relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center section-margin"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 font-inter">
+          <h2 className="text-accent mb-6">
             Our Trusted Partners
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
-          <p className="text-base md:text-lg text-neutral-base max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <p className="subtitle text-neutral-base max-w-4xl mx-auto mt-6">
             Collaborating with India's leading construction and infrastructure companies to deliver excellence
           </p>
         </motion.div>
@@ -177,7 +177,7 @@ export default function ClientLogosSection() {
                   <motion.div
                     key={`${currentIndex}-${index}`}
                     variants={logoVariants}
-                    className="group flex-1 max-w-60 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-8 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
+                    className="group flex-1 max-w-60 card-base card-hover p-8 cursor-pointer relative overflow-hidden"
                     whileHover={{ 
                       scale: 1.08,
                       y: -8,
