@@ -38,8 +38,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/90 backdrop-blur-custom shadow-lg border-b border-white/10">
-      <div className="container">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/50 backdrop-blur-sm shadow-lg">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -47,8 +47,7 @@ export default function Navbar() {
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
-                className="h-12 w-auto cursor-pointer hover:scale-105 transition-transform duration-200"
-                loading="eager"
+                className="h-12 w-auto cursor-pointer"
               />
             </Link>
           </div>
@@ -144,12 +143,10 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <Link 
-              to="/contact" 
-              className="btn-primary"
-              onClick={handleLinkClick}
-            >
-              Get a Quote
+            <Link to="/contact">
+              <Button className="bg-primary hover:bg-white text-accent hover:text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-110 border-2 border-primary hover:border-[#041d33] shadow-lg hover:shadow-xl">
+                <span className="transition-all duration-300 hover:scale-110">Contact Us</span>
+              </Button>
             </Link>
           </div>
 

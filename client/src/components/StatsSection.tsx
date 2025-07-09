@@ -88,10 +88,10 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative section-padding-sm bg-neutral-dark overflow-hidden">
-      <div className="container relative z-10">
+    <section className="relative py-12 bg-neutral-dark overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -118,7 +118,7 @@ export default function StatsSection() {
 
               {/* Label */}
               <motion.h3
-                className="text-white mb-3 group-hover:text-primary transition-colors duration-300"
+                className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300 font-inter"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function StatsSection() {
 
               {/* Description */}
               <motion.p
-                className="body-small text-gray-300 group-hover:text-white transition-colors duration-300"
+                className="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors duration-300"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

@@ -65,28 +65,28 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="section-padding bg-secondary">
-      <div className="container">
-        {/* Section Heading - Enhanced with consistent typography */}
+    <section className="py-16 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
         <motion.div
-          className="text-center section-margin"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-accent mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-4 font-inter">
             Why Choose IndoSup?
           </h2>
-          <p className="subtitle text-neutral-base max-w-4xl mx-auto mb-8">
+          <p className="text-neutral-base text-lg md:text-xl max-w-3xl mx-auto mb-6">
             We simplify construction procurement with cutting-edge technology and trusted partnerships
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
-        {/* Feature Cards - Enhanced with 12-column grid system */}
+        {/* Feature Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,7 +95,7 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group card-base card-hover p-6 md:p-8 text-center cursor-pointer"
+              className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 text-center cursor-pointer border border-gray-100 hover:border-primary/30"
               variants={cardVariants}
               whileHover={{
                 y: -8,
