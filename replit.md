@@ -158,7 +158,6 @@ Changelog:
 - July 08, 2025. Fixed navbar issues: converted mobile menu anchor tags to proper Link components, fixed mobile dropdown routing, linked mobile CTA button to contact page
 - July 09, 2025. Integrated high-quality partner logos (KSB, SAIL, Vedanta, Finolex, APL Apollo, Ashirvad, Havells, Polycab) into trusted partners section with proper Vite asset imports for optimal bundling
 - July 09, 2025. Enhanced testimonials section by removing progress bar and pagination dots, added gradient background with decorative elements, improved quote styling with large quotation marks, enhanced star ratings and client information layout, upgraded navigation arrows with better hover effects
-- July 09, 2025. Optimized both trusted partners and testimonials sections for full-screen viewing with #172a36 border color theme, increased container widths to max-w-7xl, enhanced spacing and typography, improved navigation buttons and cards design for better visual hierarchy and user appeal
 
 ## User Preferences
 

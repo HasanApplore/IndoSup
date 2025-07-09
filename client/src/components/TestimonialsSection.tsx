@@ -94,8 +94,8 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Heading */}
         <motion.div
           className="text-center mb-12 md:mb-16"
@@ -114,12 +114,11 @@ export default function TestimonialsSection() {
         </motion.div>
 
         {/* Testimonials Slider */}
-        <div className="relative max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-16 shadow-2xl border-2 border-[#172a36] overflow-hidden relative">
+        <div className="relative">
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 overflow-hidden relative">
             {/* Decorative Elements */}
-            <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-full -translate-x-20 -translate-y-20"></div>
-            <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#172a36]/5 rounded-full translate-x-24 translate-y-24"></div>
-            <div className="absolute top-1/2 right-0 w-32 h-32 bg-primary/5 rounded-full translate-x-16 -translate-y-16"></div>
+            <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-full -translate-x-16 -translate-y-16"></div>
+            <div className="absolute bottom-0 right-0 w-40 h-40 bg-accent/5 rounded-full translate-x-20 translate-y-20"></div>
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -152,14 +151,14 @@ export default function TestimonialsSection() {
 
                 {/* Testimonial Quote */}
                 <motion.blockquote
-                  className="text-xl md:text-2xl lg:text-3xl text-[#172a36] font-medium leading-relaxed mb-12 max-w-4xl mx-auto relative px-8"
+                  className="text-lg md:text-xl lg:text-2xl text-accent font-medium leading-relaxed mb-10 max-w-4xl mx-auto relative"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
                 >
-                  <span className="text-primary text-8xl font-bold absolute -top-6 -left-2 opacity-25">"</span>
+                  <span className="text-primary text-6xl font-bold absolute -top-4 -left-4 opacity-20">"</span>
                   {testimonials[currentIndex].quote}
-                  <span className="text-primary text-8xl font-bold absolute -bottom-8 -right-2 opacity-25">"</span>
+                  <span className="text-primary text-6xl font-bold absolute -bottom-6 -right-4 opacity-20">"</span>
                 </motion.blockquote>
 
                 {/* Client Info */}
@@ -185,21 +184,21 @@ export default function TestimonialsSection() {
                     ))}
                   </div>
 
-                  <div className="flex items-center space-x-6">
+                  <div className="flex items-center space-x-4">
                     {/* Client Logo */}
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#172a36] to-gray-800 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-xl border-4 border-primary/20">
+                    <div className="w-20 h-20 bg-gradient-to-br from-accent to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                       {testimonials[currentIndex].logo}
                     </div>
 
                     {/* Client Details */}
                     <div className="text-left">
-                      <h4 className="text-2xl font-bold text-[#172a36] mb-2">
+                      <h4 className="text-xl font-bold text-accent mb-1">
                         {testimonials[currentIndex].name}
                       </h4>
-                      <p className="text-neutral-base font-medium mb-1 text-lg">
+                      <p className="text-neutral-base font-medium mb-1">
                         {testimonials[currentIndex].position}
                       </p>
-                      <p className="text-primary font-semibold text-xl">
+                      <p className="text-primary font-semibold text-lg">
                         {testimonials[currentIndex].company}
                       </p>
                     </div>
@@ -212,23 +211,23 @@ export default function TestimonialsSection() {
           {/* Navigation Arrows */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-6 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center text-[#172a36] hover:text-white hover:bg-[#172a36] hover:shadow-2xl transition-all duration-300 z-10 hover:scale-110 border-2 border-[#172a36]/20"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white shadow-xl rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-2xl transition-all duration-300 z-10 hover:scale-110"
           >
-            <ChevronLeft className="w-8 h-8" />
+            <ChevronLeft className="w-7 h-7" />
           </button>
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-6 top-1/2 transform -translate-y-1/2 w-16 h-16 bg-white shadow-xl rounded-full flex items-center justify-center text-[#172a36] hover:text-white hover:bg-[#172a36] hover:shadow-2xl transition-all duration-300 z-10 hover:scale-110 border-2 border-[#172a36]/20"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white shadow-xl rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-2xl transition-all duration-300 z-10 hover:scale-110"
           >
-            <ChevronRight className="w-8 h-8" />
+            <ChevronRight className="w-7 h-7" />
           </button>
         </div>
 
         {/* Testimonial Counter */}
-        <div className="flex justify-center mt-10">
-          <div className="px-6 py-3 bg-[#172a36] rounded-full shadow-lg">
-            <span className="text-sm font-semibold text-white">
+        <div className="flex justify-center mt-8">
+          <div className="px-4 py-2 bg-gray-100 rounded-full">
+            <span className="text-sm font-medium text-neutral-base">
               {currentIndex + 1} of {testimonials.length} testimonials
             </span>
           </div>
