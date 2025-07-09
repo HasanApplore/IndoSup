@@ -138,23 +138,25 @@ export default function TestimonialsSection() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-          {/* Navigation Arrows - Positioned above testimonial card */}
-          <button
-            onClick={prevTestimonial}
-            className="absolute left-8 top-2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          
-          <button
-            onClick={nextTestimonial}
-            className="absolute right-8 top-2 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-10 hover:scale-105"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
+
 
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
+            {/* Navigation Arrows - Positioned above testimonial card */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-4 -top-6 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-20 hover:scale-105"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-4 -top-6 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-20 hover:scale-105"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-white/90">
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-20 h-20 bg-primary/10 rounded-full -translate-x-10 -translate-y-10"></div>
