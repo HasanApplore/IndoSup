@@ -65,23 +65,23 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-12 bg-secondary">
+    <section className="py-8 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-10"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-3 font-inter">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-2 font-inter">
             Why Choose IndoSup?
           </h2>
-          <p className="text-neutral-base text-sm md:text-base max-w-2xl mx-auto mb-4">
+          <p className="text-neutral-base text-sm md:text-base max-w-xl mx-auto mb-3">
             We simplify construction procurement with cutting-edge technology and trusted partnerships
           </p>
-          <div className="w-16 h-1 bg-primary mx-auto"></div>
+          <div className="w-12 h-1 bg-primary mx-auto"></div>
         </motion.div>
 
         {/* Feature Cards */}
