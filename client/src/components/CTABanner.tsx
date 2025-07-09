@@ -71,7 +71,7 @@ export default function CTABanner() {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <motion.button
-              className="group inline-flex items-center px-8 md:px-10 py-3 md:py-4 bg-primary text-accent font-bold text-base md:text-lg rounded-full hover:bg-[#828d99] hover:text-white transition-all duration-300 shadow-2xl hover:shadow-primary/50 border-2 border-primary hover:border-[#828d99]"
+              className="group inline-flex items-center px-8 md:px-10 py-3 md:py-4 bg-primary text-accent font-bold text-base md:text-lg rounded-full hover:bg-transparent hover:text-white transition-all duration-300 shadow-2xl hover:shadow-primary/50 border-2 border-primary hover:border-primary"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(255, 198, 0, 0.3)"
