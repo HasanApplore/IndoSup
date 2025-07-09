@@ -241,8 +241,8 @@ export default function Navbar() {
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary hover:bg-transparent text-accent hover:text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary hover:border-primary shadow-lg hover:shadow-xl">
-                    <span className="transition-all duration-300 hover:scale-110">Contact Us</span>
+                  <Button className="w-full bg-primary text-accent font-semibold py-3 rounded-lg transition-all duration-300 border-2 border-primary shadow-lg">
+                    <span className="transition-all duration-300">Contact Us</span>
                   </Button>
                 </Link>
               </div>

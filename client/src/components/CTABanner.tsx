@@ -71,7 +71,7 @@ export default function CTABanner() {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <motion.button
-              className="group inline-flex items-center px-8 md:px-10 py-3 md:py-4 bg-primary text-accent font-bold text-base md:text-lg rounded-full hover:bg-transparent hover:text-white transition-all duration-300 shadow-2xl hover:shadow-primary/50 border-2 border-primary hover:border-primary"
+              className="group inline-flex items-center px-8 md:px-10 py-3 md:py-4 bg-primary text-accent font-bold text-base md:text-lg rounded-full transition-all duration-300 shadow-2xl border-2 border-primary"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(255, 198, 0, 0.3)"
@@ -80,7 +80,7 @@ export default function CTABanner() {
             >
               <span className="mr-3">Contact Us</span>
               <motion.div
-                className="flex items-center justify-center w-8 h-8 bg-accent/20 rounded-full group-hover:bg-white/20 transition-colors duration-300"
+                className="flex items-center justify-center w-8 h-8 bg-accent/20 rounded-full transition-colors duration-300"
                 animate={{
                   x: [0, 4, 0]
                 }}
