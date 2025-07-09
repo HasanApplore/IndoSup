@@ -13,8 +13,8 @@ export default function HeroSection() {
 
   // Set your demo video URL here
   useEffect(() => {
-    // Using a construction and architecture video
-    const demoVideoUrl = "https://www.youtube.com/watch?v=G3ja6Hn8ps4"; // Construction and architecture video
+    // Using specified construction video
+    const demoVideoUrl = "https://www.youtube.com/watch?v=4BzjUq921Y4"; // Construction video (0-6 seconds)
     const videoId = extractYouTubeId(demoVideoUrl);
     if (videoId) {
       setYoutubeVideoId(videoId);
@@ -28,7 +28,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 w-full h-full">
           <iframe
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1`}
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=6`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
