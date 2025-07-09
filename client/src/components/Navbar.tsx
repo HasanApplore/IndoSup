@@ -91,20 +91,25 @@ export default function Navbar() {
               </button>
               
               {isBusinessDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-xl py-2 z-50 border border-gray-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-accent/95 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
+                  <div className="px-4 py-2 text-primary font-bold text-sm uppercase tracking-wide border-b border-primary/20 mb-2">
+                    Our Businesses
+                  </div>
                   <Link 
                     to="/products/steel" 
-                    className="block px-4 py-3 text-accent hover:bg-primary hover:text-accent transition-colors duration-200 font-medium"
+                    className="flex items-center px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium group rounded-md mx-2"
                     onClick={handleLinkClick}
                   >
-                    Steel
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-200"></span>
+                    Steel Products
                   </Link>
                   <Link 
                     to="/products/non-steel" 
-                    className="block px-4 py-3 text-accent hover:bg-primary hover:text-accent transition-colors duration-200 font-medium"
+                    className="flex items-center px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium group rounded-md mx-2"
                     onClick={handleLinkClick}
                   >
-                    Non-Steel
+                    <span className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-200"></span>
+                    Non-Steel Products
                   </Link>
                 </div>
               )}
@@ -139,8 +144,8 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex">
             <Link to="/contact">
-              <Button className="bg-primary hover:bg-accent text-accent hover:text-primary font-semibold px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105 border-2 border-primary hover:border-primary">
-                Contact Us
+              <Button className="bg-primary hover:bg-white text-accent hover:text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-110 border-2 border-primary hover:border-[#041d33] shadow-lg hover:shadow-xl">
+                <span className="transition-all duration-300 hover:scale-110">Contact Us</span>
               </Button>
             </Link>
           </div>
@@ -236,8 +241,8 @@ export default function Navbar() {
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary hover:bg-accent text-accent hover:text-primary font-semibold py-3 rounded-lg transition-all duration-200 hover:scale-105 border-2 border-primary hover:border-primary shadow-lg">
-                    Contact Us
+                  <Button className="w-full bg-primary hover:bg-white text-accent hover:text-accent font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary hover:border-[#041d33] shadow-lg hover:shadow-xl">
+                    <span className="transition-all duration-300 hover:scale-110">Contact Us</span>
                   </Button>
                 </Link>
               </div>
