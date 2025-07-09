@@ -33,6 +33,7 @@ export default function ClientLogosSection() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const itemsPerPage = 4;
 
   const totalPages = Math.ceil(clientLogos.length / itemsPerPage);
@@ -43,10 +44,24 @@ export default function ClientLogosSection() {
     
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalPages);
-    }, 3000);
+    }, 4000); // Slightly longer for better UX
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, totalPages]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % totalPages);
@@ -121,16 +136,18 @@ export default function ClientLogosSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/80 hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 hover:bg-primary shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-gray-200 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={currentIndex === 0}
           >
-            <ChevronLeft className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />
+            <ChevronLeft className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/80 hover:bg-white shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 hover:bg-primary shadow-lg hover:shadow-xl rounded-full p-3 transition-all duration-300 group hover:scale-110 backdrop-blur-sm border border-gray-200 hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={currentIndex === totalPages - 1}
           >
-            <ChevronRight className="w-6 h-6 text-accent group-hover:text-primary transition-colors" />
+            <ChevronRight className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
           </button>
 
           {/* Logos Container */}
@@ -138,7 +155,7 @@ export default function ClientLogosSection() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                className="flex gap-6 justify-center"
+                className="flex gap-3 justify-center"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -149,12 +166,15 @@ export default function ClientLogosSection() {
                   <motion.div
                     key={`${currentIndex}-${index}`}
                     variants={logoVariants}
-                    className="group flex-1 max-w-64 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-8 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
+                    className="group flex-1 max-w-60 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-6 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
                     whileHover={{ 
                       scale: 1.08,
                       y: -8,
                       transition: { duration: 0.3 }
                     }}
+                    onHoverStart={() => setHoveredCard(index)}
+                    onHoverEnd={() => setHoveredCard(null)}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {/* Subtle background gradient */}
                     <div 
@@ -212,19 +232,36 @@ export default function ClientLogosSection() {
           </div>
         </div>
 
-        {/* Dots Navigation */}
-        <div className="flex justify-center mt-8 space-x-2">
+        {/* Dots Navigation with Progress */}
+        <div className="flex justify-center mt-8 space-x-3">
           {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 hover:scale-125 ${
+              className={`relative w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
                 index === currentIndex 
                   ? 'bg-primary scale-150 shadow-md' 
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
-            />
+            >
+              {/* Auto-play progress indicator */}
+              {index === currentIndex && isAutoPlaying && (
+                <div className="absolute inset-0 rounded-full border-2 border-primary/30">
+                  <div 
+                    className="absolute inset-0 rounded-full border-2 border-primary border-t-transparent animate-spin"
+                    style={{ animationDuration: '4s' }}
+                  />
+                </div>
+              )}
+            </button>
           ))}
+        </div>
+
+        {/* Slide Counter */}
+        <div className="flex justify-center mt-4">
+          <span className="text-sm text-neutral-base bg-white/80 px-3 py-1 rounded-full backdrop-blur-sm">
+            {currentIndex + 1} / {totalPages}
+          </span>
         </div>
       </div>
     </section>
