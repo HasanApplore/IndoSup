@@ -2,34 +2,44 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import logos as assets for proper bundling
+import ksbLogo from '@/assets/ksb-logo.png';
+import sailLogo from '@/assets/sail-logo.png';
+import vedantaLogo from '@/assets/vedanta-logo.png';
+import finolexLogo from '@/assets/finolex-pipes-logo.png';
+import aplapolloLogo from '@/assets/aplapollo-logo.png';
+import ashirvadLogo from '@/assets/ashirvad-logo.webp';
+import havellsLogo from '@/assets/havells-logo.webp';
+import polycabLogo from '@/assets/polycab-logo.png';
+
 export default function ClientLogosSection() {
-  // Client logos data - using high-quality partner logos
+  // Client logos data - using imported assets for proper bundling
   const clientLogos = [
-    { name: 'KSB', logo: '/ksb-logo.png' },
-    { name: 'Steel Authority of India (SAIL)', logo: '/sail-logo.png' },
-    { name: 'Vedanta Limited', logo: '/vedanta-logo.png' },
-    { name: 'Finolex Pipes', logo: '/finolex-pipes-logo.png' },
-    { name: 'APL Apollo', logo: '/aplapollo-logo.png' },
-    { name: 'Ashirvad by Aliaxis', logo: '/ashirvad-logo.webp' },
-    { name: 'Havells', logo: '/havells-logo.webp' },
-    { name: 'Polycab', logo: '/polycab-logo.png' },
+    { name: 'KSB', logo: ksbLogo },
+    { name: 'Steel Authority of India (SAIL)', logo: sailLogo },
+    { name: 'Vedanta Limited', logo: vedantaLogo },
+    { name: 'Finolex Pipes', logo: finolexLogo },
+    { name: 'APL Apollo', logo: aplapolloLogo },
+    { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
+    { name: 'Havells', logo: havellsLogo },
+    { name: 'Polycab', logo: polycabLogo },
     // Duplicate the companies to fill more slots for carousel
-    { name: 'KSB', logo: '/ksb-logo.png' },
-    { name: 'Steel Authority of India (SAIL)', logo: '/sail-logo.png' },
-    { name: 'Vedanta Limited', logo: '/vedanta-logo.png' },
-    { name: 'Finolex Pipes', logo: '/finolex-pipes-logo.png' },
-    { name: 'APL Apollo', logo: '/aplapollo-logo.png' },
-    { name: 'Ashirvad by Aliaxis', logo: '/ashirvad-logo.webp' },
-    { name: 'Havells', logo: '/havells-logo.webp' },
-    { name: 'Polycab', logo: '/polycab-logo.png' },
-    { name: 'KSB', logo: '/ksb-logo.png' },
-    { name: 'Steel Authority of India (SAIL)', logo: '/sail-logo.png' },
-    { name: 'Vedanta Limited', logo: '/vedanta-logo.png' },
-    { name: 'Finolex Pipes', logo: '/finolex-pipes-logo.png' },
-    { name: 'APL Apollo', logo: '/aplapollo-logo.png' },
-    { name: 'Ashirvad by Aliaxis', logo: '/ashirvad-logo.webp' },
-    { name: 'Havells', logo: '/havells-logo.webp' },
-    { name: 'Polycab', logo: '/polycab-logo.png' }
+    { name: 'KSB', logo: ksbLogo },
+    { name: 'Steel Authority of India (SAIL)', logo: sailLogo },
+    { name: 'Vedanta Limited', logo: vedantaLogo },
+    { name: 'Finolex Pipes', logo: finolexLogo },
+    { name: 'APL Apollo', logo: aplapolloLogo },
+    { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
+    { name: 'Havells', logo: havellsLogo },
+    { name: 'Polycab', logo: polycabLogo },
+    { name: 'KSB', logo: ksbLogo },
+    { name: 'Steel Authority of India (SAIL)', logo: sailLogo },
+    { name: 'Vedanta Limited', logo: vedantaLogo },
+    { name: 'Finolex Pipes', logo: finolexLogo },
+    { name: 'APL Apollo', logo: aplapolloLogo },
+    { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
+    { name: 'Havells', logo: havellsLogo },
+    { name: 'Polycab', logo: polycabLogo }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -189,13 +199,14 @@ export default function ClientLogosSection() {
                           className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"
                           loading="lazy"
                           onError={(e) => {
+                            console.log(`Failed to load logo: ${client.logo}`);
                             e.currentTarget.style.display = 'none';
                             e.currentTarget.nextElementSibling.style.display = 'flex';
                           }}
                         />
                         
                         {/* Fallback text if logo fails */}
-                        <div className="absolute inset-0 hidden items-center justify-center">
+                        <div className="absolute inset-0 hidden items-center justify-center bg-gray-100 rounded-lg">
                           <span className="text-lg font-bold text-accent text-center px-2">
                             {client.name}
                           </span>
