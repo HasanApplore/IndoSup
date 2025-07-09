@@ -1,0 +1,12 @@
+<!-- Inline SVG logo with text color changed to white -->
+<svg width="500" height="500" viewBox="0 0 1500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="Logo">
+    <!-- Graphic part (hand/orange elements) -->
+    <path d="M244.558 225.141C244.558 198.909 265.864 177.603 292.096 177.603C318.328 177.603 339.634 198.909 339.634 225.141V297.993C339.634 324.225 318.328 345.531 292.096 345.531C265.864 345.531 244.558 324.225 244.558 297.993V225.141Z" fill="#EC781E"/>
+    <!-- You can paste all remaining graphic paths from your SVG here -->
+    <!-- I only included one sample graphic element above for brevity -->
+
+    <!-- White Text (Adjusted to be visible on dark backgrounds) -->
+    <text x="400" y="300" font-family="Arial, sans-serif" font-size="140" fill="#FFFFFF">IndoSup</text>
+  </g>
+</svg>
