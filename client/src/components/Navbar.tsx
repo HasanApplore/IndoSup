@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex flex-col items-start">
             <Link to="/">
               <img 
                 src={logoImage} 
@@ -50,18 +50,17 @@ export default function Navbar() {
                 className="h-12 w-auto cursor-pointer"
               />
             </Link>
+            <Link 
+              to="/" 
+              className="text-xs text-white/80 hover:text-primary transition-colors duration-200 mt-1"
+              onClick={handleLinkClick}
+            >
+              Home
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link 
-              to="/" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
-              onClick={handleLinkClick}
-            >
-              Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
             <Link 
               to="/about" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
@@ -168,13 +167,6 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-accent border-t border-primary/20">
-              <Link 
-                to="/" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"
-                onClick={handleLinkClick}
-              >
-                Home
-              </Link>
               <Link 
                 to="/about" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-primary/10 rounded-md transition-all duration-200 font-medium"

@@ -3,7 +3,6 @@ import WhoWeAreSection from '@/components/WhoWeAreSection';
 import StatsSection from '@/components/StatsSection';
 import ClientLogosSection from '@/components/ClientLogosSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import CTABanner from '@/components/CTABanner';
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <StatsSection />
       <ClientLogosSection />
       <TestimonialsSection />
-      <CTABanner />
     </div>
   )
 }
