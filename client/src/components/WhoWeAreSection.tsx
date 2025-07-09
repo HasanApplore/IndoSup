@@ -86,7 +86,7 @@ export default function WhoWeAreSection() {
 
         {/* Feature Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,7 +95,7 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center cursor-pointer border border-gray-100 hover:border-primary/30"
+              className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-8 text-center cursor-pointer border border-gray-100 hover:border-primary/30"
               variants={cardVariants}
               whileHover={{
                 y: -8,
@@ -105,26 +105,26 @@ export default function WhoWeAreSection() {
             >
               {/* Icon */}
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-colors duration-300 mb-4"
+                className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 group-hover:bg-primary transition-colors duration-300 mb-6"
                 variants={iconVariants}
                 whileHover="hover"
               >
-                <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+                <feature.icon className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-300" />
               </motion.div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-accent mb-3 group-hover:text-primary transition-colors duration-300 font-inter">
+              <h3 className="text-xl font-bold text-accent mb-4 group-hover:text-primary transition-colors duration-300 font-inter">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-neutral-base text-sm leading-relaxed group-hover:text-accent/90 transition-colors duration-300">
+              <p className="text-neutral-base text-base leading-relaxed group-hover:text-accent/90 transition-colors duration-300">
                 {feature.description}
               </p>
 
               {/* Hover Effect Line */}
               <motion.div
-                className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-10 transition-all duration-300"
+                className="w-0 h-0.5 bg-primary mx-auto mt-5 group-hover:w-12 transition-all duration-300"
               />
             </motion.div>
           ))}
