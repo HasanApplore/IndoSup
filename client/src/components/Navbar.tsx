@@ -139,7 +139,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex">
             <Link to="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-200">
+              <Button className="bg-primary hover:bg-accent text-accent hover:text-primary font-semibold px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105 border-2 border-primary hover:border-primary">
                 Contact Us
               </Button>
             </Link>
@@ -236,7 +236,7 @@ export default function Navbar() {
               {/* Mobile CTA Button */}
               <div className="px-3 py-3 border-t border-primary/20 mt-2">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-accent font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg">
+                  <Button className="w-full bg-primary hover:bg-accent text-accent hover:text-primary font-semibold py-3 rounded-lg transition-all duration-200 hover:scale-105 border-2 border-primary hover:border-primary shadow-lg">
                     Contact Us
                   </Button>
                 </Link>
