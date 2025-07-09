@@ -3,33 +3,33 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ClientLogosSection() {
-  // Client logos data - using provided company logos
+  // Client logos data - using high-quality partner logos
   const clientLogos = [
-    { name: 'KSB', logo: '/image_1752053991095.png' },
-    { name: 'Steel Authority of India', logo: '/image_1752053993871.png' },
-    { name: 'Vedanta', logo: '/image_1752053997490.png' },
-    { name: 'FinOlex Pipes', logo: '/image_1752054000374.png' },
-    { name: 'UltraTech Cement', logo: '/image_1752054003624.png' },
-    { name: 'Ashirvad by Aliaxis', logo: '/image_1752054007526.png' },
-    { name: 'Havells', logo: '/image_1752054012007.png' },
-    { name: 'Polycab', logo: '/image_1752054016241.png' },
-    { name: 'Jindal Steel & Power', logo: '/image_1752054022101.png' },
-    // Duplicate the companies to fill more slots
-    { name: 'KSB', logo: '/image_1752053991095.png' },
-    { name: 'Steel Authority of India', logo: '/image_1752053993871.png' },
-    { name: 'Vedanta', logo: '/image_1752053997490.png' },
-    { name: 'FinOlex Pipes', logo: '/image_1752054000374.png' },
-    { name: 'UltraTech Cement', logo: '/image_1752054003624.png' },
-    { name: 'Ashirvad by Aliaxis', logo: '/image_1752054007526.png' },
-    { name: 'Havells', logo: '/image_1752054012007.png' },
-    { name: 'Polycab', logo: '/image_1752054016241.png' },
-    { name: 'Jindal Steel & Power', logo: '/image_1752054022101.png' },
-    { name: 'KSB', logo: '/image_1752053991095.png' },
-    { name: 'Steel Authority of India', logo: '/image_1752053993871.png' },
-    { name: 'Vedanta', logo: '/image_1752053997490.png' },
-    { name: 'FinOlex Pipes', logo: '/image_1752054000374.png' },
-    { name: 'UltraTech Cement', logo: '/image_1752054003624.png' },
-    { name: 'Ashirvad by Aliaxis', logo: '/image_1752054007526.png' }
+    { name: 'KSB', logo: '/ksb-logo.png' },
+    { name: 'Steel Authority of India (SAIL)', logo: '/sail-logo.png' },
+    { name: 'Vedanta Limited', logo: '/vedanta-logo.png' },
+    { name: 'Finolex Pipes', logo: '/finolex-pipes-logo.png' },
+    { name: 'APL Apollo', logo: '/aplapollo-logo.png' },
+    { name: 'Ashirvad by Aliaxis', logo: '/ashirvad-logo.webp' },
+    { name: 'Havells', logo: '/havells-logo.webp' },
+    { name: 'Polycab', logo: '/polycab-logo.png' },
+    // Duplicate the companies to fill more slots for carousel
+    { name: 'KSB', logo: '/ksb-logo.png' },
+    { name: 'Steel Authority of India (SAIL)', logo: '/sail-logo.png' },
+    { name: 'Vedanta Limited', logo: '/vedanta-logo.png' },
+    { name: 'Finolex Pipes', logo: '/finolex-pipes-logo.png' },
+    { name: 'APL Apollo', logo: '/aplapollo-logo.png' },
+    { name: 'Ashirvad by Aliaxis', logo: '/ashirvad-logo.webp' },
+    { name: 'Havells', logo: '/havells-logo.webp' },
+    { name: 'Polycab', logo: '/polycab-logo.png' },
+    { name: 'KSB', logo: '/ksb-logo.png' },
+    { name: 'Steel Authority of India (SAIL)', logo: '/sail-logo.png' },
+    { name: 'Vedanta Limited', logo: '/vedanta-logo.png' },
+    { name: 'Finolex Pipes', logo: '/finolex-pipes-logo.png' },
+    { name: 'APL Apollo', logo: '/aplapollo-logo.png' },
+    { name: 'Ashirvad by Aliaxis', logo: '/ashirvad-logo.webp' },
+    { name: 'Havells', logo: '/havells-logo.webp' },
+    { name: 'Polycab', logo: '/polycab-logo.png' }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -120,11 +120,11 @@ export default function ClientLogosSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 font-inter">
-            Trusted by Industry Leaders
+            Our Trusted Partners
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
           <p className="text-base md:text-lg text-neutral-base max-w-2xl mx-auto">
-            Proud to partner with India's leading construction and infrastructure companies
+            Collaborating with India's leading construction and infrastructure companies to deliver excellence
           </p>
         </motion.div>
 
@@ -181,12 +181,13 @@ export default function ClientLogosSection() {
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-gray-50 to-white" />
                     
                     <div className="relative z-10 flex items-center justify-center h-24">
-                      {/* Company Logo - Full Size */}
+                      {/* Company Logo - Optimized for partner logos */}
                       <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                         <img 
                           src={client.logo} 
-                          alt={client.name}
-                          className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                          alt={`${client.name} - Trusted Partner`}
+                          className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"
+                          loading="lazy"
                           onError={(e) => {
                             e.currentTarget.style.display = 'none';
                             e.currentTarget.nextElementSibling.style.display = 'flex';
@@ -195,7 +196,7 @@ export default function ClientLogosSection() {
                         
                         {/* Fallback text if logo fails */}
                         <div className="absolute inset-0 hidden items-center justify-center">
-                          <span className="text-lg font-bold text-accent">
+                          <span className="text-lg font-bold text-accent text-center px-2">
                             {client.name}
                           </span>
                         </div>
