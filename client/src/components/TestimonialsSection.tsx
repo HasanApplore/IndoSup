@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
             
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 -top-6 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-20 hover:scale-105"
+              className="absolute right-4 -top-6 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-20 hover:scale-105 mr-[-38px] ml-[-38px] mt-[142px] mb-[142px]"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
