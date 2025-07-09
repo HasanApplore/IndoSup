@@ -181,7 +181,19 @@ export default function TestimonialsSection() {
                   }}
                   className="text-center pt-8"
                 >
-                  
+                  {/* Star Rating */}
+                  <div className="flex items-center justify-center gap-1 mb-6">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-5 h-5 ${
+                          i < currentTestimonial.rating
+                            ? 'text-yellow-400 fill-yellow-400'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
 
                   {/* Testimonial Quote */}
                   <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
