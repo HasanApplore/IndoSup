@@ -181,33 +181,17 @@ export default function TestimonialsSection() {
                   }}
                   className="text-center pt-8"
                 >
-                  {/* Client Info - Moved to top */}
-                  <div className="flex items-center justify-center gap-4 mb-6">
-                    {/* Avatar */}
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                      {currentTestimonial.avatar}
-                    </div>
-                    
-                    {/* Client Details */}
-                    <div className="text-left">
-                      <h4 className="font-bold text-accent text-lg mb-1">
-                        {currentTestimonial.name}
-                      </h4>
-                      <p className="text-sm text-neutral-base mb-1">
-                        {currentTestimonial.role} at {currentTestimonial.company}
-                      </p>
-                      <p className="text-xs text-neutral-base">
-                        {currentTestimonial.location} • {currentTestimonial.project}
-                      </p>
-                    </div>
-                  </div>
+                  {/* Testimonial Quote - First */}
+                  <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-6 max-w-2xl mx-auto relative">
+                    "{currentTestimonial.testimonial}"
+                  </blockquote>
 
-                  {/* Star Rating - Moved below client info */}
+                  {/* Star Rating - Second */}
                   <div className="flex items-center justify-center gap-1 mb-6">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
+                        className={`w-4 h-4 ${
                           i < currentTestimonial.rating
                             ? 'text-yellow-400 fill-yellow-400'
                             : 'text-gray-300'
@@ -216,10 +200,26 @@ export default function TestimonialsSection() {
                     ))}
                   </div>
 
-                  {/* Testimonial Quote - Moved to bottom */}
-                  <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
-                    "{currentTestimonial.testimonial}"
-                  </blockquote>
+                  {/* Client Info - Last and smaller */}
+                  <div className="flex items-center justify-center gap-3">
+                    {/* Avatar - smaller */}
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                      {currentTestimonial.avatar}
+                    </div>
+                    
+                    {/* Client Details - smaller */}
+                    <div className="text-left">
+                      <h4 className="font-bold text-accent text-base mb-1">
+                        {currentTestimonial.name}
+                      </h4>
+                      <p className="text-xs text-neutral-base mb-0.5">
+                        {currentTestimonial.role} at {currentTestimonial.company}
+                      </p>
+                      <p className="text-xs text-neutral-base opacity-75">
+                        {currentTestimonial.location} • {currentTestimonial.project}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
