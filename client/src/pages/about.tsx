@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight, Mail } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight, Mail, HandHeart, Leaf } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
@@ -101,7 +101,7 @@ export default function About() {
   // Values data
   const values = [
     {
-      icon: <Shield className="w-6 h-6" />,
+      icon: <HandHeart className="w-6 h-6" />,
       title: "Integrity",
       description: "Honest and transparent business practices"
     },
@@ -116,7 +116,7 @@ export default function About() {
       description: "Putting customer needs at the center of everything"
     },
     {
-      icon: <Heart className="w-6 h-6" />,
+      icon: <Leaf className="w-6 h-6" />,
       title: "Sustainability",
       description: "Environmental responsibility in all operations"
     }
