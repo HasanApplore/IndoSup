@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
+import contactBannerImage from '@assets/image_1752154570513.png';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -98,9 +99,9 @@ export default function Contact() {
       <section className="relative bg-gradient-to-r from-primary to-[#FFD700] text-accent py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="Construction site contact"
-            className="w-full h-full object-cover opacity-20"
+            src={contactBannerImage}
+            alt="Contact Us - Customer Service Representative"
+            className="w-full h-full object-cover opacity-30"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
