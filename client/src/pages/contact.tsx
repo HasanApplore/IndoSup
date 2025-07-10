@@ -93,10 +93,17 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="bg-accent text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+      <section className="relative bg-gradient-to-r from-primary to-[#FFD700] text-accent py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Construction site contact"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
             initial={{ opacity: 0, y: 30 }}
@@ -106,7 +113,7 @@ export default function Contact() {
             Contact Us
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-accent/80 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -118,20 +125,21 @@ export default function Contact() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-20">
+      <section className="py-5 md:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
                 Send us a Message
               </h2>
-              <div className="w-16 h-1 bg-primary mb-8"></div>
+              <div className="w-16 h-1 bg-primary mb-8 mx-auto"></div>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -227,167 +235,12 @@ export default function Contact() {
                 </motion.button>
               </form>
             </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
-                  Get in Touch
-                </h2>
-                <div className="w-16 h-1 bg-primary mb-8"></div>
-              </div>
-
-              {/* Quick Contact */}
-              <div className="space-y-4">
-                <motion.a
-                  href="tel:+912245678900"
-                  className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-accent transition-all duration-300 group"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <Phone className="w-6 h-6 text-primary group-hover:text-accent mr-4" />
-                  <div>
-                    <p className="font-semibold">Call Us</p>
-                    <p className="text-neutral-base group-hover:text-accent">+91 22 4567 8900</p>
-                  </div>
-                </motion.a>
-
-                <motion.a
-                  href="mailto:info@indosup.com"
-                  className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-accent transition-all duration-300 group"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <Mail className="w-6 h-6 text-primary group-hover:text-accent mr-4" />
-                  <div>
-                    <p className="font-semibold">Email Us</p>
-                    <p className="text-neutral-base group-hover:text-accent">info@indosup.com</p>
-                  </div>
-                </motion.a>
-
-                <motion.a
-                  href="https://wa.me/912245678900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-primary hover:text-accent transition-all duration-300 group"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <MessageCircle className="w-6 h-6 text-primary group-hover:text-accent mr-4" />
-                  <div>
-                    <p className="font-semibold">WhatsApp</p>
-                    <p className="text-neutral-base group-hover:text-accent">Chat with us instantly</p>
-                  </div>
-                </motion.a>
-              </div>
-
-              {/* Social Media */}
-              <div>
-                <h3 className="text-xl font-bold text-accent mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => {
-                    const IconComponent = social.icon;
-                    return (
-                      <motion.a
-                        key={index}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-accent hover:bg-primary hover:text-accent hover:scale-110 transition-all duration-300"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        title={social.label}
-                      >
-                        <IconComponent className="w-5 h-5" />
-                      </motion.a>
-                    );
-                  })}
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Office Locations */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 font-inter">
-              Our Offices
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto"></div>
-            <p className="text-lg text-neutral-base mt-6 max-w-2xl mx-auto">
-              Visit us at any of our offices across India for in-person consultations and support.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {offices.map((office) => (
-              <motion.div
-                key={office.id}
-                variants={itemVariants}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mr-4">
-                    <Building className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-accent">{office.city}</h3>
-                    <p className="text-sm text-primary font-medium">{office.title}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-neutral-base text-sm leading-relaxed">{office.address}</p>
-                  </div>
-
-                  <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-primary mr-3" />
-                    <a href={`tel:${office.phone}`} className="text-accent hover:text-primary transition-colors">
-                      {office.phone}
-                    </a>
-                  </div>
-
-                  <div className="flex items-center">
-                    <Mail className="w-5 h-5 text-primary mr-3" />
-                    <a href={`mailto:${office.email}`} className="text-accent hover:text-primary transition-colors">
-                      {office.email}
-                    </a>
-                  </div>
-
-                  <div className="flex items-center">
-                    <Clock className="w-5 h-5 text-primary mr-3" />
-                    <p className="text-neutral-base text-sm">{office.hours}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Google Map */}
-      <section className="py-16 md:py-20">
+      <section className="py-5 md:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-12"
@@ -401,7 +254,7 @@ export default function Contact() {
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto"></div>
             <p className="text-lg text-neutral-base mt-6 max-w-2xl mx-auto">
-              Locate our offices and plan your visit with our interactive map.
+              Visit our office at C-120, 2nd Floor, Sector 2, Noida, Uttar Pradesh - 201301
             </p>
           </motion.div>
 
@@ -414,14 +267,14 @@ export default function Contact() {
           >
             <div className="aspect-video">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160992833!2d72.74109919726561!3d19.08252215967138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1640995200000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sSector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="IndoSup Office Locations"
+                title="IndoSup Office Location - Noida"
               />
             </div>
           </motion.div>
