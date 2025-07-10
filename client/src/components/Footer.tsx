@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Send, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import indosupLogo from '../assets/indosup-logo-transparent.png';
+import indosupLogo from '@assets/Frame-9-2-removebg-preview_1752126166290.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
