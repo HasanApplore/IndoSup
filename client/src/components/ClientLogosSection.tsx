@@ -52,9 +52,9 @@ export default function ClientLogosSection() {
 
         {/* Infinite Scrolling Carousel */}
         <div className="relative overflow-hidden py-6">
-          {/* Seamless Gradient Overlays - blend with homepage background */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
+          {/* Invisible gradient overlays for smooth carousel transitions */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
           
           {/* Moving Strip Container */}
           <div 

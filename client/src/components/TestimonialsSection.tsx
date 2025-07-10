@@ -137,7 +137,7 @@ export default function TestimonialsSection() {
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
 
-            <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-white/80">
+            <div className="bg-[#fbfbfc]/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-[#fbfbfc]">
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-20 h-20 bg-primary/10 rounded-full -translate-x-10 -translate-y-10"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
