@@ -1,6 +1,5 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 // Import logos as assets for proper bundling
 import ksbLogo from '@/assets/ksb-logo.png';
@@ -13,6 +12,8 @@ import havellsLogo from '@/assets/havells-logo.webp';
 import polycabLogo from '@/assets/polycab-logo.png';
 
 export default function ClientLogosSection() {
+  const [isHovered, setIsHovered] = useState(false);
+
   // Client logos data - using imported assets for proper bundling
   const clientLogos = [
     { name: 'KSB', logo: ksbLogo },
@@ -23,96 +24,10 @@ export default function ClientLogosSection() {
     { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
     { name: 'Havells', logo: havellsLogo },
     { name: 'Polycab', logo: polycabLogo },
-    // Duplicate the companies to fill more slots for carousel
-    { name: 'KSB', logo: ksbLogo },
-    { name: 'Steel Authority of India (SAIL)', logo: sailLogo },
-    { name: 'Vedanta Limited', logo: vedantaLogo },
-    { name: 'Finolex Pipes', logo: finolexLogo },
-    { name: 'APL Apollo', logo: aplapolloLogo },
-    { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
-    { name: 'Havells', logo: havellsLogo },
-    { name: 'Polycab', logo: polycabLogo },
-    { name: 'KSB', logo: ksbLogo },
-    { name: 'Steel Authority of India (SAIL)', logo: sailLogo },
-    { name: 'Vedanta Limited', logo: vedantaLogo },
-    { name: 'Finolex Pipes', logo: finolexLogo },
-    { name: 'APL Apollo', logo: aplapolloLogo },
-    { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
-    { name: 'Havells', logo: havellsLogo },
-    { name: 'Polycab', logo: polycabLogo }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const itemsPerPage = 4;
-
-  const totalPages = Math.ceil(clientLogos.length / itemsPerPage);
-
-  // Auto-play functionality
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalPages);
-    }, 2000); // Faster transitions
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, totalPages]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        prevSlide();
-      } else if (e.key === 'ArrowRight') {
-        nextSlide();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  const getCurrentPageItems = () => {
-    const start = currentIndex * itemsPerPage;
-    return clientLogos.slice(start, start + itemsPerPage);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const logoVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
+  // Create multiple sets for infinite scroll animation
+  const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
     <section className="py-6 md:py-10 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
@@ -123,7 +38,7 @@ export default function ClientLogosSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-6"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -138,76 +53,75 @@ export default function ClientLogosSection() {
           </p>
         </motion.div>
 
-        {/* Carousel Container */}
-        <div 
-          className="relative pt-4 pb-3"
-          onMouseEnter={() => setIsAutoPlaying(false)}
-          onMouseLeave={() => setIsAutoPlaying(true)}
-        >
-
-
-          {/* Logos Container */}
-          <div className="overflow-visible rounded-2xl py-4">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                className="flex gap-3 justify-center"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                transition={{ duration: 0.5 }}
-              >
-                {getCurrentPageItems().map((client, index) => (
-                  <motion.div
-                    key={`${currentIndex}-${index}`}
-                    variants={logoVariants}
-                    className="group flex-1 max-w-48 bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 p-6 cursor-pointer border-2 border-gray-100 hover:border-primary/30 relative overflow-hidden"
-                    whileHover={{ 
-                      scale: 1.08,
-                      y: -8,
-                      transition: { duration: 0.3 }
-                    }}
-                    onHoverStart={() => setHoveredCard(index)}
-                    onHoverEnd={() => setHoveredCard(null)}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {/* Subtle background gradient on hover */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-gray-50 to-white" />
+        {/* Infinite Scrolling Carousel */}
+        <div className="relative overflow-hidden">
+          {/* Gradient Overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white via-white/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white via-white/50 to-transparent z-20 pointer-events-none"></div>
+          
+          {/* Moving Strip Container */}
+          <div 
+            className="flex gap-8 py-8"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* First Set */}
+            <motion.div
+              className="flex gap-8 items-center"
+              animate={{
+                x: [0, -100 * clientLogos.length],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: isHovered ? 40 : 20, // Slower on hover
+                  ease: "linear",
+                },
+              }}
+            >
+              {repeatedLogos.map((client, index) => (
+                <motion.div
+                  key={`set1-${index}`}
+                  className="group flex-shrink-0 w-32 h-20 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-4 cursor-pointer border border-gray-100 hover:border-primary/30 relative overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -4,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  {/* Hover Background */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/5 to-primary/10" />
+                  
+                  <div className="relative z-10 flex items-center justify-center h-full">
+                    <img 
+                      src={client.logo} 
+                      alt={`${client.name} - Trusted Partner`}
+                      className="max-w-full max-h-full object-contain filter grayscale-[0.2] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.log(`Failed to load logo: ${client.logo}`);
+                        const target = e.currentTarget as HTMLImageElement;
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) {
+                          target.style.display = 'none';
+                          fallback.style.display = 'flex';
+                        }
+                      }}
+                    />
                     
-                    <div className="relative z-10 flex items-center justify-center h-20">
-                      {/* Company Logo - Optimized for partner logos */}
-                      <div className="w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                        <img 
-                          src={client.logo} 
-                          alt={`${client.name} - Trusted Partner`}
-                          className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"
-                          loading="lazy"
-                          onError={(e) => {
-                            console.log(`Failed to load logo: ${client.logo}`);
-                            e.currentTarget.style.display = 'none';
-                            e.currentTarget.nextElementSibling.style.display = 'flex';
-                          }}
-                        />
-                        
-                        {/* Fallback text if logo fails */}
-                        <div className="absolute inset-0 hidden items-center justify-center bg-gray-100 rounded-lg">
-                          <span className="text-lg font-bold text-accent text-center px-2">
-                            {client.name}
-                          </span>
-                        </div>
-                      </div>
+                    {/* Fallback text if logo fails */}
+                    <div className="absolute inset-0 hidden items-center justify-center bg-gray-50 rounded-lg">
+                      <span className="text-xs font-bold text-accent text-center px-2">
+                        {client.name}
+                      </span>
                     </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
-
-
-
-
       </div>
     </section>
   );
