@@ -87,33 +87,35 @@ export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden h-screen">
       {/* CSS to hide YouTube suggestions and overlays */}
-      <style jsx>{`
-        .youtube-container iframe {
-          pointer-events: none !important;
-        }
-        .youtube-container::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: transparent;
-          pointer-events: none;
-          z-index: 1;
-        }
-        /* Hide YouTube end screen elements */
-        .ytp-endscreen-content,
-        .ytp-ce-element,
-        .ytp-cards-teaser,
-        .ytp-pause-overlay,
-        .ytp-suggested-action,
-        .ytp-endscreen-previous,
-        .ytp-endscreen-next {
-          display: none !important;
-          visibility: hidden !important;
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .youtube-container iframe {
+            pointer-events: none !important;
+          }
+          .youtube-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            pointer-events: none;
+            z-index: 1;
+          }
+          /* Hide YouTube end screen elements */
+          .ytp-endscreen-content,
+          .ytp-ce-element,
+          .ytp-cards-teaser,
+          .ytp-pause-overlay,
+          .ytp-suggested-action,
+          .ytp-endscreen-previous,
+          .ytp-endscreen-next {
+            display: none !important;
+            visibility: hidden !important;
+          }
+        `
+      }} />
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div className="absolute inset-0 w-full h-full youtube-container">
