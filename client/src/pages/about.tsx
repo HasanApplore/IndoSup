@@ -376,75 +376,13 @@ export default function About() {
 
           {/* Content Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {/* Vision Card */}
+            {/* Mission Card */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <motion.div
-                className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-primary/20 h-full relative overflow-hidden"
-                whileHover={{ 
-                  y: -10,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Card header */}
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                    <Eye className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-accent">Vision</h3>
-                </div>
-                
-                {/* Vision content */}
-                <div className="relative">
-                  <motion.div
-                    className="text-primary text-4xl absolute -top-2 -left-2 opacity-30"
-                    animate={{ rotate: [0, 5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    "
-                  </motion.div>
-                  <p className="text-lg md:text-xl text-accent leading-relaxed font-medium pl-6">
-                    To streamline construction sourcing and procurement using smart, cost-effective, 
-                    and scalable technology solutions to build efficient and sustainable infrastructure.
-                  </p>
-                  <motion.div
-                    className="text-primary text-4xl absolute -bottom-6 -right-2 opacity-30"
-                    animate={{ rotate: [0, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    "
-                  </motion.div>
-                </div>
-
-                {/* Floating decoration */}
-                <motion.div
-                  className="absolute top-6 right-6 w-8 h-8 bg-primary/20 rounded-full"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.5, 0.8, 0.5]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-              </motion.div>
-            </motion.div>
-
-            {/* Mission Card */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
             >
               <motion.div
                 className="bg-gradient-to-br from-accent to-accent/90 rounded-3xl p-8 md:p-10 shadow-2xl h-full relative overflow-hidden text-white"
@@ -493,6 +431,68 @@ export default function About() {
                   }}
                   transition={{
                     duration: 3.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Vision Card */}
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <motion.div
+                className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-primary/20 h-full relative overflow-hidden"
+                whileHover={{ 
+                  y: -10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Card header */}
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                    <Eye className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-accent">Vision</h3>
+                </div>
+                
+                {/* Vision content */}
+                <div className="relative">
+                  <motion.div
+                    className="text-primary text-4xl absolute -top-2 -left-2 opacity-30"
+                    animate={{ rotate: [0, 5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    "
+                  </motion.div>
+                  <p className="text-lg md:text-xl text-accent leading-relaxed font-medium pl-6">
+                    To streamline construction sourcing and procurement using smart, cost-effective, 
+                    and scalable technology solutions to build efficient and sustainable infrastructure.
+                  </p>
+                  <motion.div
+                    className="text-primary text-4xl absolute -bottom-6 -right-2 opacity-30"
+                    animate={{ rotate: [0, -5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    "
+                  </motion.div>
+                </div>
+
+                {/* Floating decoration */}
+                <motion.div
+                  className="absolute top-6 right-6 w-8 h-8 bg-primary/20 rounded-full"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5]
+                  }}
+                  transition={{
+                    duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
