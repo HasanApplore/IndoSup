@@ -99,19 +99,17 @@ export default function Navbar() {
                 >
                   <Link 
                     to="/products/steel" 
-                    className="flex items-center px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium group rounded-md mx-2"
+                    className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
                     onClick={handleLinkClick}
                   >
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-200"></span>
                     Steel Products
                   </Link>
                   <div className="border-t border-primary/20 my-2 mx-4"></div>
                   <Link 
                     to="/products/non-steel" 
-                    className="flex items-center px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium group rounded-md mx-2"
+                    className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
                     onClick={handleLinkClick}
                   >
-                    <span className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:scale-125 transition-transform duration-200"></span>
                     Non-Steel Products
                   </Link>
                 </div>
