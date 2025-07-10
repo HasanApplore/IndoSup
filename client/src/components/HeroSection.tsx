@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function HeroSection() {
   const [youtubeVideoId, setYoutubeVideoId] = useState('');
+  const iframeRef = useRef(null);
 
   // Extract YouTube video ID from URL
   const extractYouTubeId = (url) => {
@@ -21,12 +22,48 @@ export default function HeroSection() {
     }
   }, []);
 
+  // YouTube API integration for video control
+  useEffect(() => {
+    if (!youtubeVideoId) return;
+
+    // Load YouTube IFrame API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Create player when API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      if (iframeRef.current) {
+        const player = new window.YT.Player(iframeRef.current, {
+          events: {
+            onStateChange: (event) => {
+              // When video ends or is paused, ensure audio stops
+              if (event.data === window.YT.PlayerState.ENDED || 
+                  event.data === window.YT.PlayerState.PAUSED) {
+                event.target.pauseVideo();
+              }
+            }
+          }
+        });
+      }
+    };
+
+    return () => {
+      // Cleanup
+      if (window.YT && window.YT.Player) {
+        window.onYouTubeIframeAPIReady = null;
+      }
+    };
+  }, [youtubeVideoId]);
+
   return (
     <section className="relative w-full overflow-hidden h-screen">
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div className="absolute inset-0 w-full h-full">
           <iframe
+            ref={iframeRef}
             className="w-full h-full"
             src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1`}
             title="IndoSup Demo Video"
