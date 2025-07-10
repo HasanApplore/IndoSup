@@ -304,9 +304,6 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
               Our Leadership
             </h2>
-            <p className="text-lg text-neutral-base mb-6 max-w-2xl mx-auto">
-              Meet the visionary leaders driving IndoSup's mission to revolutionize construction procurement
-            </p>
             <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
           </motion.div>
 
@@ -366,10 +363,10 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
+                      className="w-12 h-12 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
                     >
-                      <Linkedin className="w-4 h-4" />
+                      <Linkedin className="w-6 h-6" />
                     </a>
                   </motion.div>
                 </div>
