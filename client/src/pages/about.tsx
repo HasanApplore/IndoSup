@@ -312,13 +312,13 @@ export default function About() {
       </section>
 
       {/* Our Mission & Vision */}
-      <section className="py-16 md:py-20 relative overflow-hidden">
+      <section className="py-10 md:py-14 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
         
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"
+            className="absolute top-16 left-8 w-24 h-24 bg-primary/10 rounded-full blur-xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.6, 0.3],
@@ -330,7 +330,7 @@ export default function About() {
             }}
           />
           <motion.div
-            className="absolute bottom-20 right-10 w-40 h-40 bg-accent/10 rounded-full blur-xl"
+            className="absolute bottom-16 right-8 w-32 h-32 bg-accent/10 rounded-full blur-xl"
             animate={{
               scale: [1.2, 1, 1.2],
               opacity: [0.4, 0.7, 0.4],
@@ -346,20 +346,20 @@ export default function About() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
           {/* Section Header */}
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent font-inter">
               Our Mission & Vision
             </h2>
-            <div className="w-28 md:w-36 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6"></div>
+            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4"></div>
           </motion.div>
 
           {/* Content Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* Mission Card */}
             <motion.div
               className="relative"
@@ -369,36 +369,36 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.div
-                className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-primary/20 h-full relative overflow-hidden"
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-primary/20 h-full relative overflow-hidden"
                 whileHover={{ 
-                  y: -10,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  y: -8,
+                  boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
                 }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Card header */}
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                    <Target className="w-6 h-6 text-white" />
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                    <Target className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-accent">Mission</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-accent">Mission</h3>
                 </div>
                 
                 {/* Mission content */}
                 <div className="relative">
                   <motion.div
-                    className="text-primary text-4xl absolute -top-2 -left-2 opacity-30"
+                    className="text-primary text-3xl absolute -top-1 -left-1 opacity-30"
                     animate={{ rotate: [0, -5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     "
                   </motion.div>
-                  <p className="text-lg md:text-xl text-accent leading-relaxed font-medium pl-6">
+                  <p className="text-base md:text-lg text-accent leading-relaxed font-medium pl-5">
                     Empowering the construction ecosystem by reducing complexity in procurement, 
                     enabling transparency, and ensuring timely, high-quality delivery.
                   </p>
                   <motion.div
-                    className="text-primary text-4xl absolute -bottom-6 -right-2 opacity-30"
+                    className="text-primary text-3xl absolute -bottom-4 -right-1 opacity-30"
                     animate={{ rotate: [0, 5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -408,7 +408,7 @@ export default function About() {
 
                 {/* Floating decoration */}
                 <motion.div
-                  className="absolute top-6 right-6 w-8 h-8 bg-primary/20 rounded-full"
+                  className="absolute top-4 right-4 w-6 h-6 bg-primary/20 rounded-full"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.5, 0.8, 0.5]
@@ -431,36 +431,36 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <motion.div
-                className="bg-gradient-to-br from-accent to-accent/90 rounded-3xl p-8 md:p-10 shadow-2xl h-full relative overflow-hidden text-white"
+                className="bg-gradient-to-br from-accent to-accent/90 rounded-2xl p-6 md:p-8 shadow-xl h-full relative overflow-hidden text-white"
                 whileHover={{ 
-                  y: -10,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  y: -8,
+                  boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
                 }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Card header */}
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                    <Eye className="w-6 h-6 text-white" />
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                    <Eye className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">Vision</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">Vision</h3>
                 </div>
                 
                 {/* Vision content */}
                 <div className="relative">
                   <motion.div
-                    className="text-primary text-4xl absolute -top-2 -left-2 opacity-60"
+                    className="text-primary text-3xl absolute -top-1 -left-1 opacity-60"
                     animate={{ rotate: [0, 5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     "
                   </motion.div>
-                  <p className="text-lg md:text-xl text-white leading-relaxed font-medium pl-6">
+                  <p className="text-base md:text-lg text-white leading-relaxed font-medium pl-5">
                     To streamline construction sourcing and procurement using smart, cost-effective, 
                     and scalable technology solutions to build efficient and sustainable infrastructure.
                   </p>
                   <motion.div
-                    className="text-primary text-4xl absolute -bottom-6 -right-2 opacity-60"
+                    className="text-primary text-3xl absolute -bottom-4 -right-1 opacity-60"
                     animate={{ rotate: [0, -5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -470,7 +470,7 @@ export default function About() {
 
                 {/* Floating decoration */}
                 <motion.div
-                  className="absolute top-6 right-6 w-8 h-8 bg-primary/30 rounded-full"
+                  className="absolute top-4 right-4 w-6 h-6 bg-primary/30 rounded-full"
                   animate={{
                     scale: [1.2, 1, 1.2],
                     opacity: [0.6, 0.9, 0.6]
@@ -487,25 +487,25 @@ export default function About() {
 
           {/* Bottom decorative elements */}
           <motion.div
-            className="flex justify-center mt-12"
+            className="flex justify-center mt-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <motion.div
-                className="w-3 h-3 bg-primary rounded-full"
+                className="w-2 h-2 bg-primary rounded-full"
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
               />
               <motion.div
-                className="w-3 h-3 bg-accent rounded-full"
+                className="w-2 h-2 bg-accent rounded-full"
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
               />
               <motion.div
-                className="w-3 h-3 bg-primary rounded-full"
+                className="w-2 h-2 bg-primary rounded-full"
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
               />
