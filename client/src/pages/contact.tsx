@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/image_1752154570513.png';
 
@@ -269,7 +269,7 @@ export default function Contact() {
           >
             <div className="h-64 relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sC-120%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789&markers=color:red%7Clabel:IndoSup%7C28.5984463,77.3100975"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sC-120%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789&markers=color:red%7Csize:large%7Clabel:I%7C28.5984463,77.3100975"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -278,19 +278,19 @@ export default function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="IndoSup Office Location - C-120, 2nd Floor, Sector 2, Noida"
               />
+            </div>
+            
+            <div className="p-4 bg-gray-50 border-t">
               <a 
                 href="https://www.google.com/maps/place/C-120,+Sector+2,+Noida,+Uttar+Pradesh+201301/@28.5984463,77.3100975,17z/data=!3m1!4b1!4m5!3m4!1s0x390ce5a43173357b:0x37ffce30c87cc3b7!8m2!3d28.5984463!4d77.3100975"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                className="flex items-center justify-center space-x-2 text-accent hover:text-primary transition-colors duration-300 group"
                 title="Click to open in Google Maps"
               >
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
-                  <span className="text-sm font-medium text-accent group-hover:text-primary transition-colors duration-300">IndoSup Office</span>
-                </div>
-                <p className="text-xs text-neutral-base mt-1 group-hover:text-accent transition-colors duration-300">C-120, 2nd Floor, Sector 2</p>
-                <p className="text-xs text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to open in Maps</p>
+                <MapPin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                <span className="font-medium">Open in Google Maps</span>
+                <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </a>
             </div>
           </motion.div>
