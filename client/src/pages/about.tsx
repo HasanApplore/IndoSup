@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin } from 'lucide-react';
 import indoSupImage from '@assets/image_1752140673594.png';
-import ashmitImage from '@assets/image_1752140873464.png';
-import akshajImage from '@assets/image_1752140881350.png';
-import shivankImage from '@assets/image_1752140885431.png';
+import ashmitImage from '@assets/image-removebg-preview (3)_1752143181751.png';
+import akshajImage from '@assets/image-removebg-preview (1)_1752143181752.png';
+import shivankImage from '@assets/image-removebg-preview_1752143197457.png';
 
 export default function About() {
   // Leadership team data
@@ -250,7 +250,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 max-w-5xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -260,10 +260,10 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
+                className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative max-w-xs mx-auto"
                 whileHover={{ y: -9, scale: 1.02 }}
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-60 overflow-hidden">
                   <img
                     src={leader.image}
                     alt={leader.name}
