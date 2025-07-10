@@ -260,66 +260,81 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100"
-                whileHover={{ y: -15, scale: 1.05 }}
+                className="group bg-gradient-to-br from-white via-gray-50 to-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-primary/30 relative"
+                whileHover={{ y: -20, scale: 1.08 }}
               >
-                <div className="relative h-64 overflow-hidden">
+                {/* Premium Badge */}
+                <div className="absolute top-4 left-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  {index === 0 ? "CEO" : index === 1 ? "COO" : "CFO"}
+                </div>
+
+                <div className="relative h-72 overflow-hidden">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  {/* Floating Badge */}
+                  {/* Floating Star Badge */}
                   <motion.div 
-                    className="absolute top-4 right-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg"
                     animate={{ 
                       rotate: [0, 360],
                       scale: [1, 1.1, 1]
                     }}
                     transition={{ 
-                      duration: 2,
+                      duration: 3,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
                   >
-                    <Star className="w-4 h-4 text-white" />
+                    <Star className="w-5 h-5 text-primary" />
                   </motion.div>
-                </div>
-                
-                <div className="p-6 text-center relative">
-                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
-                    {leader.name}
-                  </h3>
-                  <p className="text-primary font-semibold mb-4">
-                    {leader.position}
-                  </p>
-                  
-                  {/* Role-specific icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-                      {index === 0 && <Building className="w-6 h-6 text-white" />}
-                      {index === 1 && <Users className="w-6 h-6 text-white" />}
-                      {index === 2 && <TrendingUp className="w-6 h-6 text-white" />}
-                    </div>
-                  </div>
-                  
-                  {/* LinkedIn Button */}
+
+                  {/* LinkedIn Button - Now visible on image */}
                   <motion.div
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    whileHover={{ scale: 1.05 }}
+                    className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                    initial={{ y: 20 }}
+                    whileHover={{ scale: 1.1, y: -5 }}
                   >
                     <a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-accent transition-colors duration-300 flex items-center mx-auto space-x-2"
+                      className="bg-[#0077B5] text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2 border-2 border-white/20"
                     >
-                      <Linkedin className="w-4 h-4" />
-                      <span>LinkedIn</span>
+                      <Linkedin className="w-5 h-5" />
+                      <span>Connect on LinkedIn</span>
                     </a>
                   </motion.div>
+                </div>
+                
+                <div className="p-8 text-center relative bg-gradient-to-b from-white to-gray-50">
+                  <h3 className="text-2xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
+                    {leader.name}
+                  </h3>
+                  <p className="text-primary font-semibold mb-4 text-lg">
+                    {leader.position}
+                  </p>
+                  
+                  {/* Role-specific icon with enhanced styling */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-accent/80 transition-all duration-500 shadow-lg group-hover:shadow-xl">
+                      {index === 0 && <Building className="w-8 h-8 text-white" />}
+                      {index === 1 && <Users className="w-8 h-8 text-white" />}
+                      {index === 2 && <TrendingUp className="w-8 h-8 text-white" />}
+                    </div>
+                  </div>
+
+                  {/* Professional Quote */}
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 mt-4">
+                    <p className="text-sm text-gray-600 italic">
+                      {index === 0 && "Leading innovation in construction procurement"}
+                      {index === 1 && "Streamlining operations for better efficiency"}
+                      {index === 2 && "Driving financial growth and sustainability"}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -464,20 +479,21 @@ export default function About() {
                 {strengths.map((strength, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-4 group"
+                    className="flex items-start space-x-4 group p-4 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-lg border border-transparent hover:border-primary/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03, x: 8 }}
                   >
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137]">
+                    <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-125 transition-all duration-300 group-hover:bg-[#092137] shadow-lg group-hover:shadow-xl">
                       {strength.icon}
                     </div>
-                    <div>
-                      <h4 className="font-bold text-accent mb-1">
+                    <div className="flex-1">
+                      <h4 className="font-bold text-accent mb-2 text-lg group-hover:text-primary transition-colors duration-300">
                         {strength.title}
                       </h4>
-                      <p className="text-neutral-base text-sm">
+                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
                         {strength.description}
                       </p>
                     </div>
@@ -502,20 +518,21 @@ export default function About() {
                 {values.map((value, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-4 group"
+                    className="flex items-start space-x-4 group p-4 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-lg border border-transparent hover:border-primary/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03, x: 8 }}
                   >
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137]">
+                    <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-125 transition-all duration-300 group-hover:bg-[#092137] shadow-lg group-hover:shadow-xl">
                       {value.icon}
                     </div>
-                    <div>
-                      <h4 className="font-bold text-accent mb-1">
+                    <div className="flex-1">
+                      <h4 className="font-bold text-accent mb-2 text-lg group-hover:text-primary transition-colors duration-300">
                         {value.title}
                       </h4>
-                      <p className="text-neutral-base text-sm">
+                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
                         {value.description}
                       </p>
                     </div>
