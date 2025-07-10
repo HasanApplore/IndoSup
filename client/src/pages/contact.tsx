@@ -101,12 +101,13 @@ export default function Contact() {
           <img 
             src={contactBannerImage}
             alt="Contact Us - Customer Service Representative"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover filter blur-sm"
           />
+          <div className="absolute inset-0 bg-white/20"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter text-accent drop-shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -114,7 +115,7 @@ export default function Contact() {
             Contact Us
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-accent/80 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-accent max-w-3xl mx-auto leading-relaxed drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
