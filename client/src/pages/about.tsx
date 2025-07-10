@@ -384,7 +384,7 @@ export default function About() {
                     </motion.a>
                     <motion.a
                       href={`mailto:${leader.email}`}
-                      className="w-10 h-10 bg-[#EA4335] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#d33b2c] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#FFC600] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#e6b300] transition-all duration-300 hover:shadow-lg"
                       title="Send Email"
                       whileHover={{ scale: 1.15 }}
                     >
