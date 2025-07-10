@@ -173,6 +173,7 @@ Changelog:
 - July 10, 2025. Enhanced homepage background with subtle gradient from #fbf5e8 to #f8f2e0 for improved visual depth and warmth
 - July 10, 2025. Updated homepage background gradient to transition from #fbf5e8 to white for cleaner, more modern appearance
 - July 10, 2025. Added new partner logos: Asian Paints, Tata Steel, Berger Paints, and Vectus to trusted partners section, replaced old Havells logo with new high-quality version
+- July 10, 2025. Completely redesigned About Us page with new content structure: "What Is IndoSup?" section with 2-column layout, leadership profiles for Ashmit Sharma (CEO), Akshaj Sharma (COO), and Shivank Saxena (CFO), vision and mission sections with quote styling, and comprehensive Strength & Values section with animated icons and hover effects
 
 ## User Preferences
 

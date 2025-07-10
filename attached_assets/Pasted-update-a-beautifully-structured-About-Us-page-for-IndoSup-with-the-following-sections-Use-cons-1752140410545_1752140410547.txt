@@ -1,0 +1,82 @@
+update a beautifully structured "About Us" page for IndoSup with the following sections. 
+
+Use consistent styling and formatting as the homepage:
+
+
+Sections:
+ 
+
+1. What Is IndoSup?
+
+ 
+Content:
+"Indosup is a convenient source for easy, hassle-free purchasing of construction material."
+
+Below it, add a short paragraph with:
+"Indosup is a comprehensive Source-to-Deliver company dedicated to the Construction industry. Our AI-enabled Sourcing Platform connects 400+ retailers, 350+ distributors, 300+ brands, and 50+ stockists, simplifying procurement from sourcing to delivery."
+
+Use 2-column layout on large screens and stacked layout on mobile. Animate text fade-in on scroll.
+
+---
+
+2. Our Leadership
+
+  
+
+Profiles:
+- Ashmit Sharma – Founder & CEO
+- Akshaj Sharma – Co-founder & COO
+- Shivank Saxena – Co-founder & CFO
+
+Each card should have hover scale animation. Add Lottie animation or subtle glow on hover if possible.
+
+---
+
+3. Our Vision
+
+
+
+Content:
+"To streamline construction sourcing and procurement using smart, cost-effective, and scalable technology solutions to build efficient and sustainable infrastructure."
+
+Center align. Use large bold font. Animate on scroll.
+
+---
+
+4. Our Mission
+
+
+Content:
+"Empowering the construction ecosystem by reducing complexity in procurement, enabling transparency, and ensuring timely, high-quality delivery."
+
+Display this in a quote block or visually distinct section with yellow side border or left line.
+
+---
+
+5. Strength & Values
+  
+Subsections:
+
+🔹 Strengths:
+- End-to-End Sourcing Platform
+- Streamlined Procurement Process
+- Expertise in Value Engineering
+- Cost Efficiency & Timely Delivery
+
+🔹 Our Values:
+- Integrity
+- Innovation
+- Customer Focus
+- Sustainability
+- Transparency
+
+Layout: Two columns side-by-side (Strengths | Values), each with icons and short lines. Add a fade-up animation and highlight icons in yellow.
+
+---
+
+Ensure the entire page is:
+- Fully responsive
+- Uses consistent padding/margins
+- Animates each block subtly on scroll
+- Loads quickly with lazy-loaded images
+- Matches the visual tone of the homepage
