@@ -65,7 +65,7 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-6 md:py-10 bg-secondary">
+    <section className="py-6 md:py-10 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
