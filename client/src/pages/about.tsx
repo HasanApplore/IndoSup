@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
+import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
+import pipesFittingImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
 
 export default function About() {
   // Carousel images data
@@ -11,17 +14,17 @@ export default function About() {
       title: "Steel Framework"
     },
     {
-      src: "https://images.unsplash.com/photo-1614265875560-a4d33f7a3b47?w=600&h=400&fit=crop",
+      src: pipesFittingImg,
       alt: "Pipes and Fitting Systems",
       title: "Pipes & Fitting"
     },
     {
-      src: "https://images.unsplash.com/photo-1621905252472-e8b6e0a9c4c4?w=600&h=400&fit=crop",
+      src: electricalSystemImg,
       alt: "Electrical Systems Installation",
       title: "Electrical Systems"
     },
     {
-      src: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=600&h=400&fit=crop",
+      src: fireSystemImg,
       alt: "Fire Fighting System Equipment",
       title: "Fire Fighting System"
     },
