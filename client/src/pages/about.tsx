@@ -378,7 +378,7 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-[#082338] rounded-full flex items-center justify-center mr-3">
                     <Target className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-accent">Mission</h3>
