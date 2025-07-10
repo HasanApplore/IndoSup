@@ -28,7 +28,7 @@ function AnimatedCounter({ value, suffix = '', prefix = '', duration = 2 }: Coun
     });
   }, [springValue, prefix, suffix]);
 
-  return <span ref={ref} className="text-primary font-bold text-3xl md:text-4xl lg:text-5xl">0</span>;
+  return <span ref={ref} className="text-primary font-bold text-4xl md:text-5xl lg:text-6xl">0</span>;
 }
 
 export default function StatsSection() {
@@ -88,10 +88,10 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative py-6 md:py-8 bg-neutral-dark overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-neutral-dark overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,12 +100,12 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center group"
+              className="text-center group px-4 py-6 rounded-xl hover:bg-white/5 transition-all duration-300"
               variants={itemVariants}
             >
               {/* Animated Counter */}
               <motion.div
-                className="mb-3"
+                className="mb-4"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -118,7 +118,7 @@ export default function StatsSection() {
 
               {/* Label */}
               <motion.h3
-                className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300 font-inter"
+                className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors duration-300 font-inter"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function StatsSection() {
 
               {/* Description */}
               <motion.p
-                className="text-gray-300 text-xs md:text-sm leading-relaxed group-hover:text-white transition-colors duration-300"
+                className="text-gray-300 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors duration-300 max-w-xs mx-auto"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -140,7 +140,7 @@ export default function StatsSection() {
 
               {/* Decorative Line */}
               <motion.div
-                className="w-10 h-0.5 bg-primary mx-auto mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-12 h-1 bg-primary mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
