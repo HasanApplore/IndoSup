@@ -229,7 +229,7 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-8 md:py-10 bg-[#fdf9f0]">
+      <section className="py-8 md:py-10 bg-gradient-to-br from-[#fbf5e8] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             className="text-center mb-6 md:mb-8"
