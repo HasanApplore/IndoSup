@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin } from 'lucide-react';
 import indoSupImage from '@assets/image_1752140673594.png';
 import ashmitImage from '@assets/image_1752140873464.png';
 import akshajImage from '@assets/image_1752140881350.png';
@@ -11,17 +11,20 @@ export default function About() {
     {
       name: "Ashmit Sharma",
       position: "Founder & CEO",
-      image: ashmitImage
+      image: ashmitImage,
+      linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/"
     },
     {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
-      image: akshajImage
+      image: akshajImage,
+      linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/"
     },
     {
       name: "Shivank Saxena",
       position: "Co-founder & CFO",
-      image: shivankImage
+      image: shivankImage,
+      linkedin: "https://www.linkedin.com/in/shivank-saxena-19431aab/"
     }
   ];
 
@@ -302,15 +305,20 @@ export default function About() {
                     </div>
                   </div>
                   
-                  {/* Connect Button */}
+                  {/* LinkedIn Button */}
                   <motion.div
                     className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-accent transition-colors duration-300 flex items-center mx-auto space-x-2">
-                      <Phone className="w-4 h-4" />
-                      <span>Connect</span>
-                    </button>
+                    <a
+                      href={leader.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-accent transition-colors duration-300 flex items-center mx-auto space-x-2"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                      <span>LinkedIn</span>
+                    </a>
                   </motion.div>
                 </div>
               </motion.div>
@@ -462,7 +470,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137]">
                       {strength.icon}
                     </div>
                     <div>
@@ -500,7 +508,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137]">
                       {value.icon}
                     </div>
                     <div>
@@ -519,85 +527,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-accent to-accent/90 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-30"></div>
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-inter">
-              Ready to Transform Your Construction Procurement?
-            </h2>
-            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Join 400+ retailers, 350+ distributors, and 300+ brands in revolutionizing the construction industry with IndoSup's AI-powered platform.
-            </p>
-            
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <motion.button
-                className="bg-primary text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-colors duration-300 flex items-center space-x-2 group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>Get Started Today</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </motion.button>
-              
-              <motion.button
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-accent transition-colors duration-300 flex items-center space-x-2 group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Phone className="w-5 h-5" />
-                <span>Contact Our Team</span>
-              </motion.button>
-            </motion.div>
-          </motion.div>
-        </div>
-        
-        {/* Floating Elements */}
-        <motion.div
-          className="absolute top-10 left-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center opacity-20"
-          animate={{ 
-            y: [0, -20, 0],
-            rotate: [0, 180, 360]
-          }}
-          transition={{ 
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Building className="w-8 h-8 text-white" />
-        </motion.div>
-        
-        <motion.div
-          className="absolute bottom-10 right-10 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-20"
-          animate={{ 
-            y: [0, 20, 0],
-            rotate: [0, -180, -360]
-          }}
-          transition={{ 
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Sparkles className="w-6 h-6 text-accent" />
-        </motion.div>
-      </section>
+
     </div>
   );
 }
