@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
@@ -53,21 +53,24 @@ export default function About() {
       position: "Founder & CEO",
       initials: "AS",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/"
+      linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/",
+      email: "ashmit@indosup.com"
     },
     {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
       initials: "AS",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/"
+      linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/",
+      email: "akshaj@indosup.com"
     },
     {
       name: "Shivank Saxena",
       position: "Co-founder & CFO",
       initials: "SS",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
-      linkedin: "https://www.linkedin.com/in/shivank-saxena-19431aab/"
+      linkedin: "https://www.linkedin.com/in/shivank-saxena-19431aab/",
+      email: "shivank@indosup.com"
     }
   ];
 
@@ -362,20 +365,31 @@ export default function About() {
                     </p>
                   </div>
 
-                  {/* LinkedIn Icon */}
+                  {/* Social Icons */}
                   <motion.div
-                    className="flex justify-center"
-                    whileHover={{ scale: 1.15 }}
+                    className="flex justify-center space-x-3"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
                   >
-                    <a
+                    <motion.a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
+                      whileHover={{ scale: 1.15 }}
                     >
-                      <Linkedin className="w-6 h-6" />
-                    </a>
+                      <Linkedin className="w-4 h-4" />
+                    </motion.a>
+                    <motion.a
+                      href={`mailto:${leader.email}`}
+                      className="w-10 h-10 bg-[#EA4335] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#d33b2c] transition-all duration-300 hover:shadow-lg"
+                      title="Send Email"
+                      whileHover={{ scale: 1.15 }}
+                    >
+                      <Mail className="w-4 h-4" />
+                    </motion.a>
                   </motion.div>
                 </div>
 
