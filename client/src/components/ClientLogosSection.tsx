@@ -54,69 +54,55 @@ export default function ClientLogosSection() {
         </motion.div>
 
         {/* Infinite Scrolling Carousel */}
-        <div className="relative overflow-hidden">
-          {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white via-white/50 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white via-white/50 to-transparent z-20 pointer-events-none"></div>
+        <div className="relative overflow-hidden rounded-2xl bg-white/50 backdrop-blur-sm py-6">
+          {/* Seamless Gradient Overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/80 via-white/40 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/80 via-white/40 to-transparent z-20 pointer-events-none"></div>
           
           {/* Moving Strip Container */}
           <div 
-            className="flex gap-8 py-8"
+            className="flex items-center"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* First Set */}
+            {/* Continuous Strip */}
             <motion.div
-              className="flex gap-8 items-center"
+              className="flex gap-12 items-center whitespace-nowrap"
               animate={{
-                x: [0, -100 * clientLogos.length],
+                x: [0, -120 * clientLogos.length],
               }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: isHovered ? 40 : 20, // Slower on hover
+                  duration: isHovered ? 35 : 25,
                   ease: "linear",
                 },
               }}
             >
               {repeatedLogos.map((client, index) => (
                 <motion.div
-                  key={`set1-${index}`}
-                  className="group flex-shrink-0 w-32 h-20 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-4 cursor-pointer border border-gray-100 hover:border-primary/30 relative overflow-hidden"
+                  key={`logo-${index}`}
+                  className="group flex-shrink-0 w-24 h-16 flex items-center justify-center cursor-pointer"
                   whileHover={{ 
-                    scale: 1.05,
-                    y: -4,
+                    scale: 1.1,
                     transition: { duration: 0.2 }
                   }}
                 >
-                  {/* Hover Background */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/5 to-primary/10" />
-                  
-                  <div className="relative z-10 flex items-center justify-center h-full">
-                    <img 
-                      src={client.logo} 
-                      alt={`${client.name} - Trusted Partner`}
-                      className="max-w-full max-h-full object-contain filter grayscale-[0.2] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"
-                      loading="lazy"
-                      onError={(e) => {
-                        console.log(`Failed to load logo: ${client.logo}`);
-                        const target = e.currentTarget as HTMLImageElement;
-                        const fallback = target.nextElementSibling as HTMLElement;
-                        if (fallback) {
-                          target.style.display = 'none';
-                          fallback.style.display = 'flex';
-                        }
-                      }}
-                    />
-                    
-                    {/* Fallback text if logo fails */}
-                    <div className="absolute inset-0 hidden items-center justify-center bg-gray-50 rounded-lg">
-                      <span className="text-xs font-bold text-accent text-center px-2">
-                        {client.name}
-                      </span>
-                    </div>
-                  </div>
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} - Trusted Partner`}
+                    className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.log(`Failed to load logo: ${client.logo}`);
+                      const target = e.currentTarget as HTMLImageElement;
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-xs font-bold text-accent text-center px-2">${client.name}</span>`;
+                      }
+                    }}
+                  />
                 </motion.div>
               ))}
             </motion.div>
