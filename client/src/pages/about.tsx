@@ -260,49 +260,28 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-gradient-to-br from-white via-gray-50 to-white rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-primary/30 relative"
-                whileHover={{ y: -20, scale: 1.08 }}
+                className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
+                whileHover={{ y: -12, scale: 1.03 }}
               >
-                {/* Premium Badge */}
-                <div className="absolute top-4 left-4 z-10 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                  {index === 0 ? "CEO" : index === 1 ? "COO" : "CFO"}
-                </div>
-
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-80 overflow-hidden">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  {/* Floating Star Badge */}
-                  <motion.div 
-                    className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg"
-                    animate={{ 
-                      rotate: [0, 360],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    <Star className="w-5 h-5 text-primary" />
-                  </motion.div>
-
-                  {/* LinkedIn Button - Now visible on image */}
+                  {/* LinkedIn Button - Clean and prominent */}
                   <motion.div
-                    className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300"
                     initial={{ y: 20 }}
-                    whileHover={{ scale: 1.1, y: -5 }}
+                    whileHover={{ scale: 1.05 }}
                   >
                     <a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#0077B5] text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2 border-2 border-white/20"
+                      className="bg-[#0077B5] text-white px-8 py-3 rounded-full font-medium text-sm shadow-xl hover:bg-[#005885] transition-all duration-300 flex items-center space-x-3 backdrop-blur-sm"
                     >
                       <Linkedin className="w-5 h-5" />
                       <span>Connect on LinkedIn</span>
@@ -310,29 +289,20 @@ export default function About() {
                   </motion.div>
                 </div>
                 
-                <div className="p-8 text-center relative bg-gradient-to-b from-white to-gray-50">
+                <div className="p-8 text-center">
                   <h3 className="text-2xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold mb-4 text-lg">
+                  <p className="text-primary font-semibold text-lg mb-4">
                     {leader.position}
                   </p>
                   
-                  {/* Role-specific icon with enhanced styling */}
-                  <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-accent/80 transition-all duration-500 shadow-lg group-hover:shadow-xl">
-                      {index === 0 && <Building className="w-8 h-8 text-white" />}
-                      {index === 1 && <Users className="w-8 h-8 text-white" />}
-                      {index === 2 && <TrendingUp className="w-8 h-8 text-white" />}
-                    </div>
-                  </div>
-
-                  {/* Professional Quote */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 mt-4">
-                    <p className="text-sm text-gray-600 italic">
-                      {index === 0 && "Leading innovation in construction procurement"}
-                      {index === 1 && "Streamlining operations for better efficiency"}
-                      {index === 2 && "Driving financial growth and sustainability"}
+                  {/* Clean role description */}
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {index === 0 && "Visionary leader driving innovation in construction procurement technology"}
+                      {index === 1 && "Operations expert focused on streamlining business processes and efficiency"}
+                      {index === 2 && "Financial strategist ensuring sustainable growth and market expansion"}
                     </p>
                   </div>
                 </div>
