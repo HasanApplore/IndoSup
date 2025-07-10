@@ -11,17 +11,17 @@ export default function About() {
       title: "Steel Framework"
     },
     {
-      src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop",
+      src: "https://images.unsplash.com/photo-1614265875560-a4d33f7a3b47?w=600&h=400&fit=crop",
       alt: "Pipes and Fitting Systems",
       title: "Pipes & Fitting"
     },
     {
-      src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop",
+      src: "https://images.unsplash.com/photo-1621905252472-e8b6e0a9c4c4?w=600&h=400&fit=crop",
       alt: "Electrical Systems Installation",
       title: "Electrical Systems"
     },
     {
-      src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop",
+      src: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=600&h=400&fit=crop",
       alt: "Fire Fighting System Equipment",
       title: "Fire Fighting System"
     },
