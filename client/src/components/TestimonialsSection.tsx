@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 2000); // Even faster - 2 seconds
+    }, 1500); // Faster - 1.5 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
