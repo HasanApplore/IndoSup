@@ -195,7 +195,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-8 font-inter">
-              What Is IndoSup?
+              About IndoSup
             </h1>
             <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
           </motion.div>
