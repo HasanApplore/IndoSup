@@ -234,23 +234,23 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-4 md:py-6 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-6 md:mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-3 font-inter">
               Our Leadership
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+            <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -260,10 +260,10 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
-                whileHover={{ y: -12, scale: 1.03 }}
+                className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
+                whileHover={{ y: -8, scale: 1.02 }}
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -272,17 +272,17 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                <div className="p-8 text-center">
-                  <h3 className="text-2xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold text-lg mb-4">
+                  <p className="text-primary font-semibold text-sm mb-3">
                     {leader.position}
                   </p>
                   
                   {/* Clean role description */}
-                  <div className="mt-4 pt-4 border-t border-gray-100 mb-6">
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                  <div className="mt-2 pt-2 border-t border-gray-100 mb-3">
+                    <p className="text-gray-600 text-xs leading-relaxed">
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology"}
                       {index === 1 && "Operations expert focused on streamlining business processes and efficiency"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion"}
@@ -298,9 +298,9 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#0077B5] text-white px-6 py-3 rounded-full font-medium text-sm shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2"
+                      className="bg-[#0077B5] text-white px-4 py-2 rounded-full font-medium text-xs shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2"
                     >
-                      <Linkedin className="w-4 h-4" />
+                      <Linkedin className="w-3 h-3" />
                       <span>Connect on LinkedIn</span>
                     </a>
                   </motion.div>
