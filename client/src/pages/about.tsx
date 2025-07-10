@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone } from 'lucide-react';
 import indoSupImage from '@assets/image_1752140673594.png';
 import ashmitImage from '@assets/image_1752140873464.png';
 import akshajImage from '@assets/image_1752140881350.png';
@@ -78,6 +78,14 @@ export default function About() {
     }
   ];
 
+  // Statistics data
+  const stats = [
+    { number: "400+", label: "Retailers", icon: <Building className="w-6 h-6" /> },
+    { number: "350+", label: "Distributors", icon: <Truck className="w-6 h-6" /> },
+    { number: "300+", label: "Brands", icon: <Award className="w-6 h-6" /> },
+    { number: "50+", label: "Stockists", icon: <MapPin className="w-6 h-6" /> }
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -126,27 +134,98 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-accent leading-tight">
+              <motion.h2 
+                className="text-2xl md:text-3xl font-bold text-accent leading-tight"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 Indosup is a convenient source for easy, hassle-free purchasing of construction material.
-              </h2>
-              <p className="text-lg text-neutral-base leading-relaxed">
+              </motion.h2>
+              <motion.p 
+                className="text-lg text-neutral-base leading-relaxed"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
                 Indosup is a comprehensive Source-to-Deliver company dedicated to the Construction industry. 
                 Our AI-enabled Sourcing Platform connects 400+ retailers, 350+ distributors, 300+ brands, 
                 and 50+ stockists, simplifying procurement from sourcing to delivery.
-              </p>
+              </motion.p>
+              
+              {/* Statistics Cards */}
+              <motion.div 
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                    whileHover={{ y: -5, scale: 1.05 }}
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mx-auto mb-2 group-hover:bg-accent transition-colors duration-300">
+                      <div className="text-white group-hover:text-primary transition-colors duration-300">
+                        {stat.icon}
+                      </div>
+                    </div>
+                    <div className="text-2xl font-bold text-accent text-center">{stat.number}</div>
+                    <div className="text-sm text-neutral-base text-center">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
-            <div className="relative">
-              <div className="w-full h-64 bg-white rounded-2xl shadow-lg overflow-hidden">
+            
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="w-full h-64 bg-white rounded-2xl shadow-lg overflow-hidden relative">
                 <img 
                   src={indoSupImage} 
                   alt="IndoSup Construction Platform" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                />
+                {/* Floating Elements */}
+                <motion.div 
+                  className="absolute top-4 left-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Sparkles className="w-4 h-4 text-white" />
+                </motion.div>
+                <motion.div 
+                  className="absolute bottom-4 right-4 w-6 h-6 bg-accent rounded-full"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 />
               </div>
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg">
                 <Star className="w-10 h-10 text-white" />
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -178,8 +257,8 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500"
-                whileHover={{ y: -10, scale: 1.02 }}
+                className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                whileHover={{ y: -15, scale: 1.05 }}
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -188,14 +267,51 @@ export default function About() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Floating Badge */}
+                  <motion.div 
+                    className="absolute top-4 right-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    animate={{ 
+                      rotate: [0, 360],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    <Star className="w-4 h-4 text-white" />
+                  </motion.div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-accent mb-2">
+                
+                <div className="p-6 text-center relative">
+                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold">
+                  <p className="text-primary font-semibold mb-4">
                     {leader.position}
                   </p>
+                  
+                  {/* Role-specific icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                      {index === 0 && <Building className="w-6 h-6 text-white" />}
+                      {index === 1 && <Users className="w-6 h-6 text-white" />}
+                      {index === 2 && <TrendingUp className="w-6 h-6 text-white" />}
+                    </div>
+                  </div>
+                  
+                  {/* Connect Button */}
+                  <motion.div
+                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-accent transition-colors duration-300 flex items-center mx-auto space-x-2">
+                      <Phone className="w-4 h-4" />
+                      <span>Connect</span>
+                    </button>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -204,8 +320,9 @@ export default function About() {
       </section>
 
       {/* Our Vision */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -213,14 +330,62 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-8 font-inter">
-              Our Vision
-            </h2>
+            <div className="flex items-center justify-center mb-6">
+              <motion.div
+                className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mr-4"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Eye className="w-8 h-8 text-white" />
+              </motion.div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent font-inter">
+                Our Vision
+              </h2>
+            </div>
             <div className="w-24 md:w-32 h-1 bg-primary mx-auto mb-12"></div>
-            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-accent max-w-5xl mx-auto leading-relaxed">
-              "To streamline construction sourcing and procurement using smart, cost-effective, 
-              and scalable technology solutions to build efficient and sustainable infrastructure."
-            </p>
+            
+            <motion.div
+              className="relative max-w-5xl mx-auto"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/20">
+                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-accent leading-relaxed relative">
+                  <span className="text-primary text-6xl absolute -top-4 -left-4 opacity-20">"</span>
+                  To streamline construction sourcing and procurement using smart, cost-effective, 
+                  and scalable technology solutions to build efficient and sustainable infrastructure.
+                  <span className="text-primary text-6xl absolute -bottom-8 -right-4 opacity-20">"</span>
+                </p>
+              </div>
+              
+              {/* Floating elements */}
+              <motion.div
+                className="absolute -top-4 -left-4 w-8 h-8 bg-primary rounded-full"
+                animate={{ 
+                  y: [0, -15, 0],
+                  opacity: [0.6, 1, 0.6]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent rounded-full"
+                animate={{ 
+                  y: [0, 15, 0],
+                  opacity: [0.6, 1, 0.6]
+                }}
+                transition={{ 
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -352,6 +517,86 @@ export default function About() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 md:py-20 bg-gradient-to-r from-accent to-accent/90 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-30"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-inter">
+              Ready to Transform Your Construction Procurement?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+              Join 400+ retailers, 350+ distributors, and 300+ brands in revolutionizing the construction industry with IndoSup's AI-powered platform.
+            </p>
+            
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <motion.button
+                className="bg-primary text-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-colors duration-300 flex items-center space-x-2 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Get Started Today</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </motion.button>
+              
+              <motion.button
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-accent transition-colors duration-300 flex items-center space-x-2 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Phone className="w-5 h-5" />
+                <span>Contact Our Team</span>
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </div>
+        
+        {/* Floating Elements */}
+        <motion.div
+          className="absolute top-10 left-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center opacity-20"
+          animate={{ 
+            y: [0, -20, 0],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Building className="w-8 h-8 text-white" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-10 right-10 w-12 h-12 bg-white rounded-full flex items-center justify-center opacity-20"
+          animate={{ 
+            y: [0, 20, 0],
+            rotate: [0, -180, -360]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Sparkles className="w-6 h-6 text-accent" />
+        </motion.div>
       </section>
     </div>
   );
