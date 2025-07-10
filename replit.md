@@ -169,6 +169,7 @@ Changelog:
 - July 09, 2025. Final homepage polish and testimonials enhancements: removed title quote icon, centered testimonial quote icon with increased size, repositioned navigation arrows above testimonial cards, removed star ratings, added hover effects to testimonial cards, increased spacing between quote icon and content, enhanced "Why Choose IndoSup?" card hover effects (scale 1.08, y -12px)
 - July 10, 2025. Applied unified background theme across entire homepage: added overall `bg-gradient-to-br from-gray-50 to-white` to homepage container, removed individual section backgrounds to inherit from main theme, added missing sections (IndiaMapSection, InitiativesSection, CTABanner) to complete homepage layout, ensured consistent visual flow while preserving navbar, hero, stats, and footer unique backgrounds
 - July 10, 2025. Simplified homepage layout: removed Pan India section (IndiaMapSection), Contact Us section (CTABanner), and Our Key Initiatives section (InitiativesSection) to create a more focused user experience with core sections: Hero, Why Choose IndoSup, Stats, Trusted Partners, and Testimonials
+- July 10, 2025. Updated homepage background color to #fbf5e8 (warm off-white) while preserving navbar, hero, statistics, and footer sections with their original backgrounds for visual contrast and hierarchy
 
 ## User Preferences
 
