@@ -138,20 +138,27 @@ export default function Careers() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="bg-accent text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+      <section className="relative bg-gradient-to-r from-primary to-[#FFD700] text-accent py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Construction team working"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Join Our Team
+            Join Our Team Now
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-accent/80 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -163,7 +170,7 @@ export default function Careers() {
       </section>
 
       {/* Job Openings Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-5 md:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-12"
@@ -294,7 +301,7 @@ export default function Careers() {
       </section>
 
       {/* Life at IndoSup Section */}
-      <section className="bg-gray-50 py-16 md:py-20">
+      <section className="py-5 md:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-12"
@@ -380,30 +387,7 @@ export default function Careers() {
             </motion.div>
           </div>
 
-          {/* Culture Values */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
-            {[
-              { icon: <Users className="w-8 h-8" />, title: "Team First", description: "We succeed together" },
-              { icon: <Star className="w-8 h-8" />, title: "Excellence", description: "Quality in everything we do" },
-              { icon: <Building className="w-8 h-8" />, title: "Innovation", description: "Building the future" },
-              { icon: <MapPin className="w-8 h-8" />, title: "Impact", description: "Making a real difference" }
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-6 bg-white rounded-2xl shadow-lg"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mx-auto mb-4">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold text-accent mb-2">{value.title}</h3>
-                <p className="text-neutral-base">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
+
         </div>
       </section>
 
