@@ -265,17 +265,24 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="h-64">
+            <div className="h-64 relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sC-120%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789&markers=28.5984463,77.3100975"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sC-120%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789&markers=color:red%7Clabel:IndoSup%7C28.5984463,77.3100975"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="IndoSup Office Location - Noida"
+                title="IndoSup Office Location - C-120, 2nd Floor, Sector 2, Noida"
               />
+              <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-accent">IndoSup Office</span>
+                </div>
+                <p className="text-xs text-neutral-base mt-1">C-120, 2nd Floor, Sector 2</p>
+              </div>
             </div>
           </motion.div>
         </div>
