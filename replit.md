@@ -171,6 +171,7 @@ Changelog:
 - July 10, 2025. Simplified homepage layout: removed Pan India section (IndiaMapSection), Contact Us section (CTABanner), and Our Key Initiatives section (InitiativesSection) to create a more focused user experience with core sections: Hero, Why Choose IndoSup, Stats, Trusted Partners, and Testimonials
 - July 10, 2025. Updated homepage background color to #fbf5e8 (warm off-white) while preserving navbar, hero, statistics, and footer sections with their original backgrounds for visual contrast and hierarchy
 - July 10, 2025. Enhanced homepage background with subtle gradient from #fbf5e8 to #f8f2e0 for improved visual depth and warmth
+- July 10, 2025. Updated homepage background gradient to transition from #fbf5e8 to white for cleaner, more modern appearance
 
 ## User Preferences
 
