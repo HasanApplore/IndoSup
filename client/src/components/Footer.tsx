@@ -1,29 +1,10 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
-import { Send, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import indosupLogo from '@assets/Frame-9-2-removebg-preview_1752126166290.png';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleNewsletterSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate newsletter subscription
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Newsletter subscription:', email);
-    setEmail('');
-    setIsSubmitting(false);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const quickLinks = [
     { name: 'Home', path: '/' },
@@ -49,17 +30,11 @@ export default function Footer() {
     { icon: FaLinkedin, url: 'https://www.linkedin.com/company/indosup/', label: 'LinkedIn' }
   ];
 
-  const legalLinks = [
-    { name: 'Privacy Policy', path: '/privacy' },
-    { name: 'Terms of Service', path: '/terms' },
-    { name: 'Sitemap', path: '/sitemap' }
-  ];
-
   return (
     <footer className="bg-neutral-dark text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Company Info & Quick Links */}
           <div>
             <div className="mb-4">
@@ -152,75 +127,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-sm font-semibold mb-3">Newsletter</h4>
-            <p className="text-gray-300 text-xs mb-3 leading-relaxed">
-              Stay updated with latest industry insights.
-            </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="space-y-2">
-              <div className="relative">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-white placeholder-gray-400 text-xs"
-                />
-              </div>
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-primary text-neutral-dark font-semibold py-2 px-3 rounded-lg hover:bg-primary/90 transition-all duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed text-xs"
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-              >
-                {isSubmitting ? (
-                  <div className="w-3 h-3 border-2 border-neutral-dark border-t-transparent rounded-full animate-spin mr-2" />
-                ) : (
-                  <Send className="w-3 h-3 mr-2" />
-                )}
-                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-              </motion.button>
-            </form>
-          </div>
+
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-3">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+          <div className="flex justify-center items-center">
             {/* Copyright */}
             <div className="text-gray-400 text-xs">
               © {new Date().getFullYear()} IndoSup. All rights reserved.
             </div>
-
-            {/* Legal Links */}
-            <div className="flex flex-wrap items-center space-x-4">
-              {legalLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.path}
-                  className="text-gray-400 hover:text-primary transition-colors duration-200 text-xs"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-
-            {/* Back to Top */}
-            <motion.button
-              onClick={scrollToTop}
-              className="flex items-center space-x-1 text-gray-400 hover:text-primary transition-colors duration-200 text-xs"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>Back to Top</span>
-              <ArrowUp className="w-3 h-3" />
-            </motion.button>
           </div>
         </div>
       </div>
