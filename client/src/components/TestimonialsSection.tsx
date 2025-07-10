@@ -54,14 +54,14 @@ export default function TestimonialsSection() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [direction, setDirection] = useState(0);
 
-  // Auto-play functionality - faster transitions
+  // Auto-play functionality - slower transitions
   useEffect(() => {
     if (!isAutoPlaying) return;
     
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 1500); // Faster - 1.5 seconds
+    }, 4000); // Slower - 4 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
