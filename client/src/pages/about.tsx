@@ -270,23 +270,6 @@ export default function About() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* LinkedIn Button - Clean and prominent */}
-                  <motion.div
-                    className="absolute bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    initial={{ y: 20 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <a
-                      href={leader.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-[#0077B5] text-white px-8 py-3 rounded-full font-medium text-sm shadow-xl hover:bg-[#005885] transition-all duration-300 flex items-center space-x-3 backdrop-blur-sm"
-                    >
-                      <Linkedin className="w-5 h-5" />
-                      <span>Connect on LinkedIn</span>
-                    </a>
-                  </motion.div>
                 </div>
                 
                 <div className="p-8 text-center">
@@ -298,13 +281,29 @@ export default function About() {
                   </p>
                   
                   {/* Clean role description */}
-                  <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="mt-4 pt-4 border-t border-gray-100 mb-6">
                     <p className="text-gray-600 text-sm leading-relaxed">
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology"}
                       {index === 1 && "Operations expert focused on streamlining business processes and efficiency"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion"}
                     </p>
                   </div>
+
+                  {/* LinkedIn Button - Always visible at bottom */}
+                  <motion.div
+                    className="flex justify-center"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <a
+                      href={leader.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#0077B5] text-white px-6 py-3 rounded-full font-medium text-sm shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                      <span>Connect on LinkedIn</span>
+                    </a>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
