@@ -144,7 +144,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* What Is IndoSup Section */}
-      <section className="py-14 md:py-20 relative overflow-hidden">
+      <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
         
         {/* Animated background elements */}
@@ -175,9 +175,9 @@ export default function About() {
           />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           <motion.div
-            className="text-center mb-10 md:mb-14"
+            className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -190,7 +190,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -251,7 +251,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="w-full h-80 bg-white rounded-2xl shadow-xl overflow-hidden relative">
+              <div className="w-full h-96 bg-white rounded-2xl shadow-xl overflow-hidden relative">
                 {/* Carousel Images */}
                 <div className="relative w-full h-full">
                   {carouselImages.map((image, index) => (
