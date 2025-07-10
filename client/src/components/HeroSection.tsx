@@ -36,6 +36,7 @@ export default function HeroSection() {
     window.onYouTubeIframeAPIReady = () => {
       if (iframeRef.current) {
         const player = new window.YT.Player(iframeRef.current, {
+          host: 'https://www.youtube-nocookie.com',
           playerVars: {
             autoplay: 1,
             loop: 1,
@@ -50,18 +51,25 @@ export default function HeroSection() {
             end: 10,
             cc_load_policy: 0,
             fs: 0,
-            disablekb: 1
+            disablekb: 1,
+            origin: 'https://indosup.com'
           },
           events: {
             onStateChange: (event) => {
-              // When video ends, restart the loop
+              // When video ends, restart the loop immediately
               if (event.data === window.YT.PlayerState.ENDED) {
+                event.target.seekTo(0);
+                event.target.playVideo();
+              }
+              // Ensure continuous playback
+              if (event.data === window.YT.PlayerState.PAUSED) {
                 event.target.playVideo();
               }
             },
             onReady: (event) => {
-              // Ensure video starts playing
+              // Force autoplay when ready
               event.target.playVideo();
+              event.target.setVolume(50); // Set moderate volume
             }
           }
         });
@@ -78,13 +86,41 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden h-screen">
+      {/* CSS to hide YouTube suggestions and overlays */}
+      <style jsx>{`
+        .youtube-container iframe {
+          pointer-events: none !important;
+        }
+        .youtube-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          pointer-events: none;
+          z-index: 1;
+        }
+        /* Hide YouTube end screen elements */
+        .ytp-endscreen-content,
+        .ytp-ce-element,
+        .ytp-cards-teaser,
+        .ytp-pause-overlay,
+        .ytp-suggested-action,
+        .ytp-endscreen-previous,
+        .ytp-endscreen-next {
+          display: none !important;
+          visibility: hidden !important;
+        }
+      `}</style>
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full youtube-container">
           <iframe
             ref={iframeRef}
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&widget_referrer=https%3A%2F%2Findosup.com`}
+            src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=https://indosup.com`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
