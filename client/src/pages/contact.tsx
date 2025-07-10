@@ -136,13 +136,13 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">
                 Send us a Message
               </h2>
-              <div className="w-16 h-1 bg-primary mb-8 mx-auto"></div>
+              <div className="w-12 h-1 bg-primary mb-6 mx-auto"></div>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-accent mb-2">
                       Full Name *
@@ -174,7 +174,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-accent mb-2">
                       Phone Number
@@ -211,7 +211,7 @@ export default function Contact() {
                   <textarea
                     name="message"
                     required
-                    rows={6}
+                    rows={4}
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
@@ -222,7 +222,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-accent font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-primary text-accent font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
@@ -241,33 +241,33 @@ export default function Contact() {
 
       {/* Google Map */}
       <section className="py-5 md:py-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4 font-inter">
               Find Us
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto"></div>
-            <p className="text-lg text-neutral-base mt-6 max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+            <p className="text-base text-neutral-base mt-4 max-w-xl mx-auto">
               Visit our office at C-120, 2nd Floor, Sector 2, Noida, Uttar Pradesh - 201301
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-white rounded-2xl shadow-lg overflow-hidden"
+            className="bg-white rounded-xl shadow-lg overflow-hidden max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="aspect-video">
+            <div className="h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sSector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sC-120%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789&markers=28.5984463,77.3100975"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
