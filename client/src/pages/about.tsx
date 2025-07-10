@@ -263,7 +263,7 @@ export default function About() {
                 className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative max-w-xs mx-auto"
                 whileHover={{ y: -9, scale: 1.02 }}
               >
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-60 overflow-hidden bg-[#f0ede4]">
                   <img
                     src={leader.image}
                     alt={leader.name}
