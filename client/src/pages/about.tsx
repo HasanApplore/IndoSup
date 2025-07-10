@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin } from 'lucide-react';
 import indoSupImage from '@assets/image_1752140673594.png';
-import ashmitImage from '@assets/image-removebg-preview (3)_1752143181751.png';
-import akshajImage from '@assets/image-removebg-preview (1)_1752143181752.png';
-import shivankImage from '@assets/image-removebg-preview_1752143197457.png';
 
 export default function About() {
   // Leadership team data
@@ -11,19 +8,19 @@ export default function About() {
     {
       name: "Ashmit Sharma",
       position: "Founder & CEO",
-      image: ashmitImage,
+      initials: "AS",
       linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/"
     },
     {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
-      image: akshajImage,
+      initials: "AS",
       linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/"
     },
     {
       name: "Shivank Saxena",
       position: "Co-founder & CFO",
-      image: shivankImage,
+      initials: "SS",
       linkedin: "https://www.linkedin.com/in/shivank-saxena-19431aab/"
     }
   ];
@@ -229,10 +226,10 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-6 md:py-8 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <section className="py-8 md:py-10 bg-[#f0ede4]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
-            className="text-center mb-8 md:mb-10"
+            className="text-center mb-6 md:mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -241,11 +238,11 @@ export default function About() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-4 font-inter">
               Our Leadership
             </h2>
-            <div className="w-18 md:w-24 h-1 bg-primary mx-auto"></div>
+            <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 max-w-5xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -255,48 +252,54 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative max-w-xs mx-auto"
-                whileHover={{ y: -9, scale: 1.02 }}
+                className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
+                whileHover={{ y: -6, scale: 1.02 }}
               >
-                <div className="relative h-60 overflow-hidden bg-[#f0ede4]">
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Avatar Section */}
+                <div className="relative h-28 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
+                  <motion.div
+                    className="w-18 h-18 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {leader.initials}
+                  </motion.div>
+                  
+                  {/* Floating decorations */}
+                  <div className="absolute top-3 right-3 w-2 h-2 bg-primary/30 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-accent/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                 </div>
                 
-                <div className="p-5 text-center">
-                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold text-base mb-4">
+                  <p className="text-primary font-semibold text-sm mb-3">
                     {leader.position}
                   </p>
                   
                   {/* Clean role description */}
-                  <div className="mt-3 pt-3 border-t border-gray-100 mb-4">
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                  <div className="mb-4">
+                    <p className="text-gray-600 text-xs leading-relaxed">
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology"}
                       {index === 1 && "Operations expert focused on streamlining business processes and efficiency"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion"}
                     </p>
                   </div>
 
-                  {/* LinkedIn Button - Always visible at bottom */}
+                  {/* LinkedIn Icon - Always visible at bottom */}
                   <motion.div
                     className="flex justify-center"
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.15 }}
                   >
                     <a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#0077B5] text-white px-5 py-2 rounded-full font-medium text-sm shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2"
+                      className="w-8 h-8 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
+                      title="Connect on LinkedIn"
                     >
                       <Linkedin className="w-4 h-4" />
-                      <span>Connect on LinkedIn</span>
                     </a>
                   </motion.div>
                 </div>
