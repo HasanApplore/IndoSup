@@ -36,13 +36,32 @@ export default function HeroSection() {
     window.onYouTubeIframeAPIReady = () => {
       if (iframeRef.current) {
         const player = new window.YT.Player(iframeRef.current, {
+          playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: youtubeVideoId,
+            controls: 0,
+            showinfo: 0,
+            rel: 0,
+            iv_load_policy: 3,
+            modestbranding: 1,
+            playsinline: 1,
+            start: 0,
+            end: 10,
+            cc_load_policy: 0,
+            fs: 0,
+            disablekb: 1
+          },
           events: {
             onStateChange: (event) => {
-              // When video ends or is paused, ensure audio stops
-              if (event.data === window.YT.PlayerState.ENDED || 
-                  event.data === window.YT.PlayerState.PAUSED) {
-                event.target.pauseVideo();
+              // When video ends, restart the loop
+              if (event.data === window.YT.PlayerState.ENDED) {
+                event.target.playVideo();
               }
+            },
+            onReady: (event) => {
+              // Ensure video starts playing
+              event.target.playVideo();
             }
           }
         });
@@ -65,7 +84,7 @@ export default function HeroSection() {
           <iframe
             ref={iframeRef}
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1`}
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&widget_referrer=https%3A%2F%2Findosup.com`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
