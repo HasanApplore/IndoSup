@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star } from 'lucide-react';
 import indoSupImage from '@assets/image_1752140673594.png';
+import ashmitImage from '@assets/image_1752140873464.png';
+import akshajImage from '@assets/image_1752140881350.png';
+import shivankImage from '@assets/image_1752140885431.png';
 
 export default function About() {
   // Leadership team data
@@ -8,17 +11,17 @@ export default function About() {
     {
       name: "Ashmit Sharma",
       position: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: ashmitImage
     },
     {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: akshajImage
     },
     {
       name: "Shivank Saxena",
       position: "Co-founder & CFO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+      image: shivankImage
     }
   ];
 
