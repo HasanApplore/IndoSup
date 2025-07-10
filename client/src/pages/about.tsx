@@ -9,18 +9,21 @@ export default function About() {
       name: "Ashmit Sharma",
       position: "Founder & CEO",
       initials: "AS",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/"
     },
     {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
       initials: "AS",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/"
     },
     {
       name: "Shivank Saxena",
       position: "Co-founder & CFO",
       initials: "SS",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
       linkedin: "https://www.linkedin.com/in/shivank-saxena-19431aab/"
     }
   ];
@@ -226,7 +229,7 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-8 md:py-10 bg-[#f0ede4]">
+      <section className="py-8 md:py-10 bg-[#fdf9f0]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             className="text-center mb-6 md:mb-8"
@@ -255,19 +258,18 @@ export default function About() {
                 className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
                 whileHover={{ y: -6, scale: 1.02 }}
               >
-                {/* Avatar Section */}
-                <div className="relative h-28 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
-                  <motion.div
-                    className="w-18 h-18 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {leader.initials}
-                  </motion.div>
+                {/* Image Section */}
+                <div className="relative h-40 overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Floating decorations */}
-                  <div className="absolute top-3 right-3 w-2 h-2 bg-primary/30 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-accent/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute top-3 right-3 w-2 h-2 bg-primary/40 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                 </div>
                 
                 <div className="p-4 text-center">
