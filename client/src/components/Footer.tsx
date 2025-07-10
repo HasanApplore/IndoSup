@@ -7,12 +7,10 @@ import indosupLogo from '@assets/Frame-9-2-removebg-preview_1752126166290.png';
 export default function Footer() {
 
   const quickLinks = [
-    { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Solutions', path: '/solutions' },
-    { name: 'Media & Resources', path: '/media' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'New Initiatives', path: '/initiatives' },
+    { name: 'Streamlined Procurement', path: '/solutions' },
+    { name: 'Our Businesses', path: '/products' }
   ];
 
   const productCategories = [
