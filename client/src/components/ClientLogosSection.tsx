@@ -30,10 +30,7 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="py-6 md:py-10 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(3,29,51,0.05),transparent_50%)]"></div>
+    <section className="pt-6 pb-2 md:pt-10 md:pb-4 relative overflow-hidden">
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}
@@ -55,7 +52,7 @@ export default function ClientLogosSection() {
 
         {/* Infinite Scrolling Carousel */}
         <div className="relative overflow-hidden py-6">
-          {/* Seamless Gradient Overlays - blend with section background */}
+          {/* Seamless Gradient Overlays - blend with homepage background */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
           
