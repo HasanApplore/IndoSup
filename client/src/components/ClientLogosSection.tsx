@@ -54,10 +54,10 @@ export default function ClientLogosSection() {
         </motion.div>
 
         {/* Infinite Scrolling Carousel */}
-        <div className="relative overflow-hidden rounded-2xl bg-white/50 backdrop-blur-sm py-6">
-          {/* Seamless Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white/80 via-white/40 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white/80 via-white/40 to-transparent z-20 pointer-events-none"></div>
+        <div className="relative overflow-hidden py-6">
+          {/* Seamless Gradient Overlays - blend with section background */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
           
           {/* Moving Strip Container */}
           <div 
