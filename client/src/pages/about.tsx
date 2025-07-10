@@ -337,20 +337,7 @@ export default function About() {
                   <div className="absolute top-4 right-4 w-3 h-3 bg-primary/50 rounded-full animate-pulse"></div>
                   <div className="absolute bottom-4 left-4 w-2 h-2 bg-accent/50 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                   
-                  {/* Hover overlay with additional info */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                    <motion.div
-                      className="text-white text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <Users className="w-6 h-6 text-white" />
-                      </div>
-                      <p className="text-sm font-medium">Team Leader</p>
-                    </motion.div>
-                  </div>
+
                 </div>
                 
                 <div className="p-6 text-center">
@@ -370,20 +357,19 @@ export default function About() {
                     </p>
                   </div>
 
-                  {/* Enhanced LinkedIn Section */}
+                  {/* LinkedIn Icon */}
                   <motion.div
                     className="flex justify-center"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.15 }}
                   >
                     <a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 bg-gradient-to-r from-[#0077B5] to-[#005885] text-white px-4 py-2 rounded-full font-medium text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:from-[#005885] hover:to-[#004066]"
+                      className="w-8 h-8 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
                     >
                       <Linkedin className="w-4 h-4" />
-                      <span>Connect</span>
                     </a>
                   </motion.div>
                 </div>
@@ -394,36 +380,7 @@ export default function About() {
             ))}
           </motion.div>
 
-          {/* Additional Leadership Stats */}
-          <motion.div
-            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="text-center bg-white/50 rounded-xl p-6 border border-gray-100">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
-                <Award className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-accent mb-2">15+ Years</h4>
-              <p className="text-sm text-gray-600">Combined Experience</p>
-            </div>
-            <div className="text-center bg-white/50 rounded-xl p-6 border border-gray-100">
-              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
-                <TrendingUp className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-accent mb-2">50+ Projects</h4>
-              <p className="text-sm text-gray-600">Successfully Delivered</p>
-            </div>
-            <div className="text-center bg-white/50 rounded-xl p-6 border border-gray-100">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-accent mb-2">100+ Team</h4>
-              <p className="text-sm text-gray-600">Members Led</p>
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
