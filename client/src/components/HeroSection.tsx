@@ -56,7 +56,8 @@ export default function HeroSection() {
             cc_load_policy: 0,
             fs: 0,
             disablekb: 1,
-            origin: window.location.origin
+            origin: window.location.origin,
+            widget_referrer: window.location.origin
           },
           events: {
             onStateChange: (event) => {
@@ -120,12 +121,19 @@ export default function HeroSection() {
           <iframe
             ref={iframeRef}
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=${encodeURIComponent(window.location.origin)}`}
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=${encodeURIComponent(window.location.origin)}&widget_referrer=${encodeURIComponent(window.location.origin)}`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
+          {/* Overlay to hide any YouTube branding or suggestions */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Hide YouTube logo/branding in bottom right */}
+            <div className="absolute bottom-0 right-0 w-24 h-12 bg-transparent z-10"></div>
+            {/* Hide any potential suggestions overlay */}
+            <div className="absolute inset-0 bg-transparent z-0"></div>
+          </div>
         </div>
       ) : (
         // Fallback for when video ID is not available
