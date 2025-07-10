@@ -34,7 +34,7 @@ export default function About() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
-    }, 4000);
+    }, 2500); // Faster transition - 2.5 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -144,7 +144,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* What Is IndoSup Section */}
-      <section className="py-10 md:py-14 relative overflow-hidden">
+      <section className="py-14 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
         
         {/* Animated background elements */}
@@ -177,28 +177,28 @@ export default function About() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
           <motion.div
-            className="text-center mb-8 md:mb-10"
+            className="text-center mb-10 md:mb-14"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-8 font-inter">
               What Is IndoSup?
             </h1>
-            <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
+            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="space-y-6">
+            <div className="space-y-8">
               <motion.h2 
-                className="text-xl md:text-2xl font-bold text-accent leading-tight"
+                className="text-2xl md:text-3xl font-bold text-accent leading-tight"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -207,7 +207,7 @@ export default function About() {
                 Your convenient source for hassle-free construction material procurement.
               </motion.h2>
               <motion.p 
-                className="text-base text-neutral-base leading-relaxed"
+                className="text-lg text-neutral-base leading-relaxed"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -219,7 +219,7 @@ export default function About() {
               
               {/* Statistics Cards */}
               <motion.div 
-                className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6"
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -228,16 +228,16 @@ export default function About() {
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white rounded-xl p-3 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-                    whileHover={{ y: -3, scale: 1.03 }}
+                    className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                    whileHover={{ y: -5, scale: 1.05 }}
                   >
-                    <div className="flex items-center justify-center w-8 h-8 bg-primary rounded-full mx-auto mb-2 group-hover:bg-accent transition-colors duration-300">
-                      <div className="text-white group-hover:text-primary transition-colors duration-300 text-sm">
+                    <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mx-auto mb-3 group-hover:bg-accent transition-colors duration-300">
+                      <div className="text-white group-hover:text-primary transition-colors duration-300">
                         {stat.icon}
                       </div>
                     </div>
-                    <div className="text-lg font-bold text-accent text-center">{stat.number}</div>
-                    <div className="text-xs text-neutral-base text-center">{stat.label}</div>
+                    <div className="text-xl font-bold text-accent text-center">{stat.number}</div>
+                    <div className="text-sm text-neutral-base text-center">{stat.label}</div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -251,13 +251,13 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="w-full h-64 bg-white rounded-2xl shadow-xl overflow-hidden relative">
+              <div className="w-full h-80 bg-white rounded-2xl shadow-xl overflow-hidden relative">
                 {/* Carousel Images */}
                 <div className="relative w-full h-full">
                   {carouselImages.map((image, index) => (
                     <motion.div
                       key={index}
-                      className={`absolute inset-0 transition-opacity duration-500 ${
+                      className={`absolute inset-0 transition-opacity duration-700 ${
                         index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
@@ -266,34 +266,19 @@ export default function About() {
                         alt={image.alt} 
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="text-lg font-bold">{image.title}</h3>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      <div className="absolute bottom-6 left-6 text-white">
+                        <h3 className="text-xl font-bold">{image.title}</h3>
                       </div>
                     </motion.div>
                   ))}
                 </div>
 
-                {/* Navigation Arrows */}
-                <button
-                  onClick={() => setCurrentImageIndex((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-md"
-                >
-                  <ChevronLeft className="w-4 h-4 text-accent" />
-                </button>
-                <button
-                  onClick={() => setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-md"
-                >
-                  <ChevronRight className="w-4 h-4 text-accent" />
-                </button>
-
                 {/* Dots Indicator */}
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
                   {carouselImages.map((_, index) => (
-                    <button
+                    <div
                       key={index}
-                      onClick={() => setCurrentImageIndex(index)}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         index === currentImageIndex ? 'bg-primary scale-125' : 'bg-white/60'
                       }`}
