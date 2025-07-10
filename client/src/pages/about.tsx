@@ -292,23 +292,26 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-8 md:py-10 bg-gradient-to-br from-[#fbf5e8] to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
-            className="text-center mb-6 md:mb-8"
+            className="text-center mb-10 md:mb-14"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-4 font-inter">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
               Our Leadership
             </h2>
-            <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
+            <p className="text-lg text-neutral-base mb-6 max-w-2xl mx-auto">
+              Meet the visionary leaders driving IndoSup's mission to revolutionize construction procurement
+            </p>
+            <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -318,58 +321,108 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
-                whileHover={{ y: -6, scale: 1.02 }}
+                className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/40 relative"
+                whileHover={{ y: -10, scale: 1.03 }}
               >
                 {/* Image Section */}
-                <div className="relative h-40 overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
                   <img
                     src={leader.image}
                     alt={leader.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Floating decorations */}
-                  <div className="absolute top-3 right-3 w-2 h-2 bg-primary/40 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-primary/50 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-accent/50 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  
+                  {/* Hover overlay with additional info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                    <motion.div
+                      className="text-white text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <Users className="w-6 h-6 text-white" />
+                      </div>
+                      <p className="text-sm font-medium">Team Leader</p>
+                    </motion.div>
+                  </div>
                 </div>
                 
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold text-sm mb-3">
+                  <p className="text-primary font-semibold text-base mb-4">
                     {leader.position}
                   </p>
                   
-                  {/* Clean role description */}
-                  <div className="mb-4">
-                    <p className="text-gray-600 text-xs leading-relaxed">
-                      {index === 0 && "Visionary leader driving innovation in construction procurement technology"}
-                      {index === 1 && "Operations expert focused on streamlining business processes and efficiency"}
-                      {index === 2 && "Financial strategist ensuring sustainable growth and market expansion"}
+                  {/* Enhanced role description */}
+                  <div className="mb-6">
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {index === 0 && "Visionary leader driving innovation in construction procurement technology with over 10 years of industry experience"}
+                      {index === 1 && "Operations expert focused on streamlining business processes and ensuring operational excellence across all verticals"}
+                      {index === 2 && "Financial strategist ensuring sustainable growth and market expansion through strategic financial planning"}
                     </p>
                   </div>
 
-                  {/* LinkedIn Icon - Always visible at bottom */}
+                  {/* Enhanced LinkedIn Section */}
                   <motion.div
                     className="flex justify-center"
-                    whileHover={{ scale: 1.15 }}
+                    whileHover={{ scale: 1.1 }}
                   >
                     <a
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
+                      className="flex items-center space-x-2 bg-gradient-to-r from-[#0077B5] to-[#005885] text-white px-4 py-2 rounded-full font-medium text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:from-[#005885] hover:to-[#004066]"
                       title="Connect on LinkedIn"
                     >
                       <Linkedin className="w-4 h-4" />
+                      <span>Connect</span>
                     </a>
                   </motion.div>
                 </div>
+
+                {/* Card corner decoration */}
+                <div className="absolute top-4 left-4 w-8 h-8 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Additional Leadership Stats */}
+          <motion.div
+            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="text-center bg-white/50 rounded-xl p-6 border border-gray-100">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                <Award className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-xl font-bold text-accent mb-2">15+ Years</h4>
+              <p className="text-sm text-gray-600">Combined Experience</p>
+            </div>
+            <div className="text-center bg-white/50 rounded-xl p-6 border border-gray-100">
+              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-xl font-bold text-accent mb-2">50+ Projects</h4>
+              <p className="text-sm text-gray-600">Successfully Delivered</p>
+            </div>
+            <div className="text-center bg-white/50 rounded-xl p-6 border border-gray-100">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="text-xl font-bold text-accent mb-2">100+ Team</h4>
+              <p className="text-sm text-gray-600">Members Led</p>
+            </div>
           </motion.div>
         </div>
       </section>
