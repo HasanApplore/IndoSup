@@ -162,7 +162,10 @@ export default function TestimonialsSection() {
               <div className="absolute top-0 left-0 w-20 h-20 bg-primary/10 rounded-full -translate-x-10 -translate-y-10"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
               
-              
+              {/* Quote Icon - Centered */}
+              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                <Quote className="w-8 h-8 text-primary" />
+              </div>
 
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
