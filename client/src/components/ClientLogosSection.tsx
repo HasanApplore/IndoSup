@@ -8,7 +8,7 @@ import vedantaLogo from '@/assets/vedanta-logo.png';
 import finolexLogo from '@/assets/finolex-pipes-logo.png';
 import aplapolloLogo from '@/assets/aplapollo-logo.png';
 import ashirvadLogo from '@/assets/ashirvad-logo.webp';
-import havellsLogo from '@/assets/havells-logo.webp';
+import havellsLogo from '@/assets/OIP_1752133637875.jpg';
 import polycabLogo from '@/assets/polycab-logo.png';
 
 export default function ClientLogosSection() {
