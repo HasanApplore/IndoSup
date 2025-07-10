@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 3000); // Faster - 3 seconds instead of 5
+    }, 2000); // Even faster - 2 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
@@ -139,7 +139,7 @@ export default function TestimonialsSection() {
 
             <div className="bg-[#fbfbfc]/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-[#fbfbfc]">
               {/* Decorative Elements */}
-              <div className="absolute top-0 left-0 w-20 h-20 bg-primary/10 rounded-full -translate-x-10 -translate-y-10"></div>
+              <div className="absolute top-0 left-0 w-20 h-20 bg-[#fada7e]/30 rounded-full -translate-x-10 -translate-y-10"></div>
               <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
               
               {/* Quote Icon - Centered */}
