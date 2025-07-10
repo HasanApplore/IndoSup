@@ -172,6 +172,7 @@ Changelog:
 - July 10, 2025. Updated homepage background color to #fbf5e8 (warm off-white) while preserving navbar, hero, statistics, and footer sections with their original backgrounds for visual contrast and hierarchy
 - July 10, 2025. Enhanced homepage background with subtle gradient from #fbf5e8 to #f8f2e0 for improved visual depth and warmth
 - July 10, 2025. Updated homepage background gradient to transition from #fbf5e8 to white for cleaner, more modern appearance
+- July 10, 2025. Added new partner logos: Asian Paints, Tata Steel, Berger Paints, and Vectus to trusted partners section, replaced old Havells logo with new high-quality version
 
 ## User Preferences
 

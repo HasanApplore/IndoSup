@@ -8,8 +8,12 @@ import vedantaLogo from '@/assets/vedanta-logo.png';
 import finolexLogo from '@/assets/finolex-pipes-logo.png';
 import aplapolloLogo from '@/assets/aplapollo-logo.png';
 import ashirvadLogo from '@/assets/ashirvad-logo.webp';
-import havellsLogo from '@/assets/havells-logo.webp';
+import havellsLogo from '@/assets/havells-logo-new.png';
 import polycabLogo from '@/assets/polycab-logo.png';
+import asianPaintsLogo from '@/assets/asian-paints-logo.png';
+import tataSteelLogo from '@/assets/tata-steel-logo.png';
+import bergerPaintsLogo from '@/assets/berger-paints-logo.webp';
+import vectusLogo from '@/assets/vectus-logo.png';
 
 export default function ClientLogosSection() {
   const [isHovered, setIsHovered] = useState(false);
@@ -24,6 +28,10 @@ export default function ClientLogosSection() {
     { name: 'Ashirvad by Aliaxis', logo: ashirvadLogo },
     { name: 'Havells', logo: havellsLogo },
     { name: 'Polycab', logo: polycabLogo },
+    { name: 'Asian Paints', logo: asianPaintsLogo },
+    { name: 'Tata Steel', logo: tataSteelLogo },
+    { name: 'Berger Paints', logo: bergerPaintsLogo },
+    { name: 'Vectus', logo: vectusLogo },
   ];
 
   // Create multiple sets for infinite scroll animation
