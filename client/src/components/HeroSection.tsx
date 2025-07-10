@@ -27,15 +27,17 @@ export default function HeroSection() {
   useEffect(() => {
     if (!youtubeVideoId) return;
 
-    // Load YouTube IFrame API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // Load YouTube IFrame API if not already loaded
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
 
     // Create player when API is ready
-    window.onYouTubeIframeAPIReady = () => {
-      if (iframeRef.current) {
+    const initializePlayer = () => {
+      if (iframeRef.current && window.YT && window.YT.Player) {
         const ytPlayer = new window.YT.Player(iframeRef.current, {
           videoId: youtubeVideoId,
           playerVars: {
@@ -66,13 +68,23 @@ export default function HeroSection() {
             onReady: (event) => {
               // Force autoplay when ready
               setPlayer(event.target);
-              event.target.playVideo();
-              event.target.setVolume(70); // Set higher volume
+              // Ensure video starts playing immediately
+              setTimeout(() => {
+                event.target.playVideo();
+                event.target.setVolume(70); // Set higher volume
+              }, 100);
             }
           }
         });
       }
     };
+
+    // Initialize player immediately if API is ready, otherwise wait for it
+    if (window.YT && window.YT.Player) {
+      initializePlayer();
+    } else {
+      window.onYouTubeIframeAPIReady = initializePlayer;
+    }
 
     return () => {
       // Cleanup
