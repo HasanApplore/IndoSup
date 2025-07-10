@@ -73,11 +73,6 @@ export default function About() {
       icon: <Heart className="w-6 h-6" />,
       title: "Sustainability",
       description: "Environmental responsibility in all operations"
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6" />,
-      title: "Transparency",
-      description: "Open communication and clear processes"
     }
   ];
 
@@ -515,53 +510,53 @@ export default function About() {
       </section>
 
       {/* Strength & Values */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-10 md:py-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-8 md:mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-4 font-inter">
               Strength & Values
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
+            <div className="w-20 md:w-28 h-1 bg-primary mx-auto"></div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
             {/* Strengths */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
+              className="bg-white rounded-xl p-6 shadow-lg"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-accent mb-8 flex items-center">
-                <Target className="w-8 h-8 text-primary mr-3" />
+              <h3 className="text-xl md:text-2xl font-bold text-accent mb-6 flex items-center">
+                <Target className="w-6 h-6 text-primary mr-3" />
                 Strengths
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {strengths.map((strength, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-4 group p-4 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-lg border border-transparent hover:border-primary/10"
+                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-md border border-transparent hover:border-primary/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.03, x: 8 }}
+                    whileHover={{ scale: 1.02, x: 6 }}
                   >
-                    <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-125 transition-all duration-300 group-hover:bg-[#092137] shadow-lg group-hover:shadow-xl">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137] shadow-md group-hover:shadow-lg">
                       {strength.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-accent mb-2 text-lg group-hover:text-primary transition-colors duration-300">
+                      <h4 className="font-bold text-accent mb-1 text-base group-hover:text-primary transition-colors duration-300">
                         {strength.title}
                       </h4>
-                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
+                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed text-sm">
                         {strength.description}
                       </p>
                     </div>
@@ -576,31 +571,31 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
+              className="bg-white rounded-xl p-6 shadow-lg"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-accent mb-8 flex items-center">
-                <Heart className="w-8 h-8 text-primary mr-3" />
+              <h3 className="text-xl md:text-2xl font-bold text-accent mb-6 flex items-center">
+                <Heart className="w-6 h-6 text-primary mr-3" />
                 Our Values
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {values.map((value, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-4 group p-4 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-lg border border-transparent hover:border-primary/10"
+                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-md border border-transparent hover:border-primary/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.03, x: 8 }}
+                    whileHover={{ scale: 1.02, x: 6 }}
                   >
-                    <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-125 transition-all duration-300 group-hover:bg-[#092137] shadow-lg group-hover:shadow-xl">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137] shadow-md group-hover:shadow-lg">
                       {value.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-accent mb-2 text-lg group-hover:text-primary transition-colors duration-300">
+                      <h4 className="font-bold text-accent mb-1 text-base group-hover:text-primary transition-colors duration-300">
                         {value.title}
                       </h4>
-                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed">
+                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed text-sm">
                         {value.description}
                       </p>
                     </div>
