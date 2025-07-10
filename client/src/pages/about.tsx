@@ -234,23 +234,23 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-4 md:py-6 bg-white">
+      <section className="py-6 md:py-8 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
-            className="text-center mb-6 md:mb-8"
+            className="text-center mb-8 md:mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-3 font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-4 font-inter">
               Our Leadership
             </h2>
-            <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
+            <div className="w-18 md:w-24 h-1 bg-primary mx-auto"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -261,9 +261,9 @@ export default function About() {
                 key={index}
                 variants={itemVariants}
                 className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-primary/30 relative"
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -9, scale: 1.02 }}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -272,17 +272,17 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">
+                <div className="p-5 text-center">
+                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold text-sm mb-3">
+                  <p className="text-primary font-semibold text-base mb-4">
                     {leader.position}
                   </p>
                   
                   {/* Clean role description */}
-                  <div className="mt-2 pt-2 border-t border-gray-100 mb-3">
-                    <p className="text-gray-600 text-xs leading-relaxed">
+                  <div className="mt-3 pt-3 border-t border-gray-100 mb-4">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology"}
                       {index === 1 && "Operations expert focused on streamlining business processes and efficiency"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion"}
@@ -298,9 +298,9 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#0077B5] text-white px-4 py-2 rounded-full font-medium text-xs shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2"
+                      className="bg-[#0077B5] text-white px-5 py-2 rounded-full font-medium text-sm shadow-lg hover:bg-[#005885] transition-all duration-300 flex items-center space-x-2"
                     >
-                      <Linkedin className="w-3 h-3" />
+                      <Linkedin className="w-4 h-4" />
                       <span>Connect on LinkedIn</span>
                     </a>
                   </motion.div>
