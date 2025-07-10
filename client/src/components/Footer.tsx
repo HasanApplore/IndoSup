@@ -43,27 +43,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info & Quick Links */}
           <div className="space-y-6">
-            <div className="transform hover:scale-105 transition-transform duration-300">
+            <div>
               <img 
                 src={indosupLogo} 
                 alt="IndoSup Logo" 
-                className="h-10 w-auto mb-4 filter drop-shadow-lg"
+                className="h-10 w-auto mb-4"
               />
             </div>
             
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-              <h4 className="text-base font-bold mb-4 text-white flex items-center">
-                <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-                Quick Links
-              </h4>
-              <ul className="space-y-3">
+            <div>
+              <h4 className="text-base font-bold mb-4 text-white">Quick Links</h4>
+              <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
+                      className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm"
                     >
-                      <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
                       {link.name}
                     </Link>
                   </li>
@@ -73,19 +69,15 @@ export default function Footer() {
           </div>
 
           {/* Product Categories */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-            <h4 className="text-base font-bold mb-4 text-white flex items-center">
-              <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-              Product Categories
-            </h4>
-            <ul className="space-y-3">
+          <div>
+            <h4 className="text-base font-bold mb-4 text-white">Product Categories</h4>
+            <ul className="space-y-2">
               {productCategories.map((category, index) => (
                 <li key={index}>
                   <Link 
                     to={category.path}
-                    className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
+                    className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm"
                   >
-                    <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
                     {category.name}
                   </Link>
                 </li>
@@ -94,27 +86,24 @@ export default function Footer() {
           </div>
 
           {/* Contact Info & Social Media */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-            <h4 className="text-base font-bold mb-4 text-white flex items-center">
-              <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-              Connect With Us
-            </h4>
+          <div>
+            <h4 className="text-base font-bold mb-4 text-white">Connect With Us</h4>
             
-            <div className="space-y-4 mb-6">
-              <div className="flex items-start text-gray-300 text-sm group">
-                <MapPin className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+            <div className="space-y-3 mb-6">
+              <div className="flex items-start text-gray-300 text-sm">
+                <MapPin className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
               </div>
-              <div className="flex items-start text-gray-300 text-sm group">
-                <Phone className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+              <div className="flex items-start text-gray-300 text-sm">
+                <Phone className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col space-y-1">
-                  <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors font-medium">+91 880 211 4204</a></span>
-                  <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors font-medium">+91 836 882 5766</a></span>
+                  <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors">+91 880 211 4204</a></span>
+                  <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors">+91 836 882 5766</a></span>
                 </div>
               </div>
-              <div className="flex items-center text-gray-300 text-sm group">
-                <Mail className="w-4 h-4 mr-3 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors font-medium">
+              <div className="flex items-center text-gray-300 text-sm">
+                <Mail className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
+                <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors">
                   sales@indosup.com
                 </a>
               </div>
@@ -131,8 +120,8 @@ export default function Footer() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
-                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="w-9 h-9 bg-gray-700 rounded-full flex items-center justify-center text-gray-300 hover:bg-primary hover:text-neutral-dark transition-all duration-300"
+                      whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       title={social.label}
                     >
