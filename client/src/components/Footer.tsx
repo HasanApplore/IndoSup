@@ -73,50 +73,54 @@ export default function Footer() {
           </div>
 
           {/* Product Categories */}
-          <div>
-            <h4 className="text-base font-bold mb-4 text-white flex items-center">
-              <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-              Product Categories
-            </h4>
-            <ul className="space-y-3">
-              {productCategories.map((category, index) => (
-                <li key={index}>
-                  <Link 
-                    to={category.path}
-                    className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
-                  >
-                    <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-base font-bold mb-4 text-white flex items-center">
+                <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
+                Product Categories
+              </h4>
+              <ul className="space-y-3">
+                {productCategories.map((category, index) => (
+                  <li key={index}>
+                    <Link 
+                      to={category.path}
+                      className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
+                    >
+                      <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                      {category.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact Info & Social Media */}
-          <div>
-            <h4 className="text-base font-bold mb-4 text-white flex items-center">
-              <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-              Connect With Us
-            </h4>
-            
-            <div className="space-y-4 mb-6">
-              <div className="flex items-start text-gray-300 text-sm group">
-                <MapPin className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
-              </div>
-              <div className="flex items-start text-gray-300 text-sm group">
-                <Phone className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div className="flex flex-col space-y-1">
-                  <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors font-medium">+91 880 211 4204</a></span>
-                  <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors font-medium">+91 836 882 5766</a></span>
+          <div className="space-y-6">
+            <div>
+              <h4 className="text-base font-bold mb-4 text-white flex items-center">
+                <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
+                Connect With Us
+              </h4>
+              
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start text-gray-300 text-sm group">
+                  <MapPin className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
                 </div>
-              </div>
-              <div className="flex items-center text-gray-300 text-sm group">
-                <Mail className="w-4 h-4 mr-3 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors font-medium">
-                  sales@indosup.com
-                </a>
+                <div className="flex items-start text-gray-300 text-sm group">
+                  <Phone className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <div className="flex flex-col space-y-1">
+                    <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors font-medium">+91 880 211 4204</a></span>
+                    <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors font-medium">+91 836 882 5766</a></span>
+                  </div>
+                </div>
+                <div className="flex items-center text-gray-300 text-sm group">
+                  <Mail className="w-4 h-4 mr-3 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors font-medium">
+                    sales@indosup.com
+                  </a>
+                </div>
               </div>
             </div>
 
