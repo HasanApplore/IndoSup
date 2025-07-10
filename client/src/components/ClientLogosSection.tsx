@@ -12,7 +12,7 @@ import havellsLogo from '@/assets/havells-logo-new.png';
 import polycabLogo from '@/assets/polycab-logo.png';
 import asianPaintsLogo from '@/assets/asian-paints-logo.png';
 import tataSteelLogo from '@/assets/tata-steel-logo.png';
-import bergerPaintsLogo from '@/assets/berger-paints-logo.webp';
+
 import vectusLogo from '@/assets/vectus-logo.png';
 
 export default function ClientLogosSection() {
@@ -30,7 +30,7 @@ export default function ClientLogosSection() {
     { name: 'Polycab', logo: polycabLogo },
     { name: 'Asian Paints', logo: asianPaintsLogo },
     { name: 'Tata Steel', logo: tataSteelLogo },
-    { name: 'Berger Paints', logo: bergerPaintsLogo },
+
     { name: 'Vectus', logo: vectusLogo },
   ];
 
