@@ -6,24 +6,29 @@ export default function About() {
   // Carousel images data
   const carouselImages = [
     {
-      src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop",
-      alt: "Construction Site Planning",
-      title: "Smart Planning"
-    },
-    {
       src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop",
-      alt: "Digital Procurement Platform",
-      title: "Digital Solutions"
+      alt: "Steel Framework Construction",
+      title: "Steel Framework"
     },
     {
-      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
-      alt: "Modern Construction",
-      title: "Modern Infrastructure"
+      src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop",
+      alt: "Pipes and Fitting Systems",
+      title: "Pipes & Fitting"
     },
     {
-      src: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=600&h=400&fit=crop",
-      alt: "Supply Chain Management",
-      title: "Supply Chain"
+      src: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop",
+      alt: "Electrical Systems Installation",
+      title: "Electrical Systems"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop",
+      alt: "Fire Fighting System Equipment",
+      title: "Fire Fighting System"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+      alt: "Warehousing Material Storage",
+      title: "Warehousing Material"
     }
   ];
 
