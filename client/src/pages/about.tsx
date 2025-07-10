@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star } from 'lucide-react';
+import indoSupImage from '@assets/image_1752140673594.png';
 
 export default function About() {
   // Leadership team data
@@ -132,10 +133,14 @@ export default function About() {
               </p>
             </div>
             <div className="relative">
-              <div className="w-full h-64 bg-accent rounded-2xl flex items-center justify-center">
-                <Building className="w-24 h-24 text-primary" />
+              <div className="w-full h-64 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <img 
+                  src={indoSupImage} 
+                  alt="IndoSup Construction Platform" 
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary rounded-full flex items-center justify-center">
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg">
                 <Star className="w-10 h-10 text-white" />
               </div>
             </div>
