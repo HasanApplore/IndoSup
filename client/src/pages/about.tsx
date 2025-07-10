@@ -188,7 +188,7 @@ export default function About() {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           <motion.div
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-12 md:mb-16 text-[14px] font-normal"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
