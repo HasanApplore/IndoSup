@@ -278,13 +278,20 @@ export default function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="IndoSup Office Location - C-120, 2nd Floor, Sector 2, Noida"
               />
-              <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
+              <a 
+                href="https://www.google.com/maps/place/C-120,+Sector+2,+Noida,+Uttar+Pradesh+201301/@28.5984463,77.3100975,17z/data=!3m1!4b1!4m5!3m4!1s0x390ce5a43173357b:0x37ffce30c87cc3b7!8m2!3d28.5984463!4d77.3100975"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                title="Click to open in Google Maps"
+              >
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-accent">IndoSup Office</span>
+                  <div className="w-3 h-3 bg-red-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
+                  <span className="text-sm font-medium text-accent group-hover:text-primary transition-colors duration-300">IndoSup Office</span>
                 </div>
-                <p className="text-xs text-neutral-base mt-1">C-120, 2nd Floor, Sector 2</p>
-              </div>
+                <p className="text-xs text-neutral-base mt-1 group-hover:text-accent transition-colors duration-300">C-120, 2nd Floor, Sector 2</p>
+                <p className="text-xs text-primary mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Click to open in Maps</p>
+              </a>
             </div>
           </motion.div>
         </div>
