@@ -55,7 +55,8 @@ export default function HeroSection() {
             end: 10,
             cc_load_policy: 0,
             fs: 0,
-            disablekb: 1
+            disablekb: 1,
+            origin: window.location.origin
           },
           events: {
             onStateChange: (event) => {
@@ -68,11 +69,21 @@ export default function HeroSection() {
             onReady: (event) => {
               // Force autoplay when ready
               setPlayer(event.target);
-              // Ensure video starts playing immediately
-              setTimeout(() => {
-                event.target.playVideo();
-                event.target.setVolume(70); // Set higher volume
-              }, 100);
+              // Ensure video starts playing immediately with multiple attempts
+              const forcePlay = () => {
+                try {
+                  event.target.playVideo();
+                  event.target.setVolume(70); // Set higher volume
+                } catch (error) {
+                  console.log('Autoplay attempt failed, retrying...');
+                  setTimeout(forcePlay, 500);
+                }
+              };
+              
+              // Multiple autoplay attempts for better reliability
+              setTimeout(forcePlay, 100);
+              setTimeout(forcePlay, 500);
+              setTimeout(forcePlay, 1000);
             }
           }
         });
@@ -109,7 +120,7 @@ export default function HeroSection() {
           <iframe
             ref={iframeRef}
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1`}
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=${encodeURIComponent(window.location.origin)}`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
