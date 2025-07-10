@@ -72,9 +72,9 @@ export default function ClientLogosSection() {
           >
             {/* Continuous Strip */}
             <motion.div
-              className="flex gap-12 items-center whitespace-nowrap"
+              className="flex gap-16 items-center whitespace-nowrap"
               animate={{
-                x: [0, -120 * clientLogos.length],
+                x: [0, -144 * clientLogos.length],
               }}
               transition={{
                 x: {
@@ -88,7 +88,7 @@ export default function ClientLogosSection() {
               {repeatedLogos.map((client, index) => (
                 <motion.div
                   key={`logo-${index}`}
-                  className="group flex-shrink-0 w-24 h-16 flex items-center justify-center cursor-pointer"
+                  className="group flex-shrink-0 w-32 h-20 flex items-center justify-center cursor-pointer"
                   whileHover={{ 
                     scale: 1.1,
                     transition: { duration: 0.2 }
