@@ -312,9 +312,9 @@ export default function About() {
       </section>
 
       {/* Our Vision */}
-      <section className="py-16 md:py-20 relative overflow-hidden">
+      <section className="py-12 md:py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
@@ -322,41 +322,41 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center mb-6">
+            <div className="flex items-center justify-center mb-5">
               <motion.div
-                className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mr-4"
+                className="w-14 h-14 bg-primary rounded-full flex items-center justify-center mr-3"
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.5 }}
               >
-                <Eye className="w-8 h-8 text-white" />
+                <Eye className="w-7 h-7 text-white" />
               </motion.div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent font-inter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent font-inter">
                 Our Vision
               </h2>
             </div>
-            <div className="w-24 md:w-32 h-1 bg-primary mx-auto mb-12"></div>
+            <div className="w-20 md:w-28 h-1 bg-primary mx-auto mb-10"></div>
             
             <motion.div
-              className="relative max-w-5xl mx-auto"
+              className="relative max-w-4xl mx-auto"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-primary/20">
-                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-accent leading-relaxed relative">
-                  <span className="text-primary text-6xl absolute -top-4 -left-4 opacity-20">"</span>
+              <div className="bg-white rounded-2xl p-6 md:p-10 shadow-xl border border-primary/20">
+                <p className="text-lg md:text-xl lg:text-2xl font-bold text-accent leading-relaxed relative">
+                  <span className="text-primary text-5xl absolute -top-3 -left-3 opacity-20">"</span>
                   To streamline construction sourcing and procurement using smart, cost-effective, 
                   and scalable technology solutions to build efficient and sustainable infrastructure.
-                  <span className="text-primary text-6xl absolute -bottom-8 -right-4 opacity-20">"</span>
+                  <span className="text-primary text-5xl absolute -bottom-6 -right-3 opacity-20">"</span>
                 </p>
               </div>
               
               {/* Floating elements */}
               <motion.div
-                className="absolute -top-4 -left-4 w-8 h-8 bg-primary rounded-full"
+                className="absolute -top-3 -left-3 w-7 h-7 bg-primary rounded-full"
                 animate={{ 
-                  y: [0, -15, 0],
+                  y: [0, -12, 0],
                   opacity: [0.6, 1, 0.6]
                 }}
                 transition={{ 
@@ -366,9 +366,9 @@ export default function About() {
                 }}
               />
               <motion.div
-                className="absolute -bottom-4 -right-4 w-6 h-6 bg-accent rounded-full"
+                className="absolute -bottom-3 -right-3 w-5 h-5 bg-accent rounded-full"
                 animate={{ 
-                  y: [0, 15, 0],
+                  y: [0, 12, 0],
                   opacity: [0.6, 1, 0.6]
                 }}
                 transition={{ 
@@ -383,19 +383,19 @@ export default function About() {
       </section>
 
       {/* Our Mission */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-8 font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-6 font-inter">
               Our Mission
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-primary mx-auto mb-12"></div>
+            <div className="w-20 md:w-28 h-1 bg-primary mx-auto mb-10"></div>
           </motion.div>
 
           <motion.div
@@ -405,8 +405,8 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border-l-8 border-primary">
-              <p className="text-lg md:text-xl text-accent leading-relaxed font-medium">
+            <div className="bg-gray-50 rounded-2xl p-6 md:p-10 border-l-6 border-primary">
+              <p className="text-base md:text-lg text-accent leading-relaxed font-medium">
                 "Empowering the construction ecosystem by reducing complexity in procurement, 
                 enabling transparency, and ensuring timely, high-quality delivery."
               </p>
