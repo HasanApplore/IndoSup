@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Send, Mail, MapPin, Phone, ArrowUp } from 'lucide-react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import indosupLogo from '../assets/indosup-logo-transparent.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -43,11 +44,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, url: 'https://facebook.com/indosup', label: 'Facebook' },
-    { icon: FaTwitter, url: 'https://twitter.com/indosup', label: 'Twitter' },
-    { icon: FaLinkedin, url: 'https://linkedin.com/company/indosup', label: 'LinkedIn' },
-    { icon: FaInstagram, url: 'https://instagram.com/indosup', label: 'Instagram' },
-    { icon: FaYoutube, url: 'https://youtube.com/indosup', label: 'YouTube' }
+    { icon: FaFacebook, url: 'https://www.facebook.com/IndoSup/', label: 'Facebook' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/indosupofficial/', label: 'Instagram' },
+    { icon: FaLinkedin, url: 'https://www.linkedin.com/company/indosup/', label: 'LinkedIn' }
   ];
 
   const legalLinks = [
@@ -64,10 +63,11 @@ export default function Footer() {
           {/* Company Info & Quick Links */}
           <div>
             <div className="mb-4">
-              <h3 className="text-xl font-bold text-primary mb-2">IndoSup</h3>
-              <p className="text-gray-300 text-xs leading-relaxed">
-                Revolutionizing construction procurement with digital sourcing solutions.
-              </p>
+              <img 
+                src={indosupLogo} 
+                alt="IndoSup Logo" 
+                className="h-8 w-auto mb-2"
+              />
             </div>
             
             <div>
@@ -109,20 +109,21 @@ export default function Footer() {
             <h4 className="text-sm font-semibold mb-3">Connect With Us</h4>
             
             <div className="space-y-2 mb-4">
-              <div className="flex items-center text-gray-300 text-xs">
-                <MapPin className="w-3 h-3 mr-2 text-primary flex-shrink-0" />
-                <span>Mumbai, Delhi, Bangalore</span>
+              <div className="flex items-start text-gray-300 text-xs">
+                <MapPin className="w-3 h-3 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                <span>C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
               </div>
               <div className="flex items-center text-gray-300 text-xs">
                 <Phone className="w-3 h-3 mr-2 text-primary flex-shrink-0" />
-                <a href="tel:+912245678900" className="hover:text-primary transition-colors">
-                  +91 22 4567 8900
-                </a>
+                <div className="flex flex-col">
+                  <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors">+91 880 211 4204</a></span>
+                  <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors">+91 836 882 5766</a></span>
+                </div>
               </div>
               <div className="flex items-center text-gray-300 text-xs">
                 <Mail className="w-3 h-3 mr-2 text-primary flex-shrink-0" />
-                <a href="mailto:info@indosup.com" className="hover:text-primary transition-colors">
-                  info@indosup.com
+                <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors">
+                  sales@indosup.com
                 </a>
               </div>
             </div>
