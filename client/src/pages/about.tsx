@@ -144,7 +144,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* What Is IndoSup Section */}
-      <section className="min-h-screen flex items-center py-20 md:py-24 relative overflow-hidden">
+      <section className="py-14 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
         
         {/* Animated background elements */}
@@ -175,7 +175,7 @@ export default function About() {
           />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl relative">
           <motion.div
             className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -183,22 +183,22 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-accent mb-10 font-inter">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-6 font-inter leading-tight">
               What Is IndoSup?
             </h1>
-            <div className="w-32 md:w-40 h-1.5 bg-gradient-to-r from-primary to-accent mx-auto"></div>
+            <div className="w-28 md:w-36 h-1.5 bg-gradient-to-r from-primary to-accent mx-auto rounded-full shadow-sm"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="space-y-10">
+            <div className="space-y-10 lg:pr-8">
               <motion.h2 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent leading-tight"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent leading-tight"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -207,7 +207,7 @@ export default function About() {
                 Your convenient source for hassle-free construction material procurement.
               </motion.h2>
               <motion.p 
-                className="text-xl md:text-2xl text-neutral-base leading-relaxed"
+                className="text-lg md:text-xl text-neutral-base leading-relaxed"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -219,7 +219,7 @@ export default function About() {
               
               {/* Statistics Cards */}
               <motion.div 
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10"
+                className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-10"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -228,16 +228,16 @@ export default function About() {
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-                    whileHover={{ y: -8, scale: 1.08 }}
+                    className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group text-center"
+                    whileHover={{ y: -8, scale: 1.05 }}
                   >
-                    <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full mx-auto mb-4 group-hover:bg-accent transition-colors duration-300">
-                      <div className="text-white group-hover:text-primary transition-colors duration-300 text-lg">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                      <div className="text-white">
                         {stat.icon}
                       </div>
                     </div>
-                    <div className="text-2xl font-bold text-accent text-center">{stat.number}</div>
-                    <div className="text-base text-neutral-base text-center mt-2">{stat.label}</div>
+                    <div className="text-2xl font-bold text-accent mb-1">{stat.number}</div>
+                    <div className="text-sm text-neutral-base font-medium">{stat.label}</div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -245,13 +245,13 @@ export default function About() {
             
             {/* Multi-Image Carousel */}
             <motion.div 
-              className="relative"
+              className="relative lg:pl-8"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="w-full h-96 md:h-[500px] bg-white rounded-3xl shadow-2xl overflow-hidden relative">
+              <div className="w-full h-96 bg-white rounded-3xl shadow-2xl overflow-hidden relative border border-gray-100">
                 {/* Carousel Images */}
                 <div className="relative w-full h-full">
                   {carouselImages.map((image, index) => (
@@ -266,26 +266,31 @@ export default function About() {
                         alt={image.alt} 
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       <div className="absolute bottom-8 left-8 text-white">
-                        <h3 className="text-2xl md:text-3xl font-bold">{image.title}</h3>
+                        <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">{image.title}</h3>
+                        <div className="w-16 h-1 bg-primary rounded-full"></div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
                   {carouselImages.map((_, index) => (
                     <div
                       key={index}
                       className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        index === currentImageIndex ? 'bg-primary scale-125' : 'bg-white/60'
+                        index === currentImageIndex ? 'bg-primary scale-125 shadow-lg' : 'bg-white/60'
                       }`}
                     />
                   ))}
                 </div>
               </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
             </motion.div>
           </motion.div>
         </div>
