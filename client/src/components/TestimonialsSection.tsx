@@ -54,14 +54,14 @@ export default function TestimonialsSection() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [direction, setDirection] = useState(0);
 
-  // Auto-play functionality
+  // Auto-play functionality - faster transitions
   useEffect(() => {
     if (!isAutoPlaying) return;
     
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 3000); // Faster - 3 seconds instead of 5
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
@@ -142,20 +142,6 @@ export default function TestimonialsSection() {
 
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
-            {/* Navigation Arrows - Positioned above testimonial card */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-4 -top-6 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-20 hover:scale-105 ml-[-38px] mr-[-38px] mt-[142px] mb-[142px]"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-4 -top-6 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-accent hover:text-white hover:bg-primary hover:shadow-xl transition-all duration-300 z-20 hover:scale-105 mr-[-38px] ml-[-38px] mt-[142px] mb-[142px]"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-white/90">
               {/* Decorative Elements */}
@@ -176,9 +162,9 @@ export default function TestimonialsSection() {
                   animate="center"
                   exit="exit"
                   transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.4 },
-                    scale: { duration: 0.4 }
+                    x: { type: "spring", stiffness: 400, damping: 25 },
+                    opacity: { duration: 0.3 },
+                    scale: { duration: 0.3 }
                   }}
                   className="text-center pt-16"
                 >
