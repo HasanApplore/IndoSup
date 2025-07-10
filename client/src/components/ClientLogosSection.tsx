@@ -30,7 +30,7 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="py-6 md:py-10 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="pt-6 md:pt-10 pb-0 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,198,0,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(3,29,51,0.05),transparent_50%)]"></div>
