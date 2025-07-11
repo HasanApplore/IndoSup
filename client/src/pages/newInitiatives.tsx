@@ -402,34 +402,7 @@ export default function NewInitiatives() {
         </div>
       </section>
 
-      {/* Additional Info */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
-              Complete Product Catalogs Available
-            </h2>
-            <p className="text-lg text-neutral-base mb-8 leading-relaxed">
-              Access detailed specifications, pricing, and availability for our entire 
-              product range through our comprehensive digital catalogs.
-            </p>
-            
-            <motion.button
-              className="inline-flex items-center px-8 py-4 bg-primary text-accent font-bold rounded-full hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ExternalLink className="w-5 h-5 mr-2" />
-              Learn More
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
