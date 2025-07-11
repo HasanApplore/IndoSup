@@ -33,6 +33,13 @@ export default function SteelProducts() {
     setHeroAnimationComplete(true);
   };
 
+  const scrollToCategories = () => {
+    const element = document.getElementById('steel-categories-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const steelCategories = [
     {
       name: "Structural Steel",
@@ -184,10 +191,15 @@ export default function SteelProducts() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+            <motion.button
+              onClick={scrollToCategories}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Building2 className="w-5 h-5 text-white" />
               <span className="text-white font-medium">5 Categories</span>
-            </div>
+            </motion.button>
             <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
               <Package className="w-5 h-5 text-white" />
               <span className="text-white font-medium">ISI Certified</span>
@@ -252,6 +264,7 @@ export default function SteelProducts() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            id="steel-categories-section"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 font-inter">
               Steel Product Categories
