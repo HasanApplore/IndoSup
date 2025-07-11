@@ -340,7 +340,7 @@ export default function SteelProducts() {
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold font-inter">Steel Products</h1>
-                <p className="text-white text-lg mt-2">Premium quality steel construction materials</p>
+                <p className="text-black text-lg mt-2">Premium quality steel construction materials</p>
               </div>
             </div>
           </motion.div>
