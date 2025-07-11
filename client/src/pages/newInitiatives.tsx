@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Building2, Users, Globe, Shield, Zap, ArrowDown, ArrowUp, Star, Target, CheckCircle, TrendingUp, Award, Handshake, ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
-import productsBannerImage from '@assets/image_1752217941194.png';
+import globalInitiativesBanner from '@assets/global-initiatives_1752232647962.jpg';
 
 export default function NewInitiatives() {
   const [heroAnimated, setHeroAnimated] = useState(false);
@@ -90,11 +90,11 @@ export default function NewInitiatives() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src={productsBannerImage}
-            alt="IndoSup New Initiatives - Construction Materials Excellence"
+            src={globalInitiativesBanner}
+            alt="IndoSup Global Initiatives - Worldwide Network"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/80 via-accent/60 to-accent/40"></div>
         </div>
         
         {/* Animated background elements */}
@@ -168,25 +168,38 @@ export default function NewInitiatives() {
             Expanding horizons with two specialized companies driving innovation in construction procurement and technical excellence.
           </motion.p>
 
-          {/* Feature highlights */}
+          {/* Company Buttons */}
           <motion.div
-            className="flex flex-wrap justify-center gap-4 mb-8"
+            className="flex flex-col sm:flex-row justify-center gap-6 mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Building2 className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Global Private Limited</span>
-            </div>
-            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Users className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Global Assist Limited</span>
-            </div>
-            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Globe className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Global Expansion</span>
-            </div>
+            <Link to="/contact">
+              <motion.button
+                className="group relative px-8 py-4 bg-primary text-accent font-bold rounded-full hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="flex items-center justify-center">
+                  <Building2 className="w-5 h-5 mr-3" />
+                  <span>IndoSup Global Private Limited</span>
+                </div>
+              </motion.button>
+            </Link>
+            
+            <Link to="/contact">
+              <motion.button
+                className="group relative px-8 py-4 bg-white/10 text-white font-bold rounded-full border-2 border-white/30 hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center backdrop-blur-sm"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="flex items-center justify-center">
+                  <Users className="w-5 h-5 mr-3" />
+                  <span>IndoSup Global Assist Limited</span>
+                </div>
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 
@@ -199,7 +212,7 @@ export default function NewInitiatives() {
           onClick={scrollToContent}
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">Scroll to explore</span>
+            <span className="text-white text-sm">New Initiatives</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -212,8 +225,8 @@ export default function NewInitiatives() {
       </section>
 
       {/* Statistics Summary */}
-      <section className="py-12 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-16 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div
               className="text-center"
@@ -256,10 +269,10 @@ export default function NewInitiatives() {
       </section>
 
       {/* Company Categories */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <section className="py-20 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-16 md:mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -268,8 +281,8 @@ export default function NewInitiatives() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
               Our Global Companies
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
-            <p className="text-neutral-base mt-6 max-w-2xl mx-auto text-lg">
+            <div className="w-24 md:w-32 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-neutral-base max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
               Two specialized companies driving innovation in global construction markets and technical excellence
             </p>
           </motion.div>
@@ -281,11 +294,11 @@ export default function NewInitiatives() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* Steel Products Card */}
+            {/* Global Private Limited Card */}
             <motion.div variants={cardVariants}>
               <Link to="/contact">
                 <motion.div
-                  className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-10 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl"
+                  className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl h-full"
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -340,11 +353,11 @@ export default function NewInitiatives() {
               </Link>
             </motion.div>
 
-            {/* Non-Steel Products Card */}
+            {/* Global Assist Limited Card */}
             <motion.div variants={cardVariants}>
               <Link to="/contact">
                 <motion.div
-                  className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-10 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl"
+                  className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl h-full"
                   whileHover={{ y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
