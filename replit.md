@@ -176,6 +176,7 @@ Changelog:
 - July 10, 2025. Completely redesigned About Us page with new content structure: "What Is IndoSup?" section with 2-column layout, leadership profiles for Ashmit Sharma (CEO), Akshaj Sharma (COO), and Shivank Saxena (CFO), vision and mission sections with quote styling, and comprehensive Strength & Values section with animated icons and hover effects
 - July 10, 2025. Updated "What Is IndoSup?" section with Mission & Vision background styling, reduced theoretical content by 40%, removed single image and star decoration, implemented multi-image carousel with 4 construction-themed images, auto-advancing functionality, navigation arrows, and dot indicators
 - July 10, 2025. Enhanced Leadership section with demo avatar images, reduced size by 40%, replaced LinkedIn buttons with clean icons, applied consistent background gradient matching page theme, and improved visual hierarchy and alignment
+- July 11, 2025. Applied unified background theme styling across all pages: updated all pages to use `bg-gradient-to-br from-[#fbf5e8] to-white` background gradient matching homepage design, ensuring consistent visual experience and brand cohesion throughout the entire application
 
 ## User Preferences
 

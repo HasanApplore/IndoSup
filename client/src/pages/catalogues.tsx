@@ -158,7 +158,7 @@ export default function Catalogues() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
       <section className="bg-accent text-white py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
