@@ -288,50 +288,7 @@ export default function StreamlinedProcurement() {
             </p>
           </motion.div>
 
-          {/* Stats Summary */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building2 className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Multi-site</h3>
-              <p className="text-neutral-base text-sm">Procurement</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Calculator className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Price</h3>
-              <p className="text-neutral-base text-sm">Accuracy</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Truck className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Supply Chain</h3>
-              <p className="text-neutral-base text-sm">Solutions</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <FileText className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">GST</h3>
-              <p className="text-neutral-base text-sm">Compliance</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Package className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Order</h3>
-              <p className="text-neutral-base text-sm">Management</p>
-            </div>
-          </motion.div>
+
 
           <motion.div
             className="space-y-12 md:space-y-16"
