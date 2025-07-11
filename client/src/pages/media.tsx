@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Tag, ArrowRight, Filter, Search } from 'lucide-react';
 
@@ -7,6 +7,24 @@ export default function Media() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
+  const [heroAnimated, setHeroAnimated] = useState(false);
+
+  // Reset hero animation when component mounts or page is refreshed
+  useEffect(() => {
+    setHeroAnimated(false);
+  }, []);
+
+  // Add scroll handler to reset hero when scrolling back to top
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setHeroAnimated(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const tabs = [
     { id: 'media-coverage', label: 'Media Coverage' },
@@ -207,9 +225,20 @@ export default function Media() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white relative overflow-hidden">
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section 
+        className={`hero-section relative min-h-screen flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
+          heroAnimated ? '-translate-y-full' : 'translate-y-0'
+        }`}
+        style={{ 
+          position: heroAnimated ? 'fixed' : 'relative',
+          top: heroAnimated ? '0' : 'auto',
+          left: heroAnimated ? '0' : 'auto',
+          width: heroAnimated ? '100%' : 'auto',
+          zIndex: heroAnimated ? 40 : 'auto'
+        }}
+      >
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
@@ -302,11 +331,7 @@ export default function Media() {
               onClick={() => {
                 const contentSection = document.getElementById('media-content');
                 if (contentSection) {
-                  const heroSection = document.querySelector('.hero-section');
-                  if (heroSection) {
-                    heroSection.style.transform = 'translateY(-100vh)';
-                    heroSection.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                  }
+                  setHeroAnimated(true);
                   setTimeout(() => {
                     contentSection.scrollIntoView({ 
                       behavior: 'smooth',
@@ -333,8 +358,35 @@ export default function Media() {
       </section>
 
       {/* Main Content */}
-      <section id="media-content" className="py-16 md:py-20 lg:py-24 bg-white">
+      <section 
+        id="media-content" 
+        className={`py-16 md:py-20 lg:py-24 bg-white transition-all duration-700 ease-out ${
+          heroAnimated ? 'mt-0' : 'mt-0'
+        }`}
+        style={{ 
+          position: 'relative',
+          zIndex: heroAnimated ? 50 : 'auto'
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Back to Top Button */}
+          {heroAnimated && (
+            <motion.button
+              className="fixed top-4 right-4 z-50 bg-primary text-accent px-4 py-2 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.3 }}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setHeroAnimated(false);
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Back to Top
+            </motion.button>
+          )}
+
           {/* Section Header */}
           <motion.div
             className="text-center mb-12 md:mb-16"
@@ -450,8 +502,9 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative cursor-pointer"
-                  whileHover={{ y: -10, scale: 1.03 }}
+                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative cursor-pointer transform-gpu"
+                  whileHover={{ y: -12, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {/* Image */}
                   <div className="relative h-48 md:h-52 overflow-hidden">
@@ -466,9 +519,16 @@ export default function Media() {
                         {item.category}
                       </span>
                     </div>
+                    
+                    {/* Reading Time Badge */}
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="bg-white/90 text-accent px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-lg">
+                        {Math.ceil(Math.random() * 5 + 2)} min read
+                      </span>
+                    </div>
                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <ArrowRight className="w-4 h-4 text-accent" />
+                      <div className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg hover:bg-primary transition-colors duration-300">
+                        <ArrowRight className="w-5 h-5 text-accent" />
                       </div>
                     </div>
                   </div>
@@ -492,7 +552,7 @@ export default function Media() {
 
                     <div className="flex items-center justify-between">
                       <motion.button
-                        className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-xs md:text-sm group-hover:bg-primary/10 px-2 md:px-3 py-1.5 md:py-2 rounded-lg transition-all duration-300"
+                        className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors duration-300 text-xs md:text-sm group-hover:bg-primary/10 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-primary/20 hover:border-primary/40"
                         whileHover={{ x: 5 }}
                       >
                         <span className="mr-1 md:mr-2">Read More</span>
@@ -502,20 +562,20 @@ export default function Media() {
                       {/* Engagement Icons */}
                       <div className="flex items-center gap-1 md:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <motion.button
-                          className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          className="p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Add to favorites"
                         >
-                          <Tag className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />
+                          <Tag className="w-3 h-3 md:w-4 md:h-4 text-primary hover:text-accent" />
                         </motion.button>
                         <motion.button
-                          className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          className="p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Share"
                         >
-                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />
+                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-primary hover:text-accent" />
                         </motion.button>
                       </div>
                     </div>
