@@ -353,7 +353,7 @@ export default function NonSteelProducts() {
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold font-inter">Non-Steel Products</h1>
-                <p className="text-gray-200 text-lg mt-2">Specialized construction systems and utilities</p>
+                <p className="text-black text-lg mt-2">Specialized construction systems and utilities</p>
               </div>
             </div>
           </motion.div>
