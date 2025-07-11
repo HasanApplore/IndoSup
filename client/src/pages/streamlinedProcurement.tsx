@@ -388,52 +388,10 @@ export default function StreamlinedProcurement() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 opacity-10">
-                        <img
-                          src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
-                          alt={solution.title}
-                          className="w-full h-full object-cover rounded-3xl"
-                        />
-                      </div>
-                      
-                      <div className="relative z-10">
-                        <div className="w-24 h-24 md:w-32 md:h-32 bg-primary rounded-3xl flex items-center justify-center text-white mx-auto mb-6">
-                          <div className="scale-150">
-                            {solution.icon}
-                          </div>
-                        </div>
-                        
-                        {/* Decorative elements */}
-                        <div className="space-y-3">
-                          {[...Array(3)].map((_, i) => (
-                            <motion.div
-                              key={i}
-                              className="h-2 bg-primary/20 rounded-full"
-                              style={{ width: `${100 - i * 20}%` }}
-                              initial={{ scaleX: 0 }}
-                              whileInView={{ scaleX: 1 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: index * 0.2 + i * 0.1, duration: 0.6 }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Floating accent */}
-                    <motion.div
-                      className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full opacity-60"
-                      animate={{
-                        y: [0, -8, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
+                    <img
+                      src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
+                      alt={solution.title}
+                      className="w-full h-auto rounded-3xl shadow-lg"
                     />
                   </motion.div>
                 </div>
