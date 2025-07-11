@@ -37,6 +37,20 @@ export default function NewInitiatives() {
     });
   };
 
+  const scrollToPrivateSection = () => {
+    const element = document.getElementById('global-private-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToAssistSection = () => {
+    const element = document.getElementById('global-assist-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const scrollToTop = () => {
     setHeroAnimated(false);
     window.scrollTo({
@@ -175,31 +189,29 @@ export default function NewInitiatives() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Link to="/contact">
-              <motion.button
-                className="group relative px-8 py-4 bg-primary text-accent font-bold rounded-full hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex items-center justify-center">
-                  <Building2 className="w-5 h-5 mr-3" />
-                  <span>IndoSup Global Private Limited</span>
-                </div>
-              </motion.button>
-            </Link>
+            <motion.button
+              onClick={scrollToPrivateSection}
+              className="group relative px-8 py-4 bg-primary text-accent font-bold rounded-full hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="flex items-center justify-center">
+                <Building2 className="w-5 h-5 mr-3" />
+                <span>IndoSup Global Private Limited</span>
+              </div>
+            </motion.button>
             
-            <Link to="/contact">
-              <motion.button
-                className="group relative px-8 py-4 bg-white/10 text-white font-bold rounded-full border-2 border-white/30 hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center backdrop-blur-sm"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex items-center justify-center">
-                  <Users className="w-5 h-5 mr-3" />
-                  <span>IndoSup Global Assist Limited</span>
-                </div>
-              </motion.button>
-            </Link>
+            <motion.button
+              onClick={scrollToAssistSection}
+              className="group relative px-8 py-4 bg-white/10 text-white font-bold rounded-full border-2 border-white/30 hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center backdrop-blur-sm"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="flex items-center justify-center">
+                <Users className="w-5 h-5 mr-3" />
+                <span>IndoSup Global Assist Limited</span>
+              </div>
+            </motion.button>
           </motion.div>
         </div>
 
@@ -295,7 +307,7 @@ export default function NewInitiatives() {
             viewport={{ once: true }}
           >
             {/* Global Private Limited Card */}
-            <motion.div variants={cardVariants}>
+            <motion.div variants={cardVariants} id="global-private-section">
               <Link to="/contact">
                 <motion.div
                   className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl h-full"
@@ -354,7 +366,7 @@ export default function NewInitiatives() {
             </motion.div>
 
             {/* Global Assist Limited Card */}
-            <motion.div variants={cardVariants}>
+            <motion.div variants={cardVariants} id="global-assist-section">
               <Link to="/contact">
                 <motion.div
                   className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl h-full"
