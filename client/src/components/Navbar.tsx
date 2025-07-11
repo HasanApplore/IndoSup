@@ -45,6 +45,11 @@ export default function Navbar() {
     return false;
   };
 
+  // Helper function to check if Our Business dropdown should be highlighted
+  const isBusinessActive = () => {
+    return location.startsWith('/products/steel') || location.startsWith('/products/non-steel');
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/50 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,11 +110,15 @@ export default function Navbar() {
               <button
                 onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                 onClick={toggleBusinessDropdown}
-                className="flex items-center text-white hover:text-primary transition-colors duration-200 relative group"
+                className={`flex items-center transition-colors duration-200 relative group font-medium ${
+                  isBusinessActive() ? 'text-primary' : 'text-white hover:text-primary'
+                }`}
               >
                 Our Businesses
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  isBusinessActive() ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </button>
               
               {isBusinessDropdownOpen && (
@@ -232,7 +241,9 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={toggleBusinessDropdown}
-                  className="flex items-center justify-between w-full px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
+                  className={`flex items-center justify-between w-full px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                    isBusinessActive() ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                  }`}
                 >
                   Our Businesses
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
