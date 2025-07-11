@@ -8,11 +8,11 @@ export default function Media() {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const tabs = [
-    { id: 'media-coverage', label: 'Media Coverage', icon: '📰' },
-    { id: 'awards', label: 'Awards', icon: '🏆' },
-    { id: 'newsletters', label: 'Newsletters', icon: '📧' },
-    { id: 'blogs', label: 'Blogs', icon: '📝' },
-    { id: 'case-studies', label: 'Case Studies', icon: '📊' }
+    { id: 'media-coverage', label: 'Media Coverage' },
+    { id: 'awards', label: 'Awards' },
+    { id: 'newsletters', label: 'Newsletters' },
+    { id: 'blogs', label: 'Blogs' },
+    { id: 'case-studies', label: 'Case Studies' }
   ];
 
   const mediaCoverage = [
@@ -208,10 +208,18 @@ export default function Media() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="bg-accent text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Media & Resources - News and Updates"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -224,52 +232,51 @@ export default function Media() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Stay updated with IndoSup's latest news, insights, and success stories from the construction industry.
+            Discover our latest news, insights, and success stories from the construction industry.
           </motion.p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-12 md:py-16">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center px-4 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeTab === tab.id
-                    ? 'bg-primary text-accent shadow-lg'
-                    : 'bg-gray-100 text-neutral-base hover:bg-gray-200'
+                    ? 'bg-primary text-accent shadow-lg border-2 border-primary'
+                    : 'bg-white text-neutral-base hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300'
                 }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <span className="mr-2">{tab.icon}</span>
                 {tab.label}
               </motion.button>
             ))}
           </div>
 
           {/* Search and Filter */}
-          <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-2xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 mb-10 max-w-3xl mx-auto">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search content..."
+                placeholder="Search articles, news, and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm"
               />
             </div>
             <div className="relative">
-              <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="pl-10 pr-8 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
+                className="pl-12 pr-8 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[180px]"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (
@@ -283,7 +290,7 @@ export default function Media() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -293,18 +300,18 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
-                  whileHover={{ y: -5 }}
+                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-52 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-primary text-accent px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-primary/90 text-accent px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
                         {item.category}
                       </span>
                     </div>
@@ -312,23 +319,23 @@ export default function Media() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <div className="flex items-center text-neutral-base text-sm mb-3">
+                    <div className="flex items-center text-gray-500 text-sm mb-4">
                       <Calendar className="w-4 h-4 mr-2" />
                       <span>{item.date}</span>
                       <span className="mx-2">•</span>
-                      <span>{item.source}</span>
+                      <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-accent mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-accent mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                       {item.title}
                     </h3>
 
-                    <p className="text-neutral-base leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 text-sm">
                       {item.preview}
                     </p>
 
                     <motion.button
-                      className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
+                      className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-sm"
                       whileHover={{ x: 5 }}
                     >
                       <span className="mr-2">Read More</span>
@@ -350,7 +357,7 @@ export default function Media() {
             >
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-accent mb-2">No Content Found</h3>
-              <p className="text-neutral-base">
+              <p className="text-gray-600">
                 Try adjusting your search terms or filter selection.
               </p>
             </motion.div>
@@ -358,39 +365,7 @@ export default function Media() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
-              Stay Updated with IndoSup
-            </h2>
-            <p className="text-lg text-neutral-base mb-8 leading-relaxed">
-              Subscribe to our newsletter for the latest industry insights, company updates, and construction trends.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-              <motion.button
-                className="px-6 py-3 bg-primary text-accent font-bold rounded-lg hover:bg-accent hover:text-white transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Subscribe
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
     </div>
   );
 }
