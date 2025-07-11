@@ -158,9 +158,9 @@ export default function NonSteelProducts() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <Building2 className="w-5 h-5" />
+                <ArrowLeft className="w-4 h-4" />
                 <span>Steel Products</span>
-                <ArrowLeft className="w-4 h-4 rotate-180" />
+                <Building2 className="w-5 h-5" />
               </motion.button>
             </Link>
             
