@@ -8,15 +8,19 @@ export default function Media() {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(false);
   const [heroAnimated, setHeroAnimated] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   // Reset hero animation when component mounts or page is refreshed
   useEffect(() => {
     setHeroAnimated(false);
   }, []);
 
-  // Add scroll handler to reset hero when scrolling back to top
+  // Add scroll handler to show/hide back to top button and reset hero
   useEffect(() => {
     const handleScroll = () => {
+      const scrolled = window.scrollY > 300;
+      setShowBackToTop(scrolled);
+      
       if (window.scrollY === 0) {
         setHeroAnimated(false);
       }
@@ -370,15 +374,18 @@ export default function Media() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Back to Top Arrow */}
-          {heroAnimated && (
+          {showBackToTop && (
             <motion.button
               className="fixed top-6 right-6 z-50 w-12 h-12 border-2 border-primary rounded-full flex items-center justify-center bg-white/90 hover:bg-white hover:border-primary transition-all duration-300 backdrop-blur-sm shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.3 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
               onClick={() => {
-                // Reset hero animation first
-                setHeroAnimated(false);
+                // Reset hero animation first if it was triggered
+                if (heroAnimated) {
+                  setHeroAnimated(false);
+                }
                 // Then scroll to top smoothly
                 setTimeout(() => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
