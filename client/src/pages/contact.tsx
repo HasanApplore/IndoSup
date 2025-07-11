@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/image_1752154570513.png';
 
@@ -96,39 +96,156 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src={contactBannerImage}
-            alt="Contact Us - Customer Service Representative"
-            className="w-full h-full object-cover filter blur-sm"
+            alt="Contact IndoSup - Professional Construction Procurement"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-white/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
         </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.6, 0.3],
+              x: [0, 40, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-10 w-32 h-32 bg-primary/25 rounded-full blur-2xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.5, 0.2],
+              x: [0, -25, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+          <motion.div
+            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Star className="w-4 h-4" />
+            <span className="font-medium">24/7 Support</span>
+          </motion.div>
+          
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter text-accent drop-shadow-lg"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Contact Us
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-accent max-w-3xl mx-auto leading-relaxed drop-shadow-md"
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             Ready to transform your construction procurement? Get in touch with our team to discuss 
             your project requirements and discover how IndoSup can streamline your operations.
+          </motion.p>
+          
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Phone className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">3 Offices</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Mail className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Expert Support</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <HeadphonesIcon className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">24/7 Available</span>
+            </div>
+          </motion.div>
+          
+          <motion.p
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            Connect with our experts and discover how we can optimize your construction procurement process.
           </motion.p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-5 md:py-8">
+      <section className="py-5 md:py-8 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          
+          {/* Stats Summary */}
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Building className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">3</h3>
+              <p className="text-neutral-base text-sm">Offices</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Phone className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">24/7</h3>
+              <p className="text-neutral-base text-sm">Support</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Expert</h3>
+              <p className="text-neutral-base text-sm">Team</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <MessageCircle className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Quick</h3>
+              <p className="text-neutral-base text-sm">Response</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Clock className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Fast</h3>
+              <p className="text-neutral-base text-sm">Service</p>
+            </div>
+          </motion.div>
+
           <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <motion.div

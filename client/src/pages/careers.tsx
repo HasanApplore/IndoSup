@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, Building, Users, Star, X, Upload, Send } from 'lucide-react';
+import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Careers() {
@@ -140,37 +140,109 @@ export default function Careers() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary to-[#FFD700] text-accent py-16 md:py-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="Construction team working"
-            className="w-full h-full object-cover opacity-20"
+            alt="Career Opportunities at IndoSup"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+        </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-1/4 left-10 w-24 h-24 bg-primary/25 rounded-full blur-2xl"
+            animate={{
+              scale: [1, 1.8, 1],
+              opacity: [0.3, 0.7, 0.3],
+              x: [0, 50, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-10 w-36 h-36 bg-primary/35 rounded-full blur-2xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.6, 0.2],
+              x: [0, -30, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
           />
         </div>
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Join Our Team Now
-          </motion.h1>
-          <motion.p
-            className="text-lg md:text-xl text-accent/80 max-w-3xl mx-auto leading-relaxed"
+          <motion.div
+            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Star className="w-4 h-4" />
+            <span className="font-medium">We're Hiring!</span>
+          </motion.div>
+          
+          <motion.h1
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Career Opportunities
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             Build the future of construction procurement with IndoSup. Join our mission to revolutionize 
             how construction companies source materials and manage their supply chains.
+          </motion.p>
+          
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Briefcase className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">15+ Positions</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Building className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">5 Departments</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <MapPin className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">6+ Locations</span>
+            </div>
+          </motion.div>
+          
+          <motion.p
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            Discover exciting career opportunities and be part of India's leading construction procurement platform.
           </motion.p>
         </div>
       </section>
 
       {/* Job Openings Section */}
-      <section className="py-5 md:py-8">
+      <section className="py-5 md:py-8 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-12"
@@ -183,6 +255,51 @@ export default function Careers() {
               Current Openings
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto"></div>
+          </motion.div>
+
+          {/* Stats Summary */}
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Briefcase className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">15+</h3>
+              <p className="text-neutral-base text-sm">Open Positions</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Building className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">5</h3>
+              <p className="text-neutral-base text-sm">Departments</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <MapPin className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">6+</h3>
+              <p className="text-neutral-base text-sm">Locations</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Users className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">100+</h3>
+              <p className="text-neutral-base text-sm">Team Members</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Clock className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Full-time</h3>
+              <p className="text-neutral-base text-sm">Benefits</p>
+            </div>
           </motion.div>
 
           {/* Filters */}

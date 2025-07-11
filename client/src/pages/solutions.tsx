@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight } from 'lucide-react';
+import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight, Star, Eye, Clock, Target } from 'lucide-react';
 
 export default function Solutions() {
   // Solutions data
@@ -66,30 +66,109 @@ export default function Solutions() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="bg-accent text-white py-20 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Streamlined Procurement Solutions"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+        </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.6, 0.3],
+              x: [0, 40, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-10 w-32 h-32 bg-primary/25 rounded-full blur-2xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.5, 0.2],
+              x: [0, -25, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+          <motion.div
+            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Star className="w-4 h-4" />
+            <span className="font-medium">AI-Powered Solutions</span>
+          </motion.div>
+          
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Our Solutions
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             Comprehensive procurement solutions designed to solve the most critical challenges 
             in construction project management and supply chain operations.
+          </motion.p>
+          
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Target className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">5 Key Solutions</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Eye className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">End-to-End</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Clock className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Real-time</span>
+            </div>
+          </motion.div>
+          
+          <motion.p
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            Experience the future of construction procurement with our comprehensive suite of intelligent solutions.
           </motion.p>
         </div>
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-12 md:mb-16"
@@ -106,6 +185,51 @@ export default function Solutions() {
               Each solution is designed to address specific pain points in construction procurement, 
               delivering measurable results and operational excellence.
             </p>
+          </motion.div>
+
+          {/* Stats Summary */}
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Building2 className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Multi-site</h3>
+              <p className="text-neutral-base text-sm">Procurement</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Calculator className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Price</h3>
+              <p className="text-neutral-base text-sm">Accuracy</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Truck className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Supply Chain</h3>
+              <p className="text-neutral-base text-sm">Solutions</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <FileText className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">GST</h3>
+              <p className="text-neutral-base text-sm">Compliance</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Package className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Order</h3>
+              <p className="text-neutral-base text-sm">Management</p>
+            </div>
           </motion.div>
 
           <motion.div
