@@ -7,8 +7,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/home";
 import About from "@/pages/about";
+import NewInitiatives from "@/pages/newInitiatives";
 import StreamlinedProcurement from "@/pages/streamlinedProcurement";
-import Products from "@/pages/products";
 import SteelProducts from "@/pages/steel-products";
 import NonSteelProducts from "@/pages/non-steel-products";
 import Media from "@/pages/media";
@@ -27,8 +27,8 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/new-initiatives" component={NewInitiatives} />
           <Route path="/streamlined-procurement" component={StreamlinedProcurement} />
-          <Route path="/products" component={Products} />
           <Route path="/products/steel" component={SteelProducts} />
           <Route path="/products/non-steel" component={NonSteelProducts} />
           <Route path="/media" component={Media} />

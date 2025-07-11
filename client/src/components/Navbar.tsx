@@ -1,13 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import logoImage from '@/assets/indosup-logo-new.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [location] = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -37,6 +38,13 @@ export default function Navbar() {
     setIsBusinessDropdownOpen(false);
   };
 
+  // Helper function to check if a link is active
+  const isActivePath = (path) => {
+    if (path === '/' && location === '/') return true;
+    if (path !== '/' && location.startsWith(path)) return true;
+    return false;
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/50 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,28 +64,41 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-4 ml-16">
             <Link 
               to="/about" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
+              className={`transition-colors duration-200 relative group font-medium ${
+                isActivePath('/about') ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
               onClick={handleLinkClick}
             >
               About Us
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                isActivePath('/about') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
+            </Link>
+            <Link 
+              to="/new-initiatives" 
+              className={`transition-colors duration-200 relative group font-medium ${
+                isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
+              onClick={handleLinkClick}
+            >
+              New Initiatives
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                isActivePath('/new-initiatives') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
             <Link 
               to="/streamlined-procurement" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
+              className={`transition-colors duration-200 relative group font-medium ${
+                isActivePath('/streamlined-procurement') ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
               onClick={handleLinkClick}
             >
               Streamlined Procurement
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                isActivePath('/streamlined-procurement') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
-            <Link 
-              to="/products" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
-              onClick={handleLinkClick}
-            >
-              Products
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+
             
             {/* Our Business Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -118,27 +139,39 @@ export default function Navbar() {
 
             <Link 
               to="/media" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
+              className={`transition-colors duration-200 relative group font-medium ${
+                isActivePath('/media') ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
               onClick={handleLinkClick}
             >
               Media
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                isActivePath('/media') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
             <Link 
               to="/careers" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
+              className={`transition-colors duration-200 relative group font-medium ${
+                isActivePath('/careers') ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
               onClick={handleLinkClick}
             >
-              Career
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              Careers
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                isActivePath('/careers') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
             <Link 
               to="/catalogues" 
-              className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
+              className={`transition-colors duration-200 relative group font-medium ${
+                isActivePath('/catalogues') ? 'text-primary' : 'text-white hover:text-primary'
+              }`}
               onClick={handleLinkClick}
             >
               Catalogues
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                isActivePath('/catalogues') ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}></span>
             </Link>
           </div>
 
@@ -168,25 +201,32 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-accent border-t border-primary/20">
               <Link 
                 to="/about" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
+                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                  isActivePath('/about') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                }`}
                 onClick={handleLinkClick}
               >
                 About Us
               </Link>
               <Link 
+                to="/new-initiatives" 
+                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                  isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                }`}
+                onClick={handleLinkClick}
+              >
+                New Initiatives
+              </Link>
+              <Link 
                 to="/streamlined-procurement" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
+                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                  isActivePath('/streamlined-procurement') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                }`}
                 onClick={handleLinkClick}
               >
                 Streamlined Procurement
               </Link>
-              <Link 
-                to="/products" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
-                onClick={handleLinkClick}
-              >
-                Products
-              </Link>
+
               
               {/* Mobile Our Business Section */}
               <div>
@@ -219,21 +259,27 @@ export default function Navbar() {
 
               <Link 
                 to="/media" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
+                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                  isActivePath('/media') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                }`}
                 onClick={handleLinkClick}
               >
                 Media
               </Link>
               <Link 
                 to="/careers" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
+                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                  isActivePath('/careers') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                }`}
                 onClick={handleLinkClick}
               >
-                Career
+                Careers
               </Link>
               <Link 
                 to="/catalogues" 
-                className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
+                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                  isActivePath('/catalogues') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                }`}
                 onClick={handleLinkClick}
               >
                 Catalogues

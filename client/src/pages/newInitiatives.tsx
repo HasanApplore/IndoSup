@@ -4,7 +4,7 @@ import { ArrowRight, Download, Package, Wrench, ArrowDown, ArrowUp, Star, Eye, T
 import { Link } from 'wouter';
 import productsBannerImage from '@assets/image_1752217941194.png';
 
-export default function Products() {
+export default function NewInitiatives() {
   const [heroAnimated, setHeroAnimated] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -91,7 +91,7 @@ export default function Products() {
         <div className="absolute inset-0">
           <img 
             src={productsBannerImage}
-            alt="IndoSup Products - Construction Materials Excellence"
+            alt="IndoSup New Initiatives - Construction Materials Excellence"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
@@ -146,7 +146,7 @@ export default function Products() {
             transition={{ duration: 0.8 }}
           >
             <Star className="w-5 h-5 text-primary mr-2" />
-            <span className="text-white font-medium">Our Products</span>
+            <span className="text-white font-medium">New Initiatives</span>
           </motion.div>
 
           <motion.h1
