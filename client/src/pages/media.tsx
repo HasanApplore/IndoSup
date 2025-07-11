@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Tag, ArrowRight, Filter, Search } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag } from 'lucide-react';
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
