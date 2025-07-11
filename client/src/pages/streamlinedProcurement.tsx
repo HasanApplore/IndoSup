@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight, Star, Eye, Clock, Target, ArrowUp, ArrowDown } from 'lucide-react';
-import constructionSiteImg from '@assets/image_1752053991095.png';
-import pricingImg from '@assets/image_1752053993871.png';
-import supplyChainImg from '@assets/image_1752053997490.png';
-import complianceImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
-import orderManagementImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
+import constructionSiteImg from '@assets/Construction-material-management-system-on-project-sites-1024x409_1752230798913.webp';
+import pricingImg from '@assets/building-estimation-course-1000x1000_1752230798912.webp';
+import supplyChainImg from '@assets/phases-of-construction_1752230798913.webp';
+import complianceImg from '@assets/GST-768x512_1752230804835.jpeg';
+import orderManagementImg from '@assets/Package-box-recieved-1024_1752230798913.webp';
 
 export default function StreamlinedProcurement() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -232,7 +232,7 @@ export default function StreamlinedProcurement() {
           transition={{ delay: 1, duration: 0.8 }}
           onClick={scrollToContent}
         >
-          <div className="flex flex-col items-center space-y-2 ml-[-100px] mr-[-100px] mt-[25px] mb-[25px]">
+          <div className="flex flex-col items-center space-y-2">
             <span className="text-white text-sm">Streamlined Procurement</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
