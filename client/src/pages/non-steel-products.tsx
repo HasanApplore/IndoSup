@@ -33,6 +33,13 @@ export default function NonSteelProducts() {
     setHeroAnimationComplete(true);
   };
 
+  const scrollToCategories = () => {
+    const element = document.getElementById('non-steel-categories-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const nonSteelCategories = [
     {
       name: "Plumbing",
@@ -133,27 +140,32 @@ export default function NonSteelProducts() {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
-          <Link to="/products">
-            <motion.button
-              className="inline-flex items-center text-primary hover:text-white transition-colors duration-200 mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
-              whileHover={{ x: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Products
-            </motion.button>
-          </Link>
-
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Star className="w-4 h-4" />
-            <span className="font-medium">Premium Non-Steel Products</span>
+            <Link to="/products/steel">
+              <motion.button
+                className="inline-flex items-center space-x-2 bg-white/10 text-white px-6 py-3 rounded-full backdrop-blur-sm font-semibold hover:bg-white/20 transition-all duration-300 border-2 border-white/30"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Building2 className="w-5 h-5" />
+                <span>Steel Products</span>
+                <ArrowLeft className="w-4 h-4 rotate-180" />
+              </motion.button>
+            </Link>
+            
+            <motion.div
+              className="inline-flex items-center space-x-2 bg-primary text-accent px-6 py-3 rounded-full backdrop-blur-sm font-semibold"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Star className="w-5 h-5" />
+              <span>Premium Non-Steel Products</span>
+            </motion.div>
           </motion.div>
           
           <motion.h1
@@ -179,18 +191,35 @@ export default function NonSteelProducts() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+            <motion.button
+              onClick={scrollToCategories}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Building2 className="w-5 h-5 text-white" />
               <span className="text-white font-medium">5 Categories</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Shield className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">BIS Approved</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <CheckCircle className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Certified Quality</span>
-            </div>
+            </motion.button>
+            <Link to="/media#awards">
+              <motion.button
+                className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Shield className="w-5 h-5 text-white" />
+                <span className="text-white font-medium">BIS Approved</span>
+              </motion.button>
+            </Link>
+            <Link to="/media#awards">
+              <motion.button
+                className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="text-white font-medium">Certified Quality</span>
+              </motion.button>
+            </Link>
           </motion.div>
           
           <motion.p
@@ -247,6 +276,7 @@ export default function NonSteelProducts() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            id="non-steel-categories-section"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 font-inter">
               Non-Steel Product Categories
@@ -388,34 +418,7 @@ export default function NonSteelProducts() {
         </div>
       </section>
 
-      {/* Download Section */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
-              Complete Non-Steel Products Catalog
-            </h2>
-            <p className="text-lg text-neutral-base mb-8 leading-relaxed">
-              Download our comprehensive non-steel products catalog featuring electrical, plumbing, 
-              fire safety, and infrastructure solutions with detailed specifications and pricing.
-            </p>
-            
-            <motion.button
-              className="inline-flex items-center px-8 py-4 bg-accent text-white font-bold rounded-full hover:bg-primary hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download Non-Steel Catalog (PDF)
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
+
     </div>
   );
 }
