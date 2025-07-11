@@ -360,7 +360,7 @@ export default function Media() {
       {/* Main Content */}
       <section 
         id="media-content" 
-        className={`py-16 md:py-20 lg:py-24 bg-white transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#FBF5EA] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
@@ -389,7 +389,7 @@ export default function Media() {
 
           {/* Section Header */}
           <motion.div
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-8 md:mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -404,7 +404,7 @@ export default function Media() {
           </motion.div>
 
           {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8 px-4">
             {tabs.map((tab, index) => (
               <motion.button
                 key={tab.id}
@@ -416,7 +416,7 @@ export default function Media() {
                 className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-bold transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
                     ? 'bg-primary text-accent shadow-lg border-2 border-primary'
-                    : 'bg-white text-neutral-base hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300'
+                    : 'bg-white text-neutral-base hover:bg-primary/5 border-2 border-gray-200 hover:border-primary/30'
                 }`}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -438,7 +438,7 @@ export default function Media() {
 
           {/* Search and Filter */}
           <motion.div
-            className="flex flex-col md:flex-row gap-3 md:gap-4 mb-8 md:mb-10 max-w-3xl mx-auto px-4"
+            className="flex flex-col md:flex-row gap-3 md:gap-4 mb-6 md:mb-8 max-w-3xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -451,7 +451,7 @@ export default function Media() {
                 placeholder="Search articles, news, and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-gray-300 text-sm md:text-base"
+                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-primary/30 text-sm md:text-base"
               />
             </div>
             <div className="relative">
@@ -459,7 +459,7 @@ export default function Media() {
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="pl-12 pr-8 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-gray-300 text-sm md:text-base"
+                className="pl-12 pr-8 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-primary/30 text-sm md:text-base"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (
@@ -481,7 +481,7 @@ export default function Media() {
             >
               {/* Results Count */}
               <motion.div
-                className="col-span-full mb-4 md:mb-6"
+                className="col-span-full mb-3 md:mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -502,7 +502,7 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative cursor-pointer transform-gpu"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative cursor-pointer transform-gpu hover:border-primary/30"
                   whileHover={{ y: -12, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -588,13 +588,13 @@ export default function Media() {
           {/* No Results */}
           {filteredContent.length === 0 && (
             <motion.div
-              className="text-center py-12 md:py-16 px-4"
+              className="text-center py-8 md:py-12 px-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
-                <Search className="w-10 h-10 md:w-12 md:h-12 text-gray-400" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-lg">
+                <Search className="w-10 h-10 md:w-12 md:h-12 text-primary" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-accent mb-2">No Content Found</h3>
               <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
@@ -605,7 +605,7 @@ export default function Media() {
                   setSearchQuery('');
                   setSelectedFilter('all');
                 }}
-                className="px-4 md:px-6 py-2.5 md:py-3 bg-primary text-accent rounded-xl font-medium hover:bg-primary/90 transition-colors duration-300 text-sm md:text-base"
+                className="px-4 md:px-6 py-2.5 md:py-3 bg-primary text-accent rounded-xl font-medium hover:bg-primary/90 transition-colors duration-300 text-sm md:text-base shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
