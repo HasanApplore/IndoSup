@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight, Star, Eye, Clock, Target, ArrowUp, ArrowDown } from 'lucide-react';
 
-export default function Solutions() {
+export default function StreamlinedProcurement() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   
   useEffect(() => {
@@ -142,7 +142,7 @@ export default function Solutions() {
             transition={{ duration: 0.6 }}
           >
             <Star className="w-4 h-4" />
-            <span className="font-medium">AI-Powered Solutions</span>
+            <span className="font-medium">Digital Innovation</span>
           </motion.div>
           
           <motion.h1
@@ -151,7 +151,7 @@ export default function Solutions() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Our Solutions
+            Streamlined Procurement
           </motion.h1>
           <motion.p
             className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
@@ -159,8 +159,8 @@ export default function Solutions() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Comprehensive procurement solutions designed to solve the most critical challenges 
-            in construction project management and supply chain operations.
+            Revolutionary digital procurement platform that transforms how construction companies 
+            source, manage, and deliver materials across India's diverse markets.
           </motion.p>
           
           <motion.div
@@ -171,15 +171,15 @@ export default function Solutions() {
           >
             <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
               <Target className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">5 Key Solutions</span>
+              <span className="text-white font-medium">Automated Workflows</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
               <Eye className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">End-to-End</span>
+              <span className="text-white font-medium">Smart Analytics</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
               <Clock className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Real-time</span>
+              <span className="text-white font-medium">24/7 Operations</span>
             </div>
           </motion.div>
           
@@ -189,7 +189,7 @@ export default function Solutions() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Experience the future of construction procurement with our comprehensive suite of intelligent solutions.
+            Discover how our streamlined procurement solutions eliminate inefficiencies and accelerate your project delivery.
           </motion.p>
         </div>
 

@@ -63,11 +63,11 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
-              to="/solutions" 
+              to="/streamlined-procurement" 
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
-              New Initiatives
+              Streamlined Procurement
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link 
@@ -75,7 +75,7 @@ export default function Navbar() {
               className="text-white hover:text-primary transition-colors duration-200 relative group font-medium"
               onClick={handleLinkClick}
             >
-              Streamlined Procurement
+              Products
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
             
@@ -174,18 +174,18 @@ export default function Navbar() {
                 About Us
               </Link>
               <Link 
-                to="/solutions" 
+                to="/streamlined-procurement" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
-                New Initiatives
+                Streamlined Procurement
               </Link>
               <Link 
                 to="/products" 
                 className="block px-3 py-3 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 font-medium"
                 onClick={handleLinkClick}
               >
-                Streamlined Procurement
+                Products
               </Link>
               
               {/* Mobile Our Business Section */}

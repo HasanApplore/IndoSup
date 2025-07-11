@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/home";
 import About from "@/pages/about";
-import Solutions from "@/pages/solutions";
+import StreamlinedProcurement from "@/pages/streamlinedProcurement";
 import Products from "@/pages/products";
 import SteelProducts from "@/pages/steel-products";
 import NonSteelProducts from "@/pages/non-steel-products";
@@ -27,7 +27,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/solutions" component={Solutions} />
+          <Route path="/streamlined-procurement" component={StreamlinedProcurement} />
           <Route path="/products" component={Products} />
           <Route path="/products/steel" component={SteelProducts} />
           <Route path="/products/non-steel" component={NonSteelProducts} />
