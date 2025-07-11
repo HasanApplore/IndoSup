@@ -232,7 +232,7 @@ export default function StreamlinedProcurement() {
           transition={{ delay: 1, duration: 0.8 }}
           onClick={scrollToContent}
         >
-          <div className="flex flex-col items-center space-y-2 ml-[-100px] mr-[-100px]">
+          <div className="flex flex-col items-center space-y-2 ml-[-100px] mr-[-100px] mt-[25px] mb-[25px]">
             <span className="text-white text-sm">Streamlined Procurement</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
