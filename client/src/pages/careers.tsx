@@ -154,11 +154,11 @@ export default function Careers() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="/attached_assets/OIP_1752234801339.webp"
+            src="https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
             alt="Career Opportunities at IndoSup"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/50 to-blue-700/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
         </div>
         
         {/* Animated background elements */}
