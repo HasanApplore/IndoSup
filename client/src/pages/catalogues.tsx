@@ -1,11 +1,33 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Search, Filter, Download, FileText, Calendar, Tag } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Filter, Download, FileText, Calendar, Tag, ArrowRight } from 'lucide-react';
 
 export default function Catalogues() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
+  const [heroAnimated, setHeroAnimated] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Reset hero animation when component mounts
+  useEffect(() => {
+    setHeroAnimated(false);
+  }, []);
+
+  // Add scroll handler for back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 300;
+      setShowBackToTop(scrolled);
+      
+      if (window.scrollY === 0) {
+        setHeroAnimated(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const categories = ['Steel Products', 'Non-Steel Products', 'Construction Materials', 'Safety Equipment', 'Tools & Equipment'];
   const years = ['2024', '2023', '2022'];
@@ -158,12 +180,62 @@ export default function Catalogues() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white relative overflow-hidden">
       {/* Hero Section */}
-      <section className="bg-accent text-white py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+      <section 
+        className={`hero-section relative min-h-screen flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
+          heroAnimated ? '-translate-y-full' : 'translate-y-0'
+        }`}
+        style={{ 
+          position: heroAnimated ? 'fixed' : 'relative',
+          top: heroAnimated ? '0' : 'auto',
+          left: heroAnimated ? '0' : 'auto',
+          width: heroAnimated ? '100%' : 'auto',
+          zIndex: heroAnimated ? 40 : 'auto'
+        }}
+      >
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            alt="Product Catalogues - Construction Materials"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+        </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.6, 0.3],
+              x: [0, 40, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 right-10 w-32 h-32 bg-primary/25 rounded-full blur-2xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.5, 0.2],
+              x: [0, -25, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -171,22 +243,98 @@ export default function Catalogues() {
             Product Catalogues
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Download comprehensive product catalogs with detailed specifications, pricing, and technical documentation 
-            for all your construction procurement needs.
+            Download comprehensive product catalogs with detailed specifications and technical documentation.
           </motion.p>
+          <motion.p
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            Everything you need for informed construction procurement decisions.
+          </motion.p>
+          
+          {/* Scroll indicator */}
+          <motion.div
+            className="mt-12 md:mt-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <motion.div
+              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+              onClick={() => {
+                const contentSection = document.getElementById('catalogues-content');
+                if (contentSection) {
+                  setHeroAnimated(true);
+                  setTimeout(() => {
+                    contentSection.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }, 400);
+                }
+              }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowRight className="w-6 h-6 text-white rotate-90" />
+            </motion.div>
+            <motion.p
+              className="text-white/70 text-sm mt-3 font-medium"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+            >
+              Browse Catalogues
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section 
+        id="catalogues-content"
+        className={`py-8 md:py-12 bg-[#FBF5EA] transition-all duration-700 ease-out ${
+          heroAnimated ? 'mt-0' : 'mt-0'
+        }`}
+        style={{ 
+          position: 'relative',
+          zIndex: heroAnimated ? 50 : 'auto'
+        }}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+          
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-8 md:mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4">
+              Download Product Catalogues
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
+              Access detailed specifications, pricing, and technical documentation for all construction materials
+            </p>
+          </motion.div>
           {/* Search and Filters */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+          <motion.div 
+            className="bg-white rounded-2xl shadow-lg p-6 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
@@ -196,7 +344,7 @@ export default function Catalogues() {
                   placeholder="Search catalogues..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-primary/30"
                 />
               </div>
 
@@ -206,7 +354,7 @@ export default function Catalogues() {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white appearance-none"
+                  className="w-full pl-10 pr-8 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30"
                 >
                   <option value="all">All Categories</option>
                   {categories.map(category => (
@@ -221,7 +369,7 @@ export default function Catalogues() {
                 <select
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white appearance-none"
+                  className="w-full pl-10 pr-8 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30"
                 >
                   <option value="all">All Years</option>
                   {years.map(year => (
@@ -230,7 +378,7 @@ export default function Catalogues() {
                 </select>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Results Count */}
           <div className="mb-6">
@@ -322,6 +470,30 @@ export default function Catalogues() {
                 Try adjusting your search terms or filters to find the catalogues you're looking for.
               </p>
             </motion.div>
+          )}
+
+          {/* Back to Top Arrow */}
+          {showBackToTop && (
+            <motion.button
+              className="fixed bottom-8 right-8 z-40 w-12 h-12 border-2 border-primary rounded-full flex items-center justify-center bg-white/90 hover:bg-white hover:border-primary transition-all duration-300 backdrop-blur-sm shadow-lg"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => {
+                if (heroAnimated) {
+                  setHeroAnimated(false);
+                }
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+              title="Back to Top"
+            >
+              <ArrowRight className="w-6 h-6 text-primary -rotate-90" />
+            </motion.button>
           )}
         </div>
       </section>
