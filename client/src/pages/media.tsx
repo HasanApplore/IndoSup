@@ -273,9 +273,20 @@ export default function Media() {
             transition={{ delay: 1, duration: 0.8 }}
           >
             <motion.div
-              className="w-8 h-8 border-2 border-white/60 rounded-full flex items-center justify-center mx-auto cursor-pointer"
+              className="w-8 h-8 border-2 border-white/60 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/10 transition-all duration-300"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
+              onClick={() => {
+                const contentSection = document.getElementById('media-content');
+                if (contentSection) {
+                  contentSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
               <ArrowRight className="w-4 h-4 text-white/60 rotate-90" />
             </motion.div>
@@ -284,7 +295,7 @@ export default function Media() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-20">
+      <section id="media-content" className="py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Header */}
           <motion.div
