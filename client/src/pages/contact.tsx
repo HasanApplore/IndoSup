@@ -285,50 +285,7 @@ export default function Contact() {
       <section className="py-5 md:py-8 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
-          {/* Stats Summary */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">3</h3>
-              <p className="text-neutral-base text-sm">Offices</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Phone className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">24/7</h3>
-              <p className="text-neutral-base text-sm">Support</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Mail className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Expert</h3>
-              <p className="text-neutral-base text-sm">Team</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <MessageCircle className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Quick</h3>
-              <p className="text-neutral-base text-sm">Response</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Clock className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Fast</h3>
-              <p className="text-neutral-base text-sm">Service</p>
-            </div>
-          </motion.div>
+
 
           <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
