@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Package, Wrench, ArrowDown, ArrowUp, Star, Eye, Target } from 'lucide-react';
+import { ArrowRight, Building2, Users, Globe, Shield, Zap, ArrowDown, ArrowUp, Star, Target, CheckCircle, TrendingUp, Award, Handshake, ExternalLink } from 'lucide-react';
 import { Link } from 'wouter';
 import productsBannerImage from '@assets/image_1752217941194.png';
 
@@ -45,20 +45,20 @@ export default function NewInitiatives() {
     });
   };
 
-  const steelProducts = [
-    "Structural Steel",
-    "Pipes & Fittings", 
-    "Roofing Materials",
-    "Doors & Windows",
-    "Reinforcement Products"
+  const globalPrivateServices = [
+    "Advanced Procurement Solutions",
+    "Supply Chain Management", 
+    "Vendor Network Development",
+    "Quality Assurance Systems",
+    "Digital Platform Integration"
   ];
 
-  const nonSteelProducts = [
-    "Plumbing",
-    "Electrical", 
-    "Fire Fighting",
-    "Warehouse Infra",
-    "Site Utilities"
+  const globalAssistServices = [
+    "Technical Consulting",
+    "Project Management Support", 
+    "Training & Development",
+    "Process Optimization",
+    "Strategic Advisory Services"
   ];
 
   const containerVariants = {
@@ -155,8 +155,8 @@ export default function NewInitiatives() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Premium Construction
-            <span className="block text-primary">Materials</span>
+            Our New Global
+            <span className="block text-primary">Initiatives</span>
           </motion.h1>
 
           <motion.p
@@ -165,7 +165,7 @@ export default function NewInitiatives() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Comprehensive range of construction materials sourced from India's most trusted manufacturers and suppliers.
+            Expanding horizons with two specialized companies driving innovation in construction procurement and technical excellence.
           </motion.p>
 
           {/* Feature highlights */}
@@ -176,16 +176,16 @@ export default function NewInitiatives() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Package className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Steel Products</span>
+              <Building2 className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm">Global Private Limited</span>
             </div>
             <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Wrench className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Non-Steel Products</span>
+              <Users className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm">Global Assist Limited</span>
             </div>
             <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Download className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Instant Quotes</span>
+              <Globe className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm">Global Expansion</span>
             </div>
           </motion.div>
         </div>
@@ -221,8 +221,8 @@ export default function NewInitiatives() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-neutral-dark font-medium">Products Available</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2</div>
+              <div className="text-neutral-dark font-medium">New Companies</div>
             </motion.div>
             <motion.div
               className="text-center"
@@ -230,8 +230,8 @@ export default function NewInitiatives() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
-              <div className="text-neutral-dark font-medium">Top Brands</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">Global</div>
+              <div className="text-neutral-dark font-medium">Market Reach</div>
             </motion.div>
             <motion.div
               className="text-center"
@@ -239,8 +239,8 @@ export default function NewInitiatives() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2</div>
-              <div className="text-neutral-dark font-medium">Main Categories</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10+</div>
+              <div className="text-neutral-dark font-medium">Service Areas</div>
             </motion.div>
             <motion.div
               className="text-center"
@@ -248,14 +248,14 @@ export default function NewInitiatives() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-neutral-dark font-medium">Support Available</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2025</div>
+              <div className="text-neutral-dark font-medium">Launch Year</div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Company Categories */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
@@ -266,11 +266,11 @@ export default function NewInitiatives() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
-              Product Categories
+              Our Global Companies
             </h2>
             <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
             <p className="text-neutral-base mt-6 max-w-2xl mx-auto text-lg">
-              Choose from our comprehensive range of steel and non-steel construction products
+              Two specialized companies driving innovation in global construction markets and technical excellence
             </p>
           </motion.div>
 
@@ -283,7 +283,7 @@ export default function NewInitiatives() {
           >
             {/* Steel Products Card */}
             <motion.div variants={cardVariants}>
-              <Link to="/products/steel">
+              <Link to="/contact">
                 <motion.div
                   className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-10 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl"
                   whileHover={{ y: -8, scale: 1.02 }}
@@ -292,7 +292,7 @@ export default function NewInitiatives() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-8">
                     <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                      <Package className="w-8 h-8" />
+                      <Building2 className="w-8 h-8" />
                     </div>
                     <motion.div
                       className="text-primary group-hover:text-accent transition-colors duration-300"
@@ -305,18 +305,18 @@ export default function NewInitiatives() {
 
                   {/* Title */}
                   <h3 className="text-3xl md:text-4xl font-bold text-accent mb-6 group-hover:text-primary transition-colors duration-300">
-                    Steel Products
+                    IndoSup Global Private Limited
                   </h3>
 
                   {/* Description */}
                   <p className="text-neutral-base text-lg mb-8 leading-relaxed">
-                    Essential steel construction materials including structural components, 
-                    piping systems, and architectural elements for modern infrastructure.
+                    Leading construction procurement solutions with global reach and local expertise,
+                    streamlining supply chain management for modern infrastructure projects.
                   </p>
 
                   {/* Product List */}
                   <div className="space-y-3 mb-8">
-                    {steelProducts.map((product, index) => (
+                    {globalPrivateServices.map((product, index) => (
                       <motion.div
                         key={index}
                         className="flex items-center space-x-3"
@@ -333,7 +333,7 @@ export default function NewInitiatives() {
 
                   {/* CTA */}
                   <div className="flex items-center text-primary font-semibold group-hover:text-accent transition-colors duration-300">
-                    <span className="mr-2">Explore Steel Products</span>
+                    <span className="mr-2">Learn More About Global Private</span>
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </motion.div>
@@ -342,7 +342,7 @@ export default function NewInitiatives() {
 
             {/* Non-Steel Products Card */}
             <motion.div variants={cardVariants}>
-              <Link to="/products/non-steel">
+              <Link to="/contact">
                 <motion.div
                   className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-10 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl"
                   whileHover={{ y: -8, scale: 1.02 }}
@@ -351,7 +351,7 @@ export default function NewInitiatives() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-8">
                     <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                      <Wrench className="w-8 h-8" />
+                      <Users className="w-8 h-8" />
                     </div>
                     <motion.div
                       className="text-primary group-hover:text-accent transition-colors duration-300"
@@ -364,18 +364,18 @@ export default function NewInitiatives() {
 
                   {/* Title */}
                   <h3 className="text-3xl md:text-4xl font-bold text-accent mb-6 group-hover:text-primary transition-colors duration-300">
-                    Non-Steel Products
+                    IndoSup Global Assist Limited
                   </h3>
 
                   {/* Description */}
                   <p className="text-neutral-base text-lg mb-8 leading-relaxed">
-                    Specialized construction systems and utilities including electrical, 
-                    plumbing, safety, and infrastructure support solutions.
+                    Comprehensive technical consulting and project management support,
+                    delivering specialized expertise for complex construction initiatives.
                   </p>
 
                   {/* Product List */}
                   <div className="space-y-3 mb-8">
-                    {nonSteelProducts.map((product, index) => (
+                    {globalAssistServices.map((product, index) => (
                       <motion.div
                         key={index}
                         className="flex items-center space-x-3"
@@ -392,7 +392,7 @@ export default function NewInitiatives() {
 
                   {/* CTA */}
                   <div className="flex items-center text-primary font-semibold group-hover:text-accent transition-colors duration-300">
-                    <span className="mr-2">Explore Non-Steel Products</span>
+                    <span className="mr-2">Learn More About Global Assist</span>
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </motion.div>
@@ -424,8 +424,8 @@ export default function NewInitiatives() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Download className="w-5 h-5 mr-2" />
-              Download Complete Catalog
+              <ExternalLink className="w-5 h-5 mr-2" />
+              Learn More
             </motion.button>
           </motion.div>
         </div>
