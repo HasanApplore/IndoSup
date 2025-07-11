@@ -235,7 +235,7 @@ export default function StreamlinedProcurement() {
           onClick={scrollToContent}
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">Scroll to explore</span>
+            <span className="text-white text-sm">Streamlined Procurement</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
