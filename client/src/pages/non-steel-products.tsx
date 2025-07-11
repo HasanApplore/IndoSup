@@ -70,6 +70,12 @@ export default function NonSteelProducts() {
       description: "Essential site utilities including generators, temporary structures, safety equipment, and construction tools.",
       specifications: ["Portable Generators", "Safety Barriers", "Construction Tools"],
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Pumping and Water System",
+      description: "Comprehensive water management solutions including pumps, tanks, filtration systems, and water treatment equipment.",
+      specifications: ["Submersible Pumps", "Water Storage Tanks", "Filtration Systems"],
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -198,7 +204,7 @@ export default function NonSteelProducts() {
               whileTap={{ scale: 0.95 }}
             >
               <Building2 className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">5 Categories</span>
+              <span className="text-white font-medium">6 Categories</span>
             </motion.button>
             <Link to="/media#awards">
               <motion.button
@@ -286,7 +292,7 @@ export default function NonSteelProducts() {
 
           {/* Stats Summary */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -326,6 +332,13 @@ export default function NonSteelProducts() {
               </div>
               <h3 className="text-xl font-bold text-accent mb-1">Site</h3>
               <p className="text-neutral-base text-sm">Utilities</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Package className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Pumping</h3>
+              <p className="text-neutral-base text-sm">Water System</p>
             </div>
           </motion.div>
           
