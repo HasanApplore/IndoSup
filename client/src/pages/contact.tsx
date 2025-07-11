@@ -83,7 +83,7 @@ export default function Contact() {
   };
 
   const scrollToOffices = () => {
-    const element = document.getElementById('offices-section');
+    const element = document.getElementById('find-us-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -443,80 +443,10 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Our Offices */}
-      <section className="py-5 md:py-8" id="offices-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <motion.div
-            className="text-center mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4 font-inter">
-              Our Offices
-            </h2>
-            <div className="w-16 h-1 bg-primary mx-auto"></div>
-            <p className="text-base text-neutral-base mt-4 max-w-xl mx-auto">
-              Visit us at any of our offices across India for personalized support and consultation
-            </p>
-          </motion.div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {offices.map((office) => (
-              <motion.div
-                key={office.id}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary"
-                variants={itemVariants}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-accent">{office.city}</h3>
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Building className="w-4 h-4 text-primary" />
-                  </div>
-                </div>
-                
-                <p className="text-sm font-medium text-primary mb-3">{office.title}</p>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="w-4 h-4 text-neutral-base mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-neutral-base leading-relaxed">{office.address}</p>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-neutral-base flex-shrink-0" />
-                    <a href={`tel:${office.phone}`} className="text-sm text-neutral-base hover:text-primary transition-colors">
-                      {office.phone}
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-4 h-4 text-neutral-base flex-shrink-0" />
-                    <a href={`mailto:${office.email}`} className="text-sm text-neutral-base hover:text-primary transition-colors">
-                      {office.email}
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-4 h-4 text-neutral-base flex-shrink-0" />
-                    <p className="text-sm text-neutral-base">{office.hours}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Google Map */}
-      <section className="py-5 md:py-8">
+      <section className="py-5 md:py-8" id="find-us-section">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <motion.div
             className="text-center mb-8"
