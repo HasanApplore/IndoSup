@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowRight } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/contact-page_1752235303334.png';
 
@@ -256,7 +256,7 @@ export default function Contact() {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="text-white/70"
             >
-              <ArrowDown className="w-6 h-6" />
+              <ArrowRight className="w-6 h-6 text-white rotate-90" />
             </motion.div>
           </div>
         </motion.div>
