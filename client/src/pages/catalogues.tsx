@@ -9,11 +9,17 @@ export default function Catalogues() {
   const [selectedYear, setSelectedYear] = useState('all');
   const [heroAnimated, setHeroAnimated] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [displayCount, setDisplayCount] = useState(6); // Show 6 catalogues initially
 
   // Reset hero animation when component mounts
   useEffect(() => {
     setHeroAnimated(false);
   }, []);
+
+  // Reset display count when filters change
+  useEffect(() => {
+    setDisplayCount(6);
+  }, [searchQuery, selectedCategory, selectedYear]);
 
   // Add scroll handler for back to top button
   useEffect(() => {
@@ -153,6 +159,9 @@ export default function Catalogues() {
     const matchesYear = selectedYear === 'all' || catalog.year === selectedYear;
     return matchesSearch && matchesCategory && matchesYear;
   });
+
+  const displayedCatalogues = filteredCatalogues.slice(0, displayCount);
+  const hasMoreCatalogues = filteredCatalogues.length > displayCount;
 
   const handleDownload = (catalog) => {
     // Simulate download
@@ -453,7 +462,10 @@ export default function Catalogues() {
           {/* Results Count */}
           <div className="mb-6">
             <p className="text-neutral-base">
-              Showing {filteredCatalogues.length} of {catalogues.length} catalogues
+              Showing {displayedCatalogues.length} of {filteredCatalogues.length} catalogues
+              {filteredCatalogues.length !== catalogues.length && (
+                <span className="text-primary"> (filtered from {catalogues.length} total)</span>
+              )}
             </p>
           </div>
 
@@ -464,7 +476,7 @@ export default function Catalogues() {
             initial="hidden"
             animate="visible"
           >
-            {filteredCatalogues.map((catalog) => (
+            {displayedCatalogues.map((catalog) => (
               <motion.div
                 key={catalog.id}
                 variants={itemVariants}
@@ -523,6 +535,25 @@ export default function Catalogues() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* View More Button */}
+          {hasMoreCatalogues && (
+            <motion.div
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.button
+                onClick={() => setDisplayCount(prev => prev + 6)}
+                className="px-8 py-4 bg-primary text-accent font-bold rounded-xl hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View More Catalogues ({filteredCatalogues.length - displayCount} remaining)
+              </motion.button>
+            </motion.div>
+          )}
 
           {/* No Results */}
           {filteredCatalogues.length === 0 && (
