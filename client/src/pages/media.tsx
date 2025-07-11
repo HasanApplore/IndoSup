@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight, Search, Filter, Tag } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText } from 'lucide-react';
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
@@ -296,27 +296,58 @@ export default function Media() {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+          <motion.div
+            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Star className="w-4 h-4" />
+            <span className="font-medium">Latest Industry Insights</span>
+          </motion.div>
+          
           <motion.h1
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Media & Resources
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-2"
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
             Discover our latest news, insights, and success stories from the construction industry.
           </motion.p>
+          
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <FileText className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">5 Categories</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Eye className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Latest Updates</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
+              <Clock className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Real-time News</span>
+            </div>
+          </motion.div>
+          
           <motion.p
             className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
             Stay informed with our comprehensive coverage of industry developments and achievements.
           </motion.p>
@@ -388,6 +419,51 @@ export default function Media() {
             <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Browse through our comprehensive collection of media coverage, achievements, and industry insights
             </p>
+          </motion.div>
+
+          {/* Stats Summary */}
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <FileText className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">50+</h3>
+              <p className="text-neutral-base text-sm">Media Coverage</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Star className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">15+</h3>
+              <p className="text-neutral-base text-sm">Awards Won</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Calendar className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">Monthly</h3>
+              <p className="text-neutral-base text-sm">Newsletter</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Eye className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">100+</h3>
+              <p className="text-neutral-base text-sm">Blog Posts</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Tag className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-1">25+</h3>
+              <p className="text-neutral-base text-sm">Case Studies</p>
+            </div>
           </motion.div>
 
           {/* Tab Navigation */}
