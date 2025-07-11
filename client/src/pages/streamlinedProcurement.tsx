@@ -181,7 +181,7 @@ export default function StreamlinedProcurement() {
           </motion.p>
           
           <motion.div
-            className="flex flex-wrap justify-center items-center gap-4 mb-8"
+            className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-12 max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -222,8 +222,6 @@ export default function StreamlinedProcurement() {
               <span className="text-white font-medium">Mismatched Order Management</span>
             </button>
           </motion.div>
-          
-
         </div>
 
         {/* Scroll Indicator */}
