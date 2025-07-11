@@ -133,27 +133,32 @@ export default function SteelProducts() {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
-          <Link to="/products">
-            <motion.button
-              className="inline-flex items-center text-primary hover:text-white transition-colors duration-200 mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
-              whileHover={{ x: -5 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Products
-            </motion.button>
-          </Link>
-
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Star className="w-4 h-4" />
-            <span className="font-medium">Premium Steel Products</span>
+            <motion.div
+              className="inline-flex items-center space-x-2 bg-primary text-accent px-6 py-3 rounded-full backdrop-blur-sm font-semibold"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Star className="w-5 h-5" />
+              <span>Premium Steel Products</span>
+            </motion.div>
+            
+            <Link to="/products/non-steel">
+              <motion.button
+                className="inline-flex items-center space-x-2 bg-white/10 text-white px-6 py-3 rounded-full backdrop-blur-sm font-semibold hover:bg-white/20 transition-all duration-300 border-2 border-white/30"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Package className="w-5 h-5" />
+                <span>Non Steel Products</span>
+                <ArrowLeft className="w-4 h-4 rotate-180" />
+              </motion.button>
+            </Link>
           </motion.div>
           
           <motion.h1
