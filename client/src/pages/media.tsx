@@ -209,7 +209,7 @@ export default function Media() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-24 lg:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
@@ -249,7 +249,7 @@ export default function Media() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -257,7 +257,7 @@ export default function Media() {
             Media & Resources
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-gray-200 max-w-2xl md:max-w-3xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -267,7 +267,7 @@ export default function Media() {
           
           {/* Scroll indicator */}
           <motion.div
-            className="mt-12"
+            className="mt-8 md:mt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
@@ -295,26 +295,26 @@ export default function Media() {
       </section>
 
       {/* Main Content */}
-      <section id="media-content" className="py-16 md:py-20">
+      <section id="media-content" className="py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Header */}
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4">
               Explore Our Content
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Browse through our comprehensive collection of media coverage, achievements, and industry insights
             </p>
           </motion.div>
 
           {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4">
             {tabs.map((tab, index) => (
               <motion.button
                 key={tab.id}
@@ -323,7 +323,7 @@ export default function Media() {
                   setActiveTab(tab.id);
                   setTimeout(() => setIsLoading(false), 300);
                 }}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
+                className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
                     ? 'bg-primary text-accent shadow-lg border-2 border-primary'
                     : 'bg-white text-neutral-base hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300'
@@ -348,7 +348,7 @@ export default function Media() {
 
           {/* Search and Filter */}
           <motion.div
-            className="flex flex-col md:flex-row gap-4 mb-10 max-w-3xl mx-auto"
+            className="flex flex-col md:flex-row gap-3 md:gap-4 mb-8 md:mb-10 max-w-3xl mx-auto px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -361,7 +361,7 @@ export default function Media() {
                 placeholder="Search articles, news, and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-gray-300"
+                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-gray-300 text-sm md:text-base"
               />
             </div>
             <div className="relative">
@@ -369,7 +369,7 @@ export default function Media() {
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="pl-12 pr-8 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[180px] hover:shadow-md hover:border-gray-300"
+                className="pl-12 pr-8 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-gray-300 text-sm md:text-base"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (
@@ -383,7 +383,7 @@ export default function Media() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -391,7 +391,7 @@ export default function Media() {
             >
               {/* Results Count */}
               <motion.div
-                className="col-span-full mb-6"
+                className="col-span-full mb-4 md:mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -416,7 +416,7 @@ export default function Media() {
                   whileHover={{ y: -8, scale: 1.02 }}
                 >
                   {/* Image */}
-                  <div className="relative h-52 overflow-hidden">
+                  <div className="relative h-48 md:h-52 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -436,48 +436,48 @@ export default function Media() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <div className="flex items-center text-gray-500 text-sm mb-4">
-                      <Calendar className="w-4 h-4 mr-2" />
+                  <div className="p-4 md:p-6">
+                    <div className="flex items-center text-gray-500 text-xs md:text-sm mb-3 md:mb-4">
+                      <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-2" />
                       <span>{item.date}</span>
                       <span className="mx-2">•</span>
                       <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-accent mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 text-sm">
+                    <p className="text-gray-600 leading-relaxed mb-4 md:mb-6 line-clamp-3 text-xs md:text-sm">
                       {item.preview}
                     </p>
 
                     <div className="flex items-center justify-between">
                       <motion.button
-                        className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-sm group-hover:bg-primary/10 px-3 py-2 rounded-lg transition-all duration-300"
+                        className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-xs md:text-sm group-hover:bg-primary/10 px-2 md:px-3 py-1.5 md:py-2 rounded-lg transition-all duration-300"
                         whileHover={{ x: 5 }}
                       >
-                        <span className="mr-2">Read More</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span className="mr-1 md:mr-2">Read More</span>
+                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </motion.button>
                       
                       {/* Engagement Icons */}
-                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="flex items-center gap-1 md:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <motion.button
-                          className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Add to favorites"
                         >
-                          <Tag className="w-4 h-4 text-gray-400" />
+                          <Tag className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />
                         </motion.button>
                         <motion.button
-                          className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Share"
                         >
-                          <ArrowRight className="w-4 h-4 text-gray-400" />
+                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-gray-400" />
                         </motion.button>
                       </div>
                     </div>
@@ -490,16 +490,16 @@ export default function Media() {
           {/* No Results */}
           {filteredContent.length === 0 && (
             <motion.div
-              className="text-center py-16"
+              className="text-center py-12 md:py-16 px-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Search className="w-12 h-12 text-gray-400" />
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <Search className="w-10 h-10 md:w-12 md:h-12 text-gray-400" />
               </div>
-              <h3 className="text-2xl font-bold text-accent mb-2">No Content Found</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-xl md:text-2xl font-bold text-accent mb-2">No Content Found</h3>
+              <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
                 Try adjusting your search terms or filter selection.
               </p>
               <motion.button
@@ -507,7 +507,7 @@ export default function Media() {
                   setSearchQuery('');
                   setSelectedFilter('all');
                 }}
-                className="px-6 py-3 bg-primary text-accent rounded-xl font-medium hover:bg-primary/90 transition-colors duration-300"
+                className="px-4 md:px-6 py-2.5 md:py-3 bg-primary text-accent rounded-xl font-medium hover:bg-primary/90 transition-colors duration-300 text-sm md:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
