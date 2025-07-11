@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown, ChevronDown } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/contact-page_1752235303334.png';
 
