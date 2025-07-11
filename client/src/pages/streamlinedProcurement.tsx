@@ -389,7 +389,7 @@ export default function StreamlinedProcurement() {
                     <img
                       src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
                       alt={solution.title}
-                      className="w-full h-auto rounded-3xl shadow-lg"
+                      className="w-full h-80 object-cover rounded-3xl shadow-lg"
                     />
                   </motion.div>
                 </div>
