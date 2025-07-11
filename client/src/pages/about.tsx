@@ -1,11 +1,52 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight, Mail, HandHeart, Leaf, ShieldCheck } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Building, Lightbulb, Zap, Shield, TrendingUp, Clock, CheckCircle, Star, Sparkles, ArrowRight, Globe, Truck, MapPin, Phone, Linkedin, ChevronLeft, ChevronRight, Mail, HandHeart, Leaf, ShieldCheck, ArrowUp, ArrowDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
 import pipesFittingImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
+import aboutBannerImage from '@assets/image_1752215754141.png';
 
 export default function About() {
+  const [heroAnimated, setHeroAnimated] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Reset hero animation when component mounts
+  useEffect(() => {
+    setHeroAnimated(false);
+  }, []);
+
+  // Add scroll handler for back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 400;
+      setShowScrollTop(scrolled);
+      
+      if (window.scrollY === 0) {
+        setHeroAnimated(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToContent = () => {
+    const heroHeight = window.innerHeight;
+    setHeroAnimated(true);
+    window.scrollTo({
+      top: heroHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToTop = () => {
+    setHeroAnimated(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   // Carousel images data
   const carouselImages = [
     {
@@ -154,6 +195,176 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={aboutBannerImage}
+            alt="About IndoSup - Construction Procurement Excellence"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+        </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
+            animate={{
+              scale: [1, 1.5, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/3 right-10 w-16 h-16 bg-primary/20 rounded-full blur-xl"
+            animate={{
+              y: [0, -30, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary/40 rounded-full"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+          <motion.div
+            className="inline-flex items-center px-4 py-2 bg-primary/20 rounded-full border border-primary/30 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Star className="w-5 h-5 text-primary mr-2" />
+            <span className="text-white font-medium">About IndoSup</span>
+          </motion.div>
+
+          <motion.h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Transforming Construction
+            <span className="block text-primary">Procurement</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Discover the story behind India's leading construction procurement platform and the vision that drives our mission.
+          </motion.p>
+
+          {/* Feature highlights */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+              <Eye className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm">Our Vision</span>
+            </div>
+            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+              <Target className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm">Our Mission</span>
+            </div>
+            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+              <Heart className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm">Our Values</span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          onClick={scrollToContent}
+        >
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-white text-sm">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
+            >
+              <ArrowDown className="w-6 h-6 text-white" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Statistics Summary */}
+      <section className="py-12 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">5+</div>
+              <div className="text-neutral-dark font-medium">Years Experience</div>
+            </motion.div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">400+</div>
+              <div className="text-neutral-dark font-medium">Trusted Vendors</div>
+            </motion.div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">25+</div>
+              <div className="text-neutral-dark font-medium">States Served</div>
+            </motion.div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10K+</div>
+              <div className="text-neutral-dark font-medium">Successful Projects</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* What Is IndoSup Section */}
       <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
@@ -704,6 +915,20 @@ export default function About() {
         </div>
       </section>
 
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <motion.button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-accent z-50"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <ArrowUp className="w-6 h-6" />
+        </motion.button>
+      )}
 
     </div>
   );
