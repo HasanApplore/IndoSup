@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Wrench, CheckCircle, Star, ArrowUp, Building2, Package, Shield } from 'lucide-react';
+import { ArrowLeft, Download, Wrench, CheckCircle, Star, ArrowUp, Building2, Package, Shield, ArrowDown } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function NonSteelProducts() {
@@ -216,9 +216,9 @@ export default function NonSteelProducts() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
             >
-              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+              <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
           </div>
         </motion.div>
