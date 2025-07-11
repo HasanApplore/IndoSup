@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
 import pipesFittingImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
-import aboutBannerImage from '@assets/image_1752217941194.png';
+import aboutBannerImage from '@assets/about-us-button-about-us-text-template-for-website-about-us-icon-flat-style-vector_1752226824129.jpg';
 
 export default function About() {
   const [heroAnimated, setHeroAnimated] = useState(false);
@@ -43,7 +43,12 @@ export default function About() {
     const element = document.getElementById(sectionId);
     if (element) {
       setHeroAnimated(true);
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -298,28 +303,21 @@ export default function About() {
               className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
             >
               <Users className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Leaders</span>
+              <span className="text-white text-sm font-medium">Our Leadership</span>
             </button>
             <button
-              onClick={() => scrollToSection('vision')}
-              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
-            >
-              <Eye className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Vision</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('mission')}
+              onClick={() => scrollToSection('mission-vision')}
               className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
             >
               <Target className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Mission</span>
+              <span className="text-white text-sm font-medium">Our Mission & Values</span>
             </button>
             <button
               onClick={() => scrollToSection('values')}
               className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
             >
               <Heart className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Values</span>
+              <span className="text-white text-sm font-medium">Our Strength & Values</span>
             </button>
           </motion.div>
         </div>
@@ -597,7 +595,7 @@ export default function About() {
       </section>
 
       {/* Our Mission & Vision */}
-      <section className="py-10 md:py-14 relative overflow-hidden">
+      <section id="mission-vision" className="py-10 md:py-14 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
         
         {/* Animated background elements */}
