@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase } from 'lucide-react';
+import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Careers() {
@@ -8,12 +8,22 @@ export default function Careers() {
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     resume: null
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const departments = ['Engineering', 'Sales', 'Operations', 'Marketing', 'Finance'];
   const locations = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Remote'];
@@ -239,7 +249,52 @@ export default function Careers() {
             Discover exciting career opportunities and be part of India's leading construction procurement platform.
           </motion.p>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          onClick={() => {
+            const heroHeight = window.innerHeight;
+            window.scrollTo({
+              top: heroHeight,
+              behavior: 'smooth'
+            });
+          }}
+        >
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-white text-sm">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+            >
+              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
+
+      {/* Back to Top Button */}
+      {showScrollTop && (
+        <motion.button
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          }}
+          className="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg z-50 transition-colors duration-300"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <ArrowUp className="w-5 h-5" />
+        </motion.button>
+      )}
 
       {/* Job Openings Section */}
       <section className="py-5 md:py-8 bg-[#FBF5EA]">
