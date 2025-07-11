@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/contact-page_1752235303334.png';
 
@@ -202,8 +202,8 @@ export default function Contact() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Phone className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">3 Offices</span>
+              <Building className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Offices</span>
             </motion.button>
             <motion.button
               onClick={scrollToContactForm}
@@ -250,13 +250,13 @@ export default function Contact() {
           }}
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">Scroll to explore</span>
+            <span className="text-white text-sm">Contact Us</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+              className="text-white/70"
             >
-              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+              <ArrowDown className="w-6 h-6" />
             </motion.div>
           </div>
         </motion.div>
