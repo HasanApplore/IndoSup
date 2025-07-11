@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
 import pipesFittingImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
-import aboutBannerImage from '@assets/image_1752215754141.png';
+import aboutBannerImage from '@assets/image_1752217941194.png';
 
 export default function About() {
   const [heroAnimated, setHeroAnimated] = useState(false);
@@ -37,6 +37,14 @@ export default function About() {
       top: heroHeight,
       behavior: 'smooth'
     });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      setHeroAnimated(true);
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const scrollToTop = () => {
@@ -278,25 +286,41 @@ export default function About() {
             Discover the story behind India's leading construction procurement platform and the vision that drives our mission.
           </motion.p>
 
-          {/* Feature highlights */}
+          {/* Navigation buttons */}
           <motion.div
             className="flex flex-wrap justify-center gap-4 mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Eye className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Our Vision</span>
-            </div>
-            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Target className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Our Mission</span>
-            </div>
-            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
-              <Heart className="w-4 h-4 text-primary mr-2" />
-              <span className="text-white text-sm">Our Values</span>
-            </div>
+            <button
+              onClick={() => scrollToSection('leadership')}
+              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+            >
+              <Users className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-white text-sm font-medium">Our Leaders</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('vision')}
+              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+            >
+              <Eye className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-white text-sm font-medium">Our Vision</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('mission')}
+              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+            >
+              <Target className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-white text-sm font-medium">Our Mission</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('values')}
+              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+            >
+              <Heart className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-white text-sm font-medium">Our Values</span>
+            </button>
           </motion.div>
         </div>
 
@@ -309,7 +333,6 @@ export default function About() {
           onClick={scrollToContent}
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">Scroll to explore</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -317,53 +340,12 @@ export default function About() {
             >
               <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
+            <span className="text-white text-sm">About IndoSup</span>
           </div>
         </motion.div>
       </section>
 
-      {/* Statistics Summary */}
-      <section className="py-12 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">5+</div>
-              <div className="text-neutral-dark font-medium">Years Experience</div>
-            </motion.div>
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">400+</div>
-              <div className="text-neutral-dark font-medium">Trusted Vendors</div>
-            </motion.div>
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">25+</div>
-              <div className="text-neutral-dark font-medium">States Served</div>
-            </motion.div>
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10K+</div>
-              <div className="text-neutral-dark font-medium">Successful Projects</div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* What Is IndoSup Section */}
       <section className="py-16 md:py-24 relative overflow-hidden">
@@ -514,7 +496,7 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
+      <section id="leadership" className="py-12 md:py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-10 md:mb-14"
@@ -665,6 +647,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* Mission Card */}
             <motion.div
+              id="mission"
               className="relative"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -727,6 +710,7 @@ export default function About() {
 
             {/* Vision Card */}
             <motion.div
+              id="vision"
               className="relative"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -818,7 +802,7 @@ export default function About() {
       </section>
 
       {/* Strength & Values */}
-      <section className="py-10 md:py-14">
+      <section id="values" className="py-10 md:py-14">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-8 md:mb-10"
