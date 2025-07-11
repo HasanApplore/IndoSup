@@ -377,11 +377,16 @@ export default function Media() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.3 }}
               onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Reset hero animation first
                 setHeroAnimated(false);
+                // Then scroll to top smoothly
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
               }}
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.95 }}
+              title="Back to Banner"
             >
               <ArrowRight className="w-6 h-6 text-primary -rotate-90" />
             </motion.button>
