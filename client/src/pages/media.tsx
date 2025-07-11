@@ -369,10 +369,10 @@ export default function Media() {
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          {/* Back to Top Button */}
+          {/* Back to Top Arrow */}
           {heroAnimated && (
             <motion.button
-              className="fixed top-4 right-4 z-50 bg-primary text-accent px-4 py-2 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg"
+              className="fixed top-6 right-6 z-50 w-12 h-12 border-2 border-primary rounded-full flex items-center justify-center bg-white/90 hover:bg-white hover:border-primary transition-all duration-300 backdrop-blur-sm shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.3 }}
@@ -380,10 +380,10 @@ export default function Media() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 setHeroAnimated(false);
               }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.95 }}
             >
-              Back to Top
+              <ArrowRight className="w-6 h-6 text-primary -rotate-90" />
             </motion.button>
           )}
 
