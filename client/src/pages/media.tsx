@@ -6,6 +6,7 @@ export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const [isLoading, setIsLoading] = useState(false);
 
   const tabs = [
     { id: 'media-coverage', label: 'Media Coverage' },
@@ -217,6 +218,35 @@ export default function Media() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 right-10 w-32 h-32 bg-primary/30 rounded-full blur-xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-inter text-white"
@@ -234,33 +264,85 @@ export default function Media() {
           >
             Discover our latest news, insights, and success stories from the construction industry.
           </motion.p>
+          
+          {/* Scroll indicator */}
+          <motion.div
+            className="mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <motion.div
+              className="w-8 h-8 border-2 border-white/60 rounded-full flex items-center justify-center mx-auto cursor-pointer"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <ArrowRight className="w-4 h-4 text-white/60 rotate-90" />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Main Content */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
+              Explore Our Content
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Browse through our comprehensive collection of media coverage, achievements, and industry insights
+            </p>
+          </motion.div>
+
           {/* Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {tabs.map((tab) => (
+            {tabs.map((tab, index) => (
               <motion.button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                onClick={() => {
+                  setIsLoading(true);
+                  setActiveTab(tab.id);
+                  setTimeout(() => setIsLoading(false), 300);
+                }}
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
                   activeTab === tab.id
                     ? 'bg-primary text-accent shadow-lg border-2 border-primary'
                     : 'bg-white text-neutral-base hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300'
                 }`}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
                 {tab.label}
+                {activeTab === tab.id && (
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/30 rounded-xl"
+                    layoutId="activeTab"
+                    transition={{ type: "spring", duration: 0.5 }}
+                  />
+                )}
               </motion.button>
             ))}
           </div>
 
           {/* Search and Filter */}
-          <div className="flex flex-col md:flex-row gap-4 mb-10 max-w-3xl mx-auto">
+          <motion.div
+            className="flex flex-col md:flex-row gap-4 mb-10 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="relative flex-1">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
@@ -268,7 +350,7 @@ export default function Media() {
                 placeholder="Search articles, news, and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm"
+                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-gray-300"
               />
             </div>
             <div className="relative">
@@ -276,7 +358,7 @@ export default function Media() {
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="pl-12 pr-8 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[180px]"
+                className="pl-12 pr-8 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[180px] hover:shadow-md hover:border-gray-300"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (
@@ -284,7 +366,7 @@ export default function Media() {
                 ))}
               </select>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content Grid */}
           <AnimatePresence mode="wait">
@@ -296,11 +378,30 @@ export default function Media() {
               animate="visible"
               exit="hidden"
             >
+              {/* Results Count */}
+              <motion.div
+                className="col-span-full mb-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                {isLoading ? (
+                  <div className="flex items-center gap-2 text-gray-600 text-sm">
+                    <div className="w-4 h-4 border-2 border-gray-300 border-t-primary rounded-full animate-spin"></div>
+                    Loading content...
+                  </div>
+                ) : (
+                  <p className="text-gray-600 text-sm">
+                    Showing {filteredContent.length} {filteredContent.length === 1 ? 'result' : 'results'}
+                    {searchQuery && ` for "${searchQuery}"`}
+                  </p>
+                )}
+              </motion.div>
               {filteredContent.map((item) => (
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group border border-gray-100"
+                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative"
                   whileHover={{ y: -8, scale: 1.02 }}
                 >
                   {/* Image */}
@@ -310,10 +411,16 @@ export default function Media() {
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-primary/90 text-accent px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
+                      <span className="bg-primary/90 text-accent px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg">
                         {item.category}
                       </span>
+                    </div>
+                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <ArrowRight className="w-4 h-4 text-accent" />
+                      </div>
                     </div>
                   </div>
 
@@ -334,13 +441,35 @@ export default function Media() {
                       {item.preview}
                     </p>
 
-                    <motion.button
-                      className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-sm"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="mr-2">Read More</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                    <div className="flex items-center justify-between">
+                      <motion.button
+                        className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-sm group-hover:bg-primary/10 px-3 py-2 rounded-lg transition-all duration-300"
+                        whileHover={{ x: 5 }}
+                      >
+                        <span className="mr-2">Read More</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </motion.button>
+                      
+                      {/* Engagement Icons */}
+                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <motion.button
+                          className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          title="Add to favorites"
+                        >
+                          <Tag className="w-4 h-4 text-gray-400" />
+                        </motion.button>
+                        <motion.button
+                          className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          title="Share"
+                        >
+                          <ArrowRight className="w-4 h-4 text-gray-400" />
+                        </motion.button>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -350,16 +479,29 @@ export default function Media() {
           {/* No Results */}
           {filteredContent.length === 0 && (
             <motion.div
-              className="text-center py-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              className="text-center py-16"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="text-6xl mb-4">🔍</div>
+              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search className="w-12 h-12 text-gray-400" />
+              </div>
               <h3 className="text-2xl font-bold text-accent mb-2">No Content Found</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-6">
                 Try adjusting your search terms or filter selection.
               </p>
+              <motion.button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedFilter('all');
+                }}
+                className="px-6 py-3 bg-primary text-accent rounded-xl font-medium hover:bg-primary/90 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Clear Filters
+              </motion.button>
             </motion.div>
           )}
         </div>
