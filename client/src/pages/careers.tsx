@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import careerBannerImage from '@assets/Career-Month-1_Drupal-1200x799_1752235108568.png';
 
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
@@ -154,7 +155,7 @@ export default function Careers() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1541746972996-4e0b0f93e586?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            src={careerBannerImage}
             alt="Career Opportunities at IndoSup"
             className="w-full h-full object-cover"
           />
