@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import indosupLogo from '@assets/Frame-9-2-removebg-preview_1752126166290.png';
 
 export default function Footer() {
 
@@ -42,11 +41,9 @@ export default function Footer() {
           {/* Company Info & Quick Links */}
           <div className="space-y-6">
             <div className="transform hover:scale-105 transition-transform duration-300">
-              <img 
-                src={indosupLogo} 
-                alt="IndoSup Logo" 
-                className="h-10 w-auto mb-4 filter drop-shadow-lg"
-              />
+              <h2 className="text-2xl font-bold text-primary mb-4 filter drop-shadow-lg">
+                IndoSup
+              </h2>
             </div>
             
             <div>
