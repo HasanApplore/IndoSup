@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight, Star, Eye, Clock, Target, ArrowUp, ArrowDown } from 'lucide-react';
+import constructionSiteImg from '@assets/image_1752053991095.png';
+import pricingImg from '@assets/image_1752053993871.png';
+import supplyChainImg from '@assets/image_1752053997490.png';
+import complianceImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
+import orderManagementImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
 
 export default function StreamlinedProcurement() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -27,6 +32,18 @@ export default function StreamlinedProcurement() {
       top: heroHeight,
       behavior: 'smooth'
     });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   // Solutions data
@@ -169,18 +186,41 @@ export default function StreamlinedProcurement() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Target className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Automated Workflows</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Eye className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Smart Analytics</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Clock className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">24/7 Operations</span>
-            </div>
+            <button
+              onClick={() => scrollToSection('multi-site-procurement')}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+            >
+              <Building2 className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Multi-site Procurement</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('sku-price-accuracy')}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+            >
+              <Calculator className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">SKU Price Accuracy</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('supply-chain-solutions')}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+            >
+              <Truck className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Supply Chain Delay Solutions</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('gst-billing-compliance')}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+            >
+              <FileText className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">GST/Billing Compliance</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('order-management')}
+              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
+            >
+              <Package className="w-5 h-5 text-white" />
+              <span className="text-white font-medium">Mismatched Order Management</span>
+            </button>
           </motion.div>
           
           <motion.p
@@ -258,35 +298,35 @@ export default function StreamlinedProcurement() {
           >
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building2 className="w-5 h-5 text-primary" />
+                <Building2 className="w-5 h-5 text-[#0C2539]" />
               </div>
               <h3 className="text-xl font-bold text-accent mb-1">Multi-site</h3>
               <p className="text-neutral-base text-sm">Procurement</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Calculator className="w-5 h-5 text-primary" />
+                <Calculator className="w-5 h-5 text-[#0C2539]" />
               </div>
               <h3 className="text-xl font-bold text-accent mb-1">Price</h3>
               <p className="text-neutral-base text-sm">Accuracy</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Truck className="w-5 h-5 text-primary" />
+                <Truck className="w-5 h-5 text-[#0C2539]" />
               </div>
               <h3 className="text-xl font-bold text-accent mb-1">Supply Chain</h3>
               <p className="text-neutral-base text-sm">Solutions</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <FileText className="w-5 h-5 text-primary" />
+                <FileText className="w-5 h-5 text-[#0C2539]" />
               </div>
               <h3 className="text-xl font-bold text-accent mb-1">GST</h3>
               <p className="text-neutral-base text-sm">Compliance</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Package className="w-5 h-5 text-primary" />
+                <Package className="w-5 h-5 text-[#0C2539]" />
               </div>
               <h3 className="text-xl font-bold text-accent mb-1">Order</h3>
               <p className="text-neutral-base text-sm">Management</p>
@@ -303,13 +343,14 @@ export default function StreamlinedProcurement() {
             {solutions.map((solution, index) => (
               <motion.div
                 key={index}
+                id={index === 0 ? 'multi-site-procurement' : index === 1 ? 'sku-price-accuracy' : index === 2 ? 'supply-chain-solutions' : index === 3 ? 'gst-billing-compliance' : 'order-management'}
                 variants={itemVariants}
                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-12`}
               >
                 {/* Content */}
                 <div className="flex-1 space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
                       {solution.icon}
                     </div>
                     <div>
@@ -354,26 +395,37 @@ export default function StreamlinedProcurement() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
-                      <div className="w-24 h-24 md:w-32 md:h-32 bg-primary rounded-3xl flex items-center justify-center text-white mx-auto mb-6">
-                        <div className="scale-150">
-                          {solution.icon}
-                        </div>
+                    <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 opacity-10">
+                        <img
+                          src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
+                          alt={solution.title}
+                          className="w-full h-full object-cover rounded-3xl"
+                        />
                       </div>
                       
-                      {/* Decorative elements */}
-                      <div className="space-y-3">
-                        {[...Array(3)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            className="h-2 bg-primary/20 rounded-full"
-                            style={{ width: `${100 - i * 20}%` }}
-                            initial={{ scaleX: 0 }}
-                            whileInView={{ scaleX: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 + i * 0.1, duration: 0.6 }}
-                          />
-                        ))}
+                      <div className="relative z-10">
+                        <div className="w-24 h-24 md:w-32 md:h-32 bg-primary rounded-3xl flex items-center justify-center text-white mx-auto mb-6">
+                          <div className="scale-150">
+                            {solution.icon}
+                          </div>
+                        </div>
+                        
+                        {/* Decorative elements */}
+                        <div className="space-y-3">
+                          {[...Array(3)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className="h-2 bg-primary/20 rounded-full"
+                              style={{ width: `${100 - i * 20}%` }}
+                              initial={{ scaleX: 0 }}
+                              whileInView={{ scaleX: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: index * 0.2 + i * 0.1, duration: 0.6 }}
+                            />
+                          ))}
+                        </div>
                       </div>
                     </div>
 
@@ -398,43 +450,7 @@ export default function StreamlinedProcurement() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-gray-50 py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6">
-              Ready to Transform Your Procurement?
-            </h2>
-            <p className="text-lg text-neutral-base mb-8 leading-relaxed">
-              Join hundreds of construction companies who have revolutionized their 
-              procurement operations with IndoSup's comprehensive solutions.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                className="px-8 py-4 bg-primary text-accent font-bold rounded-full hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Started Today
-              </motion.button>
-              
-              <motion.button
-                className="px-8 py-4 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-accent transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Schedule Demo
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
     </div>
   );
 }
