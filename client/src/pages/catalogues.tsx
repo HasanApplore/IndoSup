@@ -308,7 +308,7 @@ export default function Catalogues() {
             transition={{ delay: 1, duration: 0.8 }}
           >
             <motion.div
-              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+              className="w-12 h-12 flex items-center justify-center mx-auto cursor-pointer transition-all duration-300"
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 2.5, repeat: Infinity }}
               onClick={() => {
@@ -326,7 +326,11 @@ export default function Catalogues() {
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowRight className="w-6 h-6 text-white rotate-90" />
+              <img 
+                src="/attached_assets/image_1752220469567.png" 
+                alt="Scroll down arrow" 
+                className="w-10 h-10 opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
             </motion.div>
             <motion.p
               className="text-white/70 text-sm mt-3 font-medium"

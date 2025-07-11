@@ -206,9 +206,13 @@ export default function Solutions() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+              className="w-12 h-12 flex items-center justify-center"
             >
-              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+              <img 
+                src="/attached_assets/image_1752220469567.png" 
+                alt="Scroll down arrow" 
+                className="w-10 h-10 opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
             </motion.div>
           </div>
         </motion.div>
