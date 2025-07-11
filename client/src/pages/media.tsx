@@ -209,7 +209,7 @@ export default function Media() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 lg:py-28 overflow-hidden">
+      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
@@ -222,22 +222,11 @@ export default function Media() {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"
+            className="absolute top-1/4 left-10 w-24 h-24 bg-primary/25 rounded-full blur-2xl"
             animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute bottom-20 right-10 w-32 h-32 bg-primary/30 rounded-full blur-xl"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.2, 0.5, 0.2],
+              scale: [1, 1.8, 1],
+              opacity: [0.3, 0.7, 0.3],
+              x: [0, 50, 0],
             }}
             transition={{
               duration: 8,
@@ -245,11 +234,37 @@ export default function Media() {
               ease: "easeInOut"
             }}
           />
+          <motion.div
+            className="absolute bottom-1/4 right-10 w-36 h-36 bg-primary/35 rounded-full blur-2xl"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.6, 0.2],
+              x: [0, -30, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/2 w-16 h-16 bg-white/10 rounded-full blur-xl"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.2, 0.4, 0.2],
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 font-inter text-white"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -257,45 +272,68 @@ export default function Media() {
             Media & Resources
           </motion.h1>
           <motion.p
-            className="text-base md:text-lg lg:text-xl text-gray-200 max-w-2xl md:max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             Discover our latest news, insights, and success stories from the construction industry.
           </motion.p>
+          <motion.p
+            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            Stay informed with our comprehensive coverage of industry developments and achievements.
+          </motion.p>
           
           {/* Scroll indicator */}
           <motion.div
-            className="mt-8 md:mt-12"
+            className="mt-12 md:mt-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
             <motion.div
-              className="w-8 h-8 border-2 border-white/60 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/10 transition-all duration-300"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
               onClick={() => {
                 const contentSection = document.getElementById('media-content');
                 if (contentSection) {
-                  contentSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
+                  const heroSection = document.querySelector('.hero-section');
+                  if (heroSection) {
+                    heroSection.style.transform = 'translateY(-100vh)';
+                    heroSection.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                  }
+                  setTimeout(() => {
+                    contentSection.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }, 400);
                 }
               }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <ArrowRight className="w-4 h-4 text-white/60 rotate-90" />
+              <ArrowRight className="w-6 h-6 text-white rotate-90" />
             </motion.div>
+            <motion.p
+              className="text-white/70 text-sm mt-3 font-medium"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+            >
+              Explore Content
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section id="media-content" className="py-12 md:py-16 lg:py-20">
+      <section id="media-content" className="py-16 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Section Header */}
           <motion.div
@@ -323,7 +361,7 @@ export default function Media() {
                   setActiveTab(tab.id);
                   setTimeout(() => setIsLoading(false), 300);
                 }}
-                className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
+                className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-bold transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
                     ? 'bg-primary text-accent shadow-lg border-2 border-primary'
                     : 'bg-white text-neutral-base hover:bg-gray-50 border-2 border-gray-200 hover:border-gray-300'
@@ -412,8 +450,8 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative"
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative cursor-pointer"
+                  whileHover={{ y: -10, scale: 1.03 }}
                 >
                   {/* Image */}
                   <div className="relative h-48 md:h-52 overflow-hidden">
@@ -444,7 +482,7 @@ export default function Media() {
                       <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-tight hover:underline">
                       {item.title}
                     </h3>
 
