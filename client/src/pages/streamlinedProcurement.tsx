@@ -226,18 +226,18 @@ export default function StreamlinedProcurement() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer w-full flex justify-center"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
           onClick={scrollToContent}
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm text-center">Streamlined Procurement</span>
+            <span className="text-white text-sm">Streamlined Procurement</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="p-2 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
+              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
             >
               <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
