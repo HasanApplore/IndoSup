@@ -42,7 +42,7 @@ export default function HeroSection() {
           videoId: youtubeVideoId,
           playerVars: {
             autoplay: 1,
-            mute: 0,
+            mute: 1,
             loop: 1,
             playlist: youtubeVideoId,
             controls: 0,
@@ -73,8 +73,9 @@ export default function HeroSection() {
               // Ensure video starts playing immediately with multiple attempts
               const forcePlay = () => {
                 try {
+                  event.target.mute(); // Ensure muted for autoplay
                   event.target.playVideo();
-                  event.target.setVolume(70); // Set higher volume
+                  event.target.seekTo(0); // Start from beginning
                 } catch (error) {
                   console.log('Autoplay attempt failed, retrying...');
                   setTimeout(forcePlay, 500);
@@ -85,6 +86,7 @@ export default function HeroSection() {
               setTimeout(forcePlay, 100);
               setTimeout(forcePlay, 500);
               setTimeout(forcePlay, 1000);
+              setTimeout(forcePlay, 2000);
             }
           }
         });
@@ -121,7 +123,7 @@ export default function HeroSection() {
           <iframe
             ref={iframeRef}
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=0&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=${encodeURIComponent(window.location.origin)}&widget_referrer=${encodeURIComponent(window.location.origin)}`}
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=${encodeURIComponent(window.location.origin)}&widget_referrer=${encodeURIComponent(window.location.origin)}`}
             title="IndoSup Demo Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
