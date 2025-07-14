@@ -1066,18 +1066,18 @@ export default function Media() {
       <AnimatePresence>
         {showModal && selectedArticle && (
           <motion.div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setShowModal(false)}
           >
             <motion.div
-              className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[95vh] overflow-hidden border border-gray-100"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, type: "spring", damping: 25 }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
@@ -1085,64 +1085,138 @@ export default function Media() {
                 <img
                   src={selectedArticle.image}
                   alt={selectedArticle.title}
-                  className="w-full h-48 md:h-64 object-cover"
+                  className="w-full h-56 md:h-72 object-cover"
                 />
-                <div className="absolute top-4 right-4">
-                  <button
+                <div className="absolute top-6 right-6">
+                  <motion.button
                     onClick={() => setShowModal(false)}
-                    className="w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg transition-all duration-300"
+                    className="w-12 h-12 bg-white/95 hover:bg-white rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg transition-all duration-300 group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <X className="w-5 h-5 text-gray-700" />
-                  </button>
+                    <X className="w-6 h-6 text-gray-700 group-hover:text-gray-900" />
+                  </motion.button>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                  <div className="flex items-center text-white/90 text-sm mb-2">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8">
+                  <div className="flex items-center text-white/90 text-sm mb-3">
                     <Calendar className="w-4 h-4 mr-2" />
                     <span>{selectedArticle.date}</span>
-                    <span className="mx-2">•</span>
+                    <span className="mx-3">•</span>
                     <span className="font-medium">{selectedArticle.source}</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                     {selectedArticle.title}
                   </h2>
-                  <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-3 py-1.5 rounded-full backdrop-blur-sm">
-                    <Tag className="w-4 h-4" />
-                    <span className="text-sm font-medium">{selectedArticle.category}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="inline-block bg-primary text-accent px-4 py-2 rounded-full text-sm font-semibold">
+                      {selectedArticle.category}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <motion.button
+                        className={`p-2 rounded-full transition-all duration-300 ${
+                          favoriteArticles.has(selectedArticle.id) 
+                            ? 'bg-primary/20 hover:bg-primary/30' 
+                            : 'bg-white/20 hover:bg-white/30'
+                        }`}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={() => toggleFavorite(selectedArticle.id)}
+                      >
+                        <Heart className={`w-5 h-5 ${
+                          favoriteArticles.has(selectedArticle.id) 
+                            ? 'text-primary fill-primary' 
+                            : 'text-white'
+                        }`} />
+                      </motion.button>
+                      <motion.button
+                        className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={() => {
+                          if (navigator.share) {
+                            navigator.share({
+                              title: selectedArticle.title,
+                              text: selectedArticle.preview,
+                              url: window.location.href
+                            });
+                          } else {
+                            navigator.clipboard.writeText(window.location.href);
+                          }
+                        }}
+                      >
+                        <Share2 className="w-5 h-5 text-white" />
+                      </motion.button>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Modal Content */}
-              <div className="max-h-[60vh] overflow-y-auto p-6 md:p-8">
-                <div className="prose prose-lg max-w-none">
-                  <div dangerouslySetInnerHTML={{ __html: selectedArticle.fullContent }} />
+              <div className="overflow-y-auto max-h-[calc(95vh-20rem)]">
+                <div className="p-8 md:p-12">
+                  <div className="max-w-4xl mx-auto">
+                    <div 
+                      className="prose prose-lg prose-gray max-w-none 
+                                prose-headings:font-bold prose-headings:text-accent prose-headings:mb-6 prose-headings:mt-8
+                                prose-h2:text-2xl prose-h2:border-b prose-h2:border-primary/20 prose-h2:pb-3
+                                prose-h3:text-xl prose-h3:text-primary prose-h3:mt-6 prose-h3:mb-4
+                                prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6 prose-p:text-base
+                                prose-ul:my-6 prose-li:text-gray-700 prose-li:mb-2 prose-li:leading-relaxed
+                                prose-strong:text-accent prose-strong:font-semibold
+                                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                                first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-p:mt-0"
+                      dangerouslySetInnerHTML={{ __html: selectedArticle.fullContent }}
+                    />
+                  </div>
                 </div>
               </div>
 
               {/* Modal Footer */}
-              <div className="border-t border-gray-200 p-6 md:p-8">
+              <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-6">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center gap-4">
                     <motion.button
-                      className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-300"
+                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                        favoriteArticles.has(selectedArticle.id)
+                          ? 'bg-primary text-accent hover:bg-primary/90'
+                          : 'bg-accent text-white hover:bg-accent/90'
+                      }`}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        toggleFavorite(selectedArticle.id);
+                      }}
                     >
-                      <Tag className="w-5 h-5" />
-                      <span className="font-medium">Save Article</span>
+                      <Heart className={`w-5 h-5 ${
+                        favoriteArticles.has(selectedArticle.id) 
+                          ? 'fill-accent' 
+                          : ''
+                      }`} />
+                      {favoriteArticles.has(selectedArticle.id) ? 'Saved to Favorites' : 'Save Article'}
                     </motion.button>
                     <motion.button
-                      className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-300"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        if (navigator.share) {
+                          navigator.share({
+                            title: selectedArticle.title,
+                            text: selectedArticle.preview,
+                            url: window.location.href
+                          });
+                        } else {
+                          navigator.clipboard.writeText(window.location.href);
+                        }
+                      }}
                     >
-                      <ArrowRight className="w-5 h-5" />
-                      <span className="font-medium">Share</span>
+                      <Share2 className="w-5 h-5" />
+                      Share Article
                     </motion.button>
                   </div>
                   <motion.button
                     onClick={() => setShowModal(false)}
-                    className="px-6 py-3 bg-primary text-accent rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg"
+                    className="px-8 py-3 bg-white text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 border-2 border-gray-200 hover:border-gray-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
