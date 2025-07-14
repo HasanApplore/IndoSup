@@ -121,7 +121,7 @@ export default function Footer() {
                 {/* Google Maps Embed */}
                 <div className="mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-600">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce46e4b8a4663%3A0x1c7e8e8a1c8a4663!2sSector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a9e9a4c9a7%3A0x1c2b5a3b4c5d6e7f!2sC-120%2C%202nd%20Floor%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&markers=28.594424775690374,77.31138977550396"
                     width="100%"
                     height="120"
                     style={{ border: 0 }}
@@ -129,6 +129,7 @@ export default function Footer() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="rounded-lg filter brightness-90 hover:brightness-100 transition-all duration-300"
+                    title="IndoSup Office Location - C-120, 2nd Floor, Sector 2, Noida"
                   />
                 </div>
               </div>
