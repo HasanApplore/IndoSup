@@ -222,25 +222,7 @@ export default function Careers() {
             how construction companies source materials and manage their supply chains.
           </motion.p>
           
-          <motion.div
-            className="flex flex-wrap justify-center items-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Briefcase className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">15+ Positions</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <Building className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">5 Departments</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm">
-              <MapPin className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">6+ Locations</span>
-            </div>
-          </motion.div>
+
           
           <motion.p
             className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
@@ -266,8 +248,8 @@ export default function Careers() {
             });
           }}
         >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">Scroll to explore</span>
+          <div className="flex flex-col items-center justify-center space-y-2">
+            <span className="text-white text-sm text-center">Explore Opportunities</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
