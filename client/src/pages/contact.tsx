@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown, ChevronDown } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
-import contactBannerImage from '@assets/contact-page_1752235303334.png';
+import contactBannerImage from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
 import constructionImage1 from '@assets/colleagues-working-together-call-center-office_1752497192985.jpg';
 import constructionImage2 from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
 
