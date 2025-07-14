@@ -237,44 +237,77 @@ export default function NewInitiatives() {
       </section>
 
       {/* Statistics Summary */}
-      <section className="py-16 bg-white/50 backdrop-blur-sm">
+      <section className="py-16 bg-gradient-to-r from-white/80 via-white/50 to-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">New Initiatives at a Glance</h2>
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+          </motion.div>
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div
-              className="text-center"
+              className="text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2</div>
-              <div className="text-neutral-dark font-medium">New Companies</div>
+              <div className="bg-white/60 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2</div>
+                <div className="text-neutral-dark font-medium">New Companies</div>
+              </div>
             </motion.div>
+            
             <motion.div
-              className="text-center"
+              className="text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">Global</div>
-              <div className="text-neutral-dark font-medium">Market Reach</div>
+              <div className="bg-white/60 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">Worldwide</div>
+                <div className="text-neutral-dark font-medium">Market Reach</div>
+              </div>
             </motion.div>
+            
             <motion.div
-              className="text-center"
+              className="text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10+</div>
-              <div className="text-neutral-dark font-medium">Service Areas</div>
+              <div className="bg-white/60 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10+</div>
+                <div className="text-neutral-dark font-medium">Service Areas</div>
+              </div>
             </motion.div>
+            
             <motion.div
-              className="text-center"
+              className="text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2025</div>
-              <div className="text-neutral-dark font-medium">Launch Year</div>
+              <div className="bg-white/60 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2025</div>
+                <div className="text-neutral-dark font-medium">Launch Year</div>
+              </div>
             </motion.div>
           </div>
         </div>
