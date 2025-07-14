@@ -375,7 +375,7 @@ export default function NewInitiatives() {
                 </p>
 
                 {/* Features */}
-                <div className="space-y-2 mt-8 mb-8">
+                <div className="space-y-2 mt-8 mb-6">
                   {globalAssistServices.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
@@ -384,7 +384,7 @@ export default function NewInitiatives() {
                   ))}
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-3">
                   <Link to="/contact">
                     <motion.div
                       className="inline-flex items-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-primary/20 hover:border-primary shadow-sm hover:shadow-md"
