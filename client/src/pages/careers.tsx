@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown, Search } from 'lucide-react';
+import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown, Search, Filter, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import careerBannerImage from '@assets/Career-Month-1_Drupal-1200x799_1752235108568.png';
 
@@ -284,51 +284,66 @@ export default function Careers() {
 
 
           {/* Search and Filters */}
-          <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
-            {/* Search Bar */}
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-accent mb-2">Search Jobs</label>
-              <div className="relative">
+          <motion.div 
+            className="bg-white rounded-2xl shadow-lg p-6 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="flex flex-col lg:flex-row gap-4">
+              {/* Search */}
+              <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Search by title, description, or requirements..."
+                  placeholder="Search jobs..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-primary/30"
                 />
               </div>
+
+              {/* Department Filter */}
+              <div className="relative min-w-[200px]">
+                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <select
+                  value={selectedDepartment}
+                  onChange={(e) => setSelectedDepartment(e.target.value)}
+                  className="w-full pl-10 pr-8 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30"
+                >
+                  <option value="all">All Departments</option>
+                  {departments.map(dept => (
+                    <option key={dept} value={dept}>{dept}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Location Filter */}
+              <div className="relative min-w-[200px]">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <select
+                  value={selectedLocation}
+                  onChange={(e) => setSelectedLocation(e.target.value)}
+                  className="w-full pl-10 pr-8 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30"
+                >
+                  <option value="all">All Locations</option>
+                  {locations.map(location => (
+                    <option key={location} value={location}>{location}</option>
+                  ))}
+                </select>
+              </div>
             </div>
-            
-            {/* Department Filter */}
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-accent mb-2">Department</label>
-              <select
-                value={selectedDepartment}
-                onChange={(e) => setSelectedDepartment(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              >
-                <option value="all">All Departments</option>
-                {departments.map(dept => (
-                  <option key={dept} value={dept}>{dept}</option>
-                ))}
-              </select>
-            </div>
-            
-            {/* Location Filter */}
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-accent mb-2">Location</label>
-              <select
-                value={selectedLocation}
-                onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              >
-                <option value="all">All Locations</option>
-                {locations.map(location => (
-                  <option key={location} value={location}>{location}</option>
-                ))}
-              </select>
-            </div>
+          </motion.div>
+
+          {/* Results Count */}
+          <div className="mb-6">
+            <p className="text-neutral-base">
+              Showing {filteredJobs.length} of {jobOpenings.length} job openings
+              {filteredJobs.length !== jobOpenings.length && (
+                <span className="text-primary"> (filtered from {jobOpenings.length} total)</span>
+              )}
+            </p>
           </div>
 
           {/* Job Cards */}
