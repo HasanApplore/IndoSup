@@ -957,7 +957,7 @@ export default function Media() {
 
                     <div className="flex items-center justify-between">
                       <motion.button
-                        className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors duration-300 text-xs md:text-sm group-hover:bg-primary/10 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-primary/20 hover:border-primary/40"
+                        className="inline-flex items-center text-accent font-bold hover:text-gray-800 transition-colors duration-300 text-xs md:text-sm group-hover:bg-accent/10 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-accent/20 hover:border-accent/40"
                         whileHover={{ x: 5 }}
                         onClick={(e) => {
                           e.stopPropagation();
