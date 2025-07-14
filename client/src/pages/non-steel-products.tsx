@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Download, Wrench, CheckCircle, Star, ArrowUp, Building2, Package, Shield, ArrowDown } from 'lucide-react';
 import { Link } from 'wouter';
+import pumpingSystemImg from '@assets/OIP (1)_1752499680077.webp';
+import fireProtectionSystemImg from '@assets/fireprotectionsystemcomponents_1752499690321.webp';
+import waterSystemImg from '@assets/c50b6154-84bf-44da-bffb-3cd660a1fa44_1752499692423.jpg';
 
 export default function NonSteelProducts() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -57,7 +60,7 @@ export default function NonSteelProducts() {
       name: "Fire Fighting",
       description: "Advanced fire safety systems including sprinklers, alarms, extinguishers, and emergency response equipment.",
       specifications: ["BIS Approved", "Automatic Systems", "Emergency Lighting"],
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: fireProtectionSystemImg
     },
     {
       name: "Warehouse Infra",
@@ -75,7 +78,7 @@ export default function NonSteelProducts() {
       name: "Pumping and Water System",
       description: "Comprehensive water management solutions including pumps, tanks, filtration systems, and water treatment equipment.",
       specifications: ["Submersible Pumps", "Water Storage Tanks", "Filtration Systems"],
-      image: "https://images.unsplash.com/photo-1589036014726-69c17d87b217?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: waterSystemImg
     }
   ];
 
