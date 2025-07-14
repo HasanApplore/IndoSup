@@ -40,14 +40,24 @@ export default function NewInitiatives() {
   const scrollToPrivateSection = () => {
     const element = document.getElementById('global-private-section');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   const scrollToAssistSection = () => {
     const element = document.getElementById('global-assist-section');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 80; // Account for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
