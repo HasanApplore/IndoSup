@@ -118,7 +118,7 @@ export default function StreamlinedProcurement() {
             alt="Streamlined Procurement Solutions"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
         {/* Animated background elements */}
@@ -127,8 +127,7 @@ export default function StreamlinedProcurement() {
             className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
             animate={{
               scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-              x: [0, 40, 0],
+              rotate: [0, 180, 360],
             }}
             transition={{
               duration: 8,
@@ -137,11 +136,22 @@ export default function StreamlinedProcurement() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-10 w-32 h-32 bg-primary/25 rounded-full blur-2xl"
+            className="absolute bottom-1/3 right-10 w-16 h-16 bg-primary/20 rounded-full blur-xl"
             animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.2, 0.5, 0.2],
-              x: [0, -25, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary/40 rounded-full"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
             }}
             transition={{
               duration: 10,
@@ -191,27 +201,7 @@ export default function StreamlinedProcurement() {
           </motion.button>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-          <motion.div
-            className="cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            onClick={scrollToContent}
-          >
-            <div className="flex flex-col items-center space-y-2">
-              <span className="text-white text-sm">Streamlined Procurement</span>
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
-              >
-                <ArrowDown className="w-6 h-6 text-white" />
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+
       </section>
 
       {/* Back to Top Button */}
