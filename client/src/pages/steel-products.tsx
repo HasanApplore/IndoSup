@@ -271,7 +271,7 @@ export default function SteelProducts() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center mb-0">
+            <div className="flex items-center mb-0 mt-4">
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-accent mr-6">
                 <Package className="w-8 h-8" />
               </div>
