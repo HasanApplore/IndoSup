@@ -163,18 +163,19 @@ export default function StreamlinedProcurement() {
           </motion.div>
           
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Streamlined Procurement
+            Transforming Construction
+            <span className="block text-primary">Streamlined Procurement</span>
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             Revolutionary digital procurement platform that transforms how construction companies 
             source, manage, and deliver materials across India's diverse markets.
