@@ -340,7 +340,7 @@ export default function StreamlinedProcurement() {
           </motion.div>
 
           <motion.div
-            className="space-y-8 md:space-y-12 mt-8"
+            className="space-y-8 md:space-y-12 mt-12 md:mt-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
