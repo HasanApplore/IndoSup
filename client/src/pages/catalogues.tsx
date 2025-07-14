@@ -294,38 +294,7 @@ export default function Catalogues() {
           </motion.button>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-          <motion.div
-            className="cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-            onClick={() => {
-              const contentSection = document.getElementById('catalogues-content');
-              if (contentSection) {
-                setHeroAnimated(true);
-                setTimeout(() => {
-                  contentSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
-                }, 400);
-              }
-            }}
-          >
-            <div className="flex flex-col items-center space-y-2">
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
-              >
-                <ArrowDown className="w-6 h-6 text-white" />
-              </motion.div>
-              <span className="text-white text-sm font-medium">Browse Catalogues</span>
-            </div>
-          </motion.div>
-        </div>
+
       </section>
 
       {/* Main Content */}
