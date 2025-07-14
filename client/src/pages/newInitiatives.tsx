@@ -258,42 +258,47 @@ export default function NewInitiatives() {
             >
               {/* Content */}
               <div className="flex-1 space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-sm">
                     <Building2 className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-accent">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0E2F44] mb-2">
                       IndoSup Global Private Limited
                     </h3>
-                    <div className="w-12 h-1 bg-primary mt-2"></div>
+                    <div className="w-16 h-1 bg-[#F5A623] rounded-full"></div>
                   </div>
                 </div>
 
-                <p className="text-lg text-neutral-base leading-relaxed">
-                  Leading construction procurement solutions with global reach and local expertise,
-                  streamlining supply chain management for modern infrastructure projects.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-lg text-[#0E2F44] leading-relaxed font-medium">
+                    Leading construction procurement solutions with global reach and local expertise, 
+                    streamlining supply chain management for modern infrastructure projects.
+                  </p>
 
-                <p className="text-base text-neutral-base/80 leading-relaxed">
-                  Advanced digital platform connecting construction companies with trusted suppliers worldwide,
-                  ensuring quality, efficiency, and cost-effectiveness in every project.
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2 mt-8 mb-6">
-                  {globalPrivateServices.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-accent font-medium">{service}</span>
-                    </div>
-                  ))}
+                  <p className="text-base text-[#0E2F44]/80 leading-relaxed">
+                    Advanced digital platform connecting construction companies with trusted suppliers worldwide, 
+                    ensuring quality, efficiency, and cost-effectiveness in every project.
+                  </p>
                 </div>
 
-                <div className="mt-3">
+                {/* Features */}
+                <div className="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                  <h4 className="text-lg font-semibold text-[#0E2F44] mb-4">Key Services</h4>
+                  <div className="space-y-3">
+                    {globalPrivateServices.map((service, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-[#F5A623] flex-shrink-0" />
+                        <span className="text-[#0E2F44] font-medium">{service}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6">
                   <Link to="/contact">
                     <motion.div
-                      className="inline-flex items-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-primary/20 hover:border-primary shadow-sm hover:shadow-md"
+                      className="inline-flex items-center bg-[#F5A623]/10 hover:bg-[#F5A623] text-[#F5A623] hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#F5A623]/20 hover:border-[#F5A623] shadow-sm hover:shadow-md"
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -327,43 +332,48 @@ export default function NewInitiatives() {
               className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12"
             >
               {/* Content */}
-              <div className="flex-1 space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+              <div className="flex-1 space-y-4">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-sm">
                     <Users className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-accent">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0E2F44] mb-2">
                       IndoSup Global Assist Limited
                     </h3>
-                    <div className="w-12 h-1 bg-primary mt-2"></div>
+                    <div className="w-16 h-1 bg-[#F5A623] rounded-full"></div>
                   </div>
                 </div>
 
-                <p className="text-lg text-neutral-base leading-relaxed">
-                  Comprehensive technical consulting and project management support,
-                  delivering specialized expertise for complex construction initiatives.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-lg text-[#0E2F44] leading-relaxed font-medium">
+                    Comprehensive technical consulting and project management support, 
+                    delivering specialized expertise for complex construction initiatives.
+                  </p>
 
-                <p className="text-base text-neutral-base/80 leading-relaxed">
-                  Expert consulting services providing strategic guidance, technical support, and process optimization
-                  to enhance construction project outcomes and operational efficiency.
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2 mt-8 mb-6">
-                  {globalAssistServices.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-accent font-medium">{service}</span>
-                    </div>
-                  ))}
+                  <p className="text-base text-[#0E2F44]/80 leading-relaxed">
+                    Expert consulting services providing strategic guidance, technical support, and process optimization 
+                    to enhance construction project outcomes and operational efficiency.
+                  </p>
                 </div>
 
-                <div className="mt-3">
+                {/* Features */}
+                <div className="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                  <h4 className="text-lg font-semibold text-[#0E2F44] mb-4">Key Services</h4>
+                  <div className="space-y-3">
+                    {globalAssistServices.map((service, index) => (
+                      <div key={index} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-[#F5A623] flex-shrink-0" />
+                        <span className="text-[#0E2F44] font-medium">{service}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6">
                   <Link to="/contact">
                     <motion.div
-                      className="inline-flex items-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-primary/20 hover:border-primary shadow-sm hover:shadow-md"
+                      className="inline-flex items-center bg-[#F5A623]/10 hover:bg-[#F5A623] text-[#F5A623] hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#F5A623]/20 hover:border-[#F5A623] shadow-sm hover:shadow-md"
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
