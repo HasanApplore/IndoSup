@@ -248,41 +248,95 @@ export default function StreamlinedProcurement() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building2 className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Multi-site</h3>
-              <p className="text-neutral-base text-sm">Procurement</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Calculator className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Price</h3>
-              <p className="text-neutral-base text-sm">Accuracy</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Truck className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Supply Chain</h3>
-              <p className="text-neutral-base text-sm">Solutions</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <FileText className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">GST</h3>
-              <p className="text-neutral-base text-sm">Compliance</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Package className="w-5 h-5 text-[#0C2539]" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Order</h3>
-              <p className="text-neutral-base text-sm">Management</p>
-            </div>
+            <motion.div 
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('multi-site-procurement')}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <motion.div 
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Building2 className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </motion.div>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Multi-site</h3>
+              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Procurement</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('sku-price-accuracy')}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <motion.div 
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                whileHover={{ rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 0.5 }}
+              >
+                <Calculator className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </motion.div>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Price</h3>
+              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Accuracy</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('supply-chain-solutions')}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <motion.div 
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                whileHover={{ x: [0, 5, -5, 0] }}
+                transition={{ duration: 0.6 }}
+              >
+                <Truck className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </motion.div>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Supply Chain</h3>
+              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Solutions</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('gst-billing-compliance')}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <motion.div 
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                whileHover={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 0.4 }}
+              >
+                <FileText className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </motion.div>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">GST</h3>
+              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Compliance</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => scrollToSection('order-management')}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <motion.div 
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                whileHover={{ rotate: [0, 180, 360] }}
+                transition={{ duration: 0.6 }}
+              >
+                <Package className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </motion.div>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Order</h3>
+              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Management</p>
+            </motion.div>
           </motion.div>
 
           <motion.div
