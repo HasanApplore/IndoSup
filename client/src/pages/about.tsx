@@ -272,73 +272,14 @@ export default function About() {
           </motion.h1>
           
           <motion.p
-            className="text-sm md:text-base text-white/90 mb-4"
+            className="text-sm md:text-base text-white/90"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Leading Construction Procurement Solutions
           </motion.p>
-
-          <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Meet the team revolutionizing India's construction industry through innovative digital procurement solutions, connecting builders with trusted suppliers nationwide.
-          </motion.p>
-
-          {/* Navigation buttons */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button
-              onClick={() => scrollToSection('leadership')}
-              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
-            >
-              <Users className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Leadership</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('mission-vision')}
-              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
-            >
-              <Target className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Mission & Values</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('values')}
-              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
-            >
-              <Heart className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Strength & Values</span>
-            </button>
-          </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          onClick={scrollToContent}
-        >
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
-            >
-              <ArrowDown className="w-6 h-6 text-white mx-auto" />
-            </motion.div>
-            <span className="text-white text-sm text-center">About Us</span>
-          </div>
-        </motion.div>
       </section>
 
 
