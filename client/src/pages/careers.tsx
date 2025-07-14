@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown, Search, Filter, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import careerBannerImage from '@assets/Career-Month-1_Drupal-1200x799_1752235108568.png';
+import careerBannerImage from '@assets/businessman-holding-briefcase-travellers-walking-outdoors_1752497648254.jpg';
 
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
