@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X } from 'lucide-react';
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
@@ -9,6 +9,8 @@ export default function Media() {
   const [isLoading, setIsLoading] = useState(false);
   const [heroAnimated, setHeroAnimated] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   // Reset hero animation when component mounts or page is refreshed
   useEffect(() => {
@@ -46,7 +48,23 @@ export default function Media() {
       date: "December 2024",
       category: "Funding",
       source: "Economic Times",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>IndoSup Secures Major Funding Round</h2>
+        <p>IndoSup, India's leading construction procurement platform, has successfully raised $50 million in its Series B funding round, marking a significant milestone in the company's growth trajectory.</p>
+        
+        <h3>Investment Details</h3>
+        <p>The funding round was led by prominent venture capital firms including Sequoia Capital India and Accel Partners, with participation from existing investors Matrix Partners and Kalaari Capital. This brings IndoSup's total funding to $75 million since its inception.</p>
+        
+        <h3>Expansion Plans</h3>
+        <p>The fresh capital will be utilized to expand operations across tier-2 and tier-3 cities in India, enhance AI-driven procurement solutions, and strengthen the technology infrastructure to handle increasing transaction volumes.</p>
+        
+        <h3>Market Impact</h3>
+        <p>CEO Ashmit Sharma commented: "This funding validates our vision of digitizing construction procurement in India. We're committed to solving supply chain inefficiencies and bringing transparency to the construction industry."</p>
+        
+        <h3>Growth Metrics</h3>
+        <p>IndoSup has demonstrated remarkable growth with a 300% increase in transaction volume over the past year, now processing over ₹500 crores in procurement transactions monthly across 25+ states.</p>
+      `
     },
     {
       id: 2,
@@ -55,7 +73,29 @@ export default function Media() {
       date: "November 2024",
       category: "Technology",
       source: "Construction Week",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Technology Driving Construction Innovation</h2>
+        <p>IndoSup's digital transformation journey represents a paradigm shift in how construction materials are procured and managed across India's infrastructure projects.</p>
+        
+        <h3>Digital Solutions</h3>
+        <p>The platform integrates advanced technologies including AI-powered price optimization, real-time inventory tracking, and automated procurement workflows to eliminate traditional inefficiencies.</p>
+        
+        <h3>Key Features</h3>
+        <ul>
+          <li>Automated vendor selection and comparison</li>
+          <li>Real-time price monitoring and alerts</li>
+          <li>Digital contract management and compliance</li>
+          <li>Integrated logistics and delivery tracking</li>
+          <li>GST compliance and financial reporting</li>
+        </ul>
+        
+        <h3>Impact on Industry</h3>
+        <p>Construction companies using IndoSup have reported 25% reduction in procurement costs and 40% faster project completion times through streamlined material sourcing.</p>
+        
+        <h3>Future Roadmap</h3>
+        <p>The company plans to introduce blockchain-based supply chain transparency and IoT integration for real-time material quality monitoring in upcoming releases.</p>
+      `
     },
     {
       id: 3,
@@ -64,7 +104,29 @@ export default function Media() {
       date: "October 2024",
       category: "Partnerships",
       source: "Steel Today",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Strategic Partnerships Reshape Steel Procurement</h2>
+        <p>IndoSup has forged strategic alliances with India's leading steel manufacturers including SAIL, Tata Steel, and JSW Steel to create a comprehensive pan-India supply network.</p>
+        
+        <h3>Partnership Benefits</h3>
+        <p>These partnerships ensure consistent steel availability, competitive pricing, and quality assurance across all major construction markets in India.</p>
+        
+        <h3>Key Partners</h3>
+        <ul>
+          <li>Steel Authority of India Limited (SAIL)</li>
+          <li>Tata Steel Limited</li>
+          <li>JSW Steel Limited</li>
+          <li>Vedanta Limited</li>
+          <li>Rashtriya Ispat Nigam Limited (RINL)</li>
+        </ul>
+        
+        <h3>Market Coverage</h3>
+        <p>The partnership network enables IndoSup to serve construction projects across 25+ states with guaranteed delivery timelines and standardized quality parameters.</p>
+        
+        <h3>Price Stability</h3>
+        <p>Long-term agreements with manufacturers provide price stability and protection against market volatility, benefiting end customers with predictable procurement costs.</p>
+      `
     }
   ];
 
@@ -547,6 +609,10 @@ export default function Media() {
                       <motion.button
                         className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors duration-300 text-xs md:text-sm group-hover:bg-primary/10 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-primary/20 hover:border-primary/40"
                         whileHover={{ x: 5 }}
+                        onClick={() => {
+                          setSelectedArticle(item);
+                          setShowModal(true);
+                        }}
                       >
                         <span className="mr-1 md:mr-2">Read More</span>
                         <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -634,6 +700,99 @@ export default function Media() {
           )}
         </div>
       </section>
+
+      {/* Article Modal */}
+      <AnimatePresence>
+        {showModal && selectedArticle && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowModal(false)}
+          >
+            <motion.div
+              className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="relative">
+                <img
+                  src={selectedArticle.image}
+                  alt={selectedArticle.title}
+                  className="w-full h-48 md:h-64 object-cover"
+                />
+                <div className="absolute top-4 right-4">
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg transition-all duration-300"
+                  >
+                    <X className="w-5 h-5 text-gray-700" />
+                  </button>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <div className="flex items-center text-white/90 text-sm mb-2">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    <span>{selectedArticle.date}</span>
+                    <span className="mx-2">•</span>
+                    <span className="font-medium">{selectedArticle.source}</span>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    {selectedArticle.title}
+                  </h2>
+                  <div className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-3 py-1.5 rounded-full backdrop-blur-sm">
+                    <Tag className="w-4 h-4" />
+                    <span className="text-sm font-medium">{selectedArticle.category}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Modal Content */}
+              <div className="max-h-[60vh] overflow-y-auto p-6 md:p-8">
+                <div className="prose prose-lg max-w-none">
+                  <div dangerouslySetInnerHTML={{ __html: selectedArticle.fullContent }} />
+                </div>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="border-t border-gray-200 p-6 md:p-8">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <motion.button
+                      className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Tag className="w-5 h-5" />
+                      <span className="font-medium">Save Article</span>
+                    </motion.button>
+                    <motion.button
+                      className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                      <span className="font-medium">Share</span>
+                    </motion.button>
+                  </div>
+                  <motion.button
+                    onClick={() => setShowModal(false)}
+                    className="px-6 py-3 bg-primary text-accent rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Close
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
