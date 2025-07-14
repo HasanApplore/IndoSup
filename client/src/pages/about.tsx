@@ -262,7 +262,16 @@ export default function About() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-
+          {/* Premium Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 py-2 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Star className="w-5 h-5 text-primary" />
+            <span className="text-white font-medium">About IndoSup</span>
+          </motion.div>
 
           <motion.h1
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
