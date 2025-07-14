@@ -258,7 +258,7 @@ export default function NewInitiatives() {
           </motion.div>
 
           <motion.div
-            className="space-y-12 md:space-y-16"
+            className="space-y-16 md:space-y-20"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -340,14 +340,14 @@ export default function NewInitiatives() {
               {/* Content */}
               <div className="flex-1 space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
                     <Users className="w-8 h-8" />
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-accent">
                       IndoSup Global Assist Limited
                     </h3>
-                    <div className="w-12 h-1 bg-accent mt-2"></div>
+                    <div className="w-12 h-1 bg-primary mt-2"></div>
                   </div>
                 </div>
 
@@ -365,7 +365,7 @@ export default function NewInitiatives() {
                 <div className="space-y-2">
                   {globalAssistServices.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                       <span className="text-accent font-medium">{service}</span>
                     </div>
                   ))}
@@ -373,7 +373,7 @@ export default function NewInitiatives() {
 
                 <Link to="/contact">
                   <motion.button
-                    className="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors duration-300"
+                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     <span className="mr-2">Learn More About Global Assist</span>
