@@ -297,13 +297,13 @@ export default function Media() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
+            className="inline-flex items-center space-x-2 bg-primary text-accent px-6 py-3 rounded-full backdrop-blur-sm mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Star className="w-4 h-4" />
-            <span className="font-medium">Latest Industry Insights</span>
+            <Star className="w-5 h-5" />
+            <span className="font-semibold">Premium Media Hub</span>
           </motion.div>
           
           <motion.h1
@@ -312,25 +312,17 @@ export default function Media() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Industry Insights
+            Stay Connected with Construction
             <span className="block text-primary">Media & Resources</span>
           </motion.h1>
+          
           <motion.p
             className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover our latest news, insights, and success stories from the construction industry.
-          </motion.p>
-          
-          <motion.p
-            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            Stay informed with our comprehensive coverage of industry developments and achievements.
+            Access our latest industry insights, success stories, and expert analysis from the construction procurement sector. Stay informed with comprehensive coverage of developments and achievements that matter to your business.
           </motion.p>
           
           {/* Scroll indicator */}
@@ -338,36 +330,38 @@ export default function Media() {
             className="mt-12 md:mt-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <motion.div
-              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-              onClick={() => {
-                const contentSection = document.getElementById('media-content');
-                if (contentSection) {
-                  setHeroAnimated(true);
-                  setTimeout(() => {
-                    contentSection.scrollIntoView({ 
-                      behavior: 'smooth',
-                      block: 'start'
-                    });
-                  }, 400);
-                }
-              }}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowRight className="w-6 h-6 text-white rotate-90" />
-            </motion.div>
+            <div className="absolute left-0 right-0 flex justify-center">
+              <motion.div
+                className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+                onClick={() => {
+                  const contentSection = document.getElementById('media-content');
+                  if (contentSection) {
+                    setHeroAnimated(true);
+                    setTimeout(() => {
+                      contentSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                      });
+                    }, 400);
+                  }
+                }}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="w-6 h-6 text-white rotate-90" />
+              </motion.div>
+            </div>
             <motion.p
-              className="text-white/70 text-sm mt-3 font-medium"
+              className="text-white/70 text-sm mt-16 font-medium"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
             >
-              Explore Content
+              Explore Media
             </motion.p>
           </motion.div>
         </div>
