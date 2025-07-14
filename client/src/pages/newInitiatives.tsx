@@ -276,23 +276,20 @@ export default function NewInitiatives() {
                     streamlining supply chain management for modern infrastructure projects.
                   </p>
 
-                  <p className="text-base text-[#0E2F44]/80 leading-relaxed">
+                  <p className="text-lg text-[#0E2F44] leading-relaxed font-medium">
                     Advanced digital platform connecting construction companies with trusted suppliers worldwide, 
                     ensuring quality, efficiency, and cost-effectiveness in every project.
                   </p>
                 </div>
 
                 {/* Features */}
-                <div className="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="text-lg font-semibold text-[#0E2F44] mb-4">Key Services</h4>
-                  <div className="space-y-3">
-                    {globalPrivateServices.map((service, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-[#F5A623] flex-shrink-0" />
-                        <span className="text-[#0E2F44] font-medium">{service}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="space-y-3 mt-6">
+                  {globalPrivateServices.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-[#F5A623] flex-shrink-0" />
+                      <span className="text-[#0E2F44] font-medium">{service}</span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="mt-6">
@@ -358,16 +355,13 @@ export default function NewInitiatives() {
                 </div>
 
                 {/* Features */}
-                <div className="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                  <h4 className="text-lg font-semibold text-[#0E2F44] mb-4">Key Services</h4>
-                  <div className="space-y-3">
-                    {globalAssistServices.map((service, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-[#F5A623] flex-shrink-0" />
-                        <span className="text-[#0E2F44] font-medium">{service}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="space-y-3 mt-6">
+                  {globalAssistServices.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-[#F5A623] flex-shrink-0" />
+                      <span className="text-[#0E2F44] font-medium">{service}</span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="mt-6">
