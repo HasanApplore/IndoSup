@@ -339,23 +339,8 @@ export default function StreamlinedProcurement() {
             </motion.div>
           </motion.div>
 
-          {/* Section Divider */}
           <motion.div
-            className="flex items-center justify-center py-8 md:py-12"
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex items-center space-x-4">
-              <div className="h-0.5 w-20 bg-gradient-to-r from-transparent to-primary"></div>
-              <div className="w-3 h-3 bg-primary rounded-full"></div>
-              <div className="h-0.5 w-20 bg-gradient-to-l from-transparent to-primary"></div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="space-y-12 md:space-y-16"
+            className="space-y-8 md:space-y-12 mt-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
