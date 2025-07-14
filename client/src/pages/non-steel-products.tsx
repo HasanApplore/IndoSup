@@ -192,42 +192,7 @@ export default function NonSteelProducts() {
             Explore our comprehensive range of non-steel construction products including plumbing, electrical, and specialized infrastructure solutions.
           </motion.p>
           
-          <motion.div
-            className="flex flex-wrap justify-center items-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <motion.button
-              onClick={scrollToCategories}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Building2 className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">6 Categories</span>
-            </motion.button>
-            <Link to="/media#awards">
-              <motion.button
-                className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Shield className="w-5 h-5 text-white" />
-                <span className="text-white font-medium">BIS Approved</span>
-              </motion.button>
-            </Link>
-            <Link to="/media#awards">
-              <motion.button
-                className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <CheckCircle className="w-5 h-5 text-white" />
-                <span className="text-white font-medium">Certified Quality</span>
-              </motion.button>
-            </Link>
-          </motion.div>
+
           
           <motion.p
             className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
@@ -252,7 +217,7 @@ export default function NonSteelProducts() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
+              className="p-2 bg-white/20 rounded-full backdrop-blur-sm mx-auto"
             >
               <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
