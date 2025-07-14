@@ -205,10 +205,10 @@ export default function SteelProducts() {
       )}
 
       {/* Products Section */}
-      <section className="py-16 md:py-20 bg-[#FBF5EA]">
+      <section className="py-8 md:py-12 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -223,7 +223,7 @@ export default function SteelProducts() {
 
           {/* Stats Summary */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12"
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -285,7 +285,7 @@ export default function SteelProducts() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
