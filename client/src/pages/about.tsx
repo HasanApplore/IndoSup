@@ -377,7 +377,7 @@ export default function About() {
               </p>
             </motion.div>
             
-            {/* Image Content */}
+            {/* Image Content - Enhanced Carousel */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -385,12 +385,50 @@ export default function About() {
               viewport={{ once: true }}
               className="group"
             >
-              <img 
-                src={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].src : carouselImages[0].src}
-                alt={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].alt : carouselImages[0].alt}
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                style={{ borderRadius: '12px', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)' }}
-              />
+              <div className="relative">
+                {/* Main Carousel Image */}
+                <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                  <img 
+                    src={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].src : carouselImages[0].src}
+                    alt={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].alt : carouselImages[0].alt}
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  
+                  {/* Category Label at Bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-6">
+                    <h3 className="text-white text-xl font-bold mb-2">
+                      {currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].title : carouselImages[0].title}
+                    </h3>
+                  </div>
+                  
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={() => setCurrentImageIndex((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-gray-700" />
+                  </button>
+                  <button
+                    onClick={() => setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <ChevronRight className="w-5 h-5 text-gray-700" />
+                  </button>
+                </div>
+                
+                {/* Dot Indicators */}
+                <div className="flex justify-center mt-4 space-x-2">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        index === currentImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
