@@ -337,9 +337,8 @@ export default function StreamlinedProcurement() {
             </motion.div>
           </motion.div>
 
-          {/* Solutions Cards Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-16"
+            className="space-y-8 md:space-y-12 mt-12 md:mt-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -350,59 +349,62 @@ export default function StreamlinedProcurement() {
                 key={index}
                 id={index === 0 ? 'multi-site-procurement' : index === 1 ? 'sku-price-accuracy' : index === 2 ? 'supply-chain-solutions' : index === 3 ? 'gst-billing-compliance' : 'order-management'}
                 variants={itemVariants}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border-2 border-transparent hover:border-primary/20"
-                whileHover={{ y: -8 }}
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-12`}
               >
-                {/* Card Header with Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
-                    alt={solution.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                        {solution.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white">
-                          {solution.title}
-                        </h3>
-                      </div>
+                {/* Content */}
+                <div className="flex-1 space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      {solution.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-accent">
+                        {solution.title}
+                      </h3>
+                      <div className="w-12 h-1 bg-primary mt-2"></div>
                     </div>
                   </div>
-                </div>
 
-                {/* Card Content */}
-                <div className="p-6 space-y-4">
-                  <p className="text-neutral-base leading-relaxed text-sm">
+                  <p className="text-lg text-neutral-base leading-relaxed">
                     {solution.description}
                   </p>
 
-                  <p className="text-xs text-neutral-base/70 leading-relaxed">
+                  <p className="text-base text-neutral-base/80 leading-relaxed">
                     {solution.subtext}
                   </p>
 
                   {/* Features */}
                   <div className="space-y-2">
                     {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span className="text-accent font-medium text-sm">{feature}</span>
+                      <div key={featureIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span className="text-accent font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   <motion.button
-                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300 text-sm mt-4 w-full justify-center py-2 px-4 rounded-lg bg-primary/5 hover:bg-primary/10"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
+                    whileHover={{ x: 5 }}
                   >
                     <span className="mr-2">Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-5 h-5" />
                   </motion.button>
+                </div>
+
+                {/* Visual Element */}
+                <div className="flex-1 max-w-md lg:max-w-lg">
+                  <motion.div
+                    className="relative"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
+                      alt={solution.title}
+                      className="w-full h-80 object-cover rounded-3xl shadow-lg"
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
