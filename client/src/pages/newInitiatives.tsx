@@ -1,17 +1,85 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Building2, Users, Globe, Shield, Zap, ArrowDown, ArrowUp, Star, Target, CheckCircle, TrendingUp, Award, Handshake, ExternalLink } from 'lucide-react';
+import { ArrowRight, Building2, Users, Globe, Shield, Zap, ArrowDown, ArrowUp, Star, Target, CheckCircle, TrendingUp, Award, Handshake, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'wouter';
 import globalInitiativesBanner from '@assets/global-initiatives_1752232647962.jpg';
 
 export default function NewInitiatives() {
   const [heroAnimated, setHeroAnimated] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  
+  // Carousel images data for Global Private Limited
+  const globalPrivateImages = [
+    {
+      src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop",
+      alt: "Construction Procurement Platform",
+      title: "Digital Platform"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+      alt: "Supply Chain Management",
+      title: "Supply Chain"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop",
+      alt: "Quality Assurance Process",
+      title: "Quality Control"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1590736969955-eefec7b7e7c7?w=600&h=400&fit=crop",
+      alt: "Global Reach Network",
+      title: "Global Network"
+    }
+  ];
+
+  // Carousel images data for Global Assist Limited
+  const globalAssistImages = [
+    {
+      src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop",
+      alt: "Technical Consulting Services",
+      title: "Technical Consulting"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      alt: "Project Management Support",
+      title: "Project Management"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+      alt: "Expert Guidance Team",
+      title: "Expert Team"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1664382953403-89ba4a1ad99a?w=600&h=400&fit=crop",
+      alt: "Process Optimization",
+      title: "Process Optimization"
+    }
+  ];
+
+  // Carousel state
+  const [currentPrivateImageIndex, setCurrentPrivateImageIndex] = useState(0);
+  const [currentAssistImageIndex, setCurrentAssistImageIndex] = useState(0);
 
   // Reset hero animation when component mounts
   useEffect(() => {
     setHeroAnimated(false);
   }, []);
+
+  // Auto-advance carousel for Global Private Limited
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPrivateImageIndex((prev) => (prev + 1) % globalPrivateImages.length);
+    }, 2500); // Same timing as About Us page
+    return () => clearInterval(interval);
+  }, [globalPrivateImages.length]);
+
+  // Auto-advance carousel for Global Assist Limited
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAssistImageIndex((prev) => (prev + 1) % globalAssistImages.length);
+    }, 2500); // Same timing as About Us page
+    return () => clearInterval(interval);
+  }, [globalAssistImages.length]);
 
   // Add scroll handler for back to top button
   useEffect(() => {
@@ -85,6 +153,23 @@ export default function NewInitiatives() {
       top: 0,
       behavior: 'smooth'
     });
+  };
+
+  // Carousel navigation functions
+  const nextPrivateImage = () => {
+    setCurrentPrivateImageIndex((prev) => (prev + 1) % globalPrivateImages.length);
+  };
+
+  const prevPrivateImage = () => {
+    setCurrentPrivateImageIndex((prev) => (prev - 1 + globalPrivateImages.length) % globalPrivateImages.length);
+  };
+
+  const nextAssistImage = () => {
+    setCurrentAssistImageIndex((prev) => (prev + 1) % globalAssistImages.length);
+  };
+
+  const prevAssistImage = () => {
+    setCurrentAssistImageIndex((prev) => (prev - 1 + globalAssistImages.length) % globalAssistImages.length);
   };
 
   const globalPrivateServices = [
@@ -306,18 +391,47 @@ export default function NewInitiatives() {
                 </div>
               </div>
 
-              {/* Visual Element */}
+              {/* Visual Element - Carousel */}
               <div className="flex-1 max-w-md lg:max-w-lg">
                 <motion.div
-                  className="relative"
+                  className="relative group"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="IndoSup Global Private Limited - Construction Procurement"
-                    className="w-full h-80 object-cover rounded-3xl shadow-lg"
-                  />
+                  <div className="relative overflow-hidden rounded-3xl shadow-lg">
+                    <img
+                      src={globalPrivateImages[currentPrivateImageIndex].src}
+                      alt={globalPrivateImages[currentPrivateImageIndex].alt}
+                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={prevPrivateImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-gray-700" />
+                    </button>
+                    <button
+                      onClick={nextPrivateImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <ChevronRight className="w-5 h-5 text-gray-700" />
+                    </button>
+                  </div>
+                  
+                  {/* Dot Indicators */}
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {globalPrivateImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentPrivateImageIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                          index === currentPrivateImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -378,18 +492,47 @@ export default function NewInitiatives() {
                 </div>
               </div>
 
-              {/* Visual Element */}
+              {/* Visual Element - Carousel */}
               <div className="flex-1 max-w-md lg:max-w-lg">
                 <motion.div
-                  className="relative"
+                  className="relative group"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <img
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="IndoSup Global Assist Limited - Technical Consulting"
-                    className="w-full h-80 object-cover rounded-3xl shadow-lg"
-                  />
+                  <div className="relative overflow-hidden rounded-3xl shadow-lg">
+                    <img
+                      src={globalAssistImages[currentAssistImageIndex].src}
+                      alt={globalAssistImages[currentAssistImageIndex].alt}
+                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={prevAssistImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-gray-700" />
+                    </button>
+                    <button
+                      onClick={nextAssistImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <ChevronRight className="w-5 h-5 text-gray-700" />
+                    </button>
+                  </div>
+                  
+                  {/* Dot Indicators */}
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {globalAssistImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentAssistImageIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                          index === currentAssistImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
