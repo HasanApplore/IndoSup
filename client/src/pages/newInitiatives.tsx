@@ -348,7 +348,7 @@ export default function NewInitiatives() {
                     delivering specialized expertise for complex construction initiatives.
                   </p>
 
-                  <p className="text-base text-[#0E2F44]/80 leading-relaxed">
+                  <p className="text-lg text-[#0E2F44] leading-relaxed font-medium">
                     Expert consulting services providing strategic guidance, technical support, and process optimization 
                     to enhance construction project outcomes and operational efficiency.
                   </p>
