@@ -394,50 +394,7 @@ export default function Media() {
             </p>
           </motion.div>
 
-          {/* Stats Summary */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <FileText className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">50+</h3>
-              <p className="text-neutral-base text-sm">Media Coverage</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Star className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">15+</h3>
-              <p className="text-neutral-base text-sm">Awards Won</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Calendar className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Monthly</h3>
-              <p className="text-neutral-base text-sm">Newsletter</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Eye className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">100+</h3>
-              <p className="text-neutral-base text-sm">Blog Posts</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Tag className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">25+</h3>
-              <p className="text-neutral-base text-sm">Case Studies</p>
-            </div>
-          </motion.div>
+
 
           {/* Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 md:mb-8 px-4">
