@@ -268,7 +268,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6" style={{ color: '#ffffff' }}>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
               About IndoSup
             </h1>
             {/* Animated underline */}
