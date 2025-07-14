@@ -193,7 +193,7 @@ export default function Catalogues() {
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white relative overflow-hidden">
       {/* Hero Section */}
       <section 
-        className={`hero-section relative min-h-screen flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
+        className={`hero-section relative h-[55vh] flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
           heroAnimated ? '-translate-y-full' : 'translate-y-0'
         }`}
         style={{ 
