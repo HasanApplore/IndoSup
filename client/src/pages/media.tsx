@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2 } from 'lucide-react';
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
@@ -158,7 +158,28 @@ export default function Media() {
       date: "November 2024",
       category: "Technology",
       source: "India Construction Awards",
-      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Best Construction Tech Startup 2024</h2>
+        <p>IndoSup has been honored with the prestigious "Best Construction Tech Startup 2024" award at the India Construction Awards ceremony held in Mumbai.</p>
+        
+        <h3>Recognition Criteria</h3>
+        <p>The award recognized IndoSup's innovative approach to construction procurement automation, exceptional growth trajectory, and significant impact on the construction industry's digital transformation.</p>
+        
+        <h3>Key Achievements</h3>
+        <ul>
+          <li>300% year-over-year growth in transaction volume</li>
+          <li>Successful digitization of procurement for 500+ construction companies</li>
+          <li>Implementation of AI-driven price optimization technology</li>
+          <li>Reduction of procurement time by 60% for client companies</li>
+        </ul>
+        
+        <h3>Industry Impact</h3>
+        <p>The judges praised IndoSup's role in bringing transparency and efficiency to construction procurement, noting how the platform has helped standardize pricing and improve supply chain reliability across India.</p>
+        
+        <h3>Future Vision</h3>
+        <p>CEO Ashmit Sharma accepted the award, stating: "This recognition validates our mission to revolutionize construction procurement through technology. We're committed to continuing our innovation journey and expanding our impact across the industry."</p>
+      `
     },
     {
       id: 2,
@@ -167,7 +188,29 @@ export default function Media() {
       date: "September 2024",
       category: "Innovation",
       source: "Tech Innovation Council",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Digital Innovation Excellence Award</h2>
+        <p>The Tech Innovation Council has awarded IndoSup the Digital Innovation Excellence Award for transforming traditional construction procurement through cutting-edge digital solutions.</p>
+        
+        <h3>Innovation Highlights</h3>
+        <p>IndoSup's platform integrates multiple innovative technologies to create a comprehensive digital ecosystem for construction procurement:</p>
+        
+        <h3>Technical Excellence</h3>
+        <ul>
+          <li>AI-powered vendor matching and price optimization</li>
+          <li>Real-time inventory management across suppliers</li>
+          <li>Automated compliance and quality assurance checks</li>
+          <li>Integrated logistics and delivery tracking</li>
+          <li>Advanced analytics and reporting dashboards</li>
+        </ul>
+        
+        <h3>Market Transformation</h3>
+        <p>The award committee highlighted IndoSup's role in digitizing a traditionally manual industry, bringing modern technology solutions to construction procurement challenges.</p>
+        
+        <h3>Recognition Impact</h3>
+        <p>This recognition positions IndoSup as a leader in construction technology innovation and validates the company's approach to solving complex industry challenges through digital transformation.</p>
+      `
     },
     {
       id: 3,
@@ -176,7 +219,29 @@ export default function Media() {
       date: "August 2024",
       category: "Business",
       source: "Indian Startup Awards",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Startup of the Year - Construction Category</h2>
+        <p>IndoSup has been selected as the "Startup of the Year" in the Construction Category at the prestigious Indian Startup Awards, recognizing outstanding performance in revolutionizing construction material sourcing and procurement processes.</p>
+        
+        <h3>Award Significance</h3>
+        <p>This award is presented annually to startups that demonstrate exceptional innovation, growth, and impact in their respective industries.</p>
+        
+        <h3>Key Performance Metrics</h3>
+        <ul>
+          <li>Achieved ₹500 crores in monthly transaction volume</li>
+          <li>Onboarded 400+ verified vendors across India</li>
+          <li>Served 350+ construction companies</li>
+          <li>Expanded operations to 25+ states</li>
+          <li>Maintained 95% customer satisfaction rating</li>
+        </ul>
+        
+        <h3>Industry Revolution</h3>
+        <p>The judges recognized IndoSup's transformative impact on construction procurement, noting how the platform has addressed long-standing challenges in material sourcing, pricing transparency, and supply chain efficiency.</p>
+        
+        <h3>Growth Journey</h3>
+        <p>From its inception to becoming a market leader, IndoSup's growth story exemplifies successful startup execution in the construction technology space.</p>
+      `
     }
   ];
 
@@ -188,7 +253,31 @@ export default function Media() {
       date: "December 2024",
       category: "Monthly",
       source: "IndoSup Newsletter",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>IndoSup Monthly - December 2024</h2>
+        <p>Welcome to our comprehensive year-end review featuring new product launches, market insights, and upcoming features for construction professionals.</p>
+        
+        <h3>2024 Year in Review</h3>
+        <p>This year has been transformative for IndoSup and the construction industry. We've achieved remarkable milestones while continuing to innovate and serve our growing community.</p>
+        
+        <h3>New Product Launches</h3>
+        <ul>
+          <li>AI-powered price prediction system for steel and cement</li>
+          <li>Mobile app for on-site procurement management</li>
+          <li>Advanced analytics dashboard for procurement insights</li>
+          <li>Integration with major ERP systems</li>
+        </ul>
+        
+        <h3>Market Insights</h3>
+        <p>The construction procurement market has shown strong growth with increased adoption of digital solutions. Steel prices have stabilized after Q3 volatility, and demand for sustainable materials continues to rise.</p>
+        
+        <h3>Upcoming Features</h3>
+        <p>In 2025, we're introducing blockchain-based supply chain transparency, IoT integration for real-time quality monitoring, and expanded vendor network across Southeast Asia.</p>
+        
+        <h3>Thank You</h3>
+        <p>We appreciate your continued trust in IndoSup. Here's to a successful 2025!</p>
+      `
     },
     {
       id: 2,
@@ -197,7 +286,31 @@ export default function Media() {
       date: "November 2024",
       category: "Market Analysis",
       source: "IndoSup Research",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Construction Market Trends - Q4 2024</h2>
+        <p>Our quarterly analysis provides comprehensive insights into steel prices, demand forecasts, and strategic procurement recommendations for the construction sector.</p>
+        
+        <h3>Steel Price Analysis</h3>
+        <p>Q4 2024 has seen stabilization in steel prices after the volatility experienced in Q3. Current trends indicate a moderate price increase of 3-5% expected in early 2025.</p>
+        
+        <h3>Demand Forecasts</h3>
+        <ul>
+          <li>Infrastructure projects: 15% increase in material demand</li>
+          <li>Residential construction: 8% growth in urban areas</li>
+          <li>Commercial real estate: 12% uptick in metro cities</li>
+          <li>Industrial construction: 6% steady growth</li>
+        </ul>
+        
+        <h3>Procurement Strategies</h3>
+        <p>To optimize costs and ensure timely delivery, we recommend implementing forward contracting for steel, diversifying supplier base, and leveraging digital procurement platforms.</p>
+        
+        <h3>Regional Insights</h3>
+        <p>Northern and Western regions show highest construction activity, while Southern markets are emerging with significant infrastructure investments.</p>
+        
+        <h3>Recommendations</h3>
+        <p>Focus on long-term supplier relationships, embrace digital transformation, and maintain flexible procurement strategies to navigate market uncertainties.</p>
+      `
     },
     {
       id: 3,
@@ -206,7 +319,32 @@ export default function Media() {
       date: "October 2024",
       category: "Technology",
       source: "IndoSup Tech Team",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Technology Update - AI in Procurement</h2>
+        <p>Explore the latest developments in AI-powered procurement solutions and their transformative impact on construction project efficiency and cost optimization.</p>
+        
+        <h3>AI Innovation in Procurement</h3>
+        <p>Artificial Intelligence is revolutionizing construction procurement through predictive analytics, automated decision-making, and intelligent supplier matching.</p>
+        
+        <h3>Key AI Applications</h3>
+        <ul>
+          <li>Predictive pricing models for construction materials</li>
+          <li>Automated vendor selection and evaluation</li>
+          <li>Real-time inventory optimization</li>
+          <li>Risk assessment and mitigation strategies</li>
+          <li>Demand forecasting and procurement planning</li>
+        </ul>
+        
+        <h3>Impact on Project Efficiency</h3>
+        <p>AI-powered procurement has resulted in 30% reduction in material costs, 40% faster procurement cycles, and 25% improvement in project delivery timelines.</p>
+        
+        <h3>Future Developments</h3>
+        <p>We're developing advanced machine learning algorithms for quality prediction, blockchain integration for supply chain transparency, and IoT connectivity for real-time monitoring.</p>
+        
+        <h3>Implementation Guide</h3>
+        <p>Construction companies can start their AI journey by adopting automated procurement platforms, implementing data analytics, and training teams on new technologies.</p>
+      `
     }
   ];
 
@@ -218,7 +356,29 @@ export default function Media() {
       date: "December 2024",
       category: "Digital Transformation",
       source: "IndoSup Blog",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>5 Ways Digital Procurement is Transforming Construction</h2>
+        <p>Digital transformation is revolutionizing construction procurement, bringing unprecedented efficiency, transparency, and cost savings to the industry.</p>
+        
+        <h3>1. Automated Vendor Selection</h3>
+        <p>AI-powered systems now analyze hundreds of suppliers simultaneously, matching project requirements with vendor capabilities, pricing, and delivery schedules to identify optimal partners.</p>
+        
+        <h3>2. Real-Time Price Monitoring</h3>
+        <p>Digital platforms provide live market data, price alerts, and trend analysis, enabling construction companies to make informed purchasing decisions and capitalize on market opportunities.</p>
+        
+        <h3>3. Streamlined Approval Processes</h3>
+        <p>Digital workflows eliminate paperwork bottlenecks, reduce approval times from weeks to hours, and provide complete audit trails for compliance and accountability.</p>
+        
+        <h3>4. Predictive Analytics</h3>
+        <p>Machine learning algorithms analyze historical data to forecast material needs, optimize inventory levels, and prevent costly project delays due to material shortages.</p>
+        
+        <h3>5. Integrated Project Management</h3>
+        <p>Modern procurement platforms seamlessly integrate with project management systems, providing real-time visibility into material status, delivery schedules, and budget utilization.</p>
+        
+        <h3>The Future of Construction Procurement</h3>
+        <p>As technology continues to evolve, we expect to see even greater automation, AI-driven decision making, and seamless integration across the entire construction ecosystem.</p>
+      `
     },
     {
       id: 2,
@@ -227,7 +387,34 @@ export default function Media() {
       date: "November 2024",
       category: "Market Strategy",
       source: "IndoSup Insights",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Steel Price Volatility: Strategies for Construction Companies</h2>
+        <p>Steel price volatility presents significant challenges for construction companies. Here are proven strategies to manage risk and optimize procurement in uncertain markets.</p>
+        
+        <h3>Understanding Price Volatility</h3>
+        <p>Steel prices are influenced by global supply chains, raw material costs, geopolitical events, and demand fluctuations. Understanding these factors is crucial for effective procurement planning.</p>
+        
+        <h3>Risk Management Strategies</h3>
+        <ul>
+          <li>Forward contracting to lock in prices for critical projects</li>
+          <li>Diversifying supplier base to reduce dependency risks</li>
+          <li>Implementing price escalation clauses in contracts</li>
+          <li>Using financial hedging instruments for large projects</li>
+        </ul>
+        
+        <h3>Procurement Optimization</h3>
+        <p>Leverage digital platforms for real-time price monitoring, implement just-in-time delivery to reduce inventory costs, and negotiate flexible payment terms with suppliers.</p>
+        
+        <h3>Technology Solutions</h3>
+        <p>AI-powered price prediction models can forecast steel price movements with 85% accuracy, helping companies make informed purchasing decisions and timing strategies.</p>
+        
+        <h3>Case Study</h3>
+        <p>A major infrastructure project reduced steel costs by 15% using predictive analytics and strategic supplier partnerships, demonstrating the power of data-driven procurement.</p>
+        
+        <h3>Future Outlook</h3>
+        <p>Market stabilization is expected in 2025, but companies should maintain flexible procurement strategies to navigate ongoing uncertainties.</p>
+      `
     },
     {
       id: 3,
@@ -236,7 +423,35 @@ export default function Media() {
       date: "October 2024",
       category: "Sustainability",
       source: "IndoSup Green Team",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Sustainable Construction: Green Procurement Practices</h2>
+        <p>Sustainable procurement is no longer optional—it's essential for construction companies to meet environmental goals while maintaining profitability and quality standards.</p>
+        
+        <h3>Green Procurement Fundamentals</h3>
+        <p>Sustainable procurement involves selecting materials and suppliers based on environmental impact, social responsibility, and long-term sustainability without compromising project quality or budget.</p>
+        
+        <h3>Key Sustainable Practices</h3>
+        <ul>
+          <li>Sourcing recycled and recyclable materials</li>
+          <li>Partnering with certified green suppliers</li>
+          <li>Implementing circular economy principles</li>
+          <li>Reducing transportation emissions through local sourcing</li>
+          <li>Minimizing packaging waste and material surplus</li>
+        </ul>
+        
+        <h3>Benefits of Green Procurement</h3>
+        <p>Companies adopting sustainable practices report 10-15% reduction in long-term costs, improved brand reputation, and enhanced compliance with environmental regulations.</p>
+        
+        <h3>Implementation Strategy</h3>
+        <p>Start with supplier assessment and certification, implement green criteria in procurement decisions, and establish sustainability KPIs to track progress and improvements.</p>
+        
+        <h3>Technology Integration</h3>
+        <p>Digital platforms can track carbon footprints, verify supplier sustainability credentials, and optimize logistics to reduce environmental impact while maintaining efficiency.</p>
+        
+        <h3>Future Trends</h3>
+        <p>Expect increased regulatory requirements, carbon pricing mechanisms, and demand for sustainable materials as the construction industry moves toward net-zero emissions.</p>
+      `
     }
   ];
 
@@ -248,7 +463,39 @@ export default function Media() {
       date: "November 2024",
       category: "Infrastructure",
       source: "IndoSup Case Study",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Metro Rail Project: 40% Cost Reduction Through Smart Procurement</h2>
+        <p>This case study demonstrates how IndoSup's digital procurement platform helped a major metro rail project achieve remarkable cost savings through optimized procurement strategies and supplier management.</p>
+        
+        <h3>Project Overview</h3>
+        <p>The 65-kilometer metro rail extension project required procurement of steel, cement, electrical components, and specialized rail materials worth ₹2,400 crores over 36 months.</p>
+        
+        <h3>Challenges Faced</h3>
+        <ul>
+          <li>Price volatility in steel and cement markets</li>
+          <li>Complex supplier coordination across multiple locations</li>
+          <li>Stringent quality and safety requirements</li>
+          <li>Tight project timelines and budget constraints</li>
+        </ul>
+        
+        <h3>IndoSup's Solution</h3>
+        <p>Implementation of AI-powered procurement platform with real-time price monitoring, automated vendor selection, and integrated quality management systems.</p>
+        
+        <h3>Key Results</h3>
+        <ul>
+          <li>40% reduction in procurement costs (₹960 crores saved)</li>
+          <li>25% faster material delivery times</li>
+          <li>99.8% quality compliance rate</li>
+          <li>Zero project delays due to material shortages</li>
+        </ul>
+        
+        <h3>Implementation Timeline</h3>
+        <p>The digital transformation was completed in 3 months, with immediate cost savings visible from the first quarter of implementation.</p>
+        
+        <h3>Lessons Learned</h3>
+        <p>Success factors included early stakeholder engagement, comprehensive vendor onboarding, and continuous optimization of procurement processes based on data insights.</p>
+      `
     },
     {
       id: 2,
@@ -257,7 +504,39 @@ export default function Media() {
       date: "October 2024",
       category: "Commercial",
       source: "IndoSup Success Stories",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>High-Rise Development: Streamlined Multi-Site Procurement</h2>
+        <p>This case study showcases how IndoSup successfully managed procurement for 12 simultaneous construction sites, demonstrating the power of centralized coordination and digital transformation.</p>
+        
+        <h3>Project Scope</h3>
+        <p>A leading real estate developer needed to manage procurement for 12 high-rise residential towers across 4 cities, requiring coordination of materials worth ₹1,800 crores.</p>
+        
+        <h3>Complexity Factors</h3>
+        <ul>
+          <li>Different local suppliers in each city</li>
+          <li>Varying quality standards and regulations</li>
+          <li>Complex logistics and delivery coordination</li>
+          <li>Budget optimization across multiple sites</li>
+        </ul>
+        
+        <h3>IndoSup's Approach</h3>
+        <p>Centralized procurement platform with site-specific customization, automated vendor matching, and real-time inventory tracking across all locations.</p>
+        
+        <h3>Key Achievements</h3>
+        <ul>
+          <li>30% reduction in procurement management time</li>
+          <li>15% cost savings through bulk purchasing</li>
+          <li>95% on-time delivery rate across all sites</li>
+          <li>Unified quality standards implementation</li>
+        </ul>
+        
+        <h3>Technology Implementation</h3>
+        <p>Advanced dashboard provided real-time visibility into material status, delivery schedules, and budget utilization across all 12 sites simultaneously.</p>
+        
+        <h3>Business Impact</h3>
+        <p>The streamlined procurement process enabled the developer to complete all projects 2 months ahead of schedule, resulting in significant cost savings and improved cash flow.</p>
+      `
     },
     {
       id: 3,
@@ -266,7 +545,44 @@ export default function Media() {
       date: "September 2024",
       category: "Industrial",
       source: "IndoSup Analytics",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Industrial Complex: Zero-Delay Material Delivery</h2>
+        <p>This case study illustrates how predictive analytics and advanced supply chain optimization enabled zero-delay material delivery for a critical industrial manufacturing complex.</p>
+        
+        <h3>Project Details</h3>
+        <p>Construction of a 500-acre industrial manufacturing complex requiring specialized materials, heavy machinery, and just-in-time delivery coordination worth ₹3,200 crores.</p>
+        
+        <h3>Critical Requirements</h3>
+        <ul>
+          <li>Zero tolerance for material delivery delays</li>
+          <li>Specialized industrial-grade materials</li>
+          <li>Complex sequencing of material deliveries</li>
+          <li>Stringent safety and quality standards</li>
+        </ul>
+        
+        <h3>IndoSup's Innovation</h3>
+        <p>Implementation of AI-powered predictive analytics system that forecasted material needs 6 weeks in advance, optimizing supplier schedules and preventing bottlenecks.</p>
+        
+        <h3>Predictive Analytics Features</h3>
+        <ul>
+          <li>Weather-based delivery adjustment algorithms</li>
+          <li>Supplier performance prediction models</li>
+          <li>Automated risk assessment and mitigation</li>
+          <li>Real-time supply chain visibility</li>
+        </ul>
+        
+        <h3>Outstanding Results</h3>
+        <ul>
+          <li>100% on-time delivery rate (zero delays)</li>
+          <li>20% reduction in inventory holding costs</li>
+          <li>98% forecast accuracy for material requirements</li>
+          <li>30% improvement in supplier reliability</li>
+        </ul>
+        
+        <h3>Innovation Impact</h3>
+        <p>The project became a benchmark for industrial construction, with the client adopting IndoSup's predictive analytics system for all future projects.</p>
+      `
     }
   ];
 
@@ -596,11 +912,28 @@ export default function Media() {
                       </span>
                     </div>
                     
-                    {/* Reading Time Badge */}
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-white/90 text-accent px-2 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-lg">
-                        {Math.ceil(Math.random() * 5 + 2)} min read
-                      </span>
+                    {/* Favorite Heart - Always Visible */}
+                    <div className="absolute top-4 right-4">
+                      <motion.button
+                        className={`p-2 rounded-full transition-all duration-300 backdrop-blur-sm shadow-lg ${
+                          favoriteArticles.has(item.id) 
+                            ? 'bg-primary/20 hover:bg-primary/30' 
+                            : 'bg-white/90 hover:bg-white'
+                        }`}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        title={favoriteArticles.has(item.id) ? "Remove from favorites" : "Add to favorites"}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleFavorite(item.id);
+                        }}
+                      >
+                        <Heart className={`w-4 h-4 transition-colors duration-300 ${
+                          favoriteArticles.has(item.id) 
+                            ? 'text-primary fill-primary' 
+                            : 'text-gray-600 hover:text-primary'
+                        }`} />
+                      </motion.button>
                     </div>
                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg hover:bg-primary transition-colors duration-300">
@@ -640,37 +973,29 @@ export default function Media() {
                         <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </motion.button>
                       
-                      {/* Engagement Icons */}
-                      <div className="flex items-center gap-1 md:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <motion.button
-                          className={`p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200 ${
-                            favoriteArticles.has(item.id) ? 'bg-primary/20' : ''
-                          }`}
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          title={favoriteArticles.has(item.id) ? "Remove from favorites" : "Add to favorites"}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleFavorite(item.id);
-                          }}
-                        >
-                          <Heart className={`w-3 h-3 md:w-4 md:h-4 transition-colors duration-300 ${
-                            favoriteArticles.has(item.id) 
-                              ? 'text-primary fill-primary' 
-                              : 'text-gray-400 hover:text-primary'
-                          }`} />
-                        </motion.button>
+                      {/* Share Icon - Always Visible */}
+                      <div className="flex items-center gap-2">
                         <motion.button
                           className="p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          title="Share"
+                          title="Share article"
                           onClick={(e) => {
                             e.stopPropagation();
-                            // Add share functionality here
+                            // Simple share functionality
+                            if (navigator.share) {
+                              navigator.share({
+                                title: item.title,
+                                text: item.preview,
+                                url: window.location.href
+                              });
+                            } else {
+                              // Fallback: copy to clipboard
+                              navigator.clipboard.writeText(window.location.href);
+                            }
                           }}
                         >
-                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-gray-400 hover:text-primary" />
+                          <Share2 className="w-3 h-3 md:w-4 md:h-4 text-gray-600 hover:text-primary" />
                         </motion.button>
                       </div>
                     </div>
