@@ -257,7 +257,7 @@ export default function NewInitiatives() {
               className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
             >
               {/* Content */}
-              <div className="flex-1 space-y-6">
+              <div className="flex-1 space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
                     <Building2 className="w-8 h-8" />
