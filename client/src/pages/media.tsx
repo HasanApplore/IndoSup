@@ -327,36 +327,34 @@ export default function Media() {
           
           {/* Scroll indicator */}
           <motion.div
-            className="mt-12 md:mt-16"
+            className="mt-12 md:mt-16 flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <div className="absolute left-0 right-0 flex justify-center">
-              <motion.div
-                className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-                onClick={() => {
-                  const contentSection = document.getElementById('media-content');
-                  if (contentSection) {
-                    setHeroAnimated(true);
-                    setTimeout(() => {
-                      contentSection.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                      });
-                    }, 400);
-                  }
-                }}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowRight className="w-6 h-6 text-white rotate-90" />
-              </motion.div>
-            </div>
+            <motion.div
+              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+              onClick={() => {
+                const contentSection = document.getElementById('media-content');
+                if (contentSection) {
+                  setHeroAnimated(true);
+                  setTimeout(() => {
+                    contentSection.scrollIntoView({ 
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }, 400);
+                }
+              }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowRight className="w-6 h-6 text-white rotate-90" />
+            </motion.div>
             <motion.p
-              className="text-white/70 text-sm mt-16 font-medium"
+              className="text-white/80 text-sm mt-3 font-medium"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.8 }}
