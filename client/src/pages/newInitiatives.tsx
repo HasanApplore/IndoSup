@@ -305,13 +305,14 @@ export default function NewInitiatives() {
                 </div>
 
                 <Link to="/contact">
-                  <motion.button
-                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
-                    whileHover={{ x: 5 }}
+                  <motion.div
+                    className="inline-flex items-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-primary/20 hover:border-primary shadow-sm hover:shadow-md"
+                    whileHover={{ x: 5, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <span className="mr-2">Learn More About Global Private</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
+                    <span className="mr-3">Learn More About Global Private</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </motion.div>
                 </Link>
               </div>
 
@@ -372,13 +373,14 @@ export default function NewInitiatives() {
                 </div>
 
                 <Link to="/contact">
-                  <motion.button
-                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
-                    whileHover={{ x: 5 }}
+                  <motion.div
+                    className="inline-flex items-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-primary/20 hover:border-primary shadow-sm hover:shadow-md"
+                    whileHover={{ x: 5, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <span className="mr-2">Learn More About Global Assist</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
+                    <span className="mr-3">Learn More About Global Assist</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </motion.div>
                 </Link>
               </div>
 
