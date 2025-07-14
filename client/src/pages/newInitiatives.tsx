@@ -236,72 +236,7 @@ export default function NewInitiatives() {
         </motion.div>
       </section>
 
-      {/* Statistics Summary */}
-      <section className="py-8 bg-gradient-to-r from-white/80 via-white/50 to-white/80 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="bg-white/60 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Building2 className="w-4 h-4 text-primary" />
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">2</div>
-                <div className="text-neutral-dark font-medium text-sm">New Companies</div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="bg-white/60 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Globe className="w-4 h-4 text-primary" />
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">Worldwide</div>
-                <div className="text-neutral-dark font-medium text-sm">Market Reach</div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="bg-white/60 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Target className="w-4 h-4 text-primary" />
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">10+</div>
-                <div className="text-neutral-dark font-medium text-sm">Service Areas</div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="bg-white/60 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">2025</div>
-                <div className="text-neutral-dark font-medium text-sm">Launch Year</div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Company Categories */}
       <section className="py-20 md:py-24">
