@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight, Star, Eye, Clock, Target, ArrowUp, ArrowDown } from 'lucide-react';
-import constructionSiteImg from '@assets/Construction-material-management-system-on-project-sites-1024x409_1752230798913.webp';
+import constructionSiteImg from '@assets/illustration-construction-site (1)_1752496997919.jpg';
 import pricingImg from '@assets/building-estimation-course-1000x1000_1752230798912.webp';
-import supplyChainImg from '@assets/phases-of-construction_1752230798913.webp';
+import supplyChainImg from '@assets/digital-composite-image-businessman-touching-icon-harbor_1752497026364.jpg';
 import complianceImg from '@assets/GST-768x512_1752230804835.jpeg';
-import orderManagementImg from '@assets/Package-box-recieved-1024_1752230798913.webp';
+import orderManagementImg from '@assets/standard-quality-control-concept-m_1752497041033.jpg';
 
 export default function StreamlinedProcurement() {
   const [showScrollTop, setShowScrollTop] = useState(false);
