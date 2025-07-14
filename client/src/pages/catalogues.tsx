@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, Download, FileText, Calendar, Tag, ArrowRight, Star, Eye, Clock } from 'lucide-react';
+import { Search, Filter, Download, FileText, Calendar, Tag, ArrowRight, ArrowDown, Star, Eye, Clock } from 'lucide-react';
 import steelBarsImage from "@assets/assorted-steel-bars-pipes_1077802-159331_1752217650726.jpg";
 
 export default function Catalogues() {
