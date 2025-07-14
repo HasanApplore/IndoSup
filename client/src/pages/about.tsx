@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
 import pipesFittingImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
-import aboutBannerImage from '@assets/about-us-button-about-us-text-template-for-website-about-us-icon-flat-style-vector_1752226824129.jpg';
+import aboutBannerImage from '@assets/assorted-steel-bars-pipes_1077802-159331_1752217650726.jpg';
 
 export default function About() {
   const [heroAnimated, setHeroAnimated] = useState(false);
