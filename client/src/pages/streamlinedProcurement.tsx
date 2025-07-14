@@ -180,48 +180,7 @@ export default function StreamlinedProcurement() {
             source, manage, and deliver materials across India's diverse markets.
           </motion.p>
           
-          <motion.div
-            className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mb-12 max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button
-              onClick={() => scrollToSection('multi-site-procurement')}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-            >
-              <Building2 className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Multi-site Procurement</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('sku-price-accuracy')}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-            >
-              <Calculator className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">SKU Price Accuracy</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('supply-chain-solutions')}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-            >
-              <Truck className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Supply Chain Delay Solutions</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('gst-billing-compliance')}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-            >
-              <FileText className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">GST/Billing Compliance</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('order-management')}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-            >
-              <Package className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Mismatched Order Management</span>
-            </button>
-          </motion.div>
+
         </div>
 
         {/* Scroll Indicator */}
