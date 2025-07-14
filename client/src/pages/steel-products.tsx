@@ -106,7 +106,7 @@ export default function SteelProducts() {
             alt="Steel Products - Premium Construction Materials"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
         {/* Animated background elements */}
@@ -115,8 +115,7 @@ export default function SteelProducts() {
             className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
             animate={{
               scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-              x: [0, 40, 0],
+              rotate: [0, 180, 360],
             }}
             transition={{
               duration: 8,
@@ -125,11 +124,22 @@ export default function SteelProducts() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-10 w-32 h-32 bg-primary/25 rounded-full blur-2xl"
+            className="absolute bottom-1/3 right-10 w-16 h-16 bg-primary/20 rounded-full blur-xl"
             animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.2, 0.5, 0.2],
-              x: [0, -25, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/3 w-4 h-4 bg-primary/40 rounded-full"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
             }}
             transition={{
               duration: 10,
@@ -138,7 +148,7 @@ export default function SteelProducts() {
             }}
           />
         </div>
-        
+
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
@@ -160,7 +170,7 @@ export default function SteelProducts() {
           </motion.div>
           
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed"
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -178,8 +188,6 @@ export default function SteelProducts() {
             Explore Products
           </motion.button>
         </div>
-
-
       </section>
 
       {/* Back to Top Button */}
