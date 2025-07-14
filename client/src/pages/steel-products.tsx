@@ -271,7 +271,7 @@ export default function SteelProducts() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center mb-2">
+            <div className="flex items-center mb-0">
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-accent mr-6">
                 <Package className="w-8 h-8" />
               </div>
@@ -285,7 +285,7 @@ export default function SteelProducts() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-4 md:py-6">
+      <section className="py-2 md:py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
