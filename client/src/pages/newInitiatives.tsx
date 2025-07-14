@@ -29,7 +29,7 @@ export default function NewInitiatives() {
   }, []);
 
   const scrollToContent = () => {
-    const heroHeight = window.innerHeight;
+    const heroHeight = window.innerHeight * 0.55; // 55% of viewport height
     setHeroAnimated(true);
     window.scrollTo({
       top: heroHeight,
@@ -110,7 +110,7 @@ export default function NewInitiatives() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -118,7 +118,7 @@ export default function NewInitiatives() {
             alt="IndoSup Global Initiatives - Worldwide Network"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/80 via-accent/60 to-accent/40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
         {/* Animated background elements */}
@@ -162,90 +162,46 @@ export default function NewInitiatives() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
-            className="inline-flex items-center px-4 py-2 bg-primary/20 rounded-full border border-primary/30 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Star className="w-5 h-5 text-primary mr-2" />
-            <span className="text-white font-medium">New Initiatives</span>
-          </motion.div>
-
-          <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Our New Global
-            <span className="block text-primary">Initiatives</span>
-          </motion.h1>
-
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+              New Initiatives
+            </h1>
+            {/* Animated underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
+            />
+          </motion.div>
+          
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Expanding horizons with two specialized companies driving innovation in construction procurement and technical excellence.
+            Expanding Global Presence Through Innovation
           </motion.p>
 
-          {/* Company Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-6 mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <motion.button
-              onClick={scrollToPrivateSection}
-              className="group relative px-8 py-4 bg-primary text-accent font-bold rounded-full hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="flex items-center justify-center">
-                <Building2 className="w-5 h-5 mr-3" />
-                <span>IndoSup Global Private Limited</span>
-              </div>
-            </motion.button>
-            
-            <motion.button
-              onClick={scrollToAssistSection}
-              className="group relative px-8 py-4 bg-white/10 text-white font-bold rounded-full border-2 border-white/30 hover:bg-white hover:text-accent transition-all duration-300 shadow-lg hover:shadow-xl min-w-[280px] text-center backdrop-blur-sm"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="flex items-center justify-center">
-                <Users className="w-5 h-5 mr-3" />
-                <span>IndoSup Global Assist Limited</span>
-              </div>
-            </motion.button>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-          <motion.div
-            className="cursor-pointer"
+          <motion.button
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             onClick={scrollToContent}
           >
-            <div className="flex flex-col items-center space-y-2">
-              <span className="text-white text-sm">New Initiatives</span>
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
-              >
-                <ArrowDown className="w-6 h-6 text-white" />
-              </motion.div>
-            </div>
-          </motion.div>
+            Learn More
+          </motion.button>
         </div>
+
+
       </section>
 
 
