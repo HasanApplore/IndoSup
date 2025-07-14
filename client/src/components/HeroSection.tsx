@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
 
 export default function HeroSection() {
   const [youtubeVideoId, setYoutubeVideoId] = useState('');
   const [player, setPlayer] = useState(null);
-  const [isMuted, setIsMuted] = useState(true);
   const iframeRef = useRef(null);
 
   // Extract YouTube video ID from URL
@@ -115,17 +113,9 @@ export default function HeroSection() {
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div 
-          className="absolute inset-0 w-full h-full cursor-pointer group"
+          className="absolute inset-0 w-full h-full cursor-pointer"
           onClick={() => {
-            if (player) {
-              if (isMuted) {
-                player.unMute();
-                player.setVolume(70);
-                setIsMuted(false);
-              } else {
-                player.mute();
-                setIsMuted(true);
-              }
+            if (player && player.playVideo) {
               player.playVideo();
             }
           }}
@@ -146,37 +136,6 @@ export default function HeroSection() {
             {/* Hide any potential suggestions overlay */}
             <div className="absolute inset-0 bg-transparent z-0"></div>
           </div>
-          
-          {/* Sound Toggle Indicator */}
-          <div className="absolute top-8 right-8 z-20 pointer-events-none">
-            <motion.div
-              className="bg-black/50 backdrop-blur-sm rounded-full p-3 flex items-center justify-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-            >
-              {isMuted ? (
-                <VolumeX className="w-6 h-6 text-white" />
-              ) : (
-                <Volume2 className="w-6 h-6 text-white" />
-              )}
-            </motion.div>
-          </div>
-          
-          {/* Click to Enable Sound Notice */}
-          {isMuted && (
-            <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
-              <motion.div
-                className="bg-black/50 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center space-x-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2, duration: 0.5 }}
-              >
-                <VolumeX className="w-4 h-4 text-white" />
-                <span className="text-white text-sm font-medium">Click to enable sound</span>
-              </motion.div>
-            </div>
-          )}
         </div>
       ) : (
         // Fallback for when video ID is not available
