@@ -249,74 +249,25 @@ export default function Contact() {
           {/* Contact Form and Images Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" id="contact-form-section">
             
-            {/* Left Side - Images */}
+            {/* Left Side - Single Image */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="flex items-center justify-center"
             >
-              {/* Construction Image 1 */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+              {/* Single Construction Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group w-full">
                 <img 
                   src={constructionImage1} 
-                  alt="Professional electrical work and construction services"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  alt="Professional construction and electrical services"
+                  className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold">Expert Electrical Solutions</h3>
-                  <p className="text-sm">Professional installation and maintenance</p>
-                </div>
-              </div>
-
-              {/* Construction Image 2 */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-                <img 
-                  src={constructionImage2} 
-                  alt="Quality steel bars and construction materials"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold">Premium Steel Products</h3>
-                  <p className="text-sm">High-quality materials for construction</p>
-                </div>
-              </div>
-
-              {/* Contact Info Cards */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-accent mb-4">Quick Contact</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <div>
-                      <p className="text-sm font-medium">Sales Queries</p>
-                      <a href="tel:+918802114204" className="text-accent hover:text-primary transition-colors">
-                        +91 880 211 4204
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-primary" />
-                    <div>
-                      <p className="text-sm font-medium">Email Us</p>
-                      <a href="mailto:sales@indosup.com" className="text-accent hover:text-primary transition-colors">
-                        sales@indosup.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <div>
-                      <p className="text-sm font-medium">Visit Us</p>
-                      <p className="text-accent text-sm">
-                        C-120, 2nd Floor, Sector 2<br />
-                        Noida, Uttar Pradesh - 201301
-                      </p>
-                    </div>
-                  </div>
+                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-xl font-semibold mb-2">Expert Construction Solutions</h3>
+                  <p className="text-sm">Professional installation, maintenance, and construction services</p>
                 </div>
               </div>
             </motion.div>
