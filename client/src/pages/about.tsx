@@ -311,48 +311,45 @@ export default function About() {
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group cursor-pointer"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-[#0E2F44] transition-all duration-300 shadow-md group-hover:shadow-lg">
-                <Award className="w-10 h-10 text-white group-hover:rotate-12 transition-transform duration-300" />
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Award className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">Proven track record in construction procurement with decades of industry expertise</p>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
+              <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group cursor-pointer"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-[#0E2F44] transition-all duration-300 shadow-md group-hover:shadow-lg">
-                <Building className="w-10 h-10 text-white group-hover:rotate-12 transition-transform duration-300" />
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Building className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">Successfully delivered construction materials to projects across India</p>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
+              <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group cursor-pointer"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-[#0E2F44] transition-all duration-300 shadow-md group-hover:shadow-lg">
-                <Globe className="w-10 h-10 text-white group-hover:rotate-12 transition-transform duration-300" />
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Globe className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>Global Reach</h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>Global Reach</h3>
+              <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
@@ -367,16 +364,14 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group cursor-pointer"
-              whileHover={{ scale: 1.02 }}
             >
-              <h2 className="text-3xl font-bold mb-6 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>What Is IndoSup?</h2>
-              <p className="text-gray-600 mb-6 group-hover:text-gray-700 transition-colors duration-300" style={{ lineHeight: '1.6' }}>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#0E2F44' }}>What Is IndoSup?</h2>
+              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
                 IndoSup is revolutionizing India's construction procurement landscape through innovative digital solutions. 
                 We connect builders, contractors, and suppliers through a seamless platform that ensures quality, 
                 transparency, and efficiency in every transaction.
               </p>
-              <p className="text-gray-600 mb-6 group-hover:text-gray-700 transition-colors duration-300" style={{ lineHeight: '1.6' }}>
+              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
                 Our mission is to transform how construction materials are sourced, procured, and delivered across India. 
                 With a focus on technology-driven solutions, we're building the future of construction procurement.
               </p>
@@ -388,26 +383,14 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              whileHover={{ scale: 1.02 }}
+              className="group"
             >
-              <div className="relative overflow-hidden rounded-lg">
-                <img 
-                  src={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].src : carouselImages[0].src}
-                  alt={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].alt : carouselImages[0].alt}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  style={{ borderRadius: '8px' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-lg font-semibold text-[#0E2F44] group-hover:text-[#F5A623] transition-colors duration-300">
-                  Construction Innovation
-                </h3>
-                <p className="text-gray-600 text-sm mt-2 group-hover:text-gray-700 transition-colors duration-300">
-                  Transforming the industry through technology
-                </p>
-              </div>
+              <img 
+                src={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].src : carouselImages[0].src}
+                alt={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].alt : carouselImages[0].alt}
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                style={{ borderRadius: '12px', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)' }}
+              />
             </motion.div>
           </div>
         </div>
