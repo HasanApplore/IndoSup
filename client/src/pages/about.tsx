@@ -31,7 +31,7 @@ export default function About() {
   }, []);
 
   const scrollToContent = () => {
-    const heroHeight = window.innerHeight;
+    const heroHeight = window.innerHeight * 0.3; // 30% of viewport height
     setHeroAnimated(true);
     window.scrollTo({
       top: heroHeight,
@@ -209,7 +209,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -263,7 +263,7 @@ export default function About() {
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -272,7 +272,7 @@ export default function About() {
           </motion.h1>
           
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-6"
+            className="text-sm md:text-base text-white/90 mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
