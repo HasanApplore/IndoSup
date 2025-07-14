@@ -204,18 +204,19 @@ export default function Careers() {
           </motion.div>
           
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 font-inter text-white"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Career Opportunities
+            Shape the Future
+            <span className="block text-primary">Career Opportunities</span>
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl md:max-w-4xl mx-auto leading-relaxed px-4 mb-6"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             Build the future of construction procurement with IndoSup. Join our mission to revolutionize 
             how construction companies source materials and manage their supply chains.
