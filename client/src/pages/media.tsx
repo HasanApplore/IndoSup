@@ -53,10 +53,9 @@ export default function Media() {
   }, []);
 
   const tabs = [
-    { id: 'media-coverage', label: 'Media Coverage' },
+    { id: 'media-coverage', label: 'Blogs' },
     { id: 'awards', label: 'Awards' },
     { id: 'newsletters', label: 'Newsletters' },
-    { id: 'blogs', label: 'Blogs' },
     { id: 'case-studies', label: 'Case Studies' }
   ];
 
