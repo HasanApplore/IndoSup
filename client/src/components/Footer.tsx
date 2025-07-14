@@ -98,6 +98,7 @@ export default function Footer() {
                 Connect With Us
               </h4>
               
+              {/* Contact Info and Map Container */}
               <div className="space-y-4 mb-6">
                 <div className="flex items-start text-gray-300 text-sm group">
                   <MapPin className="w-4 h-4 mr-3 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
@@ -115,6 +116,20 @@ export default function Footer() {
                   <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors font-medium">
                     sales@indosup.com
                   </a>
+                </div>
+                
+                {/* Google Maps Embed */}
+                <div className="mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-600">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce46e4b8a4663%3A0x1c7e8e8a1c8a4663!2sSector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="120"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg filter brightness-90 hover:brightness-100 transition-all duration-300"
+                  />
                 </div>
               </div>
             </div>
