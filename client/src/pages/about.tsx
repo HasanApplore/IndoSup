@@ -322,15 +322,15 @@ export default function About() {
           transition={{ delay: 1, duration: 0.8 }}
           onClick={scrollToContent}
         >
-          <div className="flex flex-col items-center space-y-2">
+          <div className="flex flex-col items-center space-y-2 text-center">
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
               className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
             >
-              <ArrowDown className="w-6 h-6 text-white" />
+              <ArrowDown className="w-6 h-6 text-white mx-auto" />
             </motion.div>
-            <span className="text-white text-sm">Discover Our Story</span>
+            <span className="text-white text-sm text-center">About Us</span>
           </div>
         </motion.div>
       </section>
