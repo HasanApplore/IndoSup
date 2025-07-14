@@ -1154,12 +1154,12 @@ export default function Media() {
                     <div 
                       className="prose prose-lg prose-gray max-w-none 
                                 prose-headings:font-bold prose-headings:text-accent prose-headings:mb-6 prose-headings:mt-8
-                                prose-h2:text-2xl prose-h2:border-b prose-h2:border-primary/20 prose-h2:pb-3
-                                prose-h3:text-xl prose-h3:text-primary prose-h3:mt-6 prose-h3:mb-4
+                                prose-h2:text-2xl prose-h2:border-b prose-h2:border-gray-300 prose-h2:pb-3 prose-h2:text-accent
+                                prose-h3:text-xl prose-h3:text-gray-800 prose-h3:mt-6 prose-h3:mb-4
                                 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6 prose-p:text-base
                                 prose-ul:my-6 prose-li:text-gray-700 prose-li:mb-2 prose-li:leading-relaxed
                                 prose-strong:text-accent prose-strong:font-semibold
-                                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                                prose-a:text-accent prose-a:no-underline hover:prose-a:underline
                                 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-p:mt-0"
                       dangerouslySetInnerHTML={{ __html: selectedArticle.fullContent }}
                     />
