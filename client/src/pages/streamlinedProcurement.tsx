@@ -50,35 +50,35 @@ export default function StreamlinedProcurement() {
   const solutions = [
     {
       icon: <Building2 className="w-8 h-8" />,
-      title: "Multi-site Procurement",
+      title: "Centralized Multi-Site Operations",
       description: "Centralized procurement management across multiple construction sites with real-time coordination and unified vendor relationships.",
       subtext: "Streamline operations, reduce costs, and maintain consistent quality standards across all your project locations.",
       features: ["Centralized Ordering", "Site-wise Tracking", "Unified Vendor Management"]
     },
     {
       icon: <Calculator className="w-8 h-8" />,
-      title: "SKU Price Accuracy",
+      title: "Real-Time Price Intelligence",
       description: "Real-time price validation and market analysis ensuring competitive rates for every construction material and component.",
       subtext: "Eliminate price discrepancies with our AI-powered pricing engine that monitors market fluctuations across India.",
       features: ["Real-time Pricing", "Market Analysis", "Price Alerts"]
     },
     {
       icon: <Truck className="w-8 h-8" />,
-      title: "Supply Chain Delay Solutions",
+      title: "Predictive Supply Chain Management",
       description: "Proactive logistics management with predictive analytics to identify and resolve potential delays before they impact your projects.",
       subtext: "Advanced tracking systems and alternative sourcing options ensure your construction timeline stays on track.",
       features: ["Predictive Analytics", "Alternative Sourcing", "Real-time Tracking"]
     },
     {
       icon: <FileText className="w-8 h-8" />,
-      title: "GST/Billing Compliance",
+      title: "Automated Compliance & Billing",
       description: "Automated GST calculations, compliant invoicing, and seamless integration with accounting systems for hassle-free financial management.",
       subtext: "Stay compliant with Indian tax regulations while reducing administrative overhead through intelligent automation.",
       features: ["Automated GST", "Compliant Invoicing", "System Integration"]
     },
     {
       icon: <Package className="w-8 h-8" />,
-      title: "Mismatched Order Management",
+      title: "Intelligent Order Reconciliation",
       description: "Intelligent order reconciliation system that identifies, flags, and resolves discrepancies in material deliveries and specifications.",
       subtext: "Advanced matching algorithms ensure what you ordered is exactly what you receive, every single time.",
       features: ["Order Reconciliation", "Discrepancy Detection", "Quality Assurance"]
