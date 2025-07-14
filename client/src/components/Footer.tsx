@@ -100,7 +100,7 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-bold mb-6 text-white flex items-center">
                 <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-                Connect With Us
+                Find Us
               </h4>
               
               {/* Contact Info and Map Container */}
@@ -149,12 +149,12 @@ export default function Footer() {
                 </div>
                 
                 {/* Google Maps Embed */}
-                <div className="flex-1 xl:max-w-lg">
+                <div className="flex-1 xl:max-w-xl">
                   <div className="rounded-xl overflow-hidden shadow-xl border border-gray-600">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a9e9a4c9a7%3A0x1c2b5a3b4c5d6e7f!2sH8M8%2BM8%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                       width="100%"
-                      height="260"
+                      height="320"
                       style={{ border: 0 }}
                       allowFullScreen={false}
                       loading="lazy"
