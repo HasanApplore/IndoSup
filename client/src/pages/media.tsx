@@ -935,11 +935,7 @@ export default function Media() {
                         }`} />
                       </motion.button>
                     </div>
-                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center backdrop-blur-sm shadow-lg hover:bg-primary transition-colors duration-300">
-                        <ArrowRight className="w-5 h-5 text-accent" />
-                      </div>
-                    </div>
+
                   </div>
 
                   {/* Content */}
@@ -1073,7 +1069,7 @@ export default function Media() {
             onClick={() => setShowModal(false)}
           >
             <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[95vh] overflow-hidden border border-gray-100"
+              className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[95vh] overflow-hidden border border-gray-100 flex flex-col"
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -1152,7 +1148,7 @@ export default function Media() {
               </div>
 
               {/* Modal Content */}
-              <div className="overflow-y-auto max-h-[calc(95vh-20rem)]">
+              <div className="flex-1 overflow-y-auto">
                 <div className="p-8 md:p-12">
                   <div className="max-w-4xl mx-auto">
                     <div 
@@ -1172,11 +1168,11 @@ export default function Media() {
               </div>
 
               {/* Modal Footer */}
-              <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
+              <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 p-6 flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                     <motion.button
-                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 min-w-[160px] justify-center ${
                         favoriteArticles.has(selectedArticle.id)
                           ? 'bg-primary text-accent hover:bg-primary/90'
                           : 'bg-accent text-white hover:bg-accent/90'
@@ -1195,7 +1191,7 @@ export default function Media() {
                       {favoriteArticles.has(selectedArticle.id) ? 'Saved to Favorites' : 'Save Article'}
                     </motion.button>
                     <motion.button
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-gray-600 text-white rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300 min-w-[140px] justify-center"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => {
@@ -1216,7 +1212,7 @@ export default function Media() {
                   </div>
                   <motion.button
                     onClick={() => setShowModal(false)}
-                    className="px-8 py-3 bg-white text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 border-2 border-gray-200 hover:border-gray-300"
+                    className="px-8 py-3 bg-white text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 border-2 border-gray-200 hover:border-gray-300 min-w-[100px]"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
