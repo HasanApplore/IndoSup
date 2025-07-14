@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart } from 'lucide-react';
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
@@ -11,6 +11,26 @@ export default function Media() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [favoriteArticles, setFavoriteArticles] = useState(new Set());
+
+  // Function to toggle favorite status
+  const toggleFavorite = (articleId) => {
+    setFavoriteArticles(prev => {
+      const newFavorites = new Set(prev);
+      if (newFavorites.has(articleId)) {
+        newFavorites.delete(articleId);
+      } else {
+        newFavorites.add(articleId);
+      }
+      return newFavorites;
+    });
+  };
+
+  // Function to handle card click
+  const handleCardClick = (item) => {
+    setSelectedArticle(item);
+    setShowModal(true);
+  };
 
   // Reset hero animation when component mounts or page is refreshed
   useEffect(() => {
@@ -560,6 +580,7 @@ export default function Media() {
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 relative cursor-pointer transform-gpu hover:border-primary/30"
                   whileHover={{ y: -12, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={() => handleCardClick(item)}
                 >
                   {/* Image */}
                   <div className="relative h-48 md:h-52 overflow-hidden">
@@ -609,7 +630,8 @@ export default function Media() {
                       <motion.button
                         className="inline-flex items-center text-primary font-bold hover:text-accent transition-colors duration-300 text-xs md:text-sm group-hover:bg-primary/10 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-primary/20 hover:border-primary/40"
                         whileHover={{ x: 5 }}
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           setSelectedArticle(item);
                           setShowModal(true);
                         }}
@@ -621,20 +643,34 @@ export default function Media() {
                       {/* Engagement Icons */}
                       <div className="flex items-center gap-1 md:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <motion.button
-                          className="p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200"
+                          className={`p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200 ${
+                            favoriteArticles.has(item.id) ? 'bg-primary/20' : ''
+                          }`}
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          title="Add to favorites"
+                          title={favoriteArticles.has(item.id) ? "Remove from favorites" : "Add to favorites"}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFavorite(item.id);
+                          }}
                         >
-                          <Tag className="w-3 h-3 md:w-4 md:h-4 text-primary hover:text-accent" />
+                          <Heart className={`w-3 h-3 md:w-4 md:h-4 transition-colors duration-300 ${
+                            favoriteArticles.has(item.id) 
+                              ? 'text-primary fill-primary' 
+                              : 'text-gray-400 hover:text-primary'
+                          }`} />
                         </motion.button>
                         <motion.button
                           className="p-1.5 md:p-2 hover:bg-primary/10 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Share"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            // Add share functionality here
+                          }}
                         >
-                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-primary hover:text-accent" />
+                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 text-gray-400 hover:text-primary" />
                         </motion.button>
                       </div>
                     </div>
