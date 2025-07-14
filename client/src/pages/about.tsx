@@ -262,18 +262,10 @@ export default function About() {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-          <motion.div
-            className="inline-flex items-center px-4 py-2 bg-primary/20 rounded-full border border-primary/30 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Star className="w-5 h-5 text-primary mr-2" />
-            <span className="text-white font-medium">About IndoSup</span>
-          </motion.div>
+
 
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -283,41 +275,55 @@ export default function About() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover the story behind India's leading construction procurement platform and the vision that drives our mission.
+            Meet the team revolutionizing India's construction industry through innovative digital procurement solutions, connecting builders with trusted suppliers nationwide.
           </motion.p>
+
+          {/* Feature highlights */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-6 mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+              <Star className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm font-medium">5+ Years Experience</span>
+            </div>
+            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+              <Building className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm font-medium">400+ Trusted Vendors</span>
+            </div>
+            <div className="flex items-center px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm">
+              <Globe className="w-4 h-4 text-primary mr-2" />
+              <span className="text-white text-sm font-medium">25+ States Served</span>
+            </div>
+          </motion.div>
 
           {/* Navigation buttons */}
           <motion.div
             className="flex flex-wrap justify-center gap-4 mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
           >
             <button
               onClick={() => scrollToSection('leadership')}
-              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
+              className="flex items-center px-6 py-3 bg-primary/20 rounded-full border border-primary/30 backdrop-blur-sm hover:bg-primary/30 hover:border-primary/50 transition-all duration-300 group"
             >
-              <Users className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Leadership</span>
+              <Users className="w-4 h-4 text-white mr-2 group-hover:scale-110 transition-transform" />
+              <span className="text-white text-sm font-medium">Meet Our Team</span>
             </button>
             <button
               onClick={() => scrollToSection('mission-vision')}
               className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
             >
               <Target className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Mission & Values</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('values')}
-              className="flex items-center px-6 py-3 bg-white/10 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 group"
-            >
-              <Heart className="w-4 h-4 text-primary mr-2 group-hover:scale-110 transition-transform" />
-              <span className="text-white text-sm font-medium">Our Strength & Values</span>
+              <span className="text-white text-sm font-medium">Our Mission</span>
             </button>
           </motion.div>
         </div>
@@ -338,7 +344,7 @@ export default function About() {
             >
               <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
-            <span className="text-white text-sm">About IndoSup</span>
+            <span className="text-white text-sm">Discover Our Story</span>
           </div>
         </motion.div>
       </section>
