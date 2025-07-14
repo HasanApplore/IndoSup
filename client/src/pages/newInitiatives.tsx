@@ -21,14 +21,9 @@ export default function NewInitiatives() {
       title: "Supply Chain"
     },
     {
-      src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop",
-      alt: "Quality Assurance Process",
-      title: "Quality Control"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1590736969955-eefec7b7e7c7?w=600&h=400&fit=crop",
-      alt: "Global Reach Network",
-      title: "Global Network"
+      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      alt: "Construction Materials Management",
+      title: "Materials Management"
     }
   ];
 
@@ -45,14 +40,9 @@ export default function NewInitiatives() {
       title: "Project Management"
     },
     {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
-      alt: "Expert Guidance Team",
-      title: "Expert Team"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1664382953403-89ba4a1ad99a?w=600&h=400&fit=crop",
-      alt: "Process Optimization",
-      title: "Process Optimization"
+      src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+      alt: "Construction Planning",
+      title: "Construction Planning"
     }
   ];
 
