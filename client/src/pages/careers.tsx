@@ -224,30 +224,32 @@ export default function Careers() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          onClick={() => {
-            const heroHeight = window.innerHeight;
-            window.scrollTo({
-              top: heroHeight,
-              behavior: 'smooth'
-            });
-          }}
-        >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm font-medium">Explore Opportunities</span>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="p-3 bg-white/20 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors duration-300"
-            >
-              <ArrowDown className="w-6 h-6 text-white" />
-            </motion.div>
-          </div>
-        </motion.div>
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+          <motion.div
+            className="cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            onClick={() => {
+              const heroHeight = window.innerHeight;
+              window.scrollTo({
+                top: heroHeight,
+                behavior: 'smooth'
+              });
+            }}
+          >
+            <div className="flex flex-col items-center space-y-2">
+              <span className="text-white text-sm font-medium">Explore Opportunities</span>
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
+              >
+                <ArrowDown className="w-6 h-6 text-white" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Back to Top Button */}
