@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown, ChevronDown } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/contact-page_1752235303334.png';
-import constructionImage1 from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
-import constructionImage2 from '@assets/assorted-steel-bars-pipes_1077802-159331_1752217650726.jpg';
+import constructionImage1 from '@assets/colleagues-working-together-call-center-office_1752497192985.jpg';
+import constructionImage2 from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -257,17 +257,17 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="flex items-center justify-center"
             >
-              {/* Single Construction Image */}
+              {/* Customer Support Image */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg group w-full">
                 <img 
                   src={constructionImage1} 
-                  alt="Professional construction and electrical services"
+                  alt="Professional customer support team in call center"
                   className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-xl font-semibold mb-2">Expert Construction Solutions</h3>
-                  <p className="text-sm">Professional installation, maintenance, and construction services</p>
+                  <h3 className="text-xl font-semibold mb-2">24/7 Customer Support</h3>
+                  <p className="text-sm">Dedicated support team ready to assist with your queries</p>
                 </div>
               </div>
             </motion.div>
