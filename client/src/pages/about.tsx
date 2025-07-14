@@ -31,7 +31,7 @@ export default function About() {
   }, []);
 
   const scrollToContent = () => {
-    const heroHeight = window.innerHeight * 0.3; // 30% of viewport height
+    const heroHeight = window.innerHeight * 0.5; // 50% of viewport height
     setHeroAnimated(true);
     window.scrollTo({
       top: heroHeight,
@@ -209,7 +209,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
