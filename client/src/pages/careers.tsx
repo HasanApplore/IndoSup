@@ -204,39 +204,28 @@ export default function Careers() {
           </motion.div>
           
           <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Shape the Future
-            <span className="block text-primary">Career Opportunities</span>
+            Join IndoSup's Mission
+            <span className="block text-primary mt-2">Build Tomorrow's Construction</span>
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Build the future of construction procurement with IndoSup. Join our mission to revolutionize 
-            how construction companies source materials and manage their supply chains.
-          </motion.p>
-          
-
-          
-          <motion.p
-            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            Discover exciting career opportunities and be part of India's leading construction procurement platform.
+            Be part of India's fastest-growing construction procurement platform. Shape the future of 
+            how construction companies source materials and accelerate project delivery nationwide.
           </motion.p>
         </div>
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
@@ -248,12 +237,12 @@ export default function Careers() {
             });
           }}
         >
-          <div className="flex flex-col items-center justify-center space-y-2">
-            <span className="text-white text-sm text-center">Explore Opportunities</span>
+          <div className="flex flex-col items-center space-y-2">
+            <span className="text-white text-sm font-medium">Explore Opportunities</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
+              className="p-3 bg-white/20 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors duration-300"
             >
               <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
