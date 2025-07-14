@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown } from 'lucide-react';
+import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import careerBannerImage from '@assets/Career-Month-1_Drupal-1200x799_1752235108568.png';
 
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -101,7 +102,11 @@ export default function Careers() {
   const filteredJobs = jobOpenings.filter(job => {
     const matchesDepartment = selectedDepartment === 'all' || job.department === selectedDepartment;
     const matchesLocation = selectedLocation === 'all' || job.location === selectedLocation;
-    return matchesDepartment && matchesLocation;
+    const matchesSearch = searchQuery === '' || 
+      job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.requirements.some(req => req.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchesDepartment && matchesLocation && matchesSearch;
   });
 
   const handleApply = (job) => {
@@ -276,53 +281,26 @@ export default function Careers() {
             <div className="w-24 h-1 bg-primary mx-auto"></div>
           </motion.div>
 
-          {/* Stats Summary */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Briefcase className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">15+</h3>
-              <p className="text-neutral-base text-sm">Open Positions</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">5</h3>
-              <p className="text-neutral-base text-sm">Departments</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <MapPin className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">6+</h3>
-              <p className="text-neutral-base text-sm">Locations</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Users className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">100+</h3>
-              <p className="text-neutral-base text-sm">Team Members</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Clock className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Full-time</h3>
-              <p className="text-neutral-base text-sm">Benefits</p>
-            </div>
-          </motion.div>
 
-          {/* Filters */}
-          <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-2xl mx-auto">
+
+          {/* Search and Filters */}
+          <div className="flex flex-col md:flex-row gap-4 mb-8 max-w-4xl mx-auto">
+            {/* Search Bar */}
+            <div className="flex-1">
+              <label className="block text-sm font-medium text-accent mb-2">Search Jobs</label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search by title, description, or requirements..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+            </div>
+            
+            {/* Department Filter */}
             <div className="flex-1">
               <label className="block text-sm font-medium text-accent mb-2">Department</label>
               <select
@@ -336,6 +314,8 @@ export default function Careers() {
                 ))}
               </select>
             </div>
+            
+            {/* Location Filter */}
             <div className="flex-1">
               <label className="block text-sm font-medium text-accent mb-2">Location</label>
               <select
