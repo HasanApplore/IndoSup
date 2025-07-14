@@ -295,7 +295,7 @@ export default function NewInitiatives() {
                 </p>
 
                 {/* Features */}
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2">
                   {globalPrivateServices.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
@@ -363,7 +363,7 @@ export default function NewInitiatives() {
                 </p>
 
                 {/* Features */}
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2">
                   {globalAssistServices.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
