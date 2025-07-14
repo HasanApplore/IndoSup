@@ -5,6 +5,7 @@ import { Link } from 'wouter';
 import pumpingSystemImg from '@assets/OIP (1)_1752499680077.webp';
 import fireProtectionSystemImg from '@assets/fireprotectionsystemcomponents_1752499690321.webp';
 import waterSystemImg from '@assets/c50b6154-84bf-44da-bffb-3cd660a1fa44_1752499692423.jpg';
+import plumbingSystemImg from '@assets/OIP (2)_1752499839297.webp';
 
 export default function NonSteelProducts() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -48,7 +49,7 @@ export default function NonSteelProducts() {
       name: "Plumbing",
       description: "Complete plumbing solutions including pipes, fittings, valves, and fixtures for residential and commercial projects.",
       specifications: ["CPVC/PVC Pipes", "Brass Fittings", "ISI Certified"],
-      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: plumbingSystemImg
     },
     {
       name: "Electrical",
