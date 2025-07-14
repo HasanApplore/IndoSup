@@ -337,77 +337,62 @@ export default function StreamlinedProcurement() {
             </motion.div>
           </motion.div>
 
+          {/* Multi-site Procurement Card */}
           <motion.div
-            className="space-y-8 md:space-y-12 mt-12 md:mt-16"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            className="max-w-4xl mx-auto mt-12 md:mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                id={index === 0 ? 'multi-site-procurement' : index === 1 ? 'sku-price-accuracy' : index === 2 ? 'supply-chain-solutions' : index === 3 ? 'gst-billing-compliance' : 'order-management'}
-                variants={itemVariants}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-12`}
-              >
-                {/* Content */}
-                <div className="flex-1 space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      {solution.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-accent">
-                        {solution.title}
-                      </h3>
-                      <div className="w-12 h-1 bg-primary mt-2"></div>
-                    </div>
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539]">
+                    <Building2 className="w-8 h-8" />
                   </div>
-
-                  <p className="text-lg text-neutral-base leading-relaxed">
-                    {solution.description}
-                  </p>
-
-                  <p className="text-base text-neutral-base/80 leading-relaxed">
-                    {solution.subtext}
-                  </p>
-
-                  {/* Features */}
-                  <div className="space-y-2">
-                    {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-accent font-medium">{feature}</span>
-                      </div>
-                    ))}
+                  <div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-accent">
+                      Multi-site Procurement
+                    </h3>
+                    <div className="w-16 h-1 bg-primary mt-2"></div>
                   </div>
-
-                  <motion.button
-                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="mr-2">Learn More</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
                 </div>
 
-                {/* Visual Element */}
-                <div className="flex-1 max-w-md lg:max-w-lg">
-                  <motion.div
-                    className="relative"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img
-                      src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
-                      alt={solution.title}
-                      className="w-full h-80 object-cover rounded-3xl shadow-lg"
-                    />
-                  </motion.div>
+                <p className="text-lg text-neutral-base leading-relaxed mb-6">
+                  Centralized procurement management across multiple construction sites with real-time coordination and unified vendor relationships.
+                </p>
+
+                <p className="text-base text-neutral-base/80 leading-relaxed mb-8">
+                  Streamline operations, reduce costs, and maintain consistent quality standards across all your project locations.
+                </p>
+
+                {/* Features */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-accent font-medium">Centralized Ordering</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-accent font-medium">Site-wise Tracking</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-accent font-medium">Unified Vendor Management</span>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+
+                <motion.button
+                  className="inline-flex items-center bg-white border-2 border-accent text-accent font-semibold px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="mr-2">Learn More</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
