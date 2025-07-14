@@ -354,10 +354,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Section Divider */}
-        <div className="container mx-auto px-4 mb-16">
-          <div className="w-full h-px bg-gray-300"></div>
-        </div>
         
         {/* Main Content */}
         <div className="container mx-auto px-4" style={{ padding: '60px 20px' }}>
@@ -428,10 +424,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="container mx-auto px-4 my-16">
-        <div className="w-full h-px bg-gray-300"></div>
-      </div>
+
 
       {/* Our Leadership */}
       <section id="leadership" className="py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
