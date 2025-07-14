@@ -233,12 +233,12 @@ export default function NewInitiatives() {
           transition={{ delay: 1, duration: 0.8 }}
           onClick={scrollToContent}
         >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-white text-sm">New Initiatives</span>
+          <div className="flex flex-col items-center justify-center space-y-2">
+            <span className="text-white text-sm text-center">New Initiatives</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="p-2 bg-white/20 rounded-full backdrop-blur-sm"
+              className="p-2 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
             >
               <ArrowDown className="w-6 h-6 text-white" />
             </motion.div>
