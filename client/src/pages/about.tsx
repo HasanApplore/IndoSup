@@ -311,54 +311,42 @@ export default function About() {
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-[#F5A623]/20"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-[#F5A623]/20 hover:bg-gradient-to-br hover:from-white hover:to-[#fef7e6]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                boxShadow: "0 25px 50px -12px rgba(245, 166, 35, 0.25)",
-                background: "linear-gradient(135deg, #ffffff 0%, #fef7e6 100%)"
-              }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-md group-hover:shadow-xl">
-                <Award className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md group-hover:shadow-xl">
+                <Award className="w-10 h-10 text-white transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
               <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-[#F5A623]/20"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-[#F5A623]/20 hover:bg-gradient-to-br hover:from-white hover:to-[#fef7e6]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                boxShadow: "0 25px 50px -12px rgba(245, 166, 35, 0.25)",
-                background: "linear-gradient(135deg, #ffffff 0%, #fef7e6 100%)"
-              }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-md group-hover:shadow-xl">
-                <Building className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md group-hover:shadow-xl">
+                <Building className="w-10 h-10 text-white transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
               <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-[#F5A623]/20"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group cursor-pointer border-2 border-transparent hover:border-[#F5A623]/20 hover:bg-gradient-to-br hover:from-white hover:to-[#fef7e6]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ 
-                boxShadow: "0 25px 50px -12px rgba(245, 166, 35, 0.25)",
-                background: "linear-gradient(135deg, #ffffff 0%, #fef7e6 100%)"
-              }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-md group-hover:shadow-xl">
-                <Globe className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-md group-hover:shadow-xl">
+                <Globe className="w-10 h-10 text-white transition-transform duration-300" />
               </div>
               <h3 className="text-xl font-bold mb-4 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>Global Reach</h3>
               <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">Expanding networks nationwide with strategic partnerships and distribution channels</p>
