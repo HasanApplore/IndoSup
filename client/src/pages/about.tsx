@@ -424,10 +424,8 @@ export default function About() {
         </div>
       </section>
 
-
-
       {/* Our Leadership */}
-      <section id="leadership" className="py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
+      <section id="leadership" className="py-8 bg-gradient-to-br from-[#fbf5e8] to-white">
         <div className="container mx-auto px-4" style={{ padding: '60px 20px' }}>
           <motion.div
             className="text-center mb-16"
