@@ -352,10 +352,11 @@ export default function StreamlinedProcurement() {
                 className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-12`}
               >
                 {/* Content */}
-                <div className="flex-1 space-y-6">
-                  {/* Title with White Background */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg">
-                    <div className="flex items-center space-x-4">
+                <div className="flex-1">
+                  {/* Unified Content Block */}
+                  <div className="bg-white rounded-2xl p-8 shadow-lg">
+                    {/* Title Section */}
+                    <div className="flex items-center space-x-4 mb-6">
                       <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
                         {solution.icon}
                       </div>
@@ -366,40 +367,40 @@ export default function StreamlinedProcurement() {
                         <div className="w-16 h-1 bg-primary"></div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Description with Better Formatting */}
-                  <div className="bg-white rounded-xl p-6 shadow-md">
-                    <p className="text-lg text-neutral-base leading-relaxed mb-4">
-                      {solution.description}
-                    </p>
-
-                    <p className="text-base text-neutral-base/80 leading-relaxed">
-                      {solution.subtext}
-                    </p>
-                  </div>
-
-                  {/* Features with Better Styling */}
-                  <div className="bg-white rounded-xl p-6 shadow-md">
-                    <h4 className="text-lg font-semibold text-accent mb-4">Key Features</h4>
-                    <div className="space-y-3">
-                      {solution.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          <span className="text-accent font-medium">{feature}</span>
-                        </div>
-                      ))}
+                    {/* Description Section */}
+                    <div className="mb-6">
+                      <p className="text-lg text-neutral-base leading-relaxed mb-4">
+                        {solution.description}
+                      </p>
+                      <p className="text-base text-neutral-base/80 leading-relaxed">
+                        {solution.subtext}
+                      </p>
                     </div>
-                  </div>
 
-                  <motion.button
-                    className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
-                    whileHover={{ x: 5, scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span className="mr-2">Learn More</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
+                    {/* Features Section */}
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-accent mb-4">Key Features</h4>
+                      <div className="space-y-3">
+                        {solution.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                            <span className="text-accent font-medium">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Button Section */}
+                    <motion.button
+                      className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                      whileHover={{ x: 5, scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span className="mr-2">Learn More</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </motion.button>
+                  </div>
                 </div>
 
                 {/* Visual Element */}
