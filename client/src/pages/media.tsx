@@ -693,73 +693,55 @@ export default function Media() {
           />
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary text-accent px-6 py-3 rounded-full backdrop-blur-sm mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Star className="w-5 h-5" />
-            <span className="font-semibold">Premium Media Hub</span>
-          </motion.div>
-          
-          <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Stay Connected with Construction
-            <span className="block text-primary">Media & Resources</span>
-          </motion.h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+              Media & Resources
+            </h1>
+            {/* Animated underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
+            />
+          </motion.div>
           
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Access our latest industry insights, success stories, and expert analysis from the construction procurement sector. Stay informed with comprehensive coverage of developments and achievements that matter to your business.
+            Latest News, Updates & Industry Insights
           </motion.p>
-          
-          {/* Scroll indicator */}
-          <motion.div
-            className="mt-12 md:mt-16 flex flex-col items-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+
+          <motion.button
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            onClick={() => {
+              const contentSection = document.getElementById('media-content');
+              if (contentSection) {
+                setHeroAnimated(true);
+                setTimeout(() => {
+                  contentSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }, 400);
+              }
+            }}
           >
-            <motion.div
-              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-              onClick={() => {
-                const contentSection = document.getElementById('media-content');
-                if (contentSection) {
-                  setHeroAnimated(true);
-                  setTimeout(() => {
-                    contentSection.scrollIntoView({ 
-                      behavior: 'smooth',
-                      block: 'start'
-                    });
-                  }, 400);
-                }
-              }}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowRight className="w-6 h-6 text-white rotate-90" />
-            </motion.div>
-            <motion.p
-              className="text-white/80 text-sm mt-3 font-medium"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-            >
-              Explore Media
-            </motion.p>
-          </motion.div>
+            Explore Media
+          </motion.button>
         </div>
       </section>
 

@@ -161,79 +161,44 @@ export default function Contact() {
           />
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Star className="w-4 h-4" />
-            <span className="font-medium">24/7 Support</span>
-          </motion.div>
-          
-          <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Let's Connect
-            <span className="block text-primary">Contact Us</span>
-          </motion.h1>
-          <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Ready to transform your construction procurement? Get in touch with our team to discuss 
-            your project requirements and discover how IndoSup can streamline your operations.
-          </motion.p>
-          
-          <motion.div
-            className="flex flex-wrap justify-center items-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <motion.button
-              onClick={scrollToOffices}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Building className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Offices</span>
-            </motion.button>
-            <motion.button
-              onClick={scrollToContactForm}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Expert Support</span>
-            </motion.button>
-            <motion.button
-              onClick={scrollToContactForm}
-              className="flex items-center space-x-2 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-all duration-300 cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <HeadphonesIcon className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">24/7 Available</span>
-            </motion.button>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+              Contact IndoSup
+            </h1>
+            {/* Animated underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
+            />
           </motion.div>
           
           <motion.p
-            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Connect with our experts and discover how we can optimize your construction procurement process.
+            Professional Construction Support & Expert Guidance
           </motion.p>
+
+          <motion.button
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            onClick={scrollToContactForm}
+          >
+            Get in Touch
+          </motion.button>
         </div>
 
         {/* Scroll Indicator */}

@@ -139,53 +139,44 @@ export default function SteelProducts() {
           />
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              className="inline-flex items-center space-x-2 bg-primary text-accent px-6 py-3 rounded-full backdrop-blur-sm font-semibold"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Star className="w-5 h-5" />
-              <span>Premium Steel Products</span>
-            </motion.div>
-            
-            <Link to="/products/non-steel">
-              <motion.button
-                className="inline-flex items-center space-x-2 bg-white/10 text-white px-6 py-3 rounded-full backdrop-blur-sm font-semibold hover:bg-white/20 transition-all duration-300 border-2 border-white/30"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Package className="w-5 h-5" />
-                <span>Non Steel Products</span>
-                <ArrowLeft className="w-4 h-4 rotate-180" />
-              </motion.button>
-            </Link>
-          </motion.div>
-          
-          <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Premium Quality
-            <span className="block text-primary">Steel Products</span>
-          </motion.h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+              Steel Products
+            </h1>
+            {/* Animated underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
+            />
+          </motion.div>
           
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover our comprehensive range of high-quality steel products designed for modern construction and industrial applications. From structural steel to reinforcement products, we provide everything you need for your construction projects.
+            Premium Quality Steel Construction Materials
           </motion.p>
+
+          <motion.button
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            onClick={scrollToContent}
+          >
+            Explore Products
+          </motion.button>
         </div>
 
         {/* Scroll Indicator */}

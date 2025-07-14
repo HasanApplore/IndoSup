@@ -192,35 +192,44 @@ export default function Careers() {
           />
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Star className="w-4 h-4" />
-            <span className="font-medium">We're Hiring!</span>
-          </motion.div>
-          
-          <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Join IndoSup's Mission
-            <span className="block text-primary mt-2">Build Tomorrow's Construction</span>
-          </motion.h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+              Career Opportunities
+            </h1>
+            {/* Animated underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
+            />
+          </motion.div>
+          
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Be part of India's fastest-growing construction procurement platform. Shape the future of 
-            how construction companies source materials and accelerate project delivery nationwide.
+            Build Your Future with Construction Innovation
           </motion.p>
+
+          <motion.button
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            onClick={scrollToJobs}
+          >
+            Explore Opportunities
+          </motion.button>
         </div>
 
         {/* Scroll Indicator */}
