@@ -387,17 +387,17 @@ export default function About() {
             >
               <div className="relative">
                 {/* Main Carousel Image */}
-                <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <div key={currentImageIndex} className="relative overflow-hidden rounded-xl shadow-2xl">
                   <img 
-                    src={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].src : carouselImages[0].src}
-                    alt={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].alt : carouselImages[0].alt}
+                    src={carouselImages[currentImageIndex]?.src}
+                    alt={carouselImages[currentImageIndex]?.alt}
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   
                   {/* Category Label at Bottom */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent p-6">
                     <h3 className="text-white text-xl font-bold mb-2">
-                      {currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].title : carouselImages[0].title}
+                      {carouselImages[currentImageIndex]?.title}
                     </h3>
                   </div>
                   
