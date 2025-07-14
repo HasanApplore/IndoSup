@@ -244,7 +244,7 @@ export default function NewInitiatives() {
           </motion.div>
 
           <motion.div
-            className="space-y-16 md:space-y-20"
+            className="space-y-12 md:space-y-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
