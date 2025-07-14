@@ -217,7 +217,7 @@ export default function About() {
             alt="About IndoSup - Construction Procurement Excellence"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
         {/* Animated background elements */}
@@ -261,32 +261,143 @@ export default function About() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-          <motion.h1
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2"
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            About IndoSup
-          </motion.h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6" style={{ color: '#ffffff' }}>
+              About IndoSup
+            </h1>
+            {/* Animated underline */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
+            />
+          </motion.div>
           
           <motion.p
-            className="text-sm md:text-base text-white/90"
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Leading Construction Procurement Solutions
+            Transforming Construction Procurement Through Innovation
           </motion.p>
+
+          <motion.button
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            onClick={scrollToContent}
+          >
+            Learn More
+          </motion.button>
         </div>
       </section>
 
 
 
       {/* What Is IndoSup Section */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
+        
+        {/* Key Highlights Section */}
+        <div className="container mx-auto px-4 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <motion.div
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Award className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
+              <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+            </motion.div>
+            
+            <motion.div
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Building className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
+              <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
+            </motion.div>
+            
+            <motion.div
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Globe className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>Global Reach</h3>
+              <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Section Divider */}
+        <div className="container mx-auto px-4 mb-16">
+          <div className="w-full h-px bg-gray-300"></div>
+        </div>
+        
+        {/* Main Content */}
+        <div className="container mx-auto px-4" style={{ padding: '60px 20px' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ gap: '40px' }}>
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#0E2F44' }}>What Is IndoSup?</h2>
+              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
+                IndoSup is revolutionizing India's construction procurement landscape through innovative digital solutions. 
+                We connect builders, contractors, and suppliers through a seamless platform that ensures quality, 
+                transparency, and efficiency in every transaction.
+              </p>
+              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
+                Our mission is to transform how construction materials are sourced, procured, and delivered across India. 
+                With a focus on technology-driven solutions, we're building the future of construction procurement.
+              </p>
+            </motion.div>
+            
+            {/* Image Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <img 
+                src={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].src : carouselImages[0].src}
+                alt={currentImageIndex < carouselImages.length ? carouselImages[currentImageIndex].alt : carouselImages[0].alt}
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                style={{ borderRadius: '12px', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)' }}
+              />
+            </motion.div>
+          </div>
+        </div>
         
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -315,141 +426,31 @@ export default function About() {
             }}
           />
         </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
-          <motion.div
-            className="text-center mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-8 font-inter">
-              About IndoSup
-            </h1>
-            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="space-y-8">
-              <motion.h2 
-                className="text-2xl md:text-3xl font-bold text-accent leading-tight"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Your convenient source for hassle-free construction material procurement.
-              </motion.h2>
-              <motion.p 
-                className="text-lg text-neutral-base leading-relaxed"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                IndoSup connects 400+ retailers, 350+ distributors, 300+ brands, and 50+ stockists 
-                through our AI-enabled platform, streamlining construction procurement nationwide.
-              </motion.p>
-              
-              {/* Statistics Cards */}
-              <motion.div 
-                className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-                    whileHover={{ y: -5, scale: 1.05 }}
-                  >
-                    <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-full mx-auto mb-3 group-hover:bg-accent transition-colors duration-300">
-                      <div className="text-white group-hover:text-primary transition-colors duration-300">
-                        {stat.icon}
-                      </div>
-                    </div>
-                    <div className="text-xl font-bold text-accent text-center">{stat.number}</div>
-                    <div className="text-sm text-neutral-base text-center">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-            
-            {/* Multi-Image Carousel */}
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <div className="w-full h-96 bg-white rounded-2xl shadow-xl overflow-hidden relative">
-                {/* Carousel Images */}
-                <div className="relative w-full h-full">
-                  {carouselImages.map((image, index) => (
-                    <motion.div
-                      key={index}
-                      className={`absolute inset-0 transition-opacity duration-700 ${
-                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                      }`}
-                    >
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      <div className="absolute bottom-6 left-6 text-white">
-                        <h3 className="text-xl font-bold">{image.title}</h3>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Dots Indicator */}
-                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {carouselImages.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentImageIndex ? 'bg-primary scale-125' : 'bg-white/60'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="container mx-auto px-4 my-16">
+        <div className="w-full h-px bg-gray-300"></div>
+      </div>
+
       {/* Our Leadership */}
-      <section id="leadership" className="py-12 md:py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <section id="leadership" className="py-16 bg-gradient-to-br from-[#fbf5e8] to-white">
+        <div className="container mx-auto px-4" style={{ padding: '60px 20px' }}>
           <motion.div
-            className="text-center mb-10 md:mb-14"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-3xl font-bold mb-6" style={{ color: '#0E2F44' }}>
               Our Leadership
             </h2>
-            <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
+            <div className="w-24 h-1 bg-[#F5A623] mx-auto"></div>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -459,11 +460,12 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/40 relative"
-                whileHover={{ y: -10, scale: 1.03 }}
+                className="group bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
+                whileHover={{ scale: 1.05 }}
+                style={{ borderRadius: '12px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}
               >
                 {/* Image Section */}
-                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#F5A623]/10 to-[#0E2F44]/10">
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -479,16 +481,16 @@ export default function About() {
                 </div>
                 
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>
                     {leader.name}
                   </h3>
-                  <p className="text-primary font-semibold text-base mb-4">
+                  <p className="text-[#F5A623] font-semibold text-base mb-4">
                     {leader.position}
                   </p>
                   
                   {/* Enhanced role description */}
                   <div className="mb-6">
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm" style={{ lineHeight: '1.6' }}>
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology with over 10 years of industry experience"}
                       {index === 1 && "Operations expert focused on streamlining business processes and ensuring operational excellence across all verticals"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion through strategic financial planning"}
@@ -506,17 +508,17 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#0077B5] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#005885] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#0E2F44] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#F5A623] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
-                      whileHover={{ scale: 1.15 }}
+                      whileHover={{ scale: 1.05 }}
                     >
                       <Linkedin className="w-4 h-4" />
                     </motion.a>
                     <motion.a
                       href={`mailto:${leader.email}`}
-                      className="w-10 h-10 bg-[#FFC600] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#e6b300] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#F5A623] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#0E2F44] transition-all duration-300 hover:shadow-lg"
                       title="Send Email"
-                      whileHover={{ scale: 1.15 }}
+                      whileHover={{ scale: 1.05 }}
                     >
                       <Mail className="w-4 h-4" />
                     </motion.a>
@@ -840,12 +842,12 @@ export default function About() {
       {showScrollTop && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-accent z-50"
+          className="fixed bottom-6 right-6 w-12 h-12 bg-[#0E2F44] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-[#F5A623] z-50"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <ArrowUp className="w-6 h-6" />
         </motion.button>
