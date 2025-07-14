@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info & Social Media */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4">
             <div>
               <h4 className="text-lg font-bold mb-6 text-white flex items-center">
                 <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
@@ -148,8 +148,8 @@ export default function Footer() {
             </div>
 
             <div>
-              <h5 className="text-sm font-semibold mb-4 text-white">Follow Us</h5>
-              <div className="flex space-x-4">
+              <h5 className="text-sm font-semibold mb-3 text-white">Follow Us</h5>
+              <div className="flex items-center space-x-4">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
                   return (
