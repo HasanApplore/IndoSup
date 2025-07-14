@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown, ChevronDown } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import contactBannerImage from '@assets/contact-page_1752235303334.png';
+import constructionImage1 from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
+import constructionImage2 from '@assets/assorted-steel-bars-pipes_1077802-159331_1752217650726.jpg';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -227,24 +229,111 @@ export default function Contact() {
       <section className="py-5 md:py-8 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">
+              Get In Touch With Us
+            </h2>
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+            <p className="text-base text-neutral-base mt-4 max-w-xl mx-auto">
+              Ready to transform your construction projects? Let's discuss your requirements and build something amazing together.
+            </p>
+          </motion.div>
 
-
-          <div className="max-w-2xl mx-auto">
-            {/* Contact Form */}
+          {/* Contact Form and Images Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" id="contact-form-section">
+            
+            {/* Left Side - Images */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center"
-              id="contact-form-section"
+              className="space-y-6"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">
+              {/* Construction Image 1 */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+                <img 
+                  src={constructionImage1} 
+                  alt="Professional electrical work and construction services"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-lg font-semibold">Expert Electrical Solutions</h3>
+                  <p className="text-sm">Professional installation and maintenance</p>
+                </div>
+              </div>
+
+              {/* Construction Image 2 */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+                <img 
+                  src={constructionImage2} 
+                  alt="Quality steel bars and construction materials"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-lg font-semibold">Premium Steel Products</h3>
+                  <p className="text-sm">High-quality materials for construction</p>
+                </div>
+              </div>
+
+              {/* Contact Info Cards */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-accent mb-4">Quick Contact</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="text-sm font-medium">Sales Queries</p>
+                      <a href="tel:+918802114204" className="text-accent hover:text-primary transition-colors">
+                        +91 880 211 4204
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="text-sm font-medium">Email Us</p>
+                      <a href="mailto:sales@indosup.com" className="text-accent hover:text-primary transition-colors">
+                        sales@indosup.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="text-sm font-medium">Visit Us</p>
+                      <p className="text-accent text-sm">
+                        C-120, 2nd Floor, Sector 2<br />
+                        Noida, Uttar Pradesh - 201301
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-2xl p-8 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold text-accent mb-6 text-center">
                 Send us a Message
-              </h2>
-              <div className="w-12 h-1 bg-primary mb-6 mx-auto"></div>
+              </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-accent mb-2">
@@ -256,7 +345,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -271,7 +360,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -287,7 +376,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -301,7 +390,7 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your company name"
                     />
                   </div>
@@ -317,7 +406,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-none"
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>
@@ -325,7 +414,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-accent font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-primary text-accent font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
@@ -339,64 +428,6 @@ export default function Contact() {
               </form>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-
-
-      {/* Google Map */}
-      <section className="py-5 md:py-8" id="find-us-section">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <motion.div
-            className="text-center mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4 font-inter">
-              Find Us
-            </h2>
-            <div className="w-16 h-1 bg-primary mx-auto"></div>
-            <p className="text-base text-neutral-base mt-4 max-w-xl mx-auto">
-              Visit our office at C-120, 2nd Floor, Sector 2, Noida, Uttar Pradesh - 201301
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-white rounded-xl shadow-lg overflow-hidden max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="h-64 relative">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6167887896447!2d77.3100975!3d28.5984463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc3b7!2sC-120%2C%20Sector%202%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1673123456789&markers=color:red%7Csize:large%7Clabel:I%7C28.5984463,77.3100975"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="IndoSup Office Location - C-120, 2nd Floor, Sector 2, Noida"
-              />
-            </div>
-            
-            <div className="p-4 bg-gray-50 border-t">
-              <a 
-                href="https://www.google.com/maps/place/C-120,+Sector+2,+Noida,+Uttar+Pradesh+201301/@28.5984463,77.3100975,17z/data=!3m1!4b1!4m5!3m4!1s0x390ce5a43173357b:0x37ffce30c87cc3b7!8m2!3d28.5984463!4d77.3100975"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 text-accent hover:text-primary transition-colors duration-300 group"
-                title="Click to open in Google Maps"
-              >
-                <MapPin className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-medium">Open in Google Maps</span>
-                <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-              </a>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
