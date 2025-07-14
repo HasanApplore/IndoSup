@@ -426,9 +426,9 @@ export default function About() {
 
       {/* Our Leadership */}
       <section id="leadership" className="py-8 bg-gradient-to-br from-[#fbf5e8] to-white">
-        <div className="container mx-auto px-4" style={{ padding: '60px 20px' }}>
+        <div className="container mx-auto px-4" style={{ padding: '20px 20px 60px 20px' }}>
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
