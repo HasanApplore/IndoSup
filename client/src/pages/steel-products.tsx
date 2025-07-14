@@ -141,31 +141,13 @@ export default function SteelProducts() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.div
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8"
+            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              className="inline-flex items-center space-x-2 bg-primary text-accent px-6 py-3 rounded-full backdrop-blur-sm font-semibold"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Star className="w-5 h-5" />
-              <span>Premium Steel Products</span>
-            </motion.div>
-            
-            <Link to="/products/non-steel">
-              <motion.button
-                className="inline-flex items-center space-x-2 bg-white/10 text-white px-6 py-3 rounded-full backdrop-blur-sm font-semibold hover:bg-white/20 transition-all duration-300 border-2 border-white/30"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Package className="w-5 h-5" />
-                <span>Non Steel Products</span>
-                <ArrowLeft className="w-4 h-4 rotate-180" />
-              </motion.button>
-            </Link>
+            <Star className="w-4 h-4" />
+            <span className="font-medium">Premium Steel Products</span>
           </motion.div>
           
           <motion.h1
@@ -177,24 +159,14 @@ export default function SteelProducts() {
             Premium Quality
             <span className="block text-primary">Steel Products</span>
           </motion.h1>
+          
           <motion.p
-            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover our comprehensive range of high-quality steel products designed for modern construction and industrial applications.
-          </motion.p>
-          
-
-          
-          <motion.p
-            className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            From structural steel to reinforcement products, we provide everything you need for your construction projects.
+            Discover our comprehensive range of high-quality steel products designed for modern construction and industrial applications. From structural steel to reinforcement products, we provide everything you need for your construction projects.
           </motion.p>
         </div>
 
