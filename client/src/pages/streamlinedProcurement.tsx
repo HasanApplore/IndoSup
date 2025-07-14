@@ -249,93 +249,93 @@ export default function StreamlinedProcurement() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('multi-site-procurement')}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <Building2 className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <Building2 className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Multi-site</h3>
-              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Procurement</p>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Multi-site</h3>
+              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Procurement</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('sku-price-accuracy')}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <Calculator className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <Calculator className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Price</h3>
-              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Accuracy</p>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Price</h3>
+              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Accuracy</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('supply-chain-solutions')}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ x: [0, 5, -5, 0] }}
                 transition={{ duration: 0.6 }}
               >
-                <Truck className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <Truck className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Supply Chain</h3>
-              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Solutions</p>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Supply Chain</h3>
+              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Solutions</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('gst-billing-compliance')}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 0.4 }}
               >
-                <FileText className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <FileText className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">GST</h3>
-              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Compliance</p>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">GST</h3>
+              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Compliance</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('order-management')}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors duration-300"
+                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ rotate: [0, 180, 360] }}
                 transition={{ duration: 0.6 }}
               >
-                <Package className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <Package className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-primary transition-colors duration-300">Order</h3>
-              <p className="text-neutral-base text-sm group-hover:text-accent transition-colors duration-300">Management</p>
+              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Order</h3>
+              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Management</p>
             </motion.div>
           </motion.div>
 
