@@ -258,128 +258,144 @@ export default function NewInitiatives() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+            className="space-y-12 md:space-y-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* Global Private Limited Card */}
-            <motion.div variants={cardVariants} id="global-private-section">
-              <Link to="/contact">
-                <motion.div
-                  className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl h-full"
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                      <Building2 className="w-8 h-8" />
+            {/* Global Private Limited Row */}
+            <motion.div
+              variants={cardVariants}
+              id="global-private-section"
+              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+            >
+              {/* Content */}
+              <div className="flex-1 space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                    <Building2 className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-accent">
+                      IndoSup Global Private Limited
+                    </h3>
+                    <div className="w-12 h-1 bg-primary mt-2"></div>
+                  </div>
+                </div>
+
+                <p className="text-lg text-neutral-base leading-relaxed">
+                  Leading construction procurement solutions with global reach and local expertise,
+                  streamlining supply chain management for modern infrastructure projects.
+                </p>
+
+                <p className="text-base text-neutral-base/80 leading-relaxed">
+                  Advanced digital platform connecting construction companies with trusted suppliers worldwide,
+                  ensuring quality, efficiency, and cost-effectiveness in every project.
+                </p>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  {globalPrivateServices.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-accent font-medium">{service}</span>
                     </div>
-                    <motion.div
-                      className="text-primary group-hover:text-accent transition-colors duration-300"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <ArrowRight className="w-6 h-6" />
-                    </motion.div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Title */}
-                  <h3 className="text-3xl md:text-4xl font-bold text-accent mb-6 group-hover:text-primary transition-colors duration-300">
-                    IndoSup Global Private Limited
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-neutral-base text-lg mb-8 leading-relaxed">
-                    Leading construction procurement solutions with global reach and local expertise,
-                    streamlining supply chain management for modern infrastructure projects.
-                  </p>
-
-                  {/* Product List */}
-                  <div className="space-y-3 mb-8">
-                    {globalPrivateServices.map((product, index) => (
-                      <motion.div
-                        key={index}
-                        className="flex items-center space-x-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                      >
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-accent font-medium">{product}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-primary font-semibold group-hover:text-accent transition-colors duration-300">
+                <Link to="/contact">
+                  <motion.button
+                    className="inline-flex items-center text-primary font-semibold hover:text-accent transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                  >
                     <span className="mr-2">Learn More About Global Private</span>
                     <ArrowRight className="w-5 h-5" />
-                  </div>
-                </motion.div>
-              </Link>
-            </motion.div>
+                  </motion.button>
+                </Link>
+              </div>
 
-            {/* Global Assist Limited Card */}
-            <motion.div variants={cardVariants} id="global-assist-section">
-              <Link to="/contact">
+              {/* Visual Element */}
+              <div className="flex-1 max-w-md lg:max-w-lg">
                 <motion.div
-                  className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl h-full"
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="relative"
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                      <Users className="w-8 h-8" />
+                  <img
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="IndoSup Global Private Limited - Construction Procurement"
+                    className="w-full h-80 object-cover rounded-3xl shadow-lg"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Global Assist Limited Row */}
+            <motion.div
+              variants={cardVariants}
+              id="global-assist-section"
+              className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12"
+            >
+              {/* Content */}
+              <div className="flex-1 space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                    <Users className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-accent">
+                      IndoSup Global Assist Limited
+                    </h3>
+                    <div className="w-12 h-1 bg-accent mt-2"></div>
+                  </div>
+                </div>
+
+                <p className="text-lg text-neutral-base leading-relaxed">
+                  Comprehensive technical consulting and project management support,
+                  delivering specialized expertise for complex construction initiatives.
+                </p>
+
+                <p className="text-base text-neutral-base/80 leading-relaxed">
+                  Expert consulting services providing strategic guidance, technical support, and process optimization
+                  to enhance construction project outcomes and operational efficiency.
+                </p>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  {globalAssistServices.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                      <span className="text-accent font-medium">{service}</span>
                     </div>
-                    <motion.div
-                      className="text-primary group-hover:text-accent transition-colors duration-300"
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <ArrowRight className="w-6 h-6" />
-                    </motion.div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Title */}
-                  <h3 className="text-3xl md:text-4xl font-bold text-accent mb-6 group-hover:text-primary transition-colors duration-300">
-                    IndoSup Global Assist Limited
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-neutral-base text-lg mb-8 leading-relaxed">
-                    Comprehensive technical consulting and project management support,
-                    delivering specialized expertise for complex construction initiatives.
-                  </p>
-
-                  {/* Product List */}
-                  <div className="space-y-3 mb-8">
-                    {globalAssistServices.map((product, index) => (
-                      <motion.div
-                        key={index}
-                        className="flex items-center space-x-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                      >
-                        <div className="w-2 h-2 bg-accent rounded-full"></div>
-                        <span className="text-accent font-medium">{product}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-primary font-semibold group-hover:text-accent transition-colors duration-300">
+                <Link to="/contact">
+                  <motion.button
+                    className="inline-flex items-center text-accent font-semibold hover:text-primary transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                  >
                     <span className="mr-2">Learn More About Global Assist</span>
                     <ArrowRight className="w-5 h-5" />
-                  </div>
+                  </motion.button>
+                </Link>
+              </div>
+
+              {/* Visual Element */}
+              <div className="flex-1 max-w-md lg:max-w-lg">
+                <motion.div
+                  className="relative"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="IndoSup Global Assist Limited - Technical Consulting"
+                    className="w-full h-80 object-cover rounded-3xl shadow-lg"
+                  />
                 </motion.div>
-              </Link>
+              </div>
             </motion.div>
           </motion.div>
         </div>
