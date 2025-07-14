@@ -207,7 +207,7 @@ export default function NewInitiatives() {
 
 
       {/* Company Categories */}
-      <section className="py-20 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-16 md:mb-20"
