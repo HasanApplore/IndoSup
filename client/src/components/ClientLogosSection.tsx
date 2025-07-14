@@ -38,7 +38,7 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="pt-6 pb-12 md:pt-10 md:pb-16 relative overflow-hidden">
+    <section className="pt-6 pb-8 md:pt-10 md:pb-10 relative overflow-hidden">
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}

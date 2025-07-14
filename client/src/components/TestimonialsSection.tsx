@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="pt-8 pb-5 md:pt-12 md:pb-8 relative overflow-hidden">
+    <section className="pt-6 pb-5 md:pt-8 md:pb-8 relative overflow-hidden">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         {/* Section Header */}
