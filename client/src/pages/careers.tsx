@@ -239,7 +239,6 @@ export default function Careers() {
             }}
           >
             <div className="flex flex-col items-center space-y-2">
-              <span className="text-white text-sm font-medium">Explore Opportunities</span>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -247,6 +246,7 @@ export default function Careers() {
               >
                 <ArrowDown className="w-6 h-6 text-white" />
               </motion.div>
+              <span className="text-white text-sm font-medium">Explore Opportunities</span>
             </div>
           </motion.div>
         </div>
