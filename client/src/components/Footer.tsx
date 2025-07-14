@@ -125,6 +125,26 @@ export default function Footer() {
                     </a>
                   </div>
                   
+                  {/* Social Media Links */}
+                  <div className="flex items-center space-x-4 pl-9">
+                    {socialLinks.map((social, index) => {
+                      const IconComponent = social.icon;
+                      return (
+                        <motion.a
+                          key={index}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          title={social.label}
+                        >
+                          <IconComponent className="w-4 h-4" />
+                        </motion.a>
+                      );
+                    })}
+                  </div>
 
                 </div>
                 
@@ -147,28 +167,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
-              <h5 className="text-sm font-semibold mb-3 text-white">Follow Us</h5>
-              <div className="flex items-center space-x-4">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      title={social.label}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            </div>
+
           </div>
 
 
