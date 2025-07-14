@@ -118,7 +118,7 @@ export default function StreamlinedProcurement() {
             alt="Streamlined Procurement Solutions"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
         </div>
         
         {/* Animated background elements */}
@@ -153,36 +153,26 @@ export default function StreamlinedProcurement() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center relative z-10">
           <motion.div
-            className="inline-flex items-center space-x-2 bg-[#F5A623]/20 text-[#F5A623] px-6 py-3 rounded-full backdrop-blur-sm mb-8 shadow-lg border border-[#F5A623]/30"
+            className="inline-flex items-center space-x-2 bg-primary/20 text-primary px-4 py-2 rounded-full backdrop-blur-sm mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Star className="w-5 h-5" />
-            <span className="font-semibold">Digital Innovation</span>
+            <Star className="w-4 h-4" />
+            <span className="font-medium">Digital Innovation</span>
           </motion.div>
           
-          <motion.div
+          <motion.h1
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Transforming Construction
-              <span className="block text-[#F5A623]">Streamlined Procurement</span>
-            </h1>
-            {/* Animated underline */}
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "160px" }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="h-1 bg-[#F5A623] mx-auto mb-8"
-            />
-          </motion.div>
-          
+            Transforming Construction
+            <span className="block text-primary">Streamlined Procurement</span>
+          </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-4xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -191,15 +181,6 @@ export default function StreamlinedProcurement() {
             source, manage, and deliver materials across India's diverse markets.
           </motion.p>
           
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            onClick={scrollToContent}
-            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
-          >
-            Explore Solutions
-          </motion.button>
 
         </div>
 
@@ -212,14 +193,14 @@ export default function StreamlinedProcurement() {
             transition={{ delay: 1, duration: 0.8 }}
             onClick={scrollToContent}
           >
-            <div className="flex flex-col items-center space-y-3">
-              <span className="text-white text-sm font-medium">Discover Solutions</span>
+            <div className="flex flex-col items-center space-y-2">
+              <span className="text-white text-sm">Streamlined Procurement</span>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-14 h-14 bg-[#F5A623]/20 border-2 border-[#F5A623]/40 rounded-full backdrop-blur-sm flex items-center justify-center hover:bg-[#F5A623]/30 transition-colors duration-300"
+                className="w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
               >
-                <ArrowDown className="w-6 h-6 text-[#F5A623]" />
+                <ArrowDown className="w-6 h-6 text-white" />
               </motion.div>
             </div>
           </motion.div>
