@@ -300,43 +300,38 @@ export default function Catalogues() {
           >
             Everything you need for informed construction procurement decisions.
           </motion.p>
-          
-          {/* Scroll indicator */}
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
           <motion.div
-            className="mt-12 md:mt-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            className="cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
+            onClick={() => {
+              const contentSection = document.getElementById('catalogues-content');
+              if (contentSection) {
+                setHeroAnimated(true);
+                setTimeout(() => {
+                  contentSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }, 400);
+              }
+            }}
           >
-            <motion.div
-              className="w-12 h-12 border-2 border-white/70 rounded-full flex items-center justify-center mx-auto cursor-pointer hover:border-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-              onClick={() => {
-                const contentSection = document.getElementById('catalogues-content');
-                if (contentSection) {
-                  setHeroAnimated(true);
-                  setTimeout(() => {
-                    contentSection.scrollIntoView({ 
-                      behavior: 'smooth',
-                      block: 'start'
-                    });
-                  }, 400);
-                }
-              }}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowRight className="w-6 h-6 text-white rotate-90" />
-            </motion.div>
-            <motion.p
-              className="text-white/70 text-sm mt-3 font-medium"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-            >
-              Browse Catalogues
-            </motion.p>
+            <div className="flex flex-col items-center space-y-2">
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-12 h-12 bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors duration-300"
+              >
+                <ArrowDown className="w-6 h-6 text-white" />
+              </motion.div>
+              <span className="text-white text-sm font-medium">Browse Catalogues</span>
+            </div>
           </motion.div>
         </div>
       </section>
