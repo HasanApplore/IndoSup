@@ -120,23 +120,7 @@ export default function Footer() {
                     </a>
                   </div>
                   
-                  {/* Newsletter Signup */}
-                  <div className="pt-4">
-                    <h5 className="text-sm font-semibold mb-3 text-white">Newsletter</h5>
-                    <p className="text-sm text-gray-300 mb-4 leading-relaxed">
-                      Get updates on new products and exclusive offers.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-2">
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="flex-1 px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-                      />
-                      <button className="bg-primary text-accent font-semibold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors duration-200">
-                        Subscribe
-                      </button>
-                    </div>
-                  </div>
+
                 </div>
                 
                 {/* Google Maps Embed */}
