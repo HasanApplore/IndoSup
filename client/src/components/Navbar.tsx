@@ -7,7 +7,9 @@ import logoImage from '@/assets/indosup-logo-new.png';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
+  const [isInitiativesDropdownOpen, setIsInitiativesDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const initiativesDropdownRef = useRef(null);
   const [location] = useLocation();
 
   const toggleMenu = () => {
@@ -18,11 +20,18 @@ export default function Navbar() {
     setIsBusinessDropdownOpen(!isBusinessDropdownOpen);
   };
 
+  const toggleInitiativesDropdown = () => {
+    setIsInitiativesDropdownOpen(!isInitiativesDropdownOpen);
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsBusinessDropdownOpen(false);
+      }
+      if (initiativesDropdownRef.current && !initiativesDropdownRef.current.contains(event.target)) {
+        setIsInitiativesDropdownOpen(false);
       }
     };
 
@@ -36,6 +45,29 @@ export default function Navbar() {
   const handleLinkClick = () => {
     setIsMenuOpen(false);
     setIsBusinessDropdownOpen(false);
+    setIsInitiativesDropdownOpen(false);
+  };
+
+  // Navigate to specific sections on New Initiatives page
+  const navigateToInitiativeSection = (sectionId) => {
+    if (location === '/new-initiatives') {
+      // If already on the page, scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      // Navigate to page then scroll to section
+      window.location.href = `/new-initiatives#${sectionId}`;
+    }
+    handleLinkClick();
   };
 
   // Helper function to check if a link is active
@@ -79,18 +111,44 @@ export default function Navbar() {
                 isActivePath('/about') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
-            <Link 
-              to="/new-initiatives" 
-              className={`transition-colors duration-200 relative group font-medium ${
-                isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
-              }`}
-              onClick={handleLinkClick}
-            >
-              New Initiatives
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                isActivePath('/new-initiatives') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
-            </Link>
+            {/* New Initiatives Dropdown */}
+            <div className="relative" ref={initiativesDropdownRef}>
+              <button
+                onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
+                onClick={toggleInitiativesDropdown}
+                className={`flex items-center transition-colors duration-200 relative group font-medium ${
+                  isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
+                }`}
+              >
+                New Initiatives
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  isActivePath('/new-initiatives') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </button>
+              
+              {isInitiativesDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                  onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
+                  onMouseLeave={() => setIsInitiativesDropdownOpen(false)}
+                >
+                  <button 
+                    onClick={() => navigateToInitiativeSection('global-private-section')}
+                    className="block w-full text-left px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
+                  >
+                    IndoSup Global Private Limited
+                  </button>
+                  <div className="border-t border-primary/20 my-2 mx-4"></div>
+                  <button 
+                    onClick={() => navigateToInitiativeSection('global-assist-section')}
+                    className="block w-full text-left px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
+                  >
+                    IndoSup Global Assist Limited
+                  </button>
+                </div>
+              )}
+            </div>
             <Link 
               to="/streamlined-procurement" 
               className={`transition-colors duration-200 relative group font-medium ${
@@ -217,15 +275,34 @@ export default function Navbar() {
               >
                 About Us
               </Link>
-              <Link 
-                to="/new-initiatives" 
-                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                  isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
-                }`}
-                onClick={handleLinkClick}
-              >
-                New Initiatives
-              </Link>
+              {/* Mobile New Initiatives Section */}
+              <div>
+                <button
+                  onClick={toggleInitiativesDropdown}
+                  className={`flex items-center justify-between w-full px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                    isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                  }`}
+                >
+                  New Initiatives
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isInitiativesDropdownOpen && (
+                  <div className="pl-3 mt-1 space-y-1">
+                    <button 
+                      onClick={() => navigateToInitiativeSection('global-private-section')}
+                      className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
+                    >
+                      Global Private Limited
+                    </button>
+                    <button 
+                      onClick={() => navigateToInitiativeSection('global-assist-section')}
+                      className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
+                    >
+                      Global Assist Limited
+                    </button>
+                  </div>
+                )}
+              </div>
               <Link 
                 to="/streamlined-procurement" 
                 className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${

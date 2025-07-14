@@ -28,6 +28,24 @@ export default function NewInitiatives() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle hash fragment navigation
+  useEffect(() => {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 500);
+    }
+  }, []);
+
   const scrollToContent = () => {
     const heroHeight = window.innerHeight * 0.55; // 55% of viewport height
     setHeroAnimated(true);
