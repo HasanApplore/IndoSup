@@ -104,8 +104,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
-
+    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#FFFDEE] to-[#F4F4F4] relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -115,11 +114,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-2 font-poppins">
             What Our Clients Say
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
+          <div className="h-1 w-12 bg-[#FFD95A] mx-auto my-4"></div>
+          <p className="text-gray-500 text-lg max-w-3xl mx-auto mt-2 font-poppins">
             Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>
@@ -130,19 +129,15 @@ export default function TestimonialsSection() {
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
-
-
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
-
-            <div className="bg-[#fbfbfc]/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-[#fbfbfc]">
-              {/* Decorative Elements */}
-              <div className="absolute top-0 left-0 w-20 h-20 bg-[#fada7e]/30 rounded-full -translate-x-10 -translate-y-10"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
+            <div className="bg-white/90 backdrop-blur-md shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-200 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300">
               
-              {/* Quote Icon - Centered */}
-              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                <Quote className="w-8 h-8 text-primary" />
+              {/* Quote Icon - Centered at top */}
+              <div className="flex justify-center mb-6">
+                <div className="bg-[#FFF3BF] w-12 h-12 flex items-center justify-center rounded-full">
+                  <Quote className="w-6 h-6 text-[#FFD95A]" />
+                </div>
               </div>
 
               <AnimatePresence mode="wait" custom={direction}>
@@ -158,30 +153,30 @@ export default function TestimonialsSection() {
                     opacity: { duration: 0.3 },
                     scale: { duration: 0.3 }
                   }}
-                  className="text-center pt-16"
+                  className="text-center"
                 >
-                  {/* Testimonial Quote - First */}
-                  <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
+                  {/* Testimonial Quote */}
+                  <blockquote className="text-lg text-gray-800 text-center italic leading-relaxed mb-6">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
-                  {/* Client Info - Last and smaller */}
+                  {/* Client Info */}
                   <div className="flex items-center justify-center gap-3">
-                    {/* Avatar - smaller */}
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                    {/* Client Profile Circle */}
+                    <div className="bg-[#FFD95A] text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
                       {currentTestimonial.avatar}
                     </div>
                     
-                    {/* Client Details - smaller */}
+                    {/* Client Details */}
                     <div className="text-left">
-                      <h4 className="font-bold text-accent text-base mb-1">
+                      <h4 className="text-xl text-[#1E293B] font-semibold mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-xs text-neutral-base mb-0.5">
+                      <p className="text-sm text-gray-500 mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-xs text-neutral-base opacity-75">
-                        {currentTestimonial.location} • {currentTestimonial.project}
+                      <p className="text-sm text-gray-500">
+                        {currentTestimonial.location}
                       </p>
                     </div>
                   </div>
@@ -192,15 +187,15 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Navigation Dots */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex justify-center mt-8 space-x-2">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
                 index === currentIndex 
-                  ? 'bg-primary w-8' 
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-[#FFD95A]' 
+                  : 'bg-[#D1D5DB] hover:bg-gray-400'
               }`}
             />
           ))}
