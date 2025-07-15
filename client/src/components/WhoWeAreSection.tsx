@@ -111,7 +111,7 @@ export default function WhoWeAreSection() {
                   variants={iconVariants}
                   whileHover="hover"
                 >
-                  <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
+                  <feature.icon className="w-8 h-8 text-primary group-hover:text-[#1E293B] transition-all duration-300 relative z-10" />
                 </motion.div>
 
                 {/* Title */}
