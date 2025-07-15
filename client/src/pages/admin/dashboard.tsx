@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useLocation } from 'wouter';
 import { 
   MessageSquare, 
   Briefcase, 
@@ -12,6 +13,8 @@ import {
 } from 'lucide-react';
 
 export default function AdminDashboard() {
+  const [, setLocation] = useLocation();
+  
   const { data: contactSubmissions } = useQuery({
     queryKey: ['/api/admin/contact-submissions'],
   });
@@ -42,44 +45,54 @@ export default function AdminDashboard() {
       value: contactSubmissions?.length || 0,
       icon: MessageSquare,
       color: 'bg-blue-500',
-      description: 'Total contact form submissions'
+      description: 'Total contact form submissions',
+      link: '/admin/contact-submissions'
     },
     {
       title: 'Active Jobs',
       value: jobs?.filter((job: any) => job.isActive).length || 0,
       icon: Briefcase,
       color: 'bg-green-500',
-      description: 'Currently open positions'
+      description: 'Currently open positions',
+      link: '/admin/jobs'
     },
     {
       title: 'Applications',
       value: applications?.length || 0,
       icon: Users,
       color: 'bg-purple-500',
-      description: 'Total job applications'
+      description: 'Total job applications',
+      link: '/admin/applications'
     },
     {
       title: 'Catalogues',
       value: catalogues?.length || 0,
       icon: FolderOpen,
       color: 'bg-orange-500',
-      description: 'Available product catalogues'
+      description: 'Available product catalogues',
+      link: '/admin/catalogues'
     },
     {
       title: 'Products',
       value: products?.length || 0,
       icon: Package,
       color: 'bg-red-500',
-      description: 'Total products in database'
+      description: 'Total products in database',
+      link: '/admin/products'
     },
     {
       title: 'Media Content',
       value: media?.length || 0,
       icon: Newspaper,
       color: 'bg-indigo-500',
-      description: 'Published media items'
+      description: 'Published media items',
+      link: '/admin/media'
     },
   ];
+
+  const handleCardClick = (link: string) => {
+    setLocation(link);
+  };
 
   const recentSubmissions = contactSubmissions?.slice(-5) || [];
   const recentApplications = applications?.slice(-5) || [];
@@ -111,7 +124,11 @@ export default function AdminDashboard() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {stats.map((stat) => (
-          <Card key={stat.title} className="hover:shadow-lg transition-shadow">
+          <Card 
+            key={stat.title} 
+            className="hover:shadow-lg transition-all duration-200 cursor-pointer hover:scale-105 hover:bg-gray-50"
+            onClick={() => handleCardClick(stat.link)}
+          >
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-gray-600">
                 {stat.title}
@@ -123,6 +140,9 @@ export default function AdminDashboard() {
             <CardContent>
               <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
               <p className="text-xs text-gray-500 mt-1">{stat.description}</p>
+              <div className="text-xs text-[#FFC600] mt-2 font-medium">
+                Click to manage →
+              </div>
             </CardContent>
           </Card>
         ))}
