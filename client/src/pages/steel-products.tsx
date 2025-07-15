@@ -300,7 +300,7 @@ export default function SteelProducts() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-2 md:py-4 ml-[0px] mr-[0px] mt-[-80px] mb-[-80px]">
+      <section className="py-2 md:py-4 ml-[0px] mr-[0px] mt-[-80px] mb-[80px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
