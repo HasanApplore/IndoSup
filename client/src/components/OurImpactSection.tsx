@@ -40,22 +40,22 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   );
 };
 
-// Animated Network Background Component
+// Clean Animated Network Background Component
 const NetworkBackground = () => {
   const [nodes, setNodes] = useState<Array<{ x: number; y: number; id: number }>>([]);
   const [connections, setConnections] = useState<Array<{ from: number; to: number }>>([]);
 
   useEffect(() => {
-    // Generate random nodes
-    const nodeCount = 25;
+    // Generate evenly distributed nodes for cleaner look
+    const nodeCount = 15;
     const newNodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
+      x: 10 + (i % 5) * 20 + Math.random() * 10,
+      y: 20 + Math.floor(i / 5) * 25 + Math.random() * 10,
     }));
     setNodes(newNodes);
 
-    // Generate connections between nearby nodes
+    // Generate selective connections for cleaner pattern
     const newConnections: Array<{ from: number; to: number }> = [];
     newNodes.forEach((node, i) => {
       newNodes.forEach((otherNode, j) => {
@@ -63,7 +63,7 @@ const NetworkBackground = () => {
           const distance = Math.sqrt(
             Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
           );
-          if (distance < 20 && Math.random() > 0.7) {
+          if (distance < 25 && Math.random() > 0.85) {
             newConnections.push({ from: i, to: j });
           }
         }
@@ -74,8 +74,9 @@ const NetworkBackground = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <svg className="w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {/* Animated connections */}
+      {/* Main Network Pattern */}
+      <svg className="w-full h-full opacity-8" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {/* Clean animated connections */}
         {connections.map((connection, index) => {
           const fromNode = nodes[connection.from];
           const toNode = nodes[connection.to];
@@ -88,71 +89,76 @@ const NetworkBackground = () => {
               y1={fromNode.y}
               x2={toNode.x}
               y2={toNode.y}
-              stroke="rgba(255, 255, 255, 0.3)"
-              strokeWidth="0.1"
+              stroke="rgba(255, 255, 255, 0.15)"
+              strokeWidth="0.08"
+              strokeDasharray="2 1"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ 
-                pathLength: 1, 
-                opacity: [0, 0.8, 0],
-                strokeWidth: [0.05, 0.15, 0.05]
+                pathLength: [0, 1, 0],
+                opacity: [0, 0.6, 0]
               }}
               transition={{
-                duration: 4,
+                duration: 8,
                 repeat: Infinity,
-                delay: index * 0.1,
-                ease: "linear"
+                delay: index * 0.3,
+                ease: "easeInOut"
               }}
             />
           );
         })}
         
-        {/* Animated nodes */}
+        {/* Refined animated nodes */}
         {nodes.map((node, index) => (
           <motion.circle
             key={node.id}
             cx={node.x}
             cy={node.y}
-            r="0.3"
-            fill="rgba(255, 217, 90, 0.6)"
+            r="0.2"
+            fill="rgba(255, 217, 90, 0.4)"
+            stroke="rgba(255, 255, 255, 0.2)"
+            strokeWidth="0.05"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ 
-              scale: [0.8, 1.2, 0.8],
-              opacity: [0.4, 0.8, 0.4]
+              scale: [0.8, 1.1, 0.8],
+              opacity: [0.3, 0.7, 0.3]
             }}
             transition={{
-              duration: 3,
+              duration: 4,
               repeat: Infinity,
-              delay: index * 0.05,
+              delay: index * 0.1,
               ease: "easeInOut"
             }}
           />
         ))}
       </svg>
       
-      {/* Moving geometric shapes */}
+      {/* Subtle floating elements */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute w-1 h-1 bg-white/10 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${20 + i * 15}%`,
+              top: `${30 + (i % 2) * 40}%`,
             }}
             animate={{
-              x: [0, Math.random() * 400 - 200, 0],
-              y: [0, Math.random() * 400 - 200, 0],
-              opacity: [0.2, 0.8, 0.2],
+              y: [0, -30, 0],
+              opacity: [0.1, 0.4, 0.1],
+              scale: [0.8, 1.2, 0.8]
             }}
             transition={{
-              duration: 6 + Math.random() * 4,
+              duration: 5 + i,
               repeat: Infinity,
-              delay: i * 0.5,
-              ease: "linear"
+              delay: i * 0.8,
+              ease: "easeInOut"
             }}
           />
         ))}
       </div>
+      
+      {/* Clean gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
     </div>
   );
 };
