@@ -91,25 +91,25 @@ const OurImpactSection = () => {
   };
 
   return (
-    <section className="py-16 bg-[#0F172A] relative overflow-hidden">
+    <section className="py-12 px-4 md:py-20 md:px-6 bg-[#0F172A] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1E3A8A] via-transparent to-[#FFD95A]"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-white mb-6 font-poppins">
             Our Impact
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto font-poppins">
             Transforming construction procurement across India with measurable results
           </p>
         </motion.div>

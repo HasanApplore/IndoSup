@@ -38,22 +38,22 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="pt-6 pb-8 md:pt-10 md:pb-10 relative overflow-hidden">
+    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 font-inter">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
             Our Trusted Partners
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-3"></div>
-          <p className="text-sm md:text-base text-neutral-base max-w-xl mx-auto">
+          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
             Collaborating with India's leading construction and infrastructure companies
           </p>
         </motion.div>
