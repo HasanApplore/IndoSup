@@ -140,48 +140,51 @@ export default function TestimonialsSection() {
                 </div>
               </div>
 
-              <AnimatePresence mode="wait" custom={direction}>
-                <motion.div
-                  key={currentIndex}
-                  custom={direction}
-                  variants={slideVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 400, damping: 25 },
-                    opacity: { duration: 0.3 },
-                    scale: { duration: 0.3 }
-                  }}
-                  className="text-center"
-                >
-                  {/* Testimonial Quote */}
-                  <blockquote className="text-lg text-white text-center italic leading-relaxed mb-6">
-                    "{currentTestimonial.testimonial}"
-                  </blockquote>
+              {/* Content Container - Only content animates */}
+              <div className="text-center min-h-[200px] relative overflow-hidden">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.div
+                    key={currentIndex}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{
+                      x: { type: "spring", stiffness: 400, damping: 25 },
+                      opacity: { duration: 0.3 },
+                      scale: { duration: 0.3 }
+                    }}
+                    className="absolute inset-0 flex flex-col justify-center"
+                  >
+                    {/* Testimonial Quote */}
+                    <blockquote className="text-lg text-white text-center italic leading-relaxed mb-6">
+                      "{currentTestimonial.testimonial}"
+                    </blockquote>
 
-                  {/* Client Info */}
-                  <div className="flex items-center justify-center gap-3">
-                    {/* Client Profile Circle */}
-                    <div className="bg-white/20 backdrop-blur-sm text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
-                      {currentTestimonial.avatar}
+                    {/* Client Info */}
+                    <div className="flex items-center justify-center gap-3">
+                      {/* Client Profile Circle */}
+                      <div className="bg-white/20 backdrop-blur-sm text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
+                        {currentTestimonial.avatar}
+                      </div>
+                      
+                      {/* Client Details */}
+                      <div className="text-left">
+                        <h4 className="text-xl text-white font-semibold mb-1">
+                          {currentTestimonial.name}
+                        </h4>
+                        <p className="text-sm text-gray-300 mb-0.5">
+                          {currentTestimonial.role} at {currentTestimonial.company}
+                        </p>
+                        <p className="text-sm text-gray-300">
+                          {currentTestimonial.location}
+                        </p>
+                      </div>
                     </div>
-                    
-                    {/* Client Details */}
-                    <div className="text-left">
-                      <h4 className="text-xl text-white font-semibold mb-1">
-                        {currentTestimonial.name}
-                      </h4>
-                      <p className="text-sm text-gray-300 mb-0.5">
-                        {currentTestimonial.role} at {currentTestimonial.company}
-                      </p>
-                      <p className="text-sm text-gray-300">
-                        {currentTestimonial.location}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
           </div>
         </div>
