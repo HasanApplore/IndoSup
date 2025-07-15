@@ -402,28 +402,60 @@ export default function JobApplications() {
               )}
 
               {/* Resume Section */}
-              {selectedApplication.resumeUrl && (
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-semibold text-gray-900 mb-3">Resume</h4>
-                  <div className="flex items-center space-x-4">
-                    <Button
-                      onClick={() => handleViewResume(selectedApplication.resumeUrl!)}
-                      className="flex items-center bg-blue-600 hover:bg-blue-700 text-white"
-                    >
-                      <Eye className="h-4 w-4 mr-2" />
-                      View Resume
-                    </Button>
-                    <Button
-                      onClick={() => handleDownloadResume(selectedApplication.resumeUrl!, selectedApplication.name)}
-                      variant="outline"
-                      className="flex items-center"
-                    >
-                      <Download className="h-4 w-4 mr-2" />
-                      Download Resume
-                    </Button>
+              <div className="p-4 border rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                  <FileText className="h-5 w-5 mr-2 text-blue-600" />
+                  Submitted Resume
+                </h4>
+                {selectedApplication.resumeUrl ? (
+                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                          <FileText className="h-6 w-6 text-red-600" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-900">{selectedApplication.name}_resume.pdf</p>
+                          <p className="text-sm text-gray-500">Submitted resume document</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 flex-wrap">
+                      <Button
+                        onClick={() => handleViewResume(selectedApplication.resumeUrl!)}
+                        className="flex items-center bg-blue-600 hover:bg-blue-700 text-white"
+                      >
+                        <Eye className="h-4 w-4 mr-2" />
+                        View Resume
+                      </Button>
+                      <Button
+                        onClick={() => handleDownloadResume(selectedApplication.resumeUrl!, selectedApplication.name)}
+                        variant="outline"
+                        className="flex items-center hover:bg-green-50 border-green-200 text-green-700 hover:text-green-800"
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        Download Resume
+                      </Button>
+                      <Button
+                        onClick={() => window.open(selectedApplication.resumeUrl!, '_blank')}
+                        variant="outline"
+                        className="flex items-center hover:bg-gray-50"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Open in New Tab
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              )}
+                ) : (
+                  <div className="bg-white rounded-lg p-6 border border-gray-200 text-center">
+                    <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <FileText className="h-8 w-8 text-gray-400" />
+                    </div>
+                    <p className="text-gray-500 text-sm">No resume was submitted with this application</p>
+                  </div>
+                )}
+              </div>
 
               {/* Status Management */}
               <div className="p-4 border rounded-lg">
