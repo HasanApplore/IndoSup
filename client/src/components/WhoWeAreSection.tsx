@@ -95,7 +95,7 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center cursor-pointer border border-gray-100 hover:border-primary/50 mt-[12px] mb-[12px] hover:bg-white/95 relative overflow-hidden"
+              className="group bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center cursor-pointer border border-gray-100 hover:border-primary mt-[12px] mb-[12px] hover:bg-white/95 relative overflow-hidden"
               variants={cardVariants}
               whileHover={{
                 y: -16,
@@ -103,10 +103,8 @@ export default function WhoWeAreSection() {
                 transition: { duration: 0.4 }
               }}
             >
-              {/* Glossy Neon Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 blur-sm rounded-2xl"></div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-primary/10 to-primary/30 rounded-2xl opacity-0 group-hover:opacity-100 blur-md transition-all duration-500"></div>
+              {/* Neon Border Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/60 via-primary/30 to-primary/60 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 -z-10"></div>
               
               {/* Content Container */}
               <div className="relative z-10">
@@ -116,8 +114,6 @@ export default function WhoWeAreSection() {
                   variants={iconVariants}
                   whileHover="hover"
                 >
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 blur-lg transition-all duration-500"></div>
                   <feature.icon className="w-10 h-10 text-primary group-hover:text-white transition-all duration-500 relative z-10" />
                 </motion.div>
 
