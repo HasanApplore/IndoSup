@@ -82,20 +82,17 @@ export default function TestimonialsSection() {
   };
 
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+    enter: () => ({
       opacity: 0,
       scale: 0.9,
     }),
     center: {
       zIndex: 1,
-      x: 0,
       opacity: 1,
       scale: 1,
     },
-    exit: (direction: number) => ({
+    exit: () => ({
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
       opacity: 0,
       scale: 0.9,
     }),
@@ -140,9 +137,8 @@ export default function TestimonialsSection() {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.4 },
-                  scale: { duration: 0.4 }
+                  opacity: { duration: 0.5 },
+                  scale: { duration: 0.5, type: "spring", stiffness: 300, damping: 30 }
                 }}
                 className="bg-gradient-to-br from-[#0F172D] to-[#1E293B] shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-700 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300"
               >
