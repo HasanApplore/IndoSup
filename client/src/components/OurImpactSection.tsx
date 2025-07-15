@@ -46,29 +46,45 @@ const NetworkBackground = () => {
   const [connections, setConnections] = useState<Array<{ from: number; to: number }>>([]);
 
   useEffect(() => {
-    // Generate evenly distributed nodes for cleaner look
-    const nodeCount = 15;
+    // Generate structured nodes in a proper grid
+    const nodeCount = 20;
+    const cols = 5;
+    const rows = 4;
     const newNodes = Array.from({ length: nodeCount }, (_, i) => ({
       id: i,
-      x: 10 + (i % 5) * 20 + Math.random() * 10,
-      y: 20 + Math.floor(i / 5) * 25 + Math.random() * 10,
+      x: 15 + (i % cols) * 17.5,
+      y: 15 + Math.floor(i / cols) * 22.5,
     }));
     setNodes(newNodes);
 
-    // Generate selective connections for cleaner pattern
+    // Create meaningful connections - horizontal, vertical, and diagonal
     const newConnections: Array<{ from: number; to: number }> = [];
+    
     newNodes.forEach((node, i) => {
-      newNodes.forEach((otherNode, j) => {
-        if (i !== j) {
-          const distance = Math.sqrt(
-            Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
-          );
-          if (distance < 25 && Math.random() > 0.85) {
-            newConnections.push({ from: i, to: j });
-          }
-        }
-      });
+      const row = Math.floor(i / cols);
+      const col = i % cols;
+      
+      // Right connection
+      if (col < cols - 1) {
+        newConnections.push({ from: i, to: i + 1 });
+      }
+      
+      // Down connection
+      if (row < rows - 1) {
+        newConnections.push({ from: i, to: i + cols });
+      }
+      
+      // Diagonal connections (selective)
+      if (col < cols - 1 && row < rows - 1 && Math.random() > 0.5) {
+        newConnections.push({ from: i, to: i + cols + 1 });
+      }
+      
+      // Cross connections (selective)
+      if (col > 0 && row < rows - 1 && Math.random() > 0.7) {
+        newConnections.push({ from: i, to: i + cols - 1 });
+      }
     });
+    
     setConnections(newConnections);
   }, []);
 
@@ -196,31 +212,76 @@ const NetworkBackground = () => {
         ))}
       </svg>
       
-      {/* Enhanced floating particles */}
+      {/* Enhanced floating particles with paths */}
       <div className="absolute inset-0">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full shadow-lg"
             style={{
-              left: `${15 + (i % 4) * 20}%`,
-              top: `${20 + Math.floor(i / 4) * 25}%`,
-              width: `${4 + Math.random() * 6}px`,
-              height: `${4 + Math.random() * 6}px`,
-              background: `radial-gradient(circle, rgba(255, 217, 90, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%)`,
-              boxShadow: `0 0 10px rgba(255, 217, 90, 0.5)`
+              width: `${6 + Math.random() * 4}px`,
+              height: `${6 + Math.random() * 4}px`,
+              background: `radial-gradient(circle, rgba(255, 217, 90, 0.9) 0%, rgba(255, 255, 255, 0.4) 70%, transparent 100%)`,
+              boxShadow: `0 0 15px rgba(255, 217, 90, 0.8), 0 0 30px rgba(255, 217, 90, 0.4)`,
+              filter: `blur(0.5px)`
             }}
             animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [0.8, 1.3, 0.8]
+              x: [
+                `${10 + i * 12}%`,
+                `${20 + i * 12}%`,
+                `${30 + i * 8}%`,
+                `${10 + i * 12}%`
+              ],
+              y: [
+                `${20 + (i % 3) * 25}%`,
+                `${40 + (i % 3) * 20}%`,
+                `${60 + (i % 3) * 15}%`,
+                `${20 + (i % 3) * 25}%`
+              ],
+              opacity: [0.4, 0.9, 0.6, 0.4],
+              scale: [0.8, 1.4, 1.1, 0.8]
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
+              duration: 6 + Math.random() * 4,
               repeat: Infinity,
-              delay: i * 0.3,
+              delay: i * 0.4,
               ease: "easeInOut"
+            }}
+          />
+        ))}
+        
+        {/* Additional smaller particles */}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={`small-${i}`}
+            className="absolute rounded-full"
+            style={{
+              width: `${2 + Math.random() * 3}px`,
+              height: `${2 + Math.random() * 3}px`,
+              background: `rgba(255, 255, 255, 0.6)`,
+              boxShadow: `0 0 8px rgba(255, 217, 90, 0.6)`
+            }}
+            animate={{
+              x: [
+                `${5 + i * 6}%`,
+                `${15 + i * 6}%`,
+                `${25 + i * 4}%`,
+                `${5 + i * 6}%`
+              ],
+              y: [
+                `${15 + (i % 4) * 20}%`,
+                `${35 + (i % 4) * 15}%`,
+                `${55 + (i % 4) * 10}%`,
+                `${15 + (i % 4) * 20}%`
+              ],
+              opacity: [0.2, 0.7, 0.4, 0.2],
+              scale: [0.5, 1.2, 0.8, 0.5]
+            }}
+            transition={{
+              duration: 8 + Math.random() * 3,
+              repeat: Infinity,
+              delay: i * 0.2,
+              ease: "linear"
             }}
           />
         ))}
