@@ -38,58 +38,80 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="py-20 px-6 md:py-20 md:px-6 relative overflow-hidden">
+    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
       
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-4 font-['Poppins']">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
             Our Trusted Partners
           </h2>
-          {/* Yellow underline */}
-          <div className="w-20 h-1 bg-[#FFD95A] mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
             Collaborating with India's leading construction and infrastructure companies
           </p>
         </motion.div>
 
-        {/* Company Logos */}
-        <div className="flex flex-wrap items-center justify-center gap-12 py-8">
-          {clientLogos.map((client, index) => (
+        {/* Infinite Scrolling Carousel */}
+        <div className="relative overflow-hidden py-6">
+          {/* Invisible gradient overlays for smooth carousel transitions */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
+          
+          {/* Moving Strip Container */}
+          <div 
+            className="flex items-center"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Continuous Strip */}
             <motion.div
-              key={index}
-              className="group flex-shrink-0 w-32 h-20 flex items-center justify-center cursor-pointer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
+              className="flex gap-16 items-center whitespace-nowrap"
+              animate={{
+                x: [0, -144 * clientLogos.length],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: isHovered ? 35 : 25,
+                  ease: "linear",
+                },
               }}
             >
-              <img 
-                src={client.logo} 
-                alt={`${client.name} - Trusted Partner`}
-                className="object-contain h-12 filter grayscale hover:grayscale-0 transition-all duration-300"
-                loading="lazy"
-                onError={(e) => {
-                  console.log(`Failed to load logo: ${client.logo}`);
-                  const target = e.currentTarget as HTMLImageElement;
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `<span class="text-xs font-bold text-[#1E293B] text-center px-2">${client.name}</span>`;
-                  }
-                }}
-              />
+              {repeatedLogos.map((client, index) => (
+                <motion.div
+                  key={`logo-${index}`}
+                  className="group flex-shrink-0 w-32 h-20 flex items-center justify-center cursor-pointer"
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} - Trusted Partner`}
+                    className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.log(`Failed to load logo: ${client.logo}`);
+                      const target = e.currentTarget as HTMLImageElement;
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-xs font-bold text-accent text-center px-2">${client.name}</span>`;
+                      }
+                    }}
+                  />
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

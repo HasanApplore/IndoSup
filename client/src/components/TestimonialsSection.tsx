@@ -104,23 +104,22 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 px-6 md:py-20 md:px-6 relative overflow-hidden">
+    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
 
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-4 font-['Poppins']">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
             What Our Clients Say
           </h2>
-          {/* Yellow underline */}
-          <div className="w-20 h-1 bg-[#FFD95A] mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
             Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>
@@ -134,12 +133,16 @@ export default function TestimonialsSection() {
 
 
           {/* Testimonial Card */}
-          <div className="relative max-w-3xl mx-auto">
+          <div className="relative max-w-4xl mx-auto">
 
-            <div className="bg-white rounded-2xl shadow-lg p-6 relative">
+            <div className="bg-[#fbfbfc]/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-[#fbfbfc]">
+              {/* Decorative Elements */}
+              <div className="absolute top-0 left-0 w-20 h-20 bg-[#fada7e]/30 rounded-full -translate-x-10 -translate-y-10"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-accent/10 rounded-full translate-x-8 translate-y-8"></div>
+              
               {/* Quote Icon - Centered */}
-              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-[#FFD95A] rounded-full flex items-center justify-center">
-                <Quote className="w-5 h-5 text-white" />
+              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                <Quote className="w-8 h-8 text-primary" />
               </div>
 
               <AnimatePresence mode="wait" custom={direction}>
@@ -155,29 +158,29 @@ export default function TestimonialsSection() {
                     opacity: { duration: 0.3 },
                     scale: { duration: 0.3 }
                   }}
-                  className="text-center pt-12"
+                  className="text-center pt-16"
                 >
                   {/* Testimonial Quote - First */}
-                  <blockquote className="text-lg text-[#1E293B] font-medium leading-relaxed mb-8 max-w-2xl mx-auto">
+                  <blockquote className="text-base md:text-lg lg:text-xl text-accent font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
                   {/* Client Info - Last and smaller */}
                   <div className="flex items-center justify-center gap-3">
                     {/* Avatar - smaller */}
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#FFD95A] to-[#FFC107] rounded-full flex items-center justify-center text-[#1E293B] font-semibold text-sm shadow-md">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg">
                       {currentTestimonial.avatar}
                     </div>
                     
                     {/* Client Details - smaller */}
                     <div className="text-left">
-                      <h4 className="font-semibold text-[#1E293B] text-base mb-1">
+                      <h4 className="font-bold text-accent text-base mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-sm text-gray-600 mb-0.5">
+                      <p className="text-xs text-neutral-base mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-xs text-neutral-base opacity-75">
                         {currentTestimonial.location} • {currentTestimonial.project}
                       </p>
                     </div>
@@ -194,9 +197,9 @@ export default function TestimonialsSection() {
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? 'bg-[#FFD95A] w-8' 
+                  ? 'bg-primary w-8' 
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
             />

@@ -72,6 +72,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
+        poppins: ['Poppins', 'system-ui', '-apple-system', 'sans-serif'],
         inter: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         'plus-jakarta': ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
       },
