@@ -65,28 +65,29 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-6">
-      <div className="container mx-auto">
+    <section className="py-20 px-6 md:py-20 md:px-6">
+      <div className="container mx-auto max-w-6xl">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-4 font-['Poppins']">
             Why Choose IndoSup?
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
+          {/* Yellow underline */}
+          <div className="w-20 h-1 bg-[#FFD95A] mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We simplify construction procurement with cutting-edge technology and trusted partnerships
           </p>
         </motion.div>
 
         {/* Feature Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,37 +96,27 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white/70 backdrop-blur-sm rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center cursor-pointer border border-gray-100 hover:border-primary/30 mt-[9px] mb-[9px] hover:bg-white/90"
+              className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition-shadow duration-300"
               variants={cardVariants}
-              whileHover={{
-                y: -12,
-                scale: 1.08,
-                transition: { duration: 0.3 }
-              }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               {/* Icon */}
-              <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-colors duration-300 mb-4"
-                variants={iconVariants}
-                whileHover="hover"
-              >
-                <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
-              </motion.div>
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#FFF3BF] mb-4">
+                <feature.icon className="w-6 h-6 text-[#FFD95A]" />
+              </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-accent mb-3 group-hover:text-primary transition-colors duration-300 font-inter">
+              <h3 className="text-lg font-semibold text-[#1E293B] mb-3 font-['Poppins']">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-neutral-base text-sm leading-relaxed group-hover:text-accent/90 transition-colors duration-300">
+              <p className="text-base text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
-
-              {/* Hover Effect Line */}
-              <motion.div
-                className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-10 transition-all duration-300"
-              />
             </motion.div>
           ))}
         </motion.div>
