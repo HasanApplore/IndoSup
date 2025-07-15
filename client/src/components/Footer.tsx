@@ -16,10 +16,10 @@ export default function Footer() {
   const productCategories = [
     { name: 'Steel Products', path: '/products/steel' },
     { name: 'Non-Steel Products', path: '/products/non-steel' },
-    { name: 'TMT Bars', path: '/products/steel' },
-    { name: 'Pipes & Fittings', path: '/products/steel' },
-    { name: 'Electrical Components', path: '/products/non-steel' },
-    { name: 'Fire Safety Equipment', path: '/products/non-steel' }
+    { name: 'TMT Bars', path: '/products/steel#tmt-bars' },
+    { name: 'Pipes & Fittings', path: '/products/steel#pipes-fittings' },
+    { name: 'Electrical Components', path: '/products/non-steel#electrical-components' },
+    { name: 'Fire Safety Equipment', path: '/products/non-steel#fire-safety-equipment' }
   ];
 
   const socialLinks = [

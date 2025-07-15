@@ -297,6 +297,7 @@ export default function SteelProducts() {
             {steelCategories.map((category, index) => (
               <motion.div
                 key={index}
+                id={category.name === "Reinforcement Products" ? "tmt-bars" : category.name === "Pipes & Fittings" ? "pipes-fittings" : undefined}
                 variants={itemVariants}
                 className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}

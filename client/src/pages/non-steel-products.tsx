@@ -316,6 +316,7 @@ export default function NonSteelProducts() {
             {nonSteelCategories.map((category, index) => (
               <motion.div
                 key={index}
+                id={category.name === "Electrical" ? "electrical-components" : category.name === "Fire Fighting" ? "fire-safety-equipment" : undefined}
                 variants={itemVariants}
                 className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
