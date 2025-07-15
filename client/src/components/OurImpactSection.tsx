@@ -75,90 +75,151 @@ const NetworkBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
       {/* Main Network Pattern */}
-      <svg className="w-full h-full opacity-8" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {/* Clean animated connections */}
+      <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {/* Enhanced animated connections with glow effect */}
         {connections.map((connection, index) => {
           const fromNode = nodes[connection.from];
           const toNode = nodes[connection.to];
           if (!fromNode || !toNode) return null;
           
           return (
-            <motion.line
-              key={index}
-              x1={fromNode.x}
-              y1={fromNode.y}
-              x2={toNode.x}
-              y2={toNode.y}
-              stroke="rgba(255, 255, 255, 0.15)"
-              strokeWidth="0.08"
-              strokeDasharray="2 1"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ 
-                pathLength: [0, 1, 0],
-                opacity: [0, 0.6, 0]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                delay: index * 0.3,
-                ease: "easeInOut"
-              }}
-            />
+            <g key={index}>
+              {/* Glow effect */}
+              <motion.line
+                x1={fromNode.x}
+                y1={fromNode.y}
+                x2={toNode.x}
+                y2={toNode.y}
+                stroke="rgba(255, 217, 90, 0.6)"
+                strokeWidth="0.3"
+                filter="blur(1px)"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ 
+                  pathLength: [0, 1, 0],
+                  opacity: [0, 0.8, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  delay: index * 0.2,
+                  ease: "easeInOut"
+                }}
+              />
+              {/* Main line */}
+              <motion.line
+                x1={fromNode.x}
+                y1={fromNode.y}
+                x2={toNode.x}
+                y2={toNode.y}
+                stroke="rgba(255, 255, 255, 0.4)"
+                strokeWidth="0.1"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ 
+                  pathLength: [0, 1, 0],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  delay: index * 0.2,
+                  ease: "easeInOut"
+                }}
+              />
+            </g>
           );
         })}
         
-        {/* Refined animated nodes */}
+        {/* Enhanced animated nodes with glow */}
         {nodes.map((node, index) => (
-          <motion.circle
-            key={node.id}
-            cx={node.x}
-            cy={node.y}
-            r="0.2"
-            fill="rgba(255, 217, 90, 0.4)"
-            stroke="rgba(255, 255, 255, 0.2)"
-            strokeWidth="0.05"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ 
-              scale: [0.8, 1.1, 0.8],
-              opacity: [0.3, 0.7, 0.3]
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              delay: index * 0.1,
-              ease: "easeInOut"
-            }}
-          />
+          <g key={node.id}>
+            {/* Glow effect */}
+            <motion.circle
+              cx={node.x}
+              cy={node.y}
+              r="0.6"
+              fill="rgba(255, 217, 90, 0.3)"
+              filter="blur(2px)"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ 
+                scale: [0.5, 1.2, 0.5],
+                opacity: [0.2, 0.6, 0.2]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: index * 0.1,
+                ease: "easeInOut"
+              }}
+            />
+            {/* Main node */}
+            <motion.circle
+              cx={node.x}
+              cy={node.y}
+              r="0.3"
+              fill="rgba(255, 217, 90, 0.8)"
+              stroke="rgba(255, 255, 255, 0.6)"
+              strokeWidth="0.1"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ 
+                scale: [0.8, 1.2, 0.8],
+                opacity: [0.6, 1, 0.6]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: index * 0.1,
+                ease: "easeInOut"
+              }}
+            />
+          </g>
         ))}
       </svg>
       
-      {/* Subtle floating elements */}
+      {/* Enhanced floating particles */}
       <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-white/10 rounded-full"
+            className="absolute rounded-full shadow-lg"
             style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + (i % 2) * 40}%`,
+              left: `${15 + (i % 4) * 20}%`,
+              top: `${20 + Math.floor(i / 4) * 25}%`,
+              width: `${4 + Math.random() * 6}px`,
+              height: `${4 + Math.random() * 6}px`,
+              background: `radial-gradient(circle, rgba(255, 217, 90, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%)`,
+              boxShadow: `0 0 10px rgba(255, 217, 90, 0.5)`
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.1, 0.4, 0.1],
-              scale: [0.8, 1.2, 0.8]
+              y: [0, -40, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              opacity: [0.3, 0.8, 0.3],
+              scale: [0.8, 1.3, 0.8]
             }}
             transition={{
-              duration: 5 + i,
+              duration: 4 + Math.random() * 3,
               repeat: Infinity,
-              delay: i * 0.8,
+              delay: i * 0.3,
               ease: "easeInOut"
             }}
           />
         ))}
       </div>
       
-      {/* Clean gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+      {/* Animated gradient waves */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"
+          animate={{
+            x: ["-100%", "100%"],
+            opacity: [0, 0.5, 0]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
     </div>
   );
 };
