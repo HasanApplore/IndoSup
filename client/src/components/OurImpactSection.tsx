@@ -40,6 +40,123 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   );
 };
 
+// Animated Network Background Component
+const NetworkBackground = () => {
+  const [nodes, setNodes] = useState<Array<{ x: number; y: number; id: number }>>([]);
+  const [connections, setConnections] = useState<Array<{ from: number; to: number }>>([]);
+
+  useEffect(() => {
+    // Generate random nodes
+    const nodeCount = 25;
+    const newNodes = Array.from({ length: nodeCount }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+    }));
+    setNodes(newNodes);
+
+    // Generate connections between nearby nodes
+    const newConnections: Array<{ from: number; to: number }> = [];
+    newNodes.forEach((node, i) => {
+      newNodes.forEach((otherNode, j) => {
+        if (i !== j) {
+          const distance = Math.sqrt(
+            Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
+          );
+          if (distance < 20 && Math.random() > 0.7) {
+            newConnections.push({ from: i, to: j });
+          }
+        }
+      });
+    });
+    setConnections(newConnections);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      <svg className="w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {/* Animated connections */}
+        {connections.map((connection, index) => {
+          const fromNode = nodes[connection.from];
+          const toNode = nodes[connection.to];
+          if (!fromNode || !toNode) return null;
+          
+          return (
+            <motion.line
+              key={index}
+              x1={fromNode.x}
+              y1={fromNode.y}
+              x2={toNode.x}
+              y2={toNode.y}
+              stroke="rgba(255, 255, 255, 0.3)"
+              strokeWidth="0.1"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ 
+                pathLength: 1, 
+                opacity: [0, 0.8, 0],
+                strokeWidth: [0.05, 0.15, 0.05]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: index * 0.1,
+                ease: "linear"
+              }}
+            />
+          );
+        })}
+        
+        {/* Animated nodes */}
+        {nodes.map((node, index) => (
+          <motion.circle
+            key={node.id}
+            cx={node.x}
+            cy={node.y}
+            r="0.3"
+            fill="rgba(255, 217, 90, 0.6)"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ 
+              scale: [0.8, 1.2, 0.8],
+              opacity: [0.4, 0.8, 0.4]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: index * 0.05,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </svg>
+      
+      {/* Moving geometric shapes */}
+      <div className="absolute inset-0">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              x: [0, Math.random() * 400 - 200, 0],
+              y: [0, Math.random() * 400 - 200, 0],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: 6 + Math.random() * 4,
+              repeat: Infinity,
+              delay: i * 0.5,
+              ease: "linear"
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const OurImpactSection = () => {
   const impactData = [
     {
@@ -92,6 +209,9 @@ const OurImpactSection = () => {
 
   return (
     <section className="py-12 px-4 md:py-20 md:px-6 bg-[#0F172A] relative overflow-hidden">
+      {/* Animated Network Background */}
+      <NetworkBackground />
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1E3A8A] via-transparent to-[#FFD95A]"></div>
