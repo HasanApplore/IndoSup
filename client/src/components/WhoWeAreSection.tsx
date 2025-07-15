@@ -95,11 +95,11 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white/90 backdrop-blur-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center cursor-pointer border border-gray-200 hover:border-primary hover:bg-white/95 relative overflow-hidden"
+              className="group bg-white/95 backdrop-blur-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-white/30 transition-all duration-300 p-6 text-center cursor-pointer border border-white/20 hover:border-primary hover:bg-white/95 relative overflow-hidden"
               variants={cardVariants}
               whileHover={{
                 y: -8,
-                scale: 1.03,
+                scale: 1.05,
                 transition: { duration: 0.3 }
               }}
             >
