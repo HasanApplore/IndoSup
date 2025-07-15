@@ -137,13 +137,13 @@ export default function TestimonialsSection() {
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
 
-            <div className="bg-[#0F182F] backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-[#1F3A8A] overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-[#1F3A8A]">
+            <div className="bg-[#fbfbfc]/90 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl border border-[#1F3A8A] overflow-hidden relative hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:bg-[#fbfbfc]">
               {/* Decorative Elements */}
-              <div className="absolute top-0 left-0 w-20 h-20 bg-[#FFD95A]/20 rounded-full -translate-x-10 -translate-y-10"></div>
-              <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#FFD95A]/10 rounded-full translate-x-8 translate-y-8"></div>
+              <div className="absolute top-0 left-0 w-20 h-20 bg-[#FFD95A]/30 rounded-full -translate-x-10 -translate-y-10"></div>
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#0F182F]/20 rounded-full translate-x-8 translate-y-8"></div>
               
               {/* Quote Icon - Centered */}
-              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#FFD95A]/20 rounded-full flex items-center justify-center">
+              <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#0F182F] rounded-full flex items-center justify-center">
                 <Quote className="w-8 h-8 text-[#FFD95A]" />
               </div>
 
@@ -163,7 +163,7 @@ export default function TestimonialsSection() {
                   className="text-center pt-16"
                 >
                   {/* Testimonial Quote - First */}
-                  <blockquote className="text-base md:text-lg lg:text-xl text-white font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
+                  <blockquote className="text-base md:text-lg lg:text-xl text-[#0F182F] font-medium leading-relaxed mb-8 max-w-2xl mx-auto relative">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
@@ -176,13 +176,13 @@ export default function TestimonialsSection() {
                     
                     {/* Client Details - smaller */}
                     <div className="text-left">
-                      <h4 className="font-bold text-[#FFD95A] text-base mb-1">
+                      <h4 className="font-bold text-[#0F182F] text-base mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-xs text-gray-300 mb-0.5">
+                      <p className="text-xs text-[#1F3A8A] mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-xs text-gray-400 opacity-75">
+                      <p className="text-xs text-[#1F3A8A] opacity-75">
                         {currentTestimonial.location} • {currentTestimonial.project}
                       </p>
                     </div>
