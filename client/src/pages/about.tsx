@@ -311,84 +311,171 @@ export default function About() {
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer group relative overflow-hidden border-2 border-transparent"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)",
+                borderColor: "rgba(245, 166, 35, 0.3)"
+              }}
               whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {/* Animated background overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
               
               <motion.div 
-                className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md group-hover:shadow-xl transition-all duration-300 relative z-10"
+                className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md relative z-10"
                 whileHover={{ 
-                  scale: 1.1,
-                  rotate: [0, -5, 5, -5, 0],
-                  boxShadow: "0 20px 40px rgba(245, 166, 35, 0.3)"
+                  scale: 1.15,
+                  rotate: [0, -8, 8, -8, 0],
+                  boxShadow: "0 25px 50px rgba(245, 166, 35, 0.4)"
                 }}
-                transition={{ duration: 0.4 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
-                <Award className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Award className="w-10 h-10 text-white" />
+                </motion.div>
               </motion.div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 relative z-10" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 relative z-10">Proven track record in construction procurement with decades of industry expertise</p>
+              <motion.h3 
+                className="text-xl font-bold mb-4 relative z-10" 
+                style={{ color: '#0E2F44' }}
+                whileHover={{ color: '#F5A623' }}
+                transition={{ duration: 0.2 }}
+              >
+                10+ Years Experience
+              </motion.h3>
+              <motion.p 
+                className="text-gray-600 leading-relaxed relative z-10"
+                whileHover={{ color: '#4B5563' }}
+                transition={{ duration: 0.2 }}
+              >
+                Proven track record in construction procurement with decades of industry expertise
+              </motion.p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer group relative overflow-hidden border-2 border-transparent"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)",
+                borderColor: "rgba(245, 166, 35, 0.3)"
+              }}
               whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {/* Animated background overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
               
               <motion.div 
-                className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md group-hover:shadow-xl transition-all duration-300 relative z-10"
+                className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md relative z-10"
                 whileHover={{ 
-                  scale: 1.1,
-                  rotate: [0, 10, -10, 0],
-                  boxShadow: "0 20px 40px rgba(245, 166, 35, 0.3)"
+                  scale: 1.15,
+                  rotate: [0, 15, -15, 0],
+                  boxShadow: "0 25px 50px rgba(245, 166, 35, 0.4)"
                 }}
-                transition={{ duration: 0.4 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
-                <Building className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Building className="w-10 h-10 text-white" />
+                </motion.div>
               </motion.div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 relative z-10" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 relative z-10">Successfully delivered construction materials to projects across India</p>
+              <motion.h3 
+                className="text-xl font-bold mb-4 relative z-10" 
+                style={{ color: '#0E2F44' }}
+                whileHover={{ color: '#F5A623' }}
+                transition={{ duration: 0.2 }}
+              >
+                500+ Projects Supplied
+              </motion.h3>
+              <motion.p 
+                className="text-gray-600 leading-relaxed relative z-10"
+                whileHover={{ color: '#4B5563' }}
+                transition={{ duration: 0.2 }}
+              >
+                Successfully delivered construction materials to projects across India
+              </motion.p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer group relative overflow-hidden border-2 border-transparent"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)",
+                borderColor: "rgba(245, 166, 35, 0.3)"
+              }}
               whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {/* Animated background overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
               
               <motion.div 
-                className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md group-hover:shadow-xl transition-all duration-300 relative z-10"
+                className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md relative z-10"
                 whileHover={{ 
-                  scale: 1.1,
-                  rotate: [0, 360],
-                  boxShadow: "0 20px 40px rgba(245, 166, 35, 0.3)"
+                  scale: 1.15,
+                  rotate: 360,
+                  boxShadow: "0 25px 50px rgba(245, 166, 35, 0.4)"
                 }}
-                transition={{ duration: 0.6 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
               >
-                <Globe className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Globe className="w-10 h-10 text-white" />
+                </motion.div>
               </motion.div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300 relative z-10" style={{ color: '#0E2F44' }}>Global Reach</h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 relative z-10">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <motion.h3 
+                className="text-xl font-bold mb-4 relative z-10" 
+                style={{ color: '#0E2F44' }}
+                whileHover={{ color: '#F5A623' }}
+                transition={{ duration: 0.2 }}
+              >
+                Global Reach
+              </motion.h3>
+              <motion.p 
+                className="text-gray-600 leading-relaxed relative z-10"
+                whileHover={{ color: '#4B5563' }}
+                transition={{ duration: 0.2 }}
+              >
+                Expanding networks nationwide with strategic partnerships and distribution channels
+              </motion.p>
             </motion.div>
           </div>
         </div>
