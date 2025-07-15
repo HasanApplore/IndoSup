@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#FFFDEE] to-[#F4F4F4] relative overflow-hidden">
+    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#0F172D] to-[#1E293B] relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -114,11 +114,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-2 font-poppins">
+          <h2 className="text-4xl font-bold text-white mb-2 font-poppins">
             What Our Clients Say
           </h2>
-          <div className="h-1 w-12 bg-[#FFD95A] mx-auto my-4"></div>
-          <p className="text-gray-500 text-lg max-w-3xl mx-auto mt-2 font-poppins">
+          <div className="h-1 w-12 bg-[#3B82F6] mx-auto my-4"></div>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto mt-2 font-poppins">
             Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>
@@ -131,12 +131,12 @@ export default function TestimonialsSection() {
         >
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
-            <div className="bg-white/90 backdrop-blur-md shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-200 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300">
+            <div className="bg-white/95 backdrop-blur-md shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-200 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300">
               
               {/* Quote Icon - Centered at top */}
               <div className="flex justify-center mb-6">
-                <div className="bg-[#FFF3BF] w-12 h-12 flex items-center justify-center rounded-full">
-                  <Quote className="w-6 h-6 text-[#FFD95A]" />
+                <div className="bg-[#0F172D] w-12 h-12 flex items-center justify-center rounded-full">
+                  <Quote className="w-6 h-6 text-white" />
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export default function TestimonialsSection() {
                   {/* Client Info */}
                   <div className="flex items-center justify-center gap-3">
                     {/* Client Profile Circle */}
-                    <div className="bg-[#FFD95A] text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
+                    <div className="bg-[#0F172D] text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
                       {currentTestimonial.avatar}
                     </div>
                     
@@ -194,8 +194,8 @@ export default function TestimonialsSection() {
               onClick={() => goToTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
                 index === currentIndex 
-                  ? 'bg-[#FFD95A]' 
-                  : 'bg-[#D1D5DB] hover:bg-gray-400'
+                  ? 'bg-[#3B82F6]' 
+                  : 'bg-gray-400 hover:bg-gray-300'
               }`}
             />
           ))}
