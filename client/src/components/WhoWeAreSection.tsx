@@ -107,11 +107,11 @@ export default function WhoWeAreSection() {
               <div className="relative z-10">
                 {/* Icon */}
                 <motion.div
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-4 relative"
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-[#1E293B] transition-all duration-300 mb-4 relative"
                   variants={iconVariants}
                   whileHover="hover"
                 >
-                  <feature.icon className="w-8 h-8 text-primary group-hover:text-[#1E293B] transition-all duration-300 relative z-10" />
+                  <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
                 </motion.div>
 
                 {/* Title */}
