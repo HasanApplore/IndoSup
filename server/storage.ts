@@ -9,6 +9,8 @@ import {
   mediaContent, type MediaContent, type InsertMediaContent,
   siteSettings, type SiteSetting, type InsertSiteSetting
 } from "@shared/schema";
+import { db } from './db';
+import { eq, desc } from 'drizzle-orm';
 
 // modify the interface with any CRUD methods
 // you might need
@@ -436,4 +438,305 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// Database Storage Implementation
+export class DatabaseStorage implements IStorage {
+  // User methods
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db.insert(users).values(insertUser).returning();
+    return user;
+  }
+
+  // Admin user methods
+  async getAdminUser(id: number): Promise<AdminUser | undefined> {
+    const [user] = await db.select().from(adminUsers).where(eq(adminUsers.id, id));
+    return user || undefined;
+  }
+
+  async getAdminUserByEmail(email: string): Promise<AdminUser | undefined> {
+    const [user] = await db.select().from(adminUsers).where(eq(adminUsers.email, email));
+    return user || undefined;
+  }
+
+  async createAdminUser(insertUser: InsertAdminUser): Promise<AdminUser> {
+    const [user] = await db.insert(adminUsers).values({
+      ...insertUser,
+      role: insertUser.role || 'admin',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }).returning();
+    return user;
+  }
+
+  async updateAdminUser(id: number, updates: Partial<InsertAdminUser>): Promise<AdminUser | undefined> {
+    const [user] = await db.update(adminUsers)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(adminUsers.id, id))
+      .returning();
+    return user || undefined;
+  }
+
+  async deleteAdminUser(id: number): Promise<boolean> {
+    const result = await db.delete(adminUsers).where(eq(adminUsers.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Contact submission methods
+  async getContactSubmissions(): Promise<ContactSubmission[]> {
+    return await db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+  }
+
+  async getContactSubmission(id: number): Promise<ContactSubmission | undefined> {
+    const [submission] = await db.select().from(contactSubmissions).where(eq(contactSubmissions.id, id));
+    return submission || undefined;
+  }
+
+  async createContactSubmission(insertion: InsertContactSubmission): Promise<ContactSubmission> {
+    const [submission] = await db.insert(contactSubmissions).values({
+      ...insertion,
+      phone: insertion.phone || null,
+      company: insertion.company || null,
+      createdAt: new Date()
+    }).returning();
+    return submission;
+  }
+
+  async deleteContactSubmission(id: number): Promise<boolean> {
+    const result = await db.delete(contactSubmissions).where(eq(contactSubmissions.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Job methods
+  async getJobs(): Promise<Job[]> {
+    return await db.select().from(jobs).orderBy(desc(jobs.createdAt));
+  }
+
+  async getJob(id: number): Promise<Job | undefined> {
+    const [job] = await db.select().from(jobs).where(eq(jobs.id, id));
+    return job || undefined;
+  }
+
+  async createJob(insertion: InsertJob): Promise<Job> {
+    const [job] = await db.insert(jobs).values({
+      ...insertion,
+      isActive: insertion.isActive ?? true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }).returning();
+    return job;
+  }
+
+  async updateJob(id: number, updates: Partial<InsertJob>): Promise<Job | undefined> {
+    const [job] = await db.update(jobs)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(jobs.id, id))
+      .returning();
+    return job || undefined;
+  }
+
+  async deleteJob(id: number): Promise<boolean> {
+    const result = await db.delete(jobs).where(eq(jobs.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Job application methods
+  async getJobApplications(): Promise<JobApplication[]> {
+    return await db.select().from(jobApplications).orderBy(desc(jobApplications.createdAt));
+  }
+
+  async getJobApplicationsByJob(jobId: number): Promise<JobApplication[]> {
+    return await db.select().from(jobApplications).where(eq(jobApplications.jobId, jobId));
+  }
+
+  async getJobApplication(id: number): Promise<JobApplication | undefined> {
+    const [application] = await db.select().from(jobApplications).where(eq(jobApplications.id, id));
+    return application || undefined;
+  }
+
+  async createJobApplication(insertion: InsertJobApplication): Promise<JobApplication> {
+    const [application] = await db.insert(jobApplications).values({
+      ...insertion,
+      status: insertion.status || 'pending',
+      phone: insertion.phone || null,
+      resumeUrl: insertion.resumeUrl || null,
+      coverLetter: insertion.coverLetter || null,
+      createdAt: new Date()
+    }).returning();
+    return application;
+  }
+
+  async updateJobApplication(id: number, updates: Partial<InsertJobApplication>): Promise<JobApplication | undefined> {
+    const [application] = await db.update(jobApplications)
+      .set(updates)
+      .where(eq(jobApplications.id, id))
+      .returning();
+    return application || undefined;
+  }
+
+  async deleteJobApplication(id: number): Promise<boolean> {
+    const result = await db.delete(jobApplications).where(eq(jobApplications.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Catalogue methods
+  async getCatalogues(): Promise<Catalogue[]> {
+    return await db.select().from(catalogues).orderBy(desc(catalogues.createdAt));
+  }
+
+  async getCatalogue(id: number): Promise<Catalogue | undefined> {
+    const [catalogue] = await db.select().from(catalogues).where(eq(catalogues.id, id));
+    return catalogue || undefined;
+  }
+
+  async createCatalogue(insertion: InsertCatalogue): Promise<Catalogue> {
+    const [catalogue] = await db.insert(catalogues).values({
+      ...insertion,
+      description: insertion.description || null,
+      isActive: insertion.isActive ?? true,
+      fileSize: insertion.fileSize || null,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }).returning();
+    return catalogue;
+  }
+
+  async updateCatalogue(id: number, updates: Partial<InsertCatalogue>): Promise<Catalogue | undefined> {
+    const [catalogue] = await db.update(catalogues)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(catalogues.id, id))
+      .returning();
+    return catalogue || undefined;
+  }
+
+  async deleteCatalogue(id: number): Promise<boolean> {
+    const result = await db.delete(catalogues).where(eq(catalogues.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Product methods
+  async getProducts(): Promise<Product[]> {
+    return await db.select().from(products).orderBy(desc(products.createdAt));
+  }
+
+  async getProduct(id: number): Promise<Product | undefined> {
+    const [product] = await db.select().from(products).where(eq(products.id, id));
+    return product || undefined;
+  }
+
+  async createProduct(insertion: InsertProduct): Promise<Product> {
+    const [product] = await db.insert(products).values({
+      ...insertion,
+      description: insertion.description || null,
+      isActive: insertion.isActive ?? true,
+      subcategory: insertion.subcategory || null,
+      imageUrl: insertion.imageUrl || null,
+      tags: insertion.tags || null,
+      specifications: insertion.specifications || null,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }).returning();
+    return product;
+  }
+
+  async updateProduct(id: number, updates: Partial<InsertProduct>): Promise<Product | undefined> {
+    const [product] = await db.update(products)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(products.id, id))
+      .returning();
+    return product || undefined;
+  }
+
+  async deleteProduct(id: number): Promise<boolean> {
+    const result = await db.delete(products).where(eq(products.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Media content methods
+  async getMediaContent(): Promise<MediaContent[]> {
+    return await db.select().from(mediaContent).orderBy(desc(mediaContent.createdAt));
+  }
+
+  async getMediaContentByType(type: string): Promise<MediaContent[]> {
+    return await db.select().from(mediaContent).where(eq(mediaContent.type, type));
+  }
+
+  async getMediaContentItem(id: number): Promise<MediaContent | undefined> {
+    const [content] = await db.select().from(mediaContent).where(eq(mediaContent.id, id));
+    return content || undefined;
+  }
+
+  async createMediaContent(insertion: InsertMediaContent): Promise<MediaContent> {
+    const [content] = await db.insert(mediaContent).values({
+      ...insertion,
+      fileUrl: insertion.fileUrl || null,
+      imageUrl: insertion.imageUrl || null,
+      tags: insertion.tags || null,
+      author: insertion.author || null,
+      summary: insertion.summary || null,
+      isPublished: insertion.isPublished ?? true,
+      isFeatured: insertion.isFeatured ?? false,
+      downloadCount: insertion.downloadCount || 0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      publishedAt: new Date()
+    }).returning();
+    return content;
+  }
+
+  async updateMediaContent(id: number, updates: Partial<InsertMediaContent>): Promise<MediaContent | undefined> {
+    const [content] = await db.update(mediaContent)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(mediaContent.id, id))
+      .returning();
+    return content || undefined;
+  }
+
+  async deleteMediaContent(id: number): Promise<boolean> {
+    const result = await db.delete(mediaContent).where(eq(mediaContent.id, id));
+    return result.rowCount > 0;
+  }
+
+  // Site settings methods
+  async getSiteSettings(): Promise<SiteSetting[]> {
+    return await db.select().from(siteSettings);
+  }
+
+  async getSiteSetting(key: string): Promise<SiteSetting | undefined> {
+    const [setting] = await db.select().from(siteSettings).where(eq(siteSettings.key, key));
+    return setting || undefined;
+  }
+
+  async createSiteSetting(insertion: InsertSiteSetting): Promise<SiteSetting> {
+    const [setting] = await db.insert(siteSettings).values({
+      ...insertion,
+      type: insertion.type || 'string',
+      description: insertion.description || null,
+      updatedAt: new Date()
+    }).returning();
+    return setting;
+  }
+
+  async updateSiteSetting(key: string, value: string): Promise<SiteSetting | undefined> {
+    const [setting] = await db.update(siteSettings)
+      .set({ value, updatedAt: new Date() })
+      .where(eq(siteSettings.key, key))
+      .returning();
+    return setting || undefined;
+  }
+
+  async deleteSiteSetting(key: string): Promise<boolean> {
+    const result = await db.delete(siteSettings).where(eq(siteSettings.key, key));
+    return result.rowCount > 0;
+  }
+}
+
+export const storage = new DatabaseStorage();
