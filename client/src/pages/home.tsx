@@ -6,28 +6,12 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
   return (
-    <div className="bg-[#FAFAFA]"> {/* Light neutral background */}
+    <div className="bg-gradient-to-br from-[#fbf5e8] to-white"> {/* Overall background theme gradient to white */}
       <HeroSection />
-      
-      {/* Why Choose IndoSup Section */}
-      <div className="bg-[#F9FAFB]">
-        <WhoWeAreSection />
-      </div>
-      
-      {/* Our Impact Section */}
-      <div className="bg-[#0F172A]">
-        <StatsSection />
-      </div>
-      
-      {/* Trusted Partners Section */}
-      <div className="bg-[#F4F4F5]">
-        <ClientLogosSection />
-      </div>
-      
-      {/* What Our Clients Say Section */}
-      <div className="bg-[#FFFDF5]">
-        <TestimonialsSection />
-      </div>
+      <WhoWeAreSection />
+      <StatsSection />
+      <ClientLogosSection />
+      <TestimonialsSection />
     </div>
   )
 }
