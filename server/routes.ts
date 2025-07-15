@@ -13,6 +13,49 @@ import {
 } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Public API Routes (for website integration)
+  
+  // Get all active jobs for careers page
+  app.get("/api/jobs", async (req, res) => {
+    try {
+      const jobs = await storage.getJobs();
+      // Only return active jobs for public API
+      const activeJobs = jobs.filter(job => job.isActive);
+      res.json(activeJobs);
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Submit job application
+  app.post("/api/jobs/:id/apply", async (req, res) => {
+    try {
+      const jobId = parseInt(req.params.id);
+      const applicationData = {
+        ...req.body,
+        jobId,
+        status: 'pending'
+      };
+      
+      const application = insertJobApplicationSchema.parse(applicationData);
+      const newApplication = await storage.createJobApplication(application);
+      res.json(newApplication);
+    } catch (error) {
+      res.status(400).json({ message: "Invalid application data" });
+    }
+  });
+
+  // Submit contact form
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const submission = insertContactSubmissionSchema.parse(req.body);
+      const newSubmission = await storage.createContactSubmission(submission);
+      res.json(newSubmission);
+    } catch (error) {
+      res.status(400).json({ message: "Invalid contact data" });
+    }
+  });
+
   // Admin Authentication Routes
   app.post("/api/admin/login", async (req, res) => {
     try {

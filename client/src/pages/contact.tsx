@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, MessageCircle, Clock, Building, ExternalLink, Star, Eye, Target, HeadphonesIcon, ArrowUp, ArrowDown, ChevronDown } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { useMutation } from '@tanstack/react-query';
+import { apiRequest } from '@/lib/queryClient';
+import { useToast } from '@/hooks/use-toast';
 import contactBannerImage from '@assets/busy-woman-doing-many-things-same-time_1752497557915.jpg';
 import constructionImage1 from '@assets/colleagues-working-together-call-center-office_1752497192985.jpg';
 import constructionImage2 from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
@@ -15,8 +18,24 @@ export default function Contact() {
     message: ''
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const { toast } = useToast();
+
+  // Contact form submission mutation
+  const contactMutation = useMutation({
+    mutationFn: async (contactData) => {
+      const response = await apiRequest('POST', '/api/contact', contactData);
+      if (!response.ok) throw new Error('Failed to submit contact form');
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({ title: "Success", description: "Your message has been sent successfully! We'll get back to you soon." });
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+    },
+    onError: () => {
+      toast({ title: "Error", description: "Failed to send your message. Please try again.", variant: "destructive" });
+    },
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,14 +86,7 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', phone: '', company: '', message: '' });
-    setIsSubmitting(false);
+    contactMutation.mutate(formData);
   };
 
   const handleChange = (e) => {
@@ -364,17 +376,17 @@ export default function Contact() {
 
                 <motion.button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={contactMutation.isPending}
                   className="w-full bg-primary text-accent font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  whileHover={{ scale: contactMutation.isPending ? 1 : 1.02 }}
+                  whileTap={{ scale: contactMutation.isPending ? 1 : 0.98 }}
                 >
-                  {isSubmitting ? (
+                  {contactMutation.isPending ? (
                     <div className="w-5 h-5 border-2 border-accent border-t-transparent rounded-full animate-spin mr-2" />
                   ) : (
                     <Send className="w-5 h-5 mr-2" />
                   )}
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {contactMutation.isPending ? 'Sending...' : 'Send Message'}
                 </motion.button>
               </form>
             </motion.div>

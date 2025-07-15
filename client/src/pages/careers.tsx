@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Clock, Building, Users, Star, X, Upload, Send, Eye, Target, Briefcase, ArrowUp, ArrowDown, Search, Filter, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { apiRequest } from '@/lib/queryClient';
+import { useToast } from '@/hooks/use-toast';
 import careerBannerImage from '@assets/businessman-holding-briefcase-travellers-walking-outdoors_1752497648254.jpg';
 
 export default function Careers() {
@@ -18,6 +21,31 @@ export default function Careers() {
     resume: null
   });
 
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
+
+  // Fetch jobs from admin panel
+  const { data: jobOpenings = [], isLoading: jobsLoading } = useQuery({
+    queryKey: ['/api/jobs'],
+    queryFn: () => fetch('/api/jobs').then(res => res.json()),
+  });
+
+  // Job application mutation
+  const applyMutation = useMutation({
+    mutationFn: async (applicationData) => {
+      const response = await apiRequest('POST', `/api/jobs/${selectedJob.id}/apply`, applicationData);
+      if (!response.ok) throw new Error('Failed to submit application');
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({ title: "Success", description: "Application submitted successfully!" });
+      handleCloseModal();
+    },
+    onError: () => {
+      toast({ title: "Error", description: "Failed to submit application", variant: "destructive" });
+    },
+  });
+
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
@@ -27,77 +55,9 @@ export default function Careers() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const departments = ['Engineering', 'Sales', 'Operations', 'Marketing', 'Finance'];
-  const locations = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Remote'];
-
-  const jobOpenings = [
-    {
-      id: 1,
-      title: "Senior Frontend Developer",
-      department: "Engineering",
-      location: "Mumbai",
-      type: "Full-time",
-      experience: "3-5 years",
-      description: "Build and maintain our React-based procurement platform with focus on user experience and performance optimization.",
-      requirements: ["React.js expertise", "TypeScript proficiency", "UI/UX design sense", "Performance optimization"],
-      posted: "2 days ago"
-    },
-    {
-      id: 2,
-      title: "Sales Manager - Construction",
-      department: "Sales",
-      location: "Delhi",
-      type: "Full-time",
-      experience: "5-7 years",
-      description: "Lead sales efforts in North India, building relationships with construction companies and driving revenue growth.",
-      requirements: ["Construction industry experience", "B2B sales expertise", "Team leadership", "Hindi fluency"],
-      posted: "1 week ago"
-    },
-    {
-      id: 3,
-      title: "Supply Chain Analyst",
-      department: "Operations",
-      location: "Bangalore",
-      type: "Full-time",
-      experience: "2-4 years",
-      description: "Analyze supply chain data, optimize procurement processes, and implement efficiency improvements.",
-      requirements: ["Data analysis skills", "Supply chain knowledge", "Excel/SQL proficiency", "Process improvement"],
-      posted: "3 days ago"
-    },
-    {
-      id: 4,
-      title: "Product Marketing Manager",
-      department: "Marketing",
-      location: "Mumbai",
-      type: "Full-time",
-      experience: "4-6 years",
-      description: "Drive product marketing strategy, create compelling content, and support business growth initiatives.",
-      requirements: ["B2B marketing experience", "Content creation", "Market research", "Campaign management"],
-      posted: "5 days ago"
-    },
-    {
-      id: 5,
-      title: "DevOps Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      experience: "3-5 years",
-      description: "Manage cloud infrastructure, CI/CD pipelines, and ensure scalable, secure deployment processes.",
-      requirements: ["AWS/Azure expertise", "Docker/Kubernetes", "CI/CD tools", "Security best practices"],
-      posted: "1 day ago"
-    },
-    {
-      id: 6,
-      title: "Financial Analyst",
-      department: "Finance",
-      location: "Chennai",
-      type: "Full-time",
-      experience: "2-4 years",
-      description: "Support financial planning, analysis, and reporting for procurement operations and business growth.",
-      requirements: ["Financial modeling", "Excel expertise", "Analytical thinking", "CA/CFA preferred"],
-      posted: "4 days ago"
-    }
-  ];
+  // Extract unique departments and locations from job data
+  const departments = [...new Set(jobOpenings.map(job => job.department))];
+  const locations = [...new Set(jobOpenings.map(job => job.location))];
 
   const filteredJobs = jobOpenings.filter(job => {
     const matchesDepartment = selectedDepartment === 'all' || job.department === selectedDepartment;
@@ -105,7 +65,7 @@ export default function Careers() {
     const matchesSearch = searchQuery === '' || 
       job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       job.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      job.requirements.some(req => req.toLowerCase().includes(searchQuery.toLowerCase()));
+      (job.requirements && job.requirements.some(req => req.toLowerCase().includes(searchQuery.toLowerCase())));
     return matchesDepartment && matchesLocation && matchesSearch;
   });
 
@@ -122,9 +82,12 @@ export default function Careers() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Application submitted:', formData, selectedJob);
-    handleCloseModal();
+    applyMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      resume: formData.resume ? formData.resume.name : null, // Store filename for now
+    });
   };
 
   const handleFileChange = (e) => {
@@ -627,10 +590,15 @@ export default function Careers() {
                   </Button>
                   <Button
                     type="submit"
-                    className="flex-1 bg-primary text-accent hover:bg-accent hover:text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center"
+                    disabled={applyMutation.isPending}
+                    className="flex-1 bg-primary text-accent hover:bg-accent hover:text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Submit Application
+                    {applyMutation.isPending ? (
+                      <div className="w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin mr-2" />
+                    ) : (
+                      <Send className="w-4 h-4 mr-2" />
+                    )}
+                    {applyMutation.isPending ? 'Submitting...' : 'Submit Application'}
                   </Button>
                 </div>
               </form>
