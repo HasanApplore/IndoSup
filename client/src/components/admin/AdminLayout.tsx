@@ -170,7 +170,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   onClick={handleLogout}
                   variant="outline"
                   size="sm"
-                  className="lg:hidden"
+                  className="lg:hidden border-gray-300 text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                 >
                   <LogOut className="h-4 w-4" />
                 </Button>
