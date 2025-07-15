@@ -95,7 +95,7 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center cursor-pointer border border-gray-100 hover:border-primary mt-[12px] mb-[12px] hover:bg-white/95 relative overflow-hidden"
+              className="group bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center cursor-pointer border-2 border-gray-100 hover:border-primary mt-[12px] mb-[12px] hover:bg-white/95 relative overflow-hidden"
               variants={cardVariants}
               whileHover={{
                 y: -16,
@@ -103,9 +103,6 @@ export default function WhoWeAreSection() {
                 transition: { duration: 0.4 }
               }}
             >
-              {/* Neon Border Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/60 via-primary/30 to-primary/60 rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 -z-10"></div>
-              
               {/* Content Container */}
               <div className="relative z-10">
                 {/* Icon */}
