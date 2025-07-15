@@ -1,0 +1,94 @@
+Build a modern, secure, and fully functional Admin Panel (dashboard) for the IndoSup website using  and configure it to manage all website content dynamically. 
+ and also storing and managing all data used the desired technology
+
+---
+
+🎨 Admin Panel Features to Include:
+
+1. **Authentication**
+- Admin login with email + password using Firebase Auth
+- Protect all admin routes (PrivateRoute HOC or middleware)
+- Optional: Remember me, forgot password, logout
+
+---
+
+2. **Dashboard Layout**
+- Sidebar with sections:
+  - Dashboard Home
+  - Contact Submissions
+  - Careers (Jobs + Applications)
+  - Catalogues
+  - Our Business (Steel + Non-Steel Products)
+  - Media (Blogs, Awards, News, etc.)
+  - Settings
+- Use Tailwind + Headless UI + Icons for clean UI
+
+---
+
+📨 3. **Contact Us Submissions**
+- Fetch and list all form submissions in a table view:
+  - Name, Email, Message, Date
+- Option to filter, delete, or export submissions as CSV
+- Backend stores each new form submission to DB
+- Triggered from the public website's Contact Us form
+
+---
+
+💼 4. **Careers**
+**(a) Job Management**
+- Form to add new job postings:
+  - Title, Department, Location, Type, Description
+- View/edit/delete jobs in a table
+- Sync with frontend Careers page (real-time update)
+
+**(b) Candidate Applications**
+- View list of candidates who applied via website
+- Fields: Name, Email, Resume link, Applied Job
+- Allow download or view resume file
+- Optional status: Shortlisted / Rejected / Interview
+
+---
+
+📁 5. **Catalogues**
+- Admin can upload new product catalogs (PDF)
+- Fields: Title, Category (Steel / Non-Steel), Description, File
+- All uploads should display dynamically on the frontend Catalogues page
+- Allow deleting outdated PDFs
+
+---
+
+🏗️ 6. **Our Business – Products (Steel & Non-Steel)**
+- Add/Edit/Delete categories and products dynamically
+- Fields:
+  - Product Name, Description, Image (optional), Category, Tags
+- All updates should reflect on frontend instantly
+
+Example: Add "UPVC Pipes" under "Plumbing" → auto visible on frontend under Non-Steel → Plumbing
+
+---
+
+📰 7. **Media Management**
+Admin can manage the following tabs:
+**(a) Blogs**
+- Title, Author, Banner Image, Content (Rich Text or Markdown)
+- CRUD options
+**(b) Awards**
+- Title, Image, Date, Description
+**(c) News / Press Mentions**
+- Title, Source, Link, Summary
+**(d) Case Studies**
+- Title, Client, Description, Media/File Upload
+
+All should be auto-synced with frontend Media section
+
+---
+
+🎯 8. **General Settings (Optional)**
+- Manage social links, SEO meta tags, global site settings
+- Optional: Theme switch, Footer links
+
+---
+
+🧩 TECH REQUIREMENTS:
+use the tech stack which are used for building the website and comptiable with that tech stacks . 
+
