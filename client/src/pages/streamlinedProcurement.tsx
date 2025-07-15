@@ -354,7 +354,7 @@ export default function StreamlinedProcurement() {
                 {/* Content */}
                 <div className="flex-1">
                   {/* Unified Content Block */}
-                  <div className="bg-white rounded-2xl p-8 shadow-lg">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg min-h-[320px] flex flex-col">
                     {/* Title Section */}
                     <div className="flex items-center space-x-4 mb-6">
                       <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -369,7 +369,7 @@ export default function StreamlinedProcurement() {
                     </div>
 
                     {/* Description Section */}
-                    <div className="mb-6">
+                    <div className="mb-6 flex-grow">
                       <p className="text-lg text-neutral-base leading-relaxed mb-4">
                         {solution.description}
                       </p>
@@ -392,14 +392,16 @@ export default function StreamlinedProcurement() {
                     </div>
 
                     {/* Button Section */}
-                    <motion.button
-                      className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
-                      whileHover={{ x: 5, scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span className="mr-2">Learn More</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.button>
+                    <div className="mt-auto">
+                      <motion.button
+                        className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                        whileHover={{ x: 5, scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <span className="mr-2">Learn More</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </motion.button>
+                    </div>
                   </div>
                 </div>
 
@@ -413,7 +415,7 @@ export default function StreamlinedProcurement() {
                     <img
                       src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
                       alt={solution.title}
-                      className="w-full h-80 object-cover rounded-3xl shadow-lg"
+                      className="w-full h-[320px] object-cover rounded-3xl shadow-lg"
                     />
                   </motion.div>
                 </div>
