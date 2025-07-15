@@ -101,7 +101,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center ml-8">
             <Link 
               to="/about" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-bold text-base ${
                 isActivePath('/about') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -116,7 +116,7 @@ export default function Navbar() {
               <button
                 onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
                 onClick={toggleInitiativesDropdown}
-                className={`flex items-center transition-colors duration-200 relative group font-medium text-sm ${
+                className={`flex items-center transition-colors duration-200 relative group font-bold text-base ${
                   isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
@@ -151,7 +151,7 @@ export default function Navbar() {
             </div>
             <Link 
               to="/streamlined-procurement" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-bold text-base ${
                 isActivePath('/streamlined-procurement') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -168,7 +168,7 @@ export default function Navbar() {
               <button
                 onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                 onClick={toggleBusinessDropdown}
-                className={`flex items-center transition-colors duration-200 relative group font-medium text-sm ${
+                className={`flex items-center transition-colors duration-200 relative group font-bold text-base ${
                   isBusinessActive() ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
@@ -206,7 +206,7 @@ export default function Navbar() {
 
             <Link 
               to="/media" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-bold text-base ${
                 isActivePath('/media') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -218,7 +218,7 @@ export default function Navbar() {
             </Link>
             <Link 
               to="/careers" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-bold text-base ${
                 isActivePath('/careers') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -230,7 +230,7 @@ export default function Navbar() {
             </Link>
             <Link 
               to="/catalogues" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-bold text-base ${
                 isActivePath('/catalogues') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -245,7 +245,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center flex-shrink-0">
             <Link to="/contact">
-              <Button className="bg-primary text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-sm">
+              <Button className="bg-primary text-accent font-bold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-base">
                 Contact Us
               </Button>
             </Link>
