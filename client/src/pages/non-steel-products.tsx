@@ -232,7 +232,7 @@ export default function NonSteelProducts() {
       )}
 
       {/* Products Section */}
-      <section className="py-8 md:py-12 bg-[#FBF5EA]">
+      <section className="py-8 md:py-12 bg-[#FBF5EA] pt-[0px] pb-[0px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-8"
@@ -250,7 +250,7 @@ export default function NonSteelProducts() {
 
           {/* Stats Summary */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8"
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -286,17 +286,10 @@ export default function NonSteelProducts() {
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Site</h3>
-              <p className="text-neutral-base text-sm">Utilities</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Package className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-accent mb-1">Pumping</h3>
-              <p className="text-neutral-base text-sm">Water System</p>
+              <h3 className="text-xl font-bold text-accent mb-1">Water Systems</h3>
+              <p className="text-neutral-base text-sm">& Utilities</p>
             </div>
           </motion.div>
           
@@ -305,7 +298,7 @@ export default function NonSteelProducts() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center mb-0 mt-4">
+            <div className="flex items-center mt-[80px] mb-[80px]">
               <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-accent mr-6">
                 <Wrench className="w-8 h-8" />
               </div>
