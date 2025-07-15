@@ -65,7 +65,7 @@ export default function Careers() {
     const matchesSearch = searchQuery === '' || 
       job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       job.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (job.requirements && job.requirements.some(req => req.toLowerCase().includes(searchQuery.toLowerCase())));
+      (job.requirements && job.requirements.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesDepartment && matchesLocation && matchesSearch;
   });
 
@@ -344,7 +344,7 @@ export default function Careers() {
                     </div>
                   </div>
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    {job.experience}
+                    {job.department}
                   </span>
                 </div>
 
@@ -355,16 +355,22 @@ export default function Careers() {
                 <div className="mb-4">
                   <h4 className="font-semibold text-accent mb-2">Key Requirements:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {job.requirements.map((req, index) => (
+                    {job.requirements && job.requirements.split(',').map((req, index) => (
                       <span key={index} className="bg-gray-100 text-accent px-3 py-1 rounded-full text-sm">
-                        {req}
+                        {req.trim()}
                       </span>
                     ))}
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-neutral-base">Posted {job.posted}</span>
+                  <span className="text-sm text-neutral-base">
+                    Posted {new Date(job.createdAt).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'short', 
+                      day: 'numeric' 
+                    })}
+                  </span>
                   <Button
                     onClick={() => handleApply(job)}
                     className="bg-primary hover:bg-accent text-accent hover:text-white font-semibold px-6 py-2 rounded-lg transition-all duration-200"
