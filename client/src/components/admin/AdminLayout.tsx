@@ -88,7 +88,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <Button
               onClick={handleLogout}
               variant="outline"
-              className="w-full text-white border-gray-600 hover:bg-gray-700"
+              className="w-full bg-transparent text-white border-gray-600 hover:bg-gray-700 hover:text-white hover:border-gray-500"
             >
               <LogOut className="h-4 w-4 mr-2" />
               Logout
@@ -136,7 +136,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             <Button
               onClick={handleLogout}
               variant="outline"
-              className="w-full text-white border-gray-600 hover:bg-gray-700"
+              className="w-full bg-transparent text-white border-gray-600 hover:bg-gray-700 hover:text-white hover:border-gray-500"
             >
               <LogOut className="h-4 w-4 mr-2" />
               Logout
