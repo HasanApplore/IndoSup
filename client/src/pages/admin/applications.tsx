@@ -4,6 +4,7 @@ import { apiRequest } from '@/lib/queryClient';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
 import { 
   Search, 
@@ -18,13 +19,18 @@ import {
   CheckCircle,
   XCircle,
   Clock,
-  Eye
+  Eye,
+  X
 } from 'lucide-react';
 import type { JobApplication, Job } from '@shared/schema';
 
 export default function JobApplications() {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+  const [currentResumeUrl, setCurrentResumeUrl] = useState<string>('');
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -86,6 +92,26 @@ export default function JobApplications() {
     if (window.confirm('Are you sure you want to delete this application?')) {
       deleteMutation.mutate(id);
     }
+  };
+
+  const handleViewApplication = (application: JobApplication) => {
+    setSelectedApplication(application);
+    setIsModalOpen(true);
+  };
+
+  const handleViewResume = (resumeUrl: string) => {
+    setCurrentResumeUrl(resumeUrl);
+    setIsResumeModalOpen(true);
+  };
+
+  const handleDownloadResume = (resumeUrl: string, applicantName: string) => {
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = `${applicantName}_resume.pdf`;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const getStatusColor = (status: string) => {
@@ -267,17 +293,36 @@ export default function JobApplications() {
                       )}
 
                       <div className="flex items-center space-x-4">
+                        <Button
+                          onClick={() => handleViewApplication(application)}
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center"
+                        >
+                          <Eye className="h-4 w-4 mr-1" />
+                          View Details
+                        </Button>
                         {application.resumeUrl && (
-                          <a
-                            href={application.resumeUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center text-blue-600 hover:text-blue-700 text-sm"
-                          >
-                            <FileText className="h-4 w-4 mr-1" />
-                            View Resume
-                            <ExternalLink className="h-3 w-3 ml-1" />
-                          </a>
+                          <div className="flex items-center space-x-2">
+                            <Button
+                              onClick={() => handleViewResume(application.resumeUrl!)}
+                              variant="outline"
+                              size="sm"
+                              className="flex items-center text-blue-600 hover:text-blue-700"
+                            >
+                              <FileText className="h-4 w-4 mr-1" />
+                              View Resume
+                            </Button>
+                            <Button
+                              onClick={() => handleDownloadResume(application.resumeUrl!, application.name)}
+                              variant="outline"
+                              size="sm"
+                              className="flex items-center text-green-600 hover:text-green-700"
+                            >
+                              <Download className="h-4 w-4 mr-1" />
+                              Download
+                            </Button>
+                          </div>
                         )}
                       </div>
                     </div>
@@ -311,6 +356,159 @@ export default function JobApplications() {
           )}
         </CardContent>
       </Card>
+
+      {/* Application Details Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">Application Details</DialogTitle>
+          </DialogHeader>
+          {selectedApplication && (
+            <div className="space-y-6">
+              {/* Header Section */}
+              <div className="flex items-start justify-between p-4 bg-gray-50 rounded-lg">
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900">{selectedApplication.name}</h3>
+                  <p className="text-gray-600">{selectedApplication.email}</p>
+                  {selectedApplication.phone && (
+                    <p className="text-gray-600">{selectedApplication.phone}</p>
+                  )}
+                </div>
+                <div className="text-right">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(selectedApplication.status)}`}>
+                    {getStatusIcon(selectedApplication.status)}
+                    <span className="ml-1 capitalize">{selectedApplication.status}</span>
+                  </span>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Applied: {new Date(selectedApplication.createdAt).toLocaleDateString()}
+                  </p>
+                </div>
+              </div>
+
+              {/* Job Information */}
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Job Information</h4>
+                <p className="text-gray-700">{getJobTitle(selectedApplication.jobId)}</p>
+              </div>
+
+              {/* Cover Letter */}
+              {selectedApplication.coverLetter && (
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-semibold text-gray-900 mb-2">Cover Letter</h4>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <p className="text-gray-700 whitespace-pre-wrap">{selectedApplication.coverLetter}</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Resume Section */}
+              {selectedApplication.resumeUrl && (
+                <div className="p-4 border rounded-lg">
+                  <h4 className="font-semibold text-gray-900 mb-3">Resume</h4>
+                  <div className="flex items-center space-x-4">
+                    <Button
+                      onClick={() => handleViewResume(selectedApplication.resumeUrl!)}
+                      className="flex items-center bg-blue-600 hover:bg-blue-700 text-white"
+                    >
+                      <Eye className="h-4 w-4 mr-2" />
+                      View Resume
+                    </Button>
+                    <Button
+                      onClick={() => handleDownloadResume(selectedApplication.resumeUrl!, selectedApplication.name)}
+                      variant="outline"
+                      className="flex items-center"
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download Resume
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* Status Management */}
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-3">Status Management</h4>
+                <div className="flex items-center space-x-4">
+                  <select
+                    value={selectedApplication.status}
+                    onChange={(e) => {
+                      handleStatusChange(selectedApplication.id, e.target.value);
+                      setSelectedApplication({
+                        ...selectedApplication,
+                        status: e.target.value
+                      });
+                    }}
+                    className="px-3 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="pending">Pending</option>
+                    <option value="shortlisted">Shortlisted</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="interviewed">Interviewed</option>
+                  </select>
+                  <Button
+                    onClick={() => {
+                      handleDelete(selectedApplication.id);
+                      setIsModalOpen(false);
+                    }}
+                    variant="outline"
+                    className="text-red-600 hover:text-red-700"
+                  >
+                    Delete Application
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Resume Viewer Modal */}
+      <Dialog open={isResumeModalOpen} onOpenChange={setIsResumeModalOpen}>
+        <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">Resume Viewer</DialogTitle>
+          </DialogHeader>
+          <div className="flex-1 overflow-hidden">
+            {currentResumeUrl && (
+              <div className="h-[70vh] border rounded-lg overflow-hidden">
+                <iframe
+                  src={currentResumeUrl}
+                  className="w-full h-full border-0"
+                  title="Resume Viewer"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div className="mt-4 flex items-center justify-between">
+              <p className="text-sm text-gray-600">
+                If the resume doesn't load properly, you can download it directly.
+              </p>
+              <div className="flex space-x-2">
+                <Button
+                  onClick={() => window.open(currentResumeUrl, '_blank')}
+                  variant="outline"
+                  className="flex items-center"
+                >
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Open in New Tab
+                </Button>
+                <Button
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = currentResumeUrl;
+                    link.download = 'resume.pdf';
+                    link.click();
+                  }}
+                  className="flex items-center bg-[#FFC600] hover:bg-[#E6B200] text-black"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </Button>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
