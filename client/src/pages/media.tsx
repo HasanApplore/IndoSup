@@ -598,15 +598,32 @@ export default function Media() {
     }
   ];
 
-  const contentMap = {
-    'media-coverage': mediaCoverage,
-    'awards': awards,
-    'newsletters': newsletters,
-    'blogs': blogs,
-    'case-studies': caseStudies
+  // Transform database content to match expected format for display
+  const transformedContent = mediaContent.map(item => ({
+    ...item,
+    preview: item.summary || item.content?.substring(0, 200) + '...' || 'No preview available',
+    date: new Date(item.publishedAt || item.createdAt).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long'
+    }),
+    category: item.tags?.[0] || 'General',
+    image: item.imageUrl || 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    fullContent: item.content || 'No content available'
+  }));
+
+  // Filter content by type (tab)
+  const getContentByType = (type) => {
+    const typeMap = {
+      'media-coverage': 'blog',
+      'awards': 'award',
+      'newsletters': 'newsletter',
+      'blogs': 'blog',
+      'case-studies': 'case-study'
+    };
+    return transformedContent.filter(item => item.type === typeMap[type]);
   };
 
-  const currentContent = contentMap[activeTab] || [];
+  const currentContent = isLoading ? [] : getContentByType(activeTab);
 
   const filteredContent = currentContent.filter(item => {
     const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -898,6 +915,9 @@ export default function Media() {
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
