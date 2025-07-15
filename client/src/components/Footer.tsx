@@ -98,15 +98,14 @@ export default function Footer() {
           {/* Contact Info & Social Media */}
           <div className="lg:col-span-6 space-y-4">
             <div>
-              <h4 className="text-lg font-bold mb-6 text-white flex items-center">
-                <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-                Find Us
-              </h4>
-              
-              {/* Contact Info and Map Container */}
+              {/* Find Us Section with Map */}
               <div className="flex flex-col xl:flex-row gap-8 mb-6">
                 {/* Contact Information */}
                 <div className="flex-1 space-y-5">
+                  <h4 className="text-lg font-bold mb-6 text-white flex items-center">
+                    <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
+                    Find Us
+                  </h4>
                   <div className="flex items-start text-gray-300 text-sm group">
                     <MapPin className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                     <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
