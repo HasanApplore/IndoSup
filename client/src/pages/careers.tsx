@@ -33,7 +33,19 @@ export default function Careers() {
   // Job application mutation
   const applyMutation = useMutation({
     mutationFn: async (applicationData) => {
-      const response = await apiRequest('POST', `/api/jobs/${selectedJob.id}/apply`, applicationData);
+      const formData = new FormData();
+      formData.append('name', applicationData.name);
+      formData.append('email', applicationData.email);
+      formData.append('phone', applicationData.phone || '');
+      if (applicationData.resume) {
+        formData.append('resume', applicationData.resume);
+      }
+      
+      const response = await fetch(`/api/jobs/${selectedJob.id}/apply`, {
+        method: 'POST',
+        body: formData,
+      });
+      
       if (!response.ok) throw new Error('Failed to submit application');
       return response.json();
     },
@@ -86,7 +98,7 @@ export default function Careers() {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      resume: formData.resume ? formData.resume.name : null, // Store filename for now
+      resume: formData.resume, // Pass the actual file object
     });
   };
 

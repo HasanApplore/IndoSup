@@ -1,5 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import multer from "multer";
+import path from "path";
 import { storage } from "./storage";
 import { 
   insertAdminUserSchema, 
@@ -11,6 +13,33 @@ import {
   insertMediaContentSchema,
   insertSiteSettingSchema
 } from "@shared/schema";
+
+// Configure multer for file uploads
+const storage_config = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/resumes/'); // Store resumes in uploads/resumes directory
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const ext = path.extname(file.originalname);
+    cb(null, `resume-${uniqueSuffix}${ext}`);
+  }
+});
+
+const upload = multer({ 
+  storage: storage_config,
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+  fileFilter: (req, file, cb) => {
+    // Accept only pdf, doc, docx files
+    if (file.mimetype === 'application/pdf' || 
+        file.mimetype === 'application/msword' || 
+        file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+      cb(null, true);
+    } else {
+      cb(new Error('Only PDF, DOC, and DOCX files are allowed!'), false);
+    }
+  }
+});
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Public API Routes (for website integration)
@@ -27,13 +56,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Submit job application
-  app.post("/api/jobs/:id/apply", async (req, res) => {
+  // Submit job application with file upload
+  app.post("/api/jobs/:id/apply", upload.single('resume'), async (req, res) => {
     try {
       const jobId = parseInt(req.params.id);
+      const resumeUrl = req.file ? `/uploads/resumes/${req.file.filename}` : null;
+      
       const applicationData = {
         ...req.body,
         jobId,
+        resumeUrl,
         status: 'pending'
       };
       
@@ -41,6 +73,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const newApplication = await storage.createJobApplication(application);
       res.json(newApplication);
     } catch (error) {
+      console.error('Job application error:', error);
       res.status(400).json({ message: "Invalid application data" });
     }
   });
