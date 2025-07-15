@@ -20,6 +20,21 @@ export default function NonSteelProducts() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Handle hash navigation when page loads
+    if (window.location.hash) {
+      const elementId = window.location.hash.substring(1);
+      const element = document.getElementById(elementId);
+      if (element) {
+        setTimeout(() => {
+          const yOffset = -100; // Offset for navbar
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
