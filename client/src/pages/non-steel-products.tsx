@@ -30,7 +30,7 @@ export default function NonSteelProducts() {
           const yOffset = -100; // Offset for navbar
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
-        }, 100);
+        }, 500);
       }
     }
   }, []);
