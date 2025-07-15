@@ -146,6 +146,7 @@ export class MemStorage implements IStorage {
     const now = new Date();
     const user: AdminUser = { 
       ...insertUser, 
+      role: insertUser.role || "admin",
       id, 
       createdAt: now,
       updatedAt: now 
@@ -184,6 +185,8 @@ export class MemStorage implements IStorage {
     const id = this.currentId++;
     const submission: ContactSubmission = { 
       ...insertion, 
+      phone: insertion.phone || null,
+      company: insertion.company || null,
       id, 
       createdAt: new Date() 
     };
@@ -209,6 +212,7 @@ export class MemStorage implements IStorage {
     const now = new Date();
     const job: Job = { 
       ...insertion, 
+      isActive: insertion.isActive ?? true,
       id, 
       createdAt: now,
       updatedAt: now 
@@ -253,6 +257,10 @@ export class MemStorage implements IStorage {
     const id = this.currentId++;
     const application: JobApplication = { 
       ...insertion, 
+      status: insertion.status || "pending",
+      phone: insertion.phone || null,
+      resumeUrl: insertion.resumeUrl || null,
+      coverLetter: insertion.coverLetter || null,
       id, 
       createdAt: new Date() 
     };
@@ -290,6 +298,9 @@ export class MemStorage implements IStorage {
     const now = new Date();
     const catalogue: Catalogue = { 
       ...insertion, 
+      description: insertion.description || null,
+      isActive: insertion.isActive ?? true,
+      fileSize: insertion.fileSize || null,
       id, 
       createdAt: now,
       updatedAt: now 
@@ -329,6 +340,12 @@ export class MemStorage implements IStorage {
     const now = new Date();
     const product: Product = { 
       ...insertion, 
+      description: insertion.description || null,
+      isActive: insertion.isActive ?? true,
+      subcategory: insertion.subcategory || null,
+      imageUrl: insertion.imageUrl || null,
+      tags: insertion.tags || null,
+      specifications: insertion.specifications || null,
       id, 
       createdAt: now,
       updatedAt: now 
@@ -374,6 +391,15 @@ export class MemStorage implements IStorage {
     const now = new Date();
     const content: MediaContent = { 
       ...insertion, 
+      author: insertion.author || null,
+      content: insertion.content || null,
+      summary: insertion.summary || null,
+      imageUrl: insertion.imageUrl || null,
+      fileUrl: insertion.fileUrl || null,
+      source: insertion.source || null,
+      externalLink: insertion.externalLink || null,
+      tags: insertion.tags || null,
+      isPublished: insertion.isPublished ?? true,
       id, 
       publishedAt: now,
       createdAt: now,
@@ -413,6 +439,8 @@ export class MemStorage implements IStorage {
     const id = this.currentId++;
     const setting: SiteSetting = { 
       ...insertion, 
+      type: insertion.type || "text",
+      description: insertion.description || null,
       id, 
       updatedAt: new Date() 
     };
@@ -487,7 +515,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteAdminUser(id: number): Promise<boolean> {
     const result = await db.delete(adminUsers).where(eq(adminUsers.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Contact submission methods
@@ -512,7 +540,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteContactSubmission(id: number): Promise<boolean> {
     const result = await db.delete(contactSubmissions).where(eq(contactSubmissions.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Job methods
@@ -545,7 +573,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteJob(id: number): Promise<boolean> {
     const result = await db.delete(jobs).where(eq(jobs.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Job application methods
@@ -584,7 +612,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteJobApplication(id: number): Promise<boolean> {
     const result = await db.delete(jobApplications).where(eq(jobApplications.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Catalogue methods
@@ -619,7 +647,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteCatalogue(id: number): Promise<boolean> {
     const result = await db.delete(catalogues).where(eq(catalogues.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Product methods
@@ -657,7 +685,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteProduct(id: number): Promise<boolean> {
     const result = await db.delete(products).where(eq(products.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Media content methods
@@ -677,17 +705,18 @@ export class DatabaseStorage implements IStorage {
   async createMediaContent(insertion: InsertMediaContent): Promise<MediaContent> {
     const [content] = await db.insert(mediaContent).values({
       ...insertion,
-      fileUrl: insertion.fileUrl || null,
-      imageUrl: insertion.imageUrl || null,
-      tags: insertion.tags || null,
       author: insertion.author || null,
+      content: insertion.content || null,
       summary: insertion.summary || null,
+      imageUrl: insertion.imageUrl || null,
+      fileUrl: insertion.fileUrl || null,
+      source: insertion.source || null,
+      externalLink: insertion.externalLink || null,
+      tags: insertion.tags || null,
       isPublished: insertion.isPublished ?? true,
-      isFeatured: insertion.isFeatured ?? false,
-      downloadCount: insertion.downloadCount || 0,
+      publishedAt: new Date(),
       createdAt: new Date(),
-      updatedAt: new Date(),
-      publishedAt: new Date()
+      updatedAt: new Date()
     }).returning();
     return content;
   }
@@ -702,7 +731,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteMediaContent(id: number): Promise<boolean> {
     const result = await db.delete(mediaContent).where(eq(mediaContent.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 
   // Site settings methods
@@ -735,7 +764,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteSiteSetting(key: string): Promise<boolean> {
     const result = await db.delete(siteSettings).where(eq(siteSettings.key, key));
-    return result.rowCount > 0;
+    return (result.rowCount || 0) > 0;
   }
 }
 
