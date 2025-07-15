@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Download, FileText, Calendar, Tag, ArrowRight, ArrowDown, Star, Eye, Clock } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
 import steelBarsImage from "@assets/assorted-steel-bars-pipes_1077802-159331_1752217650726.jpg";
 
 export default function Catalogues() {
@@ -36,10 +37,26 @@ export default function Catalogues() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const categories = ['Steel Products', 'Non-Steel Products', 'Construction Materials', 'Safety Equipment', 'Tools & Equipment'];
-  const years = ['2024', '2023', '2022'];
+  // Fetch catalogues from database
+  const { data: catalogues = [], isLoading, error } = useQuery({
+    queryKey: ['/api/catalogues'],
+    queryFn: async () => {
+      const response = await fetch('/api/catalogues');
+      if (!response.ok) {
+        throw new Error('Failed to fetch catalogues');
+      }
+      return response.json();
+    }
+  });
 
-  const catalogues = [
+  // Extract unique categories and years from database data
+  const categories = [...new Set(catalogues.map(catalogue => catalogue.category))];
+  const years = [...new Set(catalogues.map(catalogue => 
+    new Date(catalogue.createdAt).getFullYear().toString()
+  ))].sort().reverse();
+
+  // Use hardcoded data as fallback if no database data
+  const hardcodedCatalogues = [
     {
       id: 1,
       title: "Complete Steel Products Catalog 2024",
@@ -152,7 +169,20 @@ export default function Catalogues() {
     }
   ];
 
-  const filteredCatalogues = catalogues.filter(catalog => {
+  // Use database data if available, otherwise use hardcoded data
+  const catalogueData = catalogues.length > 0 ? catalogues.map(catalogue => ({
+    ...catalogue,
+    year: new Date(catalogue.createdAt).getFullYear().toString(),
+    lastUpdated: new Date(catalogue.updatedAt).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long' 
+    }),
+    size: catalogue.fileSize ? `${(catalogue.fileSize / 1024 / 1024).toFixed(1)} MB` : 'N/A',
+    pages: 'N/A',
+    downloadCount: 0 // This would come from actual download tracking
+  })) : hardcodedCatalogues;
+
+  const filteredCatalogues = catalogueData.filter(catalog => {
     const matchesSearch = catalog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          catalog.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || catalog.category === selectedCategory;

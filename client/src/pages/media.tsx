@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2 } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isContentLoading, setIsContentLoading] = useState(false);
   const [heroAnimated, setHeroAnimated] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState(null);
@@ -51,6 +52,18 @@ export default function Media() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Fetch media content from database
+  const { data: mediaContent = [], isLoading, error } = useQuery({
+    queryKey: ['/api/media'],
+    queryFn: async () => {
+      const response = await fetch('/api/media');
+      if (!response.ok) {
+        throw new Error('Failed to fetch media content');
+      }
+      return response.json();
+    }
+  });
 
   const tabs = [
     { id: 'media-coverage', label: 'Blogs' },

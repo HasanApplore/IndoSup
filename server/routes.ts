@@ -56,6 +56,43 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get all active catalogues for catalogues page
+  app.get("/api/catalogues", async (req, res) => {
+    try {
+      const catalogues = await storage.getCatalogues();
+      // Only return active catalogues for public API
+      const activeCatalogues = catalogues.filter(catalogue => catalogue.isActive);
+      res.json(activeCatalogues);
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Get all published media content for media page
+  app.get("/api/media", async (req, res) => {
+    try {
+      const media = await storage.getMediaContent();
+      // Only return published media for public API
+      const publishedMedia = media.filter(item => item.isPublished);
+      res.json(publishedMedia);
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
+  // Get media content by type
+  app.get("/api/media/:type", async (req, res) => {
+    try {
+      const type = req.params.type;
+      const media = await storage.getMediaContentByType(type);
+      // Only return published media for public API
+      const publishedMedia = media.filter(item => item.isPublished);
+      res.json(publishedMedia);
+    } catch (error) {
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
   // Admin Authentication Routes
   app.post("/api/admin/login", async (req, res) => {
     try {
