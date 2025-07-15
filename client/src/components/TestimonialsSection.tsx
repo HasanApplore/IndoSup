@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#0F172D] to-[#1E293B] relative overflow-hidden">
+    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#FFFDEE] to-[#F4F4F4] relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -114,11 +114,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-2 font-poppins">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-2 font-poppins">
             What Our Clients Say
           </h2>
-          <div className="h-1 w-12 bg-[#3B82F6] mx-auto my-4"></div>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto mt-2 font-poppins">
+          <div className="h-1 w-12 bg-[#0F172D] mx-auto my-4"></div>
+          <p className="text-gray-500 text-lg max-w-3xl mx-auto mt-2 font-poppins">
             Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>
@@ -131,11 +131,11 @@ export default function TestimonialsSection() {
         >
           {/* Testimonial Card */}
           <div className="relative max-w-4xl mx-auto">
-            <div className="bg-white/95 backdrop-blur-md shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-200 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300">
+            <div className="bg-gradient-to-br from-[#0F172D] to-[#1E293B] shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-700 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300">
               
               {/* Quote Icon - Centered at top */}
               <div className="flex justify-center mb-6">
-                <div className="bg-[#0F172D] w-12 h-12 flex items-center justify-center rounded-full">
+                <div className="bg-white/20 backdrop-blur-sm w-12 h-12 flex items-center justify-center rounded-full">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
               </div>
@@ -156,26 +156,26 @@ export default function TestimonialsSection() {
                   className="text-center"
                 >
                   {/* Testimonial Quote */}
-                  <blockquote className="text-lg text-gray-800 text-center italic leading-relaxed mb-6">
+                  <blockquote className="text-lg text-white text-center italic leading-relaxed mb-6">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
                   {/* Client Info */}
                   <div className="flex items-center justify-center gap-3">
                     {/* Client Profile Circle */}
-                    <div className="bg-[#0F172D] text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
+                    <div className="bg-white/20 backdrop-blur-sm text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
                       {currentTestimonial.avatar}
                     </div>
                     
                     {/* Client Details */}
                     <div className="text-left">
-                      <h4 className="text-xl text-[#1E293B] font-semibold mb-1">
+                      <h4 className="text-xl text-white font-semibold mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-sm text-gray-500 mb-0.5">
+                      <p className="text-sm text-gray-300 mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-300">
                         {currentTestimonial.location}
                       </p>
                     </div>
@@ -194,8 +194,8 @@ export default function TestimonialsSection() {
               onClick={() => goToTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
                 index === currentIndex 
-                  ? 'bg-[#3B82F6]' 
-                  : 'bg-gray-400 hover:bg-gray-300'
+                  ? 'bg-[#0F172D]' 
+                  : 'bg-[#D1D5DB] hover:bg-gray-400'
               }`}
             />
           ))}
