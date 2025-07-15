@@ -794,9 +794,9 @@ export default function Media() {
               <motion.button
                 key={tab.id}
                 onClick={() => {
-                  setIsLoading(true);
+                  setIsContentLoading(true);
                   setActiveTab(tab.id);
-                  setTimeout(() => setIsLoading(false), 300);
+                  setTimeout(() => setIsContentLoading(false), 300);
                 }}
                 className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-bold transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
