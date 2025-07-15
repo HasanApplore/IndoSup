@@ -39,6 +39,13 @@ function App() {
           <Switch>
             {/* Admin Routes */}
             <Route path="/admin/login" component={AdminLogin} />
+            <Route path="/admin">
+              <PrivateRoute>
+                <AdminLayout>
+                  <AdminDashboard />
+                </AdminLayout>
+              </PrivateRoute>
+            </Route>
             <Route path="/admin/dashboard">
               <PrivateRoute>
                 <AdminLayout>
