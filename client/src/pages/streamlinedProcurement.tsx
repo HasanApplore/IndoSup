@@ -354,7 +354,7 @@ export default function StreamlinedProcurement() {
                 {/* Content */}
                 <div className="flex-1">
                   {/* Unified Content Block */}
-                  <div className="bg-white rounded-2xl p-8 shadow-lg h-[400px] flex flex-col">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg h-[500px] flex flex-col">
                     {/* Title Section */}
                     <div className="flex items-center space-x-4 mb-6">
                       <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -415,7 +415,7 @@ export default function StreamlinedProcurement() {
                     <img
                       src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
                       alt={solution.title}
-                      className="w-full h-[400px] object-cover rounded-3xl shadow-lg"
+                      className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
                     />
                   </motion.div>
                 </div>
