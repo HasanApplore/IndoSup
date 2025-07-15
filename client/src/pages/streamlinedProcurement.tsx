@@ -72,8 +72,8 @@ export default function StreamlinedProcurement() {
     {
       icon: <FileText className="w-8 h-8" />,
       title: "GST/Billing Compliance",
-      description: "Automated GST calculations, compliant invoicing, and seamless integration with accounting systems for hassle-free financial management.",
-      subtext: "Stay compliant with Indian tax regulations while reducing administrative overhead through intelligent automation.",
+      description: "Automated GST calculations and compliant invoicing for hassle-free financial management.",
+      subtext: "Stay compliant with Indian tax regulations while reducing administrative overhead.",
       features: ["Automated GST", "Compliant Invoicing", "System Integration"]
     },
     {
