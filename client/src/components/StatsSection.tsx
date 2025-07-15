@@ -28,7 +28,7 @@ function AnimatedCounter({ value, suffix = '', prefix = '', duration = 2 }: Coun
     });
   }, [springValue, prefix, suffix]);
 
-  return <span ref={ref} className="text-[#FFC600] font-bold text-4xl md:text-5xl lg:text-6xl">0</span>;
+  return <span ref={ref} className="text-[#FFD95A] font-bold text-4xl md:text-5xl lg:text-6xl">0</span>;
 }
 
 export default function StatsSection() {
@@ -88,8 +88,8 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative py-16 md:py-20 bg-[#031D33] overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-20 px-6 md:py-20 md:px-6 bg-[#0F172A] overflow-hidden">
+      <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -97,20 +97,18 @@ export default function StatsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-inter">
+          <h2 className="text-4xl font-bold text-white mb-4 font-['Poppins']">
             Our Impact
           </h2>
-          <div className="relative inline-block">
-            <div className="absolute -bottom-2 left-0 w-full h-2 bg-[#FFC600] rounded-full opacity-60"></div>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-6 relative z-10">
-              Numbers that showcase our commitment to excellence and growth
-            </p>
-          </div>
-          <div className="w-24 h-1 bg-[#FFC600] mx-auto mt-4"></div>
+          {/* Yellow underline */}
+          <div className="w-20 h-1 bg-[#FFD95A] mx-auto mb-6"></div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Numbers that showcase our commitment to excellence and growth
+          </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -119,107 +117,34 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#FFC600]/50 transition-all duration-500 hover:bg-white/10 cursor-pointer"
+              className="text-center rounded-lg border border-[#1E3A8A] p-6 shadow-inner"
               variants={itemVariants}
-              whileHover={{ 
-                scale: 1.05, 
-                y: -8,
-                transition: { duration: 0.4 }
-              }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               {/* Animated Counter */}
-              <motion.div
-                className="mb-4"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-              >
+              <div className="mb-3">
                 <AnimatedCounter 
                   value={stat.value} 
                   suffix={stat.suffix}
                   duration={2 + index * 0.3}
                 />
-              </motion.div>
+              </div>
 
               {/* Label */}
-              <motion.h3
-                className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#FFC600] transition-colors duration-300 font-inter"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
-              >
+              <h3 className="text-lg font-semibold text-white mb-2 font-['Poppins']">
                 {stat.label}
-              </motion.h3>
+              </h3>
 
               {/* Description */}
-              <motion.p
-                className="text-white/70 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors duration-300"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.2 + index * 0.1, duration: 0.6 }}
-              >
+              <p className="text-sm text-gray-300 leading-relaxed">
                 {stat.description}
-              </motion.p>
-
-              {/* Decorative Line */}
-              <motion.div
-                className="w-0 h-1 bg-[#FFC600] mx-auto mt-4 group-hover:w-16 transition-all duration-500 rounded-full"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
-              />
-              
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#FFC600]/0 via-[#FFC600]/5 to-[#FFC600]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </p>
             </motion.div>
           ))}
         </motion.div>
-
-      </div>
-
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFC600]/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-[#FFC600]/3 rounded-full blur-2xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-48 h-48 bg-white/5 rounded-full blur-xl"
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4
-          }}
-        />
       </div>
     </section>
   );

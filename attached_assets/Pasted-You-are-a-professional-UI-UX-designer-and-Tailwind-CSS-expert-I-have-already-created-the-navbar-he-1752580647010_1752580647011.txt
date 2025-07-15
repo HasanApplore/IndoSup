@@ -1,0 +1,60 @@
+You are a professional UI/UX designer and Tailwind CSS expert. I have already created the navbar, hero section, and footer — so DO NOT touch them.
+
+Now, improve the remaining homepage sections — starting from "Why Choose IndoSup?" and below — using the following requirements:
+
+1. **Color Theme (Do Not Change Navbar/Hero/Footer):**
+   - Primary dark: `#1E293B` (for titles, headings)
+   - Accent yellow: `#FFD95A` (highlight icons, underline headings)
+   - Background: `#FAFAFA` or `#F9FAFB` for light sections
+   - Deep dark: `#0F172A` (for "Our Impact" section)
+   - Text: `#0F172A` and `#4B5563` for body
+   - Do not use pure white background — use slightly warm neutrals
+
+2. **Typography:**
+   - Font family: `Poppins`
+   - Section Titles: `text-4xl` / `font-bold` / `text-[#1E293B]`
+   - Paragraphs: `text-base` or `text-lg` / `text-gray-600`
+   - Button or icon texts: `uppercase`, `tracking-wide`
+
+3. **Section-wise Design Improvements:**
+
+   ● **Why Choose IndoSup Section**  
+     - Use soft background `#F9FAFB`
+     - Use grid layout: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8`
+     - Add yellow underline below title
+     - Each card: white background, shadow-md, `rounded-xl`, `p-6`
+     - Icon box: circular background `#FFF3BF`, `w-12 h-12`, centered
+     - Animate cards using `framer-motion` or GSAP `fadeInUp`
+
+   ● **Our Impact Section**  
+     - Background: `#0F172A`
+     - Headings: white, numbers: `#FFD95A`, text: `text-gray-300`
+     - Use `grid grid-cols-2 md:grid-cols-4 gap-6`
+     - Add animated count effect (`countUp.js` or framer `motion.div`)
+     - Card styling: rounded-lg, border border-[#1E3A8A], shadow-inner
+
+   ● **Trusted Partners Section**  
+     - Background: `#F4F4F5`
+     - Title with yellow underline and center text
+     - Company logos in flex row, add `hover:grayscale-0` and `transition`
+     - Add padding `py-16 px-6` and logo gap `gap-12`
+     - Use `object-contain h-12` for logos
+
+   ● **What Our Clients Say Section (Testimonials)**  
+     - Background: `#FFFDF5` or `#F9FAFB`
+     - Testimonial card: white, shadow-lg, `rounded-2xl`, `p-6`, max-w-3xl
+     - Client quote icon: yellow circle `#FFD95A`, `w-10 h-10`, centered
+     - Quote: `text-[#1E293B]` or `text-lg`, client name `font-semibold`
+     - Slider: Use dots and autoplay, use `keen-slider` or `swiper.js`
+
+4. **Spacing & Responsiveness:**
+   - Section padding: `py-20 px-6` (desktop), `py-12 px-4` (mobile)
+   - Use responsive Tailwind grid/flex layouts
+   - Use consistent gap and margin between all blocks
+
+5. **DO NOT:**
+   - Do not modify the Navbar, Hero Section, or Footer
+   - Do not use fully white background
+   - Do not touch existing logo or contact details
+
+Now regenerate the homepage with these changes and styles, preserving all existing content and section structure, and improving the overall visual polish and readability across devices.

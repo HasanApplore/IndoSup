@@ -104,9 +104,9 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 md:py-20 relative overflow-hidden">
+    <section className="py-20 px-6 md:py-20 md:px-6 relative overflow-hidden">
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
           className="text-center mb-12"
@@ -115,18 +115,14 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937] font-inter">
-              What Our Clients Say
-            </h2>
-          </div>
-          <div className="relative inline-block">
-            <div className="absolute -bottom-2 left-0 w-full h-2 bg-[#FFC600] rounded-full opacity-60"></div>
-            <p className="text-[#1F2937] text-lg md:text-xl max-w-2xl mx-auto mb-6 relative z-10">
-              Trusted by industry leaders across India for construction procurement excellence
-            </p>
-          </div>
-          <div className="w-24 h-1 bg-[#FFC600] mx-auto mt-4"></div>
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-4 font-['Poppins']">
+            What Our Clients Say
+          </h2>
+          {/* Yellow underline */}
+          <div className="w-20 h-1 bg-[#FFD95A] mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Trusted by industry leaders across India for construction procurement excellence
+          </p>
         </motion.div>
 
         {/* Main Testimonial Container */}
@@ -138,16 +134,12 @@ export default function TestimonialsSection() {
 
 
           {/* Testimonial Card */}
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-3xl mx-auto">
 
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl border border-[#E5E7EB] overflow-hidden relative hover:shadow-3xl hover:scale-[1.02] transition-all duration-500 hover:bg-white/95 cursor-pointer">
-              {/* Decorative Elements */}
-              <div className="absolute top-0 left-0 w-24 h-24 bg-[#FFC600]/20 rounded-full -translate-x-12 -translate-y-12"></div>
-              <div className="absolute bottom-0 right-0 w-20 h-20 bg-[#031D33]/10 rounded-full translate-x-10 translate-y-10"></div>
-              
+            <div className="bg-white rounded-2xl shadow-lg p-6 relative">
               {/* Quote Icon - Centered */}
-              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-[#FFC600]/15 rounded-2xl flex items-center justify-center shadow-lg">
-                <Quote className="w-10 h-10 text-[#FFC600]" />
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-[#FFD95A] rounded-full flex items-center justify-center">
+                <Quote className="w-5 h-5 text-white" />
               </div>
 
               <AnimatePresence mode="wait" custom={direction}>
@@ -163,29 +155,29 @@ export default function TestimonialsSection() {
                     opacity: { duration: 0.3 },
                     scale: { duration: 0.3 }
                   }}
-                  className="text-center pt-16"
+                  className="text-center pt-12"
                 >
                   {/* Testimonial Quote - First */}
-                  <blockquote className="text-lg md:text-xl lg:text-2xl text-[#1F2937] font-medium leading-relaxed mb-10 max-w-3xl mx-auto relative">
+                  <blockquote className="text-lg text-[#1E293B] font-medium leading-relaxed mb-8 max-w-2xl mx-auto">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
                   {/* Client Info - Last and smaller */}
-                  <div className="flex items-center justify-center gap-4">
+                  <div className="flex items-center justify-center gap-3">
                     {/* Avatar - smaller */}
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#FFC600] to-[#FFD700] rounded-2xl flex items-center justify-center text-[#031D33] font-bold text-lg shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#FFD95A] to-[#FFC107] rounded-full flex items-center justify-center text-[#1E293B] font-semibold text-sm shadow-md">
                       {currentTestimonial.avatar}
                     </div>
                     
                     {/* Client Details - smaller */}
                     <div className="text-left">
-                      <h4 className="font-bold text-[#1F2937] text-lg mb-1">
+                      <h4 className="font-semibold text-[#1E293B] text-base mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-sm text-[#1F2937]/70 mb-0.5">
+                      <p className="text-sm text-gray-600 mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-sm text-[#1F2937]/50">
+                      <p className="text-sm text-gray-500">
                         {currentTestimonial.location} • {currentTestimonial.project}
                       </p>
                     </div>
@@ -197,15 +189,15 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Navigation Dots */}
-        <div className="flex justify-center mt-8 space-x-3">
+        <div className="flex justify-center mt-6 space-x-2">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`h-3 rounded-full transition-all duration-500 ${
+              className={`h-2 w-2 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? 'bg-[#FFC600] w-12 shadow-lg' 
-                  : 'bg-[#E5E7EB] w-3 hover:bg-[#FFC600]/50'
+                  ? 'bg-[#FFD95A] w-8' 
+                  : 'bg-gray-300 hover:bg-gray-400'
               }`}
             />
           ))}
