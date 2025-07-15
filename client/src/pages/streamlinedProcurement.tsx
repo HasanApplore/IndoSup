@@ -338,7 +338,7 @@ export default function StreamlinedProcurement() {
           </motion.div>
 
           <motion.div
-            className="space-y-8 md:space-y-12 mt-12 md:mt-16"
+            className="space-y-16 md:space-y-24 mt-12 md:mt-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -349,7 +349,7 @@ export default function StreamlinedProcurement() {
                 key={index}
                 id={index === 0 ? 'multi-site-procurement' : index === 1 ? 'sku-price-accuracy' : index === 2 ? 'supply-chain-solutions' : index === 3 ? 'gst-billing-compliance' : 'order-management'}
                 variants={itemVariants}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-12`}
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-10 lg:gap-16`}
               >
                 {/* Content */}
                 <div className="flex-1">
