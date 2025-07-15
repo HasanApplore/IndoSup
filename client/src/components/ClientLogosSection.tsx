@@ -59,7 +59,7 @@ export default function ClientLogosSection() {
         </motion.div>
 
         {/* Infinite Scrolling Carousel */}
-        <div className="relative overflow-hidden py-6 bg-white rounded-2xl border-2 border-[#FFD95A] shadow-lg">
+        <div className="relative overflow-hidden py-6">
           {/* Invisible gradient overlays for smooth carousel transitions */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
