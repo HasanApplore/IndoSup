@@ -28,7 +28,7 @@ function AnimatedCounter({ value, suffix = '', prefix = '', duration = 2 }: Coun
     });
   }, [springValue, prefix, suffix]);
 
-  return <span ref={ref} className="text-primary font-bold text-3xl md:text-4xl lg:text-5xl">0</span>;
+  return <span ref={ref} className="text-[#FFC600] font-bold text-4xl md:text-5xl lg:text-6xl">0</span>;
 }
 
 export default function StatsSection() {
@@ -88,10 +88,29 @@ export default function StatsSection() {
   };
 
   return (
-    <section className="relative py-6 md:py-8 bg-neutral-dark overflow-hidden">
+    <section className="relative py-16 md:py-20 bg-[#031D33] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 font-inter">
+            Our Impact
+          </h2>
+          <div className="relative inline-block">
+            <div className="absolute -bottom-2 left-0 w-full h-2 bg-[#FFC600] rounded-full opacity-60"></div>
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-6 relative z-10">
+              Numbers that showcase our commitment to excellence and growth
+            </p>
+          </div>
+          <div className="w-24 h-1 bg-[#FFC600] mx-auto mt-4"></div>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,13 +119,18 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center group"
+              className="text-center group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#FFC600]/50 transition-all duration-500 hover:bg-white/10 cursor-pointer"
               variants={itemVariants}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -8,
+                transition: { duration: 0.4 }
+              }}
             >
               {/* Animated Counter */}
               <motion.div
-                className="mb-3"
-                whileHover={{ scale: 1.05 }}
+                className="mb-4"
+                whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
               >
                 <AnimatedCounter 
@@ -118,7 +142,7 @@ export default function StatsSection() {
 
               {/* Label */}
               <motion.h3
-                className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300 font-inter"
+                className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#FFC600] transition-colors duration-300 font-inter"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -129,7 +153,7 @@ export default function StatsSection() {
 
               {/* Description */}
               <motion.p
-                className="text-gray-300 text-xs md:text-sm leading-relaxed group-hover:text-white transition-colors duration-300"
+                className="text-white/70 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors duration-300"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -140,12 +164,15 @@ export default function StatsSection() {
 
               {/* Decorative Line */}
               <motion.div
-                className="w-10 h-0.5 bg-primary mx-auto mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-0 h-1 bg-[#FFC600] mx-auto mt-4 group-hover:w-16 transition-all duration-500 rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
               />
+              
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#FFC600]/0 via-[#FFC600]/5 to-[#FFC600]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
           ))}
         </motion.div>
@@ -155,7 +182,7 @@ export default function StatsSection() {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFC600]/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -167,7 +194,7 @@ export default function StatsSection() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary/3 rounded-full blur-2xl"
+          className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-[#FFC600]/3 rounded-full blur-2xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.2, 0.5, 0.2],
@@ -177,6 +204,20 @@ export default function StatsSection() {
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/3 w-48 h-48 bg-white/5 rounded-full blur-xl"
+          animate={{
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4
           }}
         />
       </div>

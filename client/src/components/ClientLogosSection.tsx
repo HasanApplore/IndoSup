@@ -38,24 +38,27 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="pt-6 pb-8 md:pt-10 md:pb-10 relative overflow-hidden">
+    <section className="py-16 md:py-20 relative overflow-hidden">
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 font-inter">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937] mb-4 font-inter">
             Our Trusted Partners
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-3"></div>
-          <p className="text-sm md:text-base text-neutral-base max-w-xl mx-auto">
-            Collaborating with India's leading construction and infrastructure companies
-          </p>
+          <div className="relative inline-block">
+            <div className="absolute -bottom-2 left-0 w-full h-2 bg-[#FFC600] rounded-full opacity-60"></div>
+            <p className="text-[#1F2937] text-lg md:text-xl max-w-2xl mx-auto mb-6 relative z-10">
+              Collaborating with India's leading construction and infrastructure companies
+            </p>
+          </div>
+          <div className="w-24 h-1 bg-[#FFC600] mx-auto mt-4"></div>
         </motion.div>
 
         {/* Infinite Scrolling Carousel */}

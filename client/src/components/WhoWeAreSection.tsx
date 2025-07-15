@@ -65,28 +65,31 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-6 md:py-10">
+    <section className="py-16 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-6"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-3 font-inter">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1F2937] mb-4 font-inter">
             Why Choose IndoSup?
           </h2>
-          <p className="text-neutral-base text-sm md:text-base max-w-xl mx-auto mb-4">
-            We simplify construction procurement with cutting-edge technology and trusted partnerships
-          </p>
-          <div className="w-16 h-1 bg-primary mx-auto"></div>
+          <div className="relative inline-block">
+            <div className="absolute -bottom-2 left-0 w-full h-2 bg-[#FFC600] rounded-full opacity-60"></div>
+            <p className="text-[#1F2937] text-lg md:text-xl max-w-2xl mx-auto mb-6 relative z-10">
+              We simplify construction procurement with cutting-edge technology and trusted partnerships
+            </p>
+          </div>
+          <div className="w-24 h-1 bg-[#FFC600] mx-auto mt-4"></div>
         </motion.div>
 
         {/* Feature Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,37 +98,41 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white/70 backdrop-blur-sm rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-center cursor-pointer border border-gray-100 hover:border-primary/30 mt-[9px] mb-[9px] hover:bg-white/90"
+              className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 text-center cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]/50 hover:bg-white/95 hover:scale-105 hover:rotate-1"
               variants={cardVariants}
               whileHover={{
-                y: -12,
-                scale: 1.08,
-                transition: { duration: 0.3 }
+                y: -16,
+                scale: 1.05,
+                rotate: 1,
+                transition: { duration: 0.4, ease: "easeOut" }
               }}
             >
               {/* Icon */}
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-colors duration-300 mb-4"
+                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-[#FFC600]/10 group-hover:bg-[#FFC600] transition-all duration-400 mb-6 group-hover:shadow-lg group-hover:shadow-[#FFC600]/30"
                 variants={iconVariants}
                 whileHover="hover"
               >
-                <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+                <feature.icon className="w-10 h-10 text-[#FFC600] group-hover:text-[#031D33] transition-colors duration-400" />
               </motion.div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-accent mb-3 group-hover:text-primary transition-colors duration-300 font-inter">
+              <h3 className="text-xl font-bold text-[#1F2937] mb-4 group-hover:text-[#031D33] transition-colors duration-400 font-inter">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-neutral-base text-sm leading-relaxed group-hover:text-accent/90 transition-colors duration-300">
+              <p className="text-[#1F2937]/70 text-sm leading-relaxed group-hover:text-[#1F2937] transition-colors duration-400">
                 {feature.description}
               </p>
 
               {/* Hover Effect Line */}
               <motion.div
-                className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-10 transition-all duration-300"
+                className="w-0 h-1 bg-[#FFC600] mx-auto mt-6 group-hover:w-16 transition-all duration-500 rounded-full"
               />
+              
+              {/* Glow effect on hover */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#FFC600]/0 via-[#FFC600]/5 to-[#FFC600]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
           ))}
         </motion.div>
