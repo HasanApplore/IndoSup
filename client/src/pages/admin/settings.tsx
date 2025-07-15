@@ -55,11 +55,7 @@ export default function Settings() {
 
   const createMutation = useMutation({
     mutationFn: async (data: SettingForm) => {
-      const response = await apiRequest('/api/admin/settings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('POST', '/api/admin/settings', data);
       if (!response.ok) throw new Error('Failed to create setting');
       return response.json();
     },
@@ -76,11 +72,7 @@ export default function Settings() {
 
   const updateMutation = useMutation({
     mutationFn: async ({ key, value }: { key: string; value: string }) => {
-      const response = await apiRequest(`/api/admin/settings/${key}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ value }),
-      });
+      const response = await apiRequest('PUT', `/api/admin/settings/${key}`, { value });
       if (!response.ok) throw new Error('Failed to update setting');
       return response.json();
     },
@@ -96,9 +88,7 @@ export default function Settings() {
 
   const deleteMutation = useMutation({
     mutationFn: async (key: string) => {
-      const response = await apiRequest(`/api/admin/settings/${key}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/settings/${key}`);
       if (!response.ok) throw new Error('Failed to delete setting');
       return response.json();
     },

@@ -64,11 +64,7 @@ export default function Catalogues() {
 
   const createMutation = useMutation({
     mutationFn: async (data: CatalogueForm) => {
-      const response = await apiRequest('/api/admin/catalogues', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('POST', '/api/admin/catalogues', data);
       if (!response.ok) throw new Error('Failed to create catalogue');
       return response.json();
     },
@@ -85,11 +81,7 @@ export default function Catalogues() {
 
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }: { id: number; data: CatalogueForm }) => {
-      const response = await apiRequest(`/api/admin/catalogues/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('PUT', `/api/admin/catalogues/${id}`, data);
       if (!response.ok) throw new Error('Failed to update catalogue');
       return response.json();
     },
@@ -107,9 +99,7 @@ export default function Catalogues() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest(`/api/admin/catalogues/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/catalogues/${id}`);
       if (!response.ok) throw new Error('Failed to delete catalogue');
       return response.json();
     },

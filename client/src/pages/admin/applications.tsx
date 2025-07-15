@@ -38,11 +38,7 @@ export default function JobApplications() {
 
   const updateStatusMutation = useMutation({
     mutationFn: async ({ id, status }: { id: number; status: string }) => {
-      const response = await apiRequest(`/api/admin/job-applications/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status }),
-      });
+      const response = await apiRequest('PUT', `/api/admin/job-applications/${id}`, { status });
       if (!response.ok) throw new Error('Failed to update application');
       return response.json();
     },
@@ -57,9 +53,7 @@ export default function JobApplications() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest(`/api/admin/job-applications/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/job-applications/${id}`);
       if (!response.ok) throw new Error('Failed to delete application');
       return response.json();
     },

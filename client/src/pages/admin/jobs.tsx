@@ -63,11 +63,7 @@ export default function Jobs() {
 
   const createMutation = useMutation({
     mutationFn: async (data: JobForm) => {
-      const response = await apiRequest('/api/admin/jobs', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('POST', '/api/admin/jobs', data);
       if (!response.ok) throw new Error('Failed to create job');
       return response.json();
     },
@@ -84,11 +80,7 @@ export default function Jobs() {
 
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }: { id: number; data: JobForm }) => {
-      const response = await apiRequest(`/api/admin/jobs/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('PUT', `/api/admin/jobs/${id}`, data);
       if (!response.ok) throw new Error('Failed to update job');
       return response.json();
     },
@@ -106,9 +98,7 @@ export default function Jobs() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest(`/api/admin/jobs/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/jobs/${id}`);
       if (!response.ok) throw new Error('Failed to delete job');
       return response.json();
     },

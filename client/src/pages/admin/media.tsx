@@ -74,11 +74,7 @@ export default function Media() {
 
   const createMutation = useMutation({
     mutationFn: async (data: MediaForm) => {
-      const response = await apiRequest('/api/admin/media', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('POST', '/api/admin/media', data);
       if (!response.ok) throw new Error('Failed to create media content');
       return response.json();
     },
@@ -96,11 +92,7 @@ export default function Media() {
 
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }: { id: number; data: MediaForm }) => {
-      const response = await apiRequest(`/api/admin/media/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('PUT', `/api/admin/media/${id}`, data);
       if (!response.ok) throw new Error('Failed to update media content');
       return response.json();
     },
@@ -119,9 +111,7 @@ export default function Media() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest(`/api/admin/media/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/media/${id}`);
       if (!response.ok) throw new Error('Failed to delete media content');
       return response.json();
     },

@@ -66,11 +66,7 @@ export default function Products() {
 
   const createMutation = useMutation({
     mutationFn: async (data: ProductForm) => {
-      const response = await apiRequest('/api/admin/products', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('POST', '/api/admin/products', data);
       if (!response.ok) throw new Error('Failed to create product');
       return response.json();
     },
@@ -88,11 +84,7 @@ export default function Products() {
 
   const updateMutation = useMutation({
     mutationFn: async ({ id, data }: { id: number; data: ProductForm }) => {
-      const response = await apiRequest(`/api/admin/products/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest('PUT', `/api/admin/products/${id}`, data);
       if (!response.ok) throw new Error('Failed to update product');
       return response.json();
     },
@@ -111,9 +103,7 @@ export default function Products() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest(`/api/admin/products/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/products/${id}`);
       if (!response.ok) throw new Error('Failed to delete product');
       return response.json();
     },

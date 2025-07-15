@@ -31,9 +31,7 @@ export default function ContactSubmissions() {
 
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest(`/api/admin/contact-submissions/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await apiRequest('DELETE', `/api/admin/contact-submissions/${id}`);
       if (!response.ok) {
         throw new Error('Failed to delete submission');
       }
