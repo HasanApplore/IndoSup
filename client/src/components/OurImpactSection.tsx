@@ -75,7 +75,7 @@ const NetworkBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
       {/* Main Network Pattern */}
-      <svg className="w-full h-full opacity-30" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <svg className="w-full h-full opacity-50" viewBox="0 0 100 100" preserveAspectRatio="none">
         {/* Enhanced animated connections with glow effect */}
         {connections.map((connection, index) => {
           const fromNode = nodes[connection.from];
@@ -84,24 +84,45 @@ const NetworkBackground = () => {
           
           return (
             <g key={index}>
-              {/* Glow effect */}
+              {/* Outer glow effect */}
               <motion.line
                 x1={fromNode.x}
                 y1={fromNode.y}
                 x2={toNode.x}
                 y2={toNode.y}
-                stroke="rgba(255, 217, 90, 0.6)"
-                strokeWidth="0.3"
+                stroke="rgba(255, 217, 90, 0.8)"
+                strokeWidth="0.8"
+                filter="blur(3px)"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ 
+                  pathLength: [0, 1, 0],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: index * 0.15,
+                  ease: "easeInOut"
+                }}
+              />
+              {/* Inner glow */}
+              <motion.line
+                x1={fromNode.x}
+                y1={fromNode.y}
+                x2={toNode.x}
+                y2={toNode.y}
+                stroke="rgba(255, 255, 255, 0.9)"
+                strokeWidth="0.4"
                 filter="blur(1px)"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ 
                   pathLength: [0, 1, 0],
-                  opacity: [0, 0.8, 0]
+                  opacity: [0, 0.9, 0]
                 }}
                 transition={{
-                  duration: 6,
+                  duration: 4,
                   repeat: Infinity,
-                  delay: index * 0.2,
+                  delay: index * 0.15,
                   ease: "easeInOut"
                 }}
               />
@@ -111,17 +132,17 @@ const NetworkBackground = () => {
                 y1={fromNode.y}
                 x2={toNode.x}
                 y2={toNode.y}
-                stroke="rgba(255, 255, 255, 0.4)"
-                strokeWidth="0.1"
+                stroke="rgba(255, 255, 255, 1)"
+                strokeWidth="0.15"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ 
                   pathLength: [0, 1, 0],
                   opacity: [0, 1, 0]
                 }}
                 transition={{
-                  duration: 6,
+                  duration: 4,
                   repeat: Infinity,
-                  delay: index * 0.2,
+                  delay: index * 0.15,
                   ease: "easeInOut"
                 }}
               />
