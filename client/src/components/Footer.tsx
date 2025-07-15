@@ -19,7 +19,7 @@ export default function Footer() {
     { name: 'TMT Bars', path: '/products/steel#tmt-bars' },
     { name: 'Pipes & Fittings', path: '/products/steel#pipes-fittings' },
     { name: 'Electrical Components', path: '/products/non-steel#electrical-components' },
-    { name: 'Fire Safety Equipment', path: '/products/non-steel#fire-safety-equipment' }
+    { name: 'Fire Safety Equipment', path: '/products/non-steel#fire-fighting-systems' }
   ];
 
   const socialLinks = [
