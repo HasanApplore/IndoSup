@@ -40,7 +40,7 @@ export default function ClientLogosSection() {
   return (
     <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
       
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10 bg-white rounded-2xl border-2 border-[#FFD95A] p-8 shadow-lg">
         {/* Section Heading */}
         <motion.div
           className="text-center mb-16"
