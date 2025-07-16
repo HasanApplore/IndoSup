@@ -74,6 +74,20 @@
     background: linear-gradient(135deg, var(--accent) 0%, var(--neutral-dark) 50%, var(--accent) 100%);
   }
   
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  
   /* Anime.js Background Effects */
   @keyframes pulse {
     0%, 100% {
