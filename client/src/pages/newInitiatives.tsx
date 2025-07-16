@@ -201,7 +201,7 @@ export default function NewInitiatives() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-[#2A374B]">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -262,7 +262,7 @@ export default function NewInitiatives() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8 font-poppins">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
               New Initiatives
             </h1>
             {/* Animated underline */}
@@ -270,12 +270,12 @@ export default function NewInitiatives() {
               initial={{ width: 0 }}
               animate={{ width: "120px" }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="h-1 bg-[#FFC600] mx-auto mb-6"
+              className="h-1 bg-[#F5A623] mx-auto mb-6"
             />
           </motion.div>
           
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed font-poppins"
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -284,7 +284,7 @@ export default function NewInitiatives() {
           </motion.p>
 
           <motion.button
-            className="bg-[#FFC600] text-[#031D33] px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105 font-poppins"
+            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -300,8 +300,9 @@ export default function NewInitiatives() {
 
 
       {/* Company Categories */}
-      <section className="py-12 px-4 md:py-20 px-6">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             className="text-center mb-16 md:mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -309,11 +310,11 @@ export default function NewInitiatives() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
+            <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">
               Our Global Companies
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-[#FFC600] mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins leading-relaxed">
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
+            <p className="text-[#F5F5F5] max-w-3xl mx-auto leading-relaxed">
               Two specialized companies driving innovation in global construction markets and technical excellence
             </p>
           </motion.div>
@@ -329,16 +330,16 @@ export default function NewInitiatives() {
             <motion.div
               variants={cardVariants}
               id="global-private-section"
-              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-[#3C4A5E] rounded-xl p-8 shadow-lg border border-[#475466]"
             >
               {/* Content */}
               <div className="flex-1 space-y-4">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-[#FFC600]/10 rounded-2xl flex items-center justify-center text-[#FFC600] shadow-sm">
+                  <div className="w-16 h-16 bg-[#FFC600] rounded-2xl flex items-center justify-center text-[#2A374B] shadow-sm">
                     <Building2 className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#1E293B] mb-2 font-poppins">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
                       IndoSup Global Private Limited
                     </h3>
                     <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
@@ -346,12 +347,12 @@ export default function NewInitiatives() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-lg text-gray-600 leading-relaxed font-poppins">
+                  <p className="text-[#F5F5F5] leading-relaxed">
                     Leading construction procurement solutions with global reach and local expertise, 
                     streamlining supply chain management for modern infrastructure projects.
                   </p>
 
-                  <p className="text-lg text-gray-600 leading-relaxed font-poppins">
+                  <p className="text-[#F5F5F5] leading-relaxed">
                     Advanced digital platform connecting construction companies with trusted suppliers worldwide, 
                     ensuring quality, efficiency, and cost-effectiveness in every project.
                   </p>
@@ -362,7 +363,7 @@ export default function NewInitiatives() {
                   {globalPrivateServices.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
-                      <span className="text-gray-600 font-poppins">{service}</span>
+                      <span className="text-[#F5F5F5]">{service}</span>
                     </div>
                   ))}
                 </div>
@@ -370,7 +371,7 @@ export default function NewInitiatives() {
                 <div className="mt-6">
                   <Link to="/contact">
                     <motion.div
-                      className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#031D33] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md font-poppins"
+                      className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md"
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -417,7 +418,7 @@ export default function NewInitiatives() {
                         key={index}
                         onClick={() => setCurrentPrivateImageIndex(index)}
                         className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                          index === currentPrivateImageIndex ? 'bg-[#FFC600]' : 'bg-gray-300'
+                          index === currentPrivateImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
                         }`}
                       />
                     ))}
@@ -430,16 +431,16 @@ export default function NewInitiatives() {
             <motion.div
               variants={cardVariants}
               id="global-assist-section"
-              className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12"
+              className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 bg-[#3C4A5E] rounded-xl p-8 shadow-lg border border-[#475466]"
             >
               {/* Content */}
               <div className="flex-1 space-y-4">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-[#FFC600]/10 rounded-2xl flex items-center justify-center text-[#FFC600] shadow-sm">
+                  <div className="w-16 h-16 bg-[#FFC600] rounded-2xl flex items-center justify-center text-[#2A374B] shadow-sm">
                     <Users className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#1E293B] mb-2 font-poppins">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
                       IndoSup Global Assist Limited
                     </h3>
                     <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
@@ -447,12 +448,12 @@ export default function NewInitiatives() {
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-lg text-gray-600 leading-relaxed font-poppins">
+                  <p className="text-[#F5F5F5] leading-relaxed">
                     Comprehensive technical consulting and project management support, 
                     delivering specialized expertise for complex construction initiatives.
                   </p>
 
-                  <p className="text-lg text-gray-600 leading-relaxed font-poppins">
+                  <p className="text-[#F5F5F5] leading-relaxed">
                     Expert consulting services providing strategic guidance, technical support, and process optimization 
                     to enhance construction project outcomes and operational efficiency.
                   </p>
@@ -463,7 +464,7 @@ export default function NewInitiatives() {
                   {globalAssistServices.map((service, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
-                      <span className="text-gray-600 font-poppins">{service}</span>
+                      <span className="text-[#F5F5F5]">{service}</span>
                     </div>
                   ))}
                 </div>
@@ -471,7 +472,7 @@ export default function NewInitiatives() {
                 <div className="mt-6">
                   <Link to="/contact">
                     <motion.div
-                      className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#031D33] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md font-poppins"
+                      className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md"
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -518,7 +519,7 @@ export default function NewInitiatives() {
                         key={index}
                         onClick={() => setCurrentAssistImageIndex(index)}
                         className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                          index === currentAssistImageIndex ? 'bg-[#FFC600]' : 'bg-gray-300'
+                          index === currentAssistImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
                         }`}
                       />
                     ))}
@@ -536,7 +537,7 @@ export default function NewInitiatives() {
       {showScrollTop && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 w-12 h-12 bg-[#FFC600] text-[#031D33] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-[#031D33] hover:text-white z-50"
+          className="fixed bottom-6 right-6 w-12 h-12 bg-[#FFC600] text-[#2A374B] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-[#E6B200] z-50"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
