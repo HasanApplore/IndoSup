@@ -304,14 +304,14 @@ export default function About() {
 
 
       {/* What Is IndoSup Section */}
-      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+      <section className="py-16 relative overflow-hidden bg-[#fbf5ea]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Key Highlights Section */}
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-[#3C4A5E] rounded-xl p-8 shadow-lg cursor-pointer border border-[#475466]"
+              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -322,11 +322,11 @@ export default function About() {
                 <Award className="w-10 h-10 text-[#2A374B]" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#FFC600]">10+ Years Experience</h3>
-              <p className="text-[#F5F5F5] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <p className="text-[#2A374B] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-[#3C4A5E] rounded-xl p-8 shadow-lg cursor-pointer border border-[#475466]"
+              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -337,11 +337,11 @@ export default function About() {
                 <Building className="w-10 h-10 text-[#2A374B]" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#FFC600]">500+ Projects Supplied</h3>
-              <p className="text-[#F5F5F5] leading-relaxed">Successfully delivered construction materials to projects across India</p>
+              <p className="text-[#2A374B] leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-[#3C4A5E] rounded-xl p-8 shadow-lg cursor-pointer border border-[#475466]"
+              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -352,7 +352,7 @@ export default function About() {
                 <Globe className="w-10 h-10 text-[#2A374B]" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#FFC600]">Global Reach</h3>
-              <p className="text-[#F5F5F5] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <p className="text-[#2A374B] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
@@ -368,13 +368,13 @@ export default function About() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">What Is IndoSup?</h2>
-              <p className="text-[#F5F5F5] mb-6" style={{ lineHeight: '1.6' }}>
+              <h2 className="text-3xl font-bold mb-6 text-[#2A374B]">What Is IndoSup?</h2>
+              <p className="text-[#2A374B] mb-6" style={{ lineHeight: '1.6' }}>
                 IndoSup is revolutionizing India's construction procurement landscape through innovative digital solutions. 
                 We connect builders, contractors, and suppliers through a seamless platform that ensures quality, 
                 transparency, and efficiency in every transaction.
               </p>
-              <p className="text-[#F5F5F5] mb-6" style={{ lineHeight: '1.6' }}>
+              <p className="text-[#2A374B] mb-6" style={{ lineHeight: '1.6' }}>
                 Our mission is to transform how construction materials are sourced, procured, and delivered across India. 
                 With a focus on technology-driven solutions, we're building the future of construction procurement.
               </p>
