@@ -406,16 +406,16 @@ export default function StreamlinedProcurement() {
                 </div>
 
                 {/* Visual Element */}
-                <div className="flex-1 max-w-md lg:max-w-lg">
+                <div className="flex-1 max-w-md lg:max-w-lg flex">
                   <motion.div
-                    className="relative"
+                    className="relative bg-[#3C4A5E] rounded-2xl border border-[#475466] overflow-hidden shadow-lg w-full"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
                     <img
                       src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
                       alt={solution.title}
-                      className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-lg"
+                      className="w-full h-full object-cover min-h-[400px]"
                     />
                   </motion.div>
                 </div>
