@@ -314,7 +314,7 @@ export default function NewInitiatives() {
               Our Global Companies
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
-            <p className="text-[#F5F5F5] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#F5F5F5] max-w-3xl mx-auto leading-relaxed">
               Two specialized companies driving innovation in global construction markets and technical excellence
             </p>
           </motion.div>
