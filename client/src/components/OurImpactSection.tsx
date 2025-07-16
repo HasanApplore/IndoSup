@@ -40,177 +40,11 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   );
 };
 
-// Clean Animated Network Background Component
-const NetworkBackground = () => {
-  const [nodes, setNodes] = useState<Array<{ x: number; y: number; id: number }>>([]);
-  const [connections, setConnections] = useState<Array<{ from: number; to: number }>>([]);
-
-  useEffect(() => {
-    // Generate structured nodes in a proper grid
-    const nodeCount = 20;
-    const cols = 5;
-    const rows = 4;
-    const newNodes = Array.from({ length: nodeCount }, (_, i) => ({
-      id: i,
-      x: 15 + (i % cols) * 17.5,
-      y: 15 + Math.floor(i / cols) * 22.5,
-    }));
-    setNodes(newNodes);
-
-    // Create meaningful connections - horizontal, vertical, and diagonal
-    const newConnections: Array<{ from: number; to: number }> = [];
-    
-    newNodes.forEach((node, i) => {
-      const row = Math.floor(i / cols);
-      const col = i % cols;
-      
-      // Right connection
-      if (col < cols - 1) {
-        newConnections.push({ from: i, to: i + 1 });
-      }
-      
-      // Down connection
-      if (row < rows - 1) {
-        newConnections.push({ from: i, to: i + cols });
-      }
-      
-      // Diagonal connections (selective)
-      if (col < cols - 1 && row < rows - 1 && Math.random() > 0.5) {
-        newConnections.push({ from: i, to: i + cols + 1 });
-      }
-      
-      // Cross connections (selective)
-      if (col > 0 && row < rows - 1 && Math.random() > 0.7) {
-        newConnections.push({ from: i, to: i + cols - 1 });
-      }
-    });
-    
-    setConnections(newConnections);
-  }, []);
-
+// 3D Particles Background Component
+const ParticlesBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Main Network Pattern */}
-      <svg className="w-full h-full opacity-50" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {/* Enhanced animated connections with glow effect */}
-        {connections.map((connection, index) => {
-          const fromNode = nodes[connection.from];
-          const toNode = nodes[connection.to];
-          if (!fromNode || !toNode) return null;
-          
-          return (
-            <g key={index}>
-              {/* Outer glow effect */}
-              <motion.line
-                x1={fromNode.x}
-                y1={fromNode.y}
-                x2={toNode.x}
-                y2={toNode.y}
-                stroke="rgba(255, 217, 90, 0.8)"
-                strokeWidth="0.8"
-                filter="blur(3px)"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ 
-                  pathLength: [0, 1, 0],
-                  opacity: [0, 1, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: index * 0.15,
-                  ease: "easeInOut"
-                }}
-              />
-              {/* Inner glow */}
-              <motion.line
-                x1={fromNode.x}
-                y1={fromNode.y}
-                x2={toNode.x}
-                y2={toNode.y}
-                stroke="rgba(255, 255, 255, 0.9)"
-                strokeWidth="0.4"
-                filter="blur(1px)"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ 
-                  pathLength: [0, 1, 0],
-                  opacity: [0, 0.9, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: index * 0.15,
-                  ease: "easeInOut"
-                }}
-              />
-              {/* Main line */}
-              <motion.line
-                x1={fromNode.x}
-                y1={fromNode.y}
-                x2={toNode.x}
-                y2={toNode.y}
-                stroke="rgba(255, 255, 255, 1)"
-                strokeWidth="0.15"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ 
-                  pathLength: [0, 1, 0],
-                  opacity: [0, 1, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: index * 0.15,
-                  ease: "easeInOut"
-                }}
-              />
-            </g>
-          );
-        })}
-        
-        {/* Enhanced animated nodes with glow */}
-        {nodes.map((node, index) => (
-          <g key={node.id}>
-            {/* Glow effect */}
-            <motion.circle
-              cx={node.x}
-              cy={node.y}
-              r="0.6"
-              fill="rgba(255, 217, 90, 0.3)"
-              filter="blur(2px)"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ 
-                scale: [0.5, 1.2, 0.5],
-                opacity: [0.2, 0.6, 0.2]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                delay: index * 0.1,
-                ease: "easeInOut"
-              }}
-            />
-            {/* Main node */}
-            <motion.circle
-              cx={node.x}
-              cy={node.y}
-              r="0.3"
-              fill="rgba(255, 217, 90, 0.8)"
-              stroke="rgba(255, 255, 255, 0.6)"
-              strokeWidth="0.1"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ 
-                scale: [0.8, 1.2, 0.8],
-                opacity: [0.6, 1, 0.6]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                delay: index * 0.1,
-                ease: "easeInOut"
-              }}
-            />
-          </g>
-        ))}
-      </svg>
+
       
       {/* 3D Floating Particles with Depth */}
       <div className="absolute inset-0" style={{ perspective: '1000px' }}>
@@ -445,8 +279,8 @@ const OurImpactSection = () => {
 
   return (
     <section className="py-12 px-4 md:py-20 md:px-6 bg-[#0F172A] relative overflow-hidden">
-      {/* Animated Network Background */}
-      <NetworkBackground />
+      {/* 3D Particles Background */}
+      <ParticlesBackground />
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
