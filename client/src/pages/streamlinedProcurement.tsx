@@ -354,14 +354,14 @@ export default function StreamlinedProcurement() {
                 {/* Content */}
                 <div className="flex-1">
                   {/* Unified Content Block */}
-                  <div className="bg-[#3C4A5E] rounded-2xl p-8 shadow-lg h-[500px] flex flex-col border border-[#475466]">
+                  <div className="bg-[#3C4A5E] rounded-2xl p-6 md:p-8 shadow-lg border border-[#475466] space-y-6">
                     {/* Title Section */}
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-[#FFC600]/10 rounded-2xl flex items-center justify-center text-[#FFC600] group-hover:bg-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-[#FFC600]/10 rounded-2xl flex items-center justify-center text-[#FFC600] transition-all duration-300">
                         {solution.icon}
                       </div>
                       <div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
+                        <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-2">
                           {solution.title}
                         </h3>
                         <div className="w-16 h-1 bg-[#FFC600]"></div>
@@ -369,32 +369,32 @@ export default function StreamlinedProcurement() {
                     </div>
 
                     {/* Description Section */}
-                    <div className="mb-6 flex-grow">
-                      <p className="text-lg text-[#F5F5F5] leading-relaxed mb-4">
+                    <div>
+                      <p className="text-base md:text-lg text-[#F5F5F5] leading-relaxed mb-4">
                         {solution.description}
                       </p>
-                      <p className="text-base text-[#F5F5F5]/80 leading-relaxed">
+                      <p className="text-sm md:text-base text-[#F5F5F5]/80 leading-relaxed">
                         {solution.subtext}
                       </p>
                     </div>
 
                     {/* Features Section */}
-                    <div className="mb-6">
+                    <div>
                       <h4 className="text-lg font-semibold text-[#FFC600] mb-4">Key Features</h4>
                       <div className="space-y-3">
                         {solution.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
-                            <span className="text-[#F5F5F5] font-medium">{feature}</span>
+                            <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0" />
+                            <span className="text-[#F5F5F5] font-medium text-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Button Section */}
-                    <div className="mt-auto">
+                    <div className="pt-4">
                       <motion.button
-                        className="inline-flex items-center bg-[#FFC600] text-[#2A374B] px-6 py-3 rounded-lg font-semibold hover:bg-[#E6B200] transition-colors duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                        className="inline-flex items-center bg-[#FFC600] text-[#2A374B] px-6 py-3 rounded-lg font-semibold hover:bg-[#E6B200] transition-colors duration-300 shadow-lg hover:shadow-xl"
                         whileHover={{ x: 5, scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -415,7 +415,7 @@ export default function StreamlinedProcurement() {
                     <img
                       src={index === 0 ? constructionSiteImg : index === 1 ? pricingImg : index === 2 ? supplyChainImg : index === 3 ? complianceImg : orderManagementImg}
                       alt={solution.title}
-                      className="w-full h-[500px] object-cover rounded-3xl shadow-lg"
+                      className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-lg"
                     />
                   </motion.div>
                 </div>
@@ -425,6 +425,20 @@ export default function StreamlinedProcurement() {
         </div>
       </section>
 
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <motion.button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 w-12 h-12 bg-[#FFC600] text-[#2A374B] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-[#E6B200] z-50"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <ArrowUp className="w-6 h-6" />
+        </motion.button>
+      )}
 
     </div>
   );
