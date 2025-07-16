@@ -395,10 +395,10 @@ export default function Catalogues() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] mb-3 md:mb-4">
               Download Product Catalogues
             </h2>
-            <p className="text-gray-200 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
+            <p className="text-[#F5F5F5] text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Access detailed specifications, pricing, and technical documentation for all construction materials
             </p>
           </motion.div>
@@ -406,7 +406,7 @@ export default function Catalogues() {
 
           {/* Search and Filters */}
           <motion.div 
-            className="bg-white rounded-2xl shadow-lg p-6 mb-8 backdrop-blur-sm border border-[#FFC600]/20 relative overflow-hidden"
+            className="bg-[#3C4A5E] rounded-2xl shadow-lg p-6 mb-8 backdrop-blur-sm border border-[#FFC600]/20 relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -448,23 +448,23 @@ export default function Catalogues() {
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5] w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search catalogues..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-primary/30"
+                  className="w-full pl-10 pr-4 py-3 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 bg-[#2A374B] text-[#F5F5F5] placeholder-[#F5F5F5]/60 shadow-sm hover:shadow-md hover:border-[#FFC600]/30"
                 />
               </div>
 
               {/* Category Filter */}
               <div className="relative min-w-[200px]">
-                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5] w-5 h-5" />
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30"
+                  className="w-full pl-10 pr-8 py-3 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] bg-[#2A374B] text-[#F5F5F5] appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/30"
                 >
                   <option value="all">All Categories</option>
                   {categories.map(category => (
@@ -475,11 +475,11 @@ export default function Catalogues() {
 
               {/* Year Filter */}
               <div className="relative min-w-[150px]">
-                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5] w-5 h-5" />
                 <select
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30"
+                  className="w-full pl-10 pr-8 py-3 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] bg-[#2A374B] text-[#F5F5F5] appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/30"
                 >
                   <option value="all">All Years</option>
                   {years.map(year => (
@@ -492,7 +492,7 @@ export default function Catalogues() {
 
           {/* Results Count */}
           <div className="mb-6">
-            <p className="text-gray-200">
+            <p className="text-[#F5F5F5]">
               Showing {displayedCatalogues.length} of {filteredCatalogues.length} catalogues
               {filteredCatalogues.length !== catalogues.length && (
                 <span className="text-[#FFC600]"> (filtered from {catalogues.length} total)</span>
@@ -545,7 +545,7 @@ export default function Catalogues() {
               <motion.div
                 key={catalog.id}
                 variants={itemVariants}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-transparent hover:border-[#FFC600] relative overflow-hidden"
+                className="bg-[#3C4A5E] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-[#475466] hover:border-[#FFC600] relative overflow-hidden"
                 whileHover={{ 
                   y: -8,
                   scale: 1.02,
@@ -571,48 +571,48 @@ export default function Catalogues() {
                 <div className="relative z-10">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center text-[#FFC600] group-hover:bg-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300">
                     <FileText className="w-6 h-6" />
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-neutral-base">
+                  <div className="flex items-center space-x-2 text-sm text-[#F5F5F5]">
                     <Tag className="w-4 h-4" />
                     <span>{catalog.category}</span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-accent mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-[#FFC600] mb-3 line-clamp-2 group-hover:text-[#FFC600] transition-colors duration-300">
                   {catalog.title}
                 </h3>
 
-                <p className="text-neutral-base leading-relaxed mb-4 line-clamp-3">
+                <p className="text-[#F5F5F5] leading-relaxed mb-4 line-clamp-3">
                   {catalog.description}
                 </p>
 
                 {/* Details */}
                 <div className="space-y-2 mb-6">
                   <div className="flex justify-between text-sm">
-                    <span className="text-neutral-base">Size:</span>
-                    <span className="font-medium text-accent">{catalog.size}</span>
+                    <span className="text-[#F5F5F5]">Size:</span>
+                    <span className="font-medium text-[#FFC600]">{catalog.size}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-neutral-base">Pages:</span>
-                    <span className="font-medium text-accent">{catalog.pages}</span>
+                    <span className="text-[#F5F5F5]">Pages:</span>
+                    <span className="font-medium text-[#FFC600]">{catalog.pages}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-neutral-base">Updated:</span>
-                    <span className="font-medium text-accent">{catalog.lastUpdated}</span>
+                    <span className="text-[#F5F5F5]">Updated:</span>
+                    <span className="font-medium text-[#FFC600]">{catalog.lastUpdated}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-neutral-base">Downloads:</span>
-                    <span className="font-medium text-primary">{catalog.downloadCount.toLocaleString()}</span>
+                    <span className="text-[#F5F5F5]">Downloads:</span>
+                    <span className="font-medium text-[#FFC600]">{catalog.downloadCount.toLocaleString()}</span>
                   </div>
                 </div>
 
                 {/* Download Button */}
                 <motion.button
                   onClick={() => handleDownload(catalog)}
-                  className="w-full bg-primary text-accent font-semibold py-3 px-4 rounded-lg hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center group-hover:scale-105"
+                  className="w-full bg-[#FFC600] text-[#2A374B] font-semibold py-3 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-300 flex items-center justify-center group-hover:scale-105"
                   whileTap={{ scale: 0.95 }}
                 >
                   <Download className="w-5 h-5 mr-2" />
@@ -665,11 +665,11 @@ export default function Catalogues() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-24 h-24 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FileText className="w-12 h-12 text-gray-300" />
+              <div className="w-24 h-24 bg-[#3C4A5E] rounded-full flex items-center justify-center mx-auto mb-6">
+                <FileText className="w-12 h-12 text-[#F5F5F5]" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">No Catalogues Found</h3>
-              <p className="text-gray-200 max-w-md mx-auto">
+              <h3 className="text-2xl font-bold text-[#FFC600] mb-2">No Catalogues Found</h3>
+              <p className="text-[#F5F5F5] max-w-md mx-auto">
                 Try adjusting your search terms or filters to find the catalogues you're looking for.
               </p>
             </motion.div>
