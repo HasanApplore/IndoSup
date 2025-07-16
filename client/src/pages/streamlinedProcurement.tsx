@@ -369,18 +369,18 @@ export default function StreamlinedProcurement() {
                     </div>
 
                     {/* Description Section */}
-                    <div className="mb-4 flex-grow overflow-hidden">
-                      <p className="text-base text-[#2A374B] leading-relaxed mb-3 line-clamp-3">
+                    <div className="mb-3 flex-grow overflow-hidden">
+                      <p className="text-base text-[#2A374B] leading-relaxed mb-2 line-clamp-3">
                         {solution.description}
                       </p>
-                      <p className="text-sm text-[#2A374B]/80 leading-relaxed line-clamp-2">
+                      <p className="text-base text-[#2A374B]/80 leading-relaxed line-clamp-2">
                         {solution.subtext}
                       </p>
                     </div>
 
                     {/* Features Section */}
                     <div className="mb-4 flex-shrink-0">
-                      <h4 className="text-base font-semibold text-[#FFC600] mb-3">Key Features</h4>
+                      <h4 className="text-base font-semibold text-[#FFC600] mb-2">Key Features</h4>
                       <div className="space-y-2">
                         {solution.features.slice(0, 3).map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-2">
