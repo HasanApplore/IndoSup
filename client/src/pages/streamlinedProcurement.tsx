@@ -369,11 +369,11 @@ export default function StreamlinedProcurement() {
                     </div>
 
                     {/* Description Section */}
-                    <div className="mb-3 flex-grow overflow-hidden">
+                    <div className="mb-2 flex-grow overflow-hidden">
                       <p className="text-base text-[#2A374B] leading-relaxed mb-2 line-clamp-3">
                         {solution.description}
                       </p>
-                      <p className="text-base text-[#2A374B]/80 leading-relaxed line-clamp-2">
+                      <p className="text-base text-[#2A374B] leading-relaxed line-clamp-2">
                         {solution.subtext}
                       </p>
                     </div>
