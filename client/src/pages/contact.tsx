@@ -132,7 +132,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-[#2A374B]">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -238,7 +238,7 @@ export default function Contact() {
       )}
 
       {/* Main Content */}
-      <section className="py-5 md:py-8 bg-[#2a374b]">
+      <section className="py-5 md:py-8 bg-[#2A374B]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {/* Section Header */}
@@ -249,11 +249,11 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-4">
               Get In Touch With Us
             </h2>
             <div className="w-16 h-1 bg-[#FFC600] mx-auto"></div>
-            <p className="text-base text-gray-200 mt-4 max-w-xl mx-auto">
+            <p className="text-base text-[#F5F5F5] mt-4 max-w-xl mx-auto">
               Ready to transform your construction projects? Let's discuss your requirements and build something amazing together.
             </p>
           </motion.div>

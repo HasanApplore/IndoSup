@@ -207,7 +207,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-[#2A374B]">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -304,55 +304,55 @@ export default function About() {
 
 
       {/* What Is IndoSup Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
+      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Key Highlights Section */}
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer"
+              className="text-center bg-[#3C4A5E] rounded-xl p-8 shadow-lg cursor-pointer border border-[#475466]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Award className="w-10 h-10 text-white" />
+              <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Award className="w-10 h-10 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
-              <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">10+ Years Experience</h3>
+              <p className="text-[#F5F5F5] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer"
+              className="text-center bg-[#3C4A5E] rounded-xl p-8 shadow-lg cursor-pointer border border-[#475466]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Building className="w-10 h-10 text-white" />
+              <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Building className="w-10 h-10 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
-              <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
+              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">500+ Projects Supplied</h3>
+              <p className="text-[#F5F5F5] leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer"
+              className="text-center bg-[#3C4A5E] rounded-xl p-8 shadow-lg cursor-pointer border border-[#475466]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Globe className="w-10 h-10 text-white" />
+              <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Globe className="w-10 h-10 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>Global Reach</h3>
-              <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">Global Reach</h3>
+              <p className="text-[#F5F5F5] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
@@ -368,13 +368,13 @@ export default function About() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6" style={{ color: '#0E2F44' }}>What Is IndoSup?</h2>
-              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
+              <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">What Is IndoSup?</h2>
+              <p className="text-[#F5F5F5] mb-6" style={{ lineHeight: '1.6' }}>
                 IndoSup is revolutionizing India's construction procurement landscape through innovative digital solutions. 
                 We connect builders, contractors, and suppliers through a seamless platform that ensures quality, 
                 transparency, and efficiency in every transaction.
               </p>
-              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
+              <p className="text-[#F5F5F5] mb-6" style={{ lineHeight: '1.6' }}>
                 Our mission is to transform how construction materials are sourced, procured, and delivered across India. 
                 With a focus on technology-driven solutions, we're building the future of construction procurement.
               </p>
@@ -466,7 +466,7 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section id="leadership" className="py-8 bg-gradient-to-br from-[#fbf5e8] to-white">
+      <section id="leadership" className="py-8 bg-[#2A374B]">
         <div className="container mx-auto px-4" style={{ padding: '10px 20px 60px 20px' }}>
           <motion.div
             className="text-center mb-12"
@@ -475,10 +475,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#0E2F44' }}>
+            <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">
               Our Leadership
             </h2>
-            <div className="w-24 h-1 bg-[#F5A623] mx-auto"></div>
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
           </motion.div>
 
           <motion.div
@@ -492,7 +492,7 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="group bg-[#3C4A5E] rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-[#475466]"
                 whileHover={{ scale: 1.05 }}
                 style={{ borderRadius: '12px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}
               >
@@ -513,16 +513,16 @@ export default function About() {
                 </div>
                 
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#F5A623] transition-colors duration-300" style={{ color: '#0E2F44' }}>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#FFC600] transition-colors duration-300 text-[#FFC600]">
                     {leader.name}
                   </h3>
-                  <p className="text-[#F5A623] font-semibold text-base mb-4">
+                  <p className="text-[#FFC600] font-semibold text-base mb-4">
                     {leader.position}
                   </p>
                   
                   {/* Enhanced role description */}
                   <div className="mb-6">
-                    <p className="text-gray-600 text-sm" style={{ lineHeight: '1.6' }}>
+                    <p className="text-[#F5F5F5] text-sm" style={{ lineHeight: '1.6' }}>
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology with over 10 years of industry experience"}
                       {index === 1 && "Operations expert focused on streamlining business processes and ensuring operational excellence across all verticals"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion through strategic financial planning"}
@@ -540,7 +540,7 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#0E2F44] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#F5A623] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#FFC600] text-[#2A374B] rounded-full flex items-center justify-center shadow-md hover:bg-[#E6B200] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -548,7 +548,7 @@ export default function About() {
                     </motion.a>
                     <motion.a
                       href={`mailto:${leader.email}`}
-                      className="w-10 h-10 bg-[#F5A623] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#0E2F44] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#3C4A5E] text-[#FFC600] rounded-full flex items-center justify-center shadow-md hover:bg-[#475466] transition-all duration-300 hover:shadow-lg"
                       title="Send Email"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -568,8 +568,8 @@ export default function About() {
       </section>
 
       {/* Our Mission & Vision */}
-      <section id="mission-vision" className="py-10 md:py-14 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
+      <section id="mission-vision" className="py-10 md:py-14 relative overflow-hidden bg-[#2A374B]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -608,10 +608,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] font-inter">
               Our Mission & Vision
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-4"></div>
+            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-[#FFC600] to-[#FFC600] mx-auto mt-4"></div>
           </motion.div>
 
           {/* Content Cards */}
@@ -626,7 +626,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.div
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-primary/20 h-full relative overflow-hidden"
+                className="bg-[#3C4A5E] rounded-2xl p-6 md:p-8 shadow-xl border border-[#475466] h-full relative overflow-hidden"
                 whileHover={{ 
                   y: -8,
                   boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
@@ -635,10 +635,10 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-[#082338] rounded-full flex items-center justify-center mr-3">
-                    <Target className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-[#FFC600] rounded-full flex items-center justify-center mr-3">
+                    <Target className="w-5 h-5 text-[#2A374B]" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-accent">Mission</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#FFC600]">Mission</h3>
                 </div>
                 
                 {/* Mission content */}
@@ -650,7 +650,7 @@ export default function About() {
                   >
                     "
                   </motion.div>
-                  <p className="text-base md:text-lg text-accent leading-relaxed font-medium pl-5">
+                  <p className="text-base md:text-lg text-[#F5F5F5] leading-relaxed font-medium pl-5">
                     Empowering the construction ecosystem by reducing complexity in procurement, 
                     enabling transparency, and ensuring timely, high-quality delivery.
                   </p>
@@ -689,7 +689,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <motion.div
-                className="bg-gradient-to-br from-accent to-accent/90 rounded-2xl p-6 md:p-8 shadow-xl h-full relative overflow-hidden text-white"
+                className="bg-gradient-to-br from-[#FFC600] to-[#E6B200] rounded-2xl p-6 md:p-8 shadow-xl h-full relative overflow-hidden text-[#2A374B] border border-[#475466]"
                 whileHover={{ 
                   y: -8,
                   boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
@@ -698,10 +698,10 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
-                    <Eye className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-[#2A374B] rounded-full flex items-center justify-center mr-3">
+                    <Eye className="w-5 h-5 text-[#FFC600]" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white">Vision</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#2A374B]">Vision</h3>
                 </div>
                 
                 {/* Vision content */}
@@ -713,7 +713,7 @@ export default function About() {
                   >
                     "
                   </motion.div>
-                  <p className="text-base md:text-lg text-white leading-relaxed font-medium pl-5">
+                  <p className="text-base md:text-lg text-[#2A374B] leading-relaxed font-medium pl-5">
                     To streamline construction sourcing and procurement using smart, cost-effective, 
                     and scalable technology solutions to build efficient and sustainable infrastructure.
                   </p>
@@ -773,7 +773,7 @@ export default function About() {
       </section>
 
       {/* Strength & Values */}
-      <section id="values" className="py-10 md:py-14">
+      <section id="values" className="py-10 md:py-14 bg-[#2A374B]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-8 md:mb-10"
@@ -782,10 +782,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-4 font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] mb-4 font-inter">
               Strength & Values
             </h2>
-            <div className="w-20 md:w-28 h-1 bg-primary mx-auto"></div>
+            <div className="w-20 md:w-28 h-1 bg-[#FFC600] mx-auto"></div>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
@@ -795,31 +795,31 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl p-6 shadow-lg"
+              className="bg-[#3C4A5E] rounded-xl p-6 shadow-lg border border-[#475466]"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-accent mb-6 flex items-center">
-                <Target className="w-6 h-6 text-primary mr-3" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
+                <Target className="w-6 h-6 text-[#FFC600] mr-3" />
                 Strengths
               </h3>
               <div className="space-y-4">
                 {strengths.map((strength, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-md border border-transparent hover:border-primary/10"
+                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#475466] hover:to-[#3C4A5E] transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.02, x: 6 }}
                   >
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137] shadow-md group-hover:shadow-lg">
+                    <div className="w-12 h-12 bg-[#FFC600] rounded-full flex items-center justify-center text-[#2A374B] group-hover:scale-110 transition-all duration-300 group-hover:bg-[#E6B200] shadow-md group-hover:shadow-lg">
                       {strength.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-accent mb-1 text-base group-hover:text-primary transition-colors duration-300">
+                      <h4 className="font-bold text-[#FFC600] mb-1 text-base group-hover:text-[#FFC600] transition-colors duration-300">
                         {strength.title}
                       </h4>
-                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed text-sm">
+                      <p className="text-[#F5F5F5] group-hover:text-[#F5F5F5] transition-colors duration-300 leading-relaxed text-sm">
                         {strength.description}
                       </p>
                     </div>
@@ -834,31 +834,31 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl p-6 shadow-lg"
+              className="bg-[#3C4A5E] rounded-xl p-6 shadow-lg border border-[#475466]"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-accent mb-6 flex items-center">
-                <Heart className="w-6 h-6 text-primary mr-3" />
+              <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
+                <Heart className="w-6 h-6 text-[#FFC600] mr-3" />
                 Our Values
               </h3>
               <div className="space-y-4">
                 {values.map((value, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-md border border-transparent hover:border-primary/10"
+                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#475466] hover:to-[#3C4A5E] transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/10"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.02, x: 6 }}
                   >
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all duration-300 group-hover:bg-[#092137] shadow-md group-hover:shadow-lg">
+                    <div className="w-12 h-12 bg-[#FFC600] rounded-full flex items-center justify-center text-[#2A374B] group-hover:scale-110 transition-all duration-300 group-hover:bg-[#E6B200] shadow-md group-hover:shadow-lg">
                       {value.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-accent mb-1 text-base group-hover:text-primary transition-colors duration-300">
+                      <h4 className="font-bold text-[#FFC600] mb-1 text-base group-hover:text-[#FFC600] transition-colors duration-300">
                         {value.title}
                       </h4>
-                      <p className="text-neutral-base group-hover:text-gray-800 transition-colors duration-300 leading-relaxed text-sm">
+                      <p className="text-[#F5F5F5] group-hover:text-[#F5F5F5] transition-colors duration-300 leading-relaxed text-sm">
                         {value.description}
                       </p>
                     </div>
