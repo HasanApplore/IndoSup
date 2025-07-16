@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Calculator, Truck, FileText, Package, CheckCircle, ArrowRight, Star, Eye, Clock, Target, ArrowUp, ArrowDown } from 'lucide-react';
 import constructionSiteImg from '@assets/illustration-construction-site (1)_1752496997919.jpg';
@@ -354,36 +355,41 @@ export default function StreamlinedProcurement() {
                 {/* Content */}
                 <div className="flex-1">
                   {/* Unified Content Block */}
-                  <div className="bg-white rounded-2xl p-8 shadow-lg h-[500px] flex flex-col border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300 overflow-hidden">
-                    {/* Title Section */}
-                    <div className="flex items-center space-x-4 mb-4 flex-shrink-0">
-                      <div className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center text-[#FFC600] group-hover:bg-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300">
-                        {solution.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-2 truncate">
-                          {solution.title}
-                        </h3>
-                        <div className="w-12 h-1 bg-[#FFC600]"></div>
+                  <motion.div 
+                    className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600] h-[500px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {/* Icon Section */}
+                    <div className="flex-shrink-0 mb-6">
+                      <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto shadow-md">
+                        {React.cloneElement(solution.icon, { className: "w-10 h-10 text-[#2A374B]" })}
                       </div>
                     </div>
 
+                    {/* Title Section */}
+                    <div className="flex-shrink-0 mb-4">
+                      <h3 className="text-xl font-bold mb-4 text-[#FFC600] truncate">
+                        {solution.title}
+                      </h3>
+                    </div>
+
                     {/* Description Section */}
-                    <div className="mb-2 flex-grow overflow-hidden">
-                      <p className="text-base text-[#2A374B] leading-relaxed mb-2 line-clamp-3">
+                    <div className="flex-grow overflow-hidden mb-4">
+                      <p className="text-[#2A374B] leading-relaxed mb-3 line-clamp-3">
                         {solution.description}
                       </p>
-                      <p className="text-base text-[#2A374B] leading-relaxed line-clamp-2">
+                      <p className="text-[#2A374B] leading-relaxed line-clamp-2">
                         {solution.subtext}
                       </p>
                     </div>
 
                     {/* Features Section */}
-                    <div className="mb-4 flex-shrink-0">
+                    <div className="flex-shrink-0 mb-4">
                       <h4 className="text-base font-semibold text-[#FFC600] mb-2">Key Features</h4>
                       <div className="space-y-2">
                         {solution.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2">
+                          <div key={featureIndex} className="flex items-center justify-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0" />
                             <span className="text-[#2A374B] font-medium text-sm truncate">{feature}</span>
                           </div>
@@ -402,7 +408,7 @@ export default function StreamlinedProcurement() {
                         <ArrowRight className="w-4 h-4" />
                       </motion.button>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Visual Element */}
