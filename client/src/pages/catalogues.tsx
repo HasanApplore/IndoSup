@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, Download, FileText, Calendar, Tag, ArrowRight, ArrowDown, Star, Eye, Clock } from 'lucide-react';
+import { Search, Filter, Download, FileText, Calendar, Tag, ArrowRight, ArrowDown, ArrowUp, Star, Eye, Clock } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import steelBarsImage from "@assets/assorted-steel-bars-pipes_1077802-159331_1752217650726.jpg";
 
@@ -678,11 +678,10 @@ export default function Catalogues() {
           {/* Back to Top Arrow */}
           {showBackToTop && (
             <motion.button
-              className="fixed bottom-6 right-6 z-40 w-12 h-12 border-2 border-[#FFC600] rounded-full flex items-center justify-center bg-[#2A374B]/90 hover:bg-[#FFC600] hover:border-[#FFC600] transition-all duration-300 backdrop-blur-sm shadow-lg group relative overflow-hidden"
+              className="fixed bottom-6 right-6 w-12 h-12 bg-[#FFC600] text-[#2A374B] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-[#E6B200] z-50"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
               onClick={() => {
                 if (heroAnimated) {
                   setHeroAnimated(false);
@@ -691,28 +690,10 @@ export default function Catalogues() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
-              whileHover={{ 
-                scale: 1.15,
-                boxShadow: "0 10px 30px rgba(255, 198, 0, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              title="Back to Top"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              {/* Pulse animation */}
-              <motion.div
-                className="absolute inset-0 bg-[#FFC600]/20 rounded-full"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.1, 0.3]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              
-              <ArrowRight className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] -rotate-90 relative z-10" />
+              <ArrowUp className="w-6 h-6" />
             </motion.button>
           )}
         </div>
