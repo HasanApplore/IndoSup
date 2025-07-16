@@ -773,7 +773,7 @@ export default function About() {
       </section>
 
       {/* Strength & Values */}
-      <section id="values" className="py-10 md:py-14 bg-[#2A374B]">
+      <section id="values" className="py-10 md:py-14 bg-[#fbf5ea]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-8 md:mb-10"
@@ -782,7 +782,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] mb-4 font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2A374B] mb-4 font-inter">
               Strength & Values
             </h2>
             <div className="w-20 md:w-28 h-1 bg-[#FFC600] mx-auto"></div>
@@ -795,7 +795,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-[#3C4A5E] rounded-xl p-6 shadow-lg border border-[#475466]"
+              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600]"
             >
               <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
                 <Target className="w-6 h-6 text-[#FFC600] mr-3" />
@@ -805,7 +805,7 @@ export default function About() {
                 {strengths.map((strength, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#475466] hover:to-[#3C4A5E] transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/10"
+                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#FFC600]/5 hover:to-[#FFC600]/10 transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -819,7 +819,7 @@ export default function About() {
                       <h4 className="font-bold text-[#FFC600] mb-1 text-base group-hover:text-[#FFC600] transition-colors duration-300">
                         {strength.title}
                       </h4>
-                      <p className="text-[#F5F5F5] group-hover:text-[#F5F5F5] transition-colors duration-300 leading-relaxed text-sm">
+                      <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
                         {strength.description}
                       </p>
                     </div>
@@ -834,7 +834,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-[#3C4A5E] rounded-xl p-6 shadow-lg border border-[#475466]"
+              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600]"
             >
               <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
                 <Heart className="w-6 h-6 text-[#FFC600] mr-3" />
@@ -844,7 +844,7 @@ export default function About() {
                 {values.map((value, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#475466] hover:to-[#3C4A5E] transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/10"
+                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#FFC600]/5 hover:to-[#FFC600]/10 transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/20"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -858,7 +858,7 @@ export default function About() {
                       <h4 className="font-bold text-[#FFC600] mb-1 text-base group-hover:text-[#FFC600] transition-colors duration-300">
                         {value.title}
                       </h4>
-                      <p className="text-[#F5F5F5] group-hover:text-[#F5F5F5] transition-colors duration-300 leading-relaxed text-sm">
+                      <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
                         {value.description}
                       </p>
                     </div>
