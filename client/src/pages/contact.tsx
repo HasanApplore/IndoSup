@@ -238,7 +238,7 @@ export default function Contact() {
       )}
 
       {/* Main Content */}
-      <section className="py-5 md:py-8 bg-[#FFF3CD]">
+      <section className="py-5 md:py-8 bg-[#2a374b]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {/* Section Header */}
@@ -249,11 +249,11 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-[#374151] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Get In Touch With Us
             </h2>
-            <div className="w-16 h-1 bg-[#374151] mx-auto"></div>
-            <p className="text-base text-[#374151] mt-4 max-w-xl mx-auto">
+            <div className="w-16 h-1 bg-[#FFC600] mx-auto"></div>
+            <p className="text-base text-gray-200 mt-4 max-w-xl mx-auto">
               Ready to transform your construction projects? Let's discuss your requirements and build something amazing together.
             </p>
           </motion.div>
