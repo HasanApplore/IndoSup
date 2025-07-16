@@ -332,12 +332,59 @@ export default function Catalogues() {
         id="catalogues-content"
         className={`py-8 md:py-12 bg-[#2a374b] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
-        }`}
+        } relative overflow-hidden`}
         style={{ 
           position: 'relative',
           zIndex: heroAnimated ? 50 : 'auto'
         }}
       >
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Floating Shapes */}
+          <motion.div
+            className="absolute top-20 left-10 w-20 h-20 bg-[#FFC600]/10 rounded-full blur-xl"
+            animate={{
+              y: [-20, 20, -20],
+              x: [-10, 10, -10],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-40 right-20 w-32 h-32 bg-[#FFC600]/5 rounded-full blur-2xl"
+            animate={{
+              y: [10, -30, 10],
+              x: [5, -15, 5],
+              scale: [1, 1.5, 1]
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 left-1/3 w-16 h-16 bg-white/5 rounded-full blur-lg"
+            animate={{
+              y: [0, -40, 0],
+              x: [-20, 20, -20],
+              opacity: [0.3, 0.8, 0.3]
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          
+          {/* Gradient Overlays */}
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-[#FFC600]/5 via-transparent to-transparent pointer-events-none" />
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           
           {/* Section Header */}
@@ -359,12 +406,45 @@ export default function Catalogues() {
 
           {/* Search and Filters */}
           <motion.div 
-            className="bg-white rounded-2xl shadow-lg p-6 mb-8"
+            className="bg-white rounded-2xl shadow-lg p-6 mb-8 backdrop-blur-sm border border-[#FFC600]/20 relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ 
+              boxShadow: "0 20px 40px rgba(255, 198, 0, 0.1)",
+              y: -2
+            }}
           >
+            {/* Subtle background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FFC600]/5 via-transparent to-[#FFC600]/5 pointer-events-none" />
+            
+            {/* Animated corner accents */}
+            <motion.div
+              className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[#FFC600]/10 to-transparent rounded-full blur-sm"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#FFC600]/10 to-transparent rounded-full blur-sm"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.6, 0.3, 0.6]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            />
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
@@ -420,20 +500,75 @@ export default function Catalogues() {
             </p>
           </div>
 
+          {/* Loading Animation */}
+          {isLoading && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[...Array(6)].map((_, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <div className="animate-pulse">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-12 h-12 bg-white/20 rounded-xl"></div>
+                      <div className="w-20 h-6 bg-white/20 rounded"></div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="w-full h-6 bg-white/20 rounded"></div>
+                      <div className="w-3/4 h-4 bg-white/20 rounded"></div>
+                      <div className="w-1/2 h-4 bg-white/20 rounded"></div>
+                    </div>
+                    <div className="mt-6 space-y-2">
+                      <div className="w-full h-4 bg-white/20 rounded"></div>
+                      <div className="w-full h-4 bg-white/20 rounded"></div>
+                      <div className="w-full h-4 bg-white/20 rounded"></div>
+                    </div>
+                    <div className="mt-6 w-full h-12 bg-white/20 rounded-lg"></div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+
           {/* Catalogues Grid */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {displayedCatalogues.map((catalog) => (
+          {!isLoading && (
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {displayedCatalogues.map((catalog) => (
               <motion.div
                 key={catalog.id}
                 variants={itemVariants}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-transparent hover:border-primary"
-                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-2 border-transparent hover:border-[#FFC600] relative overflow-hidden"
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px rgba(255, 198, 0, 0.15)"
+                }}
+                whileTap={{ scale: 0.98 }}
               >
+                {/* Animated background effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                />
+                
+                {/* Shimmer effect */}
+                <motion.div
+                  className="absolute -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-[#FFC600]/20 to-transparent opacity-0 group-hover:opacity-100"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                />
+                
+                <div className="relative z-10">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -483,9 +618,11 @@ export default function Catalogues() {
                   <Download className="w-5 h-5 mr-2" />
                   Download PDF
                 </motion.button>
+                </div>
               </motion.div>
             ))}
-          </motion.div>
+            </motion.div>
+          )}
 
           {/* View More Button */}
           {hasMoreCatalogues && (
@@ -497,11 +634,25 @@ export default function Catalogues() {
             >
               <motion.button
                 onClick={() => setDisplayCount(prev => prev + 6)}
-                className="px-8 py-4 bg-primary text-accent font-bold rounded-xl hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05 }}
+                className="px-8 py-4 bg-[#FFC600] text-[#2a374b] font-bold rounded-xl hover:bg-white hover:text-[#2a374b] transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-[#FFC600] hover:border-[#FFC600] relative overflow-hidden group"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(255, 198, 0, 0.3)"
+                }}
                 whileTap={{ scale: 0.95 }}
               >
-                View More Catalogues ({filteredCatalogues.length - displayCount} remaining)
+                {/* Button shimmer effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                />
+                
+                <span className="relative z-10 flex items-center justify-center">
+                  <Eye className="w-5 h-5 mr-2" />
+                  View More Catalogues ({filteredCatalogues.length - displayCount} remaining)
+                </span>
               </motion.button>
             </motion.div>
           )}
@@ -527,7 +678,7 @@ export default function Catalogues() {
           {/* Back to Top Arrow */}
           {showBackToTop && (
             <motion.button
-              className="fixed bottom-8 right-8 z-40 w-12 h-12 border-2 border-primary rounded-full flex items-center justify-center bg-white/90 hover:bg-white hover:border-primary transition-all duration-300 backdrop-blur-sm shadow-lg"
+              className="fixed bottom-8 right-8 z-40 w-12 h-12 border-2 border-[#FFC600] rounded-full flex items-center justify-center bg-white/90 hover:bg-[#FFC600] hover:border-[#FFC600] transition-all duration-300 backdrop-blur-sm shadow-lg group relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
@@ -540,11 +691,28 @@ export default function Catalogues() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
-              whileHover={{ scale: 1.15 }}
+              whileHover={{ 
+                scale: 1.15,
+                boxShadow: "0 10px 30px rgba(255, 198, 0, 0.3)"
+              }}
               whileTap={{ scale: 0.95 }}
               title="Back to Top"
             >
-              <ArrowRight className="w-6 h-6 text-primary -rotate-90" />
+              {/* Pulse animation */}
+              <motion.div
+                className="absolute inset-0 bg-[#FFC600]/20 rounded-full"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.1, 0.3]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              
+              <ArrowRight className="w-6 h-6 text-[#FFC600] group-hover:text-white -rotate-90 relative z-10" />
             </motion.button>
           )}
         </div>
