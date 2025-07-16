@@ -777,7 +777,7 @@ export default function Media() {
       {/* Main Content */}
       <section 
         id="media-content" 
-        className={`py-8 md:py-12 bg-[#FBF5EA] transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#2a374b] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
@@ -795,10 +795,10 @@ export default function Media() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
               Explore Our Content
             </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
+            <p className="text-gray-200 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Browse through our comprehensive collection of media coverage, achievements, and industry insights
             </p>
           </motion.div>
@@ -894,7 +894,7 @@ export default function Media() {
                     Loading content...
                   </div>
                 ) : (
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-200 text-sm">
                     Showing {filteredContent.length} {filteredContent.length === 1 ? 'result' : 'results'}
                     {searchQuery && ` for "${searchQuery}"`}
                   </p>

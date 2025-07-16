@@ -232,7 +232,7 @@ export default function NonSteelProducts() {
       )}
 
       {/* Products Section */}
-      <section className="py-8 md:py-12 bg-[#FBF5EA] pt-[0px] pb-[0px]">
+      <section className="py-8 md:py-12 bg-[#2a374b] pt-[0px] pb-[0px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-8"

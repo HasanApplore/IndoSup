@@ -241,7 +241,7 @@ export default function Careers() {
       )}
 
       {/* Job Openings Section */}
-      <section className="py-5 md:py-8 bg-[#FBF5EA]">
+      <section className="py-5 md:py-8 bg-[#2a374b]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-12"
@@ -250,7 +250,7 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-inter">
               Current Openings
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto"></div>
@@ -313,10 +313,10 @@ export default function Careers() {
 
           {/* Results Count */}
           <div className="mb-6">
-            <p className="text-neutral-base">
+            <p className="text-gray-200">
               Showing {filteredJobs.length} of {jobOpenings.length} job openings
               {filteredJobs.length !== jobOpenings.length && (
-                <span className="text-primary"> (filtered from {jobOpenings.length} total)</span>
+                <span className="text-[#FFC600]"> (filtered from {jobOpenings.length} total)</span>
               )}
             </p>
           </div>

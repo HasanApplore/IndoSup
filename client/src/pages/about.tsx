@@ -207,7 +207,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-[#2a374b]">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -321,8 +321,8 @@ export default function About() {
               <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Award className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
-              <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <h3 className="text-xl font-bold mb-4 text-white">10+ Years Experience</h3>
+              <p className="text-gray-200 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
