@@ -220,7 +220,7 @@ export default function Catalogues() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white relative overflow-hidden">
+    <div className="min-h-screen bg-[#2A374B] relative overflow-hidden">
       {/* Hero Section */}
       <section 
         className={`hero-section relative h-[55vh] flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${

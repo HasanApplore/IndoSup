@@ -656,7 +656,7 @@ export default function Media() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white relative overflow-hidden">
+    <div className="min-h-screen bg-[#2A374B] relative overflow-hidden">
       {/* Hero Section */}
       <section 
         className={`hero-section relative h-[55vh] flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
@@ -777,7 +777,7 @@ export default function Media() {
       {/* Main Content */}
       <section 
         id="media-content" 
-        className={`py-8 md:py-12 bg-[#FBF5EA] transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#2A374B] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
@@ -795,10 +795,10 @@ export default function Media() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] mb-3 md:mb-4">
               Explore Our Content
             </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
+            <p className="text-[#F5F5F5] text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Browse through our comprehensive collection of media coverage, achievements, and industry insights
             </p>
           </motion.div>
@@ -817,8 +817,8 @@ export default function Media() {
                 }}
                 className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-bold transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
-                    ? 'bg-primary text-accent shadow-lg border-2 border-primary'
-                    : 'bg-white text-neutral-base hover:bg-primary/5 border-2 border-gray-200 hover:border-primary/30'
+                    ? 'bg-[#FFC600] text-[#2A374B] shadow-lg border-2 border-[#FFC600]'
+                    : 'bg-[#3C4A5E] text-[#F5F5F5] hover:bg-[#FFC600]/10 border-2 border-[#475466] hover:border-[#FFC600]/30'
                 }`}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -829,7 +829,7 @@ export default function Media() {
                 {tab.label}
                 {activeTab === tab.id && (
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/30 rounded-xl"
+                    className="absolute inset-0 bg-gradient-to-r from-[#FFC600]/20 to-[#FFC600]/30 rounded-xl"
                     layoutId="activeTab"
                     transition={{ type: "spring", duration: 0.5 }}
                   />
@@ -847,21 +847,21 @@ export default function Media() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles, news, and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white shadow-sm hover:shadow-md hover:border-primary/30 text-sm md:text-base"
+                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 bg-[#3C4A5E] text-[#F5F5F5] shadow-sm hover:shadow-md hover:border-[#FFC600]/30 text-sm md:text-base placeholder-[#F5F5F5]/60"
               />
             </div>
             <div className="relative">
-              <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="pl-12 pr-8 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-primary/30 text-sm md:text-base"
+                className="pl-12 pr-8 py-3 md:py-4 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] bg-[#3C4A5E] text-[#F5F5F5] shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-[#FFC600]/30 text-sm md:text-base"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (

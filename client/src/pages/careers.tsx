@@ -241,12 +241,12 @@ export default function Careers() {
       )}
 
       {/* Job Openings Section */}
-      <section className="py-12 md:py-16 bg-[#2a374b] relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-[#2A374B] relative overflow-hidden">
         {/* Decorative Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2a374b] to-[#1f2937] opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2A374B] to-[#1f2937] opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-[#F5A623]/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-20 w-32 h-32 bg-[#F5A623]/5 rounded-full blur-2xl"></div>
+          <div className="absolute top-10 left-10 w-20 h-20 bg-[#FFC600]/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-20 w-32 h-32 bg-[#FFC600]/5 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rounded-full blur-lg"></div>
         </div>
         
@@ -258,11 +258,11 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6 font-inter">
               Current Openings
             </h2>
-            <div className="w-24 h-1 bg-[#F5A623] mx-auto mb-4"></div>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-4"></div>
+            <p className="text-lg text-[#F5F5F5] max-w-2xl mx-auto">
               Join our team of innovators and help shape the future of construction procurement
             </p>
           </motion.div>
@@ -271,7 +271,7 @@ export default function Careers() {
 
           {/* Search and Filters */}
           <motion.div 
-            className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-6 mb-8 border border-white/20"
+            className="bg-[#3C4A5E] backdrop-blur-md rounded-2xl shadow-2xl p-6 mb-8 border border-[#475466]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -280,42 +280,42 @@ export default function Careers() {
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search jobs..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white/10 border-2 border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] transition-all duration-300 text-white placeholder-white/60 shadow-sm hover:shadow-md hover:border-[#F5A623]/50"
+                  className="w-full pl-10 pr-4 py-3 bg-[#3C4A5E] border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 text-[#F5F5F5] placeholder-[#F5F5F5]/60 shadow-sm hover:shadow-md hover:border-[#FFC600]/50"
                 />
               </div>
 
               {/* Department Filter */}
               <div className="relative min-w-[200px]">
-                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
                 <select
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 bg-white/10 border-2 border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] text-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#F5A623]/50"
+                  className="w-full pl-10 pr-8 py-3 bg-[#3C4A5E] border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-[#F5F5F5] appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
                 >
-                  <option value="all" className="bg-[#2a374b] text-white">All Departments</option>
+                  <option value="all" className="bg-[#3C4A5E] text-[#F5F5F5]">All Departments</option>
                   {departments.map(dept => (
-                    <option key={dept} value={dept} className="bg-[#2a374b] text-white">{dept}</option>
+                    <option key={dept} value={dept} className="bg-[#3C4A5E] text-[#F5F5F5]">{dept}</option>
                   ))}
                 </select>
               </div>
 
               {/* Location Filter */}
               <div className="relative min-w-[200px]">
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
                 <select
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 bg-white/10 border-2 border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] text-white appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#F5A623]/50"
+                  className="w-full pl-10 pr-8 py-3 bg-[#3C4A5E] border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-[#F5F5F5] appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
                 >
-                  <option value="all" className="bg-[#2a374b] text-white">All Locations</option>
+                  <option value="all" className="bg-[#3C4A5E] text-[#F5F5F5]">All Locations</option>
                   {locations.map(location => (
-                    <option key={location} value={location} className="bg-[#2a374b] text-white">{location}</option>
+                    <option key={location} value={location} className="bg-[#3C4A5E] text-[#F5F5F5]">{location}</option>
                   ))}
                 </select>
               </div>
@@ -324,10 +324,10 @@ export default function Careers() {
 
           {/* Results Count */}
           <div className="mb-6">
-            <p className="text-white/80 text-lg">
+            <p className="text-[#F5F5F5]/80 text-lg">
               Showing {filteredJobs.length} of {jobOpenings.length} job openings
               {filteredJobs.length !== jobOpenings.length && (
-                <span className="text-[#F5A623] font-semibold"> (filtered from {jobOpenings.length} total)</span>
+                <span className="text-[#FFC600] font-semibold"> (filtered from {jobOpenings.length} total)</span>
               )}
             </p>
           </div>
@@ -343,15 +343,15 @@ export default function Careers() {
               <motion.div
                 key={job.id}
                 variants={itemVariants}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 group hover:bg-white/10 hover:border-[#F5A623]/30"
+                className="bg-[#3C4A5E] backdrop-blur-sm border border-[#475466] rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 group hover:bg-[#3C4A5E]/80 hover:border-[#FFC600]/30"
                 whileHover={{ y: -8, scale: 1.02 }}
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#F5A623] transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-[#FFC600] mb-2 group-hover:text-[#FFC600] transition-colors duration-300">
                       {job.title}
                     </h3>
-                    <div className="flex items-center space-x-4 text-sm text-white/70">
+                    <div className="flex items-center space-x-4 text-sm text-[#F5F5F5]/70">
                       <span className="flex items-center">
                         <Building className="w-4 h-4 mr-1" />
                         {job.department}
@@ -366,20 +366,20 @@ export default function Careers() {
                       </span>
                     </div>
                   </div>
-                  <span className="bg-[#F5A623]/20 text-[#F5A623] px-3 py-1 rounded-full text-sm font-medium border border-[#F5A623]/30">
+                  <span className="bg-[#FFC600]/20 text-[#FFC600] px-3 py-1 rounded-full text-sm font-medium border border-[#FFC600]/30">
                     {job.department}
                   </span>
                 </div>
 
-                <p className="text-white/80 leading-relaxed mb-4">
+                <p className="text-[#F5F5F5] leading-relaxed mb-4">
                   {job.description}
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-white mb-2">Key Requirements:</h4>
+                  <h4 className="font-semibold text-[#FFC600] mb-2">Key Requirements:</h4>
                   <div className="flex flex-wrap gap-2">
                     {job.requirements && job.requirements.split(',').map((req, index) => (
-                      <span key={index} className="bg-white/10 text-white/90 px-3 py-1 rounded-full text-sm border border-white/20">
+                      <span key={index} className="bg-[#3C4A5E] text-[#F5F5F5] px-3 py-1 rounded-full text-sm border border-[#475466]">
                         {req.trim()}
                       </span>
                     ))}
@@ -387,7 +387,7 @@ export default function Careers() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/60">
+                  <span className="text-sm text-[#F5F5F5]/60">
                     Posted {new Date(job.createdAt).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'short', 
@@ -396,7 +396,7 @@ export default function Careers() {
                   </span>
                   <Button
                     onClick={() => handleApply(job)}
-                    className="bg-[#F5A623] hover:bg-[#F5A623]/90 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#F5A623]"
+                    className="bg-[#FFC600] hover:bg-[#E6B200] text-[#2A374B] font-semibold px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#FFC600]"
                   >
                     Apply Now
                   </Button>
@@ -414,8 +414,8 @@ export default function Careers() {
               transition={{ duration: 0.5 }}
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-2">No Openings Found</h3>
-              <p className="text-white/70">
+              <h3 className="text-2xl font-bold text-[#FFC600] mb-2">No Openings Found</h3>
+              <p className="text-[#F5F5F5]/70">
                 Try adjusting your filters or check back later for new opportunities.
               </p>
             </motion.div>
@@ -424,7 +424,7 @@ export default function Careers() {
       </section>
 
       {/* Life at IndoSup Section */}
-      <section className="py-5 md:py-8">
+      <section className="py-5 md:py-8 bg-[#2A374B]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-12"
@@ -433,11 +433,11 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6 font-inter">
               Life at IndoSup
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto"></div>
-            <p className="text-lg text-neutral-base mt-6 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
+            <p className="text-lg text-[#F5F5F5] mt-6 max-w-2xl mx-auto">
               Join a dynamic team of innovators, builders, and problem-solvers who are transforming the construction industry.
             </p>
           </motion.div>

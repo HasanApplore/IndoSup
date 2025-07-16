@@ -219,7 +219,7 @@ export default function StreamlinedProcurement() {
       )}
 
       {/* Solutions Grid */}
-      <section className="py-16 md:py-20 bg-[#FBF5EA]">
+      <section className="py-16 md:py-20 bg-[#2A374B]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-12 md:mb-16"
@@ -228,11 +228,11 @@ export default function StreamlinedProcurement() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFC600] mb-6 font-inter">
               Transforming Construction Procurement
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-primary mx-auto"></div>
-            <p className="text-neutral-base mt-6 max-w-3xl mx-auto text-lg">
+            <div className="w-24 md:w-32 h-1 bg-[#FFC600] mx-auto"></div>
+            <p className="text-[#F5F5F5] mt-6 max-w-3xl mx-auto text-lg">
               Each solution is designed to address specific pain points in construction procurement, 
               delivering measurable results and operational excellence.
             </p>
@@ -247,93 +247,93 @@ export default function StreamlinedProcurement() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#475466] hover:border-[#FFC600]/30"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('multi-site-procurement')}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
+                className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[#FFC600] group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <Building2 className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
+                <Building2 className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Multi-site</h3>
-              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Procurement</p>
+              <h3 className="text-lg font-bold text-[#FFC600] mb-1 group-hover:text-[#FFC600] transition-colors duration-300">Multi-site</h3>
+              <p className="text-[#F5F5F5] text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">Procurement</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#475466] hover:border-[#FFC600]/30"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('sku-price-accuracy')}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
+                className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[#FFC600] group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <Calculator className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
+                <Calculator className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Price</h3>
-              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Accuracy</p>
+              <h3 className="text-lg font-bold text-[#FFC600] mb-1 group-hover:text-[#FFC600] transition-colors duration-300">Price</h3>
+              <p className="text-[#F5F5F5] text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">Accuracy</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#475466] hover:border-[#FFC600]/30"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('supply-chain-solutions')}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
+                className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[#FFC600] group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ x: [0, 5, -5, 0] }}
                 transition={{ duration: 0.6 }}
               >
-                <Truck className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
+                <Truck className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Supply Chain</h3>
-              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Solutions</p>
+              <h3 className="text-lg font-bold text-[#FFC600] mb-1 group-hover:text-[#FFC600] transition-colors duration-300">Supply Chain</h3>
+              <p className="text-[#F5F5F5] text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">Solutions</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#475466] hover:border-[#FFC600]/30"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('gst-billing-compliance')}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
+                className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[#FFC600] group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 0.4 }}
               >
-                <FileText className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
+                <FileText className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">GST</h3>
-              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Compliance</p>
+              <h3 className="text-lg font-bold text-[#FFC600] mb-1 group-hover:text-[#FFC600] transition-colors duration-300">GST</h3>
+              <p className="text-[#F5F5F5] text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">Compliance</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-transparent hover:border-primary/20"
+              className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#475466] hover:border-[#FFC600]/30"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('order-management')}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <motion.div 
-                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:shadow-lg transition-all duration-300"
+                className="w-12 h-12 bg-[#FFC600]/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[#FFC600] group-hover:shadow-lg transition-all duration-300"
                 whileHover={{ rotate: [0, 180, 360] }}
                 transition={{ duration: 0.6 }}
               >
-                <Package className="w-6 h-6 text-primary group-hover:text-white transition-all duration-300" />
+                <Package className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-accent mb-1 group-hover:text-accent transition-colors duration-300">Order</h3>
-              <p className="text-neutral-base text-sm group-hover:text-neutral-base transition-colors duration-300">Management</p>
+              <h3 className="text-lg font-bold text-[#FFC600] mb-1 group-hover:text-[#FFC600] transition-colors duration-300">Order</h3>
+              <p className="text-[#F5F5F5] text-sm group-hover:text-[#F5F5F5] transition-colors duration-300">Management</p>
             </motion.div>
           </motion.div>
 
@@ -354,38 +354,38 @@ export default function StreamlinedProcurement() {
                 {/* Content */}
                 <div className="flex-1">
                   {/* Unified Content Block */}
-                  <div className="bg-white rounded-2xl p-8 shadow-lg h-[500px] flex flex-col">
+                  <div className="bg-[#3C4A5E] rounded-2xl p-8 shadow-lg h-[500px] flex flex-col border border-[#475466]">
                     {/* Title Section */}
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-[#0C2539] group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      <div className="w-16 h-16 bg-[#FFC600]/10 rounded-2xl flex items-center justify-center text-[#FFC600] group-hover:bg-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300">
                         {solution.icon}
                       </div>
                       <div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-accent mb-2">
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
                           {solution.title}
                         </h3>
-                        <div className="w-16 h-1 bg-primary"></div>
+                        <div className="w-16 h-1 bg-[#FFC600]"></div>
                       </div>
                     </div>
 
                     {/* Description Section */}
                     <div className="mb-6 flex-grow">
-                      <p className="text-lg text-neutral-base leading-relaxed mb-4">
+                      <p className="text-lg text-[#F5F5F5] leading-relaxed mb-4">
                         {solution.description}
                       </p>
-                      <p className="text-base text-neutral-base/80 leading-relaxed">
+                      <p className="text-base text-[#F5F5F5]/80 leading-relaxed">
                         {solution.subtext}
                       </p>
                     </div>
 
                     {/* Features Section */}
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-accent mb-4">Key Features</h4>
+                      <h4 className="text-lg font-semibold text-[#FFC600] mb-4">Key Features</h4>
                       <div className="space-y-3">
                         {solution.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                            <span className="text-accent font-medium">{feature}</span>
+                            <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
+                            <span className="text-[#F5F5F5] font-medium">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -394,7 +394,7 @@ export default function StreamlinedProcurement() {
                     {/* Button Section */}
                     <div className="mt-auto">
                       <motion.button
-                        className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                        className="inline-flex items-center bg-[#FFC600] text-[#2A374B] px-6 py-3 rounded-lg font-semibold hover:bg-[#E6B200] transition-colors duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                         whileHover={{ x: 5, scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
