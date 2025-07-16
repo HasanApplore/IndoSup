@@ -798,7 +798,7 @@ export default function About() {
               className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.02, y: -4 }}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
+              <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-6 flex items-center">
                 <Target className="w-6 h-6 text-[#FFC600] mr-3" />
                 Strengths
               </h3>
@@ -817,7 +817,7 @@ export default function About() {
                       {strength.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-[#FFC600] mb-1 text-base group-hover:text-[#FFC600] transition-colors duration-300">
+                      <h4 className="font-bold text-[#2A374B] mb-1 text-base group-hover:text-[#2A374B] transition-colors duration-300">
                         {strength.title}
                       </h4>
                       <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
@@ -838,7 +838,7 @@ export default function About() {
               className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.02, y: -4 }}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
+              <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-6 flex items-center">
                 <Heart className="w-6 h-6 text-[#FFC600] mr-3" />
                 Our Values
               </h3>
@@ -857,7 +857,7 @@ export default function About() {
                       {value.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-[#FFC600] mb-1 text-base group-hover:text-[#FFC600] transition-colors duration-300">
+                      <h4 className="font-bold text-[#2A374B] mb-1 text-base group-hover:text-[#2A374B] transition-colors duration-300">
                         {value.title}
                       </h4>
                       <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
