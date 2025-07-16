@@ -220,7 +220,7 @@ export default function Catalogues() {
   };
 
   return (
-    <div className="min-h-screen bg-[#2A374B] relative overflow-hidden">
+    <div className="min-h-screen bg-[#2a374b] relative overflow-hidden">
       {/* Hero Section */}
       <section 
         className={`hero-section relative h-[55vh] flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
@@ -330,7 +330,7 @@ export default function Catalogues() {
       {/* Main Content */}
       <section 
         id="catalogues-content"
-        className={`py-8 md:py-12 bg-[#2A374B] transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#2a374b] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         } relative overflow-hidden`}
         style={{ 
