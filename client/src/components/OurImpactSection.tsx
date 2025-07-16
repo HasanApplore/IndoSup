@@ -40,89 +40,238 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   );
 };
 
-// Simple Motion Background Component
-const SimpleMotionBackground = () => {
+// Enhanced Framer Motion Background Component
+const AdvancedMotionBackground = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: ((e.clientX - rect.left) / rect.width) * 100,
+          y: ((e.clientY - rect.top) / rect.height) * 100
+        });
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
+      return () => container.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, []);
+
   return (
-    <div className="absolute inset-0 overflow-hidden">
-      
-      {/* Simple floating dots */}
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
+      {/* Dynamic Particle System */}
       <div className="absolute inset-0">
-        {/* Simple floating dots */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(40)].map((_, i) => (
           <motion.div
-            key={i}
+            key={`particle-${i}`}
             className="absolute rounded-full"
             style={{
-              width: `${3 + Math.random() * 4}px`,
-              height: `${3 + Math.random() * 4}px`,
-              background: `rgba(255, 217, 90, 0.3)`,
-              left: `${10 + i * 8}%`,
-              top: `${20 + (i % 3) * 30}%`,
+              width: `${2 + Math.random() * 4}px`,
+              height: `${2 + Math.random() * 4}px`,
+              background: `rgba(255, 217, 90, ${0.3 + Math.random() * 0.4})`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [0.8, 1.2, 0.8]
+              x: [0, Math.random() * 100 - 50, 0],
+              y: [0, Math.random() * 100 - 50, 0],
+              scale: [0.5, 1.5, 0.5],
+              opacity: [0.2, 0.8, 0.2],
+              rotate: [0, 360]
             }}
             transition={{
-              duration: 4 + Math.random() * 2,
+              duration: 5 + Math.random() * 10,
               repeat: Infinity,
-              delay: i * 0.3,
-              ease: "easeInOut"
+              ease: "easeInOut",
+              delay: Math.random() * 2
             }}
           />
         ))}
       </div>
-      
-      {/* Gentle wave patterns */}
+
+      {/* Morphing Energy Orbs */}
       <div className="absolute inset-0">
-        {[...Array(3)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
-            key={`wave-${i}`}
-            className="absolute inset-0 opacity-10"
+            key={`orb-${i}`}
+            className="absolute rounded-full"
             style={{
-              background: `radial-gradient(circle at ${30 + i * 20}% ${40 + i * 15}%, rgba(255, 217, 90, 0.2) 0%, transparent 50%)`,
+              width: `${15 + Math.random() * 30}px`,
+              height: `${15 + Math.random() * 30}px`,
+              background: `radial-gradient(circle, rgba(255, 217, 90, 0.2) 0%, transparent 70%)`,
+              left: `${10 + i * 12}%`,
+              top: `${20 + (i % 3) * 30}%`,
+              filter: 'blur(1px)',
             }}
             animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.05, 0.15, 0.05]
+              scale: [0.8, 2, 0.8],
+              opacity: [0.1, 0.6, 0.1],
+              rotate: [0, 180, 360],
+              borderRadius: ['50%', '30%', '50%']
             }}
             transition={{
-              duration: 6 + i * 2,
+              duration: 8 + Math.random() * 4,
               repeat: Infinity,
-              delay: i * 1.5,
-              ease: "easeInOut"
+              ease: "easeInOut",
+              delay: i * 0.5
             }}
           />
         ))}
       </div>
-      
-      {/* Subtle moving lines */}
+
+      {/* Interactive Lightning Lines */}
       <div className="absolute inset-0">
-        {[...Array(4)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={`line-${i}`}
-            className="absolute h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"
+            className="absolute"
             style={{
-              top: `${25 + i * 20}%`,
-              left: 0,
-              right: 0,
+              width: '1px',
+              height: `${30 + Math.random() * 80}px`,
+              background: `linear-gradient(to bottom, transparent, rgba(255, 217, 90, 0.4), transparent)`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              transformOrigin: 'center',
             }}
             animate={{
-              x: ["-100%", "100%"],
-              opacity: [0, 0.4, 0]
+              rotate: [0, 360],
+              scaleY: [0.5, 1.5, 0.5],
+              opacity: [0.1, 0.7, 0.1],
+              x: mousePosition.x * 0.1,
+              y: mousePosition.y * 0.1
+            }}
+            transition={{
+              duration: 6 + Math.random() * 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.3
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Sweeping Wave Effects */}
+      <div className="absolute inset-0">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={`wave-${i}`}
+            className="absolute h-px bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"
+            style={{
+              top: `${15 + i * 20}%`,
+              left: '-100px',
+              right: '-100px',
+            }}
+            animate={{
+              x: ['-100%', '100%'],
+              opacity: [0, 0.5, 0],
+              scaleX: [0.5, 1, 0.5]
             }}
             transition={{
               duration: 8 + i * 2,
               repeat: Infinity,
-              delay: i * 2,
-              ease: "linear"
+              ease: "easeInOut",
+              delay: i * 1.5
             }}
           />
         ))}
       </div>
-      
 
+      {/* Pulsing Energy Centers */}
+      <div className="absolute inset-0">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`energy-${i}`}
+            className="absolute rounded-full"
+            style={{
+              width: `${10 + Math.random() * 15}px`,
+              height: `${10 + Math.random() * 15}px`,
+              background: `radial-gradient(circle, rgba(255, 217, 90, 0.8) 0%, rgba(255, 217, 90, 0.2) 50%, transparent 100%)`,
+              left: `${15 + i * 15}%`,
+              top: `${25 + (i % 2) * 50}%`,
+              boxShadow: '0 0 20px rgba(255, 217, 90, 0.3)',
+            }}
+            animate={{
+              scale: [1, 1.8, 1],
+              opacity: [0.4, 1, 0.4],
+              boxShadow: [
+                '0 0 20px rgba(255, 217, 90, 0.3)',
+                '0 0 40px rgba(255, 217, 90, 0.6)',
+                '0 0 20px rgba(255, 217, 90, 0.3)'
+              ]
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.4
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating Geometric Elements */}
+      <div className="absolute inset-0">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={`geo-${i}`}
+            className="absolute border border-yellow-400/40"
+            style={{
+              width: '8px',
+              height: '8px',
+              left: `${20 + i * 10}%`,
+              top: `${30 + (i % 3) * 20}%`,
+            }}
+            animate={{
+              rotate: [0, 360],
+              scale: [0.5, 1.2, 0.5],
+              opacity: [0.3, 0.8, 0.3],
+              borderRadius: ['0%', '50%', '0%']
+            }}
+            transition={{
+              duration: 10 + Math.random() * 5,
+              repeat: Infinity,
+              ease: "linear",
+              delay: i * 0.6
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Background Glow Effects */}
+      <div className="absolute inset-0">
+        {[...Array(4)].map((_, i) => (
+          <motion.div
+            key={`glow-${i}`}
+            className="absolute rounded-full"
+            style={{
+              width: `${100 + Math.random() * 200}px`,
+              height: `${100 + Math.random() * 200}px`,
+              background: `radial-gradient(circle, rgba(255, 217, 90, 0.05) 0%, transparent 70%)`,
+              left: `${i * 25}%`,
+              top: `${20 + (i % 2) * 40}%`,
+              filter: 'blur(2px)',
+            }}
+            animate={{
+              scale: [0.8, 1.2, 0.8],
+              opacity: [0.02, 0.1, 0.02],
+              x: [0, 50, 0],
+              y: [0, -30, 0]
+            }}
+            transition={{
+              duration: 12 + Math.random() * 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 2
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
@@ -179,8 +328,8 @@ const OurImpactSection = () => {
 
   return (
     <section className="py-12 px-4 md:py-20 md:px-6 bg-[#0F172A] relative overflow-hidden">
-      {/* Simple Motion Background */}
-      <SimpleMotionBackground />
+      {/* Advanced Motion Background */}
+      <AdvancedMotionBackground />
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
