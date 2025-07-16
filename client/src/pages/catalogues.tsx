@@ -330,7 +330,7 @@ export default function Catalogues() {
       {/* Main Content */}
       <section 
         id="catalogues-content"
-        className={`py-8 md:py-12 bg-[#FBF5EA] transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#2a374b] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
@@ -348,10 +348,10 @@ export default function Catalogues() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4">
               Download Product Catalogues
             </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
+            <p className="text-gray-200 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Access detailed specifications, pricing, and technical documentation for all construction materials
             </p>
           </motion.div>
@@ -412,10 +412,10 @@ export default function Catalogues() {
 
           {/* Results Count */}
           <div className="mb-6">
-            <p className="text-neutral-base">
+            <p className="text-gray-200">
               Showing {displayedCatalogues.length} of {filteredCatalogues.length} catalogues
               {filteredCatalogues.length !== catalogues.length && (
-                <span className="text-primary"> (filtered from {catalogues.length} total)</span>
+                <span className="text-[#FFC600]"> (filtered from {catalogues.length} total)</span>
               )}
             </p>
           </div>
@@ -514,11 +514,11 @@ export default function Catalogues() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FileText className="w-12 h-12 text-gray-400" />
+              <div className="w-24 h-24 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FileText className="w-12 h-12 text-gray-300" />
               </div>
-              <h3 className="text-2xl font-bold text-accent mb-2">No Catalogues Found</h3>
-              <p className="text-neutral-base max-w-md mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-2">No Catalogues Found</h3>
+              <p className="text-gray-200 max-w-md mx-auto">
                 Try adjusting your search terms or filters to find the catalogues you're looking for.
               </p>
             </motion.div>
