@@ -795,7 +795,8 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -4 }}
             >
               <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
                 <Target className="w-6 h-6 text-[#FFC600] mr-3" />
@@ -834,7 +835,8 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -4 }}
             >
               <h3 className="text-xl md:text-2xl font-bold text-[#FFC600] mb-6 flex items-center">
                 <Heart className="w-6 h-6 text-[#FFC600] mr-3" />
