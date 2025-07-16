@@ -240,7 +240,7 @@ export default function Catalogues() {
             alt="Steel Bars and Pipes - Product Catalogues"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-accent/50"></div>
+          <div className="absolute inset-0 bg-accent/80"></div>
         </div>
         
         {/* Animated background elements */}
@@ -381,9 +381,9 @@ export default function Catalogues() {
             }}
           />
           
-          {/* Gradient Overlays */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-[#FFC600]/5 via-transparent to-transparent pointer-events-none" />
+          {/* Simple Overlays */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[#FFC600]/5 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-[#FFC600]/3 pointer-events-none" />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
           
@@ -416,12 +416,12 @@ export default function Catalogues() {
               y: -2
             }}
           >
-            {/* Subtle background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FFC600]/5 via-transparent to-[#FFC600]/5 pointer-events-none" />
+            {/* Subtle background overlay */}
+            <div className="absolute inset-0 bg-[#FFC600]/3 pointer-events-none" />
             
             {/* Animated corner accents */}
             <motion.div
-              className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[#FFC600]/10 to-transparent rounded-full blur-sm"
+              className="absolute top-0 left-0 w-20 h-20 bg-[#FFC600]/10 rounded-full blur-sm"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.6, 0.3]
@@ -433,7 +433,7 @@ export default function Catalogues() {
               }}
             />
             <motion.div
-              className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#FFC600]/10 to-transparent rounded-full blur-sm"
+              className="absolute bottom-0 right-0 w-16 h-16 bg-[#FFC600]/10 rounded-full blur-sm"
               animate={{
                 scale: [1.2, 1, 1.2],
                 opacity: [0.6, 0.3, 0.6]
@@ -553,19 +553,11 @@ export default function Catalogues() {
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {/* Animated background effect */}
+                {/* Simple hover background effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-transparent to-[#FFC600]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-[#FFC600]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
-                />
-                
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-[#FFC600]/20 to-transparent opacity-0 group-hover:opacity-100"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
                 />
                 
                 <div className="relative z-10">
@@ -641,12 +633,11 @@ export default function Catalogues() {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {/* Button shimmer effect */}
+                {/* Button hover effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
                 />
                 
                 <span className="relative z-10 flex items-center justify-center">
