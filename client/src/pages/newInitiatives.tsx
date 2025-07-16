@@ -310,7 +310,7 @@ export default function NewInitiatives() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FFC600]">
               Our Global Companies
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
