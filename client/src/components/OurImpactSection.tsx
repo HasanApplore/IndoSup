@@ -208,21 +208,7 @@ const ParticlesBackground = () => {
         ))}
       </div>
       
-      {/* Animated gradient waves */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"
-          animate={{
-            x: ["-100%", "100%"],
-            opacity: [0, 0.5, 0]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
+
     </div>
   );
 };
@@ -282,11 +268,6 @@ const OurImpactSection = () => {
       {/* 3D Particles Background */}
       <ParticlesBackground />
       
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#1E3A8A] via-transparent to-[#FFD95A]"></div>
-      </div>
-      
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
@@ -335,9 +316,7 @@ const OurImpactSection = () => {
           ))}
         </motion.div>
 
-        {/* Bottom Decorative Elements */}
-        <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#1E3A8A] rounded-full opacity-10 blur-xl"></div>
-        <div className="absolute bottom-0 right-0 w-24 h-24 bg-[#FFD95A] rounded-full opacity-10 blur-xl"></div>
+
       </div>
     </section>
   );
