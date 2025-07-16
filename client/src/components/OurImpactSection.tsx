@@ -74,7 +74,7 @@ const AdvancedMotionBackground = () => {
             style={{
               width: `${2 + Math.random() * 4}px`,
               height: `${2 + Math.random() * 4}px`,
-              background: `rgba(255, 217, 90, ${0.3 + Math.random() * 0.4})`,
+              background: `rgba(255, 255, 0, ${0.4 + Math.random() * 0.5})`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
@@ -104,7 +104,7 @@ const AdvancedMotionBackground = () => {
             style={{
               width: `${15 + Math.random() * 30}px`,
               height: `${15 + Math.random() * 30}px`,
-              background: `radial-gradient(circle, rgba(255, 217, 90, 0.2) 0%, transparent 70%)`,
+              background: `radial-gradient(circle, rgba(255, 255, 0, 0.3) 0%, transparent 70%)`,
               left: `${10 + i * 12}%`,
               top: `${20 + (i % 3) * 30}%`,
               filter: 'blur(1px)',
@@ -134,7 +134,7 @@ const AdvancedMotionBackground = () => {
             style={{
               width: '1px',
               height: `${30 + Math.random() * 80}px`,
-              background: `linear-gradient(to bottom, transparent, rgba(255, 217, 90, 0.4), transparent)`,
+              background: `linear-gradient(to bottom, transparent, rgba(255, 255, 0, 0.5), transparent)`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               transformOrigin: 'center',
@@ -161,7 +161,7 @@ const AdvancedMotionBackground = () => {
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={`wave-${i}`}
-            className="absolute h-px bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"
+            className="absolute h-px bg-gradient-to-r from-transparent via-yellow-300/50 to-transparent"
             style={{
               top: `${15 + i * 20}%`,
               left: '-100px',
@@ -191,18 +191,18 @@ const AdvancedMotionBackground = () => {
             style={{
               width: `${10 + Math.random() * 15}px`,
               height: `${10 + Math.random() * 15}px`,
-              background: `radial-gradient(circle, rgba(255, 217, 90, 0.8) 0%, rgba(255, 217, 90, 0.2) 50%, transparent 100%)`,
+              background: `radial-gradient(circle, rgba(255, 255, 0, 0.9) 0%, rgba(255, 255, 0, 0.3) 50%, transparent 100%)`,
               left: `${15 + i * 15}%`,
               top: `${25 + (i % 2) * 50}%`,
-              boxShadow: '0 0 20px rgba(255, 217, 90, 0.3)',
+              boxShadow: '0 0 20px rgba(255, 255, 0, 0.4)',
             }}
             animate={{
               scale: [1, 1.8, 1],
               opacity: [0.4, 1, 0.4],
               boxShadow: [
-                '0 0 20px rgba(255, 217, 90, 0.3)',
-                '0 0 40px rgba(255, 217, 90, 0.6)',
-                '0 0 20px rgba(255, 217, 90, 0.3)'
+                '0 0 20px rgba(255, 255, 0, 0.4)',
+                '0 0 40px rgba(255, 255, 0, 0.7)',
+                '0 0 20px rgba(255, 255, 0, 0.4)'
               ]
             }}
             transition={{
@@ -220,7 +220,7 @@ const AdvancedMotionBackground = () => {
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={`geo-${i}`}
-            className="absolute border border-yellow-400/40"
+            className="absolute border border-yellow-300/60"
             style={{
               width: '8px',
               height: '8px',
@@ -252,7 +252,7 @@ const AdvancedMotionBackground = () => {
             style={{
               width: `${100 + Math.random() * 200}px`,
               height: `${100 + Math.random() * 200}px`,
-              background: `radial-gradient(circle, rgba(255, 217, 90, 0.05) 0%, transparent 70%)`,
+              background: `radial-gradient(circle, rgba(255, 255, 0, 0.08) 0%, transparent 70%)`,
               left: `${i * 25}%`,
               top: `${20 + (i % 2) * 40}%`,
               filter: 'blur(2px)',
