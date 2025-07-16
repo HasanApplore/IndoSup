@@ -40,169 +40,83 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   );
 };
 
-// 3D Particles Background Component
-const ParticlesBackground = () => {
+// Simple Motion Background Component
+const SimpleMotionBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-
       
-      {/* 3D Floating Particles with Depth */}
-      <div className="absolute inset-0" style={{ perspective: '1000px' }}>
-        {/* Large 3D particles */}
-        {[...Array(10)].map((_, i) => (
+      {/* Simple floating dots */}
+      <div className="absolute inset-0">
+        {/* Simple floating dots */}
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full"
             style={{
-              width: `${8 + Math.random() * 6}px`,
-              height: `${8 + Math.random() * 6}px`,
-              background: `conic-gradient(from ${i * 36}deg, rgba(255, 217, 90, 0.9) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 217, 90, 0.9) 100%)`,
-              boxShadow: `
-                0 0 20px rgba(255, 217, 90, 0.8),
-                0 0 40px rgba(255, 217, 90, 0.4),
-                inset 0 0 10px rgba(255, 255, 255, 0.3)
-              `,
-              filter: `blur(0.3px)`,
-              transformStyle: 'preserve-3d'
+              width: `${3 + Math.random() * 4}px`,
+              height: `${3 + Math.random() * 4}px`,
+              background: `rgba(255, 217, 90, 0.3)`,
+              left: `${10 + i * 8}%`,
+              top: `${20 + (i % 3) * 30}%`,
             }}
             animate={{
-              x: [
-                `${5 + i * 10}%`,
-                `${25 + i * 8}%`,
-                `${45 + i * 6}%`,
-                `${5 + i * 10}%`
-              ],
-              y: [
-                `${10 + (i % 4) * 20}%`,
-                `${30 + (i % 4) * 15}%`,
-                `${50 + (i % 4) * 10}%`,
-                `${10 + (i % 4) * 20}%`
-              ],
-              rotateX: [0, 180, 360],
-              rotateY: [0, 360, 720],
-              rotateZ: [0, 180, 360],
-              scale: [0.8, 1.6, 1.2, 0.8],
-              opacity: [0.4, 1, 0.7, 0.4]
+              y: [0, -20, 0],
+              opacity: [0.3, 0.8, 0.3],
+              scale: [0.8, 1.2, 0.8]
             }}
             transition={{
-              duration: 8 + Math.random() * 4,
+              duration: 4 + Math.random() * 2,
               repeat: Infinity,
               delay: i * 0.3,
               ease: "easeInOut"
             }}
           />
         ))}
-        
-        {/* Medium 3D particles with morphing */}
-        {[...Array(15)].map((_, i) => (
+      </div>
+      
+      {/* Gentle wave patterns */}
+      <div className="absolute inset-0">
+        {[...Array(3)].map((_, i) => (
           <motion.div
-            key={`medium-${i}`}
-            className="absolute"
+            key={`wave-${i}`}
+            className="absolute inset-0 opacity-10"
             style={{
-              width: `${4 + Math.random() * 4}px`,
-              height: `${4 + Math.random() * 4}px`,
-              background: `radial-gradient(ellipse 70% 30%, rgba(255, 217, 90, 0.8) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%)`,
-              borderRadius: `${40 + Math.random() * 60}% ${60 + Math.random() * 40}% ${30 + Math.random() * 70}% ${50 + Math.random() * 50}%`,
-              boxShadow: `
-                0 0 12px rgba(255, 217, 90, 0.6),
-                0 0 24px rgba(255, 217, 90, 0.3)
-              `,
-              transformStyle: 'preserve-3d'
+              background: `radial-gradient(circle at ${30 + i * 20}% ${40 + i * 15}%, rgba(255, 217, 90, 0.2) 0%, transparent 50%)`,
             }}
             animate={{
-              x: [
-                `${2 + i * 6}%`,
-                `${18 + i * 6}%`,
-                `${34 + i * 4}%`,
-                `${2 + i * 6}%`
-              ],
-              y: [
-                `${8 + (i % 5) * 18}%`,
-                `${28 + (i % 5) * 16}%`,
-                `${48 + (i % 5) * 12}%`,
-                `${8 + (i % 5) * 18}%`
-              ],
-              rotateX: [0, 120, 240, 360],
-              rotateY: [0, 240, 480, 720],
-              scaleX: [0.6, 1.4, 1.0, 0.6],
-              scaleY: [0.8, 1.2, 1.1, 0.8],
-              opacity: [0.3, 0.8, 0.5, 0.3],
-              borderRadius: [
-                `${40 + Math.random() * 20}% ${60 + Math.random() * 20}% ${30 + Math.random() * 30}% ${50 + Math.random() * 20}%`,
-                `${60 + Math.random() * 30}% ${40 + Math.random() * 30}% ${70 + Math.random() * 20}% ${30 + Math.random() * 30}%`,
-                `${30 + Math.random() * 40}% ${70 + Math.random() * 20}% ${40 + Math.random() * 30}% ${60 + Math.random() * 20}%`,
-                `${40 + Math.random() * 20}% ${60 + Math.random() * 20}% ${30 + Math.random() * 30}% ${50 + Math.random() * 20}%`
-              ]
+              scale: [1, 1.1, 1],
+              opacity: [0.05, 0.15, 0.05]
             }}
             transition={{
-              duration: 10 + Math.random() * 5,
+              duration: 6 + i * 2,
               repeat: Infinity,
-              delay: i * 0.2,
+              delay: i * 1.5,
               ease: "easeInOut"
-            }}
-          />
-        ))}
-        
-        {/* Small 3D sparkle particles */}
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={`sparkle-${i}`}
-            className="absolute"
-            style={{
-              width: `${2 + Math.random() * 2}px`,
-              height: `${2 + Math.random() * 2}px`,
-              background: `linear-gradient(45deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 217, 90, 0.7) 50%, rgba(255, 255, 255, 0.9) 100%)`,
-              clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)',
-              boxShadow: `0 0 8px rgba(255, 217, 90, 0.8)`,
-              transformStyle: 'preserve-3d'
-            }}
-            animate={{
-              x: [
-                `${Math.random() * 100}%`,
-                `${Math.random() * 100}%`,
-                `${Math.random() * 100}%`,
-                `${Math.random() * 100}%`
-              ],
-              y: [
-                `${Math.random() * 100}%`,
-                `${Math.random() * 100}%`,
-                `${Math.random() * 100}%`,
-                `${Math.random() * 100}%`
-              ],
-              rotateZ: [0, 360, 720, 1080],
-              scale: [0.3, 1.5, 0.8, 0.3],
-              opacity: [0.1, 0.9, 0.4, 0.1]
-            }}
-            transition={{
-              duration: 12 + Math.random() * 6,
-              repeat: Infinity,
-              delay: i * 0.1,
-              ease: "linear"
             }}
           />
         ))}
       </div>
       
-      {/* 3D Depth layers */}
-      <div className="absolute inset-0" style={{ perspective: '800px' }}>
-        {[...Array(5)].map((_, i) => (
+      {/* Subtle moving lines */}
+      <div className="absolute inset-0">
+        {[...Array(4)].map((_, i) => (
           <motion.div
-            key={`layer-${i}`}
-            className="absolute inset-0"
+            key={`line-${i}`}
+            className="absolute h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"
             style={{
-              background: `radial-gradient(circle at ${20 + i * 15}% ${30 + i * 10}%, rgba(255, 217, 90, 0.1) 0%, transparent 60%)`,
-              transformStyle: 'preserve-3d'
+              top: `${25 + i * 20}%`,
+              left: 0,
+              right: 0,
             }}
             animate={{
-              rotateX: [0, 5, -5, 0],
-              rotateY: [0, 10, -10, 0],
-              scale: [0.95, 1.05, 0.98, 0.95]
+              x: ["-100%", "100%"],
+              opacity: [0, 0.4, 0]
             }}
             transition={{
-              duration: 15 + i * 2,
+              duration: 8 + i * 2,
               repeat: Infinity,
-              delay: i * 0.5,
-              ease: "easeInOut"
+              delay: i * 2,
+              ease: "linear"
             }}
           />
         ))}
@@ -265,8 +179,8 @@ const OurImpactSection = () => {
 
   return (
     <section className="py-12 px-4 md:py-20 md:px-6 bg-[#0F172A] relative overflow-hidden">
-      {/* 3D Particles Background */}
-      <ParticlesBackground />
+      {/* Simple Motion Background */}
+      <SimpleMotionBackground />
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
