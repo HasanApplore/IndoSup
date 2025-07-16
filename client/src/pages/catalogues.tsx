@@ -678,7 +678,7 @@ export default function Catalogues() {
           {/* Back to Top Arrow */}
           {showBackToTop && (
             <motion.button
-              className="fixed bottom-6 right-6 z-40 w-12 h-12 border-2 border-[#FFC600] rounded-full flex items-center justify-center bg-[#2A374B]/90 hover:bg-[#FFC600] hover:border-[#FFC600] transition-all duration-300 backdrop-blur-sm shadow-lg group relative overflow-hidden"
+              className="fixed bottom-8 right-8 z-40 w-12 h-12 border-2 border-[#FFC600] rounded-full flex items-center justify-center bg-[#2A374B]/90 hover:bg-[#FFC600] hover:border-[#FFC600] transition-all duration-300 backdrop-blur-sm shadow-lg group relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
