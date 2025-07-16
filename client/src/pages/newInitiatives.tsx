@@ -300,7 +300,7 @@ export default function NewInitiatives() {
 
 
       {/* Company Categories */}
-      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+      <section className="py-16 relative overflow-hidden bg-[#fbf5ea]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -310,11 +310,11 @@ export default function NewInitiatives() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FFC600]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#2A374B]">
               Our Global Companies
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-[#F5F5F5] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#2A374B] max-w-3xl mx-auto leading-relaxed">
               Two specialized companies driving innovation in global construction markets and technical excellence
             </p>
           </motion.div>
