@@ -356,42 +356,40 @@ export default function StreamlinedProcurement() {
                 <div className="flex-1">
                   {/* Unified Content Block */}
                   <motion.div 
-                    className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600] h-[500px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
-                    whileHover={{ scale: 1.05 }}
+                    className="bg-[#3C4A5E] rounded-xl p-8 shadow-lg border border-[#475466] h-[500px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
+                    whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {/* Icon Section */}
-                    <div className="flex-shrink-0 mb-6">
-                      <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto shadow-md">
-                        {React.cloneElement(solution.icon, { className: "w-10 h-10 text-[#2A374B]" })}
+                    {/* Icon and Title Section */}
+                    <div className="flex items-center space-x-4 mb-6 flex-shrink-0">
+                      <div className="w-16 h-16 bg-[#FFC600] rounded-2xl flex items-center justify-center text-[#2A374B] shadow-sm">
+                        {React.cloneElement(solution.icon, { className: "w-8 h-8" })}
                       </div>
-                    </div>
-
-                    {/* Title Section */}
-                    <div className="flex-shrink-0 mb-4">
-                      <h3 className="text-xl font-bold mb-4 text-[#FFC600] truncate">
-                        {solution.title}
-                      </h3>
+                      <div>
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2 truncate">
+                          {solution.title}
+                        </h3>
+                        <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
+                      </div>
                     </div>
 
                     {/* Description Section */}
                     <div className="flex-grow overflow-hidden mb-4">
-                      <p className="text-[#2A374B] leading-relaxed mb-3 line-clamp-3">
+                      <p className="text-[#F5F5F5] leading-relaxed mb-3 line-clamp-3">
                         {solution.description}
                       </p>
-                      <p className="text-[#2A374B] leading-relaxed line-clamp-2">
+                      <p className="text-[#F5F5F5] leading-relaxed line-clamp-2">
                         {solution.subtext}
                       </p>
                     </div>
 
                     {/* Features Section */}
                     <div className="flex-shrink-0 mb-4">
-                      <h4 className="text-base font-semibold text-[#FFC600] mb-2">Key Features</h4>
                       <div className="space-y-2">
                         {solution.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center justify-center space-x-2">
-                            <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0" />
-                            <span className="text-[#2A374B] font-medium text-sm truncate">{feature}</span>
+                          <div key={featureIndex} className="flex items-center space-x-3">
+                            <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
+                            <span className="text-[#F5F5F5] text-sm truncate">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -399,14 +397,14 @@ export default function StreamlinedProcurement() {
 
                     {/* Button Section */}
                     <div className="mt-auto flex-shrink-0">
-                      <motion.button
-                        className="inline-flex items-center bg-[#FFC600] text-[#2A374B] px-5 py-2 rounded-lg font-semibold hover:bg-[#E6B200] transition-colors duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm"
+                      <motion.div
+                        className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md cursor-pointer"
                         whileHover={{ x: 5, scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        <span className="mr-2">Learn More</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </motion.button>
+                        <span className="mr-3">Learn More</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                      </motion.div>
                     </div>
                   </motion.div>
                 </div>
