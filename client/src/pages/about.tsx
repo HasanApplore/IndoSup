@@ -368,13 +368,13 @@ export default function About() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#2A374B]">What Is IndoSup?</h2>
-              <p className="text-[#2A374B] mb-6" style={{ lineHeight: '1.6' }}>
+              <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">What Is IndoSup?</h2>
+              <p className="text-[#F5F5F5] mb-6" style={{ lineHeight: '1.6' }}>
                 IndoSup is revolutionizing India's construction procurement landscape through innovative digital solutions. 
                 We connect builders, contractors, and suppliers through a seamless platform that ensures quality, 
                 transparency, and efficiency in every transaction.
               </p>
-              <p className="text-[#2A374B] mb-6" style={{ lineHeight: '1.6' }}>
+              <p className="text-[#F5F5F5] mb-6" style={{ lineHeight: '1.6' }}>
                 Our mission is to transform how construction materials are sourced, procured, and delivered across India. 
                 With a focus on technology-driven solutions, we're building the future of construction procurement.
               </p>
