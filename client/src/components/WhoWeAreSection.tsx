@@ -65,7 +65,7 @@ export default function WhoWeAreSection() {
   };
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-6 mb-16">
+    <section className="py-12 px-4 md:py-20 md:px-6 mb-16 bg-[#FAFAFA]">
       <div className="container mx-auto">
         {/* Section Heading */}
         <motion.div
@@ -75,11 +75,11 @@ export default function WhoWeAreSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-4 font-poppins">
+          <h2 className="text-4xl font-bold text-[#0E2F44] mb-4 font-poppins">
             Why Choose IndoSup?
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins leading-relaxed">
+          <div className="w-16 h-1 bg-[#F5A623] mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg text-[#555555] max-w-3xl mx-auto font-poppins leading-relaxed">
             We simplify construction procurement with cutting-edge technology and trusted partnerships
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ export default function WhoWeAreSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white/95 backdrop-blur-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-white/30 transition-all duration-300 p-6 text-center cursor-pointer border border-white/20 hover:border-primary hover:bg-white/95 relative overflow-hidden"
+              className="group bg-white backdrop-blur-lg rounded-xl shadow-[0_4px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.08)] transition-all duration-300 p-6 text-center cursor-pointer border border-white/20 hover:border-[#F5A623] hover:bg-white relative overflow-hidden"
               variants={cardVariants}
               whileHover={{
                 y: -8,
@@ -107,26 +107,26 @@ export default function WhoWeAreSection() {
               <div className="relative z-10">
                 {/* Icon */}
                 <motion.div
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-4 relative"
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#F5A623]/10 group-hover:bg-[#F5A623] transition-all duration-300 mb-4 relative"
                   variants={iconVariants}
                   whileHover="hover"
                 >
-                  <feature.icon className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
+                  <feature.icon className="w-8 h-8 text-[#F5A623] group-hover:text-white transition-all duration-300 relative z-10" />
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-[#1E293B] mb-3 group-hover:text-primary transition-all duration-300 font-poppins">
+                <h3 className="text-xl font-bold text-[#0E2F44] mb-3 group-hover:text-[#F5A623] transition-all duration-300 font-poppins">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-base leading-relaxed group-hover:text-gray-700 transition-all duration-300 font-poppins">
+                <p className="text-[#555555] text-base leading-relaxed group-hover:text-[#333333] transition-all duration-300 font-poppins">
                   {feature.description}
                 </p>
 
                 {/* Hover Effect Line */}
                 <motion.div
-                  className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-12 transition-all duration-300 rounded-full"
+                  className="w-0 h-0.5 bg-[#F5A623] mx-auto mt-4 group-hover:w-12 transition-all duration-300 rounded-full"
                 />
               </div>
             </motion.div>

@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#FFFDEE] to-[#F4F4F4] relative overflow-hidden">
+    <section className="py-20 px-4 md:px-12 bg-[#FAFAFA] relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -111,11 +111,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-2 font-poppins">
+          <h2 className="text-4xl font-bold text-[#0E2F44] mb-2 font-poppins">
             What Our Clients Say
           </h2>
-          <div className="h-1 w-12 bg-[#0F172D] mx-auto my-4"></div>
-          <p className="text-gray-500 text-lg max-w-3xl mx-auto mt-2 font-poppins">
+          <div className="h-1 w-12 bg-[#F5A623] mx-auto my-4"></div>
+          <p className="text-[#555555] text-lg max-w-3xl mx-auto mt-2 font-poppins">
             Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>

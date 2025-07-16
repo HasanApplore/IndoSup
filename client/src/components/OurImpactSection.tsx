@@ -34,7 +34,7 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   }, [isInView, target, duration]);
 
   return (
-    <span ref={ref} className="text-[#0F172A] font-bold text-3xl md:text-4xl">
+    <span ref={ref} className="text-[#0E2F44] font-bold text-3xl md:text-4xl">
       {count.toLocaleString()}{suffix}
     </span>
   );
@@ -369,10 +369,10 @@ const OurImpactSection = () => {
                   duration={2.5}
                 />
               </div>
-              <h3 className="text-[#1E293B] font-semibold text-lg mb-2 group-hover:text-[#0F172A] transition-colors duration-300">
+              <h3 className="text-[#0E2F44] font-semibold text-lg mb-2 group-hover:text-[#0F172A] transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-[#555555] text-sm">
                 {item.description}
               </p>
             </motion.div>
