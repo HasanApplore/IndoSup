@@ -132,7 +132,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FAFAFA] to-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -237,11 +237,8 @@ export default function Contact() {
         </motion.button>
       )}
 
-      {/* Section Divider */}
-      <div className="h-px bg-[#CFCFCF]"></div>
-
       {/* Main Content */}
-      <section className="py-5 md:py-8 bg-[#FAFAFA]">
+      <section className="py-5 md:py-8 bg-[#FBF5EA]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {/* Section Header */}
@@ -252,11 +249,11 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0E2F44] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">
               Get In Touch With Us
             </h2>
-            <div className="w-16 h-1 bg-[#F5A623] mx-auto"></div>
-            <p className="text-base text-[#555555] mt-4 max-w-xl mx-auto">
+            <div className="w-16 h-1 bg-primary mx-auto"></div>
+            <p className="text-base text-neutral-base mt-4 max-w-xl mx-auto">
               Ready to transform your construction projects? Let's discuss your requirements and build something amazing together.
             </p>
           </motion.div>
@@ -293,16 +290,16 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-2xl p-8 shadow-[0_4px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+              className="bg-white rounded-2xl p-8 shadow-lg"
             >
-              <h3 className="text-2xl font-bold text-[#0E2F44] mb-6 text-center">
+              <h3 className="text-2xl font-bold text-accent mb-6 text-center">
                 Send us a Message
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-[#0E2F44] mb-2">
+                    <label className="block text-sm font-medium text-accent mb-2">
                       Full Name *
                     </label>
                     <input
@@ -311,13 +308,13 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] transition-all duration-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your full name"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-[#0E2F44] mb-2">
+                    <label className="block text-sm font-medium text-accent mb-2">
                       Email Address *
                     </label>
                     <input
@@ -326,7 +323,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] transition-all duration-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -334,7 +331,7 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-[#0E2F44] mb-2">
+                    <label className="block text-sm font-medium text-accent mb-2">
                       Phone Number
                     </label>
                     <input
@@ -342,13 +339,13 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] transition-all duration-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your phone number"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-[#0E2F44] mb-2">
+                    <label className="block text-sm font-medium text-accent mb-2">
                       Company Name
                     </label>
                     <input
@@ -356,14 +353,14 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] transition-all duration-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
                       placeholder="Enter your company name"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#0E2F44] mb-2">
+                  <label className="block text-sm font-medium text-accent mb-2">
                     Message *
                   </label>
                   <textarea
@@ -372,7 +369,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F5A623] focus:border-[#F5A623] transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-none"
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>
@@ -380,7 +377,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={contactMutation.isPending}
-                  className="w-full bg-[#F5A623] text-[#0E2F44] font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_4px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.08)] hover:bg-[#E6951E]"
+                  className="w-full bg-primary text-accent font-bold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                   whileHover={{ scale: contactMutation.isPending ? 1 : 1.02 }}
                   whileTap={{ scale: contactMutation.isPending ? 1 : 0.98 }}
                 >

@@ -303,59 +303,56 @@ export default function About() {
 
 
 
-      {/* Section Divider */}
-      <div className="h-px bg-[#CFCFCF]"></div>
-
       {/* What Is IndoSup Section */}
-      <section className="py-16 relative overflow-hidden bg-[#FDF8F3]">
+      <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5"></div>
         
         {/* Key Highlights Section */}
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-[0_4px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.08)] cursor-pointer transition-shadow duration-300"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-[#F5A623] hover:bg-[#E6951E] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md transition-colors duration-300">
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Award className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#0E2F44]">10+ Years Experience</h3>
-              <p className="text-[#555555] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>10+ Years Experience</h3>
+              <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-[0_4px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.08)] cursor-pointer transition-shadow duration-300"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-[#F5A623] hover:bg-[#E6951E] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md transition-colors duration-300">
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Building className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#0E2F44]">500+ Projects Supplied</h3>
-              <p className="text-[#555555] leading-relaxed">Successfully delivered construction materials to projects across India</p>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>500+ Projects Supplied</h3>
+              <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-[0_4px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_12px_rgba(0,0,0,0.08)] cursor-pointer transition-shadow duration-300"
+              className="text-center bg-gradient-to-b from-white to-gray-50 rounded-xl p-8 shadow-lg cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="bg-[#F5A623] hover:bg-[#E6951E] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md transition-colors duration-300">
+              <div className="bg-[#F5A623] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Globe className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#0E2F44]">Global Reach</h3>
-              <p className="text-[#555555] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#0E2F44' }}>Global Reach</h3>
+              <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
@@ -371,13 +368,13 @@ export default function About() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-[#0E2F44]">What Is IndoSup?</h2>
-              <p className="text-[#333333] mb-6" style={{ lineHeight: '1.6' }}>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#0E2F44' }}>What Is IndoSup?</h2>
+              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
                 IndoSup is revolutionizing India's construction procurement landscape through innovative digital solutions. 
                 We connect builders, contractors, and suppliers through a seamless platform that ensures quality, 
                 transparency, and efficiency in every transaction.
               </p>
-              <p className="text-[#333333] mb-6" style={{ lineHeight: '1.6' }}>
+              <p className="text-gray-600 mb-6" style={{ lineHeight: '1.6' }}>
                 Our mission is to transform how construction materials are sourced, procured, and delivered across India. 
                 With a focus on technology-driven solutions, we're building the future of construction procurement.
               </p>
