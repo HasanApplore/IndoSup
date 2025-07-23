@@ -306,12 +306,12 @@ export default function About() {
 
 
 
-      {/* What Is IndoSup Section */}
+      {/* Statistics Cards Section */}
       <section className="py-16 relative overflow-hidden bg-[#35506b]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Key Highlights Section */}
-        <div className="container mx-auto px-4 mb-16">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
               className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
@@ -359,7 +359,11 @@ export default function About() {
             </motion.div>
           </div>
         </div>
+      </section>
 
+      {/* What Is IndoSup Section */}
+      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Main Content */}
         <div className="container mx-auto px-4" style={{ padding: '60px 20px' }}>
