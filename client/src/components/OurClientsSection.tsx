@@ -103,25 +103,19 @@ export default function OurClientsSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -12, scale: 1.08 }}
-              className="group relative"
+              whileHover={{ y: -4 }}
+              className="group"
             >
-              {/* Elegant client logo card with website theme colors */}
-              <div className="bg-gradient-to-br from-white to-[#fbf5e8] rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-[#FFC600]/20 group-hover:border-[#FFC600]/60 relative overflow-hidden">
-                {/* Decorative background element */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 to-[#031D33]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+              {/* Simple clean card */}
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 {/* Company Logo */}
-                <div className="flex items-center justify-center h-20 relative z-10">
+                <div className="flex items-center justify-center h-16">
                   <img 
                     src={client.logo} 
                     alt={`${client.name} - Client Logo`}
-                    className="max-h-16 max-w-full object-contain group-hover:scale-115 transition-all duration-500 filter drop-shadow-lg group-hover:drop-shadow-xl"
+                    className="max-h-12 max-w-full object-contain"
                   />
                 </div>
-                
-                {/* Subtle accent line */}
-                <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#FFC600] to-transparent mt-4 opacity-30 group-hover:opacity-70 transition-opacity duration-500"></div>
               </div>
             </motion.div>
           ))}
