@@ -326,7 +326,7 @@ export default function About() {
               }}
             >
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
                 whileHover={{
                   scale: 1.1,
                   rotate: 5,
@@ -355,7 +355,7 @@ export default function About() {
               }}
             >
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
                 whileHover={{
                   scale: 1.1,
                   rotate: 5,
@@ -384,7 +384,7 @@ export default function About() {
               }}
             >
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
                 whileHover={{
                   scale: 1.1,
                   rotate: 5,
