@@ -314,7 +314,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
+              className="group text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -325,15 +325,25 @@ export default function About() {
                 transition: { duration: 0.3 }
               }}
             >
-              <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Award className="w-8 h-8 text-[#2A374B]" />
-              </div>
+              <motion.div
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 5,
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeInOut"
+                  }
+                }}
+              >
+                <Award className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
+              </motion.div>
               <h3 className="text-xl font-bold mb-4 text-[#2A374B]">25+ Years Experience</h3>
               <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
+              className="group text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -344,15 +354,25 @@ export default function About() {
                 transition: { duration: 0.3 }
               }}
             >
-              <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Building className="w-8 h-8 text-[#2A374B]" />
-              </div>
+              <motion.div
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 5,
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeInOut"
+                  }
+                }}
+              >
+                <Building className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
+              </motion.div>
               <h3 className="text-xl font-bold mb-4 text-[#2A374B]">2000+ Projects Supplied</h3>
               <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
+              className="group text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -363,9 +383,19 @@ export default function About() {
                 transition: { duration: 0.3 }
               }}
             >
-              <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Globe className="w-8 h-8 text-[#2A374B]" />
-              </div>
+              <motion.div
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 5,
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeInOut"
+                  }
+                }}
+              >
+                <Globe className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
+              </motion.div>
               <h3 className="text-xl font-bold mb-4 text-[#2A374B]">Global Reach</h3>
               <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
