@@ -13,7 +13,7 @@ export default function OurClientsSection() {
       name: "Bry-Air", 
       industry: "Industrial",
       partnership: "5+ Years",
-      logo: "/attached_assets/Bry-Air _Logo-comp245921_1753268466230.webp"
+      logo: "/attached_assets/Bry-Air%20_Logo-comp245921_1753268466230.webp"
     },
     { 
       name: "CBRE", 
