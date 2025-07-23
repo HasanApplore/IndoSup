@@ -1,43 +1,38 @@
 import { motion } from 'framer-motion';
-import { Building2, Star, Award, TrendingUp } from 'lucide-react';
+
+// Import logos as assets for proper bundling
+import plcityLogo from '@/assets/plcity-logo.jpg';
+import bryAirLogo from '@/assets/bry-air-logo.webp';
+import cbreLogo from '@/assets/cbre-logo.png';
+import jaksonLogo from '@/assets/jakson-logo.png';
+import cciLogo from '@/assets/cci-logo.jpg';
+import allcargoLogo from '@/assets/allcargo-logo.png';
 
 export default function OurClientsSection() {
   const clients = [
     { 
-      name: "HL City", 
-      industry: "Real Estate",
-      partnership: "3+ Years",
-      logo: "/attached_assets/hqdefault_live_1753268448612.jpg"
+      name: "PL City", 
+      logo: plcityLogo
     },
     { 
       name: "Bry-Air", 
-      industry: "Industrial",
-      partnership: "5+ Years",
-      logo: "/attached_assets/Bry-Air%20_Logo-comp245921_1753268466230.webp"
+      logo: bryAirLogo
     },
     { 
       name: "CBRE", 
-      industry: "Commercial",
-      partnership: "2+ Years",
-      logo: "/attached_assets/cb5381ccf3-cbre-logo-cbre_1753268471965.png"
+      logo: cbreLogo
     },
     { 
       name: "JAKSON", 
-      industry: "Infrastructure",
-      partnership: "4+ Years",
-      logo: "/attached_assets/jakson_1753268476294.png"
+      logo: jaksonLogo
     },
     { 
       name: "CCI", 
-      industry: "Construction",
-      partnership: "6+ Years",
-      logo: "/attached_assets/CCI_1753268480375.jpg"
+      logo: cciLogo
     },
     { 
-      name: "all Cargo", 
-      industry: "Logistics",
-      partnership: "3+ Years",
-      logo: "/attached_assets/ALLCARGO.NS_BIG_1753268487926.png"
+      name: "Allcargo Logistics", 
+      logo: allcargoLogo
     }
   ];
 
@@ -83,7 +78,7 @@ export default function OurClientsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Trusted by Industry Leaders
+            Our Valued Clients
             <motion.div
               className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
               initial={{ width: 0 }}
@@ -93,7 +88,7 @@ export default function OurClientsSection() {
             />
           </motion.h2>
           <p className="text-lg text-neutral-base max-w-2xl mx-auto mt-8">
-            Partnering with leading companies across diverse industries to deliver exceptional results
+            Building successful partnerships across diverse industries
           </p>
         </motion.div>
 
@@ -108,36 +103,32 @@ export default function OurClientsSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
+              whileHover={{ y: -8, scale: 1.05 }}
               className="group relative"
             >
-              {/* Minimal clean card */}
-              <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group-hover:border-primary/20">
+              {/* Clean, professional client card */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group-hover:border-primary/30">
                 {/* Company Logo */}
-                <div className="flex items-center justify-center mb-3 h-16">
+                <div className="flex items-center justify-center h-24 mb-4">
                   <img 
                     src={client.logo} 
-                    alt={client.name}
-                    className="max-h-12 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    alt={`${client.name} - Client Logo`}
+                    className="max-h-20 max-w-full object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-sm"
                   />
                 </div>
                 
-                {/* Client info */}
+                {/* Company Name Only */}
                 <div className="text-center">
-                  <h3 className="text-sm font-semibold text-accent mb-1 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-lg font-bold text-accent group-hover:text-primary transition-colors duration-300">
                     {client.name}
                   </h3>
-                  <p className="text-xs text-neutral-base mb-2">{client.industry}</p>
-                  <div className="text-xs text-primary font-medium">
-                    {client.partnership}
-                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Simple bottom section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -145,16 +136,9 @@ export default function OurClientsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <p className="text-lg text-neutral-base mb-6">
-            Join these industry leaders in transforming your procurement process
+          <p className="text-lg text-neutral-base">
+            Trusted partnerships driving construction excellence
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Become Our Partner
-          </motion.button>
         </motion.div>
       </div>
     </section>
