@@ -495,7 +495,7 @@ export default function About() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group bg-[#3C4A5E] rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-[#475466]"
+                className="group bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200"
                 whileHover={{ scale: 1.05 }}
                 style={{ borderRadius: '12px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}
               >
@@ -516,16 +516,16 @@ export default function About() {
                 </div>
                 
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#FFC600] transition-colors duration-300 text-[#FFC600]">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#F5A623] transition-colors duration-300 text-[#2A374B]">
                     {leader.name}
                   </h3>
-                  <p className="text-[#FFC600] font-semibold text-base mb-4">
+                  <p className="text-[#F5A623] font-semibold text-base mb-4">
                     {leader.position}
                   </p>
                   
                   {/* Enhanced role description */}
                   <div className="mb-6">
-                    <p className="text-[#F5F5F5] text-sm" style={{ lineHeight: '1.6' }}>
+                    <p className="text-gray-600 text-sm" style={{ lineHeight: '1.6' }}>
                       {index === 0 && "Visionary leader driving innovation in construction procurement technology with over 10 years of industry experience"}
                       {index === 1 && "Operations expert focused on streamlining business processes and ensuring operational excellence across all verticals"}
                       {index === 2 && "Financial strategist ensuring sustainable growth and market expansion through strategic financial planning"}
@@ -543,7 +543,7 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#FFC600] text-[#2A374B] rounded-full flex items-center justify-center shadow-md hover:bg-[#E6B200] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#2A374B] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#1A2530] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -551,7 +551,7 @@ export default function About() {
                     </motion.a>
                     <motion.a
                       href={`mailto:${leader.email}`}
-                      className="w-10 h-10 bg-[#3C4A5E] text-[#FFC600] rounded-full flex items-center justify-center shadow-md hover:bg-[#475466] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#F5A623] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#E6981A] transition-all duration-300 hover:shadow-lg"
                       title="Send Email"
                       whileHover={{ scale: 1.05 }}
                     >
