@@ -404,7 +404,7 @@ export default function About() {
       </section>
 
       {/* What Is IndoSup Section */}
-      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+      <section className="py-16 relative overflow-hidden bg-[#35506b]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Main Content */}
