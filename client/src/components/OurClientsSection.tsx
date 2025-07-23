@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 // Import logos as assets for proper bundling
 import plcityLogo from '@/assets/plcity-logo.jpg';
@@ -9,119 +10,97 @@ import cciLogo from '@/assets/cci-logo.jpg';
 import allcargoLogo from '@/assets/allcargo-logo.png';
 
 export default function OurClientsSection() {
-  const clients = [
-    { 
-      name: "PL City", 
-      logo: plcityLogo
-    },
-    { 
-      name: "Bry-Air", 
-      logo: bryAirLogo
-    },
-    { 
-      name: "CBRE", 
-      logo: cbreLogo
-    },
-    { 
-      name: "JAKSON", 
-      logo: jaksonLogo
-    },
-    { 
-      name: "CCI", 
-      logo: cciLogo
-    },
-    { 
-      name: "Allcargo Logistics", 
-      logo: allcargoLogo
-    }
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Client logos data - using imported assets for proper bundling
+  const clientLogos = [
+    { name: 'PL City', logo: plcityLogo },
+    { name: 'Bry-Air', logo: bryAirLogo },
+    { name: 'CBRE', logo: cbreLogo },
+    { name: 'JAKSON', logo: jaksonLogo },
+    { name: 'CCI', logo: cciLogo },
+    { name: 'Allcargo Logistics', logo: allcargoLogo },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
+  // Create multiple sets for infinite scroll animation
+  const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="py-16 md:py-20 px-4 md:px-10 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl"></div>
+    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
       
-      <div className="container mx-auto max-w-6xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        {/* Section Heading */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
           className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-accent mb-4 relative"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
             Our Valued Clients
-            <motion.div
-              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
-              initial={{ width: 0 }}
-              whileInView={{ width: 128 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            />
-          </motion.h2>
-          <p className="text-lg text-neutral-base max-w-2xl mx-auto mt-8">
+          </h2>
+          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
             Building successful partnerships across diverse industries
           </p>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {clients.map((client, index) => (
+        {/* Infinite Scrolling Carousel */}
+        <div className="relative overflow-hidden py-6">
+          {/* Invisible gradient overlays for smooth carousel transitions */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-transparent via-transparent to-transparent z-20 pointer-events-none"></div>
+          
+          {/* Moving Strip Container */}
+          <div 
+            className="flex items-center"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Continuous Strip */}
             <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ y: -4 }}
-              className="group"
+              className="flex gap-16 items-center whitespace-nowrap"
+              animate={{
+                x: [0, -144 * clientLogos.length],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: isHovered ? 35 : 25,
+                  ease: "linear",
+                },
+              }}
             >
-              {/* Simple clean card */}
-              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                {/* Company Logo */}
-                <div className="flex items-center justify-center h-16">
+              {repeatedLogos.map((client, index) => (
+                <motion.div
+                  key={`logo-${index}`}
+                  className="group flex-shrink-0 w-32 h-20 flex items-center justify-center cursor-pointer"
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { duration: 0.2 }
+                  }}
+                >
                   <img 
                     src={client.logo} 
-                    alt={`${client.name} - Client Logo`}
-                    className="max-h-12 max-w-full object-contain"
+                    alt={`${client.name} - Valued Client`}
+                    className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.log(`Failed to load logo: ${client.logo}`);
+                      const target = e.currentTarget as HTMLImageElement;
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span class="text-xs font-bold text-accent text-center px-2">${client.name}</span>`;
+                      }
+                    }}
                   />
-                </div>
-              </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
-
-
+          </div>
+        </div>
       </div>
     </section>
   );
