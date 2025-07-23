@@ -478,10 +478,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-[#FFC600]">
+            <h2 className="text-3xl font-bold mb-6 text-[#2A374B]">
               Our Leadership
             </h2>
-            <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
+            <div className="w-24 h-1 bg-[#F5A623] mx-auto"></div>
           </motion.div>
 
           <motion.div
