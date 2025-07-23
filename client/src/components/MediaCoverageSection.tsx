@@ -118,7 +118,7 @@ export default function MediaCoverageSection() {
           className="text-center mb-16"
         >
           <motion.h2 
-            className="text-4xl font-bold text-[#1E293B] font-poppins mb-6 relative"
+            className="text-4xl font-bold text-white font-poppins mb-6 relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
