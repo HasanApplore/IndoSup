@@ -326,107 +326,6 @@ export default function NewInitiatives() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* Global Private Limited Row */}
-            <motion.div
-              variants={cardVariants}
-              id="global-private-section"
-              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-[#3e4e66] rounded-xl p-8 shadow-lg border border-[#475466]"
-            >
-              {/* Content */}
-              <div className="flex-1 space-y-4">
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-16 h-16 bg-[#FFC600] rounded-2xl flex items-center justify-center text-[#2A374B] shadow-sm">
-                    <Building2 className="w-8 h-8" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
-                      IndoSup Global Private Limited
-                    </h3>
-                    <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <p className="text-[#F5F5F5] leading-relaxed">
-                    Leading construction procurement solutions with global reach and local expertise, 
-                    streamlining supply chain management for modern infrastructure projects.
-                  </p>
-
-                  <p className="text-[#F5F5F5] leading-relaxed">
-                    Advanced digital platform connecting construction companies with trusted suppliers worldwide, 
-                    ensuring quality, efficiency, and cost-effectiveness in every project.
-                  </p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3 mt-6">
-                  {globalPrivateServices.map((service, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
-                      <span className="text-[#F5F5F5]">{service}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6">
-                  <Link to="/contact">
-                    <motion.div
-                      className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md"
-                      whileHover={{ x: 5, scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span className="mr-3">Learn More About Global Private</span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </motion.div>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Visual Element - Carousel */}
-              <div className="flex-1 max-w-md lg:max-w-lg">
-                <motion.div
-                  className="relative group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative overflow-hidden rounded-3xl shadow-lg">
-                    <img
-                      src={globalPrivateImages[currentPrivateImageIndex].src}
-                      alt={globalPrivateImages[currentPrivateImageIndex].alt}
-                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    
-                    {/* Navigation Arrows */}
-                    <button
-                      onClick={prevPrivateImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >
-                      <ChevronLeft className="w-5 h-5 text-gray-700" />
-                    </button>
-                    <button
-                      onClick={nextPrivateImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >
-                      <ChevronRight className="w-5 h-5 text-gray-700" />
-                    </button>
-                  </div>
-                  
-                  {/* Dot Indicators */}
-                  <div className="flex justify-center mt-4 space-x-2">
-                    {globalPrivateImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentPrivateImageIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                          index === currentPrivateImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-
             {/* Global Assist Limited Row */}
             <motion.div
               variants={cardVariants}
@@ -520,6 +419,107 @@ export default function NewInitiatives() {
                         onClick={() => setCurrentAssistImageIndex(index)}
                         className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                           index === currentAssistImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Global Private Limited Row */}
+            <motion.div
+              variants={cardVariants}
+              id="global-private-section"
+              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-[#3e4e66] rounded-xl p-8 shadow-lg border border-[#475466]"
+            >
+              {/* Content */}
+              <div className="flex-1 space-y-4">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-16 h-16 bg-[#FFC600] rounded-2xl flex items-center justify-center text-[#2A374B] shadow-sm">
+                    <Building2 className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
+                      IndoSup Global Private Limited
+                    </h3>
+                    <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-[#F5F5F5] leading-relaxed">
+                    Leading construction procurement solutions with global reach and local expertise, 
+                    streamlining supply chain management for modern infrastructure projects.
+                  </p>
+
+                  <p className="text-[#F5F5F5] leading-relaxed">
+                    Advanced digital platform connecting construction companies with trusted suppliers worldwide, 
+                    ensuring quality, efficiency, and cost-effectiveness in every project.
+                  </p>
+                </div>
+
+                {/* Features */}
+                <div className="space-y-3 mt-6">
+                  {globalPrivateServices.map((service, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-[#FFC600] flex-shrink-0" />
+                      <span className="text-[#F5F5F5]">{service}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6">
+                  <Link to="/contact">
+                    <motion.div
+                      className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md"
+                      whileHover={{ x: 5, scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span className="mr-3">Learn More About Global Private</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </motion.div>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Visual Element - Carousel */}
+              <div className="flex-1 max-w-md lg:max-w-lg">
+                <motion.div
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative overflow-hidden rounded-3xl shadow-lg">
+                    <img
+                      src={globalPrivateImages[currentPrivateImageIndex].src}
+                      alt={globalPrivateImages[currentPrivateImageIndex].alt}
+                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Navigation Arrows */}
+                    <button
+                      onClick={prevPrivateImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-gray-700" />
+                    </button>
+                    <button
+                      onClick={nextPrivateImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      <ChevronRight className="w-5 h-5 text-gray-700" />
+                    </button>
+                  </div>
+                  
+                  {/* Dot Indicators */}
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {globalPrivateImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentPrivateImageIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                          index === currentPrivateImageIndex ? 'bg-[#F5A623]' : 'bg-gray-300'
                         }`}
                       />
                     ))}
