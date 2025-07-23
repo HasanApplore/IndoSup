@@ -207,7 +207,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-[#2A374B]">
+    <div className="min-h-screen bg-[#35506b]">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -304,7 +304,7 @@ export default function About() {
 
 
       {/* What Is IndoSup Section */}
-      <section className="py-16 relative overflow-hidden bg-[#2A374B]">
+      <section className="py-16 relative overflow-hidden bg-[#35506b]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Key Highlights Section */}
@@ -568,7 +568,7 @@ export default function About() {
       </section>
 
       {/* Our Mission & Vision */}
-      <section id="mission-vision" className="py-10 md:py-14 relative overflow-hidden bg-[#2A374B]">
+      <section id="mission-vision" className="py-10 md:py-14 relative overflow-hidden bg-[#35506b]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Animated background elements */}
@@ -698,7 +698,7 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-[#2A374B] rounded-full flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-[#35506b] rounded-full flex items-center justify-center mr-3">
                     <Eye className="w-5 h-5 text-[#FFC600]" />
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-[#2A374B]">Vision</h3>
