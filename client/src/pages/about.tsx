@@ -325,19 +325,9 @@ export default function About() {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 5,
-                  transition: {
-                    duration: 0.3,
-                    ease: "easeInOut"
-                  }
-                }}
-              >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative group-hover:scale-110 group-hover:rotate-3">
                 <Award className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
-              </motion.div>
+              </div>
               <h3 className="text-xl font-bold mb-4 text-[#2A374B]">25+ Years Experience</h3>
               <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
@@ -354,19 +344,9 @@ export default function About() {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 5,
-                  transition: {
-                    duration: 0.3,
-                    ease: "easeInOut"
-                  }
-                }}
-              >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative group-hover:scale-110 group-hover:rotate-3">
                 <Building className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
-              </motion.div>
+              </div>
               <h3 className="text-xl font-bold mb-4 text-[#2A374B]">2000+ Projects Supplied</h3>
               <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
@@ -383,19 +363,9 @@ export default function About() {
                 transition: { duration: 0.3 }
               }}
             >
-              <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 5,
-                  transition: {
-                    duration: 0.3,
-                    ease: "easeInOut"
-                  }
-                }}
-              >
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-6 mx-auto relative group-hover:scale-110 group-hover:rotate-3">
                 <Globe className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10" />
-              </motion.div>
+              </div>
               <h3 className="text-xl font-bold mb-4 text-[#2A374B]">Global Reach</h3>
               <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
