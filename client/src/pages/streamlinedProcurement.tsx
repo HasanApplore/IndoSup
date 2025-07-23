@@ -248,7 +248,7 @@ export default function StreamlinedProcurement() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-[#778fb2] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('multi-site-procurement')}
@@ -266,7 +266,7 @@ export default function StreamlinedProcurement() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-[#778fb2] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('sku-price-accuracy')}
@@ -284,7 +284,7 @@ export default function StreamlinedProcurement() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-[#778fb2] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('supply-chain-solutions')}
@@ -302,7 +302,7 @@ export default function StreamlinedProcurement() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-[#778fb2] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('gst-billing-compliance')}
@@ -320,7 +320,7 @@ export default function StreamlinedProcurement() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
+              className="bg-[#778fb2] rounded-xl p-4 shadow-lg text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden border-2 border-[#E5E7EB] hover:border-[#FFC600]"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('order-management')}
@@ -356,7 +356,7 @@ export default function StreamlinedProcurement() {
                 <div className="flex-1">
                   {/* Unified Content Block */}
                   <motion.div 
-                    className="bg-[#3C4A5E] rounded-xl p-8 shadow-lg border border-[#475466] h-[500px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
+                    className="bg-[#778fb2] rounded-xl p-8 shadow-lg border border-[#475466] h-[500px] flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
