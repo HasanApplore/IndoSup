@@ -360,7 +360,7 @@ const OurImpactSection = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white/95 backdrop-blur-lg rounded-xl border border-white/20 shadow-lg hover:shadow-xl hover:shadow-white/30 p-6 text-center transition-all duration-300 group hover:scale-105"
+              className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-lg hover:shadow-xl hover:shadow-[#FFC600]/20 p-6 text-center transition-all duration-300 group hover:scale-105 hover:bg-white/20 hover:border-[#FFC600]/40"
             >
               <div className="mb-4">
                 <AnimatedCounter 
@@ -372,7 +372,7 @@ const OurImpactSection = () => {
               <h3 className="text-[#1E293B] font-semibold text-lg mb-2 group-hover:text-[#0F172A] transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-[#374151] text-sm">
                 {item.description}
               </p>
             </motion.div>

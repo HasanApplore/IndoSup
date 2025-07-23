@@ -150,7 +150,7 @@ export default function MediaCoverageSection() {
               className="relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-3xl blur opacity-20`}></div>
-              <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12">
+              <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
                     {/* Source and Category */}
@@ -249,7 +249,7 @@ export default function MediaCoverageSection() {
             <motion.div
               key={item.id}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 cursor-pointer group transition-all duration-300 hover:bg-white/10"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 cursor-pointer group transition-all duration-300 hover:bg-white/20 hover:border-[#FFC600]/30"
               onClick={() => setSelectedArticle(item)}
             >
               <div className="flex items-center gap-3 mb-4">
