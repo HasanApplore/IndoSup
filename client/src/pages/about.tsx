@@ -311,7 +311,7 @@ export default function About() {
         <div className="container mx-auto px-4 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="text-center bg-[#35506b] rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -322,11 +322,11 @@ export default function About() {
                 <Award className="w-10 h-10 text-[#2A374B]" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#FFC600]">10+ Years Experience</h3>
-              <p className="text-[#2A374B] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <p className="text-white leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="text-center bg-[#35506b] rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -337,11 +337,11 @@ export default function About() {
                 <Building className="w-10 h-10 text-[#2A374B]" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#FFC600]">500+ Projects Supplied</h3>
-              <p className="text-[#2A374B] leading-relaxed">Successfully delivered construction materials to projects across India</p>
+              <p className="text-white leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="text-center bg-[#35506b] rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -352,7 +352,7 @@ export default function About() {
                 <Globe className="w-10 h-10 text-[#2A374B]" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#FFC600]">Global Reach</h3>
-              <p className="text-[#2A374B] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <p className="text-white leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
@@ -795,10 +795,10 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
+              className="bg-[#35506b] rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.02, y: -4 }}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-6 flex items-center">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center">
                 <Target className="w-6 h-6 text-[#FFC600] mr-3" />
                 Strengths
               </h3>
@@ -817,10 +817,10 @@ export default function About() {
                       {strength.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-[#2A374B] mb-1 text-base group-hover:text-[#2A374B] transition-colors duration-300">
+                      <h4 className="font-bold text-white mb-1 text-base group-hover:text-white transition-colors duration-300">
                         {strength.title}
                       </h4>
-                      <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
+                      <p className="text-white group-hover:text-white transition-colors duration-300 leading-relaxed text-sm">
                         {strength.description}
                       </p>
                     </div>
@@ -835,10 +835,10 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
+              className="bg-[#35506b] rounded-xl p-6 shadow-lg border border-[#E5E7EB] hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.02, y: -4 }}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-6 flex items-center">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center">
                 <Heart className="w-6 h-6 text-[#FFC600] mr-3" />
                 Our Values
               </h3>
@@ -857,10 +857,10 @@ export default function About() {
                       {value.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-[#2A374B] mb-1 text-base group-hover:text-[#2A374B] transition-colors duration-300">
+                      <h4 className="font-bold text-white mb-1 text-base group-hover:text-white transition-colors duration-300">
                         {value.title}
                       </h4>
-                      <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
+                      <p className="text-white group-hover:text-white transition-colors duration-300 leading-relaxed text-sm">
                         {value.description}
                       </p>
                     </div>
