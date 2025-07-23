@@ -261,8 +261,8 @@ export default function StreamlinedProcurement() {
               >
                 <Building2 className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1 group-hover:text-[#2A374B] transition-colors duration-300">Multi-site</h3>
-              <p className="text-[#2A374B] text-sm group-hover:text-[#2A374B] transition-colors duration-300">Procurement</p>
+              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">Multi-site</h3>
+              <p className="text-white text-sm group-hover:text-white transition-colors duration-300">Procurement</p>
             </motion.div>
             
             <motion.div 
@@ -279,8 +279,8 @@ export default function StreamlinedProcurement() {
               >
                 <Calculator className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1 group-hover:text-[#2A374B] transition-colors duration-300">Price</h3>
-              <p className="text-[#2A374B] text-sm group-hover:text-[#2A374B] transition-colors duration-300">Accuracy</p>
+              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">Price</h3>
+              <p className="text-white text-sm group-hover:text-white transition-colors duration-300">Accuracy</p>
             </motion.div>
             
             <motion.div 
@@ -297,8 +297,8 @@ export default function StreamlinedProcurement() {
               >
                 <Truck className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1 group-hover:text-[#2A374B] transition-colors duration-300">Supply Chain</h3>
-              <p className="text-[#2A374B] text-sm group-hover:text-[#2A374B] transition-colors duration-300">Solutions</p>
+              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">Supply Chain</h3>
+              <p className="text-white text-sm group-hover:text-white transition-colors duration-300">Solutions</p>
             </motion.div>
             
             <motion.div 
@@ -315,8 +315,8 @@ export default function StreamlinedProcurement() {
               >
                 <FileText className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1 group-hover:text-[#2A374B] transition-colors duration-300">GST</h3>
-              <p className="text-[#2A374B] text-sm group-hover:text-[#2A374B] transition-colors duration-300">Compliance</p>
+              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">GST</h3>
+              <p className="text-white text-sm group-hover:text-white transition-colors duration-300">Compliance</p>
             </motion.div>
             
             <motion.div 
@@ -333,8 +333,8 @@ export default function StreamlinedProcurement() {
               >
                 <Package className="w-6 h-6 text-[#FFC600] group-hover:text-[#2A374B] transition-all duration-300" />
               </motion.div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1 group-hover:text-[#2A374B] transition-colors duration-300">Order</h3>
-              <p className="text-[#2A374B] text-sm group-hover:text-[#2A374B] transition-colors duration-300">Management</p>
+              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-white transition-colors duration-300">Order</h3>
+              <p className="text-white text-sm group-hover:text-white transition-colors duration-300">Management</p>
             </motion.div>
           </motion.div>
 
