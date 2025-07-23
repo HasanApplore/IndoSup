@@ -1,13 +1,30 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 
+// YouTube API types
+declare global {
+  interface Window {
+    YT: {
+      Player: any;
+      PlayerState: {
+        ENDED: number;
+        PLAYING: number;
+        PAUSED: number;
+        BUFFERING: number;
+        CUED: number;
+      };
+    };
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
+
 export default function HeroSection() {
   const [youtubeVideoId, setYoutubeVideoId] = useState('');
-  const [player, setPlayer] = useState(null);
-  const iframeRef = useRef(null);
+  const [player, setPlayer] = useState<any>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // Extract YouTube video ID from URL
-  const extractYouTubeId = (url) => {
+  const extractYouTubeId = (url: string) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
@@ -32,7 +49,7 @@ export default function HeroSection() {
       const tag = document.createElement('script');
       tag.src = 'https://www.youtube.com/iframe_api';
       const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
     }
 
     // Create player when API is ready
@@ -60,14 +77,14 @@ export default function HeroSection() {
             widget_referrer: window.location.origin
           },
           events: {
-            onStateChange: (event) => {
+            onStateChange: (event: any) => {
               // When video ends, restart the loop immediately
               if (event.data === window.YT.PlayerState.ENDED) {
                 event.target.seekTo(0);
                 event.target.playVideo();
               }
             },
-            onReady: (event) => {
+            onReady: (event: any) => {
               // Force autoplay when ready
               setPlayer(event.target);
               // Ensure video starts playing immediately with multiple attempts
@@ -97,13 +114,13 @@ export default function HeroSection() {
     if (window.YT && window.YT.Player) {
       initializePlayer();
     } else {
-      window.onYouTubeIframeAPIReady = initializePlayer;
+      (window as any).onYouTubeIframeAPIReady = initializePlayer;
     }
 
     return () => {
       // Cleanup
       if (window.YT && window.YT.Player) {
-        window.onYouTubeIframeAPIReady = null;
+        (window as any).onYouTubeIframeAPIReady = null;
       }
     };
   }, [youtubeVideoId]);
@@ -117,6 +134,7 @@ export default function HeroSection() {
           onClick={() => {
             if (player && player.playVideo) {
               player.playVideo();
+              player.playVideo(); // Double call for better reliability
             }
           }}
         >

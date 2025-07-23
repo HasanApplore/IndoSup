@@ -36,7 +36,7 @@ const upload = multer({
         file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
       cb(null, true);
     } else {
-      cb(new Error('Only PDF, DOC, and DOCX files are allowed!'), false);
+      cb(null, false);
     }
   }
 });

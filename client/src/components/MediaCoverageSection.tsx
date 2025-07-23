@@ -6,9 +6,23 @@ import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from '
 import newspaper1 from '@/assets/newspaper-1.png';
 import newspaper2 from '@/assets/newspaper-2.webp';
 
+type MediaItem = {
+  id: number;
+  source: string;
+  headline: string;
+  description: string;
+  date: string;
+  category: string;
+  icon: React.JSX.Element;
+  gradient: string;
+  quote: string;
+  image: string;
+  fullContent: string;
+};
+
 export default function MediaCoverageSection() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedArticle, setSelectedArticle] = useState<MediaItem | null>(null);
 
   const mediaItems = [
     {
