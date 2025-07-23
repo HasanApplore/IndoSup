@@ -3,8 +3,6 @@ import WhoWeAreSection from '@/components/WhoWeAreSection';
 import OurImpactSection from '@/components/OurImpactSection';
 import OurClientsSection from '@/components/OurClientsSection';
 import MediaCoverageSection from '@/components/MediaCoverageSection';
-import AboutIndoSupSection from '@/components/AboutIndoSupSection';
-import LeadershipSection from '@/components/LeadershipSection';
 import ClientLogosSection from '@/components/ClientLogosSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
@@ -16,8 +14,6 @@ export default function Home() {
       <OurImpactSection />
       <OurClientsSection />
       <MediaCoverageSection />
-      <AboutIndoSupSection />
-      <LeadershipSection />
       <ClientLogosSection />
       <TestimonialsSection />
     </div>
