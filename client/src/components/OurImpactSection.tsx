@@ -327,7 +327,7 @@ const OurImpactSection = () => {
   };
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-6 bg-[#0F172A] relative overflow-hidden">
+    <section className="py-12 px-4 md:py-20 md:px-6 bg-[#35506b] relative overflow-hidden">
       {/* Advanced Motion Background */}
       <AdvancedMotionBackground />
       
