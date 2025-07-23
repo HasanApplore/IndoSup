@@ -1,32 +1,41 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote } from 'lucide-react';
+import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from 'lucide-react';
+
+// Import newspaper images
+import newspaper1 from '@/assets/newspaper-1.png';
+import newspaper2 from '@/assets/newspaper-2.webp';
 
 export default function MediaCoverageSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   const mediaItems = [
     {
       id: 1,
-      source: "Economic Times",
-      headline: "IndoSup Revolutionizes Construction Procurement",
-      description: "Digital platform transforms traditional construction material sourcing with AI-powered solutions",
-      date: "Dec 2024",
+      source: "The Daily Marketer",
+      headline: "ATTENTION CONTENT MARKETERS",
+      description: "Breaking message from journalism industry: We have work to do. Digital platform transforms traditional construction material sourcing with AI-powered solutions",
+      date: "June 2014",
       category: "Technology",
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-blue-600 to-purple-600",
-      quote: "Game-changer in procurement technology"
+      quote: "Game-changer in procurement technology",
+      image: newspaper1,
+      fullContent: "I've got buckets. I call it S-School buckets. Let me be clear: marketers need to get around. Thousands of people have graduated from journalism school in the years since the financial crisis and the collapse of the 'old media' model..."
     },
     {
       id: 2,
-      source: "Business Standard", 
-      headline: "Digital Transformation in Construction Leadership",
-      description: "How IndoSup is setting new industry standards for material procurement efficiency",
+      source: "The Newspaper Line", 
+      headline: "BUSINESS REVIEW ON DIGITAL MARKETING",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. How IndoSup is setting new industry standards for material procurement efficiency",
       date: "Nov 2024",
       category: "Business",
       icon: <Award className="w-5 h-5" />,
       gradient: "from-green-600 to-teal-600",
-      quote: "Leading innovation in construction tech"
+      quote: "Leading innovation in construction tech",
+      image: newspaper2,
+      fullContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. Proin varius tincidunt molestie. Phasellus et congue erat. Proin vitae urna nisl. Nam tristique eget odio quis pellentesque..."
     },
     {
       id: 3,
@@ -37,7 +46,9 @@ export default function MediaCoverageSection() {
       category: "Industry",
       icon: <Zap className="w-5 h-5" />,
       gradient: "from-orange-600 to-red-600",
-      quote: "Efficiency meets innovation"
+      quote: "Efficiency meets innovation",
+      image: newspaper1,
+      fullContent: "Technology-driven approach reduces costs and improves delivery timelines significantly. Advanced procurement systems streamline the entire supply chain process..."
     },
     {
       id: 4,
@@ -48,7 +59,9 @@ export default function MediaCoverageSection() {
       category: "Innovation",
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-purple-600 to-pink-600",
-      quote: "Future of supply chain management"
+      quote: "Future of supply chain management",
+      image: newspaper2,
+      fullContent: "Advanced analytics and automation reshape construction material supply chains. Machine learning algorithms optimize inventory management and predict demand patterns..."
     },
     {
       id: 5,
@@ -59,7 +72,9 @@ export default function MediaCoverageSection() {
       category: "Finance",
       icon: <Award className="w-5 h-5" />,
       gradient: "from-indigo-600 to-blue-600",
-      quote: "Smart investment in construction future"
+      quote: "Smart investment in construction future",
+      image: newspaper1,
+      fullContent: "Growing investor confidence in digital procurement platforms drives market expansion. Venture capital funding in construction technology reaches new heights..."
     }
   ];
 
@@ -95,7 +110,7 @@ export default function MediaCoverageSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            What Newspapers Say About Us
+            What Media Says About Us
             <motion.div
               className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
               initial={{ width: 0 }}
@@ -105,7 +120,7 @@ export default function MediaCoverageSection() {
             />
           </motion.h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Read what top newspapers and magazines write about our work and achievements
+            Read what top media outlets and publications write about our work and achievements
           </p>
         </motion.div>
 
@@ -160,6 +175,7 @@ export default function MediaCoverageSection() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => setSelectedArticle(mediaItems[activeIndex])}
                       className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300`}
                     >
                       Read Full Article
@@ -188,7 +204,7 @@ export default function MediaCoverageSection() {
                       </div>
                       <div className="relative z-10 flex items-center justify-center h-full text-center">
                         <img 
-                          src="/attached_assets/hqdefault_live_1753268448612.jpg" 
+                          src={mediaItems[activeIndex].image} 
                           alt="Media Coverage" 
                           className="w-full h-full object-cover rounded-2xl"
                         />
@@ -220,7 +236,7 @@ export default function MediaCoverageSection() {
               key={item.id}
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 cursor-pointer group transition-all duration-300 hover:bg-white/10"
-              onClick={() => setActiveIndex(mediaItems.findIndex(m => m.id === item.id))}
+              onClick={() => setSelectedArticle(item)}
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className={`bg-gradient-to-r ${item.gradient} rounded-lg p-2`}>
@@ -241,6 +257,94 @@ export default function MediaCoverageSection() {
           ))}
         </motion.div>
       </div>
+
+      {/* Article Popup Modal */}
+      <AnimatePresence>
+        {selectedArticle && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedArticle(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-6 relative">
+                <button
+                  onClick={() => setSelectedArticle(null)}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className={`bg-gradient-to-r ${selectedArticle.gradient} rounded-xl p-3`}>
+                    {selectedArticle.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-primary font-bold text-xl">{selectedArticle.source}</h4>
+                    <p className="text-gray-300 flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      {selectedArticle.date} • {selectedArticle.category}
+                    </p>
+                  </div>
+                </div>
+                <h2 className="text-3xl font-bold mb-2">{selectedArticle.headline}</h2>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 overflow-y-auto max-h-[60vh]">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Article Image */}
+                  <div className="mb-6">
+                    <img 
+                      src={selectedArticle.image} 
+                      alt={selectedArticle.headline}
+                      className="w-full h-auto rounded-xl shadow-lg"
+                    />
+                  </div>
+                  
+                  {/* Article Content */}
+                  <div>
+                    <div className="bg-primary/10 border-l-4 border-primary p-4 rounded-r-xl mb-6">
+                      <p className="text-primary font-semibold italic">
+                        "{selectedArticle.quote}"
+                      </p>
+                    </div>
+                    
+                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                      {selectedArticle.description}
+                    </p>
+                    
+                    <div className="prose prose-lg text-gray-600">
+                      <p>{selectedArticle.fullContent}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="bg-gray-50 p-6 border-t">
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-600">Published by {selectedArticle.source}</p>
+                  <button
+                    onClick={() => setSelectedArticle(null)}
+                    className="bg-gradient-to-r from-primary to-accent text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    Close Article
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
