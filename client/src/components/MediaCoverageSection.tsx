@@ -101,7 +101,7 @@ export default function MediaCoverageSection() {
   }, [mediaItems.length]);
 
   return (
-    <section className="py-16 md:py-20 px-4 md:px-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+    <section className="py-16 md:py-20 px-4 md:px-10 relative overflow-hidden" style={{ backgroundColor: '#35506B' }}>
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
