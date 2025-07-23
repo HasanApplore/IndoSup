@@ -103,43 +103,31 @@ export default function OurClientsSection() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.05 }}
+              whileHover={{ y: -12, scale: 1.08 }}
               className="group relative"
             >
-              {/* Clean, professional client card */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group-hover:border-primary/30">
+              {/* Elegant client logo card with website theme colors */}
+              <div className="bg-gradient-to-br from-white to-[#fbf5e8] rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-[#FFC600]/20 group-hover:border-[#FFC600]/60 relative overflow-hidden">
+                {/* Decorative background element */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 to-[#031D33]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
                 {/* Company Logo */}
-                <div className="flex items-center justify-center h-24 mb-4">
+                <div className="flex items-center justify-center h-20 relative z-10">
                   <img 
                     src={client.logo} 
                     alt={`${client.name} - Client Logo`}
-                    className="max-h-20 max-w-full object-contain group-hover:scale-110 transition-transform duration-300 filter drop-shadow-sm"
+                    className="max-h-16 max-w-full object-contain group-hover:scale-115 transition-all duration-500 filter drop-shadow-lg group-hover:drop-shadow-xl"
                   />
                 </div>
                 
-                {/* Company Name Only */}
-                <div className="text-center">
-                  <h3 className="text-lg font-bold text-accent group-hover:text-primary transition-colors duration-300">
-                    {client.name}
-                  </h3>
-                </div>
+                {/* Subtle accent line */}
+                <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#FFC600] to-transparent mt-4 opacity-30 group-hover:opacity-70 transition-opacity duration-500"></div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Simple bottom section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-neutral-base">
-            Trusted partnerships driving construction excellence
-          </p>
-        </motion.div>
+
       </div>
     </section>
   );
