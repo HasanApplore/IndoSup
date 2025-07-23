@@ -340,7 +340,7 @@ export default function NewInitiatives() {
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
-                      IndoSup Assist Limited
+                      IndoSup Assist Private Limited
                     </h3>
                     <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
                   </div>
