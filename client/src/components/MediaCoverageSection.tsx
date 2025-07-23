@@ -2,10 +2,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from 'lucide-react';
 
-// Import newspaper images
-import newspaper1 from '@/assets/newspaper-1.png';
-import newspaper2 from '@/assets/newspaper-2.webp';
-import danLevyNewspaper from '@/assets/dan-levy-moz1_1753273462693.png';
+// Import media coverage images
+import businessImage from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
+import constructionImage from '@assets/Construction-material-management-system-on-project-sites-1024x409_1752230798913.webp';
+import danLevyNewspaper from '@assets/dan-levy-moz1_1753273462693.png';
 
 type MediaItem = {
   id: number;
@@ -49,7 +49,7 @@ export default function MediaCoverageSection() {
       icon: <Award className="w-5 h-5" />,
       gradient: "from-green-600 to-teal-600",
       quote: "Leading innovation in construction tech",
-      image: newspaper2,
+      image: businessImage,
       fullContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. Proin varius tincidunt molestie. Phasellus et congue erat. Proin vitae urna nisl. Nam tristique eget odio quis pellentesque..."
     },
     {
@@ -62,7 +62,7 @@ export default function MediaCoverageSection() {
       icon: <Zap className="w-5 h-5" />,
       gradient: "from-orange-600 to-red-600",
       quote: "Efficiency meets innovation",
-      image: newspaper1,
+      image: constructionImage,
       fullContent: "Technology-driven approach reduces costs and improves delivery timelines significantly. Advanced procurement systems streamline the entire supply chain process..."
     },
     {
@@ -75,7 +75,7 @@ export default function MediaCoverageSection() {
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-purple-600 to-pink-600",
       quote: "Future of supply chain management",
-      image: newspaper2,
+      image: danLevyNewspaper,
       fullContent: "Advanced analytics and automation reshape construction material supply chains. Machine learning algorithms optimize inventory management and predict demand patterns..."
     },
     {
@@ -88,7 +88,7 @@ export default function MediaCoverageSection() {
       icon: <Award className="w-5 h-5" />,
       gradient: "from-indigo-600 to-blue-600",
       quote: "Smart investment in construction future",
-      image: newspaper1,
+      image: businessImage,
       fullContent: "Growing investor confidence in digital procurement platforms drives market expansion. Venture capital funding in construction technology reaches new heights..."
     }
   ];
