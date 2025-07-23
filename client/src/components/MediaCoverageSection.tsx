@@ -187,14 +187,11 @@ export default function MediaCoverageSection() {
                         </svg>
                       </div>
                       <div className="relative z-10 flex items-center justify-center h-full text-center">
-                        <div>
-                          <div className="bg-white/20 rounded-full p-4 mx-auto mb-4 w-16 h-16 flex items-center justify-center">
-                            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-                            </svg>
-                          </div>
-                          <p className="text-white font-semibold">Featured Article</p>
-                        </div>
+                        <img 
+                          src="/attached_assets/hqdefault_live_1753268448612.jpg" 
+                          alt="Media Coverage" 
+                          className="w-full h-full object-cover rounded-2xl"
+                        />
                       </div>
                       {/* Floating elements */}
                       <div className="absolute top-4 right-4 w-3 h-3 bg-white/30 rounded-full"></div>
@@ -208,20 +205,7 @@ export default function MediaCoverageSection() {
           </AnimatePresence>
         </div>
 
-        {/* Navigation Dots */}
-        <div className="flex justify-center gap-3 mb-8">
-          {mediaItems.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === activeIndex 
-                  ? 'bg-primary scale-125' 
-                  : 'bg-white/30 hover:bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
+
 
         {/* Bottom Grid - Other Articles */}
         <motion.div

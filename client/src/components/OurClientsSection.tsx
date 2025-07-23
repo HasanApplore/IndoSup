@@ -7,43 +7,37 @@ export default function OurClientsSection() {
       name: "HL City", 
       industry: "Real Estate",
       partnership: "3+ Years",
-      icon: <Building2 className="w-6 h-6" />,
-      gradient: "from-blue-500 to-purple-600"
+      logo: "/attached_assets/hqdefault_live_1753268448612.jpg"
     },
     { 
       name: "Bry-Air", 
       industry: "Industrial",
       partnership: "5+ Years",
-      icon: <TrendingUp className="w-6 h-6" />,
-      gradient: "from-green-500 to-teal-600"
+      logo: "/attached_assets/Bry-Air _Logo-comp245921_1753268466230.webp"
     },
     { 
       name: "CBRE", 
       industry: "Commercial",
       partnership: "2+ Years",
-      icon: <Star className="w-6 h-6" />,
-      gradient: "from-orange-500 to-red-600"
+      logo: "/attached_assets/cb5381ccf3-cbre-logo-cbre_1753268471965.png"
     },
     { 
       name: "JAKSON", 
       industry: "Infrastructure",
       partnership: "4+ Years",
-      icon: <Award className="w-6 h-6" />,
-      gradient: "from-purple-500 to-pink-600"
+      logo: "/attached_assets/jakson_1753268476294.png"
     },
     { 
       name: "CCI", 
       industry: "Construction",
       partnership: "6+ Years",
-      icon: <Building2 className="w-6 h-6" />,
-      gradient: "from-indigo-500 to-blue-600"
+      logo: "/attached_assets/CCI_1753268480375.jpg"
     },
     { 
       name: "all Cargo", 
       industry: "Logistics",
       partnership: "3+ Years",
-      icon: <TrendingUp className="w-6 h-6" />,
-      gradient: "from-teal-500 to-green-600"
+      logo: "/attached_assets/ALLCARGO.NS_BIG_1753268487926.png"
     }
   ];
 
@@ -117,43 +111,27 @@ export default function OurClientsSection() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative"
             >
-              {/* Main card with gradient border */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${client.gradient} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
-              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                {/* Company Logo/Image Area */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${client.gradient} rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
-                    {client.icon}
-                  </div>
-                  {/* Company building/office illustration */}
-                  <div className="w-16 h-12 bg-gray-100 rounded-lg flex items-center justify-center opacity-60">
-                    <svg className="w-10 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 3L2 9v12h5v-7h10v7h5V9L12 3zm3 11h-2v-2h2v2zm0-3h-2V9h2v2zm-3 3H9v-2h3v2zm0-3H9V9h3v2z"/>
-                    </svg>
-                  </div>
+              {/* Minimal clean card */}
+              <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group-hover:border-primary/20">
+                {/* Company Logo */}
+                <div className="flex items-center justify-center mb-3 h-16">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="max-h-12 max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 
-                {/* Client name */}
-                <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
-                  {client.name}
-                </h3>
-                
-                {/* Industry and Partnership info */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
-                    {client.industry}
+                {/* Client info */}
+                <div className="text-center">
+                  <h3 className="text-sm font-semibold text-accent mb-1 group-hover:text-primary transition-colors duration-300">
+                    {client.name}
+                  </h3>
+                  <p className="text-xs text-neutral-base mb-2">{client.industry}</p>
+                  <div className="text-xs text-primary font-medium">
+                    {client.partnership}
                   </div>
-                  <span className="text-primary font-semibold text-sm">{client.partnership}</span>
                 </div>
-                
-                {/* Success metrics */}
-                <div className="flex justify-between text-xs text-neutral-base">
-                  <span>✓ Quality Delivery</span>
-                  <span>✓ On-time Service</span>
-                </div>
-                
-                {/* Decorative element */}
-                <div className="absolute top-3 right-3 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </motion.div>
           ))}
