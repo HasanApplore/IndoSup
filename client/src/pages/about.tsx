@@ -319,10 +319,10 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Globe className="w-10 h-10 text-[#2A374B]" />
+                <Award className="w-10 h-10 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">Global Reach</h3>
-              <p className="text-[#2A374B] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">25+ Years Experience</h3>
+              <p className="text-[#2A374B] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
@@ -334,10 +334,10 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Award className="w-10 h-10 text-[#2A374B]" />
+                <Building className="w-10 h-10 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">25+ Years Experience</h3>
-              <p className="text-[#2A374B] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">2000+ Projects Supplied</h3>
+              <p className="text-[#2A374B] leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
@@ -349,10 +349,10 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Building className="w-10 h-10 text-[#2A374B]" />
+                <Globe className="w-10 h-10 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">2000+ Projects Supplied</h3>
-              <p className="text-[#2A374B] leading-relaxed">Successfully delivered construction materials to projects across India</p>
+              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">Global Reach</h3>
+              <p className="text-[#2A374B] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
