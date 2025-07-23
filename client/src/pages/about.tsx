@@ -469,7 +469,7 @@ export default function About() {
       </section>
 
       {/* Our Leadership */}
-      <section id="leadership" className="py-8 bg-[#35506b]">
+      <section id="leadership" className="py-8 bg-[#fbf7ed]">
         <div className="container mx-auto px-4" style={{ padding: '10px 20px 60px 20px' }}>
           <motion.div
             className="text-center mb-12"
