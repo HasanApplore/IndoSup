@@ -2,9 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from 'lucide-react';
 
-// Placeholder newspaper images
-const newspaper1 = "data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23374151' text-anchor='middle' dy='.3em'%3ENewspaper Image%3C/text%3E%3C/svg%3E";
-const newspaper2 = "data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23374151' text-anchor='middle' dy='.3em'%3ENewspaper Image%3C/text%3E%3C/svg%3E";
+// Import newspaper images
+import newspaper1 from '@assets/dan-levy-moz1_1753274065103.png';
+import newspaper2 from '@assets/1600w-uRVwxMWMZJU_1753274061332.webp';
 
 type MediaItem = {
   id: number;
