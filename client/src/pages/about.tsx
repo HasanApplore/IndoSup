@@ -5,6 +5,9 @@ import fireSystemImg from '@assets/OIP (4)_1752150066624.webp';
 import electricalSystemImg from '@assets/electrician-working-in-fuse-box-closeup-electrical-panel-ai-generated-photo_1752150070669.jpg';
 import pipesFittingImg from '@assets/Merit Brass - Chrome Plated Fittings_1752150074665.jpg';
 import aboutBannerImage from '@assets/interior-view-steel-factory_1752495300931.jpg';
+import leader1Img from '@assets/1_1753274708897.png';
+import leader2Img from '@assets/2_1753274710360.png';
+import leader3Img from '@assets/3_1753274712130.png';
 
 export default function About() {
   const [heroAnimated, setHeroAnimated] = useState(false);
@@ -106,7 +109,7 @@ export default function About() {
       name: "Ashmit Sharma",
       position: "Founder & CEO",
       initials: "AS",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: leader1Img,
       linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/",
       email: "ashmit@indosup.com"
     },
@@ -114,7 +117,7 @@ export default function About() {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
       initials: "AS",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: leader2Img,
       linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/",
       email: "akshaj@indosup.com"
     },
@@ -122,7 +125,7 @@ export default function About() {
       name: "Shivank Saxena",
       position: "Co-founder & CFO",
       initials: "SS",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
+      image: leader3Img,
       linkedin: "https://www.linkedin.com/in/shivank-saxena-19431aab/",
       email: "shivank@indosup.com"
     }
