@@ -330,7 +330,7 @@ export default function NewInitiatives() {
             <motion.div
               variants={cardVariants}
               id="global-private-section"
-              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-[#3C4A5E] rounded-xl p-8 shadow-lg border border-[#475466]"
+              className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 bg-[#3e4e66] rounded-xl p-8 shadow-lg border border-[#475466]"
             >
               {/* Content */}
               <div className="flex-1 space-y-4">
@@ -431,7 +431,7 @@ export default function NewInitiatives() {
             <motion.div
               variants={cardVariants}
               id="global-assist-section"
-              className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 bg-[#3C4A5E] rounded-xl p-8 shadow-lg border border-[#475466]"
+              className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 bg-[#3e4e66] rounded-xl p-8 shadow-lg border border-[#475466]"
             >
               {/* Content */}
               <div className="flex-1 space-y-4">
