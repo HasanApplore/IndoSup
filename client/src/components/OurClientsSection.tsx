@@ -119,29 +119,41 @@ export default function OurClientsSection() {
             >
               {/* Main card with gradient border */}
               <div className={`absolute inset-0 bg-gradient-to-r ${client.gradient} rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                {/* Icon with gradient background */}
-                <div className={`w-16 h-16 bg-gradient-to-r ${client.gradient} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  {client.icon}
+              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                {/* Company Logo/Image Area */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${client.gradient} rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                    {client.icon}
+                  </div>
+                  {/* Company building/office illustration */}
+                  <div className="w-16 h-12 bg-gray-100 rounded-lg flex items-center justify-center opacity-60">
+                    <svg className="w-10 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 3L2 9v12h5v-7h10v7h5V9L12 3zm3 11h-2v-2h2v2zm0-3h-2V9h2v2zm-3 3H9v-2h3v2zm0-3H9V9h3v2z"/>
+                    </svg>
+                  </div>
                 </div>
                 
                 {/* Client name */}
-                <h3 className="text-2xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-accent mb-2 group-hover:text-primary transition-colors duration-300">
                   {client.name}
                 </h3>
                 
-                {/* Industry tag */}
-                <div className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium mb-3">
-                  {client.industry}
+                {/* Industry and Partnership info */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
+                    {client.industry}
+                  </div>
+                  <span className="text-primary font-semibold text-sm">{client.partnership}</span>
                 </div>
                 
-                {/* Partnership duration */}
-                <p className="text-neutral-base font-medium">
-                  Partnership: <span className="text-primary font-semibold">{client.partnership}</span>
-                </p>
+                {/* Success metrics */}
+                <div className="flex justify-between text-xs text-neutral-base">
+                  <span>✓ Quality Delivery</span>
+                  <span>✓ On-time Service</span>
+                </div>
                 
                 {/* Decorative element */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute top-3 right-3 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </motion.div>
           ))}

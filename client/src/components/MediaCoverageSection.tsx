@@ -95,7 +95,7 @@ export default function MediaCoverageSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            In the Spotlight
+            What Newspapers Say About Us
             <motion.div
               className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
               initial={{ width: 0 }}
@@ -105,7 +105,7 @@ export default function MediaCoverageSection() {
             />
           </motion.h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Industry recognition and media coverage highlighting our innovation in construction procurement
+            Read what top newspapers and magazines write about our work and achievements
           </p>
         </motion.div>
 
@@ -169,15 +169,37 @@ export default function MediaCoverageSection() {
 
                   {/* Visual Element */}
                   <div className="relative">
-                    <div className={`w-full h-64 bg-gradient-to-br ${mediaItems[activeIndex].gradient} rounded-2xl flex items-center justify-center relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="relative z-10 text-center">
-                        <Play className="w-16 h-16 text-white mx-auto mb-4" />
-                        <p className="text-white font-semibold">Featured Coverage</p>
+                    <div className={`w-full h-64 bg-gradient-to-br ${mediaItems[activeIndex].gradient} rounded-2xl relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-black/30"></div>
+                      {/* Newspaper/Article Background */}
+                      <div className="absolute inset-0 opacity-20">
+                        <svg viewBox="0 0 400 300" className="w-full h-full">
+                          {/* Newspaper layout */}
+                          <rect x="40" y="40" width="320" height="220" fill="white" rx="8"/>
+                          <rect x="60" y="60" width="280" height="30" fill="#333" opacity="0.8"/>
+                          <rect x="60" y="100" width="130" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="60" y="115" width="120" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="60" y="130" width="135" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="210" y="100" width="130" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="210" y="115" width="125" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="210" y="130" width="130" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="60" y="160" width="280" height="80" fill="#f0f0f0" opacity="0.7"/>
+                        </svg>
+                      </div>
+                      <div className="relative z-10 flex items-center justify-center h-full text-center">
+                        <div>
+                          <div className="bg-white/20 rounded-full p-4 mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                            </svg>
+                          </div>
+                          <p className="text-white font-semibold">Featured Article</p>
+                        </div>
                       </div>
                       {/* Floating elements */}
-                      <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full"></div>
-                      <div className="absolute bottom-6 left-6 w-4 h-4 bg-white/30 rounded-full"></div>
+                      <div className="absolute top-4 right-4 w-3 h-3 bg-white/30 rounded-full"></div>
+                      <div className="absolute bottom-6 left-6 w-2 h-2 bg-white/40 rounded-full"></div>
+                      <div className="absolute top-1/2 right-8 w-1 h-1 bg-white/50 rounded-full"></div>
                     </div>
                   </div>
                 </div>
