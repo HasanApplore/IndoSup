@@ -14,6 +14,7 @@ import NewInitiatives from "@/pages/newInitiatives";
 import StreamlinedProcurement from "@/pages/streamlinedProcurement";
 import SteelProducts from "@/pages/steel-products";
 import NonSteelProducts from "@/pages/non-steel-products";
+import SolarProducts from "@/pages/products/solar";
 import Media from "@/pages/media";
 import Careers from "@/pages/careers";
 import Catalogues from "@/pages/catalogues";
@@ -143,6 +144,13 @@ function App() {
               <>
                 <Navbar />
                 <NonSteelProducts />
+                <Footer />
+              </>
+            )} />
+            <Route path="/products/solar" component={() => (
+              <>
+                <Navbar />
+                <SolarProducts />
                 <Footer />
               </>
             )} />

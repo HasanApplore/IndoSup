@@ -6,47 +6,47 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      company: "Kumar Construction Ltd",
-      location: "Mumbai",
-      role: "Project Manager",
+      name: "Mr S Kumar",
+      company: "BRY Air Asia",
+      location: "",
+      role: "",
       rating: 5,
-      testimonial: "IndoSup has revolutionized our procurement process. Their platform provides transparency, competitive pricing, and reliable delivery that we've never experienced before. The quality assurance is exceptional.",
-      project: "Commercial Complex Project",
-      avatar: "RK"
+      testimonial: "Indosup has revolutionized the way we source construction materials. Their digital platform has made the entire procurement process streamlined and convenient. With just a few clicks, we can compare prices, check product specifications, and place orders. It has saved us a tremendous amount of time and effort.",
+      project: "",
+      avatar: "SK"
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      company: "Sharma Infrastructure",
-      location: "Delhi",
-      role: "Purchase Head",
+      name: "Harish Mittal",
+      company: "Aerocoach Pvt Ltd",
+      location: "",
+      role: "",
       rating: 5,
-      testimonial: "The digital sourcing platform has streamlined our entire supply chain. We've reduced costs by 15% while improving delivery times. The customer support is outstanding and responsive.",
-      project: "Residential Township",
-      avatar: "PS"
+      testimonial: "I highly recommend Indosup for anyone in the construction industry. Their platform has transformed the way we source and procure materials. The competitive pricing, reliable delivery, and excellent customer service have made them an indispensable partner in our projects. It's a game-changer for efficiency and cost-effectiveness.",
+      project: "",
+      avatar: "HM"
     },
     {
       id: 3,
-      name: "Amit Patel",
-      company: "Patel Builders",
-      location: "Ahmedabad",
-      role: "Site Engineer",
+      name: "Bharat Gupta",
+      company: "Jakson Group",
+      location: "",
+      role: "",
       rating: 5,
-      testimonial: "Working with IndoSup has been a game-changer for our construction projects. Their comprehensive product range and expert guidance have helped us deliver projects on time and within budget.",
-      project: "Industrial Warehouse",
-      avatar: "AP"
+      testimonial: "Indosup has made our material procurement a breeze. The platform's intuitive interface allows us to quickly browse through various options, compare prices, and make informed decisions. The hassle-free ordering process and prompt delivery have significantly reduced our downtime and kept our projects running smoothly.",
+      project: "",
+      avatar: "BG"
     },
     {
       id: 4,
-      name: "Sunita Reddy",
-      company: "Reddy Constructions",
-      location: "Hyderabad",
-      role: "CEO",
+      name: "Rahul Pandey",
+      company: "ATS Group",
+      location: "",
+      role: "",
       rating: 5,
-      testimonial: "IndoSup's end-to-end digital sourcing has transformed how we approach procurement. The platform's user-friendly interface and comprehensive vendor network make it our go-to solution.",
-      project: "Mixed-Use Development",
-      avatar: "SR"
+      testimonial: "Using Indosup for our construction material procurement needs has been a game-changer. The platform is incredibly user-friendly, and their vast product catalog ensures we can find everything we need for our projects. The efficient order processing and on-time delivery have helped us stay on schedule and complete projects smoothly.",
+      project: "",
+      avatar: "RP"
     }
   ];
 

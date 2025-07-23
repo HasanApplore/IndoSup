@@ -54,21 +54,21 @@ export default function StreamlinedProcurement() {
       title: "Multi-site Procurement",
       description: "Centralized procurement management across multiple construction sites with real-time coordination and unified vendor relationships.",
       subtext: "Streamline operations, reduce costs, and maintain consistent quality standards across all your project locations.",
-      features: ["Centralized Ordering", "Site-wise Tracking", "Unified Vendor Management"]
+      features: ["Order for all sites from one place", "Track materials for each site", "Manage all suppliers easily"]
     },
     {
       icon: <Calculator className="w-8 h-8" />,
       title: "SKU Price Accuracy",
       description: "Real-time price validation and market analysis ensuring competitive rates for every construction material and component.",
       subtext: "Eliminate price discrepancies with our AI-powered pricing engine that monitors market fluctuations across India.",
-      features: ["Real-time Pricing", "Market Analysis", "Price Alerts"]
+      features: ["Faster material ordering and delivery", "Find trusted suppliers easily", "Get the best prices automatically"]
     },
     {
       icon: <Truck className="w-8 h-8" />,
       title: "Supply Chain Delay Solutions",
       description: "Proactive logistics management with predictive analytics to identify and resolve potential delays before they impact your projects.",
       subtext: "Advanced tracking systems and alternative sourcing options ensure your construction timeline stays on track.",
-      features: ["Predictive Analytics", "Alternative Sourcing", "Real-time Tracking"]
+      features: ["Less manual work in buying materials", "Backup suppliers ready", "Track deliveries in real-time"]
     },
     {
       icon: <FileText className="w-8 h-8" />,
@@ -171,7 +171,7 @@ export default function StreamlinedProcurement() {
             className="relative"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
-              Streamlined Procurement
+              Benefits of Working with Indosup
             </h1>
             {/* Animated underline */}
             <motion.div

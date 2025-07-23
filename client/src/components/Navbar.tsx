@@ -134,17 +134,17 @@ export default function Navbar() {
                   onMouseLeave={() => setIsInitiativesDropdownOpen(false)}
                 >
                   <button 
-                    onClick={() => navigateToInitiativeSection('global-private-section')}
-                    className="block w-full text-left px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
-                  >
-                    IndoSup Global Private Limited
-                  </button>
-                  <div className="border-t border-primary/20 my-2 mx-4"></div>
-                  <button 
                     onClick={() => navigateToInitiativeSection('global-assist-section')}
                     className="block w-full text-left px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
                   >
-                    IndoSup Global Assist Limited
+                    Indosup Assist Pvt Ltd
+                  </button>
+                  <div className="border-t border-primary/20 my-2 mx-4"></div>
+                  <button 
+                    onClick={() => navigateToInitiativeSection('global-private-section')}
+                    className="block w-full text-left px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
+                  >
+                    Indosup Global Pvt Ltd
                   </button>
                 </div>
               )}
@@ -199,6 +199,14 @@ export default function Navbar() {
                     onClick={handleLinkClick}
                   >
                     Non-Steel Products
+                  </Link>
+                  <div className="border-t border-primary/20 my-2 mx-4"></div>
+                  <Link 
+                    to="/products/solar" 
+                    className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
+                    onClick={handleLinkClick}
+                  >
+                    Solar Products
                   </Link>
                 </div>
               )}

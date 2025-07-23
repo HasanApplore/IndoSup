@@ -1,0 +1,109 @@
+Make the following updates to the homepage layout and content. Keep the Navbar, Hero section, and Footer unchanged.
+
+---
+🤝 3. Our Clients Section
+- Create a new section above the Testimonials titled “Our Clients”.
+- Display client names/logos in a responsive grid (3–4 per row).
+- Sample clients: HL City, Bry-Air, CBRE, JAKSON, CCI, all Cargo.
+- Style each item as a logo or styled name block.
+  - Use minimal box shadow and `rounded-xl`.
+  - Maintain brand consistency in font color and spacing.
+  - Add hover effect (e.g. slight scale or shadow).
+
+---
+📰 4. Media Coverage Section (before Testimonials)
+- Add a new section titled “Media Coverage” above the Testimonials section.
+- Use a **horizontal scroll slider** (or carousel).
+- Each card should include:
+  - A media logo or thumbnail
+  - Media source (e.g., “Economic Times”)
+  - A short headline or one-line quote
+- Use light backgrounds like existing card designs, consistent padding, and readable font.
+- Add smooth left-right navigation (buttons or drag-scroll).
+
+---
+🏢 5. About IndoSup Section
+- Add a features block or cards with the following:
+  1. 🌐 Global Reach
+  2. 🏗️ 25+ Years of Industry Experience
+  3. 📦 2000+ Projects Supplied
+- Display these using icons or emojis + text.
+- Ensure layout is horizontal for desktop (`flex-row`) and vertical on small screens.
+- Highlight “Global Reach” first in order and visibility.
+
+---
+👔 6. Leadership Section Enhancements
+- Improve card contrast with alternating or light color backgrounds.
+- Make name and title stand out:
+  - Use bold, darker text colors.
+  - Consider accent underlines or icon elements.
+- Add `hover:scale-105` and `hover:shadow-lg` for cards with smooth transitions.
+- Ensure layout looks premium and consistent with the new theme.
+
+---
+🚀 7. New Initiatives Section Update
+- Reorder the initiatives list as follows:
+  1. Indosup Assist Pvt Ltd
+  2. Indosup Global Pvt Ltd
+- Maintain consistent design with other sections.
+- Ensure mobile-first responsiveness.
+
+---
+🛠️ 8. Streamlined Procurement Section
+- Change the main heading to: **“Benefits of Working with Indosup”**
+- Rewrite bullet points using simple language. Examples:
+  - ❌ “Accelerated procurement cycle” → ✅ “Faster material ordering and delivery”
+  - ❌ “Optimized vendor sourcing” → ✅ “Find trusted suppliers easily”
+  - ❌ “Automated supply chain” → ✅ “Less manual work in buying materials”
+- Use `check-circle` icons or similar visual indicators.
+
+---
+🔆 9. Our Businesses Section
+- Add a new business category: **Solar**
+- Update Navbar → “Our Businesses” dropdown:
+  - Add sub-categories:
+    - Steel Products
+    - Non-Steel Products
+    - Solar Products
+  - Ensure each sub-category is clickable and links to correct sections or pages.
+  - Apply dropdown hover transitions and spacing similar to current menu items.
+
+---
+💬 10. Testimonials Update
+- Replace all existing testimonials with the following 4:
+
+---
+**Testimonial 1:**
+"Indosup has revolutionized the way we source construction materials. Their digital platform has made the entire procurement process streamlined and convenient. With just a few clicks, we can compare prices, check product specifications, and place orders. It has saved us a tremendous amount of time and effort."  
+**Mr S Kumar**  
+*BRY Air Asia*
+
+---
+**Testimonial 2:**
+"I highly recommend Indosup for anyone in the construction industry. Their platform has transformed the way we source and procure materials. The competitive pricing, reliable delivery, and excellent customer service have made them an indispensable partner in our projects. It's a game-changer for efficiency and cost-effectiveness."  
+**Harish Mittal**  
+*Aerocoach Pvt Ltd*
+
+---
+**Testimonial 3:**
+"Indosup has made our material procurement a breeze. The platform's intuitive interface allows us to quickly browse through various options, compare prices, and make informed decisions. The hassle-free ordering process and prompt delivery have significantly reduced our downtime and kept our projects running smoothly."  
+**Bharat Gupta**  
+*Jakson Group*
+
+---
+**Testimonial 4:**
+"Using Indosup for our construction material procurement needs has been a game-changer. The platform is incredibly user-friendly, and their vast product catalog ensures we can find everything we need for our projects. The efficient order processing and on-time delivery have helped us stay on schedule and complete projects smoothly."  
+**Rahul Pandey**  
+*ATS Group*
+
+---
+🎯 Final Notes
+- ✅ Do **not** make any changes to:
+  - Navbar
+  - Hero Section
+  - Footer
+- ✅ Ensure all new sections are:
+  - Responsive
+  - Consistent with the overall theme and color palette
+  - Built using **Tailwind CSS utility classes**
+- ✅ Maintain `section` level padding: `py-16` or `py-20` and responsive `px-4`, `md:px-10`.
