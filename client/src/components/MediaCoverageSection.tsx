@@ -5,6 +5,7 @@ import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from '
 // Import newspaper images
 import newspaper1 from '@/assets/newspaper-1.png';
 import newspaper2 from '@/assets/newspaper-2.webp';
+import mediaImage from '@/assets/image_1753271899962.png';
 
 type MediaItem = {
   id: number;
@@ -35,59 +36,46 @@ export default function MediaCoverageSection() {
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-blue-600 to-purple-600",
       quote: "Game-changer in procurement technology",
-      image: newspaper1,
+      image: mediaImage,
       fullContent: "I've got buckets. I call it S-School buckets. Let me be clear: marketers need to get around. Thousands of people have graduated from journalism school in the years since the financial crisis and the collapse of the 'old media' model..."
     },
     {
       id: 2,
-      source: "The Newspaper Line", 
-      headline: "BUSINESS REVIEW ON DIGITAL MARKETING",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. How IndoSup is setting new industry standards for material procurement efficiency",
+      source: "Construction World", 
+      headline: "Streamlining Material Procurement",
+      description: "Technology-driven approach reduces costs and improves delivery timelines significantly",
       date: "Nov 2024",
-      category: "Business",
+      category: "Industry",
       icon: <Award className="w-5 h-5" />,
-      gradient: "from-green-600 to-teal-600",
-      quote: "Leading innovation in construction tech",
-      image: newspaper2,
-      fullContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. Proin varius tincidunt molestie. Phasellus et congue erat. Proin vitae urna nisl. Nam tristique eget odio quis pellentesque..."
+      gradient: "from-orange-600 to-red-600",
+      quote: "Efficiency meets innovation",
+      image: mediaImage,
+      fullContent: "Technology-driven approach reduces costs and improves delivery timelines significantly. Advanced procurement systems streamline the entire supply chain process for modern construction projects..."
     },
     {
       id: 3,
-      source: "Construction World",
-      headline: "Streamlining Material Procurement",
-      description: "Technology-driven approach reduces costs and improves delivery timelines significantly",
-      date: "Nov 2024", 
-      category: "Industry",
-      icon: <Zap className="w-5 h-5" />,
-      gradient: "from-orange-600 to-red-600",
-      quote: "Efficiency meets innovation",
-      image: newspaper1,
-      fullContent: "Technology-driven approach reduces costs and improves delivery timelines significantly. Advanced procurement systems streamline the entire supply chain process..."
-    },
-    {
-      id: 4,
       source: "India Today",
       headline: "Supply Chain Management Innovation",
       description: "Advanced analytics and automation reshape construction material supply chains",
-      date: "Oct 2024",
+      date: "Oct 2024", 
       category: "Innovation",
-      icon: <TrendingUp className="w-5 h-5" />,
+      icon: <Zap className="w-5 h-5" />,
       gradient: "from-purple-600 to-pink-600",
       quote: "Future of supply chain management",
-      image: newspaper2,
+      image: mediaImage,
       fullContent: "Advanced analytics and automation reshape construction material supply chains. Machine learning algorithms optimize inventory management and predict demand patterns..."
     },
     {
-      id: 5,
+      id: 4,
       source: "Financial Express",
       headline: "Construction Tech Investment Surge", 
       description: "Growing investor confidence in digital procurement platforms drives market expansion",
       date: "Oct 2024",
       category: "Finance",
-      icon: <Award className="w-5 h-5" />,
+      icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-indigo-600 to-blue-600",
       quote: "Smart investment in construction future",
-      image: newspaper1,
+      image: mediaImage,
       fullContent: "Growing investor confidence in digital procurement platforms drives market expansion. Venture capital funding in construction technology reaches new heights..."
     }
   ];
@@ -349,7 +337,7 @@ export default function MediaCoverageSection() {
                   <p className="text-gray-600">Published by {selectedArticle.source}</p>
                   <button
                     onClick={() => setSelectedArticle(null)}
-                    className="bg-gradient-to-r from-primary to-accent text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="bg-gray-800 text-white px-6 py-2 rounded-xl font-semibold hover:bg-gray-700 hover:shadow-lg transition-all duration-300"
                   >
                     Close Article
                   </button>
