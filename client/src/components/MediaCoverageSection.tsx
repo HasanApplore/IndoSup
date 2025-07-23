@@ -2,10 +2,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from 'lucide-react';
 
-// Import media coverage images
-import businessImage from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
-import constructionImage from '@assets/Construction-material-management-system-on-project-sites-1024x409_1752230798913.webp';
-import danLevyNewspaper from '@assets/dan-levy-moz1_1753273462693.png';
+// Import newspaper images
+import newspaper1 from '@/assets/newspaper-1.png';
+import newspaper2 from '@/assets/newspaper-2.webp';
 
 type MediaItem = {
   id: number;
@@ -36,7 +35,7 @@ export default function MediaCoverageSection() {
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-blue-600 to-purple-600",
       quote: "Game-changer in procurement technology",
-      image: danLevyNewspaper,
+      image: newspaper1,
       fullContent: "I've got buckets. I call it S-School buckets. Let me be clear: marketers need to get around. Thousands of people have graduated from journalism school in the years since the financial crisis and the collapse of the 'old media' model..."
     },
     {
@@ -49,7 +48,7 @@ export default function MediaCoverageSection() {
       icon: <Award className="w-5 h-5" />,
       gradient: "from-green-600 to-teal-600",
       quote: "Leading innovation in construction tech",
-      image: businessImage,
+      image: newspaper2,
       fullContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. Proin varius tincidunt molestie. Phasellus et congue erat. Proin vitae urna nisl. Nam tristique eget odio quis pellentesque..."
     },
     {
@@ -62,7 +61,7 @@ export default function MediaCoverageSection() {
       icon: <Zap className="w-5 h-5" />,
       gradient: "from-orange-600 to-red-600",
       quote: "Efficiency meets innovation",
-      image: constructionImage,
+      image: newspaper1,
       fullContent: "Technology-driven approach reduces costs and improves delivery timelines significantly. Advanced procurement systems streamline the entire supply chain process..."
     },
     {
@@ -75,7 +74,7 @@ export default function MediaCoverageSection() {
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-purple-600 to-pink-600",
       quote: "Future of supply chain management",
-      image: danLevyNewspaper,
+      image: newspaper2,
       fullContent: "Advanced analytics and automation reshape construction material supply chains. Machine learning algorithms optimize inventory management and predict demand patterns..."
     },
     {
@@ -88,7 +87,7 @@ export default function MediaCoverageSection() {
       icon: <Award className="w-5 h-5" />,
       gradient: "from-indigo-600 to-blue-600",
       quote: "Smart investment in construction future",
-      image: businessImage,
+      image: newspaper1,
       fullContent: "Growing investor confidence in digital procurement platforms drives market expansion. Venture capital funding in construction technology reaches new heights..."
     }
   ];
@@ -151,59 +150,83 @@ export default function MediaCoverageSection() {
               className="relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-3xl blur opacity-20`}></div>
-              <div className="relative bg-slate-800/90 backdrop-blur-sm border border-slate-600/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+              <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    {/* Source Badge - Enhanced with icon background */}
+                    {/* Source and Category */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-2xl p-3 shadow-lg`}>
+                      <div className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-xl p-3`}>
                         {mediaItems[activeIndex].icon}
                       </div>
                       <div>
-                        <h4 className="text-[#FFC600] font-bold text-xl">{mediaItems[activeIndex].source}</h4>
-                        <p className="text-gray-400 text-sm flex items-center gap-2 mt-1">
+                        <h4 className="text-primary font-bold text-lg">{mediaItems[activeIndex].source}</h4>
+                        <p className="text-gray-400 text-sm flex items-center gap-2">
                           <Calendar className="w-4 h-4" />
-                          {mediaItems[activeIndex].date}
+                          {mediaItems[activeIndex].date} • {mediaItems[activeIndex].category}
                         </p>
                       </div>
                     </div>
 
-                    {/* Headline - Enhanced typography */}
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                    {/* Headline */}
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                       {mediaItems[activeIndex].headline}
                     </h3>
 
-                    {/* Description - Better spacing */}
-                    <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                    {/* Description */}
+                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">
                       {mediaItems[activeIndex].description}
                     </p>
 
-                    {/* CTA Button - Enhanced design */}
+                    {/* Quote */}
+                    <div className="flex items-start gap-3 mb-8">
+                      <Quote className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <p className="text-primary font-semibold text-lg italic">
+                        "{mediaItems[activeIndex].quote}"
+                      </p>
+                    </div>
+
+                    {/* CTA Button */}
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelectedArticle(mediaItems[activeIndex])}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-400/20"
+                      className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300`}
                     >
                       Read Full Article
-                      <ExternalLink className="w-5 h-5" />
+                      <ExternalLink className="w-4 h-4" />
                     </motion.button>
                   </div>
 
-                  {/* Visual Element - Enhanced newspaper image display */}
+                  {/* Visual Element */}
                   <div className="relative">
-                    <div className="w-full h-80 bg-slate-700/50 rounded-2xl relative overflow-hidden border border-slate-600/30 shadow-xl">
-                      <div className="relative z-10 flex items-center justify-center h-full">
+                    <div className={`w-full h-64 bg-gradient-to-br ${mediaItems[activeIndex].gradient} rounded-2xl relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-black/30"></div>
+                      {/* Newspaper/Article Background */}
+                      <div className="absolute inset-0 opacity-20">
+                        <svg viewBox="0 0 400 300" className="w-full h-full">
+                          {/* Newspaper layout */}
+                          <rect x="40" y="40" width="320" height="220" fill="white" rx="8"/>
+                          <rect x="60" y="60" width="280" height="30" fill="#333" opacity="0.8"/>
+                          <rect x="60" y="100" width="130" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="60" y="115" width="120" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="60" y="130" width="135" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="210" y="100" width="130" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="210" y="115" width="125" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="210" y="130" width="130" height="8" fill="#666" opacity="0.6"/>
+                          <rect x="60" y="160" width="280" height="80" fill="#f0f0f0" opacity="0.7"/>
+                        </svg>
+                      </div>
+                      <div className="relative z-10 flex items-center justify-center h-full text-center">
                         <img 
                           src={mediaItems[activeIndex].image} 
                           alt="Media Coverage" 
                           className="w-full h-full object-cover rounded-2xl"
                         />
                       </div>
-                      {/* Floating decorative elements */}
-                      <div className="absolute top-4 right-4 w-3 h-3 bg-[#FFC600]/60 rounded-full animate-pulse"></div>
-                      <div className="absolute bottom-6 left-6 w-2 h-2 bg-[#FFC600]/40 rounded-full animate-pulse delay-500"></div>
-                      <div className="absolute top-1/2 right-8 w-1 h-1 bg-[#FFC600]/30 rounded-full animate-pulse delay-1000"></div>
+                      {/* Floating elements */}
+                      <div className="absolute top-4 right-4 w-3 h-3 bg-white/30 rounded-full"></div>
+                      <div className="absolute bottom-6 left-6 w-2 h-2 bg-white/40 rounded-full"></div>
+                      <div className="absolute top-1/2 right-8 w-1 h-1 bg-white/50 rounded-full"></div>
                     </div>
                   </div>
                 </div>
