@@ -675,7 +675,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.div
-                className="bg-[#3C4A5E] rounded-2xl p-6 md:p-8 shadow-xl border border-[#475466] h-full relative overflow-hidden"
+                className="bg-gradient-to-br from-[#FFC600] to-[#E6B200] rounded-2xl p-6 md:p-8 shadow-xl border border-[#475466] h-full relative overflow-hidden text-[#2A374B]"
                 whileHover={{ 
                   y: -8,
                   boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
@@ -684,10 +684,10 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-[#FFC600] rounded-full flex items-center justify-center mr-3">
-                    <Target className="w-5 h-5 text-[#2A374B]" />
+                  <div className="w-10 h-10 bg-[#35506b] rounded-full flex items-center justify-center mr-3">
+                    <Target className="w-5 h-5 text-[#FFC600]" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#FFC600]">Mission</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-[#2A374B]">Mission</h3>
                 </div>
                 
                 {/* Mission content */}
@@ -699,7 +699,7 @@ export default function About() {
                   >
                     "
                   </motion.div>
-                  <p className="text-base md:text-lg text-[#F5F5F5] leading-relaxed font-medium pl-5">
+                  <p className="text-base md:text-lg text-[#2A374B] leading-relaxed font-medium pl-5">
                     Empowering the construction ecosystem by reducing complexity in procurement, 
                     enabling transparency, and ensuring timely, high-quality delivery.
                   </p>
