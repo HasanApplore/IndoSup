@@ -319,7 +319,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Award className="w-8 h-8 text-[#2A374B]" />
@@ -334,7 +338,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Building className="w-8 h-8 text-[#2A374B]" />
@@ -349,7 +357,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
                 <Globe className="w-8 h-8 text-[#2A374B]" />
