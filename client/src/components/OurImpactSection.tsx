@@ -340,10 +340,10 @@ const OurImpactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-[#FFC600] mb-6 font-poppins">
             Our Impact
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto font-poppins">
+          <p className="text-[#F5F5F5] text-lg max-w-3xl mx-auto font-poppins">
             Transforming construction procurement across India with measurable results
           </p>
         </motion.div>
