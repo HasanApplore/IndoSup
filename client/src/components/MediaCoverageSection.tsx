@@ -118,7 +118,7 @@ export default function MediaCoverageSection() {
           className="text-center mb-16"
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-white mb-6 relative"
+            className="text-4xl font-bold text-[#1E293B] font-poppins mb-6 relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -349,7 +349,7 @@ export default function MediaCoverageSection() {
                   <p className="text-gray-600">Published by {selectedArticle.source}</p>
                   <button
                     onClick={() => setSelectedArticle(null)}
-                    className="bg-gradient-to-r from-primary to-accent text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg hover:from-gray-700 hover:to-gray-800 transition-all duration-300"
                   >
                     Close Article
                   </button>
