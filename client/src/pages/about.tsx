@@ -307,55 +307,55 @@ export default function About() {
 
 
       {/* Statistics Cards Section */}
-      <section className="py-16 relative overflow-hidden bg-[#35506b]">
+      <section className="py-16 relative overflow-hidden bg-[#fbf7ed]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFC600]/5 via-[#FFC600]/5 to-[#FFC600]/5"></div>
         
         {/* Key Highlights Section */}
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Award className="w-10 h-10 text-[#2A374B]" />
+              <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Award className="w-8 h-8 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">25+ Years Experience</h3>
-              <p className="text-[#2A374B] leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
+              <h3 className="text-xl font-bold mb-4 text-[#2A374B]">25+ Years Experience</h3>
+              <p className="text-gray-600 leading-relaxed">Proven track record in construction procurement with decades of industry expertise</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Building className="w-10 h-10 text-[#2A374B]" />
+              <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Building className="w-8 h-8 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">2000+ Projects Supplied</h3>
-              <p className="text-[#2A374B] leading-relaxed">Successfully delivered construction materials to projects across India</p>
+              <h3 className="text-xl font-bold mb-4 text-[#2A374B]">2000+ Projects Supplied</h3>
+              <p className="text-gray-600 leading-relaxed">Successfully delivered construction materials to projects across India</p>
             </motion.div>
             
             <motion.div
-              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-[#E5E7EB] hover:border-[#FFC600]"
+              className="text-center bg-white rounded-xl p-8 shadow-lg cursor-pointer border border-gray-200 hover:shadow-xl hover:border-[#FFC600] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="bg-[#FFC600] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                <Globe className="w-10 h-10 text-[#2A374B]" />
+              <div className="bg-[#FFC600] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
+                <Globe className="w-8 h-8 text-[#2A374B]" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-[#FFC600]">Global Reach</h3>
-              <p className="text-[#2A374B] leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
+              <h3 className="text-xl font-bold mb-4 text-[#2A374B]">Global Reach</h3>
+              <p className="text-gray-600 leading-relaxed">Expanding networks nationwide with strategic partnerships and distribution channels</p>
             </motion.div>
           </div>
         </div>
