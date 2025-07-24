@@ -232,7 +232,7 @@ export default function NonSteelProducts() {
       )}
 
       {/* Products Section */}
-      <section className="py-8 md:py-12 bg-[#2A374B] pt-[0px] pb-[0px]">
+      <section className="py-8 md:py-12 bg-[#3b4f69] pt-[0px] pb-[0px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             className="text-center mb-8"
@@ -256,40 +256,40 @@ export default function NonSteelProducts() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-[#475466]">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
               <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Wrench className="w-5 h-5 text-[#FFC600]" />
               </div>
               <h3 className="text-xl font-bold text-[#FFC600] mb-1">Plumbing</h3>
-              <p className="text-[#F5F5F5] text-sm">Solutions</p>
+              <p className="text-gray-600 text-sm">Solutions</p>
             </div>
-            <div className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-[#475466]">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
               <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Package className="w-5 h-5 text-[#FFC600]" />
               </div>
               <h3 className="text-xl font-bold text-[#FFC600] mb-1">Electrical</h3>
-              <p className="text-[#F5F5F5] text-sm">Systems</p>
+              <p className="text-gray-600 text-sm">Systems</p>
             </div>
-            <div className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-[#475466]">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
               <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Shield className="w-5 h-5 text-[#FFC600]" />
               </div>
               <h3 className="text-xl font-bold text-[#FFC600] mb-1">Fire Fighting</h3>
-              <p className="text-[#F5F5F5] text-sm">Equipment</p>
+              <p className="text-gray-600 text-sm">Equipment</p>
             </div>
-            <div className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-[#475466]">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
               <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Building2 className="w-5 h-5 text-[#FFC600]" />
               </div>
               <h3 className="text-xl font-bold text-[#FFC600] mb-1">Warehouse</h3>
-              <p className="text-[#F5F5F5] text-sm">Infrastructure</p>
+              <p className="text-gray-600 text-sm">Infrastructure</p>
             </div>
-            <div className="bg-[#3C4A5E] rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-[#475466]">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
               <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Package className="w-5 h-5 text-[#FFC600]" />
               </div>
               <h3 className="text-xl font-bold text-[#FFC600] mb-1">Water Systems</h3>
-              <p className="text-[#F5F5F5] text-sm">& Utilities</p>
+              <p className="text-gray-600 text-sm">& Utilities</p>
             </div>
           </motion.div>
           
@@ -304,7 +304,7 @@ export default function NonSteelProducts() {
               </div>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold font-inter text-[#FFC600]">Non-Steel Products</h1>
-                <p className="text-[#F5F5F5] text-lg mt-2">Specialized construction systems and utilities</p>
+                <p className="text-white/90 text-lg mt-2">Specialized construction systems and utilities</p>
               </div>
             </div>
           </motion.div>
@@ -326,7 +326,7 @@ export default function NonSteelProducts() {
                 key={index}
                 id={category.name === "Electrical" ? "electrical-components" : category.name === "Fire Fighting" ? "fire-fighting-systems" : undefined}
                 variants={itemVariants}
-                className="bg-[#3C4A5E] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-[#475466]"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200"
                 whileHover={{ y: -5 }}
               >
                 {/* Image */}
@@ -344,7 +344,7 @@ export default function NonSteelProducts() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <p className="text-[#F5F5F5] leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {category.description}
                   </p>
 
@@ -354,7 +354,7 @@ export default function NonSteelProducts() {
                     {category.specifications.map((spec, specIndex) => (
                       <div key={specIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0" />
-                        <span className="text-sm text-[#F5F5F5]">{spec}</span>
+                        <span className="text-sm text-gray-600">{spec}</span>
                       </div>
                     ))}
                   </div>

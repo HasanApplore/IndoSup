@@ -210,7 +210,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-[#35506b]">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -559,7 +559,7 @@ export default function About() {
                       href={leader.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-[#2A374B] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#1A2530] transition-all duration-300 hover:shadow-lg"
+                      className="w-10 h-10 bg-[#3b4f69] text-white rounded-full flex items-center justify-center shadow-md hover:bg-[#2a3e57] transition-all duration-300 hover:shadow-lg"
                       title="Connect on LinkedIn"
                       whileHover={{ scale: 1.05 }}
                     >
