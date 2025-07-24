@@ -130,7 +130,7 @@ export default function HeroSection() {
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div 
-          className="absolute inset-0 w-full h-full cursor-pointer"
+          className="absolute inset-0 w-full h-full cursor-pointer overflow-hidden"
           onClick={() => {
             if (player && player.playVideo) {
               player.playVideo();
@@ -140,7 +140,13 @@ export default function HeroSection() {
         >
           <iframe
             ref={iframeRef}
-            className="w-full h-full"
+            className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
+            style={{
+              width: '100vw',
+              height: '56.25vw', // 16:9 aspect ratio
+              minHeight: '100vh',
+              minWidth: '177.78vh', // 16:9 aspect ratio
+            }}
             src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&start=0&end=10&enablejsapi=1&cc_load_policy=0&fs=0&disablekb=1&origin=${encodeURIComponent(window.location.origin)}&widget_referrer=${encodeURIComponent(window.location.origin)}`}
             title="IndoSup Demo Video"
             frameBorder="0"
@@ -195,6 +201,80 @@ export default function HeroSection() {
           </div>
         </div>
       )}
+
+      {/* Content Overlay */}
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight font-poppins"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+            >
+              Revolutionizing Construction
+              <span className="block text-primary">Procurement</span>
+            </motion.h1>
+            
+            <motion.p 
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 sm:mb-10 leading-relaxed font-poppins"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+            >
+              End-to-End Digital Sourcing for Modern Infrastructure
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.1 }}
+            >
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-primary text-[#031D33] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 font-poppins min-w-[200px]"
+              >
+                Explore Solutions
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-white hover:text-[#031D33] transition-all duration-300 font-poppins min-w-[200px]"
+              >
+                Get a Quote
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 border-2 border-white rounded-full flex justify-center"
+        >
+          <motion.div
+            animate={{ y: [0, 16, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1 h-3 bg-white rounded-full mt-2"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
