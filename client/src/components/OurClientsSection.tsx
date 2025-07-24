@@ -4,7 +4,7 @@ import { useState } from 'react';
 // Import logos as assets for proper bundling
 import plcityLogo from '@/assets/plcity-logo.jpg';
 import bryAirLogo from '@/assets/bry-air-logo.webp';
-import cbreLogo from '@/assets/cbre-logo.png';
+import cbreLogo from '@/assets/cbre-logo-new.webp';
 import jaksonLogo from '@/assets/jakson-logo.png';
 import cciLogo from '@/assets/cci-logo.jpg';
 import allcargoLogo from '@/assets/allcargo-logo.png';
