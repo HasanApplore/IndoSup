@@ -26,11 +26,11 @@ export default function Navbar() {
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsBusinessDropdownOpen(false);
       }
-      if (initiativesDropdownRef.current && !initiativesDropdownRef.current.contains(event.target)) {
+      if (initiativesDropdownRef.current && !initiativesDropdownRef.current.contains(event.target as Node)) {
         setIsInitiativesDropdownOpen(false);
       }
     };
@@ -49,7 +49,7 @@ export default function Navbar() {
   };
 
   // Navigate to specific sections on New Initiatives page
-  const navigateToInitiativeSection = (sectionId) => {
+  const navigateToInitiativeSection = (sectionId: string) => {
     if (location === '/new-initiatives') {
       // If already on the page, scroll to section
       setTimeout(() => {
@@ -71,7 +71,7 @@ export default function Navbar() {
   };
 
   // Helper function to check if a link is active
-  const isActivePath = (path) => {
+  const isActivePath = (path: string) => {
     if (path === '/' && location === '/') return true;
     if (path !== '/' && location.startsWith(path)) return true;
     return false;
@@ -85,20 +85,20 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/50 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <Link to="/">
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
-                className="h-12 w-auto cursor-pointer"
+                className="h-10 sm:h-12 w-auto cursor-pointer"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center ml-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 flex-1 justify-center ml-6 xl:ml-8">
             <Link 
               to="/about" 
               className={`transition-colors duration-200 relative group font-medium text-sm ${
@@ -253,7 +253,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center flex-shrink-0">
             <Link to="/contact">
-              <Button className="bg-primary text-accent font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-sm">
+              <Button className="bg-primary text-accent font-semibold px-4 xl:px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-xs xl:text-sm">
                 Contact Us
               </Button>
             </Link>

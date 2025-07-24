@@ -126,7 +126,7 @@ export default function HeroSection() {
   }, [youtubeVideoId]);
 
   return (
-    <section className="relative w-full overflow-hidden h-screen">
+    <section className="relative w-full overflow-hidden h-screen min-h-[600px] sm:min-h-[700px] md:min-h-screen">
       {/* YouTube Video Background */}
       {youtubeVideoId ? (
         <div 

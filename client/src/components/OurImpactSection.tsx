@@ -34,7 +34,7 @@ const AnimatedCounter = ({ target, duration = 2, suffix = '' }: CounterProps) =>
   }, [isInView, target, duration]);
 
   return (
-    <span ref={ref} className="text-[#0F172A] font-bold text-3xl md:text-4xl group-hover:text-[#35506b] transition-colors duration-500 group-hover:scale-110 inline-block transform">
+    <span ref={ref} className="text-[#0F172A] font-bold text-responsive-2xl group-hover:text-[#35506b] transition-colors duration-500 group-hover:scale-110 inline-block transform">
       {count.toLocaleString()}{suffix}
     </span>
   );

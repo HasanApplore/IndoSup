@@ -1,0 +1,58 @@
+Update this website to make it fully responsive across all screen sizes including mobile phones, tablets, laptops, and desktops.
+
+Follow these exact responsive design guidelines:
+
+1. **Responsive Layout**:
+   - Use CSS Flexbox or Grid appropriately for layout structure
+   - For mobile: Stack elements vertically, ensure spacing and padding remain consistent
+   - For tablets and medium screens: Adjust columns to 2-column layout where needed
+   - For desktops: Restore full layout with multi-columns (3-4 cards per row in services, 2-column in contact)
+
+2. **Typography & Readability**:
+   - Use responsive font sizes with `clamp()`, `vw`, or media queries
+   - Ensure headings don’t overflow on small screens
+   - Maintain adequate line spacing and padding around text
+
+3. **Navigation Bar**:
+   - Convert navbar to a hamburger menu on screens below 768px
+   - Ensure clickable area is large enough and nav links are legible
+
+4. **Hero Section**:
+   - Make sure heading, subheading, and buttons adjust for smaller screens
+   - Hero image or illustration should scale without breaking layout
+   - Center-align text and buttons on small screens
+
+5. **Cards and Grid Sections (like Services or Clients)**:
+   - Use a responsive grid with `grid-template-columns` or Flexbox
+   - Change layout to:
+     - 1 column on small screens (mobile)
+     - 2 columns on medium screens (tablet)
+     - 3-4 columns on large screens
+
+6. **Forms (Contact Section)**:
+   - Inputs and buttons must span full width on small screens
+   - Add adequate spacing between input fields
+   - Submit button should remain prominent and centered if possible
+
+7. **Footer**:
+   - Stack content vertically on small screens
+   - Reduce font size slightly but maintain readability
+   - Social icons should wrap neatly or stack
+
+8. **Images and Media**:
+   - All images must use `max-width: 100%` and `height: auto`
+   - Prevent overflow using `overflow-x: hidden` on `body`
+
+9. **Breakpoints**:
+   - Use the following media query breakpoints as base:
+     - `max-width: 480px` (phones)
+     - `max-width: 768px` (tablets)
+     - `max-width: 1024px` (small laptops)
+     - Above 1024px for desktops
+
+10. **Final Touches**:
+   - Ensure no horizontal scroll on any device
+   - Use `box-sizing: border-box` globally
+   - Test responsiveness with DevTools or simulator for all major devices
+
+Update the HTML and CSS code accordingly, using clean and organized CSS or inline styles.

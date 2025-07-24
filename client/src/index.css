@@ -53,11 +53,16 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border box-border;
   }
 
-  body {
+  html, body {
     @apply font-poppins antialiased bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  img {
+    @apply max-w-full h-auto;
   }
 }
 
@@ -72,6 +77,65 @@
   
   .hero-gradient {
     background: linear-gradient(135deg, var(--accent) 0%, var(--neutral-dark) 50%, var(--accent) 100%);
+  }
+
+  /* Responsive Typography */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  /* Responsive Spacing */
+  .space-responsive {
+    @apply space-y-4 sm:space-y-6 md:space-y-8;
+  }
+  
+  .p-responsive {
+    @apply p-4 sm:p-6 md:p-8;
+  }
+  
+  .py-responsive {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+  
+  .px-responsive {
+    @apply px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+
+  /* Responsive Grid */
+  .grid-responsive-1-2-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-1-2-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .grid-responsive-contact {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12;
   }
   
   .line-clamp-2 {

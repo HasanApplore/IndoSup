@@ -37,33 +37,33 @@ export default function Footer() {
       </div>
       
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 sm:py-12 lg:py-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Company Info & Quick Links */}
           <div className="lg:col-span-3 h-full flex flex-col">
-            <div className="transform hover:scale-105 transition-transform duration-300 mb-6">
+            <div className="transform hover:scale-105 transition-transform duration-300 mb-4 sm:mb-6">
               <Link to="/" className="block">
                 <img 
                   src={logoImage} 
                   alt="IndoSup Logo" 
-                  className="h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+                  className="h-10 sm:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                 />
               </Link>
             </div>
             
             <div className="flex-1">
-              <h4 className="text-base font-bold mb-4 text-white flex items-center">
-                <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
+              <h4 className="text-sm sm:text-base font-bold mb-3 sm:mb-4 text-white flex items-center">
+                <div className="w-1 h-4 sm:h-6 bg-primary mr-2 sm:mr-3 rounded-full"></div>
                 Quick Links
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
                     <Link 
                       to={link.path}
-                      className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
+                      className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
                     >
-                      <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                      <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
                       {link.name}
                     </Link>
                   </li>

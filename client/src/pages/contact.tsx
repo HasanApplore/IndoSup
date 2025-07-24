@@ -134,7 +134,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
-      <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -176,14 +176,14 @@ export default function Contact() {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+            <h1 className="text-responsive-3xl font-bold text-white mb-4 sm:mb-6 mt-4 sm:mt-8" style={{ color: '#ffffff' }}>
               Contact IndoSup
             </h1>
             {/* Animated underline */}
@@ -196,7 +196,7 @@ export default function Contact() {
           </motion.div>
           
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            className="text-responsive-lg text-white/90 mb-6 sm:mb-8 leading-relaxed px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -259,7 +259,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Form and Images Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" id="contact-form-section">
+          <div className="grid-responsive-contact items-start" id="contact-form-section">
             
             {/* Left Side - Single Image */}
             <motion.div
@@ -290,14 +290,14 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-2xl p-8 shadow-lg"
+              className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg"
             >
-              <h3 className="text-2xl font-bold text-accent mb-6 text-center">
+              <h3 className="text-responsive-xl font-bold text-accent mb-4 sm:mb-6 text-center">
                 Send us a Message
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-accent mb-2">
                       Full Name *
@@ -308,7 +308,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-sm sm:text-base"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -323,13 +323,13 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-sm sm:text-base"
                       placeholder="Enter your email address"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-accent mb-2">
                       Phone Number
@@ -339,7 +339,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-sm sm:text-base"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -353,7 +353,7 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 text-sm sm:text-base"
                       placeholder="Enter your company name"
                     />
                   </div>
@@ -369,7 +369,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-none"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 resize-none text-sm sm:text-base"
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>
