@@ -777,7 +777,7 @@ export default function Media() {
       {/* Main Content */}
       <section 
         id="media-content" 
-        className={`py-8 md:py-12 bg-[#2A374B] transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#3b4f69] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
@@ -817,8 +817,8 @@ export default function Media() {
                 }}
                 className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-bold transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
-                    ? 'bg-[#FFC600] text-[#2A374B] shadow-lg border-2 border-[#FFC600]'
-                    : 'bg-[#3C4A5E] text-[#F5F5F5] hover:bg-[#FFC600]/10 border-2 border-[#475466] hover:border-[#FFC600]/30'
+                    ? 'bg-[#FFC600] text-[#031D33] shadow-lg border-2 border-[#FFC600]'
+                    : 'bg-white text-gray-700 hover:bg-[#FFC600]/10 border-2 border-gray-200 hover:border-[#FFC600]/30'
                 }`}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -847,21 +847,21 @@ export default function Media() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles, news, and resources..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 bg-[#3C4A5E] text-[#F5F5F5] shadow-sm hover:shadow-md hover:border-[#FFC600]/30 text-sm md:text-base placeholder-[#F5F5F5]/60"
+                className="w-full pl-12 pr-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 bg-white text-gray-700 shadow-sm hover:shadow-md hover:border-[#FFC600]/30 text-sm md:text-base placeholder-gray-400"
               />
             </div>
             <div className="relative">
-              <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
+              <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="pl-12 pr-8 py-3 md:py-4 border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] bg-[#3C4A5E] text-[#F5F5F5] shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-[#FFC600]/30 text-sm md:text-base"
+                className="pl-12 pr-8 py-3 md:py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] bg-white text-gray-700 shadow-sm transition-all duration-300 min-w-[160px] md:min-w-[180px] hover:shadow-md hover:border-[#FFC600]/30 text-sm md:text-base"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (

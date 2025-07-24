@@ -241,9 +241,9 @@ export default function Careers() {
       )}
 
       {/* Job Openings Section */}
-      <section className="py-12 md:py-16 bg-[#2A374B] relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-[#3b4f69] relative overflow-hidden">
         {/* Decorative Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2A374B] to-[#1f2937] opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3b4f69] to-[#2d3748] opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-10 left-10 w-20 h-20 bg-[#FFC600]/10 rounded-full blur-xl"></div>
           <div className="absolute bottom-20 right-20 w-32 h-32 bg-[#FFC600]/5 rounded-full blur-2xl"></div>
@@ -271,7 +271,7 @@ export default function Careers() {
 
           {/* Search and Filters */}
           <motion.div 
-            className="bg-[#3C4A5E] backdrop-blur-md rounded-2xl shadow-2xl p-6 mb-8 border border-[#475466]"
+            className="bg-white backdrop-blur-md rounded-2xl shadow-2xl p-6 mb-8 border border-gray-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -280,42 +280,42 @@ export default function Careers() {
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search jobs..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-[#3C4A5E] border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 text-[#F5F5F5] placeholder-[#F5F5F5]/60 shadow-sm hover:shadow-md hover:border-[#FFC600]/50"
+                  className="w-full pl-10 pr-4 py-3 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 text-gray-700 placeholder-gray-400 shadow-sm hover:shadow-md hover:border-[#FFC600]/50"
                 />
               </div>
 
               {/* Department Filter */}
               <div className="relative min-w-[200px]">
-                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
+                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <select
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 bg-[#3C4A5E] border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-[#F5F5F5] appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
+                  className="w-full pl-10 pr-8 py-3 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-gray-700 appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
                 >
-                  <option value="all" className="bg-[#3C4A5E] text-[#F5F5F5]">All Departments</option>
+                  <option value="all" className="bg-white text-gray-700">All Departments</option>
                   {departments.map(dept => (
-                    <option key={dept} value={dept} className="bg-[#3C4A5E] text-[#F5F5F5]">{dept}</option>
+                    <option key={dept} value={dept} className="bg-white text-gray-700">{dept}</option>
                   ))}
                 </select>
               </div>
 
               {/* Location Filter */}
               <div className="relative min-w-[200px]">
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#F5F5F5]/60 w-5 h-5" />
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <select
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 bg-[#3C4A5E] border-2 border-[#475466] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-[#F5F5F5] appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
+                  className="w-full pl-10 pr-8 py-3 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-gray-700 appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
                 >
-                  <option value="all" className="bg-[#3C4A5E] text-[#F5F5F5]">All Locations</option>
+                  <option value="all" className="bg-white text-gray-700">All Locations</option>
                   {locations.map(location => (
-                    <option key={location} value={location} className="bg-[#3C4A5E] text-[#F5F5F5]">{location}</option>
+                    <option key={location} value={location} className="bg-white text-gray-700">{location}</option>
                   ))}
                 </select>
               </div>
@@ -424,7 +424,7 @@ export default function Careers() {
       </section>
 
       {/* Life at IndoSup Section */}
-      <section className="py-5 md:py-8 bg-[#2A374B]">
+      <section className="py-5 md:py-8 bg-[#3b4f69]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
             className="text-center mb-12"

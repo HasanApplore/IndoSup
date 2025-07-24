@@ -238,7 +238,7 @@ export default function Contact() {
       )}
 
       {/* Main Content */}
-      <section className="py-5 md:py-8 bg-[#2A374B]">
+      <section className="py-5 md:py-8 bg-[#3b4f69]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           {/* Section Header */}

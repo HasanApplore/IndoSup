@@ -330,7 +330,7 @@ export default function Catalogues() {
       {/* Main Content */}
       <section 
         id="catalogues-content"
-        className={`py-8 md:py-12 bg-[#2a374b] transition-all duration-700 ease-out ${
+        className={`py-8 md:py-12 bg-[#3b4f69] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         } relative overflow-hidden`}
         style={{ 
