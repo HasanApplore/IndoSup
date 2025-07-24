@@ -101,7 +101,7 @@ export default function MediaCoverageSection() {
   }, [mediaItems.length]);
 
   return (
-    <section className="py-16 md:py-20 px-4 md:px-10 bg-[#3b4f69] relative overflow-hidden">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-10 bg-[#3b4f69] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -115,10 +115,10 @@ export default function MediaCoverageSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-[#FFC600] font-poppins mb-6 relative"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFC600] font-poppins mb-4 sm:mb-6 relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -133,13 +133,13 @@ export default function MediaCoverageSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
             />
           </motion.h2>
-          <p className="text-xl text-[#F5F5F5] max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-[#F5F5F5] max-w-3xl mx-auto px-2 sm:px-0">
             Read what top media outlets and publications write about our work and achievements
           </p>
         </motion.div>
 
         {/* Main Feature Card */}
-        <div className="relative mb-12">
+        <div className="relative mb-8 sm:mb-10 md:mb-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -150,37 +150,37 @@ export default function MediaCoverageSection() {
               className="relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-3xl blur opacity-20`}></div>
-              <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 md:p-12">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     {/* Source and Category */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-xl p-3`}>
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-lg sm:rounded-xl p-2 sm:p-3`}>
                         {mediaItems[activeIndex].icon}
                       </div>
                       <div>
-                        <h4 className="text-primary font-bold text-lg">{mediaItems[activeIndex].source}</h4>
-                        <p className="text-[#D1D5DB] text-sm flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
+                        <h4 className="text-primary font-bold text-base sm:text-lg">{mediaItems[activeIndex].source}</h4>
+                        <p className="text-[#D1D5DB] text-xs sm:text-sm flex items-center gap-2">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                           {mediaItems[activeIndex].date} • {mediaItems[activeIndex].category}
                         </p>
                       </div>
                     </div>
 
                     {/* Headline */}
-                    <h3 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-4 leading-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#F5F5F5] mb-3 sm:mb-4 leading-tight">
                       {mediaItems[activeIndex].headline}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#E5E7EB] text-lg mb-6 leading-relaxed">
+                    <p className="text-[#E5E7EB] text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
                       {mediaItems[activeIndex].description}
                     </p>
 
                     {/* Quote */}
-                    <div className="flex items-start gap-3 mb-8">
-                      <Quote className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <p className="text-primary font-semibold text-lg italic">
+                    <div className="flex items-start gap-2 sm:gap-3 mb-6 sm:mb-8">
+                      <Quote className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
+                      <p className="text-primary font-semibold text-sm sm:text-base md:text-lg italic">
                         "{mediaItems[activeIndex].quote}"
                       </p>
                     </div>
@@ -190,7 +190,7 @@ export default function MediaCoverageSection() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelectedArticle(mediaItems[activeIndex])}
-                      className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300`}
+                      className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base`}
                     >
                       Read Full Article
                       <ExternalLink className="w-4 h-4" />
@@ -198,8 +198,8 @@ export default function MediaCoverageSection() {
                   </div>
 
                   {/* Visual Element */}
-                  <div className="relative">
-                    <div className={`w-full h-64 bg-gradient-to-br ${mediaItems[activeIndex].gradient} rounded-2xl relative overflow-hidden`}>
+                  <div className="relative order-first md:order-last">
+                    <div className={`w-full h-48 sm:h-56 md:h-64 bg-gradient-to-br ${mediaItems[activeIndex].gradient} rounded-xl sm:rounded-2xl relative overflow-hidden`}>
                       <div className="absolute inset-0 bg-black/30"></div>
                       {/* Newspaper/Article Background */}
                       <div className="absolute inset-0 opacity-20">
@@ -220,7 +220,7 @@ export default function MediaCoverageSection() {
                         <img 
                           src={mediaItems[activeIndex].image} 
                           alt="Media Coverage" 
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                         />
                       </div>
                       {/* Floating elements */}
@@ -243,30 +243,34 @@ export default function MediaCoverageSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
         >
           {mediaItems.filter((_, index) => index !== activeIndex).slice(0, 3).map((item, index) => (
             <motion.div
               key={item.id}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 cursor-pointer group transition-all duration-300 hover:bg-white/20 hover:border-[#FFC600]/30"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-white/20 hover:border-[#FFC600]/30"
               onClick={() => setSelectedArticle(item)}
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                 <div className={`bg-gradient-to-r ${item.gradient} rounded-lg p-2`}>
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-primary font-semibold text-sm">{item.source}</p>
+                  <p className="text-primary font-semibold text-xs sm:text-sm">{item.source}</p>
                   <p className="text-[#D1D5DB] text-xs">{item.date}</p>
                 </div>
               </div>
-              <h4 className="text-[#F5F5F5] font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+              <h4 className="text-[#F5F5F5] font-bold mb-2 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base">
                 {item.headline}
               </h4>
-              <p className="text-[#D1D5DB] text-sm line-clamp-2">
-                {item.description}
-              </p>
+              <p className="text-[#D1D5DB] text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{item.description.substring(0, 60)}...</p>
+              <div className="flex items-center justify-between">
+                <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${item.gradient} text-white`}>
+                  {item.category}
+                </span>
+                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-primary group-hover:translate-x-1 transition-transform duration-300" />
+              </div>
             </motion.div>
           ))}
         </motion.div>
