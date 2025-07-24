@@ -109,7 +109,7 @@ export default function StreamlinedProcurement() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbf5ea]">
+    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
