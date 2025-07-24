@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 px-4 md:px-12 bg-[#35506b] relative overflow-hidden">
+    <section className="py-20 px-4 md:px-12 bg-[#3b4f69] relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div

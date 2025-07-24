@@ -101,7 +101,7 @@ export default function MediaCoverageSection() {
   }, [mediaItems.length]);
 
   return (
-    <section className="py-16 md:py-20 px-4 md:px-10 bg-[#35506b] relative overflow-hidden">
+    <section className="py-16 md:py-20 px-4 md:px-10 bg-[#3b4f69] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
