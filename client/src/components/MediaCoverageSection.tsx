@@ -126,7 +126,7 @@ export default function MediaCoverageSection() {
           >
             What Media Says About Us
             <motion.div
-              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-[#FFC600] rounded-full"
               initial={{ width: 0 }}
               whileInView={{ width: 128 }}
               viewport={{ once: true }}
