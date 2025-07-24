@@ -140,18 +140,18 @@ export default function TestimonialsSection() {
                   opacity: { duration: 0.5 },
                   scale: { duration: 0.5, type: "spring", stiffness: 300, damping: 30 }
                 }}
-                className="bg-white/15 backdrop-blur-lg shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-white/30 transition-all hover:shadow-2xl hover:shadow-[#FFC600]/20 hover:scale-[1.01] hover:bg-white/20 hover:border-[#FFC600]/40 duration-300"
+                className="bg-white shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-200 transition-all hover:shadow-2xl hover:shadow-[#FFC600]/20 hover:scale-[1.01] hover:border-[#FFC600]/40 duration-300"
               >
                 {/* Quote Icon - Centered at top */}
                 <div className="flex justify-center mb-6">
-                  <div className="bg-white/20 backdrop-blur-sm w-12 h-12 flex items-center justify-center rounded-full">
-                    <Quote className="w-6 h-6 text-white" />
+                  <div className="bg-[#FFC600] w-12 h-12 flex items-center justify-center rounded-full">
+                    <Quote className="w-6 h-6 text-[#1E293B]" />
                   </div>
                 </div>
 
                 <div className="text-center">
                   {/* Testimonial Quote */}
-                  <blockquote className="text-lg text-[#F5F5F5] text-center italic leading-relaxed mb-6">
+                  <blockquote className="text-lg text-[#374151] text-center italic leading-relaxed mb-6">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
@@ -164,13 +164,13 @@ export default function TestimonialsSection() {
                     
                     {/* Client Details */}
                     <div className="text-left">
-                      <h4 className="text-xl text-[#F5F5F5] font-semibold mb-1">
+                      <h4 className="text-xl text-[#1E293B] font-semibold mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-sm text-[#E5E7EB] mb-0.5">
+                      <p className="text-sm text-[#6B7280] mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-sm text-[#E5E7EB]">
+                      <p className="text-sm text-[#6B7280]">
                         {currentTestimonial.location}
                       </p>
                     </div>
