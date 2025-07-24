@@ -16,7 +16,7 @@ export default function Footer() {
   const productCategories = [
     { name: 'Steel Products', path: '/products/steel' },
     { name: 'Non-Steel Products', path: '/products/non-steel' },
-    { name: 'TMT Bars', path: '/products/steel#tmt-bars' },
+    { name: 'Solar Products', path: '/products/solar' },
     { name: 'Pipes & Fittings', path: '/products/steel#pipes-fittings' },
     { name: 'Electrical Components', path: '/products/non-steel#electrical-components' },
     { name: 'Fire Safety Equipment', path: '/products/non-steel#fire-fighting-systems' }
