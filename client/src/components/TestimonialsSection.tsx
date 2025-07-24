@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 px-4 md:px-12 bg-gradient-to-br from-[#FFFDEE] to-[#F4F4F4] relative overflow-hidden">
+    <section className="py-20 px-4 md:px-12 bg-[#35506b] relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <motion.div
@@ -111,11 +111,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-2 font-poppins">
+          <h2 className="text-4xl font-bold text-[#FFC600] mb-2 font-poppins">
             What Our Clients Say
           </h2>
-          <div className="h-1 w-12 bg-[#0F172D] mx-auto my-4"></div>
-          <p className="text-gray-500 text-lg max-w-3xl mx-auto mt-2 font-poppins">
+          <div className="h-1 w-12 bg-[#FFC600] mx-auto my-4"></div>
+          <p className="text-[#F5F5F5] text-lg max-w-3xl mx-auto mt-2 font-poppins">
             Trusted by industry leaders across India for construction procurement excellence
           </p>
         </motion.div>
@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
                   opacity: { duration: 0.5 },
                   scale: { duration: 0.5, type: "spring", stiffness: 300, damping: 30 }
                 }}
-                className="bg-[#3e4e66] shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-700 transition-all hover:shadow-2xl hover:scale-[1.01] duration-300"
+                className="bg-white/15 backdrop-blur-lg shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-white/30 transition-all hover:shadow-2xl hover:shadow-[#FFC600]/20 hover:scale-[1.01] hover:bg-white/20 hover:border-[#FFC600]/40 duration-300"
               >
                 {/* Quote Icon - Centered at top */}
                 <div className="flex justify-center mb-6">
@@ -151,26 +151,26 @@ export default function TestimonialsSection() {
 
                 <div className="text-center">
                   {/* Testimonial Quote */}
-                  <blockquote className="text-lg text-white text-center italic leading-relaxed mb-6">
+                  <blockquote className="text-lg text-[#F5F5F5] text-center italic leading-relaxed mb-6">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 
                   {/* Client Info */}
                   <div className="flex items-center justify-center gap-3">
                     {/* Client Profile Circle */}
-                    <div className="bg-white/20 backdrop-blur-sm text-white font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
+                    <div className="bg-[#FFC600] text-[#1E293B] font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
                       {currentTestimonial.avatar}
                     </div>
                     
                     {/* Client Details */}
                     <div className="text-left">
-                      <h4 className="text-xl text-white font-semibold mb-1">
+                      <h4 className="text-xl text-[#F5F5F5] font-semibold mb-1">
                         {currentTestimonial.name}
                       </h4>
-                      <p className="text-sm text-gray-300 mb-0.5">
+                      <p className="text-sm text-[#E5E7EB] mb-0.5">
                         {currentTestimonial.role} at {currentTestimonial.company}
                       </p>
-                      <p className="text-sm text-gray-300">
+                      <p className="text-sm text-[#E5E7EB]">
                         {currentTestimonial.location}
                       </p>
                     </div>
@@ -189,8 +189,8 @@ export default function TestimonialsSection() {
               onClick={() => goToTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
                 index === currentIndex 
-                  ? 'bg-[#0F172D]' 
-                  : 'bg-[#D1D5DB] hover:bg-gray-400'
+                  ? 'bg-[#FFC600]' 
+                  : 'bg-white/40 hover:bg-white/60'
               }`}
             />
           ))}
