@@ -111,7 +111,7 @@ export default function Navbar() {
                 isActivePath('/about') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
-            {/* New Initiatives Dropdown */}
+            {/* Our Initiatives Dropdown */}
             <div className="relative" ref={initiativesDropdownRef}>
               <button
                 onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
@@ -120,7 +120,7 @@ export default function Navbar() {
                   isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
-                New Initiatives
+                Our Initiatives
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   isActivePath('/new-initiatives') ? 'w-full' : 'w-0 group-hover:w-full'
@@ -149,19 +149,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <Link 
-              to="/streamlined-procurement" 
-              className={`transition-colors duration-200 relative group font-medium text-base ${
-                isActivePath('/streamlined-procurement') ? 'text-primary' : 'text-white hover:text-primary'
-              }`}
-              onClick={handleLinkClick}
-            >
-              Streamlined Procurement
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                isActivePath('/streamlined-procurement') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
-            </Link>
-
             
             {/* Our Business Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -236,18 +223,6 @@ export default function Navbar() {
                 isActivePath('/careers') ? 'w-full' : 'w-0 group-hover:w-full'
               }`}></span>
             </Link>
-            <Link 
-              to="/catalogues" 
-              className={`transition-colors duration-200 relative group font-medium text-base ${
-                isActivePath('/catalogues') ? 'text-primary' : 'text-white hover:text-primary'
-              }`}
-              onClick={handleLinkClick}
-            >
-              Catalogues
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                isActivePath('/catalogues') ? 'w-full' : 'w-0 group-hover:w-full'
-              }`}></span>
-            </Link>
           </div>
 
           {/* CTA Button */}
@@ -283,7 +258,7 @@ export default function Navbar() {
               >
                 About Us
               </Link>
-              {/* Mobile New Initiatives Section */}
+              {/* Mobile Our Initiatives Section */}
               <div>
                 <button
                   onClick={toggleInitiativesDropdown}
@@ -291,7 +266,7 @@ export default function Navbar() {
                     isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
                   }`}
                 >
-                  New Initiatives
+                  Our Initiatives
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isInitiativesDropdownOpen && (
@@ -311,16 +286,6 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-              <Link 
-                to="/streamlined-procurement" 
-                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                  isActivePath('/streamlined-procurement') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
-                }`}
-                onClick={handleLinkClick}
-              >
-                Streamlined Procurement
-              </Link>
-
               
               {/* Mobile Our Business Section */}
               <div>
@@ -370,15 +335,6 @@ export default function Navbar() {
                 onClick={handleLinkClick}
               >
                 Careers
-              </Link>
-              <Link 
-                to="/catalogues" 
-                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                  isActivePath('/catalogues') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
-                }`}
-                onClick={handleLinkClick}
-              >
-                Catalogues
               </Link>
               
               {/* Mobile CTA Button */}
