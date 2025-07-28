@@ -166,10 +166,15 @@ export default function Navbar() {
               }`}></span>
             </Link>
             {/* Our Initiatives Dropdown */}
-            <div className="relative" ref={initiativesDropdownRef}>
-              <button
-                onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
-                onClick={toggleInitiativesDropdown}
+            <div 
+              className="relative" 
+              ref={initiativesDropdownRef}
+              onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
+              onMouseLeave={() => setIsInitiativesDropdownOpen(false)}
+            >
+              <Link
+                to="/new-initiatives"
+                onClick={handleLinkClick}
                 className={`flex items-center transition-colors duration-200 relative group font-medium text-base ${
                   isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
@@ -179,13 +184,11 @@ export default function Navbar() {
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   isActivePath('/new-initiatives') ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
-              </button>
+              </Link>
               
               {isInitiativesDropdownOpen && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
-                  onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
-                  onMouseLeave={() => setIsInitiativesDropdownOpen(false)}
                 >
                   <button 
                     onClick={() => navigateToInitiativeSection('global-assist-section')}
@@ -363,15 +366,23 @@ export default function Navbar() {
               </Link>
               {/* Mobile Our Initiatives Section */}
               <div>
-                <button
-                  onClick={toggleInitiativesDropdown}
-                  className={`flex items-center justify-between w-full px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                    isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
-                  }`}
-                >
-                  Our Initiatives
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                <div className="flex items-center">
+                  <Link
+                    to="/new-initiatives"
+                    onClick={handleLinkClick}
+                    className={`flex-1 px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                      isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                    }`}
+                  >
+                    Our Initiatives
+                  </Link>
+                  <button
+                    onClick={toggleInitiativesDropdown}
+                    className="px-2 py-3 text-white hover:text-primary transition-colors duration-200"
+                  >
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
                 {isInitiativesDropdownOpen && (
                   <div className="pl-3 mt-1 space-y-1">
                     <button 
