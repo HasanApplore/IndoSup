@@ -10,10 +10,10 @@ export default function Navbar() {
   const [isInitiativesDropdownOpen, setIsInitiativesDropdownOpen] = useState(false);
   const [isSteelDropdownOpen, setIsSteelDropdownOpen] = useState(false);
   const [isNonSteelDropdownOpen, setIsNonSteelDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const initiativesDropdownRef = useRef(null);
-  const steelDropdownRef = useRef(null);
-  const nonSteelDropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const initiativesDropdownRef = useRef<HTMLDivElement>(null);
+  const steelDropdownRef = useRef<HTMLDivElement>(null);
+  const nonSteelDropdownRef = useRef<HTMLDivElement>(null);
   const [location] = useLocation();
 
   // Steel subcategories
