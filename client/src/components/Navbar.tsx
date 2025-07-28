@@ -10,6 +10,11 @@ export default function Navbar() {
   const [isInitiativesDropdownOpen, setIsInitiativesDropdownOpen] = useState(false);
   const [isSteelDropdownOpen, setIsSteelDropdownOpen] = useState(false);
   const [isNonSteelDropdownOpen, setIsNonSteelDropdownOpen] = useState(false);
+  
+  // Timeout refs for delayed dropdown closing
+  const businessTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const steelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const nonSteelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const initiativesDropdownRef = useRef<HTMLDivElement>(null);
   const steelDropdownRef = useRef<HTMLDivElement>(null);
@@ -48,6 +53,56 @@ export default function Navbar() {
     setIsInitiativesDropdownOpen(!isInitiativesDropdownOpen);
   };
 
+  // Delayed dropdown handlers
+  const handleBusinessMouseEnter = () => {
+    if (businessTimeoutRef.current) {
+      clearTimeout(businessTimeoutRef.current);
+    }
+    setIsBusinessDropdownOpen(true);
+  };
+
+  const handleBusinessMouseLeave = () => {
+    businessTimeoutRef.current = setTimeout(() => {
+      setIsBusinessDropdownOpen(false);
+      setIsSteelDropdownOpen(false);
+      setIsNonSteelDropdownOpen(false);
+    }, 300);
+  };
+
+  const handleSteelMouseEnter = () => {
+    if (steelTimeoutRef.current) {
+      clearTimeout(steelTimeoutRef.current);
+    }
+    if (businessTimeoutRef.current) {
+      clearTimeout(businessTimeoutRef.current);
+    }
+    setIsSteelDropdownOpen(true);
+    setIsNonSteelDropdownOpen(false);
+  };
+
+  const handleSteelMouseLeave = () => {
+    steelTimeoutRef.current = setTimeout(() => {
+      setIsSteelDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleNonSteelMouseEnter = () => {
+    if (nonSteelTimeoutRef.current) {
+      clearTimeout(nonSteelTimeoutRef.current);
+    }
+    if (businessTimeoutRef.current) {
+      clearTimeout(businessTimeoutRef.current);
+    }
+    setIsNonSteelDropdownOpen(true);
+    setIsSteelDropdownOpen(false);
+  };
+
+  const handleNonSteelMouseLeave = () => {
+    nonSteelTimeoutRef.current = setTimeout(() => {
+      setIsNonSteelDropdownOpen(false);
+    }, 200);
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -68,6 +123,10 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      // Clear all timeouts on cleanup
+      if (businessTimeoutRef.current) clearTimeout(businessTimeoutRef.current);
+      if (steelTimeoutRef.current) clearTimeout(steelTimeoutRef.current);
+      if (nonSteelTimeoutRef.current) clearTimeout(nonSteelTimeoutRef.current);
     };
   }, []);
 
@@ -211,8 +270,8 @@ export default function Navbar() {
             <div 
               className="relative" 
               ref={dropdownRef}
-              onMouseEnter={() => setIsBusinessDropdownOpen(true)}
-              onMouseLeave={() => setIsBusinessDropdownOpen(false)}
+              onMouseEnter={handleBusinessMouseEnter}
+              onMouseLeave={handleBusinessMouseLeave}
             >
               <Link
                 to="/products/steel"
@@ -236,8 +295,8 @@ export default function Navbar() {
                   <div 
                     className="relative"
                     ref={steelDropdownRef}
-                    onMouseEnter={() => setIsSteelDropdownOpen(true)}
-                    onMouseLeave={() => setIsSteelDropdownOpen(false)}
+                    onMouseEnter={handleSteelMouseEnter}
+                    onMouseLeave={handleSteelMouseLeave}
                   >
                     <Link 
                       to="/products/steel" 
@@ -249,7 +308,11 @@ export default function Navbar() {
                     </Link>
                     
                     {isSteelDropdownOpen && (
-                      <div className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
+                      <div 
+                        className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                        onMouseEnter={handleSteelMouseEnter}
+                        onMouseLeave={handleSteelMouseLeave}
+                      >
                         {steelSubcategories.map((subcategory, index) => (
                           <button
                             key={index}
@@ -269,8 +332,8 @@ export default function Navbar() {
                   <div 
                     className="relative"
                     ref={nonSteelDropdownRef}
-                    onMouseEnter={() => setIsNonSteelDropdownOpen(true)}
-                    onMouseLeave={() => setIsNonSteelDropdownOpen(false)}
+                    onMouseEnter={handleNonSteelMouseEnter}
+                    onMouseLeave={handleNonSteelMouseLeave}
                   >
                     <Link 
                       to="/products/non-steel" 
@@ -282,7 +345,11 @@ export default function Navbar() {
                     </Link>
                     
                     {isNonSteelDropdownOpen && (
-                      <div className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
+                      <div 
+                        className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                        onMouseEnter={handleNonSteelMouseEnter}
+                        onMouseLeave={handleNonSteelMouseLeave}
+                      >
                         {nonSteelSubcategories.map((subcategory, index) => (
                           <button
                             key={index}
