@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
           {/* Company Info & Quick Links - Positioned at far left */}
           <div className="flex-shrink-0 w-full lg:w-auto pl-4 sm:pl-6 lg:pl-8">
-            <div className="transform hover:scale-105 transition-transform duration-300 mb-4 sm:mb-6">
+            <div className="transform hover:scale-105 transition-transform duration-300 mb-2">
               <Link to="/" className="block">
                 <img 
                   src={logoImage} 
@@ -51,7 +51,7 @@ export default function Footer() {
               </Link>
             </div>
             
-            <div className="flex-1">
+            <div className="flex-1 mt-4">
               <h4 className="text-sm sm:text-base font-bold mb-3 sm:mb-4 text-white flex items-center">
                 <div className="w-1 h-4 sm:h-6 bg-primary mr-2 sm:mr-3 rounded-full"></div>
                 Quick Links
