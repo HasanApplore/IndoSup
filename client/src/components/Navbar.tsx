@@ -214,23 +214,23 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/80 backdrop-blur-md shadow-lg">
       <div className="container mx-auto px-2 sm:px-4 lg:px-6 max-w-7xl">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <div className="flex items-center flex-shrink-0 mr-8 lg:mr-12">
-            <Link to="/">
+          <div className="flex items-center flex-shrink-0 mr-6 lg:mr-8">
+            <Link to="/" className="flex items-center">
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
-                className="h-12 sm:h-14 w-auto cursor-pointer"
+                className="h-10 sm:h-12 lg:h-14 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center space-x-8 xl:space-x-10 flex-1 justify-center">
             <Link 
               to="/about" 
-              className={`transition-colors duration-200 relative group font-medium text-base ${
+              className={`transition-colors duration-200 relative group font-medium text-base py-2 ${
                 isActivePath('/about') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -250,12 +250,12 @@ export default function Navbar() {
               <Link
                 to="/new-initiatives"
                 onClick={handleLinkClick}
-                className={`flex items-center transition-colors duration-200 relative group font-medium text-base ${
+                className={`flex items-center transition-colors duration-200 relative group font-medium text-base py-2 ${
                   isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
                 Our Initiatives
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   isActivePath('/new-initiatives') ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
@@ -294,12 +294,12 @@ export default function Navbar() {
               <Link
                 to="/products/steel"
                 onClick={handleLinkClick}
-                className={`flex items-center transition-colors duration-200 relative group font-medium text-base ${
+                className={`flex items-center transition-colors duration-200 relative group font-medium text-base py-2 ${
                   isBusinessActive() ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
                 Our Businesses
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   isBusinessActive() ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
@@ -395,7 +395,7 @@ export default function Navbar() {
 
             <Link 
               to="/media" 
-              className={`transition-colors duration-200 relative group font-medium text-base ${
+              className={`transition-colors duration-200 relative group font-medium text-base py-2 ${
                 isActivePath('/media') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -407,7 +407,7 @@ export default function Navbar() {
             </Link>
             <Link 
               to="/careers" 
-              className={`transition-colors duration-200 relative group font-medium text-base ${
+              className={`transition-colors duration-200 relative group font-medium text-base py-2 ${
                 isActivePath('/careers') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -420,19 +420,20 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:flex items-center flex-shrink-0">
+          <div className="hidden lg:flex items-center flex-shrink-0 ml-6 lg:ml-8">
             <Link to="/contact">
-              <Button className="bg-primary text-accent font-semibold px-6 xl:px-8 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-base">
+              <Button className="bg-primary text-accent font-semibold px-6 xl:px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-primary whitespace-nowrap text-base font-medium">
                 Contact Us
               </Button>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center ml-4">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-primary transition-colors duration-200"
+              className="text-white hover:text-primary transition-colors duration-200 p-2 rounded-md hover:bg-primary/10"
+              aria-label="Toggle navigation menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -442,11 +443,11 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-accent/90 border-t border-primary/20">
+            <div className="px-4 pt-4 pb-4 space-y-2 bg-accent/90 border-t border-primary/20">
               <Link 
                 to="/about" 
-                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                  isActivePath('/about') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                  isActivePath('/about') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleLinkClick}
               >
@@ -458,15 +459,15 @@ export default function Navbar() {
                   <Link
                     to="/new-initiatives"
                     onClick={handleLinkClick}
-                    className={`flex-1 px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                      isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                    className={`flex-1 px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                      isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                     }`}
                   >
                     Our Initiatives
                   </Link>
                   <button
                     onClick={toggleInitiativesDropdown}
-                    className="px-2 py-3 text-white hover:text-primary transition-colors duration-200"
+                    className="px-3 py-3 text-white hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
                   >
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
@@ -495,15 +496,15 @@ export default function Navbar() {
                   <Link
                     to="/products/steel"
                     onClick={handleLinkClick}
-                    className={`flex-1 px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                      isBusinessActive() ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                    className={`flex-1 px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                      isBusinessActive() ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                     }`}
                   >
                     Our Businesses
                   </Link>
                   <button
                     onClick={toggleBusinessDropdown}
-                    className="px-2 py-3 text-white hover:text-primary transition-colors duration-200"
+                    className="px-3 py-3 text-white hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
                   >
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
@@ -530,8 +531,8 @@ export default function Navbar() {
 
               <Link 
                 to="/media" 
-                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                  isActivePath('/media') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                  isActivePath('/media') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleLinkClick}
               >
@@ -539,8 +540,8 @@ export default function Navbar() {
               </Link>
               <Link 
                 to="/careers" 
-                className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                  isActivePath('/careers') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                  isActivePath('/careers') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleLinkClick}
               >
@@ -548,10 +549,10 @@ export default function Navbar() {
               </Link>
               
               {/* Mobile CTA Button */}
-              <div className="px-3 py-3 border-t border-primary/20 mt-2">
+              <div className="px-4 py-4 border-t border-primary/20 mt-3">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary text-accent font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary">
-                    <span>Contact Us</span>
+                  <Button className="w-full bg-primary text-accent font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-primary text-base">
+                    Contact Us
                   </Button>
                 </Link>
               </div>
