@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link, useLocation } from 'wouter';
+import { Link, useLocation, useRouter } from 'wouter';
 import logoImage from '@/assets/indosup-logo-new.png';
 
 export default function Navbar() {
@@ -21,6 +21,8 @@ export default function Navbar() {
   const steelDropdownRef = useRef<HTMLDivElement>(null);
   const nonSteelDropdownRef = useRef<HTMLDivElement>(null);
   const [location] = useLocation();
+  const router = useRouter();
+  const navigate = router.navigate;
 
   // Steel subcategories
   const steelSubcategories = [
@@ -197,6 +199,27 @@ export default function Navbar() {
       window.location.href = `${path}#${sectionId}`;
     }
     handleLinkClick();
+  };
+
+  // Navigate to specific business sections (mobile)
+  const navigateToBusinessSection = (sectionId: string) => {
+    if (sectionId === 'solar-section') {
+      // For solar, navigate to steel products page where solar section should be
+      navigate('/products/steel');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+    setIsMenuOpen(false);
+    setIsBusinessDropdownOpen(false);
   };
 
   // Helper function to check if a link is active
@@ -443,7 +466,7 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-3 sm:pb-4 space-y-1.5 sm:space-y-2 bg-accent/90 border-t border-primary/20">
+            <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-3 sm:pb-4 space-y-1.5 sm:space-y-2 bg-accent/80 border-t border-primary/20">
               <Link 
                 to="/about" 
                 className={`block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
@@ -525,6 +548,12 @@ export default function Navbar() {
                     >
                       Non-Steel Products
                     </Link>
+                    <button 
+                      onClick={() => navigateToBusinessSection('solar-section')}
+                      className="block w-full text-left px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
+                    >
+                      Solar Products
+                    </button>
                   </div>
                 )}
               </div>
