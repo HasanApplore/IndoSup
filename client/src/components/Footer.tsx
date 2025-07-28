@@ -41,17 +41,17 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
           {/* Company Info & Quick Links - Positioned at far left */}
           <div className="flex-shrink-0 w-full lg:w-auto pl-4 sm:pl-6 lg:pl-8">
-            <div className="transform hover:scale-105 transition-transform duration-300 mb-2">
+            <div className="transform hover:scale-105 transition-transform duration-300">
               <Link to="/" className="block">
                 <img 
                   src={logoImage} 
                   alt="IndoSup Logo" 
-                  className="h-12 sm:h-14 lg:h-16 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+                  className="h-8 sm:h-10 lg:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                 />
               </Link>
             </div>
             
-            <div className="flex-1 mt-4">
+            <div className="flex-1 mt-6">
               <h4 className="text-sm sm:text-base font-bold mb-3 sm:mb-4 text-white flex items-center">
                 <div className="w-1 h-4 sm:h-6 bg-primary mr-2 sm:mr-3 rounded-full"></div>
                 Quick Links
