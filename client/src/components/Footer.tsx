@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 sm:py-12 lg:py-16 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Company Info & Quick Links */}
-          <div className="lg:col-span-3 h-full flex flex-col">
+          <div className="lg:col-span-3 h-full flex flex-col ml-2">
             <div className="transform hover:scale-105 transition-transform duration-300 mb-4 sm:mb-6">
               <Link to="/" className="block">
                 <img 
