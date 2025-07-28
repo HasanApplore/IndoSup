@@ -75,6 +75,7 @@ export default {
         poppins: ['Poppins', 'system-ui', '-apple-system', 'sans-serif'],
         inter: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         'plus-jakarta': ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        cardo: ['Cardo', 'Georgia', 'serif'],
       },
       screens: {
         'xs': '475px',
