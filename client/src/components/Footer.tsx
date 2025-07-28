@@ -74,9 +74,9 @@ export default function Footer() {
 
           {/* Rest of content - Product Categories and Contact Info */}
           <div className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               {/* Product Categories */}
-              <div className="h-full flex flex-col">
+              <div className="h-full flex flex-col lg:col-span-1">
                 <div className="flex-1">
                   <h4 className="text-base font-bold mb-4 text-white flex items-center">
                     <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
@@ -99,12 +99,12 @@ export default function Footer() {
               </div>
 
               {/* Contact Info & Social Media */}
-              <div className="h-full flex flex-col">
+              <div className="h-full flex flex-col lg:col-span-2">
                 <div className="flex-1">
                   {/* Find Us Section with Map */}
-                  <div className="flex flex-col xl:flex-row gap-8 h-full">
+                  <div className="flex flex-col lg:flex-row gap-8 h-full">
                     {/* Contact Information */}
-                    <div className="flex-1 flex flex-col">
+                    <div className="lg:w-1/2 flex flex-col">
                       <h4 className="text-base font-bold mb-4 text-white flex items-center">
                         <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
                         Find Us
@@ -152,13 +152,13 @@ export default function Footer() {
                     </div>
                     
                     {/* Google Maps Embed */}
-                    <div className="flex-1 xl:max-w-md">
-                      <div className="rounded-xl overflow-hidden shadow-xl border border-gray-600">
+                    <div className="lg:w-1/2">
+                      <div className="rounded-xl overflow-hidden shadow-xl border border-gray-600 h-full min-h-[280px]">
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a9e9a4c9a7%3A0x1c2b5a3b4c5d6e7f!2sH8M8%2BM8%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                           width="100%"
-                          height="240"
-                          style={{ border: 0 }}
+                          height="100%"
+                          style={{ border: 0, minHeight: '280px' }}
                           allowFullScreen={false}
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
