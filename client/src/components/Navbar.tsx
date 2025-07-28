@@ -208,10 +208,15 @@ export default function Navbar() {
             </div>
             
             {/* Our Business Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onMouseEnter={() => setIsBusinessDropdownOpen(true)}
-                onClick={toggleBusinessDropdown}
+            <div 
+              className="relative" 
+              ref={dropdownRef}
+              onMouseEnter={() => setIsBusinessDropdownOpen(true)}
+              onMouseLeave={() => setIsBusinessDropdownOpen(false)}
+            >
+              <Link
+                to="/products/steel"
+                onClick={handleLinkClick}
                 className={`flex items-center transition-colors duration-200 relative group font-medium text-base ${
                   isBusinessActive() ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
@@ -221,13 +226,11 @@ export default function Navbar() {
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   isBusinessActive() ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
-              </button>
+              </Link>
               
               {isBusinessDropdownOpen && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
-                  onMouseEnter={() => setIsBusinessDropdownOpen(true)}
-                  onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                 >
                   {/* Steel Products with Nested Dropdown */}
                   <div 
@@ -403,15 +406,23 @@ export default function Navbar() {
               
               {/* Mobile Our Business Section */}
               <div>
-                <button
-                  onClick={toggleBusinessDropdown}
-                  className={`flex items-center justify-between w-full px-3 py-3 rounded-md transition-all duration-200 font-medium ${
-                    isBusinessActive() ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
-                  }`}
-                >
-                  Our Businesses
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                <div className="flex items-center">
+                  <Link
+                    to="/products/steel"
+                    onClick={handleLinkClick}
+                    className={`flex-1 px-3 py-3 rounded-md transition-all duration-200 font-medium ${
+                      isBusinessActive() ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-transparent'
+                    }`}
+                  >
+                    Our Businesses
+                  </Link>
+                  <button
+                    onClick={toggleBusinessDropdown}
+                    className="px-2 py-3 text-white hover:text-primary transition-colors duration-200"
+                  >
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
                 {isBusinessDropdownOpen && (
                   <div className="pl-3 mt-1 space-y-1">
                     <Link 
