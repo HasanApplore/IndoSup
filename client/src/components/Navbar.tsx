@@ -20,9 +20,7 @@ export default function Navbar() {
   const initiativesDropdownRef = useRef<HTMLDivElement>(null);
   const steelDropdownRef = useRef<HTMLDivElement>(null);
   const nonSteelDropdownRef = useRef<HTMLDivElement>(null);
-  const [location] = useLocation();
-  const router = useRouter();
-  const navigate = router.navigate;
+  const [location, navigate] = useLocation();
 
   // Steel subcategories
   const steelSubcategories = [
