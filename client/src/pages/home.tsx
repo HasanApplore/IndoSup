@@ -8,7 +8,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-br from-[#fbf5e8] to-white"> {/* Overall background theme gradient to white */}
+    <div className="bg-gradient-to-br from-[#ede6d3] to-white"> {/* Overall background theme gradient to white */}
       <HeroSection />
       <WhoWeAreSection />
       <OurImpactSection />
