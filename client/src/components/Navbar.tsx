@@ -212,7 +212,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/50 backdrop-blur-sm shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/80 backdrop-blur-md shadow-lg">
       <div className="container mx-auto px-2 sm:px-4 lg:px-6 max-w-7xl">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
@@ -263,7 +263,7 @@ export default function Navbar() {
               
               {isInitiativesDropdownOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                  className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/80 backdrop-blur-md rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
                   onMouseEnter={handleInitiativesMouseEnter}
                   onMouseLeave={handleInitiativesMouseLeave}
                 >
@@ -307,7 +307,7 @@ export default function Navbar() {
               
               {isBusinessDropdownOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                  className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/80 backdrop-blur-md rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
                 >
                   {/* Steel Products with Nested Dropdown */}
                   <div 
@@ -327,7 +327,7 @@ export default function Navbar() {
                     
                     {isSteelDropdownOpen && (
                       <div 
-                        className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                        className="absolute top-0 left-full ml-1 w-48 bg-accent/80 backdrop-blur-md rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
                         onMouseEnter={handleSteelMouseEnter}
                         onMouseLeave={handleSteelMouseLeave}
                       >
@@ -364,7 +364,7 @@ export default function Navbar() {
                     
                     {isNonSteelDropdownOpen && (
                       <div 
-                        className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                        className="absolute top-0 left-full ml-1 w-48 bg-accent/80 backdrop-blur-md rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
                         onMouseEnter={handleNonSteelMouseEnter}
                         onMouseLeave={handleNonSteelMouseLeave}
                       >
@@ -442,7 +442,7 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-accent border-t border-primary/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-accent/90 border-t border-primary/20">
               <Link 
                 to="/about" 
                 className={`block px-3 py-3 rounded-md transition-all duration-200 font-medium ${
