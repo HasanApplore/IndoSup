@@ -18,22 +18,22 @@ export default function Navbar() {
 
   // Steel subcategories
   const steelSubcategories = [
-    { name: "Structural Steel", path: "/products/steel#structural-steel" },
-    { name: "Pipes & Fittings", path: "/products/steel#pipes-fittings" },
-    { name: "Roofing Materials", path: "/products/steel#roofing-materials" },
-    { name: "Doors & Windows", path: "/products/steel#doors-windows" },
-    { name: "Reinforcement Products", path: "/products/steel#tmt-bars" },
-    { name: "Hardware & Tools", path: "/products/steel#hardware-tools" }
+    { name: "Structural Steel", path: "/products/steel", section: "structural-steel" },
+    { name: "Pipes & Fittings", path: "/products/steel", section: "pipes-fittings" },
+    { name: "Roofing Materials", path: "/products/steel", section: "roofing-materials" },
+    { name: "Doors & Windows", path: "/products/steel", section: "doors-windows" },
+    { name: "Reinforcement Products", path: "/products/steel", section: "tmt-bars" },
+    { name: "Hardware & Tools", path: "/products/steel", section: "hardware-tools" }
   ];
 
   // Non-Steel subcategories
   const nonSteelSubcategories = [
-    { name: "Plumbing", path: "/products/non-steel#plumbing" },
-    { name: "Electrical", path: "/products/non-steel#electrical-components" },
-    { name: "Fire Fighting", path: "/products/non-steel#fire-fighting-systems" },
-    { name: "Warehouse Infra", path: "/products/non-steel#warehouse-infra" },
-    { name: "Site Utilities", path: "/products/non-steel#site-utilities" },
-    { name: "Safety Equipment", path: "/products/non-steel#safety-equipment" }
+    { name: "Plumbing", path: "/products/non-steel", section: "plumbing" },
+    { name: "Electrical", path: "/products/non-steel", section: "electrical-components" },
+    { name: "Fire Fighting", path: "/products/non-steel", section: "fire-fighting-systems" },
+    { name: "Warehouse Infra", path: "/products/non-steel", section: "warehouse-infra" },
+    { name: "Site Utilities", path: "/products/non-steel", section: "site-utilities" },
+    { name: "Safety Equipment", path: "/products/non-steel", section: "safety-equipment" }
   ];
 
   const toggleMenu = () => {
@@ -98,6 +98,28 @@ export default function Navbar() {
     } else {
       // Navigate to page then scroll to section
       window.location.href = `/new-initiatives#${sectionId}`;
+    }
+    handleLinkClick();
+  };
+
+  // Navigate to specific product sections
+  const navigateToProductSection = (path: string, sectionId: string) => {
+    if (location === path) {
+      // If already on the page, scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navbarHeight = 80;
+          const elementPosition = element.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      // Navigate to page then scroll to section
+      window.location.href = `${path}#${sectionId}`;
     }
     handleLinkClick();
   };
@@ -223,14 +245,13 @@ export default function Navbar() {
                     {isSteelDropdownOpen && (
                       <div className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
                         {steelSubcategories.map((subcategory, index) => (
-                          <Link
+                          <button
                             key={index}
-                            to={subcategory.path}
-                            className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
-                            onClick={handleLinkClick}
+                            onClick={() => navigateToProductSection(subcategory.path, subcategory.section)}
+                            className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
                           >
                             {subcategory.name}
-                          </Link>
+                          </button>
                         ))}
                       </div>
                     )}
@@ -257,14 +278,13 @@ export default function Navbar() {
                     {isNonSteelDropdownOpen && (
                       <div className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
                         {nonSteelSubcategories.map((subcategory, index) => (
-                          <Link
+                          <button
                             key={index}
-                            to={subcategory.path}
-                            className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
-                            onClick={handleLinkClick}
+                            onClick={() => navigateToProductSection(subcategory.path, subcategory.section)}
+                            className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
                           >
                             {subcategory.name}
-                          </Link>
+                          </button>
                         ))}
                       </div>
                     )}
