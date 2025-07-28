@@ -213,15 +213,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/80 backdrop-blur-md shadow-lg">
-      <div className="container mx-auto px-2 sm:px-4 lg:px-6 max-w-7xl">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-6 max-w-7xl">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-18">
           {/* Logo */}
-          <div className="flex items-center flex-shrink-0 mr-6 lg:mr-8">
+          <div className="flex items-center flex-shrink-0 mr-3 sm:mr-6 lg:mr-8">
             <Link to="/" className="flex items-center">
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
-                className="h-10 sm:h-12 lg:h-14 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
+                className="h-8 xs:h-9 sm:h-10 md:h-12 lg:h-14 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
               />
             </Link>
           </div>
@@ -429,13 +429,13 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center ml-4">
+          <div className="lg:hidden flex items-center ml-2 sm:ml-4">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-primary transition-colors duration-200 p-2 rounded-md hover:bg-primary/10"
+              className="text-white hover:text-primary transition-colors duration-200 p-1.5 sm:p-2 rounded-md hover:bg-primary/10 active:bg-primary/20"
               aria-label="Toggle navigation menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
             </button>
           </div>
         </div>
@@ -443,10 +443,10 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-4 pt-4 pb-4 space-y-2 bg-accent/90 border-t border-primary/20">
+            <div className="px-3 sm:px-4 pt-3 sm:pt-4 pb-3 sm:pb-4 space-y-1.5 sm:space-y-2 bg-accent/90 border-t border-primary/20">
               <Link 
                 to="/about" 
-                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                className={`block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                   isActivePath('/about') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleLinkClick}
@@ -459,7 +459,7 @@ export default function Navbar() {
                   <Link
                     to="/new-initiatives"
                     onClick={handleLinkClick}
-                    className={`flex-1 px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                    className={`flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                       isActivePath('/new-initiatives') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                     }`}
                   >
@@ -467,22 +467,22 @@ export default function Navbar() {
                   </Link>
                   <button
                     onClick={toggleInitiativesDropdown}
-                    className="px-3 py-3 text-white hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
+                    className="px-2 sm:px-3 py-2.5 sm:py-3 text-white hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
                   >
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-200 ${isInitiativesDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                 </div>
                 {isInitiativesDropdownOpen && (
-                  <div className="pl-3 mt-1 space-y-1">
+                  <div className="pl-2 sm:pl-3 mt-1 space-y-1">
                     <button 
                       onClick={() => navigateToInitiativeSection('global-private-section')}
-                      className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
+                      className="block w-full text-left px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
                     >
                       Global Private Limited
                     </button>
                     <button 
                       onClick={() => navigateToInitiativeSection('global-assist-section')}
-                      className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
+                      className="block w-full text-left px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
                     >
                       Global Assist Limited
                     </button>
@@ -496,7 +496,7 @@ export default function Navbar() {
                   <Link
                     to="/products/steel"
                     onClick={handleLinkClick}
-                    className={`flex-1 px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                    className={`flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                       isBusinessActive() ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                     }`}
                   >
@@ -504,26 +504,26 @@ export default function Navbar() {
                   </Link>
                   <button
                     onClick={toggleBusinessDropdown}
-                    className="px-3 py-3 text-white hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
+                    className="px-2 sm:px-3 py-2.5 sm:py-3 text-white hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5"
                   >
-                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-200 ${isBusinessDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                 </div>
                 {isBusinessDropdownOpen && (
-                  <div className="pl-3 mt-1 space-y-1">
+                  <div className="pl-2 sm:pl-3 mt-1 space-y-1">
                     <Link 
                       to="/products/steel" 
-                      className="block px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
+                      className="block px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
                       onClick={handleLinkClick}
                     >
-                      Steel
+                      Steel Products
                     </Link>
                     <Link 
                       to="/products/non-steel" 
-                      className="block px-4 py-2 text-white hover:text-primary hover:bg-transparent rounded-md transition-all duration-200 ml-3"
+                      className="block px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
                       onClick={handleLinkClick}
                     >
-                      Non-Steel
+                      Non-Steel Products
                     </Link>
                   </div>
                 )}
@@ -531,7 +531,7 @@ export default function Navbar() {
 
               <Link 
                 to="/media" 
-                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                className={`block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                   isActivePath('/media') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleLinkClick}
@@ -540,7 +540,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 to="/careers" 
-                className={`block px-4 py-3 rounded-lg transition-all duration-200 font-medium text-base ${
+                className={`block px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                   isActivePath('/careers') ? 'text-primary bg-primary/10' : 'text-white hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleLinkClick}
@@ -549,9 +549,9 @@ export default function Navbar() {
               </Link>
               
               {/* Mobile CTA Button */}
-              <div className="px-4 py-4 border-t border-primary/20 mt-3">
+              <div className="px-3 sm:px-4 py-3 sm:py-4 border-t border-primary/20 mt-2 sm:mt-3">
                 <Link to="/contact">
-                  <Button className="w-full bg-primary text-accent font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-primary text-base">
+                  <Button className="w-full bg-primary text-accent font-semibold py-2.5 sm:py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-primary text-sm sm:text-base">
                     Contact Us
                   </Button>
                 </Link>
