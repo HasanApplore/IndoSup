@@ -39,8 +39,18 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 sm:py-12 lg:py-16 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
-          {/* Quick Links - Moved to left */}
-          <div className="lg:col-span-2 h-full flex flex-col">
+          {/* Company Info & Quick Links */}
+          <div className="lg:col-span-3 h-full flex flex-col">
+            <div className="transform hover:scale-105 transition-transform duration-300 mb-4 sm:mb-6">
+              <Link to="/" className="block">
+                <img 
+                  src={logoImage} 
+                  alt="IndoSup Logo" 
+                  className="h-10 sm:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+                />
+              </Link>
+            </div>
+            
             <div className="flex-1">
               <h4 className="text-sm sm:text-base font-bold mb-3 sm:mb-4 text-white flex items-center">
                 <div className="w-1 h-4 sm:h-6 bg-primary mr-2 sm:mr-3 rounded-full"></div>
@@ -85,24 +95,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company Info & Logo */}
-          <div className="lg:col-span-2 h-full flex flex-col items-center lg:items-start">
-            <div className="transform hover:scale-105 transition-transform duration-300 mb-4 sm:mb-6">
-              <Link to="/" className="block">
-                <img 
-                  src={logoImage} 
-                  alt="IndoSup Logo" 
-                  className="h-10 sm:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
-                />
-              </Link>
-            </div>
-            <p className="text-gray-300 text-xs sm:text-sm text-center lg:text-left leading-relaxed">
-              Digital Key to Procurement
-            </p>
-          </div>
-
           {/* Contact Info & Social Media */}
-          <div className="lg:col-span-5 h-full flex flex-col">
+          <div className="lg:col-span-6 h-full flex flex-col">
             <div className="flex-1">
               {/* Find Us Section with Map */}
               <div className="flex flex-col xl:flex-row gap-8 h-full">
