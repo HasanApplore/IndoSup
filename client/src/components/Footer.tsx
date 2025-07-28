@@ -37,10 +37,10 @@ export default function Footer() {
       </div>
       
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 sm:py-12 lg:py-16 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
-          {/* Company Info & Quick Links */}
-          <div className="lg:col-span-3 h-full flex flex-col ml-2">
+      <div className="py-8 sm:py-12 lg:py-16 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
+          {/* Company Info & Quick Links - Positioned at far left */}
+          <div className="flex-shrink-0 w-full lg:w-auto pl-4 sm:pl-6 lg:pl-8">
             <div className="transform hover:scale-105 transition-transform duration-300 mb-4 sm:mb-6">
               <Link to="/" className="block">
                 <img 
@@ -72,106 +72,106 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Categories */}
-          <div className="lg:col-span-3 h-full flex flex-col">
-            <div className="flex-1">
-              <h4 className="text-base font-bold mb-4 text-white flex items-center">
-                <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-                Product Categories
-              </h4>
-              <ul className="space-y-3">
-                {productCategories.map((category, index) => (
-                  <li key={index}>
-                    <Link 
-                      to={category.path}
-                      className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
-                    >
-                      <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
-                      {category.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Contact Info & Social Media */}
-          <div className="lg:col-span-6 h-full flex flex-col">
-            <div className="flex-1">
-              {/* Find Us Section with Map */}
-              <div className="flex flex-col xl:flex-row gap-8 h-full">
-                {/* Contact Information */}
-                <div className="flex-1 flex flex-col">
+          {/* Rest of content - Product Categories and Contact Info */}
+          <div className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {/* Product Categories */}
+              <div className="h-full flex flex-col">
+                <div className="flex-1">
                   <h4 className="text-base font-bold mb-4 text-white flex items-center">
                     <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
-                    Find Us
+                    Product Categories
                   </h4>
-                  <div className="space-y-5 flex-1">
-                    <div className="flex items-start text-gray-300 text-sm group">
-                      <MapPin className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
-                    </div>
-                    <div className="flex items-start text-gray-300 text-sm group">
-                      <Phone className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div className="flex flex-col space-y-1">
-                        <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors font-medium">+91 880 211 4204</a></span>
-                        <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors font-medium">+91 836 882 5766</a></span>
+                  <ul className="space-y-3">
+                    {productCategories.map((category, index) => (
+                      <li key={index}>
+                        <Link 
+                          to={category.path}
+                          className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
+                        >
+                          <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                          {category.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Contact Info & Social Media */}
+              <div className="h-full flex flex-col">
+                <div className="flex-1">
+                  {/* Find Us Section with Map */}
+                  <div className="flex flex-col xl:flex-row gap-8 h-full">
+                    {/* Contact Information */}
+                    <div className="flex-1 flex flex-col">
+                      <h4 className="text-base font-bold mb-4 text-white flex items-center">
+                        <div className="w-1 h-6 bg-primary mr-3 rounded-full"></div>
+                        Find Us
+                      </h4>
+                      <div className="space-y-5 flex-1">
+                        <div className="flex items-start text-gray-300 text-sm group">
+                          <MapPin className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                          <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
+                        </div>
+                        <div className="flex items-start text-gray-300 text-sm group">
+                          <Phone className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                          <div className="flex flex-col space-y-1">
+                            <span>Sales Queries: <a href="tel:+918802114204" className="hover:text-primary transition-colors font-medium">+91 880 211 4204</a></span>
+                            <span>Partner with us: <a href="tel:+918368825766" className="hover:text-primary transition-colors font-medium">+91 836 882 5766</a></span>
+                          </div>
+                        </div>
+                        <div className="flex items-center text-gray-300 text-sm group">
+                          <Mail className="w-5 h-5 mr-4 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
+                          <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors font-medium">
+                            sales@indosup.com
+                          </a>
+                        </div>
+                        
+                        {/* Social Media Links */}
+                        <div className="flex items-center space-x-4 pl-9 mt-auto">
+                          {socialLinks.map((social, index) => {
+                            const IconComponent = social.icon;
+                            return (
+                              <motion.a
+                                key={index}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
+                                whileHover={{ scale: 1.1, y: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                                title={social.label}
+                              >
+                                <IconComponent className="w-4 h-4" />
+                              </motion.a>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-center text-gray-300 text-sm group">
-                      <Mail className="w-5 h-5 mr-4 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
-                      <a href="mailto:sales@indosup.com" className="hover:text-primary transition-colors font-medium">
-                        sales@indosup.com
-                      </a>
-                    </div>
                     
-                    {/* Social Media Links */}
-                    <div className="flex items-center space-x-4 pl-9 mt-auto">
-                      {socialLinks.map((social, index) => {
-                        const IconComponent = social.icon;
-                        return (
-                          <motion.a
-                            key={index}
-                            href={social.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
-                            whileHover={{ scale: 1.1, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                            title={social.label}
-                          >
-                            <IconComponent className="w-4 h-4" />
-                          </motion.a>
-                        );
-                      })}
+                    {/* Google Maps Embed */}
+                    <div className="flex-1 xl:max-w-md">
+                      <div className="rounded-xl overflow-hidden shadow-xl border border-gray-600">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a9e9a4c9a7%3A0x1c2b5a3b4c5d6e7f!2sH8M8%2BM8%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                          width="100%"
+                          height="240"
+                          style={{ border: 0 }}
+                          allowFullScreen={false}
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="rounded-xl filter brightness-90 hover:brightness-100 transition-all duration-300"
+                          title="IndoSup Office Location - H8M8+M8 Noida, Uttar Pradesh"
+                        />
+                      </div>
                     </div>
-                  </div>
-
-                </div>
-                
-                {/* Google Maps Embed */}
-                <div className="flex-1 xl:max-w-md">
-                  <div className="rounded-xl overflow-hidden shadow-xl border border-gray-600">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.6761247077843!2d77.31138977550396!3d28.594424775690374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a9e9a4c9a7%3A0x1c2b5a3b4c5d6e7f!2sH8M8%2BM8%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                      width="100%"
-                      height="240"
-                      style={{ border: 0 }}
-                      allowFullScreen={false}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-xl filter brightness-90 hover:brightness-100 transition-all duration-300"
-                      title="IndoSup Office Location - H8M8+M8 Noida, Uttar Pradesh"
-                    />
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
-
-
         </div>
       </div>
 
