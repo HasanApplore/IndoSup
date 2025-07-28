@@ -84,24 +84,24 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-accent/50 backdrop-blur-sm shadow-lg">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-6 max-w-7xl">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
+          <div className="flex items-center flex-shrink-0 mr-8 lg:mr-12">
             <Link to="/">
               <img 
                 src={logoImage} 
                 alt="IndoSup - Digital Key to Procurement" 
-                className="h-10 sm:h-12 w-auto cursor-pointer"
+                className="h-12 sm:h-14 w-auto cursor-pointer"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 flex-1 justify-center ml-6 xl:ml-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 flex-1 justify-center">
             <Link 
               to="/about" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-medium text-base ${
                 isActivePath('/about') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -116,7 +116,7 @@ export default function Navbar() {
               <button
                 onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
                 onClick={toggleInitiativesDropdown}
-                className={`flex items-center transition-colors duration-200 relative group font-medium text-sm ${
+                className={`flex items-center transition-colors duration-200 relative group font-medium text-base ${
                   isActivePath('/new-initiatives') ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
@@ -151,7 +151,7 @@ export default function Navbar() {
             </div>
             <Link 
               to="/streamlined-procurement" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-medium text-base ${
                 isActivePath('/streamlined-procurement') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -168,7 +168,7 @@ export default function Navbar() {
               <button
                 onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                 onClick={toggleBusinessDropdown}
-                className={`flex items-center transition-colors duration-200 relative group font-medium text-sm ${
+                className={`flex items-center transition-colors duration-200 relative group font-medium text-base ${
                   isBusinessActive() ? 'text-primary' : 'text-white hover:text-primary'
                 }`}
               >
@@ -214,7 +214,7 @@ export default function Navbar() {
 
             <Link 
               to="/media" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-medium text-base ${
                 isActivePath('/media') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -226,7 +226,7 @@ export default function Navbar() {
             </Link>
             <Link 
               to="/careers" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-medium text-base ${
                 isActivePath('/careers') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -238,7 +238,7 @@ export default function Navbar() {
             </Link>
             <Link 
               to="/catalogues" 
-              className={`transition-colors duration-200 relative group font-medium text-sm ${
+              className={`transition-colors duration-200 relative group font-medium text-base ${
                 isActivePath('/catalogues') ? 'text-primary' : 'text-white hover:text-primary'
               }`}
               onClick={handleLinkClick}
@@ -253,7 +253,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center flex-shrink-0">
             <Link to="/contact">
-              <Button className="bg-primary text-accent font-semibold px-4 xl:px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-xs xl:text-sm">
+              <Button className="bg-primary text-accent font-semibold px-6 xl:px-8 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-primary whitespace-nowrap text-base">
                 Contact Us
               </Button>
             </Link>
