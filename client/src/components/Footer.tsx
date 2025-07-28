@@ -8,9 +8,13 @@ export default function Footer() {
 
   const quickLinks = [
     { name: 'About Us', path: '/about' },
-    { name: 'New Initiatives', path: '/initiatives' },
-    { name: 'Streamlined Procurement', path: '/solutions' },
-    { name: 'Our Businesses', path: '/products' }
+    { name: 'Our Initiatives', path: '/new-initiatives' },
+    { name: 'Steel Products', path: '/products/steel' },
+    { name: 'Non-Steel Products', path: '/products/non-steel' },
+    { name: 'Solar Products', path: '/products/solar' },
+    { name: 'Media', path: '/media' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Contact Us', path: '/contact' }
   ];
 
   const productCategories = [
