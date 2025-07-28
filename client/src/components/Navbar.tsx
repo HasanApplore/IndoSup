@@ -8,9 +8,33 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
   const [isInitiativesDropdownOpen, setIsInitiativesDropdownOpen] = useState(false);
+  const [isSteelDropdownOpen, setIsSteelDropdownOpen] = useState(false);
+  const [isNonSteelDropdownOpen, setIsNonSteelDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const initiativesDropdownRef = useRef(null);
+  const steelDropdownRef = useRef(null);
+  const nonSteelDropdownRef = useRef(null);
   const [location] = useLocation();
+
+  // Steel subcategories
+  const steelSubcategories = [
+    { name: "Structural Steel", path: "/products/steel#structural-steel" },
+    { name: "Pipes & Fittings", path: "/products/steel#pipes-fittings" },
+    { name: "Roofing Materials", path: "/products/steel#roofing-materials" },
+    { name: "Doors & Windows", path: "/products/steel#doors-windows" },
+    { name: "Reinforcement Products", path: "/products/steel#tmt-bars" },
+    { name: "Hardware & Tools", path: "/products/steel#hardware-tools" }
+  ];
+
+  // Non-Steel subcategories
+  const nonSteelSubcategories = [
+    { name: "Plumbing", path: "/products/non-steel#plumbing" },
+    { name: "Electrical", path: "/products/non-steel#electrical-components" },
+    { name: "Fire Fighting", path: "/products/non-steel#fire-fighting-systems" },
+    { name: "Warehouse Infra", path: "/products/non-steel#warehouse-infra" },
+    { name: "Site Utilities", path: "/products/non-steel#site-utilities" },
+    { name: "Safety Equipment", path: "/products/non-steel#safety-equipment" }
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -33,6 +57,12 @@ export default function Navbar() {
       if (initiativesDropdownRef.current && !initiativesDropdownRef.current.contains(event.target as Node)) {
         setIsInitiativesDropdownOpen(false);
       }
+      if (steelDropdownRef.current && !steelDropdownRef.current.contains(event.target as Node)) {
+        setIsSteelDropdownOpen(false);
+      }
+      if (nonSteelDropdownRef.current && !nonSteelDropdownRef.current.contains(event.target as Node)) {
+        setIsNonSteelDropdownOpen(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -46,6 +76,8 @@ export default function Navbar() {
     setIsMenuOpen(false);
     setIsBusinessDropdownOpen(false);
     setIsInitiativesDropdownOpen(false);
+    setIsSteelDropdownOpen(false);
+    setIsNonSteelDropdownOpen(false);
   };
 
   // Navigate to specific sections on New Initiatives page
@@ -172,21 +204,72 @@ export default function Navbar() {
                   onMouseEnter={() => setIsBusinessDropdownOpen(true)}
                   onMouseLeave={() => setIsBusinessDropdownOpen(false)}
                 >
-                  <Link 
-                    to="/products/steel" 
-                    className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
-                    onClick={handleLinkClick}
+                  {/* Steel Products with Nested Dropdown */}
+                  <div 
+                    className="relative"
+                    ref={steelDropdownRef}
+                    onMouseEnter={() => setIsSteelDropdownOpen(true)}
+                    onMouseLeave={() => setIsSteelDropdownOpen(false)}
                   >
-                    Steel Products
-                  </Link>
+                    <Link 
+                      to="/products/steel" 
+                      className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2 flex items-center justify-between"
+                      onClick={handleLinkClick}
+                    >
+                      Steel Products
+                      <ChevronDown className="ml-2 h-3 w-3 rotate-[-90deg]" />
+                    </Link>
+                    
+                    {isSteelDropdownOpen && (
+                      <div className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
+                        {steelSubcategories.map((subcategory, index) => (
+                          <Link
+                            key={index}
+                            to={subcategory.path}
+                            className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
+                            onClick={handleLinkClick}
+                          >
+                            {subcategory.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  
                   <div className="border-t border-primary/20 my-2 mx-4"></div>
-                  <Link 
-                    to="/products/non-steel" 
-                    className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
-                    onClick={handleLinkClick}
+                  
+                  {/* Non-Steel Products with Nested Dropdown */}
+                  <div 
+                    className="relative"
+                    ref={nonSteelDropdownRef}
+                    onMouseEnter={() => setIsNonSteelDropdownOpen(true)}
+                    onMouseLeave={() => setIsNonSteelDropdownOpen(false)}
                   >
-                    Non-Steel Products
-                  </Link>
+                    <Link 
+                      to="/products/non-steel" 
+                      className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2 flex items-center justify-between"
+                      onClick={handleLinkClick}
+                    >
+                      Non-Steel Products
+                      <ChevronDown className="ml-2 h-3 w-3 rotate-[-90deg]" />
+                    </Link>
+                    
+                    {isNonSteelDropdownOpen && (
+                      <div className="absolute top-0 left-full ml-1 w-48 bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200">
+                        {nonSteelSubcategories.map((subcategory, index) => (
+                          <Link
+                            key={index}
+                            to={subcategory.path}
+                            className="block px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
+                            onClick={handleLinkClick}
+                          >
+                            {subcategory.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  
                   <div className="border-t border-primary/20 my-2 mx-4"></div>
                   <Link 
                     to="/products/solar" 
