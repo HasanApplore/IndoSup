@@ -46,7 +46,7 @@ export default function Footer() {
                 <img 
                   src={logoImage} 
                   alt="IndoSup Logo" 
-                  className="h-10 sm:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
+                  className="h-12 sm:h-14 lg:h-16 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                 />
               </Link>
             </div>
@@ -73,8 +73,8 @@ export default function Footer() {
           </div>
 
           {/* Rest of content - Product Categories and Contact Info */}
-          <div className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl lg:ml-16">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
               {/* Product Categories */}
               <div className="h-full flex flex-col lg:col-span-1">
                 <div className="flex-1">
