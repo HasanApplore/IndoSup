@@ -13,6 +13,7 @@ export default function Navbar() {
   
   // Timeout refs for delayed dropdown closing
   const businessTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const initiativesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const steelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const nonSteelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -103,6 +104,20 @@ export default function Navbar() {
     }, 200);
   };
 
+  // Delayed dropdown handlers for initiatives
+  const handleInitiativesMouseEnter = () => {
+    if (initiativesTimeoutRef.current) {
+      clearTimeout(initiativesTimeoutRef.current);
+    }
+    setIsInitiativesDropdownOpen(true);
+  };
+
+  const handleInitiativesMouseLeave = () => {
+    initiativesTimeoutRef.current = setTimeout(() => {
+      setIsInitiativesDropdownOpen(false);
+    }, 300);
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -125,6 +140,7 @@ export default function Navbar() {
       document.removeEventListener('mousedown', handleClickOutside);
       // Clear all timeouts on cleanup
       if (businessTimeoutRef.current) clearTimeout(businessTimeoutRef.current);
+      if (initiativesTimeoutRef.current) clearTimeout(initiativesTimeoutRef.current);
       if (steelTimeoutRef.current) clearTimeout(steelTimeoutRef.current);
       if (nonSteelTimeoutRef.current) clearTimeout(nonSteelTimeoutRef.current);
     };
@@ -228,8 +244,8 @@ export default function Navbar() {
             <div 
               className="relative" 
               ref={initiativesDropdownRef}
-              onMouseEnter={() => setIsInitiativesDropdownOpen(true)}
-              onMouseLeave={() => setIsInitiativesDropdownOpen(false)}
+              onMouseEnter={handleInitiativesMouseEnter}
+              onMouseLeave={handleInitiativesMouseLeave}
             >
               <Link
                 to="/new-initiatives"
@@ -248,6 +264,8 @@ export default function Navbar() {
               {isInitiativesDropdownOpen && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-auto min-w-max bg-accent/50 backdrop-blur-sm rounded-lg shadow-2xl py-3 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                  onMouseEnter={handleInitiativesMouseEnter}
+                  onMouseLeave={handleInitiativesMouseLeave}
                 >
                   <button 
                     onClick={() => navigateToInitiativeSection('global-assist-section')}
