@@ -75,11 +75,11 @@ export default function WhoWeAreSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-responsive-2xl font-bold text-[#1E293B] mb-4 font-poppins">
+          <h2 className="text-responsive-2xl font-bold text-[#1E293B] mb-4">
             Why Choose IndoSup?
           </h2>
           <div className="w-12 sm:w-16 h-1 bg-primary mx-auto mb-4 sm:mb-6 rounded-full"></div>
-          <p className="text-responsive-base text-gray-600 max-w-3xl mx-auto font-poppins leading-relaxed px-4 sm:px-0">
+          <p className="text-responsive-base text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             We simplify construction procurement with cutting-edge technology and trusted partnerships
           </p>
         </motion.div>
@@ -115,12 +115,12 @@ export default function WhoWeAreSection() {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-responsive-lg font-bold text-[#1E293B] mb-2 sm:mb-3 group-hover:text-primary transition-all duration-300 font-poppins">
+                <h3 className="text-responsive-lg font-bold text-[#1E293B] mb-2 sm:mb-3 group-hover:text-primary transition-all duration-300">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-responsive-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-all duration-300 font-poppins">
+                <p className="text-responsive-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-all duration-300">
                   {feature.description}
                 </p>
 

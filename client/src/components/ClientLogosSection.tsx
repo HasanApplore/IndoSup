@@ -49,11 +49,11 @@ export default function ClientLogosSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
+          <h2 className="text-4xl font-bold text-[#1E293B] mb-6">
             Our Partners
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Collaborating with India's leading construction and infrastructure companies
           </p>
         </motion.div>

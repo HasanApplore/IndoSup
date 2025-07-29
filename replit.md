@@ -16,7 +16,7 @@ IndoSup is a modern web application built with React, JavaScript, and configured
   - Accent: #031D33 (dark blue)
   - Neutral Dark: #222629 (dark gray)
   - Neutral Base: #919191 (medium gray)
-- **Typography**: Inter and Plus Jakarta Sans fonts from Google Fonts
+- **Typography**: Cardo font from Google Fonts (applied globally)
 - **Responsive Design**: 12-column grid system with breakpoints at 640px, 768px, 1024px, and 1280px
 - **State Management**: TanStack Query for server state management
 - **Build Tool**: Vite for fast development and optimized builds
@@ -200,6 +200,7 @@ Changelog:
 - July 24, 2025. Fixed MediaCoverageSection mobile responsiveness issues: optimized section padding and spacing for mobile devices, implemented responsive typography scaling from text-2xl on mobile to text-5xl on desktop, enhanced main feature card with mobile-first grid layout and proper visual element ordering, updated bottom article grid from single column on mobile to 3 columns on desktop, improved all interactive elements with mobile-friendly sizing and touch-optimized spacing, ensured proper content hierarchy and readability across all screen sizes
 - July 24, 2025. Resolved hero video black border issue: implemented proper video scaling and positioning using viewport-based dimensions (100vw width, 56.25vw height for 16:9 ratio), added overflow hidden container, positioned video with absolute centering transforms, ensured video fills entire container without black borders while maintaining aspect ratio
 - July 24, 2025. Removed content overlay from hero video: eliminated all text content, buttons, and scroll indicators from hero section as requested by user, keeping only the clean video background without any overlaid elements for minimal design approach
+- July 29, 2025. Applied Cardo font globally across entire website: updated Tailwind config to use Cardo as default sans font, removed all font-poppins classes from components, updated Google Fonts import to include only Cardo, ensuring consistent typography throughout all pages and sections
 
 ## User Preferences
 
