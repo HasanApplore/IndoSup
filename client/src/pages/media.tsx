@@ -748,7 +748,7 @@ export default function Media() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-8" style={{ color: '#000000' }}>
               Media & Resources
             </h1>
             {/* Animated underline */}
@@ -761,7 +761,8 @@ export default function Media() {
           </motion.div>
           
           <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl mb-8 leading-relaxed"
+            style={{ color: '#000000' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

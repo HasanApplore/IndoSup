@@ -221,6 +221,7 @@ Changelog:
 - July 29, 2025. Enhanced "Our Strength" section with improved icons: kept original 4 cards structure, updated to use more professional and consistent icons (Shield, Zap, TrendingUp, Clock), improved icon sizing to w-8 h-8 for better visibility while maintaining original content and titles
 - July 29, 2025. Fixed Media & Resources page content filtering: updated type mapping to correctly match database content types ('news' for newsletters, 'case_study' for case studies) ensuring all admin panel content displays properly on frontend
 - July 29, 2025. Updated Media & Resources page banner image: replaced banner background with new media-themed image featuring cameras and photography equipment for better visual relevance to media content
+- July 29, 2025. Changed Media & Resources page heading colors to black: updated both main title "Media & Resources" and subtitle "Latest News, Updates & Industry Insights" from white to black (#000000) for better contrast and readability
 
 ## User Preferences
 
