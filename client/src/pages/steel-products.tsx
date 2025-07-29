@@ -332,7 +332,7 @@ export default function SteelProducts() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <p className="text-[#F5F5F5] leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {category.description}
                   </p>
 
@@ -342,7 +342,7 @@ export default function SteelProducts() {
                     {category.specifications.map((spec, specIndex) => (
                       <div key={specIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0" />
-                        <span className="text-sm text-[#F5F5F5]">{spec}</span>
+                        <span className="text-sm text-gray-600">{spec}</span>
                       </div>
                     ))}
                   </div>
