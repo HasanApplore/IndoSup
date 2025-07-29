@@ -26,7 +26,7 @@ export default function OurClientsSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden bg-white/95 backdrop-blur-lg">
+    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden bg-white">
       
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Heading */}
