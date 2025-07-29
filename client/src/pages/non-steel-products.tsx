@@ -256,40 +256,33 @@ export default function NonSteelProducts() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Wrench className="w-5 h-5 text-[#FFC600]" />
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Wrench className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Plumbing</h3>
-              <p className="text-gray-600 text-sm">Solutions</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Plumbing</h3>
+              <p className="text-gray-700 text-sm font-medium">Solutions</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Package className="w-5 h-5 text-[#FFC600]" />
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Package className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Electrical</h3>
-              <p className="text-gray-600 text-sm">Systems</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Electrical</h3>
+              <p className="text-gray-700 text-sm font-medium">Systems</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Shield className="w-5 h-5 text-[#FFC600]" />
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Shield className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Fire Fighting</h3>
-              <p className="text-gray-600 text-sm">Equipment</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Fire Fighting</h3>
+              <p className="text-gray-700 text-sm font-medium">Equipment</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building2 className="w-5 h-5 text-[#FFC600]" />
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Building2 className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Warehouse</h3>
-              <p className="text-gray-600 text-sm">Infrastructure</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Package className="w-5 h-5 text-[#FFC600]" />
-              </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Water Systems</h3>
-              <p className="text-gray-600 text-sm">& Utilities</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Warehouse</h3>
+              <p className="text-gray-700 text-sm font-medium">Infrastructure</p>
             </div>
           </motion.div>
           
@@ -326,8 +319,9 @@ export default function NonSteelProducts() {
                 key={index}
                 id={category.name === "Electrical" ? "electrical-components" : category.name === "Fire Fighting" ? "fire-fighting-systems" : undefined}
                 variants={itemVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200"
-                whileHover={{ y: -5 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
