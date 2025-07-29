@@ -258,7 +258,7 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
               Current Openings
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-4"></div>
@@ -433,7 +433,7 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
               Life at IndoSup
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>

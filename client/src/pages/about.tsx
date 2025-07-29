@@ -627,7 +627,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600]">
               Our Mission & Vision
             </h2>
             <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-[#FFC600] to-[#FFC600] mx-auto mt-4"></div>
@@ -801,7 +801,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2A374B] mb-4 font-inter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2A374B] mb-4">
               Strength & Values
             </h2>
             <div className="w-20 md:w-28 h-1 bg-[#FFC600] mx-auto"></div>

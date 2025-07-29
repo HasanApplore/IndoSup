@@ -242,7 +242,7 @@ export default function NonSteelProducts() {
             transition={{ duration: 0.8 }}
             id="non-steel-categories-section"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6 font-inter">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
               Non-Steel Product Categories
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
@@ -303,7 +303,7 @@ export default function NonSteelProducts() {
                 <Wrench className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold font-inter text-[#FFC600]">Non-Steel Products</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#FFC600]">Non-Steel Products</h1>
                 <p className="text-white/90 text-lg mt-2">Specialized construction systems and utilities</p>
               </div>
             </div>

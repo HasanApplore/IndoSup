@@ -201,6 +201,7 @@ Changelog:
 - July 24, 2025. Resolved hero video black border issue: implemented proper video scaling and positioning using viewport-based dimensions (100vw width, 56.25vw height for 16:9 ratio), added overflow hidden container, positioned video with absolute centering transforms, ensured video fills entire container without black borders while maintaining aspect ratio
 - July 24, 2025. Removed content overlay from hero video: eliminated all text content, buttons, and scroll indicators from hero section as requested by user, keeping only the clean video background without any overlaid elements for minimal design approach
 - July 29, 2025. Applied Cardo font globally across entire website: updated Tailwind config to use Cardo as default sans font, removed all font-poppins classes from components, updated Google Fonts import to include only Cardo, ensuring consistent typography throughout all pages and sections
+- July 29, 2025. Completed comprehensive Cardo font implementation across entire website: removed all font-inter, font-poppins, font-jakarta, and font-cardo class references from all pages and components, updated CSS base styles to apply Cardo globally via font-family property, cleaned up Google Fonts import to only include Cardo, ensured consistent typography across homepage, about, contact, careers, catalogues, products, streamlined procurement, and all other pages with semi-transparent white card backgrounds and backdrop blur effects
 
 ## User Preferences
 
