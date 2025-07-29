@@ -55,9 +55,9 @@ export default function OurStrengthSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ 
-                scale: 1.08, 
-                y: -12,
+              whileHover={{
+                y: -8,
+                scale: 1.05,
                 transition: { duration: 0.3 }
               }}
             >
@@ -67,9 +67,21 @@ export default function OurStrengthSection() {
               {/* Content */}
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white group-hover:bg-white group-hover:text-primary transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:scale-110">
-                  {strength.icon}
-                </div>
+                <motion.div
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-4 relative"
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 5,
+                    transition: {
+                      duration: 0.3,
+                      ease: "easeInOut"
+                    }
+                  }}
+                >
+                  <div className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10">
+                    {strength.icon}
+                  </div>
+                </motion.div>
                 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-[#1E293B] mb-3 group-hover:text-primary transition-colors duration-300">
@@ -80,6 +92,11 @@ export default function OurStrengthSection() {
                 <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-all duration-300 text-sm">
                   {strength.description}
                 </p>
+
+                {/* Hover Effect Line */}
+                <motion.div
+                  className="w-0 h-0.5 bg-primary mx-auto mt-4 group-hover:w-12 transition-all duration-300 rounded-full"
+                />
               </div>
             </motion.div>
           ))}
