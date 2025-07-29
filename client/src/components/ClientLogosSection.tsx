@@ -38,7 +38,7 @@ export default function ClientLogosSection() {
   const repeatedLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
-    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden bg-white/95">
+    <section className="py-12 px-4 md:py-20 md:px-6 relative overflow-hidden">
       
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Heading */}
@@ -88,7 +88,7 @@ export default function ClientLogosSection() {
               {repeatedLogos.map((client, index) => (
                 <motion.div
                   key={`logo-${index}`}
-                  className="group flex-shrink-0 w-32 h-20 flex items-center justify-center cursor-pointer"
+                  className="group flex-shrink-0 w-32 h-20 flex items-center justify-center cursor-pointer bg-white/95 backdrop-blur-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-white/30 transition-all duration-300 border border-white/20 hover:border-primary"
                   whileHover={{ 
                     scale: 1.1,
                     transition: { duration: 0.2 }
