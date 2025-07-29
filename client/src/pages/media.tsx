@@ -903,24 +903,24 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group border border-white/40 relative cursor-pointer transform-gpu hover:border-primary/60"
-                  whileHover={{ y: -16, scale: 1.05, rotateY: 5 }}
+                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-white/30 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-gray-300"
+                  whileHover={{ y: -8, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCardClick(item)}
                 >
                   {/* Image */}
-                  <div className="relative h-56 md:h-60 overflow-hidden rounded-t-3xl">
+                  <div className="relative h-48 md:h-52 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                    <div className="absolute top-6 left-6">
-                      <span className="bg-gradient-to-r from-primary to-amber-400 text-white px-4 py-2 rounded-2xl text-sm font-bold backdrop-blur-md shadow-2xl border border-white/20">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg">
                         {item.category}
                       </span>
                     </div>
@@ -952,42 +952,41 @@ export default function Media() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 md:p-8 relative">
-                    <div className="flex items-center text-sm text-gray-500 mb-4 font-medium">
-                      <Calendar className="w-4 h-4 mr-2 text-primary" />
+                  <div className="p-4 md:p-6 relative">
+                    <div className="flex items-center text-xs md:text-sm text-gray-500 mb-2 md:mb-3">
+                      <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-2" />
                       <span>{item.date}</span>
-                      <span className="mx-3 text-primary">•</span>
-                      <span className="font-semibold text-primary">{item.source}</span>
+                      <span className="mx-2">•</span>
+                      <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-bold text-[#1E293B] mb-4 line-clamp-2 group-hover:text-primary transition-colors duration-500 leading-tight">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-gray-800 transition-colors duration-300 leading-tight">
                       {item.title}
                     </h3>
 
-                    <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 text-sm md:text-base">
+                    <p className="text-gray-600 leading-relaxed mb-4 md:mb-6 line-clamp-3 text-xs md:text-sm">
                       {item.preview}
                     </p>
 
                     <div className="flex items-center justify-between">
                       <motion.button
-                        className="inline-flex items-center bg-gradient-to-r from-primary to-amber-400 text-white font-bold px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                        whileHover={{ x: 8, scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center text-accent font-bold hover:text-gray-800 transition-colors duration-300 text-xs md:text-sm group-hover:bg-gray-50 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-gray-200 hover:border-gray-300"
+                        whileHover={{ x: 5 }}
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedArticle(item);
                           setShowModal(true);
                         }}
                       >
-                        <span className="mr-2">Read Full Article</span>
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span className="mr-1 md:mr-2">Read More</span>
+                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </motion.button>
                       
-                      {/* Share Icon - Enhanced */}
+                      {/* Share Icon - Simplified */}
                       <div className="flex items-center gap-2">
                         <motion.button
-                          className="p-3 hover:bg-primary/15 rounded-full transition-all duration-300 backdrop-blur-sm bg-white/80 shadow-lg"
-                          whileHover={{ scale: 1.2, rotate: 15 }}
+                          className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Share article"
                           onClick={(e) => {
@@ -1005,7 +1004,7 @@ export default function Media() {
                             }
                           }}
                         >
-                          <Share2 className="w-5 h-5 text-gray-600 hover:text-primary transition-colors duration-300" />
+                          <Share2 className="w-3 h-3 md:w-4 md:h-4 text-gray-600 hover:text-gray-800" />
                         </motion.button>
                       </div>
                     </div>
