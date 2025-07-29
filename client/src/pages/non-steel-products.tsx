@@ -328,15 +328,41 @@ export default function NonSteelProducts() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {nonSteelCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                id={category.name === "Electrical" ? "electrical-components" : category.name === "Fire Fighting" ? "fire-fighting-systems" : undefined}
-                variants={itemVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
+            {nonSteelCategories.map((category, index) => {
+              // Create section IDs based on category names
+              let sectionId = "";
+              switch(category.name) {
+                case "Plumbing":
+                  sectionId = "plumbing";
+                  break;
+                case "Electrical":
+                  sectionId = "electrical-components";
+                  break;
+                case "Fire Fighting":
+                  sectionId = "fire-fighting-systems";
+                  break;
+                case "Warehouse Infra":
+                  sectionId = "warehouse-infra";
+                  break;
+                case "Site Utilities":
+                  sectionId = "site-utilities";
+                  break;
+                case "Pumping and Water System":
+                  sectionId = "pumping-water-system";
+                  break;
+                default:
+                  sectionId = "";
+              }
+              
+              return (
+                <motion.div
+                  key={index}
+                  id={sectionId}
+                  variants={itemVariants}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -385,8 +411,9 @@ export default function NonSteelProducts() {
                     </motion.button>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>

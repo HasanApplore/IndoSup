@@ -322,15 +322,41 @@ export default function SteelProducts() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {steelCategories.map((category, index) => (
-              <motion.div
-                key={index}
-                id={category.name === "Reinforcement Products" ? "tmt-bars" : category.name === "Pipes & Fittings" ? "pipes-fittings" : undefined}
-                variants={itemVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
+            {steelCategories.map((category, index) => {
+              // Create section IDs based on category names
+              let sectionId = "";
+              switch(category.name) {
+                case "Structural Steel":
+                  sectionId = "structural-steel";
+                  break;
+                case "Pipes & Fittings":
+                  sectionId = "pipes-fittings";
+                  break;
+                case "Roofing Materials":
+                  sectionId = "roofing-materials";
+                  break;
+                case "Doors & Windows":
+                  sectionId = "doors-windows";
+                  break;
+                case "Reinforcement Products":
+                  sectionId = "tmt-bars";
+                  break;
+                case "Hardware & Tools":
+                  sectionId = "hardware-tools";
+                  break;
+                default:
+                  sectionId = "";
+              }
+              
+              return (
+                <motion.div
+                  key={index}
+                  id={sectionId}
+                  variants={itemVariants}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -379,8 +405,9 @@ export default function SteelProducts() {
                     </motion.button>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>

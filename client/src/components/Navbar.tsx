@@ -39,7 +39,7 @@ export default function Navbar() {
     { name: "Fire Fighting", path: "/products/non-steel", section: "fire-fighting-systems" },
     { name: "Warehouse Infra", path: "/products/non-steel", section: "warehouse-infra" },
     { name: "Site Utilities", path: "/products/non-steel", section: "site-utilities" },
-    { name: "Safety Equipment", path: "/products/non-steel", section: "safety-equipment" }
+    { name: "Water Systems", path: "/products/non-steel", section: "pumping-water-system" }
   ];
 
   const toggleMenu = () => {
