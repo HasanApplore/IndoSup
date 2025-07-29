@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Package, CheckCircle, Star, ArrowUp, Eye, Target, Building2, ArrowDown, Wrench } from 'lucide-react';
+import { ArrowLeft, Download, Package, CheckCircle, Star, ArrowUp, Eye, Target, Building2, ArrowDown, Wrench, DoorOpen, Zap } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function SteelProducts() {
@@ -91,6 +91,12 @@ export default function SteelProducts() {
       description: "Professional construction tools, fasteners, bolts, nuts, and steel hardware for building and assembly work.",
       specifications: ["High-Grade Steel", "Precision Tools", "Corrosion Resistant"],
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      name: "Steel Fasteners",
+      description: "High-quality bolts, screws, anchors, and fastening solutions for secure structural connections and assembly work.",
+      specifications: ["Grade 8.8/10.9", "Galvanized Coating", "Various Sizes"],
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -244,53 +250,60 @@ export default function SteelProducts() {
 
           {/* Stats Summary */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8"
+            className="grid grid-cols-2 md:grid-cols-7 gap-3 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl hover:scale-105 hover:bg-[#FFC600]/5 transition-all duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-[#E6B200] transition-colors duration-300">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Building2 className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Structural</h3>
               <p className="text-gray-700 text-sm font-medium">Steel</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl hover:scale-105 hover:bg-[#FFC600]/5 transition-all duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-[#E6B200] transition-colors duration-300">
-                <Package className="w-5 h-5 text-white" />
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Zap className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Pipes</h3>
               <p className="text-gray-700 text-sm font-medium">& Fittings</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl hover:scale-105 hover:bg-[#FFC600]/5 transition-all duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-[#E6B200] transition-colors duration-300">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Roofing</h3>
               <p className="text-gray-700 text-sm font-medium">Materials</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl hover:scale-105 hover:bg-[#FFC600]/5 transition-all duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-[#E6B200] transition-colors duration-300">
-                <Download className="w-5 h-5 text-white" />
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <DoorOpen className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Doors</h3>
               <p className="text-gray-700 text-sm font-medium">& Windows</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl hover:scale-105 hover:bg-[#FFC600]/5 transition-all duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-[#E6B200] transition-colors duration-300">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Star className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Reinforcement</h3>
               <p className="text-gray-700 text-sm font-medium">Products</p>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl hover:scale-105 hover:bg-[#FFC600]/5 transition-all duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 hover:bg-[#E6B200] transition-colors duration-300">
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Wrench className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Hardware</h3>
               <p className="text-gray-700 text-sm font-medium">& Tools</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Target className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Steel</h3>
+              <p className="text-gray-700 text-sm font-medium">Fasteners</p>
             </div>
           </motion.div>
           
@@ -327,76 +340,53 @@ export default function SteelProducts() {
                 key={index}
                 id={category.name === "Reinforcement Products" ? "tmt-bars" : category.name === "Pipes & Fittings" ? "pipes-fittings" : undefined}
                 variants={itemVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-[#FFC600]/20 transition-all duration-500 group border border-gray-200 hover:border-[#FFC600]/30 hover:scale-105 transform-gpu"
-                whileHover={{ 
-                  y: -10,
-                  rotateX: 5,
-                  rotateY: 5,
-                  scale: 1.02
-                }}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20
-                }}
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={category.image}
                     alt={category.name}
-                    className="w-full h-full object-cover group-hover:scale-125 group-hover:rotate-2 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-[#FFC600]/40 group-hover:via-black/30 transition-all duration-500" />
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-                    <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <Eye className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                    <h3 className="text-white text-xl font-bold group-hover:text-[#FFC600] transition-colors duration-300">{category.name}</h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-white text-xl font-bold">{category.name}</h3>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 group-hover:bg-gradient-to-b group-hover:from-white group-hover:to-[#FFC600]/5 transition-all duration-300">
-                  <p className="text-gray-600 leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300">
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {category.description}
                   </p>
 
                   {/* Specifications */}
                   <div className="space-y-2 mb-6">
-                    <h4 className="font-semibold text-[#FFC600] mb-3 group-hover:text-[#E6B200] transition-colors duration-300">Key Specifications:</h4>
+                    <h4 className="font-semibold text-[#FFC600] mb-3">Key Specifications:</h4>
                     {category.specifications.map((spec, specIndex) => (
-                      <motion.div 
-                        key={specIndex} 
-                        className="flex items-center space-x-2"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: specIndex * 0.1 }}
-                      >
-                        <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0 group-hover:text-[#E6B200] group-hover:scale-110 transition-all duration-300" />
-                        <span className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{spec}</span>
-                      </motion.div>
+                      <div key={specIndex} className="flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-[#FFC600] flex-shrink-0" />
+                        <span className="text-sm text-gray-600">{spec}</span>
+                      </div>
                     ))}
                   </div>
 
                   {/* Actions */}
                   <div className="flex space-x-3">
                     <motion.button
-                      className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-3 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-300 hover:shadow-lg hover:shadow-[#FFC600]/30"
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 400 }}
+                      className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       Get Quote
                     </motion.button>
                     <motion.button
-                      className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-300 py-3 px-4 rounded-lg hover:shadow-lg hover:shadow-[#FFC600]/30"
-                      whileHover={{ scale: 1.05, y: -2, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 400 }}
+                      className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       <Download className="w-4 h-4" />
                     </motion.button>
