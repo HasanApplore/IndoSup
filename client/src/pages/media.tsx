@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2, ArrowDown, ArrowUp } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
+import mediaBannerImage from '@assets/image_1753777962918.png';
 
 interface MediaItem {
   id: number;
@@ -690,11 +691,10 @@ export default function Media() {
       >
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            src={mediaBannerImage}
             alt="Media & Resources - News and Updates"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
         
         {/* Animated background elements */}
