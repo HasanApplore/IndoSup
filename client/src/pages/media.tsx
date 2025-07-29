@@ -1043,31 +1043,7 @@ export default function Media() {
             </motion.div>
           )}
 
-          {/* Back to Top Arrow - Fixed in Content Area */}
-          {showBackToTop && (
-            <motion.button
-              className="fixed bottom-8 right-8 z-40 w-12 h-12 border-2 border-primary rounded-full flex items-center justify-center bg-white/90 hover:bg-white hover:border-primary transition-all duration-300 backdrop-blur-sm shadow-lg"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => {
-                // Reset hero animation first if it was triggered
-                if (heroAnimated) {
-                  setHeroAnimated(false);
-                }
-                // Then scroll to top smoothly
-                setTimeout(() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
-              }}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.95 }}
-              title="Back to Banner"
-            >
-              <ArrowRight className="w-6 h-6 text-primary -rotate-90" />
-            </motion.button>
-          )}
+
         </div>
       </section>
 
