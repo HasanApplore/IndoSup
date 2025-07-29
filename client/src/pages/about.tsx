@@ -645,7 +645,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.div
-                className="bg-gradient-to-br from-[#FFC600] to-[#E6B200] rounded-2xl p-6 md:p-8 shadow-xl border border-[#475466] h-full relative overflow-hidden text-[#2A374B]"
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-200 h-full relative overflow-hidden"
                 whileHover={{ 
                   y: -8,
                   boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
@@ -654,27 +654,27 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-[#35506b] rounded-full flex items-center justify-center mr-3">
-                    <Target className="w-5 h-5 text-[#FFC600]" />
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                    <Target className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#2A374B]">Mission</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800">Mission</h3>
                 </div>
                 
                 {/* Mission content */}
                 <div className="relative">
                   <motion.div
-                    className="text-primary text-3xl absolute -top-1 -left-1 opacity-30"
+                    className="text-primary text-3xl absolute -top-1 -left-1 opacity-60"
                     animate={{ rotate: [0, -5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     "
                   </motion.div>
-                  <p className="text-base md:text-lg text-[#2A374B] leading-relaxed font-medium pl-5">
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed font-medium pl-5">
                     Empowering the construction ecosystem by reducing complexity in procurement, 
                     enabling transparency, and ensuring timely, high-quality delivery.
                   </p>
                   <motion.div
-                    className="text-primary text-3xl absolute -bottom-4 -right-1 opacity-30"
+                    className="text-primary text-3xl absolute -bottom-4 -right-1 opacity-60"
                     animate={{ rotate: [0, 5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -708,7 +708,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <motion.div
-                className="bg-gradient-to-br from-[#FFC600] to-[#E6B200] rounded-2xl p-6 md:p-8 shadow-xl h-full relative overflow-hidden text-[#2A374B] border border-[#475466]"
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl h-full relative overflow-hidden border border-gray-200"
                 whileHover={{ 
                   y: -8,
                   boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
@@ -717,10 +717,10 @@ export default function About() {
               >
                 {/* Card header */}
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-[#35506b] rounded-full flex items-center justify-center mr-3">
-                    <Eye className="w-5 h-5 text-[#FFC600]" />
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                    <Eye className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-[#2A374B]">Vision</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800">Vision</h3>
                 </div>
                 
                 {/* Vision content */}
@@ -732,7 +732,7 @@ export default function About() {
                   >
                     "
                   </motion.div>
-                  <p className="text-base md:text-lg text-[#2A374B] leading-relaxed font-medium pl-5">
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed font-medium pl-5">
                     To streamline construction sourcing and procurement using smart, cost-effective, 
                     and scalable technology solutions to build efficient and sustainable infrastructure.
                   </p>
