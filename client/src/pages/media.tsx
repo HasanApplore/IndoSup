@@ -960,7 +960,7 @@ export default function Media() {
                       <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-blue-700 transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 leading-tight">
                       {item.title}
                     </h3>
 
