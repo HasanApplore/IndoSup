@@ -201,6 +201,8 @@ Changelog:
 - July 24, 2025. Resolved hero video black border issue: implemented proper video scaling and positioning using viewport-based dimensions (100vw width, 56.25vw height for 16:9 ratio), added overflow hidden container, positioned video with absolute centering transforms, ensured video fills entire container without black borders while maintaining aspect ratio
 - July 24, 2025. Removed content overlay from hero video: eliminated all text content, buttons, and scroll indicators from hero section as requested by user, keeping only the clean video background without any overlaid elements for minimal design approach
 - July 29, 2025. Applied Cardo font globally across entire website: updated Tailwind config to use Cardo as default sans font, removed all font-poppins classes from components, updated Google Fonts import to include only Cardo, ensuring consistent typography throughout all pages and sections
+- July 29, 2025. Updated media cards styling: changed background from dark transparent to white with proper shadows, replaced yellow text colors with professional blue theme for better readability, maintained gradient icons and interactive hover effects
+- July 29, 2025. Applied unified background styling across homepage sections: updated Our Partners, Our Clients, and Testimonials sections to use matching "bg-white/95 backdrop-blur-lg" background styling consistent with Why Choose IndoSup section, adjusted text colors accordingly for optimal contrast and readability
 
 ## User Preferences
 
