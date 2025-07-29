@@ -245,39 +245,39 @@ export default function SteelProducts() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Building2 className="w-5 h-5 text-[#FFC600]" />
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Building2 className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Structural</h3>
-              <p className="text-gray-600 text-sm">Steel</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Structural</h3>
+              <p className="text-gray-700 text-sm font-medium">Steel</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Package className="w-5 h-5 text-[#FFC600]" />
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Package className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Pipes</h3>
-              <p className="text-gray-600 text-sm">& Fittings</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Pipes</h3>
+              <p className="text-gray-700 text-sm font-medium">& Fittings</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <CheckCircle className="w-5 h-5 text-[#FFC600]" />
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <CheckCircle className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Roofing</h3>
-              <p className="text-gray-600 text-sm">Materials</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Roofing</h3>
+              <p className="text-gray-700 text-sm font-medium">Materials</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Download className="w-5 h-5 text-[#FFC600]" />
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Download className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Doors</h3>
-              <p className="text-gray-600 text-sm">& Windows</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Doors</h3>
+              <p className="text-gray-700 text-sm font-medium">& Windows</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Star className="w-5 h-5 text-[#FFC600]" />
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Star className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-[#FFC600] mb-1">Reinforcement</h3>
-              <p className="text-gray-600 text-sm">Products</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Reinforcement</h3>
+              <p className="text-gray-700 text-sm font-medium">Products</p>
             </div>
           </motion.div>
           
