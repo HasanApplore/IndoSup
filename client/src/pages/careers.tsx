@@ -415,10 +415,10 @@ export default function Careers() {
                   </span>
                   <Button
                     onClick={() => handleApply(job)}
-                    className="bg-gradient-to-r from-[#FFC600] to-[#E6B200] hover:from-[#E6B200] hover:to-[#D4A200] text-[#2A374B] font-medium px-4 py-2 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md text-sm"
+                    className="bg-[#FFC600] hover:bg-[#E6B200] text-[#2A374B] font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#FFC600] text-sm"
                     style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   >
-                    Apply
+                    Apply Now
                   </Button>
                 </div>
               </motion.div>
