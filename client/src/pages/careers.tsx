@@ -7,14 +7,32 @@ import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import careerBannerImage from '@assets/businessman-holding-briefcase-travellers-walking-outdoors_1752497648254.jpg';
 
+interface JobOpening {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  description: string;
+  requirements: string;
+  createdAt: string;
+}
+
+interface ApplicationData {
+  name: string;
+  email: string;
+  phone: string;
+  resume: File | null;
+}
+
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
-  const [selectedJob, setSelectedJob] = useState(null);
+  const [selectedJob, setSelectedJob] = useState<JobOpening | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ApplicationData>({
     name: '',
     email: '',
     phone: '',
@@ -25,14 +43,14 @@ export default function Careers() {
   const queryClient = useQueryClient();
 
   // Fetch jobs from admin panel
-  const { data: jobOpenings = [], isLoading: jobsLoading } = useQuery({
+  const { data: jobOpenings = [], isLoading: jobsLoading } = useQuery<JobOpening[]>({
     queryKey: ['/api/jobs'],
     queryFn: () => fetch('/api/jobs').then(res => res.json()),
   });
 
   // Job application mutation
   const applyMutation = useMutation({
-    mutationFn: async (applicationData) => {
+    mutationFn: async (applicationData: ApplicationData) => {
       const formData = new FormData();
       formData.append('name', applicationData.name);
       formData.append('email', applicationData.email);
@@ -41,7 +59,7 @@ export default function Careers() {
         formData.append('resume', applicationData.resume);
       }
       
-      const response = await fetch(`/api/jobs/${selectedJob.id}/apply`, {
+      const response = await fetch(`/api/jobs/${selectedJob?.id}/apply`, {
         method: 'POST',
         body: formData,
       });
@@ -54,7 +72,7 @@ export default function Careers() {
       handleCloseModal();
     },
     onError: () => {
-      toast({ title: "Error", description: "Failed to submit application", variant: "destructive" });
+      toast({ title: "Error", description: "Failed to submit application" });
     },
   });
 
@@ -81,7 +99,7 @@ export default function Careers() {
     return matchesDepartment && matchesLocation && matchesSearch;
   });
 
-  const handleApply = (job) => {
+  const handleApply = (job: JobOpening) => {
     setSelectedJob(job);
     setIsApplyModalOpen(true);
   };
@@ -92,7 +110,7 @@ export default function Careers() {
     setFormData({ name: '', email: '', phone: '', resume: null });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     applyMutation.mutate({
       name: formData.name,
@@ -102,8 +120,8 @@ export default function Careers() {
     });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
     setFormData({ ...formData, resume: file });
   };
 
