@@ -159,7 +159,7 @@ export default function MediaCoverageSection() {
                         {mediaItems[activeIndex].icon}
                       </div>
                       <div>
-                        <h4 className="text-primary font-bold text-base sm:text-lg">{mediaItems[activeIndex].source}</h4>
+                        <h4 className="text-blue-600 font-bold text-base sm:text-lg">{mediaItems[activeIndex].source}</h4>
                         <p className="text-gray-600 text-xs sm:text-sm flex items-center gap-2">
                           <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                           {mediaItems[activeIndex].date} • {mediaItems[activeIndex].category}
@@ -179,8 +179,8 @@ export default function MediaCoverageSection() {
 
                     {/* Quote */}
                     <div className="flex items-start gap-2 sm:gap-3 mb-6 sm:mb-8">
-                      <Quote className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
-                      <p className="text-primary font-semibold text-sm sm:text-base md:text-lg italic">
+                      <Quote className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-blue-600 flex-shrink-0 mt-1" />
+                      <p className="text-blue-600 font-semibold text-sm sm:text-base md:text-lg italic">
                         "{mediaItems[activeIndex].quote}"
                       </p>
                     </div>
@@ -249,7 +249,7 @@ export default function MediaCoverageSection() {
             <motion.div
               key={item.id}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white border border-gray-200 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-gray-50 hover:border-[#FFC600]/50 shadow-md hover:shadow-lg"
+              className="bg-white border border-gray-200 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-gray-50 hover:border-blue-400 shadow-md hover:shadow-lg"
               onClick={() => setSelectedArticle(item)}
             >
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -257,11 +257,11 @@ export default function MediaCoverageSection() {
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-primary font-semibold text-xs sm:text-sm">{item.source}</p>
+                  <p className="text-blue-600 font-semibold text-xs sm:text-sm">{item.source}</p>
                   <p className="text-gray-600 text-xs">{item.date}</p>
                 </div>
               </div>
-              <h4 className="text-gray-900 font-bold mb-2 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base">
+              <h4 className="text-gray-900 font-bold mb-2 group-hover:text-blue-600 transition-colors duration-300 text-sm sm:text-base">
                 {item.headline}
               </h4>
               <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{item.description.substring(0, 60)}...</p>
