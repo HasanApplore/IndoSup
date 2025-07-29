@@ -5,43 +5,23 @@ export default function OurStrengthSection() {
   const strengths = [
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Trusted Quality Assurance",
-      description: "Rigorous quality control ensuring superior construction materials"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Expert Team & Support",
-      description: "Dedicated professionals providing 24/7 customer assistance"
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Market Leadership",
-      description: "Industry-leading solutions with proven track record"
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Precision Delivery",
-      description: "On-time delivery with accurate project specifications"
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Excellence Recognition",
-      description: "Award-winning services recognized across the industry"
+      title: "End-to-End Sourcing Platform",
+      description: "Complete procurement solution from sourcing to delivery"
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Rapid Processing",
-      description: "Fast procurement cycles with streamlined operations"
+      title: "Streamlined Procurement Process",
+      description: "Efficient and transparent procurement workflows"
     },
     {
-      icon: <HeartHandshake className="w-8 h-8" />,
-      title: "Partnership Approach",
-      description: "Building long-term relationships with clients and suppliers"
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Expertise in Value Engineering",
+      description: "Optimizing costs while maintaining quality standards"
     },
     {
-      icon: <Settings className="w-8 h-8" />,
-      title: "Process Innovation",
-      description: "Cutting-edge technology optimizing procurement workflows"
+      icon: <Clock className="w-8 h-8" />,
+      title: "Cost Efficiency & Timely Delivery",
+      description: "Delivering value with speed and reliability"
     }
   ];
 
