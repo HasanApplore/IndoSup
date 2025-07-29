@@ -363,7 +363,7 @@ export default function Careers() {
               >
                 <div className="mb-4">
                   <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-lg font-bold text-[#1E293B] group-hover:text-[#FFC600] transition-colors duration-300 flex-1 pr-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                    <h3 className="text-lg font-bold text-[#1E293B] flex-1 pr-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                       {job.title}
                     </h3>
                     <span className="bg-gradient-to-r from-[#FFC600]/10 to-[#FFC600]/20 text-[#FFC600] px-2 py-1 rounded-lg text-xs font-medium border border-[#FFC600]/30 whitespace-nowrap" style={{ fontFamily: 'Cardo, Georgia, serif' }}>

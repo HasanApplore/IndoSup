@@ -920,7 +920,7 @@ export default function Media() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg group-hover:text-primary transition-colors duration-300">
+                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg">
                         {item.category}
                       </span>
                     </div>
@@ -944,7 +944,7 @@ export default function Media() {
                         <Heart className={`w-4 h-4 transition-colors duration-300 ${
                           favoriteArticles.has(item.id) 
                             ? 'text-primary fill-primary' 
-                            : 'text-gray-600 hover:text-primary'
+                            : 'text-gray-600'
                         }`} />
                       </motion.button>
                     </div>
@@ -960,7 +960,7 @@ export default function Media() {
                       <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 leading-tight group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 leading-tight">
                       {item.title}
                     </h3>
 
@@ -970,7 +970,7 @@ export default function Media() {
 
                     <div className="flex items-center justify-between">
                       <motion.button
-                        className="inline-flex items-center text-accent font-bold hover:text-blue-700 transition-colors duration-300 text-xs md:text-sm group-hover:bg-blue-50 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-gray-200 hover:border-blue-300"
+                        className="inline-flex items-center text-accent font-bold text-xs md:text-sm px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-gray-200"
                         whileHover={{ x: 5 }}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -979,7 +979,7 @@ export default function Media() {
                         }}
                       >
                         <span className="mr-1 md:mr-2">Read More</span>
-                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300 group-hover:text-blue-600" />
+                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </motion.button>
                       
                       {/* Share Icon - Simplified */}
@@ -1004,7 +1004,7 @@ export default function Media() {
                             }
                           }}
                         >
-                          <Share2 className="w-3 h-3 md:w-4 md:h-4 text-gray-600 hover:text-blue-600" />
+                          <Share2 className="w-3 h-3 md:w-4 md:h-4 text-gray-600" />
                         </motion.button>
                       </div>
                     </div>
