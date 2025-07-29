@@ -690,11 +690,11 @@ export default function Media() {
       >
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            src="/attached_assets/image_1753777754831.png"
             alt="Media & Resources - News and Updates"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
         </div>
         
         {/* Animated background elements */}
@@ -740,55 +740,79 @@ export default function Media() {
           />
         </div>
         
-        {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
-              Media & Resources
-            </h1>
-            {/* Animated underline */}
+        {/* Content - Centered */}
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="text-center px-4 max-w-5xl mx-auto">
             <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "120px" }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="h-1 bg-[#F5A623] mx-auto mb-6"
-            />
-          </motion.div>
-          
-          <motion.p
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Latest News, Updates & Industry Insights
-          </motion.p>
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="flex items-center justify-center mb-6 md:mb-8">
+                <div className="bg-gradient-to-r from-primary/20 to-primary/30 backdrop-blur-lg border border-primary/40 rounded-full px-6 md:px-8 py-3 md:py-4 shadow-2xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                      <FileText className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm md:text-base font-bold tracking-wide text-white">MEDIA & RESOURCES</span>
+                  </div>
+                </div>
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent leading-tight">
+                Latest News & Insights
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-10 md:mb-12 font-light">
+                Stay updated with IndoSup's latest achievements, industry insights, and construction technology innovations shaping the future
+              </p>
+              
+              {/* Feature Stats */}
+              <motion.div 
+                className="flex flex-wrap justify-center gap-6 md:gap-8 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 md:px-6 py-3 md:py-4 border border-white/20">
+                  <div className="text-primary text-xl md:text-2xl font-bold">50+</div>
+                  <div className="text-white/80 text-sm md:text-base">Articles</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 md:px-6 py-3 md:py-4 border border-white/20">
+                  <div className="text-primary text-xl md:text-2xl font-bold">15+</div>
+                  <div className="text-white/80 text-sm md:text-base">Awards</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 md:px-6 py-3 md:py-4 border border-white/20">
+                  <div className="text-primary text-xl md:text-2xl font-bold">100K+</div>
+                  <div className="text-white/80 text-sm md:text-base">Readers</div>
+                </div>
+              </motion.div>
 
-          <motion.button
-            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            onClick={() => {
-              const contentSection = document.getElementById('media-content');
-              if (contentSection) {
-                setHeroAnimated(true);
-                setTimeout(() => {
-                  contentSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
-                }, 400);
-              }
-            }}
-          >
-            Explore Media
-          </motion.button>
+              <motion.button
+                className="bg-gradient-to-r from-primary to-primary/90 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl shadow-2xl hover:shadow-3xl font-bold transition-all duration-300 hover:scale-105 text-lg md:text-xl border-2 border-primary/20"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const contentSection = document.getElementById('media-content');
+                  if (contentSection) {
+                    setHeroAnimated(true);
+                    setTimeout(() => {
+                      contentSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                      });
+                    }, 400);
+                  }
+                }}
+              >
+                Explore Media Content
+              </motion.button>
+            </motion.div>
+          </div>
         </div>
       </section>
 
