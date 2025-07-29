@@ -220,6 +220,7 @@ Changelog:
 - July 29, 2025. Updated "Our Strength" section hover effects to match exactly "Why Choose IndoSup" section: removed background gradient animation, updated icon animation structure to use variants, changed title transition from transition-colors to transition-all, ensuring identical hover behavior across both sections
 - July 29, 2025. Enhanced "Our Strength" section with improved icons: kept original 4 cards structure, updated to use more professional and consistent icons (Shield, Zap, TrendingUp, Clock), improved icon sizing to w-8 h-8 for better visibility while maintaining original content and titles
 - July 29, 2025. Fixed Media & Resources page content filtering: updated type mapping to correctly match database content types ('news' for newsletters, 'case_study' for case studies) ensuring all admin panel content displays properly on frontend
+- July 29, 2025. Updated Media & Resources page banner image: replaced banner background with new media-themed image featuring cameras and photography equipment for better visual relevance to media content
 
 ## User Preferences
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2, ArrowDown, ArrowUp } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
-import mediaBannerImage from '@assets/image_1753777962918.png';
+import mediaBannerImage from '@assets/image_1753796715922.png';
 
 interface MediaItem {
   id: number;
