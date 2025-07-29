@@ -1,27 +1,47 @@
 import { motion } from 'framer-motion';
-import { Target, Shield, Users, Zap, Award, Clock, CheckCircle, TrendingUp } from 'lucide-react';
+import { Target, Shield, Users, Zap, Award, Clock, CheckCircle, TrendingUp, Star, Truck, Settings, HeartHandshake } from 'lucide-react';
 
 export default function OurStrengthSection() {
   const strengths = [
     {
-      icon: <Target className="w-6 h-6" />,
-      title: "End-to-End Sourcing Platform",
-      description: "Complete procurement solution from sourcing to delivery"
+      icon: <Shield className="w-8 h-8" />,
+      title: "Trusted Quality Assurance",
+      description: "Rigorous quality control ensuring superior construction materials"
     },
     {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Streamlined Procurement Process",
-      description: "Efficient and transparent procurement workflows"
+      icon: <Users className="w-8 h-8" />,
+      title: "Expert Team & Support",
+      description: "Dedicated professionals providing 24/7 customer assistance"
     },
     {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Expertise in Value Engineering",
-      description: "Optimizing costs while maintaining quality standards"
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Market Leadership",
+      description: "Industry-leading solutions with proven track record"
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Cost Efficiency & Timely Delivery",
-      description: "Delivering value with speed and reliability"
+      icon: <Target className="w-8 h-8" />,
+      title: "Precision Delivery",
+      description: "On-time delivery with accurate project specifications"
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Excellence Recognition",
+      description: "Award-winning services recognized across the industry"
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Rapid Processing",
+      description: "Fast procurement cycles with streamlined operations"
+    },
+    {
+      icon: <HeartHandshake className="w-8 h-8" />,
+      title: "Partnership Approach",
+      description: "Building long-term relationships with clients and suppliers"
+    },
+    {
+      icon: <Settings className="w-8 h-8" />,
+      title: "Process Innovation",
+      description: "Cutting-edge technology optimizing procurement workflows"
     }
   ];
 
@@ -78,9 +98,11 @@ export default function OurStrengthSection() {
                   }}
                   whileHover="hover"
                 >
-                  <div className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10">
-                    {strength.icon}
-                  </div>
+                  {strength.icon && (
+                    <div className="text-primary group-hover:text-white transition-all duration-300 relative z-10">
+                      {strength.icon}
+                    </div>
+                  )}
                 </motion.div>
                 
                 {/* Title */}
