@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Package, CheckCircle, Star, ArrowUp, Eye, Target, Building2, ArrowDown, Wrench, DoorOpen, Zap } from 'lucide-react';
+import { ArrowLeft, Download, Package, CheckCircle, Star, ArrowUp, Eye, Building2, ArrowDown, Wrench, DoorOpen, Zap } from 'lucide-react';
 import { Link } from 'wouter';
 
 export default function SteelProducts() {
@@ -91,12 +91,6 @@ export default function SteelProducts() {
       description: "Professional construction tools, fasteners, bolts, nuts, and steel hardware for building and assembly work.",
       specifications: ["High-Grade Steel", "Precision Tools", "Corrosion Resistant"],
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      name: "Steel Fasteners",
-      description: "High-quality bolts, screws, anchors, and fastening solutions for secure structural connections and assembly work.",
-      specifications: ["Grade 8.8/10.9", "Galvanized Coating", "Various Sizes"],
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -250,7 +244,7 @@ export default function SteelProducts() {
 
           {/* Stats Summary */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-7 gap-3 mb-8"
+            className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -297,13 +291,6 @@ export default function SteelProducts() {
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Hardware</h3>
               <p className="text-gray-700 text-sm font-medium">& Tools</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Target className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Steel</h3>
-              <p className="text-gray-700 text-sm font-medium">Fasteners</p>
             </div>
           </motion.div>
           
