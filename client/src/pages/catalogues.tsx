@@ -666,13 +666,9 @@ export default function Catalogues() {
             </motion.div>
           )}
 
-          {/* Back to Top Arrow */}
+          {/* Back to Top Button */}
           {showBackToTop && (
             <motion.button
-              className="fixed bottom-6 right-6 w-12 h-12 bg-[#FFC600] text-[#2A374B] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:bg-[#E6B200] z-50"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
               onClick={() => {
                 if (heroAnimated) {
                   setHeroAnimated(false);
@@ -681,10 +677,13 @@ export default function Catalogues() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
               }}
+              className="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg z-50 transition-colors duration-300"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
               whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
             >
-              <ArrowUp className="w-6 h-6" />
+              <ArrowUp className="w-5 h-5" />
             </motion.button>
           )}
         </div>

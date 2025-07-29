@@ -1245,14 +1245,13 @@ export default function Media() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             setHeroAnimated(false);
           }}
-          className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-primary to-primary/90 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center z-50 border-2 border-white/20"
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          whileHover={{ scale: 1.1, y: -3 }}
-          whileTap={{ scale: 0.9 }}
+          className="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg z-50 transition-colors duration-300"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.1 }}
         >
-          <ArrowUp className="w-6 h-6" />
+          <ArrowUp className="w-5 h-5" />
         </motion.button>
       )}
     </div>
