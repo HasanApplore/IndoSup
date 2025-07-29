@@ -903,7 +903,7 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-[#222629] hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30"
+                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-primary hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30"
                   whileHover={{ y: -8, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCardClick(item)}
@@ -960,7 +960,7 @@ export default function Media() {
                       <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 leading-tight">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 leading-tight group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
 
