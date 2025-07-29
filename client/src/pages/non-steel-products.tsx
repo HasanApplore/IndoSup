@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Wrench, CheckCircle, Star, ArrowUp, Building2, Package, Shield, ArrowDown } from 'lucide-react';
+import { ArrowLeft, Download, Wrench, CheckCircle, Star, ArrowUp, Building2, Package, Shield, ArrowDown, Settings, Droplets } from 'lucide-react';
 import { Link } from 'wouter';
 import pumpingSystemImg from '@assets/OIP (1)_1752499680077.webp';
 import fireProtectionSystemImg from '@assets/fireprotectionsystemcomponents_1752499690321.webp';
@@ -250,7 +250,7 @@ export default function NonSteelProducts() {
 
           {/* Stats Summary */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
+            className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -283,6 +283,20 @@ export default function NonSteelProducts() {
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Warehouse</h3>
               <p className="text-gray-700 text-sm font-medium">Infrastructure</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Settings className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Site</h3>
+              <p className="text-gray-700 text-sm font-medium">Utilities</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Droplets className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Water</h3>
+              <p className="text-gray-700 text-sm font-medium">Systems</p>
             </div>
           </motion.div>
           
