@@ -38,7 +38,7 @@ export default function OurClientsSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl font-bold text-[#1E293B] mb-6 font-poppins">
-            Our Valued Clients
+            Our Clients
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto font-poppins">

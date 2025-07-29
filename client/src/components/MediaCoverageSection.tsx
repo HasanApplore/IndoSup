@@ -124,7 +124,7 @@ export default function MediaCoverageSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            What Media Says About Us
+            Our Media
             <motion.div
               className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-[#FFC600] rounded-full"
               initial={{ width: 0 }}

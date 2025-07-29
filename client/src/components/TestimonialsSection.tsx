@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-[#FFC600] mb-2 font-poppins">
-            What Our Clients Say
+            Testimonials
           </h2>
           <div className="h-1 w-12 bg-[#FFC600] mx-auto my-4"></div>
           <p className="text-[#F5F5F5] text-lg max-w-3xl mx-auto mt-2 font-poppins">
