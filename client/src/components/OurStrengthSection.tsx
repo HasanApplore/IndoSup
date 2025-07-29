@@ -4,44 +4,24 @@ import { Target, Shield, Users, Zap, Award, Clock, CheckCircle, TrendingUp } fro
 export default function OurStrengthSection() {
   const strengths = [
     {
-      icon: <Shield className="w-6 h-6" />,
-      title: "End-to-End Solutions",
-      description: "Complete construction procurement management from sourcing to delivery, ensuring seamless project execution."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Expert Team",
-      description: "Industry professionals with deep knowledge of construction materials and procurement best practices."
+      icon: <Target className="w-6 h-6" />,
+      title: "End-to-End Sourcing Platform",
+      description: "Complete procurement solution from sourcing to delivery"
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Technology-Driven",
-      description: "Advanced digital platforms for real-time tracking, inventory management, and streamlined operations."
-    },
-    {
-      icon: <Award className="w-6 h-6" />,
-      title: "Quality Assurance",
-      description: "Rigorous quality control processes ensuring all materials meet industry standards and specifications."
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Timely Delivery",
-      description: "Reliable supply chain management with on-time delivery to keep your projects on schedule."
-    },
-    {
-      icon: <CheckCircle className="w-6 h-6" />,
-      title: "Proven Track Record",
-      description: "Successfully managed 10,000+ deliveries across 25+ states with 400+ trusted vendor network."
+      title: "Streamlined Procurement Process",
+      description: "Efficient and transparent procurement workflows"
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      title: "Cost Optimization",
-      description: "Strategic procurement planning and bulk purchasing power delivering significant cost savings."
+      title: "Expertise in Value Engineering",
+      description: "Optimizing costs while maintaining quality standards"
     },
     {
-      icon: <Target className="w-6 h-6" />,
-      title: "Customer Focus",
-      description: "Dedicated support teams ensuring personalized service and long-term partnership success."
+      icon: <Clock className="w-6 h-6" />,
+      title: "Cost Efficiency & Timely Delivery",
+      description: "Delivering value with speed and reliability"
     }
   ];
 
