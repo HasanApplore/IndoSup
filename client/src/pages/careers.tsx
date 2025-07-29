@@ -198,7 +198,7 @@ export default function Careers() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff', fontFamily: 'Cardo, Georgia, serif' }}>
               Career Opportunities
             </h1>
             {/* Animated underline */}
@@ -212,6 +212,7 @@ export default function Careers() {
           
           <motion.p
             className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            style={{ fontFamily: 'Cardo, Georgia, serif' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -221,6 +222,7 @@ export default function Careers() {
 
           <motion.button
             className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
+            style={{ fontFamily: 'Cardo, Georgia, serif' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -268,11 +270,11 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1E293B] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E293B] mb-6" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
               Current Openings
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-4"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
               Join our team of innovators and help shape the future of construction procurement
             </p>
           </motion.div>
@@ -297,6 +299,7 @@ export default function Careers() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] transition-all duration-300 text-gray-700 placeholder-gray-400 shadow-sm hover:shadow-md hover:border-[#FFC600]/50"
+                  style={{ fontFamily: 'Cardo, Georgia, serif' }}
                 />
               </div>
 
@@ -307,10 +310,11 @@ export default function Careers() {
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
                   className="w-full pl-10 pr-8 py-3 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-gray-700 appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
+                  style={{ fontFamily: 'Cardo, Georgia, serif' }}
                 >
-                  <option value="all" className="bg-white text-gray-700">All Departments</option>
+                  <option value="all" className="bg-white text-gray-700" style={{ fontFamily: 'Cardo, Georgia, serif' }}>All Departments</option>
                   {departments.map(dept => (
-                    <option key={dept} value={dept} className="bg-white text-gray-700">{dept}</option>
+                    <option key={dept} value={dept} className="bg-white text-gray-700" style={{ fontFamily: 'Cardo, Georgia, serif' }}>{dept}</option>
                   ))}
                 </select>
               </div>
@@ -322,10 +326,11 @@ export default function Careers() {
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
                   className="w-full pl-10 pr-8 py-3 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FFC600] focus:border-[#FFC600] text-gray-700 appearance-none shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#FFC600]/50"
+                  style={{ fontFamily: 'Cardo, Georgia, serif' }}
                 >
-                  <option value="all" className="bg-white text-gray-700">All Locations</option>
+                  <option value="all" className="bg-white text-gray-700" style={{ fontFamily: 'Cardo, Georgia, serif' }}>All Locations</option>
                   {locations.map(location => (
-                    <option key={location} value={location} className="bg-white text-gray-700">{location}</option>
+                    <option key={location} value={location} className="bg-white text-gray-700" style={{ fontFamily: 'Cardo, Georgia, serif' }}>{location}</option>
                   ))}
                 </select>
               </div>
@@ -334,10 +339,10 @@ export default function Careers() {
 
           {/* Results Count */}
           <div className="mb-6">
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
               Showing {filteredJobs.length} of {jobOpenings.length} job openings
               {filteredJobs.length !== jobOpenings.length && (
-                <span className="text-[#FFC600] font-semibold"> (filtered from {jobOpenings.length} total)</span>
+                <span className="text-[#FFC600] font-semibold" style={{ fontFamily: 'Cardo, Georgia, serif' }}> (filtered from {jobOpenings.length} total)</span>
               )}
             </p>
           </div>
@@ -358,10 +363,10 @@ export default function Careers() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-[#1E293B] mb-2 group-hover:text-[#FFC600] transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-[#1E293B] mb-2 group-hover:text-[#FFC600] transition-colors duration-300" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                       {job.title}
                     </h3>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600">
+                    <div className="flex items-center space-x-4 text-sm text-gray-600" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                       <span className="flex items-center">
                         <Building className="w-4 h-4 mr-1" />
                         {job.department}
@@ -376,20 +381,20 @@ export default function Careers() {
                       </span>
                     </div>
                   </div>
-                  <span className="bg-[#FFC600]/20 text-[#FFC600] px-3 py-1 rounded-full text-sm font-medium border border-[#FFC600]/30">
+                  <span className="bg-[#FFC600]/20 text-[#FFC600] px-3 py-1 rounded-full text-sm font-medium border border-[#FFC600]/30" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                     {job.department}
                   </span>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                   {job.description}
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-[#FFC600] mb-2">Key Requirements:</h4>
+                  <h4 className="font-semibold text-[#FFC600] mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Key Requirements:</h4>
                   <div className="flex flex-wrap gap-2">
                     {job.requirements && job.requirements.split(',').map((req, index) => (
-                      <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-200">
+                      <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-200" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                         {req.trim()}
                       </span>
                     ))}
@@ -397,7 +402,7 @@ export default function Careers() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                     Posted {new Date(job.createdAt).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'short', 
@@ -407,6 +412,7 @@ export default function Careers() {
                   <Button
                     onClick={() => handleApply(job)}
                     className="bg-[#FFC600] hover:bg-[#E6B200] text-[#2A374B] font-semibold px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#FFC600]"
+                    style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   >
                     Apply Now
                   </Button>
@@ -424,8 +430,8 @@ export default function Careers() {
               transition={{ duration: 0.5 }}
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-[#1E293B] mb-2">No Openings Found</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold text-[#1E293B] mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>No Openings Found</h3>
+              <p className="text-gray-600" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                 Try adjusting your filters or check back later for new opportunities.
               </p>
             </motion.div>
@@ -443,11 +449,11 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
               Life at IndoSup
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
-            <p className="text-lg text-[#F5F5F5] mt-6 max-w-2xl mx-auto">
+            <p className="text-lg text-[#F5F5F5] mt-6 max-w-2xl mx-auto" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
               Join a dynamic team of innovators, builders, and problem-solvers who are transforming the construction industry.
             </p>
           </motion.div>
@@ -469,8 +475,8 @@ export default function Careers() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-lg font-bold mb-1">Collaborative Environment</h3>
-                  <p className="text-sm">Working together to solve complex challenges</p>
+                  <h3 className="text-lg font-bold mb-1" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Collaborative Environment</h3>
+                  <p className="text-sm" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Working together to solve complex challenges</p>
                 </div>
               </div>
             </motion.div>
@@ -491,8 +497,8 @@ export default function Careers() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-lg font-bold mb-1">Innovation Focus</h3>
-                  <p className="text-sm">Building the future of construction tech</p>
+                  <h3 className="text-lg font-bold mb-1" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Innovation Focus</h3>
+                  <p className="text-sm" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Building the future of construction tech</p>
                 </div>
               </div>
             </motion.div>
@@ -513,8 +519,8 @@ export default function Careers() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-lg font-bold mb-1">Growth & Success</h3>
-                  <p className="text-sm">Celebrating achievements together</p>
+                  <h3 className="text-lg font-bold mb-1" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Growth & Success</h3>
+                  <p className="text-sm" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Celebrating achievements together</p>
                 </div>
               </div>
             </motion.div>
@@ -542,7 +548,7 @@ export default function Careers() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-bold text-accent">Apply for Position</h3>
+                <h3 className="text-2xl font-bold text-accent" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Apply for Position</h3>
                 <button
                   onClick={handleCloseModal}
                   className="text-gray-500 hover:text-gray-700 transition-colors"
@@ -553,14 +559,14 @@ export default function Careers() {
 
               {selectedJob && (
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold text-accent">{selectedJob.title}</h4>
-                  <p className="text-sm text-neutral-base">{selectedJob.department} • {selectedJob.location}</p>
+                  <h4 className="font-semibold text-accent" style={{ fontFamily: 'Cardo, Georgia, serif' }}>{selectedJob.title}</h4>
+                  <p className="text-sm text-neutral-base" style={{ fontFamily: 'Cardo, Georgia, serif' }}>{selectedJob.department} • {selectedJob.location}</p>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-2">Full Name *</label>
+                  <label className="block text-sm font-medium text-accent mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Full Name *</label>
                   <input
                     type="text"
                     required
@@ -568,11 +574,12 @@ export default function Careers() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Enter your full name"
+                    style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-2">Email Address *</label>
+                  <label className="block text-sm font-medium text-accent mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Email Address *</label>
                   <input
                     type="email"
                     required
@@ -580,25 +587,27 @@ export default function Careers() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Enter your email address"
+                    style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-2">Phone Number</label>
+                  <label className="block text-sm font-medium text-accent mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Phone Number</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Enter your phone number"
+                    style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-accent mb-2">Resume *</label>
+                  <label className="block text-sm font-medium text-accent mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Resume *</label>
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                     <Upload className="w-8 h-8 mx-auto mb-2 text-gray-400" />
-                    <p className="text-sm text-gray-600 mb-2">Upload your resume</p>
+                    <p className="text-sm text-gray-600 mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Upload your resume</p>
                     <input
                       type="file"
                       accept=".pdf,.doc,.docx"
@@ -610,11 +619,12 @@ export default function Careers() {
                     <label
                       htmlFor="resume-upload"
                       className="inline-block bg-primary text-accent px-4 py-2 rounded-lg font-medium cursor-pointer hover:bg-primary/90 transition-colors"
+                      style={{ fontFamily: 'Cardo, Georgia, serif' }}
                     >
                       Choose File
                     </label>
                     {formData.resume && (
-                      <p className="text-sm text-primary mt-2">{formData.resume.name}</p>
+                      <p className="text-sm text-primary mt-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>{formData.resume.name}</p>
                     )}
                   </div>
                 </div>
@@ -624,6 +634,7 @@ export default function Careers() {
                     type="button"
                     onClick={handleCloseModal}
                     className="flex-1 bg-gray-200 text-accent hover:bg-gray-300 font-semibold py-3 rounded-lg transition-colors"
+                    style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   >
                     Cancel
                   </Button>
@@ -631,6 +642,7 @@ export default function Careers() {
                     type="submit"
                     disabled={applyMutation.isPending}
                     className="flex-1 bg-primary text-accent hover:bg-accent hover:text-white font-semibold py-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   >
                     {applyMutation.isPending ? (
                       <div className="w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin mr-2" />
