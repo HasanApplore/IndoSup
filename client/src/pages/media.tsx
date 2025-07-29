@@ -903,7 +903,7 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-white/30 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-gray-300"
+                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-blue-300/60 hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30"
                   whileHover={{ y: -8, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCardClick(item)}
@@ -918,9 +918,9 @@ export default function Media() {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg">
+                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg group-hover:bg-blue-50 group-hover:text-blue-700 transition-colors duration-300">
                         {item.category}
                       </span>
                     </div>
@@ -960,7 +960,7 @@ export default function Media() {
                       <span className="font-medium">{item.source}</span>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-gray-800 transition-colors duration-300 leading-tight">
+                    <h3 className="text-lg md:text-xl font-bold text-accent mb-2 md:mb-3 line-clamp-2 group-hover:text-blue-700 transition-colors duration-300 leading-tight">
                       {item.title}
                     </h3>
 
@@ -970,7 +970,7 @@ export default function Media() {
 
                     <div className="flex items-center justify-between">
                       <motion.button
-                        className="inline-flex items-center text-accent font-bold hover:text-gray-800 transition-colors duration-300 text-xs md:text-sm group-hover:bg-gray-50 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-gray-200 hover:border-gray-300"
+                        className="inline-flex items-center text-accent font-bold hover:text-blue-700 transition-colors duration-300 text-xs md:text-sm group-hover:bg-blue-50 px-3 md:px-4 py-2 md:py-2.5 rounded-lg transition-all duration-300 border border-gray-200 hover:border-blue-300"
                         whileHover={{ x: 5 }}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -979,13 +979,13 @@ export default function Media() {
                         }}
                       >
                         <span className="mr-1 md:mr-2">Read More</span>
-                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300 group-hover:text-blue-600" />
                       </motion.button>
                       
                       {/* Share Icon - Simplified */}
                       <div className="flex items-center gap-2">
                         <motion.button
-                          className="p-1.5 md:p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                          className="p-1.5 md:p-2 hover:bg-blue-50 rounded-full transition-colors duration-200"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           title="Share article"
@@ -1004,7 +1004,7 @@ export default function Media() {
                             }
                           }}
                         >
-                          <Share2 className="w-3 h-3 md:w-4 md:h-4 text-gray-600 hover:text-gray-800" />
+                          <Share2 className="w-3 h-3 md:w-4 md:h-4 text-gray-600 hover:text-blue-600" />
                         </motion.button>
                       </div>
                     </div>
