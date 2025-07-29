@@ -444,8 +444,8 @@ export default function Careers() {
       </section>
 
       {/* Life at IndoSup Section */}
-      <section className="py-5 md:py-8 bg-[#3b4f69]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <section className="py-20 px-4 md:px-12 bg-[#3b4f69] relative overflow-hidden">
+        <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
