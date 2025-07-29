@@ -61,22 +61,22 @@ export default function OurStrengthSection() {
                 transition: { duration: 0.3 }
               }}
             >
-              {/* Background Animation */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              
-              {/* Content */}
+              {/* Content Container */}
               <div className="relative z-10">
                 {/* Icon */}
                 <motion.div
                   className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary transition-all duration-300 mb-4 relative"
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 5,
-                    transition: {
-                      duration: 0.3,
-                      ease: "easeInOut"
+                  variants={{
+                    hover: {
+                      scale: 1.1,
+                      rotate: 5,
+                      transition: {
+                        duration: 0.3,
+                        ease: "easeInOut"
+                      }
                     }
                   }}
+                  whileHover="hover"
                 >
                   <div className="w-8 h-8 text-primary group-hover:text-white transition-all duration-300 relative z-10">
                     {strength.icon}
@@ -84,7 +84,7 @@ export default function OurStrengthSection() {
                 </motion.div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-[#1E293B] mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-[#1E293B] mb-3 group-hover:text-primary transition-all duration-300">
                   {strength.title}
                 </h3>
                 

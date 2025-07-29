@@ -217,6 +217,7 @@ Changelog:
 - July 29, 2025. Updated solar page banner image: replaced hero section background with full solar panel array image (photo-1509391366360-2e959784a276) showing complete solar installations, also updated product card images to maintain visual consistency across the entire solar products page
 - July 29, 2025. Implemented navbar dropdown navigation to specific product sections: added proper section IDs to all steel and non-steel product cards using switch statements, updated navbar subcategories to match section IDs, enabled smooth scrolling navigation from dropdown menus to specific product sections, ensuring users can directly navigate to "Structural Steel", "Pipes & Fittings", "Plumbing", "Electrical" and other subcategories from the navbar dropdown
 - July 29, 2025. Fixed card hover effects on Media and Careers pages: removed text color transitions on hover for headings, subheadings, and tags to maintain consistent text colors while preserving other hover animations like card scaling and background effects
+- July 29, 2025. Updated "Our Strength" section hover effects to match exactly "Why Choose IndoSup" section: removed background gradient animation, updated icon animation structure to use variants, changed title transition from transition-colors to transition-all, ensuring identical hover behavior across both sections
 
 ## User Preferences
 
