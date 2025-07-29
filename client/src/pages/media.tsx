@@ -903,7 +903,7 @@ export default function Media() {
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
-                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-blue-300/60 hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30"
+                  className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300 group border border-white/20 relative cursor-pointer transform-gpu hover:border-[#222629] hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30"
                   whileHover={{ y: -8, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCardClick(item)}
