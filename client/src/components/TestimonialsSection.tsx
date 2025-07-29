@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
 
                 <div className="text-center">
                   {/* Testimonial Quote */}
-                  <blockquote className="text-lg text-[#374151] text-center leading-relaxed mb-6 font-cardo">
+                  <blockquote className="text-lg text-[#374151] text-center leading-relaxed mb-6">
                     "{currentTestimonial.testimonial}"
                   </blockquote>
 

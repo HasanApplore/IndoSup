@@ -118,7 +118,7 @@ export default function StatsSection() {
 
               {/* Label */}
               <motion.h3
-                className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300 font-inter"
+                className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

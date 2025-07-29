@@ -55,7 +55,8 @@
   }
 
   html, body {
-    @apply font-cardo antialiased bg-background text-foreground;
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Cardo', Georgia, serif;
     overflow-x: hidden;
   }
 

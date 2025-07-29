@@ -67,7 +67,7 @@ export default function InitiativesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4 font-inter">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-accent mb-3 md:mb-4">
             Our Key Initiatives
           </h2>
           <div className="w-16 md:w-20 h-1 bg-primary mx-auto"></div>
