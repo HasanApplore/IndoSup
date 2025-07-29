@@ -159,8 +159,8 @@ export default function MediaCoverageSection() {
                         {mediaItems[activeIndex].icon}
                       </div>
                       <div>
-                        <h4 className="text-[#FFFFFF] font-bold text-base sm:text-lg hover:font-extrabold transition-all duration-300">{mediaItems[activeIndex].source}</h4>
-                        <p className="text-[#D3D8E2] text-xs sm:text-sm flex items-center gap-2">
+                        <h4 className="text-primary font-bold text-base sm:text-lg">{mediaItems[activeIndex].source}</h4>
+                        <p className="text-[#D1D5DB] text-xs sm:text-sm flex items-center gap-2">
                           <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                           {mediaItems[activeIndex].date} • {mediaItems[activeIndex].category}
                         </p>
@@ -168,29 +168,29 @@ export default function MediaCoverageSection() {
                     </div>
 
                     {/* Headline */}
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFFFFF] mb-3 sm:mb-4 leading-tight hover:font-extrabold transition-all duration-300">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#F5F5F5] mb-3 sm:mb-4 leading-tight">
                       {mediaItems[activeIndex].headline}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#D3D8E2] text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
+                    <p className="text-[#E5E7EB] text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
                       {mediaItems[activeIndex].description}
                     </p>
 
                     {/* Quote */}
                     <div className="flex items-start gap-2 sm:gap-3 mb-6 sm:mb-8">
-                      <Quote className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#F5C518] flex-shrink-0 mt-1" />
-                      <p className="text-[#F5C518] font-semibold text-sm sm:text-base md:text-lg italic">
+                      <Quote className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary flex-shrink-0 mt-1" />
+                      <p className="text-primary font-semibold text-sm sm:text-base md:text-lg italic">
                         "{mediaItems[activeIndex].quote}"
                       </p>
                     </div>
 
                     {/* CTA Button */}
                     <motion.button
-                      whileHover={{ scale: 1.05, backgroundColor: '#E85B5B' }}
+                      whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelectedArticle(mediaItems[activeIndex])}
-                      className="bg-[#FF6B6B] hover:bg-[#E85B5B] text-[#FFFFFF] px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                      className={`bg-gradient-to-r ${mediaItems[activeIndex].gradient} text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base`}
                     >
                       Read Full Article
                       <ExternalLink className="w-4 h-4" />
@@ -249,27 +249,27 @@ export default function MediaCoverageSection() {
             <motion.div
               key={item.id}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-white/20 hover:border-[#F5C518]/30"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-white/20 hover:border-[#FFC600]/30"
               onClick={() => setSelectedArticle(item)}
             >
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <div className="bg-[#FFB347] hover:bg-[#E69E2F] rounded-lg p-2 transition-colors duration-300">
+                <div className={`bg-gradient-to-r ${item.gradient} rounded-lg p-2`}>
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-[#FFFFFF] font-semibold text-xs sm:text-sm hover:font-extrabold transition-all duration-300">{item.source}</p>
-                  <p className="text-[#D3D8E2] text-xs">{item.date}</p>
+                  <p className="text-primary font-semibold text-xs sm:text-sm">{item.source}</p>
+                  <p className="text-[#D1D5DB] text-xs">{item.date}</p>
                 </div>
               </div>
-              <h4 className="text-[#FFFFFF] font-bold mb-2 group-hover:text-[#F5C518] group-hover:font-extrabold transition-all duration-300 text-sm sm:text-base">
+              <h4 className="text-[#F5F5F5] font-bold mb-2 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base">
                 {item.headline}
               </h4>
-              <p className="text-[#D3D8E2] text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{item.description.substring(0, 60)}...</p>
+              <p className="text-[#D1D5DB] text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{item.description.substring(0, 60)}...</p>
               <div className="flex items-center justify-between">
-                <span className="px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-[#FF6B6B] hover:bg-[#E85B5B] text-[#FFFFFF] transition-colors duration-300">
+                <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${item.gradient} text-white`}>
                   {item.category}
                 </span>
-                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-[#F5C518] group-hover:translate-x-1 transition-transform duration-300" />
+                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-primary group-hover:translate-x-1 transition-transform duration-300" />
               </div>
             </motion.div>
           ))}
@@ -297,23 +297,23 @@ export default function MediaCoverageSection() {
               <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-6 relative">
                 <button
                   onClick={() => setSelectedArticle(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-[#FF6B6B] hover:bg-[#E85B5B] transition-colors"
+                  className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 >
-                  <X className="w-5 h-5 text-[#FFFFFF]" />
+                  <X className="w-5 h-5" />
                 </button>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-[#FFB347] hover:bg-[#E69E2F] rounded-xl p-3 transition-colors duration-300">
+                  <div className={`bg-gradient-to-r ${selectedArticle.gradient} rounded-xl p-3`}>
                     {selectedArticle.icon}
                   </div>
                   <div>
-                    <h4 className="text-[#FFFFFF] font-bold text-xl hover:font-extrabold transition-all duration-300">{selectedArticle.source}</h4>
-                    <p className="text-[#D3D8E2] flex items-center gap-2">
+                    <h4 className="text-primary font-bold text-xl">{selectedArticle.source}</h4>
+                    <p className="text-gray-300 flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
                       {selectedArticle.date} • {selectedArticle.category}
                     </p>
                   </div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#FFFFFF] hover:font-extrabold transition-all duration-300">{selectedArticle.headline}</h2>
+                <h2 className="text-3xl font-bold mb-2">{selectedArticle.headline}</h2>
               </div>
 
               {/* Content */}
@@ -330,17 +330,17 @@ export default function MediaCoverageSection() {
                   
                   {/* Article Content */}
                   <div>
-                    <div className="bg-[#F5C518]/10 border-l-4 border-[#F5C518] p-4 rounded-r-xl mb-6">
-                      <p className="text-[#F5C518] font-semibold italic">
+                    <div className="bg-primary/10 border-l-4 border-primary p-4 rounded-r-xl mb-6">
+                      <p className="text-primary font-semibold italic">
                         "{selectedArticle.quote}"
                       </p>
                     </div>
                     
-                    <p className="text-[#D3D8E2] text-lg leading-relaxed mb-6">
+                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
                       {selectedArticle.description}
                     </p>
                     
-                    <div className="prose prose-lg text-[#D3D8E2]">
+                    <div className="prose prose-lg text-gray-600">
                       <p>{selectedArticle.fullContent}</p>
                     </div>
                   </div>
@@ -350,21 +350,13 @@ export default function MediaCoverageSection() {
               {/* Footer */}
               <div className="bg-gray-50 p-6 border-t">
                 <div className="flex justify-between items-center">
-                  <p className="text-[#D3D8E2]">Published by {selectedArticle.source}</p>
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => setSelectedArticle(null)}
-                      className="bg-[#FFB347] hover:bg-[#E69E2F] text-[#FFFFFF] px-6 py-2 rounded-xl font-semibold transition-all duration-300"
-                    >
-                      Share Article
-                    </button>
-                    <button
-                      onClick={() => setSelectedArticle(null)}
-                      className="bg-[#FF6B6B] hover:bg-[#E85B5B] text-[#FFFFFF] px-6 py-2 rounded-xl font-semibold transition-all duration-300"
-                    >
-                      Close Article
-                    </button>
-                  </div>
+                  <p className="text-gray-600">Published by {selectedArticle.source}</p>
+                  <button
+                    onClick={() => setSelectedArticle(null)}
+                    className="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-2 rounded-xl font-semibold hover:shadow-lg hover:from-gray-700 hover:to-gray-800 transition-all duration-300"
+                  >
+                    Close Article
+                  </button>
                 </div>
               </div>
             </motion.div>
