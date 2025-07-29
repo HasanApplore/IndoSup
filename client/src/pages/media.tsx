@@ -675,7 +675,7 @@ export default function Media() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Background with same effects as Why Choose IndoSup section */}
       <div className="absolute inset-0 bg-white/95 backdrop-blur-lg">
         {/* Floating Elements */}
@@ -694,8 +694,9 @@ export default function Media() {
         </div>
         
         {/* Gradient Overlays */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-primary/2 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/8 via-transparent to-primary/5"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-primary/3 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-bl from-primary/4 via-transparent to-primary/6"></div>
       </div>
       {/* Hero Section */}
       <section 
@@ -831,9 +832,11 @@ export default function Media() {
           <div className="absolute bottom-1/3 right-20 w-24 h-24 bg-primary/6 rounded-full blur-3xl animate-pulse delay-1500"></div>
           <div className="absolute bottom-20 left-16 w-18 h-18 bg-primary/10 rounded-full blur-2xl animate-bounce delay-300"></div>
           
-          {/* Gradient Overlays */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-bl from-primary/3 via-transparent to-primary/2"></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tl from-transparent via-primary/1 to-transparent"></div>
+          {/* Enhanced Gradient Overlays */}
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-bl from-primary/5 via-transparent to-primary/3"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tl from-transparent via-primary/2 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/3 via-transparent to-primary/4"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-primary/1 to-primary/2"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
 
