@@ -150,7 +150,7 @@ export default function MediaCoverageSection() {
               className="relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${mediaItems[activeIndex].gradient} rounded-3xl blur opacity-20`}></div>
-              <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
+              <div className="relative bg-white border border-gray-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-lg">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     {/* Source and Category */}
@@ -160,7 +160,7 @@ export default function MediaCoverageSection() {
                       </div>
                       <div>
                         <h4 className="text-primary font-bold text-base sm:text-lg">{mediaItems[activeIndex].source}</h4>
-                        <p className="text-[#D1D5DB] text-xs sm:text-sm flex items-center gap-2">
+                        <p className="text-gray-600 text-xs sm:text-sm flex items-center gap-2">
                           <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                           {mediaItems[activeIndex].date} • {mediaItems[activeIndex].category}
                         </p>
@@ -168,12 +168,12 @@ export default function MediaCoverageSection() {
                     </div>
 
                     {/* Headline */}
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#F5F5F5] mb-3 sm:mb-4 leading-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
                       {mediaItems[activeIndex].headline}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[#E5E7EB] text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
+                    <p className="text-gray-700 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
                       {mediaItems[activeIndex].description}
                     </p>
 
@@ -249,7 +249,7 @@ export default function MediaCoverageSection() {
             <motion.div
               key={item.id}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-white/20 hover:border-[#FFC600]/30"
+              className="bg-white border border-gray-200 rounded-lg sm:rounded-xl p-4 sm:p-6 cursor-pointer group transition-all duration-300 hover:bg-gray-50 hover:border-[#FFC600]/50 shadow-md hover:shadow-lg"
               onClick={() => setSelectedArticle(item)}
             >
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -258,13 +258,13 @@ export default function MediaCoverageSection() {
                 </div>
                 <div>
                   <p className="text-primary font-semibold text-xs sm:text-sm">{item.source}</p>
-                  <p className="text-[#D1D5DB] text-xs">{item.date}</p>
+                  <p className="text-gray-600 text-xs">{item.date}</p>
                 </div>
               </div>
-              <h4 className="text-[#F5F5F5] font-bold mb-2 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base">
+              <h4 className="text-gray-900 font-bold mb-2 group-hover:text-primary transition-colors duration-300 text-sm sm:text-base">
                 {item.headline}
               </h4>
-              <p className="text-[#D1D5DB] text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{item.description.substring(0, 60)}...</p>
+              <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{item.description.substring(0, 60)}...</p>
               <div className="flex items-center justify-between">
                 <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${item.gradient} text-white`}>
                   {item.category}
