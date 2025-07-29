@@ -129,7 +129,7 @@ export default function Careers() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#ede6d3] to-white">
       {/* Hero Section */}
       <section className="relative h-[55vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -241,15 +241,7 @@ export default function Careers() {
       )}
 
       {/* Job Openings Section */}
-      <section className="py-12 md:py-16 bg-[#3b4f69] relative overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3b4f69] to-[#2d3748] opacity-90"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-[#FFC600]/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-20 w-32 h-32 bg-[#FFC600]/5 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/5 rounded-full blur-lg"></div>
-        </div>
-        
+      <section className="py-12 md:py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
             className="text-center mb-12"
@@ -258,11 +250,11 @@ export default function Careers() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E293B] mb-6">
               Current Openings
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-4"></div>
-            <p className="text-lg text-[#F5F5F5] max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Join our team of innovators and help shape the future of construction procurement
             </p>
           </motion.div>
@@ -271,7 +263,7 @@ export default function Careers() {
 
           {/* Search and Filters */}
           <motion.div 
-            className="bg-white backdrop-blur-md rounded-2xl shadow-2xl p-6 mb-8 border border-gray-200"
+            className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-lg p-6 mb-8 border border-white/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -324,7 +316,7 @@ export default function Careers() {
 
           {/* Results Count */}
           <div className="mb-6">
-            <p className="text-[#F5F5F5]/80 text-lg">
+            <p className="text-gray-600 text-lg">
               Showing {filteredJobs.length} of {jobOpenings.length} job openings
               {filteredJobs.length !== jobOpenings.length && (
                 <span className="text-[#FFC600] font-semibold"> (filtered from {jobOpenings.length} total)</span>
@@ -343,15 +335,15 @@ export default function Careers() {
               <motion.div
                 key={job.id}
                 variants={itemVariants}
-                className="bg-[#3C4A5E] backdrop-blur-sm border border-[#475466] rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 group hover:bg-[#3C4A5E]/80 hover:border-[#FFC600]/30"
+                className="bg-white/95 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:shadow-white/30 transition-all duration-300 group hover:border-primary"
                 whileHover={{ y: -8, scale: 1.02 }}
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFC600] mb-2 group-hover:text-[#FFC600] transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-[#1E293B] mb-2 group-hover:text-[#FFC600] transition-colors duration-300">
                       {job.title}
                     </h3>
-                    <div className="flex items-center space-x-4 text-sm text-[#F5F5F5]/70">
+                    <div className="flex items-center space-x-4 text-sm text-gray-600">
                       <span className="flex items-center">
                         <Building className="w-4 h-4 mr-1" />
                         {job.department}
@@ -371,7 +363,7 @@ export default function Careers() {
                   </span>
                 </div>
 
-                <p className="text-[#F5F5F5] leading-relaxed mb-4">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   {job.description}
                 </p>
 
@@ -379,7 +371,7 @@ export default function Careers() {
                   <h4 className="font-semibold text-[#FFC600] mb-2">Key Requirements:</h4>
                   <div className="flex flex-wrap gap-2">
                     {job.requirements && job.requirements.split(',').map((req, index) => (
-                      <span key={index} className="bg-[#3C4A5E] text-[#F5F5F5] px-3 py-1 rounded-full text-sm border border-[#475466]">
+                      <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-200">
                         {req.trim()}
                       </span>
                     ))}
@@ -387,7 +379,7 @@ export default function Careers() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-[#F5F5F5]/60">
+                  <span className="text-sm text-gray-500">
                     Posted {new Date(job.createdAt).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'short', 
@@ -414,8 +406,8 @@ export default function Careers() {
               transition={{ duration: 0.5 }}
             >
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-[#FFC600] mb-2">No Openings Found</h3>
-              <p className="text-[#F5F5F5]/70">
+              <h3 className="text-2xl font-bold text-[#1E293B] mb-2">No Openings Found</h3>
+              <p className="text-gray-600">
                 Try adjusting your filters or check back later for new opportunities.
               </p>
             </motion.div>
