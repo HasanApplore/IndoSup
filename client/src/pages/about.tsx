@@ -109,7 +109,7 @@ export default function About() {
       name: "Ashmit Sharma",
       position: "Founder & CEO",
       initials: "AS",
-      image: leader1Img,
+      image: leader2Img,
       linkedin: "https://www.linkedin.com/in/ashmit-sharma-49bbb0127/",
       email: "ashmit@indosup.com"
     },
@@ -117,7 +117,7 @@ export default function About() {
       name: "Akshaj Sharma",
       position: "Co-founder & COO",
       initials: "AS",
-      image: leader2Img,
+      image: leader1Img,
       linkedin: "https://www.linkedin.com/in/akshaj-sharma-4936b373/",
       email: "akshaj@indosup.com"
     },
