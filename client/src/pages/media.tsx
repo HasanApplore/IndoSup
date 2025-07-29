@@ -816,14 +816,26 @@ export default function Media() {
       {/* Main Content */}
       <section 
         id="media-content" 
-        className={`relative z-20 py-8 md:py-12 bg-[#3b4f69] transition-all duration-700 ease-out ${
+        className={`relative z-20 py-8 md:py-12 bg-white/95 backdrop-blur-lg transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
           zIndex: heroAnimated ? 50 : 20
         }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+        {/* Additional background effects for main content */}
+        <div className="absolute inset-0">
+          {/* Floating Elements */}
+          <div className="absolute top-20 right-10 w-20 h-20 bg-primary/8 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute top-1/3 left-10 w-16 h-16 bg-primary/12 rounded-full blur-xl animate-bounce delay-700"></div>
+          <div className="absolute bottom-1/3 right-20 w-24 h-24 bg-primary/6 rounded-full blur-3xl animate-pulse delay-1500"></div>
+          <div className="absolute bottom-20 left-16 w-18 h-18 bg-primary/10 rounded-full blur-2xl animate-bounce delay-300"></div>
+          
+          {/* Gradient Overlays */}
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-bl from-primary/3 via-transparent to-primary/2"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tl from-transparent via-primary/1 to-transparent"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
 
           {/* Section Header */}
           <motion.div
@@ -833,10 +845,10 @@ export default function Media() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600] mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1E293B] mb-3 md:mb-4">
               Explore Our Content
             </h2>
-            <p className="text-[#F5F5F5] text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
+            <p className="text-gray-600 text-base md:text-lg max-w-xl md:max-w-2xl mx-auto px-4">
               Browse through our comprehensive collection of media coverage, achievements, and industry insights
             </p>
           </motion.div>
@@ -856,7 +868,7 @@ export default function Media() {
                 className={`px-4 md:px-6 py-2.5 md:py-3 rounded-xl font-bold transition-all duration-300 relative overflow-hidden text-sm md:text-base ${
                   activeTab === tab.id
                     ? 'bg-[#FFC600] text-[#031D33] shadow-lg border-2 border-[#FFC600]'
-                    : 'bg-white text-gray-700 hover:bg-[#FFC600]/10 border-2 border-gray-200 hover:border-[#FFC600]/30'
+                    : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-[#FFC600]/10 border-2 border-gray-200 hover:border-[#FFC600]/30 shadow-sm'
                 }`}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
