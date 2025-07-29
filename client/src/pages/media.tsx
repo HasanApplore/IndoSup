@@ -675,10 +675,31 @@ export default function Media() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Background with same effects as Why Choose IndoSup section */}
+      <div className="absolute inset-0 bg-white/95 backdrop-blur-lg">
+        {/* Floating Elements */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-32 right-20 w-24 h-24 bg-primary/15 rounded-full blur-2xl animate-bounce"></div>
+        <div className="absolute bottom-20 left-20 w-40 h-40 bg-primary/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-10 right-10 w-28 h-28 bg-primary/12 rounded-full blur-2xl animate-bounce delay-500"></div>
+        
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="grid grid-cols-12 h-full">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="border-r border-primary/20"></div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Gradient Overlays */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-primary/3"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-primary/2 to-transparent"></div>
+      </div>
       {/* Hero Section */}
       <section 
-        className={`hero-section relative h-[55vh] flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
+        className={`hero-section relative z-10 h-[55vh] flex items-center justify-center overflow-hidden transition-transform duration-700 ease-out ${
           heroAnimated ? '-translate-y-full' : 'translate-y-0'
         }`}
         style={{ 
@@ -795,12 +816,11 @@ export default function Media() {
       {/* Main Content */}
       <section 
         id="media-content" 
-        className={`py-8 md:py-12 bg-[#3b4f69] transition-all duration-700 ease-out ${
+        className={`relative z-20 py-8 md:py-12 bg-[#3b4f69] transition-all duration-700 ease-out ${
           heroAnimated ? 'mt-0' : 'mt-0'
         }`}
         style={{ 
-          position: 'relative',
-          zIndex: heroAnimated ? 50 : 'auto'
+          zIndex: heroAnimated ? 50 : 20
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
