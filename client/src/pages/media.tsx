@@ -1,7 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2 } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2, ArrowDown, ArrowUp } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
+
+interface MediaItem {
+  id: number;
+  title: string;
+  preview: string;
+  date: string;
+  category: string;
+  source: string;
+  image: string;
+  fullContent: string;
+  type?: string;
+  summary?: string;
+  content?: string;
+  publishedAt?: string;
+  createdAt?: string;
+  tags?: string[];
+  imageUrl?: string;
+}
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState('media-coverage');
@@ -10,12 +28,12 @@ export default function Media() {
   const [isContentLoading, setIsContentLoading] = useState(false);
   const [heroAnimated, setHeroAnimated] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedArticle, setSelectedArticle] = useState<MediaItem | null>(null);
   const [showModal, setShowModal] = useState(false);
-  const [favoriteArticles, setFavoriteArticles] = useState(new Set());
+  const [favoriteArticles, setFavoriteArticles] = useState<Set<number>>(new Set());
 
   // Function to toggle favorite status
-  const toggleFavorite = (articleId) => {
+  const toggleFavorite = (articleId: number) => {
     setFavoriteArticles(prev => {
       const newFavorites = new Set(prev);
       if (newFavorites.has(articleId)) {
@@ -28,7 +46,7 @@ export default function Media() {
   };
 
   // Function to handle card click
-  const handleCardClick = (item) => {
+  const handleCardClick = (item: MediaItem) => {
     setSelectedArticle(item);
     setShowModal(true);
   };
@@ -41,7 +59,7 @@ export default function Media() {
   // Add scroll handler to show/hide back to top button and reset hero
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 300;
+      const scrolled = window.scrollY > 400;
       setShowBackToTop(scrolled);
       
       if (window.scrollY === 0) {
@@ -599,9 +617,9 @@ export default function Media() {
   ];
 
   // Transform database content to match expected format for display
-  const transformedContent = mediaContent.map(item => ({
+  const transformedContent: MediaItem[] = mediaContent.map((item: any) => ({
     ...item,
-    preview: item.summary || item.content?.substring(0, 200) + '...' || 'No preview available',
+    preview: item.summary || (item.content?.substring(0, 200) + '...') || 'No preview available',
     date: new Date(item.publishedAt || item.createdAt).toLocaleDateString('en-US', { 
       year: 'numeric', 
       month: 'long'
@@ -612,27 +630,27 @@ export default function Media() {
   }));
 
   // Filter content by type (tab)
-  const getContentByType = (type) => {
-    const typeMap = {
+  const getContentByType = (type: string): MediaItem[] => {
+    const typeMap: Record<string, string> = {
       'media-coverage': 'blog',
       'awards': 'award',
       'newsletters': 'newsletter',
       'blogs': 'blog',
       'case-studies': 'case-study'
     };
-    return transformedContent.filter(item => item.type === typeMap[type]);
+    return transformedContent.filter((item: any) => item.type === typeMap[type]);
   };
 
   const currentContent = isLoading ? [] : getContentByType(activeTab);
 
-  const filteredContent = currentContent.filter(item => {
+  const filteredContent = currentContent.filter((item: MediaItem) => {
     const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          item.preview.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesFilter = selectedFilter === 'all' || item.category.toLowerCase() === selectedFilter.toLowerCase();
     return matchesSearch && matchesFilter;
   });
 
-  const categories = [...new Set(currentContent.map(item => item.category))];
+  const categories = Array.from(new Set(currentContent.map((item: MediaItem) => item.category)));
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -916,7 +934,7 @@ export default function Media() {
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -1238,6 +1256,24 @@ export default function Media() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <motion.button
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setHeroAnimated(false);
+          }}
+          className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-primary to-primary/90 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center z-50 border-2 border-white/20"
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 20 }}
+          whileHover={{ scale: 1.1, y: -3 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <ArrowUp className="w-6 h-6" />
+        </motion.button>
+      )}
     </div>
   );
 }
