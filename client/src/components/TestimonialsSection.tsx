@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
                   opacity: { duration: 0.5 },
                   scale: { duration: 0.5, type: "spring", stiffness: 300, damping: 30 }
                 }}
-                className="bg-white shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-gray-200 transition-all hover:shadow-2xl hover:shadow-[#FFC600]/20 hover:scale-[1.01] hover:border-[#FFC600]/40 duration-300"
+                className="bg-white/95 backdrop-blur-lg shadow-xl px-6 py-8 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-white/20 transition-all hover:shadow-2xl hover:shadow-[#FFC600]/20 hover:scale-[1.01] hover:border-[#FFC600]/40 duration-300"
               >
                 {/* Quote Icon - Centered at top */}
                 <div className="flex justify-center mb-6">
