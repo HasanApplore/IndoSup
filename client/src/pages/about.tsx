@@ -791,103 +791,64 @@ export default function About() {
         </div>
       </section>
 
-      {/* Strength & Values */}
-      <section id="values" className="py-10 md:py-14 bg-[#fbf5ea]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      {/* Our Values */}
+      <section id="values" className="py-16 bg-[#fbf5ea]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <motion.div
-            className="text-center mb-8 md:mb-10"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2A374B] mb-4">
-              Strength & Values
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2A374B] mb-6">
+              Our Values
             </h2>
-            <div className="w-20 md:w-28 h-1 bg-[#FFC600] mx-auto"></div>
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              The core principles that guide everything we do at IndoSup
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-            {/* Strengths */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-white/95 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-white/20 hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
-              whileHover={{ scale: 1.02, y: -4 }}
-            >
-              <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-6 flex items-center">
-                <Target className="w-6 h-6 text-[#FFC600] mr-3" />
-                Strengths
-              </h3>
-              <div className="space-y-4">
-                {strengths.map((strength, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#FFC600]/5 hover:to-[#FFC600]/10 transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/20"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02, x: 6 }}
-                  >
-                    <div className="w-12 h-12 bg-[#FFC600] rounded-full flex items-center justify-center text-[#2A374B] group-hover:scale-110 transition-all duration-300 group-hover:bg-[#E6B200] shadow-md group-hover:shadow-lg">
-                      {strength.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-[#2A374B] mb-1 text-base group-hover:text-[#2A374B] transition-colors duration-300">
-                        {strength.title}
-                      </h4>
-                      <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
-                        {strength.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Values */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-white/95 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-white/20 hover:border-[#FFC600] hover:shadow-xl transition-all duration-300"
-              whileHover={{ scale: 1.02, y: -4 }}
-            >
-              <h3 className="text-xl md:text-2xl font-bold text-[#2A374B] mb-6 flex items-center">
-                <Heart className="w-6 h-6 text-[#FFC600] mr-3" />
-                Our Values
-              </h3>
-              <div className="space-y-4">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start space-x-3 group p-3 rounded-lg hover:bg-gradient-to-r hover:from-[#FFC600]/5 hover:to-[#FFC600]/10 transition-all duration-300 hover:shadow-md border border-transparent hover:border-[#FFC600]/20"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02, x: 6 }}
-                  >
-                    <div className="w-12 h-12 bg-[#FFC600] rounded-full flex items-center justify-center text-[#2A374B] group-hover:scale-110 transition-all duration-300 group-hover:bg-[#E6B200] shadow-md group-hover:shadow-lg">
-                      {value.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-[#2A374B] mb-1 text-base group-hover:text-[#2A374B] transition-colors duration-300">
-                        {value.title}
-                      </h4>
-                      <p className="text-[#2A374B] group-hover:text-[#2A374B] transition-colors duration-300 leading-relaxed text-sm">
-                        {value.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+          {/* Values Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-[#FFC600]/30"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                whileHover={{ scale: 1.03, y: -8 }}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#FFC600] to-[#E6B200] rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-all duration-300">
+                    {value.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-[#2A374B] mb-3 group-hover:text-[#FFC600] transition-colors duration-300">
+                      {value.title}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Hover decoration line */}
+                <motion.div
+                  className="w-0 h-0.5 bg-gradient-to-r from-[#FFC600] to-[#E6B200] mt-4 group-hover:w-full transition-all duration-300 rounded-full"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
