@@ -269,7 +269,7 @@ export default function MediaCoverageSection() {
                 <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${item.gradient} text-white`}>
                   {item.category}
                 </span>
-                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-primary group-hover:translate-x-1 transition-transform duration-300" />
+                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 group-hover:translate-x-1 transition-transform duration-300" />
               </div>
             </motion.div>
           ))}
