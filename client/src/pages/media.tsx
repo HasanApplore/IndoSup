@@ -635,9 +635,9 @@ export default function Media() {
     const typeMap: Record<string, string> = {
       'media-coverage': 'blog',
       'awards': 'award',
-      'newsletters': 'newsletter',
+      'newsletters': 'news',
       'blogs': 'blog',
-      'case-studies': 'case-study'
+      'case-studies': 'case_study'
     };
     return transformedContent.filter((item: any) => item.type === typeMap[type]);
   };
