@@ -349,7 +349,7 @@ export default function Careers() {
 
           {/* Job Cards */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -358,63 +358,67 @@ export default function Careers() {
               <motion.div
                 key={job.id}
                 variants={itemVariants}
-                className="bg-white/95 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:shadow-white/30 transition-all duration-300 group hover:border-primary"
-                whileHover={{ y: -8, scale: 1.02 }}
+                className="bg-white backdrop-blur-sm border border-gray-200 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 group hover:border-[#FFC600] hover:shadow-[#FFC600]/20"
+                whileHover={{ y: -4, scale: 1.01 }}
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1E293B] mb-2 group-hover:text-[#FFC600] transition-colors duration-300" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                <div className="mb-4">
+                  <div className="flex justify-between items-start mb-3">
+                    <h3 className="text-lg font-bold text-[#1E293B] group-hover:text-[#FFC600] transition-colors duration-300 flex-1 pr-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                       {job.title}
                     </h3>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
-                      <span className="flex items-center">
-                        <Building className="w-4 h-4 mr-1" />
-                        {job.department}
-                      </span>
-                      <span className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {job.location}
-                      </span>
-                      <span className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {job.type}
-                      </span>
-                    </div>
+                    <span className="bg-gradient-to-r from-[#FFC600]/10 to-[#FFC600]/20 text-[#FFC600] px-2 py-1 rounded-lg text-xs font-medium border border-[#FFC600]/30 whitespace-nowrap" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                      {job.department}
+                    </span>
                   </div>
-                  <span className="bg-[#FFC600]/20 text-[#FFC600] px-3 py-1 rounded-full text-sm font-medium border border-[#FFC600]/30" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
-                    {job.department}
-                  </span>
+                  <div className="flex flex-wrap gap-3 text-xs text-gray-500" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                    <span className="flex items-center">
+                      <Building className="w-3 h-3 mr-1" />
+                      {job.department}
+                    </span>
+                    <span className="flex items-center">
+                      <MapPin className="w-3 h-3 mr-1" />
+                      {job.location}
+                    </span>
+                    <span className="flex items-center">
+                      <Clock className="w-3 h-3 mr-1" />
+                      {job.type}
+                    </span>
+                  </div>
                 </div>
 
-                <p className="text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-3" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                   {job.description}
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-[#FFC600] mb-2" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Key Requirements:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {job.requirements && job.requirements.split(',').map((req, index) => (
-                      <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm border border-gray-200" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                  <h4 className="font-semibold text-[#FFC600] mb-2 text-sm" style={{ fontFamily: 'Cardo, Georgia, serif' }}>Requirements:</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {job.requirements && job.requirements.split(',').slice(0, 3).map((req, index) => (
+                      <span key={index} className="bg-gray-50 text-gray-600 px-2 py-1 rounded-md text-xs border border-gray-100" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
                         {req.trim()}
                       </span>
                     ))}
+                    {job.requirements && job.requirements.split(',').length > 3 && (
+                      <span className="text-xs text-gray-400 px-2 py-1" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                        +{job.requirements.split(',').length - 3} more
+                      </span>
+                    )}
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
-                    Posted {new Date(job.createdAt).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
+                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                  <span className="text-xs text-gray-400" style={{ fontFamily: 'Cardo, Georgia, serif' }}>
+                    {new Date(job.createdAt).toLocaleDateString('en-US', { 
                       month: 'short', 
                       day: 'numeric' 
                     })}
                   </span>
                   <Button
                     onClick={() => handleApply(job)}
-                    className="bg-[#FFC600] hover:bg-[#E6B200] text-[#2A374B] font-semibold px-6 py-2 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#FFC600]"
+                    className="bg-gradient-to-r from-[#FFC600] to-[#E6B200] hover:from-[#E6B200] hover:to-[#D4A200] text-[#2A374B] font-medium px-4 py-2 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md text-sm"
                     style={{ fontFamily: 'Cardo, Georgia, serif' }}
                   >
-                    Apply Now
+                    Apply
                   </Button>
                 </div>
               </motion.div>
