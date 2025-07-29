@@ -920,7 +920,7 @@ export default function Media() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg group-hover:bg-blue-50 group-hover:text-blue-700 transition-colors duration-300">
+                      <span className="bg-white/90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                         {item.category}
                       </span>
                     </div>
