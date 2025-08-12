@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2, ArrowDown, ArrowUp } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter, Tag, Star, Eye, Clock, FileText, X, Heart, Share2, ArrowDown, ArrowUp, ChevronDown } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import mediaBannerImage from '@assets/image_1753796715922.png';
+import mediaNewBannerImage from "../assets/mediaImage.png"
+import mediaNews1BannerImage from "../assets/media12.png"
+import mediaNews12BannerImage from "../assets/media123.png"
+import mediaNews123BannerImage from "../assets/media1234.png"
+import mediaNews1234BannerImage from "../assets/media12345.webp"
+import mediaNews12345BannerImage from "../assets/media123456.png"
+import mediaNewsBannerImage from "../assets/mediasImage.jpg"
+
 
 interface MediaItem {
   id: number;
@@ -32,6 +40,10 @@ export default function Media() {
   const [selectedArticle, setSelectedArticle] = useState<MediaItem | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [favoriteArticles, setFavoriteArticles] = useState<Set<number>>(new Set());
+  
+  // Pagination state
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [showSeeMore, setShowSeeMore] = useState(true);
 
   // Function to toggle favorite status
   const toggleFavorite = (articleId: number) => {
@@ -50,6 +62,23 @@ export default function Media() {
   const handleCardClick = (item: MediaItem) => {
     setSelectedArticle(item);
     setShowModal(true);
+  };
+
+  // Function to handle "See More" button click
+  const handleSeeMore = () => {
+    const newCount = visibleCount + 6;
+    setVisibleCount(newCount);
+    
+    // Check if we've shown all content
+    if (newCount >= filteredContent.length) {
+      setShowSeeMore(false);
+    }
+  };
+
+  // Function to handle "See Less" button click
+  const handleSeeLess = () => {
+    setVisibleCount(6);
+    setShowSeeMore(true);
   };
 
   // Reset hero animation when component mounts or page is refreshed
@@ -71,6 +100,12 @@ export default function Media() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Reset pagination when tab or filters change
+  useEffect(() => {
+    setVisibleCount(6);
+    setShowSeeMore(true);
+  }, [activeTab, searchQuery, selectedFilter]);
 
   // Fetch media content from database
   const { data: mediaContent = [], isLoading, error } = useQuery({
@@ -483,6 +518,116 @@ export default function Media() {
         <h3>Future Trends</h3>
         <p>Expect increased regulatory requirements, carbon pricing mechanisms, and demand for sustainable materials as the construction industry moves toward net-zero emissions.</p>
       `
+    },
+    {
+      id: 4,
+      title: "Construction Material Management: Best Practices for 2025",
+      preview: "Comprehensive guide to modern construction material management strategies that drive efficiency and cost savings.",
+      date: "September 2024",
+      category: "Management",
+      source: "IndoSup Academy",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Construction Material Management: Best Practices for 2025</h2>
+        <p>Effective material management is crucial for construction project success. Discover the latest strategies and technologies that are transforming how construction companies handle materials.</p>
+        
+        <h3>Inventory Optimization</h3>
+        <p>Modern material management systems use AI and machine learning to predict material needs, optimize inventory levels, and prevent stockouts that can delay projects.</p>
+        
+        <h3>Digital Tracking Systems</h3>
+        <p>Implement RFID tags, QR codes, and IoT sensors to track materials from supplier to construction site, ensuring complete visibility and accountability.</p>
+        
+        <h3>Supplier Relationship Management</h3>
+        <p>Build strategic partnerships with reliable suppliers, negotiate favorable terms, and establish backup suppliers to ensure material availability.</p>
+      `
+    },
+    {
+      id: 5,
+      title: "The Future of Construction: AI and Automation Trends",
+      preview: "Exploring how artificial intelligence and automation are reshaping the construction industry and procurement processes.",
+      date: "August 2024",
+      category: "Technology",
+      source: "IndoSup Tech",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>The Future of Construction: AI and Automation Trends</h2>
+        <p>Artificial intelligence and automation are revolutionizing construction, from design and planning to procurement and project management.</p>
+        
+        <h3>AI in Design and Planning</h3>
+        <p>AI-powered design tools can optimize building layouts, material usage, and energy efficiency while reducing design time and costs.</p>
+        
+        <h3>Automated Procurement</h3>
+        <p>Machine learning algorithms analyze market trends, predict material price movements, and automatically execute procurement strategies.</p>
+        
+        <h3>Smart Project Management</h3>
+        <p>AI systems monitor project progress, identify potential delays, and suggest optimal resource allocation to keep projects on track.</p>
+      `
+    },
+    {
+      id: 6,
+      title: "Cost Optimization in Construction: A Strategic Approach",
+      preview: "Strategic methods for reducing construction costs while maintaining quality and meeting project deadlines.",
+      date: "July 2024",
+      category: "Cost Management",
+      source: "IndoSup Finance",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Cost Optimization in Construction: A Strategic Approach</h2>
+        <p>Cost optimization in construction requires a strategic approach that balances quality, timeline, and budget constraints.</p>
+        
+        <h3>Value Engineering</h3>
+        <p>Implement value engineering principles to identify cost-effective alternatives that maintain or improve project quality.</p>
+        
+        <h3>Bulk Purchasing</h3>
+        <p>Leverage economies of scale through bulk purchasing agreements and strategic supplier partnerships.</p>
+        
+        <h3>Technology Investment</h3>
+        <p>Invest in digital tools and automation that reduce labor costs and improve efficiency across all project phases.</p>
+      `
+    },
+    {
+      id: 7,
+      title: "Supply Chain Resilience in Construction",
+      preview: "Building resilient supply chains that can withstand disruptions and ensure project continuity.",
+      date: "June 2024",
+      category: "Supply Chain",
+      source: "IndoSup Logistics",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Supply Chain Resilience in Construction</h2>
+        <p>Supply chain resilience is critical for construction projects to withstand disruptions and maintain project continuity.</p>
+        
+        <h3>Diversification Strategies</h3>
+        <p>Diversify supplier base across multiple regions and establish backup suppliers for critical materials.</p>
+        
+        <h3>Risk Assessment</h3>
+        <p>Conduct regular risk assessments to identify potential supply chain vulnerabilities and develop mitigation strategies.</p>
+        
+        <h3>Technology Solutions</h3>
+        <p>Implement digital platforms that provide real-time visibility into supply chain status and enable rapid response to disruptions.</p>
+      `
+    },
+    {
+      id: 8,
+      title: "Quality Assurance in Construction Procurement",
+      preview: "Ensuring material quality through comprehensive testing, certification, and supplier verification processes.",
+      date: "May 2024",
+      category: "Quality",
+      source: "IndoSup Quality",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Quality Assurance in Construction Procurement</h2>
+        <p>Quality assurance in construction procurement is essential for project success and long-term durability.</p>
+        
+        <h3>Material Testing</h3>
+        <p>Implement comprehensive testing protocols for all materials, including strength, durability, and environmental compliance.</p>
+        
+        <h3>Supplier Certification</h3>
+        <p>Establish strict supplier certification processes and regular audits to ensure consistent quality standards.</p>
+        
+        <h3>Continuous Monitoring</h3>
+        <p>Use technology to continuously monitor material quality throughout the supply chain and construction process.</p>
+      `
     }
   ];
 
@@ -614,6 +759,53 @@ export default function Media() {
         <h3>Innovation Impact</h3>
         <p>The project became a benchmark for industrial construction, with the client adopting IndoSup's predictive analytics system for all future projects.</p>
       `
+    },
+    {
+      id: 4,
+      title: "Smart City Infrastructure: Digital Procurement Success",
+      preview: "How IndoSup enabled a smart city project to achieve 35% cost savings through intelligent procurement solutions.",
+      date: "August 2024",
+      category: "Smart Cities",
+      source: "IndoSup Urban",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Smart City Infrastructure: Digital Procurement Success</h2>
+        <p>This case study demonstrates how IndoSup's digital procurement platform enabled a major smart city project to achieve significant cost savings and efficiency gains.</p>
+        
+        <h3>Project Scope</h3>
+        <p>The smart city project involved infrastructure development including roads, utilities, smart lighting, and digital systems across 500 acres.</p>
+        
+        <h3>Key Achievements</h3>
+        <ul>
+          <li>35% reduction in procurement costs</li>
+          <li>50% faster project completion</li>
+          <li>100% digital procurement process</li>
+          <li>Enhanced transparency and accountability</li>
+        </ul>
+      `
+    },
+    {
+      id: 5,
+      title: "Renewable Energy Project: Sustainable Procurement",
+      preview: "Case study of sustainable procurement practices in a large-scale renewable energy construction project.",
+      date: "July 2024",
+      category: "Renewable Energy",
+      source: "IndoSup Green",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      fullContent: `
+        <h2>Renewable Energy Project: Sustainable Procurement</h2>
+        <p>This case study showcases sustainable procurement practices in a large-scale renewable energy construction project.</p>
+        
+        <h3>Sustainability Focus</h3>
+        <p>The project prioritized environmentally friendly materials and suppliers with strong sustainability credentials.</p>
+        
+        <h3>Results</h3>
+        <ul>
+          <li>25% reduction in carbon footprint</li>
+          <li>30% cost savings through bulk sustainable sourcing</li>
+          <li>100% supplier sustainability compliance</li>
+        </ul>
+      `
     }
   ];
 
@@ -639,7 +831,27 @@ export default function Media() {
       'blogs': 'blog',
       'case-studies': 'case_study'
     };
-    return transformedContent.filter((item: any) => item.type === typeMap[type]);
+    
+    // First try to get content from database
+    let dbContent = transformedContent.filter((item: any) => item.type === typeMap[type]);
+    
+    // If no database content, use hardcoded arrays as fallback
+    if (dbContent.length === 0) {
+      switch (type) {
+        case 'media-coverage':
+          return mediaCoverage;
+        case 'awards':
+          return awards;
+        case 'newsletters':
+          return newsletters;
+        case 'case-studies':
+          return caseStudies;
+        default:
+          return blogs;
+      }
+    }
+    
+    return dbContent;
   };
 
   const currentContent = isLoading ? [] : getContentByType(activeTab);
@@ -691,7 +903,7 @@ export default function Media() {
       >
         <div className="absolute inset-0">
           <img 
-            src={mediaBannerImage}
+            src={mediaNews12345BannerImage}
             alt="Media & Resources - News and Updates"
             className="w-full h-full object-cover"
           />
@@ -748,7 +960,7 @@ export default function Media() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-8" style={{ color: '#000000' }}>
+           <h1 className="text-5xl md:text-6xl font-bold mb-12 mt-20" style={{ color: 'white' }}>
               Media & Resources
             </h1>
             {/* Animated underline */}
@@ -761,8 +973,8 @@ export default function Media() {
           </motion.div>
           
           <motion.p
-            className="text-xl md:text-2xl mb-8 leading-relaxed"
-            style={{ color: '#000000' }}
+            className="text-xl md:text-2xl mb-20 leading-relaxed"
+            style={{ color: 'white' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -900,7 +1112,7 @@ export default function Media() {
               exit="hidden"
             >
 
-              {filteredContent.map((item) => (
+              {filteredContent.slice(0, visibleCount).map((item) => (
                 <motion.div
                   key={item.id}
                   variants={itemVariants}
@@ -1041,6 +1253,56 @@ export default function Media() {
               >
                 Clear Filters
               </motion.button>
+            </motion.div>
+          )}
+
+          {/* Results Counter and Pagination Controls */}
+          {filteredContent.length > 0 && (
+            <motion.div
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Results Counter */}
+              <div className="mb-4 text-gray-600">
+                <span className="font-medium text-accent">
+                  {Math.min(visibleCount, filteredContent.length)}
+                </span>
+                {" "}of{" "}
+                <span className="font-medium text-accent">
+                  {filteredContent.length}
+                </span>
+                {" "}articles shown
+              </div>
+              
+              {/* Pagination Controls */}
+              {filteredContent.length > 6 && (
+                <div className="flex justify-center">
+                  {showSeeMore ? (
+                    <motion.button
+                      className="inline-flex items-center px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 text-base shadow-lg hover:shadow-xl"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={handleSeeMore}
+                    >
+                      See More Articles
+                      <ChevronDown className="w-5 h-5 ml-2 transition-transform duration-300" />
+                    </motion.button>
+                  ) : (
+                    <motion.button
+                      className="inline-flex items-center px-8 py-4 bg-gray-600 text-white rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300 text-base shadow-lg hover:shadow-xl"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={handleSeeLess}
+                    >
+                      Show Less
+                      <ChevronDown className="w-5 h-5 ml-2 rotate-180 transition-transform duration-300" />
+                    </motion.button>
+                  )}
+                </div>
+              )}
             </motion.div>
           )}
 

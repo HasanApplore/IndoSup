@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import logoImage from '@/assets/indosup-logo-new.png';
+import brochuresPdf from "../assets/bronchure.pdf"
 
 export default function Footer() {
 
@@ -10,7 +11,8 @@ export default function Footer() {
     { name: 'About Us', path: '/about' },
     { name: 'Our Initiatives', path: '/new-initiatives' },
     { name: 'Media', path: '/media' },
-    { name: 'Careers', path: '/careers' }
+    { name: 'Careers', path: '/careers' },
+    { name: 'Bronchures', path: '/brochures' }
   ];
 
   const productCategories = [
@@ -35,7 +37,7 @@ export default function Footer() {
         <div className="absolute top-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl transform -translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl transform translate-x-48 translate-y-48"></div>
       </div>
-      
+
       {/* Main Footer Content */}
       <div className="py-8 sm:py-12 lg:py-16 relative z-10">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
@@ -43,14 +45,14 @@ export default function Footer() {
           <div className="flex-shrink-0 w-full lg:w-auto pl-4 sm:pl-6 lg:pl-8">
             <div className="transform hover:scale-105 transition-transform duration-300">
               <Link to="/" className="block">
-                <img 
-                  src={logoImage} 
-                  alt="IndoSup Logo" 
+                <img
+                  src={logoImage}
+                  alt="IndoSup Logo"
                   className="h-8 sm:h-10 lg:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                 />
               </Link>
             </div>
-            
+
             <div className="flex-1 mt-6">
               <h4 className="text-sm sm:text-base font-bold mb-3 sm:mb-4 text-white flex items-center">
                 <div className="w-1 h-4 sm:h-6 bg-primary mr-2 sm:mr-3 rounded-full"></div>
@@ -59,13 +61,26 @@ export default function Footer() {
               <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <Link 
-                      to={link.path}
-                      className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
-                    >
-                      <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
-                      {link.name}
-                    </Link>
+                                         {
+                       link.name === 'Bronchures' ? (
+                         <a 
+                           href={brochuresPdf} 
+                           target="_blank" 
+                           className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
+                         >
+                           <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                           {link.name}
+                         </a>
+                       ) : (
+                         <Link
+                           to={link.path}
+                           className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
+                         >
+                           <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                           {link.name}
+                         </Link>
+                       )
+                     }
                   </li>
                 ))}
               </ul>
@@ -85,7 +100,7 @@ export default function Footer() {
                   <ul className="space-y-3">
                     {productCategories.map((category, index) => (
                       <li key={index}>
-                        <Link 
+                        <Link
                           to={category.path}
                           className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
                         >
@@ -127,7 +142,7 @@ export default function Footer() {
                             sales@indosup.com
                           </a>
                         </div>
-                        
+
                         {/* Social Media Links */}
                         <div className="flex items-center space-x-4 pl-9 mt-auto">
                           {socialLinks.map((social, index) => {
@@ -150,7 +165,7 @@ export default function Footer() {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Google Maps Embed */}
                     <div className="lg:w-1/2">
                       <div className="rounded-xl overflow-hidden shadow-xl border border-gray-600 h-full min-h-[280px]">

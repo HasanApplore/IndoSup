@@ -11,6 +11,7 @@ import PrivateRoute from "@/components/admin/PrivateRoute";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import NewInitiatives from "@/pages/newInitiatives";
+import GlobalAssist from "@/pages/global-assist";
 import StreamlinedProcurement from "@/pages/streamlinedProcurement";
 import SteelProducts from "@/pages/steel-products";
 import NonSteelProducts from "@/pages/non-steel-products";
@@ -123,6 +124,13 @@ function App() {
               <>
                 <Navbar />
                 <NewInitiatives />
+                <Footer />
+              </>
+            )} />
+            <Route path="/global-assist" component={() => (
+              <>
+                <Navbar />
+                <GlobalAssist />
                 <Footer />
               </>
             )} />

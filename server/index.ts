@@ -4,11 +4,19 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express, { type Request, Response, NextFunction } from "express";
+import cors from "cors";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { initializeDatabase } from "./init-db";
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  credentials: false
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

@@ -263,7 +263,7 @@ export default function NewInitiatives() {
             className="relative"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 mt-8" style={{ color: '#ffffff' }}>
-              New Initiatives
+              Our Initiatives
             </h1>
             {/* Animated underline */}
             <motion.div
@@ -369,13 +369,13 @@ export default function NewInitiatives() {
                 </div>
 
                 <div className="mt-6">
-                  <Link to="/contact">
+                  <Link to="/global-assist">
                     <motion.div
                       className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md"
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <span className="mr-3">Learn More About Global Assist</span>
+                      <span className="mr-3">Learn More About IndoSup Assist</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </motion.div>
                   </Link>
@@ -476,7 +476,7 @@ export default function NewInitiatives() {
                       whileHover={{ x: 5, scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <span className="mr-3">Learn More About Global Private</span>
+                      <span className="mr-3">Learn More About IndoSup Global </span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </motion.div>
                   </Link>

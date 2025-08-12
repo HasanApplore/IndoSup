@@ -263,26 +263,29 @@ export default function Contact() {
             
             {/* Left Side - Single Image */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center justify-center"
-            >
-              {/* Customer Support Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg group w-full">
-                <img 
-                  src={constructionImage1} 
-                  alt="Professional customer support team in call center"
-                  className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-xl font-semibold mb-2">24/7 Customer Support</h3>
-                  <p className="text-sm">Dedicated support team ready to assist with your queries</p>
-                </div>
-              </div>
-            </motion.div>
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="flex items-center justify-center"
+>
+  {/* Customer Support Image */}
+  <div className="relative rounded-2xl overflow-hidden shadow-lg group w-full">
+    <img 
+      src={constructionImage1} 
+      alt="Professional customer support team in call center"
+      className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
+    />
+    {/* Keep gradient overlay always visible */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-100 transition-opacity duration-300"></div>
+    {/* Keep text always visible */}
+    <div className="absolute bottom-6 left-6 text-white opacity-100 transition-opacity duration-300">
+      <h3 className="text-xl font-semibold mb-2 ml-4">24/7 Customer Support</h3>
+      <p className="text-sm ml-4">Dedicated support team ready to assist with your queries</p>
+    </div>
+  </div>
+</motion.div>
+
 
             {/* Right Side - Contact Form */}
             <motion.div
