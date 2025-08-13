@@ -982,26 +982,7 @@ export default function Media() {
             Latest News, Updates & Industry Insights
           </motion.p>
 
-          <motion.button
-            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            onClick={() => {
-              const contentSection = document.getElementById('media-content');
-              if (contentSection) {
-                setHeroAnimated(true);
-                setTimeout(() => {
-                  contentSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                  });
-                }, 400);
-              }
-            }}
-          >
-            Explore Media
-          </motion.button>
+         
         </div>
       </section>
 

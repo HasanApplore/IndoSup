@@ -93,7 +93,7 @@ export default function OurClientsSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.8 }}
         >
           <h2 className="text-4xl font-bold text-[#1E293B] mb-6">
             Our Clients
@@ -126,7 +126,7 @@ export default function OurClientsSection() {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: isHovered ? 35 : 25,
+                  duration: isHovered ? 90 : 80,
                   ease: "linear",
                 },
               }}
@@ -137,7 +137,7 @@ export default function OurClientsSection() {
                   className="group flex-shrink-0 w-36 h-24 flex items-center justify-center cursor-pointer"
                   whileHover={{ 
                     scale: 1.1,
-                    transition: { duration: 0.1 }
+                    transition: { duration: 0.2 }
                   }}
                 >
                   <img 
