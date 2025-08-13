@@ -261,42 +261,42 @@ export default function NonSteelProducts() {
                 <Wrench className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Plumbing</h3>
-              <p className="text-gray-700 text-sm font-medium">Solutions</p>
+              <p className="text-[#2A374B] text-sm font-bold">Solutions</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Package className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Electrical</h3>
-              <p className="text-gray-700 text-sm font-medium">Systems</p>
+              <p className="text-[#2A374B] text-sm font-bold">Systems</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Fire Fighting</h3>
-              <p className="text-gray-700 text-sm font-medium">Equipment</p>
+              <p className="text-[#2A374B] text-sm font-bold">Equipment</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Building2 className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Warehouse</h3>
-              <p className="text-gray-700 text-sm font-medium">Infrastructure</p>
+              <p className="text-[#2A374B] text-sm font-bold">Infrastructure</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Settings className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Site</h3>
-              <p className="text-gray-700 text-sm font-medium">Utilities</p>
+              <p className="text-[#2A374B] text-sm font-bold">Utilities</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Droplets className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Water</h3>
-              <p className="text-gray-700 text-sm font-medium">Systems</p>
+              <p className="text-[#2A374B] text-sm font-bold">Systems</p>
             </div>
           </motion.div>
           

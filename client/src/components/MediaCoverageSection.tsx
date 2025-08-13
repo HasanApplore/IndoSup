@@ -5,6 +5,11 @@ import { Play, ExternalLink, Calendar, TrendingUp, Award, Zap, Quote, X } from '
 // Import newspaper images
 import newspaper1 from '@assets/dan-levy-moz1_1753274065103.png';
 import newspaper2 from '@assets/1600w-uRVwxMWMZJU_1753274061332.webp';
+import news1 from '../assets/news1.png';
+import news2 from '../assets/news2.webp';
+import news3 from '../assets/news3.webp';
+import news4 from '../assets/news4.png';
+
 
 type MediaItem = {
   id: number;
@@ -27,68 +32,68 @@ export default function MediaCoverageSection() {
   const mediaItems = [
     {
       id: 1,
-      source: "The Daily Marketer",
-      headline: "ATTENTION CONTENT MARKETERS",
-      description: "Breaking message from journalism industry: We have work to do. Digital platform transforms traditional construction material sourcing with AI-powered solutions",
-      date: "June 2014",
+      source: "KAROSTARTUP",
+      headline: "IndoSup,This Construction Startup made Rs 30 Crore Sales in Just 2 Year",
+      description: "IndoSup Infra Private Limited, popularly known as Indosup, emerges as a beacon of innovation in the construction industry, providing a transformative solution for SMEs.",
+      date: "11 January 2024",
       category: "Technology",
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-blue-600 to-purple-600",
       quote: "Game-changer in procurement technology",
-      image: newspaper1,
-      fullContent: "I've got buckets. I call it S-School buckets. Let me be clear: marketers need to get around. Thousands of people have graduated from journalism school in the years since the financial crisis and the collapse of the 'old media' model..."
+      image: news1,
+      fullContent: "The founders, Ashmit and Akshaj, seasoned professionals with academic brilliance and hands-on industry experience, recognized a glaring gap in construction procurement.Faced with challenges in their own projects, they set out to create a platform that would revolutionize the sector. Their vision was clear: to aggregate demand, negotiate the best pricing, and offer discounted rates to SMEs, irrespective of order quantity."
     },
     {
       id: 2,
-      source: "The Newspaper Line", 
-      headline: "BUSINESS REVIEW ON DIGITAL MARKETING",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. How IndoSup is setting new industry standards for material procurement efficiency",
-      date: "Nov 2024",
+      source: "OUTLOOK BUSINESS", 
+      headline: "IndoSup Raises Funding Led By CCI Group Promoters Naresh Sharma And Satish Sharma",
+      description: "IndoSup will use this investment to expand across new geographic markets, onboard top brands onto its platform, and drive innovative solutions like white-labeled products and credit lending tools for customers. ",
+      date: "19 April 2024",
       category: "Business",
       icon: <Award className="w-5 h-5" />,
       gradient: "from-green-600 to-teal-600",
       quote: "Leading innovation in construction tech",
-      image: newspaper2,
-      fullContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel mattis nibh. Proin varius tincidunt molestie. Phasellus et congue erat. Proin vitae urna nisl. Nam tristique eget odio quis pellentesque..."
+      image: news2,
+      fullContent: " IndoSup, a digital B2B procurement platform for small and medium construction businesses, announced a strategic funding round led by CCI Group promotors. While CCI Group promoters have a majority stake in the company, investors hold more than a 26 percent stake post-dilution. Other investors include the group CFO of Yatra.com, Rohan Mittal. This investment will fuel the company’s expansion across new geographic markets by bringing top brands onto its platform. In addition to geographic expansion into cities like Kolkata, Mumbai, and Chennai, IndoSup plans to introduce white-labeled products across 5–6 SKUs by February 2025. The company is also developing credit lending solutions in collaboration with major financial institutions to better support its customers' working capital needs."
     },
     {
       id: 3,
-      source: "Construction World",
-      headline: "Streamlining Material Procurement",
-      description: "Technology-driven approach reduces costs and improves delivery timelines significantly",
-      date: "Nov 2024", 
+      source: "THE WEEK",
+      headline: "IndoSup raises funding led by CCI group promoters Naresh Sharma and Satish Sharma and yatra.com’s Rohan Mittal",
+      description: "IndoSup intends to create a mark in the territory of infra.market, Moglix, Zetwerk, & Of Business",
+      date: "10 May 2024", 
       category: "Industry",
       icon: <Zap className="w-5 h-5" />,
       gradient: "from-orange-600 to-red-600",
       quote: "Efficiency meets innovation",
       image: newspaper1,
-      fullContent: "Technology-driven approach reduces costs and improves delivery timelines significantly. Advanced procurement systems streamline the entire supply chain process..."
+      fullContent: "IndoSup is revolutionizing procurement for construction contractors, builders, and tradespeople by providing a seamless digital experience with access to a wide range of construction materials, equipment, and services from trusted vendors and brands.Rohan Mittal, Group CFO, of Yatra.com, said, “IndoSup is bringing seamlessness to construction businesses across India. We look forward to supporting their thriving growth as the company expands into new markets and introduces problem-solving offerings tailored to this industry's unique needs."
     },
     {
       id: 4,
-      source: "India Today",
-      headline: "Supply Chain Management Innovation",
-      description: "Advanced analytics and automation reshape construction material supply chains",
-      date: "Oct 2024",
+      source: "Mid-Day",
+      headline: "Indosup Expands into Southern India, Eyes Rs 100 Cr Clean Energy Projects",
+      description: "Indosup is further expanding its offerings in the solar energy sector by venturing into the manufacturing of aluminum profiling for solar panels.",
+      date: "19 September 2024",
       category: "Innovation",
       icon: <TrendingUp className="w-5 h-5" />,
       gradient: "from-purple-600 to-pink-600",
       quote: "Future of supply chain management",
-      image: newspaper2,
-      fullContent: "Advanced analytics and automation reshape construction material supply chains. Machine learning algorithms optimize inventory management and predict demand patterns..."
+      image: news3,
+      fullContent: "Indosup, a prominent player in the construction materials procurement industry, is making substantial progress with its strategic expansion into Southern India. The company recently opened a new office in Mumbai, marking a significant milestone as it ventures into the southern market. This move is aimed at enhancing its service delivery across major southern cities, including Chennai and Bangalore."
     },
     {
       id: 5,
-      source: "Financial Express",
-      headline: "Construction Tech Investment Surge", 
-      description: "Growing investor confidence in digital procurement platforms drives market expansion",
-      date: "Oct 2024",
+      source: "BRANDWAGON",
+      headline: "Indosup reports Rs 150 crore in FY25 revenue, plans expansion with IndoShield, IndoAssist", 
+      description: "Construction supply chain startup Indosup said it closed fiscal year 2025 with Rs 150 crore in revenue, up nearly 40 times from its first year of operations in 2022.",
+      date: "28 May 2025",
       category: "Finance",
       icon: <Award className="w-5 h-5" />,
       gradient: "from-indigo-600 to-blue-600",
       quote: "Smart investment in construction future",
-      image: newspaper1,
-      fullContent: "Growing investor confidence in digital procurement platforms drives market expansion. Venture capital funding in construction technology reaches new heights..."
+      image: news4,
+      fullContent: "IndoShield is described as a proprietary line of firefighting accessories, aimed at improving safety standards in infrastructure. IndoAssist, the company said, will function as a full-scale EPC (engineering, procurement and construction) arm, extending Indosup’s role beyond material procurement into full project execution."
     }
   ];
 
@@ -220,7 +225,7 @@ export default function MediaCoverageSection() {
                         <img 
                           src={mediaItems[activeIndex].image} 
                           alt="Media Coverage" 
-                          className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                          className="w-full h-full object-fill rounded-xl sm:rounded-2xl"
                         />
                       </div>
                       {/* Floating elements */}

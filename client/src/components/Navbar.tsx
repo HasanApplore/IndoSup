@@ -3,6 +3,8 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation, useRouter } from 'wouter';
 import logoImage from '@/assets/indosup-logo-new.png';
+import logoImage1 from '@/assets/logoImage1.svg';
+import logoImage2 from '@/assets/logoImage2.svg';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,16 +12,19 @@ export default function Navbar() {
   const [isInitiativesDropdownOpen, setIsInitiativesDropdownOpen] = useState(false);
   const [isSteelDropdownOpen, setIsSteelDropdownOpen] = useState(false);
   const [isNonSteelDropdownOpen, setIsNonSteelDropdownOpen] = useState(false);
+  const [isSolarDropdownOpen, setIsSolarDropdownOpen] = useState(false);
   
   // Timeout refs for delayed dropdown closing
   const businessTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const initiativesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const steelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const nonSteelTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const solarTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const initiativesDropdownRef = useRef<HTMLDivElement>(null);
   const steelDropdownRef = useRef<HTMLDivElement>(null);
   const nonSteelDropdownRef = useRef<HTMLDivElement>(null);
+  const solarDropdownRef = useRef<HTMLDivElement>(null);
   const [location, navigate] = useLocation();
 
   // Steel subcategories
@@ -40,6 +45,15 @@ export default function Navbar() {
     { name: "Warehouse Infra", path: "/products/non-steel", section: "warehouse-infra" },
     { name: "Site Utilities", path: "/products/non-steel", section: "site-utilities" },
     { name: "Water Systems", path: "/products/non-steel", section: "pumping-water-system" }
+  ];
+
+  // Solar subcategories
+  const solarSubcategories = [
+    { name: "Solar Panels", path: "/products/solar", section: "solar-panels" },
+    { name: "Inverters", path: "/products/solar", section: "inverters" },
+    { name: "Mounting & Racking Systems", path: "/products/solar", section: "mounting-racking" },
+    { name: "Energy Storage", path: "/products/solar", section: "energy-storage" },
+    { name: "Miscellaneous & Accessories", path: "/products/solar", section: "miscellaneous-accessories" }
   ];
 
   const toggleMenu = () => {
@@ -67,6 +81,7 @@ export default function Navbar() {
       setIsBusinessDropdownOpen(false);
       setIsSteelDropdownOpen(false);
       setIsNonSteelDropdownOpen(false);
+      setIsSolarDropdownOpen(false);
     }, 300);
   };
 
@@ -104,6 +119,24 @@ export default function Navbar() {
     }, 200);
   };
 
+  const handleSolarMouseEnter = () => {
+    if (solarTimeoutRef.current) {
+      clearTimeout(solarTimeoutRef.current);
+    }
+    if (businessTimeoutRef.current) {
+      clearTimeout(businessTimeoutRef.current);
+    }
+    setIsSolarDropdownOpen(true);
+    setIsSteelDropdownOpen(false);
+    setIsNonSteelDropdownOpen(false);
+  };
+
+  const handleSolarMouseLeave = () => {
+    solarTimeoutRef.current = setTimeout(() => {
+      setIsSolarDropdownOpen(false);
+    }, 200);
+  };
+
   // Delayed dropdown handlers for initiatives
   const handleInitiativesMouseEnter = () => {
     if (initiativesTimeoutRef.current) {
@@ -133,6 +166,9 @@ export default function Navbar() {
       if (nonSteelDropdownRef.current && !nonSteelDropdownRef.current.contains(event.target as Node)) {
         setIsNonSteelDropdownOpen(false);
       }
+      if (solarDropdownRef.current && !solarDropdownRef.current.contains(event.target as Node)) {
+        setIsSolarDropdownOpen(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -143,6 +179,7 @@ export default function Navbar() {
       if (initiativesTimeoutRef.current) clearTimeout(initiativesTimeoutRef.current);
       if (steelTimeoutRef.current) clearTimeout(steelTimeoutRef.current);
       if (nonSteelTimeoutRef.current) clearTimeout(nonSteelTimeoutRef.current);
+      if (solarTimeoutRef.current) clearTimeout(solarTimeoutRef.current);
     };
   }, []);
 
@@ -153,6 +190,7 @@ export default function Navbar() {
     setIsInitiativesDropdownOpen(false);
     setIsSteelDropdownOpen(false);
     setIsNonSteelDropdownOpen(false);
+    setIsSolarDropdownOpen(false);
   };
 
   // Navigate to specific sections on New Initiatives page
@@ -202,8 +240,8 @@ export default function Navbar() {
   // Navigate to specific business sections (mobile)
   const navigateToBusinessSection = (sectionId: string) => {
     if (sectionId === 'solar-section') {
-      // For solar, navigate to steel products page where solar section should be
-      navigate('/products/steel');
+      // For solar, navigate to solar products page
+      navigate('/products/solar');
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -240,7 +278,7 @@ export default function Navbar() {
           <div className="flex items-center flex-shrink-0 mr-3 sm:mr-6 lg:mr-8">
             <Link to="/" className="flex items-center">
               <img 
-                src={logoImage} 
+                src={logoImage2} 
                 alt="IndoSup - Digital Key to Procurement" 
                 className="h-8 xs:h-9 sm:h-10 md:h-12 lg:h-14 w-auto cursor-pointer transition-transform duration-200 hover:scale-105"
               />
@@ -403,13 +441,39 @@ export default function Navbar() {
                   </div>
                   
                   <div className="border-t border-primary/20 my-2 mx-4"></div>
-                  <Link 
-                    to="/products/solar" 
-                    className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2"
-                    onClick={handleLinkClick}
+                  <div 
+                    className="relative"
+                    ref={solarDropdownRef}
+                    onMouseEnter={handleSolarMouseEnter}
+                    onMouseLeave={handleSolarMouseLeave}
                   >
-                    Solar Products
-                  </Link>
+                    <Link 
+                      to="/products/solar" 
+                      className="block px-4 py-3 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium rounded-md mx-2 flex items-center justify-between"
+                      onClick={handleLinkClick}
+                    >
+                      Solar Products
+                      <ChevronDown className="ml-2 h-3 w-3 rotate-[-90deg]" />
+                    </Link>
+                    
+                    {isSolarDropdownOpen && (
+                      <div 
+                        className="absolute top-0 left-full ml-1 w-48 bg-accent/80 backdrop-blur-md rounded-lg shadow-2xl py-2 z-50 border border-primary/20 animate-in fade-in-0 zoom-in-95 duration-200"
+                        onMouseEnter={handleSolarMouseEnter}
+                        onMouseLeave={handleSolarMouseLeave}
+                      >
+                        {solarSubcategories.map((subcategory, index) => (
+                          <button
+                            key={index}
+                            onClick={() => navigateToProductSection(subcategory.path, subcategory.section)}
+                            className="block w-full text-left px-4 py-2 text-white hover:text-primary hover:bg-primary/10 transition-all duration-200 text-sm"
+                          >
+                            {subcategory.name}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

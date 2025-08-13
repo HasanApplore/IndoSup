@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import logoImage from '@/assets/indosup-logo-new.png';
+import logoImage2 from '@/assets/logoImage2.svg';
 import brochuresPdf from "../assets/bronchure.pdf"
 
 export default function Footer() {
@@ -46,7 +47,7 @@ export default function Footer() {
             <div className="transform hover:scale-105 transition-transform duration-300">
               <Link to="/" className="block">
                 <img
-                  src={logoImage}
+                  src={logoImage2}
                   alt="IndoSup Logo"
                   className="h-8 sm:h-10 lg:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                 />

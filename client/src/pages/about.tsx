@@ -541,10 +541,10 @@ export default function About() {
                   
                   {/* Enhanced role description */}
                   <div className="mb-6">
-                    <p className="text-gray-600 text-sm" style={{ lineHeight: '1.6' }}>
-                      {index === 0 && "Visionary leader driving innovation in construction procurement technology with over 10 years of industry experience"}
-                      {index === 1 && "Operations expert focused on streamlining business processes and ensuring operational excellence across all verticals"}
-                      {index === 2 && "Financial strategist ensuring sustainable growth and market expansion through strategic financial planning"}
+                    <p className="text-gray-600 text-sm text-left" style={{ lineHeight: '1.6' }}>
+                      {index === 0 && "Strategic  serial  entrepreneur  with  over  15  years  of  experience  in infrastructure and supply  chain  management.  Skilled  in  designing  logistics  systems,  solving  complex operational challenges, and leading Indosup to superior performance"}
+                      {index === 1 && "Over 10 years of proven success in EPC and supply chain management, driving large-scale projects through effective procurement strategies, vendor partnerships, and streamlined logistics processes, and leading Indosup to superior performance"}
+                      {index === 2 && "Having  an  experience  of  over  a  decade  in  Private  equity/ Venture Capital, steering more than 50+ high-impact investments and deploying over 1 billion USD in capital to build market-leading businesses across diverse industries."}
                     </p>
                   </div>
 

@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Battery, Zap, Shield, ArrowUp, ArrowDown } from 'lucide-react';
+import { Sun, Battery, Zap, Shield, ArrowUp, ArrowDown, ChevronDown, ChevronUp } from 'lucide-react';
+
+import energyStorage from '../../assets/energyStorage.webp';
+import miscellaneous from '../../assets/miscellaneous.png';
+import mounting from '../../assets/mounting.png';
+import solarInverter from '../../assets/solarInverter.png';
+
 
 export default function SolarProducts() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [heroAnimationComplete, setHeroAnimationComplete] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,40 +26,14 @@ export default function SolarProducts() {
       top: 0,
       behavior: 'smooth'
     });
-    setHeroAnimationComplete(false);
   };
 
-  const scrollToContent = () => {
-    const heroHeight = window.innerHeight;
-    window.scrollTo({
-      top: heroHeight,
-      behavior: 'smooth'
-    });
-    setHeroAnimationComplete(true);
+  const toggleCardExpansion = (cardId: string) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }));
   };
-
-  const solarProducts = [
-    {
-      icon: <Sun className="w-8 h-8" />,
-      title: "Solar Panels",
-      description: "High-efficiency monocrystalline and polycrystalline solar panels for residential and commercial applications"
-    },
-    {
-      icon: <Battery className="w-8 h-8" />,
-      title: "Solar Batteries",
-      description: "Advanced lithium-ion and lead-acid battery systems for energy storage and backup power solutions"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Solar Inverters",
-      description: "Grid-tie and off-grid inverters with maximum power point tracking for optimal energy conversion"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Solar Mounting Systems",
-      description: "Durable aluminum and steel mounting structures for rooftop and ground-mounted solar installations"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
@@ -67,22 +47,6 @@ export default function SolarProducts() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-        
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute top-1/4 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl"
-            animate={{
-              scale: [1, 1.5, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
         </div>
         
         {/* Content */}
@@ -112,16 +76,6 @@ export default function SolarProducts() {
           >
             Renewable Energy & Sustainable Solutions
           </motion.p>
-
-          <motion.button
-            className="bg-[#F5A623] text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl font-semibold transition-all duration-300 hover:scale-105"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            onClick={scrollToContent}
-          >
-            Explore Solutions
-          </motion.button>
         </div>
       </section>
 
@@ -139,7 +93,7 @@ export default function SolarProducts() {
         </motion.button>
       )}
 
-      {/* Products Section */}
+      {/* Solar Product Categories Section */}
       <section className="py-8 md:py-12 bg-[#3b4f69] pt-[0px] pb-[0px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
@@ -155,9 +109,9 @@ export default function SolarProducts() {
             <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
           </motion.div>
 
-          {/* Stats Summary */}
+          {/* Category Cards Grid */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -168,28 +122,35 @@ export default function SolarProducts() {
                 <Sun className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Solar</h3>
-              <p className="text-gray-700 text-sm font-medium">Panels</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Battery className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Solar</h3>
-              <p className="text-gray-700 text-sm font-medium">Batteries</p>
+              <p className="text-[#2A374B] text-sm font-bold">Panels</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Zap className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Solar</h3>
-              <p className="text-gray-700 text-sm font-medium">Inverters</p>
+              <p className="text-[#2A374B] text-sm font-bold">Inverters</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Mounting</h3>
-              <p className="text-gray-700 text-sm font-medium">Systems</p>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Mounting & Racking</h3>
+              <p className="text-[#2A374B] text-sm font-bold">Systems</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Battery className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Energy</h3>
+              <p className="text-[#2A374B] text-sm font-bold">Storage</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Sun className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2A374B] mb-1">Miscellaneous</h3>
+              <p className="text-[#2A374B] text-sm font-bold">& Accessories</p>
             </div>
           </motion.div>
 
@@ -211,59 +172,477 @@ export default function SolarProducts() {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Solar Products Details Section */}
       <section className="py-2 md:py-4 ml-[0px] mr-[0px] mt-[-80px] mb-[80px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {solarProducts.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-white text-xl font-bold">{product.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Solar Panels Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Solar Panels"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="text-white text-xl font-bold">Solar Panels</h3>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Key Specifications */}
+                <div className="mb-6">
+                  <div className="space-y-3">
+                    <div>
+                      <h5 className="font-medium text-[#2A374B] mb-2"><b>Cell & Module Types:</b></h5>
+                      <div className="space-y-1 ml-4">
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                          <span className="text-sm text-gray-600">Monocrystalline</span>
+                        </div>
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                          <span className="text-sm text-gray-600">Polycrystalline</span>
+                        </div>
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                          <span className="text-sm text-gray-600">Thin-Film</span>
+                        </div>
+                        
+                        {!expandedCards['solar-panels'] && (
+                          <div className="flex items-center">
+                            <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                            <span className="text-sm text-gray-600">N-type Technologies...</span>
+                          </div>
+                        )}
+                        
+                        {expandedCards['solar-panels'] && (
+                          <>
+                            <div className="ml-4">
+                              <div className="text-sm text-gray-600 mb-1">N-type Technologies:</div>
+                              <div className="ml-4 space-y-1">
+                                <div className="flex items-center">
+                                  <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                                  <span className="text-sm text-gray-600">TOPCon</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                                  <span className="text-sm text-gray-600">HJT</span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div>
+                              <h5 className="font-medium text-[#2A374B] mb-2">Specialty Modules:</h5>
+                              <div className="space-y-1 ml-4">
+                                <div className="flex items-center">
+                                  <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                                  <span className="text-sm text-gray-600">Bifacial</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                                  <span className="text-sm text-gray-600">Transparent PV glass</span>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div>
+                              <h5 className="font-medium text-[#2A374B] mb-2">Encapsulation, Sealants & Adhesives:</h5>
+                              <div className="space-y-1 ml-4">
+                                <div className="flex items-center">
+                                  <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                                  <span className="text-sm text-gray-600">Encapsulant films (EVA, PVB, POE)</span>
+                                </div>
+                                <div className="flex items-center">
+                                  <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                                  <span className="text-sm text-gray-600">Edge sealants & moisture barriers</span>
+                                </div>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {product.description}
-                  </p>
+                {/* See More Button */}
+                <div className="mb-4">
+                  <button
+                    onClick={() => toggleCardExpansion('solar-panels')}
+                    className="text-[#FFC600] text-sm font-medium hover:text-[#E6B200] transition-colors duration-200 flex items-center"
+                  >
+                    {expandedCards['solar-panels'] ? (
+                      <>
+                        See Less <ChevronUp className="w-4 h-4 ml-1" />
+                      </>
+                    ) : (
+                      <>
+                        See More <ChevronDown className="w-4 h-4 ml-1" />
+                      </>
+                    )}
+                  </button>
+                </div>
 
-                  {/* Actions */}
-                  <div className="flex space-x-3">
-                    <motion.button
-                      className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Get Quote
-                    </motion.button>
-                    <motion.button
-                      className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <ArrowDown className="w-4 h-4" />
-                    </motion.button>
+                {/* Actions */}
+                <div className="flex space-x-3">
+                  <motion.button
+                    className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Quote
+                  </motion.button>
+                  <motion.button
+                    className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ArrowDown className="w-4 h-4" />
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Solar Inverters Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={solarInverter}
+                  alt="Solar Inverters"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="text-white text-xl font-bold">Solar Inverters</h3>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Key Specifications */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-[#2A374B] mb-3">Solar Inverter Types:</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">String Inverters</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Central Inverters</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Microinverters</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Hybrid Inverters</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Power Optimizers</span>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+
+                {/* Actions */}
+                <div className="flex space-x-3">
+                  <motion.button
+                    className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Quote
+                  </motion.button>
+                  <motion.button
+                    className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ArrowDown className="w-4 h-4" />
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mounting & Racking Systems Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={mounting}
+                  alt="Mounting & Racking Systems"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="text-white text-xl font-bold">Mounting & Racking Systems</h3>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <div className="mb-6">
+                  <div className="space-y-3">
+                    <div>
+                      <h5 className="font-medium text-[#2A374B] mb-2"><b>Roof Mounting:</b></h5>
+                      <div className="space-y-1 ml-4">
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                          <span className="text-sm text-gray-600">Pitched Roof Systems – Shingle, tile, metal roof attachments.</span>
+                        </div>
+                        <div className="flex items-center">
+                          <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                          <span className="text-sm text-gray-600">Flat Roof Systems – Ballasted (non-penetrating) or penetrating mounts.</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {!expandedCards['mounting'] && (
+                      <div className="flex items-center">
+                        <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                        <span className="text-sm text-gray-600">Ground Mounting...</span>
+                      </div>
+                    )}
+                    
+                    {expandedCards['mounting'] && (
+                      <>
+                        <div>
+                          <h5 className="font-medium text-[#2A374B] mb-2"><b>Ground Mounting:</b></h5>
+                          <div className="space-y-1 ml-4">
+                            <div className="flex items-center">
+                              <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                              <span className="text-sm text-gray-600">Fixed-Tilt Structures</span>
+                            </div>
+                            <div className="flex items-center">
+                              <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                              <span className="text-sm text-gray-600">Solar Trackers – Single-axis, dual-axis </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h5 className="font-medium text-[#2A374B] mb-2"><b>Mounting Hardware:</b></h5>
+                          <div className="space-y-1 ml-4">
+                            <div className="flex items-center">
+                              <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                              <span className="text-sm text-gray-600">Rails, mid/end clamps</span>
+                            </div>
+                            <div className="flex items-center">
+                              <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                              <span className="text-sm text-gray-600">Flashings, tilt legs, ballast blocks</span>
+                            </div>
+                            <div className="flex items-center">
+                              <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                              <span className="text-sm text-gray-600">Corrosion-resistant fasteners, grounding lugs</span>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* See More Button */}
+                <div className="mb-4">
+                  <button
+                    onClick={() => toggleCardExpansion('mounting')}
+                    className="text-[#FFC600] text-sm font-medium hover:text-[#E6B200] transition-colors duration-200 flex items-center"
+                  >
+                    {expandedCards['mounting'] ? (
+                      <>
+                        See Less <ChevronUp className="w-4 h-4 ml-1" />
+                      </>
+                    ) : (
+                      <>
+                        See More <ChevronDown className="w-4 h-4 ml-1" />
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Actions */}
+                <div className="flex space-x-3">
+                  <motion.button
+                    className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Quote
+                  </motion.button>
+                  <motion.button
+                    className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ArrowDown className="w-4 h-4" />
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Energy Storage Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={energyStorage}
+                  alt="Energy Storage"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="text-white text-xl font-bold">Energy Storage</h3>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Key Specifications */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-[#2A374B] mb-3">Types of Energy Storage:</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Lead-Acid – Flooded, AGM, Gel.</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Lithium-Ion – LFP (Lithium Iron Phosphate), NMC.</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Flow Batteries – Vanadium redox, zinc-bromine.</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Battery racks, enclosures, and cooling/thermal management systems.</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex space-x-3">
+                  <motion.button
+                    className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Quote
+                  </motion.button>
+                  <motion.button
+                    className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ArrowDown className="w-4 h-4" />
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Miscellaneous & Accessories Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200 hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={miscellaneous}
+                  alt="Miscellaneous & Accessories"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="text-white text-xl font-bold">Miscellaneous & Accessories</h3>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Key Specifications */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-[#2A374B] mb-3">Miscellaneous & Accessories:</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Tools & Equipment: Solar panel lifters, specialized wrenches, cable strippers.</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Enclosures & Boxes: NEMA-rated boxes for electrical components.</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Safety Gear: Personal protective equipment (PPE) for installers.</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="w-2 h-2 bg-[#FFC600] rounded-full mr-3"></span>
+                      <span className="text-sm text-gray-600">Service & Support: You might have a category for procurement services, project 
+                      management, or consulting if you offer them.</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex space-x-3">
+                  <motion.button
+                    className="flex-1 bg-[#FFC600] text-[#2A374B] font-semibold py-2 px-4 rounded-lg hover:bg-[#E6B200] hover:text-[#2A374B] transition-all duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Get Quote
+                  </motion.button>
+                  <motion.button
+                    className="flex items-center justify-center border-2 border-[#FFC600] text-[#FFC600] hover:bg-[#FFC600] hover:text-[#2A374B] transition-all duration-200 py-2 px-4 rounded-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ArrowDown className="w-4 h-4" />
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
