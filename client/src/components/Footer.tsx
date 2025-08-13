@@ -12,7 +12,7 @@ export default function Footer() {
     { name: 'Our Initiatives', path: '/new-initiatives' },
     { name: 'Media', path: '/media' },
     { name: 'Careers', path: '/careers' },
-    { name: 'Bronchures', path: '/brochures' }
+    { name: 'Brochures', path: '/brochures' }
   ];
 
   const productCategories = [
@@ -128,6 +128,10 @@ export default function Footer() {
                         <div className="flex items-start text-gray-300 text-sm group">
                           <MapPin className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                           <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
+                        </div>
+                        <div className="flex items-start text-gray-300 text-sm group">
+                          
+                          <span className="leading-relaxed ml-9">PRIDE PLAZA HOTEL AIRPORT AREA ,Pride Plaza Hotel Aerocity New Delhi, INNOV8 COWORKING Building No./Flat No.: H43F plus 65, Delhi Aerocity New Delhi</span>
                         </div>
                         <div className="flex items-start text-gray-300 text-sm group">
                           <Phone className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />

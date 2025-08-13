@@ -133,28 +133,30 @@ export default function OurClientsSection() {
             >
               {repeatedLogos.map((client, index) => (
                 <motion.div
-                  key={`logo-${index}`}
-                  className="group flex-shrink-0 w-36 h-24 flex items-center justify-center cursor-pointer"
-                  whileHover={{ 
-                    scale: 1.1,
-                    transition: { duration: 0.2 }
+                key={`logo-${index}`}
+                className="group flex-shrink-0 flex items-center justify-center cursor-pointer"
+                style={{ width: '150px', height: '110px' }}
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <img 
+                  src={client.logo} 
+                  alt={`${client.name} - Valued Client`}
+                  className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg"
+                  loading="lazy"
+                  onError={(e) => {
+                    console.log(`Failed to load logo: ${client.logo}`);
+                    const target = e.currentTarget as HTMLImageElement;
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `<span class="text-xs font-bold text-accent text-center px-2">${client.name}</span>`;
+                    }
                   }}
-                >
-                  <img 
-                    src={client.logo} 
-                    alt={`${client.name} - Valued Client`}
-                    className="max-w-full max-h-full object-contain filter grayscale-[0.3] group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm group-hover:drop-shadow-lg"
-                    loading="lazy"
-                    onError={(e) => {
-                      console.log(`Failed to load logo: ${client.logo}`);
-                      const target = e.currentTarget as HTMLImageElement;
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `<span class="text-xs font-bold text-accent text-center px-2">${client.name}</span>`;
-                      }
-                    }}
-                  />
-                </motion.div>
+                />
+              </motion.div>
+              
               ))}
             </motion.div>
           </div>
