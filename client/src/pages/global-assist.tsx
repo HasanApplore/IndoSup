@@ -183,11 +183,11 @@ export default function GlobalAssist() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#2A374B]">
-              About Global Assist
+              About IndoSup Assist
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              IndoSup Assist Private Limited is a specialized consulting firm dedicated to delivering 
+              IndoSup Assist is a specialized consulting firm dedicated to delivering 
               exceptional technical expertise and project management support for construction initiatives worldwide.
             </p>
           </motion.div>

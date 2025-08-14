@@ -35,6 +35,19 @@ export default function SolarProducts() {
     }));
   };
 
+  // Function to scroll to specific product sections
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 100; // Offset for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fbf5e8] to-white">
       {/* Hero Section */}
@@ -106,7 +119,10 @@ export default function SolarProducts() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
               Solar Product Categories
             </h2>
-            <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-4"></div>
+            <p className="text-white/80 text-center mb-6">
+              Click on any category below to view detailed product information
+            </p>
           </motion.div>
 
           {/* Category Cards Grid */}
@@ -117,41 +133,86 @@ export default function SolarProducts() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <motion.button
+              onClick={() => scrollToSection('solar-panels')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Solar Panels products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Sun className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Solar</h3>
               <p className="text-[#2A374B] text-sm font-bold">Panels</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('solar-inverters')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Solar Inverters products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Zap className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Solar</h3>
               <p className="text-[#2A374B] text-sm font-bold">Inverters</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('mounting-racking')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Mounting & Racking Systems products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Mounting & Racking</h3>
               <p className="text-[#2A374B] text-sm font-bold">Systems</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('energy-storage')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Energy Storage products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Battery className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Energy</h3>
               <p className="text-[#2A374B] text-sm font-bold">Storage</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('miscellaneous-accessories')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Miscellaneous & Accessories products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Sun className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Miscellaneous</h3>
               <p className="text-[#2A374B] text-sm font-bold">& Accessories</p>
-            </div>
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
           </motion.div>
 
           <motion.div
@@ -178,6 +239,7 @@ export default function SolarProducts() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Solar Panels Card */}
             <motion.div
+              id="solar-panels"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -316,6 +378,7 @@ export default function SolarProducts() {
 
             {/* Solar Inverters Card */}
             <motion.div
+              id="solar-inverters"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -387,6 +450,7 @@ export default function SolarProducts() {
 
             {/* Mounting & Racking Systems Card */}
             <motion.div
+              id="mounting-racking"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -510,6 +574,7 @@ export default function SolarProducts() {
 
             {/* Energy Storage Card */}
             <motion.div
+              id="energy-storage"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -577,6 +642,7 @@ export default function SolarProducts() {
 
             {/* Miscellaneous & Accessories Card */}
             <motion.div
+              id="miscellaneous-accessories"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}

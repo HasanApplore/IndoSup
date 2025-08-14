@@ -563,13 +563,13 @@ export default function Navbar() {
                       onClick={() => navigateToInitiativeSection('global-private-section')}
                       className="block w-full text-left px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
                     >
-                      Global Private Limited
+                     IndoSup Global
                     </button>
                     <button 
                       onClick={() => navigateToInitiativeSection('global-assist-section')}
                       className="block w-full text-left px-3 sm:px-4 py-2 text-white hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 ml-2 sm:ml-3 text-sm sm:text-base"
                     >
-                      Global Assist Limited
+                      IndoSup Assist
                     </button>
                   </div>
                 )}

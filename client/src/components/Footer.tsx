@@ -1,12 +1,27 @@
 import { motion } from 'framer-motion';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import logoImage from '@/assets/indosup-logo-new.png';
 import logoImage2 from '@/assets/logoImage2.svg';
 import brochuresPdf from "../assets/bronchure.pdf"
+import { useScrollToTop } from '../hooks/useScrollToTop';
+import facebook from '../assets/facebook.png';
+import instagram from '../assets/instagram.svg';
+import linkedin from '../assets/linkedin2.png';
 
 export default function Footer() {
+  const [, setLocation] = useLocation();
+  const scrollToTop = useScrollToTop();
+
+  // Function to handle navigation with scroll to top
+  const handleNavigation = (path: string) => {
+    setLocation(path);
+    // Scroll to top with smooth behavior after a small delay to ensure navigation completes
+    setTimeout(() => {
+      scrollToTop();
+    }, 100);
+  };
 
   const quickLinks = [
     { name: 'About Us', path: '/about' },
@@ -26,9 +41,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, url: 'https://www.facebook.com/IndoSup/', label: 'Facebook' },
-    { icon: FaInstagram, url: 'https://www.instagram.com/indosupofficial/', label: 'Instagram' },
-    { icon: FaLinkedin, url: 'https://www.linkedin.com/company/indosup/', label: 'LinkedIn' }
+    { icon: facebook, url: 'https://www.facebook.com/IndoSup/', label: 'Facebook' },
+    { icon: instagram, url: 'https://www.instagram.com/indosupofficial/', label: 'Instagram' },
+    { icon: linkedin, url: 'https://www.linkedin.com/company/indosup/', label: 'LinkedIn' }
   ];
 
   return (
@@ -45,13 +60,13 @@ export default function Footer() {
           {/* Company Info & Quick Links - Positioned at far left */}
           <div className="flex-shrink-0 w-full lg:w-auto pl-4 sm:pl-6 lg:pl-8">
             <div className="transform hover:scale-105 transition-transform duration-300">
-              <Link to="/" className="block">
+              <button onClick={() => handleNavigation('/')} className="block">
                 <img
                   src={logoImage2}
                   alt="IndoSup Logo"
                   className="h-8 sm:h-10 lg:h-12 w-auto filter drop-shadow-lg hover:drop-shadow-xl transition-all duration-300"
                 />
-              </Link>
+              </button>
             </div>
 
             <div className="flex-1 mt-6">
@@ -62,26 +77,26 @@ export default function Footer() {
               <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                                         {
-                       link.name === 'Bronchures' ? (
-                         <a 
-                           href={brochuresPdf} 
-                           target="_blank" 
-                           className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
-                         >
-                           <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
-                           {link.name}
-                         </a>
-                       ) : (
-                         <Link
-                           to={link.path}
-                           className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
-                         >
-                           <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
-                           {link.name}
-                         </Link>
-                       )
-                     }
+                    {
+                      link.name === 'Bronchures' ? (
+                        <a
+                          href={brochuresPdf}
+                          target="_blank"
+                          className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group"
+                        >
+                          <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                          {link.name}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => handleNavigation(link.path)}
+                          className="text-gray-300 hover:text-primary transition-all duration-300 text-xs sm:text-sm flex items-center group text-left w-full"
+                        >
+                          <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-2 sm:group-hover:w-3 group-hover:mr-1 sm:group-hover:mr-2 transition-all duration-300 rounded-full"></span>
+                          {link.name}
+                        </button>
+                      )
+                    }
                   </li>
                 ))}
               </ul>
@@ -101,13 +116,13 @@ export default function Footer() {
                   <ul className="space-y-3">
                     {productCategories.map((category, index) => (
                       <li key={index}>
-                        <Link
-                          to={category.path}
-                          className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group"
+                        <button
+                          onClick={() => handleNavigation(category.path)}
+                          className="text-gray-300 hover:text-primary transition-all duration-300 text-sm flex items-center group text-left w-full"
                         >
                           <span className="w-0 h-0.5 bg-primary mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 rounded-full"></span>
                           {category.name}
-                        </Link>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -131,8 +146,8 @@ export default function Footer() {
                           <span className="leading-relaxed">C-120, 2nd Floor, Sector 2<br />Noida, Uttar Pradesh - 201301</span>
                         </div>
                         <div className="flex items-start text-gray-300 text-sm group">
-                          
-                          <span className="leading-relaxed ml-9">PRIDE PLAZA HOTEL AIRPORT AREA ,Pride Plaza Hotel Aerocity New Delhi, INNOV8 COWORKING Building No./Flat No.: H43F plus 65, Delhi Aerocity New Delhi</span>
+                          <MapPin className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                          <span className="leading-relaxed">PRIDE PLAZA HOTEL AIRPORT AREA ,Pride Plaza Hotel Aerocity New Delhi, INNOV8 COWORKING Building No./Flat No.: H43F plus 65, Delhi Aerocity New Delhi</span>
                         </div>
                         <div className="flex items-start text-gray-300 text-sm group">
                           <Phone className="w-5 h-5 mr-4 text-primary flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
@@ -158,12 +173,16 @@ export default function Footer() {
                                 href={social.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
+                                // className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl flex items-center justify-center text-gray-300 hover:bg-gradient-to-br hover:from-primary hover:to-primary/80 hover:text-neutral-dark transition-all duration-300 shadow-lg hover:shadow-primary/25"
                                 whileHover={{ scale: 1.1, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
                                 title={social.label}
                               >
-                                <IconComponent className="w-4 h-4" />
+                                <img
+                                  src={social.icon}
+                                  alt={social.label}
+                                  className="w-8 h-8 object-fit"
+                                />
                               </motion.a>
                             );
                           })}
@@ -198,11 +217,22 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10 bg-black/20 backdrop-blur-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-4 relative z-10">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-between items-center">
             {/* Copyright */}
             <div className="text-gray-300 text-sm font-medium tracking-wide">
               © {new Date().getFullYear()} <span className="text-primary font-bold">IndoSup</span>. All rights reserved.
             </div>
+
+            {/* Scroll to Top Button */}
+            <button
+              onClick={() => scrollToTop()}
+              className="bg-primary hover:bg-primary/80 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-primary/25"
+              title="Scroll to top"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

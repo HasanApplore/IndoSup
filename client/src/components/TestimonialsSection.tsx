@@ -2,6 +2,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
+import bry from '../assets/bry.png'
+import aerocoach from '../assets/aerocoach.jpg'
+import jakson from '../assets/jakson.png'
+import ats from '../assets/ats1.jpg'
+
 export default function TestimonialsSection() {
   const testimonials = [
     {
@@ -13,7 +18,7 @@ export default function TestimonialsSection() {
       rating: 5,
       testimonial: "Indosup has revolutionized the way we source construction materials. Their digital platform has made the entire procurement process streamlined and convenient. With just a few clicks, we can compare prices, check product specifications, and place orders. It has saved us a tremendous amount of time and effort.",
       project: "",
-      avatar: "SK"
+      avatar: bry
     },
     {
       id: 2,
@@ -24,7 +29,7 @@ export default function TestimonialsSection() {
       rating: 5,
       testimonial: "I highly recommend Indosup for anyone in the construction industry. Their platform has transformed the way we source and procure materials. The competitive pricing, reliable delivery, and excellent customer service have made them an indispensable partner in our projects. It's a game-changer for efficiency and cost-effectiveness.",
       project: "",
-      avatar: "HM"
+      avatar: aerocoach
     },
     {
       id: 3,
@@ -35,7 +40,7 @@ export default function TestimonialsSection() {
       rating: 5,
       testimonial: "Indosup has made our material procurement a breeze. The platform's intuitive interface allows us to quickly browse through various options, compare prices, and make informed decisions. The hassle-free ordering process and prompt delivery have significantly reduced our downtime and kept our projects running smoothly.",
       project: "",
-      avatar: "BG"
+      avatar: jakson
     },
     {
       id: 4,
@@ -46,7 +51,7 @@ export default function TestimonialsSection() {
       rating: 5,
       testimonial: "Using Indosup for our construction material procurement needs has been a game-changer. The platform is incredibly user-friendly, and their vast product catalog ensures we can find everything we need for our projects. The efficient order processing and on-time delivery have helped us stay on schedule and complete projects smoothly.",
       project: "",
-      avatar: "RP"
+      avatar: ats
     }
   ];
 
@@ -158,8 +163,12 @@ export default function TestimonialsSection() {
                   {/* Client Info */}
                   <div className="flex items-center justify-center gap-3">
                     {/* Client Profile Circle */}
-                    <div className="bg-[#FFC600] text-[#1E293B] font-semibold w-10 h-10 rounded-full flex items-center justify-center text-sm">
-                      {currentTestimonial.avatar}
+                    <div className="w-24 h-24 rounded-full overflow-hidden flex items-center justify-center">
+                      <img 
+                        src={currentTestimonial.avatar} 
+                        alt={`${currentTestimonial.name} avatar`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     
                     {/* Client Details */}

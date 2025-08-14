@@ -622,27 +622,52 @@ export default function About() {
           {/* Section Header */}
           <motion.div
             className="text-center mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC600]">
               Our Mission & Vision
             </h2>
-            <div className="w-24 md:w-32 h-1 bg-gradient-to-r from-[#FFC600] to-[#FFC600] mx-auto mt-4"></div>
+            <motion.div 
+              className="w-24 md:w-32 h-1 bg-gradient-to-r from-[#FFC600] to-[#FFC600] mx-auto mt-4"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            ></motion.div>
           </motion.div>
 
           {/* Content Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto relative"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Background decoration for enhanced effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-3xl -z-10"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, delay: 0.6 }}
+            />
+            
             {/* Mission Card */}
             <motion.div
               id="mission"
               className="relative"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -200, scale: 0.8, rotateY: -15 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ 
+                duration: 1.2, 
+                delay: 0.2,
+                ease: "easeOut"
+              }}
             >
               <motion.div
                 className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-200 h-full relative overflow-hidden"
@@ -702,10 +727,14 @@ export default function About() {
             <motion.div
               id="vision"
               className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 200, scale: 0.8, rotateY: 15 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ 
+                duration: 1.2, 
+                delay: 0.4,
+                ease: "easeOut"
+              }}
             >
               <motion.div
                 className="bg-white rounded-2xl p-6 md:p-8 shadow-xl h-full relative overflow-hidden border border-gray-200"
@@ -760,15 +789,15 @@ export default function About() {
                 />
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Bottom decorative elements */}
           <motion.div
             className="flex justify-center mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 1.0, delay: 0.8, ease: "easeOut" }}
           >
             <div className="flex space-x-3">
               <motion.div

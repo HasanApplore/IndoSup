@@ -8,6 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 import contactBannerImage from '@assets/busy-woman-doing-many-things-same-time_1752497557915.jpg';
 import constructionImage1 from '@assets/colleagues-working-together-call-center-office_1752497192985.jpg';
 import constructionImage2 from '@assets/business-executives-discussing-with-their-colleagues-whiteboa_1752497243265.jpg';
+import contactus from '../assets/contactus1.png';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -272,7 +273,7 @@ export default function Contact() {
   {/* Customer Support Image */}
   <div className="relative rounded-2xl overflow-hidden shadow-lg group w-full">
     <img 
-      src={constructionImage1} 
+      src={contactus} 
       alt="Professional customer support team in call center"
       className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
     />

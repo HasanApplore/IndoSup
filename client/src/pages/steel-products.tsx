@@ -55,6 +55,19 @@ export default function SteelProducts() {
     }
   };
 
+  // Function to scroll to specific product sections
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 100; // Offset for fixed navbar
+      const elementPosition = element.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const steelCategories = [
     {
       name: "Structural Steel",
@@ -239,7 +252,10 @@ export default function SteelProducts() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#FFC600] mb-6">
               Steel Product Categories
             </h2>
-            <div className="w-24 h-1 bg-[#FFC600] mx-auto"></div>
+            <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-4"></div>
+            <p className="text-white/80 text-center mb-6">
+              Click on any category below to view detailed product information
+            </p>
           </motion.div>
 
           {/* Stats Summary */}
@@ -250,48 +266,107 @@ export default function SteelProducts() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+            <motion.button
+              onClick={() => scrollToSection('structural-steel')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Structural Steel products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Building2 className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Structural</h3>
               <p className="text-[#2A374B] text-sm font-bold">Steel</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            
+            <motion.button
+              onClick={() => scrollToSection('pipes-fittings')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Pipes & Fittings products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Zap className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Pipes</h3>
               <p className="text-[#2A374B] text-sm font-bold">& Fittings</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            
+            <motion.button
+              onClick={() => scrollToSection('roofing-materials')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Roofing Materials products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Roofing</h3>
               <p className="text-[#2A374B] text-sm font-bold">Materials</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            
+            <motion.button
+              onClick={() => scrollToSection('doors-windows')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Doors & Windows products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <DoorOpen className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Doors</h3>
               <p className="text-[#2A374B] text-sm font-bold">& Windows</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            
+            <motion.button
+              onClick={() => scrollToSection('tmt-bars')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Reinforcement Products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Star className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Reinforcement</h3>
               <p className="text-[#2A374B] text-sm font-bold">Products</p>
-            </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2">
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
+            
+            <motion.button
+              onClick={() => scrollToSection('hardware-tools')}
+              className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer group hover:border-[#FFC600]/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              title="Click to view Hardware & Tools products"
+            >
+              <div className="w-10 h-10 bg-[#FFC600] rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-[#E6B200] transition-colors duration-300">
                 <Wrench className="w-5 h-5 text-white" />
               </div>
               <h3 className="text-lg font-bold text-[#2A374B] mb-1">Hardware</h3>
               <p className="text-[#2A374B] text-sm font-bold">& Tools</p>
-            </div>
+              <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowDown className="w-4 h-4 text-[#FFC600] mx-auto" />
+              </div>
+            </motion.button>
           </motion.div>
           
           <motion.div

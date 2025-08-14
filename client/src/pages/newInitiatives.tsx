@@ -311,11 +311,11 @@ export default function NewInitiatives() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#2A374B]">
-              Our Global Companies
+              Our Companies
             </h2>
             <div className="w-24 h-1 bg-[#FFC600] mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-[#2A374B] max-w-3xl mx-auto leading-relaxed">
-              Two specialized companies driving innovation in global construction markets and technical excellence
+            Indosup  Infra  has introduced  its  two specialised Companies driving innovation in their markets with technical excellence. 
             </p>
           </motion.div>
 
@@ -340,7 +340,7 @@ export default function NewInitiatives() {
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
-                      IndoSup Assist Private Limited
+                      IndoSup Assist 
                     </h3>
                     <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
                   </div>
@@ -441,7 +441,7 @@ export default function NewInitiatives() {
                   </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-[#FFC600] mb-2">
-                      IndoSup Global Private Limited
+                      IndoSup Global
                     </h3>
                     <div className="w-16 h-1 bg-[#FFC600] rounded-full"></div>
                   </div>
@@ -470,7 +470,7 @@ export default function NewInitiatives() {
                 </div>
 
                 <div className="mt-6">
-                  <Link to="/contact">
+                  <Link to="/indosup-global">
                     <motion.div
                       className="inline-flex items-center bg-[#FFC600]/10 hover:bg-[#FFC600] text-[#FFC600] hover:text-[#2A374B] px-6 py-3 rounded-xl font-semibold transition-all duration-300 group border-2 border-[#FFC600]/20 hover:border-[#FFC600] shadow-sm hover:shadow-md"
                       whileHover={{ x: 5, scale: 1.02 }}

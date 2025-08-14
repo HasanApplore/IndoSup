@@ -291,7 +291,7 @@ const OurImpactSection = () => {
       description: 'Nationwide coverage'
     },
     {
-      number: 30,
+      number: 20,
       suffix: '+',
       title: 'States Served',
       description: 'Pan-India presence'

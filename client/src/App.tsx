@@ -12,6 +12,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import NewInitiatives from "@/pages/newInitiatives";
 import GlobalAssist from "@/pages/global-assist";
+import IndoSupGlobal from "@/pages/indosup-global";
 import StreamlinedProcurement from "@/pages/streamlinedProcurement";
 import SteelProducts from "@/pages/steel-products";
 import NonSteelProducts from "@/pages/non-steel-products";
@@ -131,6 +132,13 @@ function App() {
               <>
                 <Navbar />
                 <GlobalAssist />
+                <Footer />
+              </>
+            )} />
+            <Route path="/indosup-global" component={() => (
+              <>
+                <Navbar />
+                <IndoSupGlobal />
                 <Footer />
               </>
             )} />
